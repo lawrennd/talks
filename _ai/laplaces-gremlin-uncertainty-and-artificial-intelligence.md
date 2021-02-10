@@ -1,5 +1,5 @@
 ---
-title: "Celsius Lecture"
+title: "Laplace's Gremlin: Uncertainty and Artificial Intelligence"
 abstract: >
   With breakthroughs in understanding images, translating language,
   transcribing speech artificial intelligence promises to
@@ -8,7 +8,7 @@ abstract: >
   knowledge. With the increasing impact of these technologies,
   society’s interest is also growing.
 
-  The word intelligence conjures notions of human-like
+  The word *intelligence* conjures notions of human-like
   capabilities. But are we really on the cusp of creating machines
   that match us? We associate intelligence with knowledge, but in this
   talk I will argue that the true marvel of our intelligence is the
@@ -54,17 +54,19 @@ UNPRECEDENTED COMBINATION OF SCIENCE, SOCIAL SCIENCE, ETC REQUIRED TO DELIVER}
 
 <!--include{_physics/includes/laplaces-determinism.md}-->
 
-\newslide{}
 
-\centerdiv{$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$}
+\aligncenter{
+$$
+\text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$}
+
+
+\include{_simulation/includes/life-rules.md}
 
 
 \include{_simulation/includes/life-glider-loafer-conway.md}
 
-<!--include{_simulation/includes/life-rules.md}-->
 
 
-<!--HURRICANE DETECTOR-->
 \speakernotes{The phenomenon of emergent behaviour also applies to real world simulations like climate and weather. E.g. Niall Robinson defining a hurricane to search for hurricane's im climate simulations.}
 
 <!--LAPLACE'S GREMLIN-->
@@ -84,9 +86,13 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 \newslide{A Theory of Ignorance}
 
-\figure{\threeColumns{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}{}{left}}{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{100%}{}{center}}{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}{}{right}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
+\figure{\threeColumns{\aligncenter{\includejpg{\diagramsDir/philosophy/Bertrand_Russell_1957}{100%}}\slides{\aligncenter{*Betrand Russell*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Albert_Einstein_photo_1921}{50%}}\slides{\aligncenter{*Albert Einstein*}}}{\aligncenter{\includejpg{\diagramsDir/physics/Norbert_wiener}{100%}}\slides{\aligncenter{*Norbert Wiener*}}}{30%}{30%}{30%}}{Bertrand Russell (1872-1970), Albert Einstein (1879-1955), Norbert Wiener, (1894-1964)}{russell-wiener-russell}
 
-\speakernotes{Wiener came to Cambridge in 1913. Russell showed him Einsteins 1905 paper on brownian motion (@Einstein-brownian05)}
+\speakernotes{Wiener came to Cambridge in 1913. Russell showed him Einstein's 1905 paper on Brownian motion (@Einstein-brownian05)}
+
+\newslide{}
+
+\figure{\includegif{\diagramsDir/physics/brownian-motion}{40%}}{Brownian motion of a large particle in a group of smaller particles. The movement is known as a *Wiener process* after Norbert Wiener.}{brownian-motion}
 
 <!--EINSTEIN-->
 
@@ -97,11 +103,14 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 \newslide{}
 
+\include{_physics/includes/entropy-billiards.md}
+
+\newslide{}
+
 \figure{\threeColumns{\includepng{\diagramsDir/physics/james-clerk-maxwell}{100%}{}{left}}{\includejpg{\diagramsDir/physics/boltzmann2}{100%}{}{center}}{\includejpg{\diagramsDir/physics/j-w-gibbs}{100%}{}{right}}{30%}{30%}{30%}}{James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906) Josiah Willard Gibbs (1839-1903)}{maxwell-boltzmann-gibbs}
 
 <!--ENTROPY BILLIARDS-->
 
-\include{_physics/includes/entropy-billiards.md}
 <!--include{_physics/includes/maxwells-demon.md}-->
 
 \newslide{}
@@ -135,7 +144,9 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 }{Maxwell's Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right, only if they are hot.}{maxwells-demon}
 
 
-\figure{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}{, Claude Shannon (1916-2001) who in 1905 published a mathematical model for Brownian motion that inspired Wiener's work on stoachastic processes.}{albert-einstein}
+\newslide{}
+
+\figure{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{40%}}{Claude Shannon (1916-2001)}{claude-shannon}
 
 
 \section{MEASUREMENT}
@@ -152,11 +163,10 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 
 \comment{\figure{\includegooglebook{0p8AAAAAMAAJ}{PA3}}{Quote from Maxwell's theory of heat on the melting and boiling point of water.}{maxwell-melting-boiling}}
 
-\section{HUMANS}
-
 \newslide{Locked In}
 
-\figure{\include{_ai/includes/embodiment-factors-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Jean Dominique Bauby suffered from locked-in syndrome. The embodiment factors show that relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, whether locked in or not, it is a matter of many millions of years.}{embodiment-factors-table}
+\figure{\include{_ai/includes/embodiment-factors-computer-human-table.html}}{Embodiment factors are the ratio between our ability to compute and our ability to communicate. Relative to the machine we are also locked in. In the table we represent embodiment as the length of time it would take to communicate one second's worth of computation. For computers it is a matter of minutes, but for a human, it is a matter of thousands of millions of years.}{embodiment-factors-table}
+
 
 \include{_ai/includes/conversation-tedx.md}
 
@@ -165,6 +175,16 @@ INTRODUCE ENTROPY TO MEASURE IGNORANCE
 \speakernotes{I have a great dislike for Russell; I cannot explain it completely, but I feel a detestation for the man. As far as any sympathy with me, or with anyone else, I believe, he is an iceberg. His mind impresses one as a keen, cold, narrow logical machine, that cuts the universe into neat little packets, that measure, as it were, just three inches each way. His type of mathematical analysis he applies as a sort of Procrustean bed to the facts, and those that contain more than his system provides for, he lops short, and those that contain less, he draws out.
 
 Norbert Wiener in a letter to his family, 1913}
+
+
+\include{_ai/includes/heider-simmel.md}
+
+\include{_ai/includes/conversation-computer.md}
+
+
+\newslide{}
+
+
 
 
 \section{ARTIFICIAL}
@@ -179,13 +199,6 @@ Norbert Wiener in a letter to his family, 1913}
 
 \notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
 
-\newslide{}
-
-> Day by day, however, the machines are gaining ground upon us; day by day we are becoming more subservient to them; more men are daily bound down as slaves to tend them, more men are daily devoting the energies of their whole lives to the development of mechanical life. The upshot is simply PAGE 185a question of time, but that the time will come when the machines will hold the real supremacy over the world and its inhabitants is what no person of a truly philosophic mind can for a moment question.
->
-> Samuel Butler in *Darwin Among the Machines* a letter to the Editor of
-> *The Press*, 1863
-
 
 \notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that }
 
@@ -196,31 +209,21 @@ Norbert Wiener in a letter to his family, 1913}
 
 \speakernotes{Our natural environment provides a Gibbsian hydra for us to do battle with. Statistical ensemble as hydra.}
 
-<!--include{_physics/includes/szilards-engine.md}-->
+\newslide{}
 
-\newslide{Natural Systems are Evolved}
-\slides{
-> Survival of the fittest
-> 
-> ?
-}
+\figure{\includepng{\diagramsDir/ai/lenox-globe}{50%}}{[The Lenox globe](http://www.myoldmaps.com/renaissance-maps-1490-1800/314-the-lenox-globe/314-lenox.pdf), which dates from early 16th century, one of the earliest known globes.}{lenox-globe}
+
+\slidesmall{\credit{New York Public Library Rare Books Collection}{https://digitalcollections.nypl.org/collections/hunt-lenox-globe#/?tab=about}}
 
 
-\newslide{Natural Systems are Evolved}
 
-> Survival of the fittest
->
-> [Herbet Spencer](https://en.wikipedia.org/wiki/Herbert_Spencer), 1864
+\newslide{}
 
-\notes{Darwin himself never said "Survival of the Fittest" he talked about evolution by natural selection.}
+\figure{\includepng{\diagramsDir/ai/lenox-globe-by-b-f-da-costa}{100%}{negate}}{Drawing of the Lenox Globe by the historian for the Magazine of American History in September 1879.}{lenox-globe-by-b-f-da-costa}
 
+\newslide{}
 
-\newslide{Natural Systems are Evolved}
-
-> Non-survival of the non-fit
-> 
-> 
-
+\figure{\includepng{\diagramsDir/ai/lenox-globe-hic-sunt-dracones}{60%}}{Detail from the Lenox globe located in the region of China, "hic sunt dracones"}{lenox-globe-hic-sunt-dracones}
 
 
 \section{*ARTIFICIAL* INTELLIGENCE}
@@ -228,13 +231,23 @@ Norbert Wiener in a letter to his family, 1913}
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
 
-\newslide{Where there be dragons}
+\newslide{}
 
-\figure{\includejpg{\diagramsDir/ai/alpha-go-wins}{80%}}{Lee Sedol still
-managed to win a game. Given the effort stacked against him, it was a
-breathtaking achievement.}{alpha-go-wins}
+\includeyoutube{WXuK6gekU1Y}{600}{450}
+
+\newslide{}
 
 \speakernotes{Sedolian void: Despite the many millions of matches that AlphaGo had played, Lee Sedol
+managed to find a board position that was distinct from anything AlphaGo
+had seen before. Within the high dimensional pinball machine that made
+up AlphaGo's decision making systems, Lee Sedol found a niche, an
+Achillean chink in AlphaGo's armour. He found a path through the neural
+network where no data had every been before. He found a location in
+feature space where there be dragons.}
+
+\figure{\columns{\includepng{\diagramsDir/ai/lee-se-dol-alpha-go-game-4-move-78}{60%}}{\includejpg{\diagramsDir/ai/lee-se-dol}{60%}}{49%}{49%}}{Move 78 of [Game 4](https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol#Game_4) was critical in allowing Lee Se-dol to win the match. Described by [Gu Li](https://en.wikipedia.org/wiki/Gu_Li_(Go_player)) as a 'divine move'.}{lee-se-dol-move-78}
+
+\speakernotes{Sedolian void: Despite the many millions of matches that AlphaGo had played, Lee Se-dol
 managed to find a board position that was distinct from anything AlphaGo
 had seen before. Within the high dimensional pinball machine that made
 up AlphaGo's decision making systems, Lee Sedol found a niche, an
@@ -247,21 +260,33 @@ feature space where there be dragons.}
 
 \newslide{}
 
-\figure{\includeyoutube{iWGhXof45zI}{800}{600}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
+\figure{\includeyoutube{iWGhXof45zI}{600}{450}}{A vehicle operated by Uber ATG was involved in a fatal crash when it killed pedestrian Elaine Herzberg, 49.}{uber-atg-elaine}
 
 
 \newslide{Academy of Sweden}
 
 * The academy was founded on 2 June 1739 by naturalist Carl Linnaeus, mercantilist Jonas Alströmer, mechanical engineer Mårten Triewald, civil servants Sten Carl Bielke and Carl Wilhelm Cederhielm, and statesman/author Anders Johan von Höpken.
 
-INTRODUCE THE SOLUTIONS
+\newslide{}
+
+\figure{\includediagram{\diagramsDir/simulation/data-driven-and-mechanistic-models}{80%}}{Data driven and mechanistic models have separated since the origin of the field. Accelerate science is about bringing these two modalities back together.}{data-driven-and-mechanistic-models}
+
+https://uu.se/en/research/ai4research/
 
 \newslide{Four Pillar Programme}
+
+
+\columns{\aligncenter{\circleText{policy}{45%}}}{\aligncenter{\circleText{<tspan x="100" y="90">data</tspan><tspan x="100" y="130">governance</tspan>}{45%}}}{50%}{50%}
+\columns{\aligncenter{\circleText{<tspan x="100" y="90">accelerate</tspan><tspan x="100" y="130">science</tspan>}{45%}}}{\aligncenter{\circleText{AutoAI}{45%}}}{50%}{50%}
+
+\newslide{}
 
 * Addressing Technical Debt (with Alan Turing Institute and ELLIS/ELISE Network)
 * Accelerate Programme (funded by Schmidt Futures)
 * Data Trusts Initiative (http://datatrusts.uk, funded by McGovern)
 * Active Policy Engagement
+
+One thing is I can live with doubt, and uncertainty and not knowing. I think it's much more interesting to live with not knowing that to have an answer that might be wrong. 
 
 \thanks
 

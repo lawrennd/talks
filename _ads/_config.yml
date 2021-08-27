@@ -7,19 +7,18 @@ author:
   orcid: 0000-0001-9258-1030
   url: http://inverseprobability.com
 layout: lecture
-venue: Virtual (Zoom)
-postdir: ../../../mlatcl/mlphysical/_lectures/
-slidedir: ../../../mlatcl/mlphysical/slides/
-notedir: ../../../mlatcl/mlphysical/_notes/
-notebookdir: ../../../mlatcl/mlphysical/_notebooks/
+postdir: ../../../mlatcl/ads/_lectures/
+slidedir: ../../../mlatcl/ads/slides/
+notedir: ../../../mlatcl/ads/_notes/
+notebookdir: ../../../mlatcl/ads/_notebooks/
 writediagramsdir: .
 diagramsdir: ./slides/diagrams/
-baseurl: "mlphysical/" # the subpath of your site, e.g. /blog/
+baseurl: "ads/" # the subpath of your site, e.g. /blog/
 url: "https://mlatcl.github.io/" # the base hostname & protocol for your site
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
-  directory: _mlphysical
+  directory: _ads
 transition: None
   

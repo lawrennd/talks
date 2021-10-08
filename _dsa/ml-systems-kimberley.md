@@ -1,7 +1,6 @@
 ---
-session: 2
 title: "Introduction to Machine Learning Systems"
-abstract: "This notebook introduces some of the challenges of building machine learning data systems. It will introduce you to concepts around joining of databases together. The storage and manipulation of data is at the core of machine learning systems and data science. The goal of this notebook is to introduce the reader to these concepts, not to authoritatively answer any questions about the state of Nigerian health facilities or Covid19, but it may give you ideas about how to try and do that in your own country."
+abstract: "This session introduces some of the challenges of building machine learning data systems. It will introduce you to concepts around joining of databases together. The storage and manipulation of data is at the core of machine learning systems and data science. The goal of this notebook is to introduce the reader to these concepts, not to authoritatively answer any questions about the state of Nigerian health facilities or Covid19, but it may give you ideas about how to try and do that in your own country."
 author:
 - given: Eric
   family: Meissner
@@ -14,13 +13,12 @@ author:
   family: Lawrence
   twitter: lawrennd
   url: http://inverseprobability.com
-date: 2020-07-24
+date: 2021-10-06
 ipynb: true
-venue: Virtual DSA
+venue: Virtual DSA, Kimberley
 transition: None
 ---
 
-\include{talk-macros.tex}
 
 \slides{\section{AI via ML Systems}
 

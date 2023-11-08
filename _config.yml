@@ -5,20 +5,28 @@ author:
   email: 
 description: talks given by Neil Lawrence
 baseurl: "/talks" # the subpath of your site, e.g. /blog/
-# Exclude directories for preprocessing.
-exclude:
-  - slides/reveal.js/plugin/markdown/example
+
 reveal:
   width: 512
   height: 384
 youtube:
   width: 512
   height: 384
-talk_files: "http://inverseprobability.com/talks/slides/"
-slidedir: slides
+
+talk_files: "http://inverseprobability.com/slides/"
+
+slides:
+  url: https://inverseprobability.com
+  dir: slides
+
+notes:
+  url: https://inverseprobability.com
+  dir: notes
+
 texdir: .
 notes_files: "http://inverseprobability.com/talks/_notes/"
 notesdir: _notes
+
 url: "http://inverseprobability.com" # the base hostname & protocol for your site
 twitter_username: lawrennd
 github_username:  lawrennd

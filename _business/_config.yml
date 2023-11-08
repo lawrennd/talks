@@ -14,6 +14,7 @@ baseurl: talks/
 postsdir: ../_posts/
 notebooksdir: ../_notebooks/
 slidesdir: $HOME/lawrennd/slides/
+diagramsurl: https://inverseprobability.com
 diagramsdir: ./slides/diagrams/
 snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .

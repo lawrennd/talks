@@ -13,7 +13,7 @@ talkcss: https://inverseprobability.com/assets/css/talks.css
 baseurl: talks/
 postsdir: ../_posts/
 notebooksdir: ../_notebooks/
-slidesdir: ../slides/
+slidesdir: $HOME/lawrennd/slides/
 diagramsdir: ./slides/diagrams/
 snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .

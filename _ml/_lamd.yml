@@ -9,12 +9,28 @@ author:
 talkscam:
 url: https://inverseprobability.com/
 talkcss: https://inverseprobability.com/assets/css/talks.css
-baseurl: talks/
+bibdir: $HOME/lawrennd/bibliography/
 postsdir: ../_posts/
+slidesdir: $HOME/lawrennd/slides/
+notesdir: ../_notes/
 notebooksdir: ../_notebooks/
-slidesdir: ../slides/
-diagramsdir: ./slides/diagrams/
+practicalsdir: ../_practicals/
+snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
+scriptsdir: ./scripts/
+diagramsdir: ./slides/diagrams/
+posts: True
+docx: False
+notespdf: False
+slidesipynb: False
+pptx: False
+pdf: False
+assignment: False
+ipynb: False
+reveal: True
+potx: custom-reference.potx
+dotx: custom-reference.dotx
+baseurl: talks/ # the subpath of your site, e.g. /blog/
 ghub:
 - organization: lawrennd
   repository: talks

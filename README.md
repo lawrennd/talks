@@ -28,6 +28,6 @@ _subject/includes/
 Different subjects have their own configuration files that are found in
 
 ```
-_subject/_config.yml
+_subject/_lamd.yml
 ```
 

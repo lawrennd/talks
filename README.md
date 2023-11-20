@@ -19,7 +19,7 @@ Each general subject or lecture series comes under a sub-directory
 _subject/
 ```
 
-Under that subject, there are a series of talks. Each as a markdown file. These files include various talk files from different parts of the site. They are also allocated to different subject files, under the includes subdirectory.
+Under that subject, there are a series of talks. Each as a markdown file. These files include various snippet files mainly from anothe repository. <https://github.com/lawrennd/snippets/>. They are also allocated to different subject files.
 
 ```
 _subject/includes/

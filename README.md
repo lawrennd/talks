@@ -8,7 +8,7 @@ You can install with
 
 ```
 apt-get install gpp
-pip install makemd
+pip install lamd
 ```
 
 The talks folder is organized as follows.

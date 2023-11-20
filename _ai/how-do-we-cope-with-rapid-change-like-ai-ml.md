@@ -37,6 +37,13 @@ transition: None
 \include{_data-science/includes/data-science-africa.md}
 \include{_health/includes/malaria-gp.md}
 
+\include{_ai/includes/cuneiform.md}
+\include{_policy/includes/coin-pusher.md}
+\include{_ml/includes/rs-report-machine-learning.md}
+\include{_ml/includes/rs-report-mori-poll-art.md}
+\include{_ml/includes/chat-gpt-mercutio.md}
+\include{_ai/includes/human-analogue-machines.md}
+
 
 \thanks
 

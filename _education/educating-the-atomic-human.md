@@ -41,6 +41,7 @@ transition: None
 ---
 \define{noSlideTitle}
 
+\include{_physics/includes/the-earth-seen-from-apollo-17}
 
 THe Blue Marble
 

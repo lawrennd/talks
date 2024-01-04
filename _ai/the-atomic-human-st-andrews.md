@@ -97,6 +97,10 @@ transition: None
 
 \include{_physics/includes/richard-feynmann-doubt.md}
 
+<!-- Lecture 2 -->
+
+Time scales, how when you expand or contract time signal becomes noise and noise becomes signal illustrate with Dirac delta and and stochastic processes in Fourier space, ito calculus. Latent force models.
+
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
 

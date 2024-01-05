@@ -109,13 +109,13 @@ Practical examples of what happens understochasticity:
 
 3) Input to the system being in the form of bias and variance
 
-(Latent force models being driven by this????)
+(Latent force models being driven by this???? Latent force as high frequency information processing? Environment as slow?
 
 <!-- lecture 3 -->
 
 Connect supply chain as a "challenge" tot he abstraction of Schroedinger's bridge. Link to Optimal Transport (matching without the "physics"). Maxwell's demon.
 
-
+Control ability paper with Mauricio and Simo??)
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->

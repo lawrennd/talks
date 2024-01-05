@@ -101,9 +101,21 @@ transition: None
 
 Time scales, how when you expand or contract time signal becomes noise and noise becomes signal illustrate with Dirac delta and and stochastic processes in Fourier space, ito calculus. Latent force models.
 
+Practical examples of what happens understochasticity:
+
+1) Kappenball
+
+2) Queue efficiency (M/M/1  1/(1-\rho))
+
+3) Input to the system being in the form of bias and variance
+
+(Latent force models being driven by this????)
+
 <!-- lecture 3 -->
 
 Connect supply chain as a "challenge" tot he abstraction of Schroedinger's bridge. Link to Optimal Transport (matching without the "physics"). Maxwell's demon.
+
+
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->

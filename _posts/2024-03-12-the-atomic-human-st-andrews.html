@@ -1430,6 +1430,286 @@ than to have an answer that might be wrong.</p>
 <p>Richard P. Feynmann in the <em>The Pleasure of Finding Things
 Out</em> 1981.</p>
 </blockquote>
+<h2 id="hydrodynamica">Hydrodynamica</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/daniel-bernoulli-hydrodynamica.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/daniel-bernoulli-hydrodynamica.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>When Laplace spoke of the curve of a simple molecule of air, he may
+well have been thinking of Daniel Bernoulli (1700-1782). Daniel
+Bernoulli was one name in a prodigious family. His father and brother
+were both mathematicians. Daniel’s main work was known as
+<em>Hydrodynamica</em>.</p>
+<div class="figure">
+<div id="hydrodynamica-danielis-bernoulli-figure" class="figure-frame">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=3yRVAAAAcAAJ&amp;pg=PP7&amp;output=embed" width="700" height="500">
+</iframe>
+</div>
+<div id="hydrodynamica-danielis-bernoulli-magnify" class="magnify"
+onclick="magnifyFigure(&#39;hydrodynamica-danielis-bernoulli&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="hydrodynamica-danielis-bernoulli-caption"
+class="caption-frame">
+<p>Figure: Daniel Bernoulli’s <em>Hydrodynamica</em> published in 1738.
+It was one of the first works to use the idea of conservation of energy.
+It used Newton’s laws to predict the behaviour of gases.</p>
+</div>
+</div>
+<p>Daniel Bernoulli described a kinetic theory of gases, but it wasn’t
+until 170 years later when these ideas were verified after Einstein had
+proposed a model of Brownian motion which was experimentally verified by
+Jean Baptiste Perrin.</p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=3yRVAAAAcAAJ&amp;pg=PA200&amp;output=embed" width="700" height="500">
+</iframe>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure: Daniel Bernoulli’s chapter on the kinetic theory of gases,
+for a review on the context of this chapter see <span class="citation"
+data-cites="Mikhailov:hydrodynamica05">Mikhailov (n.d.)</span>. For 1738
+this is extraordinary thinking. The notion of kinetic theory of gases
+wouldn’t become fully accepted in Physics until 1908 when a model of
+Einstein’s was verified by Jean Baptiste Perrin.</p>
+</div>
+</div>
+<h2 id="entropy-billiards">Entropy Billiards</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="entropy-billiards-js-figure" class="figure-frame">
+<div>
+<div style="width:68%;float:left">
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left ">
+</canvas>
+</div>
+<div style="width:28%;float:right;margin:auto">
+<div style="float:right;width:100%;margin:auto">
+Entropy:
+<output id="multiball-entropy">
+</output>
+</div>
+<div id="multiball-histogram-canvas"
+style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+
+</div>
+</div>
+</div>
+<div>
+<button id="multiball-newball" style="text-align:right">
+New Ball
+</button>
+<button id="multiball-pause" style="text-align:right">
+Pause
+</button>
+<button id="multiball-skip" style="text-align:right">
+Skip 1000s
+</button>
+<button id="multiball-histogram" style="text-align:right">
+Histogram
+</button>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
+</div>
+<div id="entropy-billiards-js-magnify" class="magnify"
+onclick="magnifyFigure(&#39;entropy-billiards-js&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="entropy-billiards-js-caption" class="caption-frame">
+<p>Figure: Bernoulli’s simple kinetic models of gases assume that the
+molecules of air operate like billiard balls.</p>
+</div>
+</div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.random.randn(<span class="dv">10000</span>, <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>xlim <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="dv">200</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x)</span></code></pre></div>
+<p>Another important figure for Cambridge was the first to derive the
+probability distribution that results from small balls banging together
+in this manner. In doing so, James Clerk Maxwell founded the field of
+statistical physics.</p>
+<div class="figure">
+<div id="gaussian-histogram-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="gaussian-histogram-magnify" class="magnify"
+onclick="magnifyFigure(&#39;gaussian-histogram&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gaussian-histogram-caption" class="caption-frame">
+<p>Figure: James Clerk Maxwell 1831-1879 Derived distribution of
+velocities of particles in an ideal gas (elastic fluid).</p>
+</div>
+</div>
+<div class="figure">
+<div id="maxwell-boltzmann-gibbs-figure" class="figure-frame">
+<table>
+<tr>
+<td width="30%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/james-clerk-maxwell.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="30%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/boltzmann2.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="30%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/j-w-gibbs.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="maxwell-boltzmann-gibbs-magnify" class="magnify"
+onclick="magnifyFigure(&#39;maxwell-boltzmann-gibbs&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="maxwell-boltzmann-gibbs-caption" class="caption-frame">
+<p>Figure: James Clerk Maxwell (1831-1879), Ludwig Boltzmann (1844-1906)
+Josiah Willard Gibbs (1839-1903)</p>
+</div>
+</div>
+<p>Many of the ideas of early statistical physicists were rejected by a
+cadre of physicists who didn’t believe in the notion of a molecule. The
+stress of trying to have his ideas established caused Boltzmann to
+commit suicide in 1906, only two years before the same ideas became
+widely accepted.</p>
+<div class="figure">
+<div id="boltzmann-warmetheorie-figure" class="figure-frame">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=Vuk5AQAAMAAJ&amp;pg=PA373&amp;output=embed" width="700" height="500">
+</iframe>
+</div>
+<div id="boltzmann-warmetheorie-magnify" class="magnify"
+onclick="magnifyFigure(&#39;boltzmann-warmetheorie&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="boltzmann-warmetheorie-caption" class="caption-frame">
+<p>Figure: Boltzmann’s paper <span class="citation"
+data-cites="Boltzmann-warmetheorie77">Boltzmann (n.d.)</span> which
+introduced the relationship between entropy and probability. A
+translation with notes is available in <span class="citation"
+data-cites="Kim-translation15">Sharp and Matschinsky (2015)</span>.</p>
+</div>
+</div>
+<p>The important point about the uncertainty being represented here is
+that it is not genuine stochasticity, it is a lack of knowledge about
+the system. The techniques proposed by Maxwell, Boltzmann and Gibbs
+allow us to exactly represent the state of the system through a set of
+parameters that represent the sufficient statistics of the physical
+system. We know these values as the volume, temperature, and pressure.
+The challenge for us, when approximating the physical world with the
+techniques we will use is that we will have to sit somewhere between the
+deterministic and purely stochastic worlds that these different
+scientists described.</p>
+<p>One ongoing characteristic of people who study probability and
+uncertainty is the confidence with which they hold opinions about it.
+Another leader of the Cavendish laboratory expressed his support of the
+second law of thermodynamics (which can be proven through the work of
+Gibbs/Boltzmann) with an emphatic statement at the beginning of his
+book.</p>
+<div class="figure">
+<div id="eddington-book-figure" class="figure-frame">
+<table>
+<tr>
+<td width="49%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/arthur-stanley-eddington.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="49%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/natureofphysical00eddi_7.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="eddington-book-magnify" class="magnify"
+onclick="magnifyFigure(&#39;eddington-book&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="eddington-book-caption" class="caption-frame">
+<p>Figure: Eddington’s book on the Nature of the Physical World <span
+class="citation" data-cites="Eddington:nature29">(Eddington,
+1929)</span></p>
+</div>
+</div>
+<p>The same Eddington is also famous for dismissing the ideas of a young
+Chandrasekhar who had come to Cambridge to study in the Cavendish lab.
+Chandrasekhar demonstrated the limit at which a star would collapse
+under its own weight to a singularity, but when he presented the work to
+Eddington, he was dismissive suggesting that there “must be some natural
+law that prevents this abomination from happening”.</p>
+<div class="figure">
+<div id="physical-world-chandra-figure" class="figure-frame">
+<table>
+<tr>
+<td width="49%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/natureofphysical00eddi_100.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td width="49%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/ChandraNobel.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="physical-world-chandra-magnify" class="magnify"
+onclick="magnifyFigure(&#39;physical-world-chandra&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="physical-world-chandra-caption" class="caption-frame">
+<p>Figure: Chandrasekhar (1910-1995) derived the limit at which a star
+collapses in on itself. Eddington’s confidence in the 2nd law may have
+been what drove him to dismiss Chandrasekhar’s ideas, humiliating a
+young scientist who would later receive a Nobel prize for the work.</p>
+</div>
+</div>
+<div class="figure">
+<div id="deepest-humiliation-eddington-cropped-figure"
+class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/natureofphysical00eddi_100_cropped.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="deepest-humiliation-eddington-cropped-magnify" class="magnify"
+onclick="magnifyFigure(&#39;deepest-humiliation-eddington-cropped&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="deepest-humiliation-eddington-cropped-caption"
+class="caption-frame">
+<p>Figure: Eddington makes his feelings about the primacy of the second
+law clear. This primacy is perhaps because the second law can be
+demonstrated mathematically, building on the work of Maxwell, Gibbs and
+Boltzmann. <span class="citation"
+data-cites="Eddington:nature29">Eddington (1929)</span></p>
+</div>
+</div>
+<p>Presumably he meant that the creation of a black hole seemed to
+transgress the second law of thermodynamics, although later Hawking was
+able to show that blackholes do evaporate, but the time scales at which
+this evaporation occurs is many orders of magnitude slower than other
+processes in the universe.</p>
 <h2 id="brownian-motion-and-wiener">Brownian Motion and Wiener</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1610,7 +1890,6 @@ Pause
 </div>
 <output id="kappenball-count">
 </output>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/kappenball.js"></script>
 </div>
 </div>
@@ -1661,6 +1940,421 @@ our decision making until we’ve seen how events ‘pan out’. Be careful
 though, as we also see that when the uncertainty is large, if you don’t
 have the resources or the skill to be deadline-driven the uncertainty
 can overwhelm you and events can quickly move beyond our control.</p>
+<h2 id="game-of-life">Game of Life</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_simulation/includes/game-of-life.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_simulation/includes/game-of-life.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/John_Horton_Conway">John
+Horton Conway</a> was a mathematician who developed a game known as the
+Game of Life. He died in April 2020, but since he invented the game, he
+was in effect ‘god’ for this game. But as we will see, just inventing
+the rules doesn’t give you omniscience in the game.</p>
+<p>The Game of Life is played on a grid of squares, or pixels. Each
+pixel is either on or off. The game has no players, but a set of simple
+rules that are followed at each turn the rules are.</p>
+<h2 id="life-rules">Life Rules</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_simulation/includes/life-rules.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_simulation/includes/life-rules.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>John Conway’s game of life is a cellular automaton where the cells
+obey three very simple rules. The cells live on a rectangular grid, so
+that each cell has 8 possible neighbors.</p>
+<div class="figure">
+<div id="life-rules-loneliness-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-1-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>loneliness</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-1-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-loneliness-magnify" class="magnify"
+onclick="magnifyFigure(&#39;life-rules-loneliness&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-loneliness-caption" class="caption-frame">
+<p>Figure: ‘Death’ through loneliness in Conway’s game of life. If a
+cell is surrounded by less than three cells, it ‘dies’ through
+loneliness.</p>
+</div>
+</div>
+<p>The game proceeds in turns, and at each location in the grid is
+either alive or dead. Each turn, a cell counts its neighbors. If there
+are two or fewer neighbors, the cell ‘dies’ of ‘loneliness’.</p>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-2-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>overcrowding</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-2-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-crowding-magnify" class="magnify"
+onclick="magnifyFigure(&#39;life-rules-crowding&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-crowding-caption" class="caption-frame">
+<p>Figure: ‘Death’ through overpopulation in Conway’s game of life. If a
+cell is surrounded by more than three cells, it ‘dies’ through
+loneliness.</p>
+</div>
+</div>
+<p>If there are four or more neighbors, the cell ‘dies’ from
+‘overcrowding’. If there are three neighbors, the cell persists, or if
+it is currently dead, a new cell is born.</p>
+<div class="figure">
+<div id="life-rules-crowding-figure" class="figure-frame">
+<table>
+<tr>
+<td width="70%">
+<table>
+<tr>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-3-0.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+<td width="39%">
+<center>
+<em>birth</em>
+</center>
+<center>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//util/right-arrow.svg" width="60%" style=" ">
+</object>
+</center>
+</td>
+<td width="30%">
+<center>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-rules-3-1.svg" width="100%" style=" ">
+</object>
+</center>
+</td>
+</tr>
+</table>
+</td>
+<td width="30%">
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+</tr>
+</table>
+</div>
+<div id="life-rules-crowding-magnify" class="magnify"
+onclick="magnifyFigure(&#39;life-rules-crowding&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-rules-crowding-caption" class="caption-frame">
+<p>Figure: Birth in Conway’s life. Any position surrounded by precisely
+three live cells will give birth to a new cell at the next turn.</p>
+</div>
+</div>
+<p>And that’s it. Those are the simple ‘physical laws’ for Conway’s
+game.</p>
+<p>The game leads to patterns emerging, some of these patterns are
+static, but some oscillate in place, with varying periods. Others
+oscillate, but when they complete their cycle they’ve translated to a
+new location, in other words they move. In Life the former are known as
+<a href="https://conwaylife.com/wiki/Oscillator">oscillators</a> and the
+latter as <a
+href="https://conwaylife.com/wiki/Spaceship">spaceships</a>.</p>
+<h2 id="loafers-and-gliders">Loafers and Gliders</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_simulation/includes/life-glider-loafer-conway.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_simulation/includes/life-glider-loafer-conway.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>John Horton Conway, as the creator of the game of life, could be seen
+somehow as the god of this small universe. He created the rules. The
+rules are so simple that in many senses he, and we, are all-knowing in
+this space. But despite our knowledge, this world can still ‘surprise’
+us. From the simple rules, emergent patterns of behaviour arise. These
+include static patterns that don’t change from one turn to the next.
+They also include, oscillators, that pulse between different forms
+across different periods of time. A particular form of oscillator is
+known as a ‘spaceship’, this is one that moves across the board as the
+game evolves. One of the simplest and earliest spaceships to be
+discovered is known as the glider.</p>
+<div class="figure">
+<div id="glider-loafer-conway-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Glider (1969)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/Glider.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="glider-loafer-conway-magnify" class="magnify"
+onclick="magnifyFigure(&#39;glider-loafer-conway&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="glider-loafer-conway-caption" class="caption-frame">
+<p>Figure: <em>Left</em> A Glider pattern discovered 1969 by Richard K.
+Guy. <em>Right</em>. John Horton Conway, creator of <em>Life</em>
+(1937-2020). The glider is an oscillator that moves diagonally after
+creation. From the simple rules of Life it’s not obvious that such an
+object does exist, until you do the necessary computation.</p>
+</div>
+</div>
+<p>The glider was ‘discovered’ in 1969 by Richard K. Guy. What do we
+mean by discovered in this context? Well, as soon as the game of life is
+defined, objects such as the glider do somehow exist, but the many
+configurations of the game mean that it takes some time for us to see
+one and know it exists. This means, that despite being the creator,
+Conway, and despite the rules of the game being simple, and despite the
+rules being deterministic, we are not ‘omniscient’ in any simplistic
+sense. It requires computation to ‘discover’ what can exist in this
+universe once it’s been defined.</p>
+<div class="figure">
+<div id="gosper-glider-gun-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/Gosperglidergun.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gosper-glider-gun-magnify" class="magnify"
+onclick="magnifyFigure(&#39;gosper-glider-gun&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gosper-glider-gun-caption" class="caption-frame">
+<p>Figure: The Gosper glider gun is a configuration that creates
+gliders. A new glider is released after every 30 turns.</p>
+</div>
+</div>
+<p>These patterns had to be discovered, in the same way that a scientist
+might discover a disease, or an explorer a new land. For example, the
+Gosper glider gun was <a
+href="https://conwaylife.com/wiki/Bill_Gosper">discovered by Bill Gosper
+in 1970</a>. It is a pattern that creates a new glider every 30 turns of
+the game.</p>
+<p>Despite widespread interest in Life, some of its patterns were only
+very recently discovered like the Loafer, discovered in 2013 by Josh
+Ball. So, despite the game having existed for over forty years, and the
+rules of the game being simple, there are emergent behaviors that are
+unknown.</p>
+<div class="figure">
+<div id="the-loafer-spaceship-figure" class="figure-frame">
+<table>
+<tr>
+<td width="45%">
+<center>
+<em>Loafer (2013)</em>
+</center>
+<center>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/Loafer.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</center>
+</td>
+<td width="45%">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//maths/John-Conway.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="the-loafer-spaceship-magnify" class="magnify"
+onclick="magnifyFigure(&#39;the-loafer-spaceship&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="the-loafer-spaceship-caption" class="caption-frame">
+<p>Figure: <em>Left</em> A Loafer pattern discovered by Josh Ball in
+2013. <em>Right</em>. John Horton Conway, creator of <em>Life</em>
+(1937-2020).</p>
+</div>
+</div>
+<p>Once these patterns are discovered, they are combined (or engineered)
+to create new Life patterns that do some remarkable things. For example,
+there’s a life pattern that runs a Turing machine, or more remarkably
+there’s a Life pattern that runs Life itself.</p>
+<div class="figure">
+<div id="life-in-life-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/life-in-life.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="life-in-life-magnify" class="magnify"
+onclick="magnifyFigure(&#39;life-in-life&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="life-in-life-caption" class="caption-frame">
+<p>Figure: The Game of Life running in Life. The video is drawing out
+recursively showing pixels that are being formed by filling cells with
+moving spaceships. Each individual pixel in this game of life is made up
+of <span class="math inline">\(2048 \times 2048\)</span> pixels called
+an <a href="https://www.conwaylife.com/wiki/OTCA_metapixel">OTCA
+metapixel</a>.</p>
+</div>
+</div>
+<p>To find out more about the Game of Life you can watch this video by
+Alan Zucconi or read his <a
+href="https://www.alanzucconi.com/2020/10/13/conways-game-of-life/">associated
+blog post</a>.</p>
+<div class="figure">
+<div id="intro-to-life-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/Kk2MH9O4pXY?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="intro-to-life-magnify" class="magnify"
+onclick="magnifyFigure(&#39;intro-to-life&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="intro-to-life-caption" class="caption-frame">
+<p>Figure: An introduction to the Game of Life by Alan Zucconi.</p>
+</div>
+</div>
+<p>Contrast this with our situation where in ‘real life’ we don’t know
+the simple rules of the game, the state space is larger, and emergent
+behaviors (hurricanes, earthquakes, volcanos, climate change) have
+direct consequences for our daily lives, and we understand why the
+process of ‘understanding’ the physical world is so difficult. We also
+see immediately how much easier we might expect the physical sciences to
+be than the social sciences, where the emergent behaviors are contingent
+on highly complex human interactions.</p>
+<h2 id="bayesian-inference-by-rejection-sampling">Bayesian Inference by
+Rejection Sampling</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_gp/includes/gp-intro-very-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_gp/includes/gp-intro-very-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>One view of Bayesian inference is to assume we are given a mechanism
+for generating samples, where we assume that mechanism is representing
+an accurate view on the way we believe the world works.</p>
+<p>This mechanism is known as our <em>prior</em> belief.</p>
+<p>We combine our prior belief with our observations of the real world
+by discarding all those prior samples that are inconsistent with our
+observations. The <em>likelihood</em> defines mathematically what we
+mean by inconsistent with the observations. The higher the noise level
+in the likelihood, the looser the notion of consistent.</p>
+<p>The samples that remain are samples from the <em>posterior</em>.</p>
+<p>This approach to Bayesian inference is closely related to two
+sampling techniques known as <em>rejection sampling</em> and
+<em>importance sampling</em>. It is realized in practice in an approach
+known as <em>approximate Bayesian computation</em> (ABC) or
+likelihood-free inference.</p>
+<p>In practice, the algorithm is often too slow to be practical, because
+most samples will be inconsistent with the observations and as a result
+the mechanism must be operated many times to obtain a few posterior
+samples.</p>
+<p>However, in the Gaussian process case, when the likelihood also
+assumes Gaussian noise, we can operate this mechanism mathematically,
+and obtain the posterior density <em>analytically</em>. This is the
+benefit of Gaussian processes.</p>
+<p>First, we will load in two python functions for computing the
+covariance function.</p>
+<p>Next, we sample from a multivariate normal density (a multivariate
+Gaussian), using the covariance function as the covariance matrix.</p>
+<div class="figure">
+<div id="gp-rejection-samples-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//gp/gp_rejection_sample003.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//gp/gp_rejection_sample004.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//gp/gp_rejection_sample005.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gp-rejection-samples-magnify" class="magnify"
+onclick="magnifyFigure(&#39;gp-rejection-samples&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gp-rejection-samples-caption" class="caption-frame">
+<p>Figure: One view of Bayesian inference is we have a machine for
+generating samples (the <em>prior</em>), and we discard all samples
+inconsistent with our data, leaving the samples of interest (the
+<em>posterior</em>). This is a rejection sampling view of Bayesian
+inference. The Gaussian process allows us to do this analytically by
+multiplying the <em>prior</em> by the <em>likelihood</em>.</p>
+</div>
+</div>
 <p>Time scales, how when you expand or contract time signal becomes
 noise and noise becomes signal illustrate with Dirac delta and and
 stochastic processes in Fourier space, ito calculus. Latent force
@@ -1719,6 +2413,15 @@ Conference on High Performance Computing Networking, Storage and
 Analysis - SC ’09. <a
 href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
 </div>
+<div id="ref-Boltzmann-warmetheorie77" class="csl-entry"
+role="listitem">
+Boltzmann, L., n.d. Über die <span>B</span>eziehung zwischen dem zweiten
+<span>H</span>auptsatze der mechanischen <span>W</span>armetheorie und
+der <span>W</span>ahrscheinlichkeitsrechnung, respective den
+<span>S</span>ätzen über das wärmegleichgewicht. Sitzungberichte der
+Kaiserlichen Akademie der Wissenschaften. Mathematisch-Naturwissen
+Classe. Abt. II LXXVI, 373–435.
+</div>
 <div id="ref-Cabrera-realworld23" class="csl-entry" role="listitem">
 Cabrera, C., Paleyes, A., Thodoroff, P., Lawrence, N.D., 2023. <a
 href="https://arxiv.org/abs/2302.04810">Real-world machine learning
@@ -1728,6 +2431,11 @@ systems: A survey from a data-oriented architecture perspective</a>.
 Coales, J.F., Kane, S.J., 2014. The <span>“yellow peril”</span> and
 after. IEEE Control Systems Magazine 34, 65–69. <a
 href="https://doi.org/10.1109/MCS.2013.2287387">https://doi.org/10.1109/MCS.2013.2287387</a>
+</div>
+<div id="ref-Eddington:nature29" class="csl-entry" role="listitem">
+Eddington, A.S., 1929. The nature of the physical world. Dent (London).
+<a
+href="https://doi.org/10.2307/2180099">https://doi.org/10.2307/2180099</a>
 </div>
 <div id="ref-Heider:interpersonal58" class="csl-entry" role="listitem">
 Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
@@ -1763,11 +2471,23 @@ together: Mind and machine intelligence</a>. arXiv.
 <div id="ref-Mackay-behind91" class="csl-entry" role="listitem">
 MacKay, D.M., 1991. Behind the eye. Basil Blackwell.
 </div>
+<div id="ref-Mikhailov:hydrodynamica05" class="csl-entry"
+role="listitem">
+Mikhailov, G.K., n.d. Daniel bernoulli, hydrodynamica (1738).
+</div>
 <div id="ref-Reed-information98" class="csl-entry" role="listitem">
 Reed, C., Durlach, N.I., 1998. Note on information transfer rates in
 human communication. Presence Teleoperators &amp; Virtual Environments
 7, 509–518. <a
 href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>
+</div>
+<div id="ref-Kim-translation15" class="csl-entry" role="listitem">
+Sharp, K., Matschinsky, F., 2015. Translation of <span>L</span>udwig
+<span>B</span>oltzmann’s paper <span>“on the relationship between the
+second fundamental theorem of the mechanical theory of heat and
+probability calculations regarding the conditions for thermal
+equilibrium.”</span> Entropy 17, 1971–2009. <a
+href="https://doi.org/10.3390/e17041971">https://doi.org/10.3390/e17041971</a>
 </div>
 <div id="ref-Admiralty-gunnery45" class="csl-entry" role="listitem">
 The Admiralty, 1945. <a href="https://www.maritime.org/doc/br224/">The

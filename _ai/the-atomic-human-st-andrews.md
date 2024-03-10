@@ -104,11 +104,14 @@ dotx: custom-reference.dotx
 \include{_ai/includes/human-analogue-machines.md}
 
 \include{_physics/includes/richard-feynmann-doubt.md}
+\include{_physics/includes/entropy-intro.md}
 \include{_physics/includes/brownian-wiener.md}
 
 <!-- Lecture 2 -->
 
 \include{_physics/includes/kappenball.md}
+\include{_simulation/includes/game-of-life.md}
+\include{_gp/includes/gp-intro-very-short.md}
 \newslide{}
 
 

@@ -104,8 +104,13 @@ dotx: custom-reference.dotx
 \include{_ai/includes/human-analogue-machines.md}
 
 \include{_physics/includes/richard-feynmann-doubt.md}
+\include{_physics/includes/brownian-wiener.md}
 
 <!-- Lecture 2 -->
+
+\include{_physics/includes/kappenball.md}
+\newslide{}
+
 
 Time scales, how when you expand or contract time signal becomes noise and noise becomes signal illustrate with Dirac delta and and stochastic processes in Fourier space, ito calculus. Latent force models.
 

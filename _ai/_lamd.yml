@@ -17,7 +17,7 @@ notebooksdir: ../_notebooks/
 practicalsdir: ../_practicals/
 snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
-scriptsdir: ./scripts/
+scriptsdir: https://inverseprobability.com/talks/scripts/
 diagramsdir: ../slides/diagrams/
 slidesheader: slides-header.html
 posts: True

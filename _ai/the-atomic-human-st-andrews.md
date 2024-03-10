@@ -54,8 +54,8 @@ notation: talk-notation.tex
 papersize: a4paper
 transition: None
 slidesipynb: True
-pptx: True
-docx: True
+pptx: False
+docx: False
 ipynb: True
 reveal: True
 potx: custom-reference.potx 

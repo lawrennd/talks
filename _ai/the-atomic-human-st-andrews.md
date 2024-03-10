@@ -137,6 +137,20 @@ Control ability paper with Mauricio and Simo??)
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
+\include{_gp/includes/what-is-a-gp.md}
+
+\ifdef{SLIDES}
+\define{pydeepgpInclude}
+\endif
+\define{deepRobotWireless}
+
+\subsection{Deep Gaussian Processes}
+
+
+* *Deep Gaussian Processes and Variational Propagation of Uncertainty*
+    @Damianou:thesis2015
+
+\include{_deepgp/includes/deep-gaussian-processes.md}
 
 \subsection{Conclusions}
 

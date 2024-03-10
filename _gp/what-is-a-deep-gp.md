@@ -13,13 +13,9 @@ author:
 transition: None
 ---
 
-\include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
-\subsection{Thanks!}
 
-* twitter: \@lawrennd
-* blog: [http://inverseprobability.com](http://inverseprobability.com/blog.html)
+\thanks
 
-\subsection{References}
-
+\references
 

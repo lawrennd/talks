@@ -103,11 +103,13 @@ Time scales, how when you expand or contract time signal becomes noise and noise
 
 Practical examples of what happens understochasticity:
 
-1) Kappenball
+0) Derive U = W + TS?? Go from microscopic to macroscopic. 
+
+1) Kappenball --- world in between where interesting thigns happen,
 
 2) Queue efficiency (M/M/1  1/(1-\rho))
 
-3) Input to the system being in the form of bias and variance
+3) Input to the system being in the form of bias and variance (or perhaps Brownian motion, wiener process)
 
 (Latent force models being driven by this???? Latent force as high frequency information processing? Environment as slow?
 

@@ -50,8 +50,16 @@ author:
 venue: St Andrews' Distinguished Lecture Series
 date: 2024-03-12
 geometry: ["a4paper", "margin=2cm"]
+notation: talk-notation.tex
 papersize: a4paper
 transition: None
+slidesipynb: True
+pptx: True
+docx: True
+ipynb: True
+reveal: True
+potx: custom-reference.potx 
+dotx: custom-reference.dotx
 ---
 \define{noSlideTitle}
 
@@ -105,7 +113,7 @@ Practical examples of what happens understochasticity:
 
 0) Derive U = W + TS?? Go from microscopic to macroscopic. 
 
-1) Kappenball --- world in between where interesting thigns happen,
+1) Kappenball --- world in between where interesting things happen,
 
 2) Queue efficiency (M/M/1  1/(1-\rho))
 

@@ -45,7 +45,7 @@ transition: None
 \include{_physics/includes/eagle-from-columbia.md}
 \include{_physics/includes/little-red-bus.md}
 \include{_ai/includes/naca-proving.md}
-\include{_books/includes/the-atomic-eye.md}
+\include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/colossus-mark-2.md}
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_data-science/includes/new-flow-of-information.md}

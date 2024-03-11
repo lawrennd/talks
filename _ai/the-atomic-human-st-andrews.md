@@ -158,6 +158,51 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_physics/includes/richard-feynmann-doubt.md}
 
+
+<!-- Faster horse -->
+
+<!-- Embodiment Factors -->
+\include{_ai/includes/embodiment-factors-celsius.md}
+
+<!-- Information Triangle -->
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_data-science/includes/societal-effects.md}
+
+<!-- AI Fallacy -->
+\include{_ai/includes/the-great-ai-fallacy.md}
+
+<!-- Mathematical Statistics -->
+\include{_data-science/includes/lies-damned-lies.md}
+
+<!-- Conversation -->
+\include{_ai/includes/conversation.md}
+
+<!-- Fritz Heider -->
+\include{_ai/includes/heider-simmel.md}
+\include{_ai/includes/baby-shoes.md}
+<!-- Conversation LLM -->
+\include{_ai/includes/conversation-computer.md}
+\include{_ai/includes/conversation-probability.md}
+\include{_ai/includes/human-computers-interacting.md}
+\include{_ai/includes/human-culture-interacting.md}
+\include{_data-science/includes/number-data-theatre.md}
+<!--\include{_psychology/includes/selective-attention-bias.md}-->
+<!--include{_data-science/includes/data-selection-attention-bias.md}-->
+\include{_ai/includes/conversation-llm.md}
+\include{_ai/includes/human-analogue-machines.md}
+
+\include{_physics/includes/richard-feynmann-doubt.md}
+
+<!-- Interfaces AI for Science -->
+<!--include{_ai/includes/interfaces-ai-for-science.md}-->
+
+\subsection{Conclusions}
+
+\notes{The probabilistic modelling community has evolved in an era where the assumption was that ambiguous conclusions are best shared with a (trained) professional through probabilities. Recent advances in generative AI offer the possibility of machines that have a better understanding of human subjective ambiguities and therefore machines that can summarise information in a way that can be interogated rather than just through a series of numbers.}
+
+\slides{* HAMs change how we share ambiguous information.
+* We need to think about how that effects our sharing of proabilities.}
+
 <!-- Lecture 2 -->
 
 \newslide{}

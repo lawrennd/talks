@@ -34,7 +34,7 @@ transition: None
 
 \notes{The key idea I want to communicate next is related to our ability to share our thoughts.}
 
-\include{_ai/includes/the-diving-bell-butterfly.md}
+\include{_books/includes/the-diving-bell-butterfly.md}
 
 \include{_ai/includes/jean-dominique-bauby.md}
 

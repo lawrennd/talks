@@ -25,7 +25,7 @@ In practice, translation of AI technology into practical benefit is not simple. 
 
 When carelessly deployed, AI risks exacerbating existing social and economic inequalities.}
 
-\include{_ai/includes/the-diving-bell-butterfly.md}
+\include{_books/includes/the-diving-bell-butterfly.md}
 
 \include{_ai/includes/jean-dominique-bauby.md}
 

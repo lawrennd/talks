@@ -28,7 +28,7 @@ Likely to be informed by ideas that arise in AI@Cam}
 
 \include{_ai/includes/henry-ford-intro.md}
 
-\include{_ai/includes/the-diving-bell-butterfly.md}
+\include{_books/includes/the-diving-bell-butterfly.md}
 \slides{
 \include{_ai/includes/jean-dominique-bauby.md}
 

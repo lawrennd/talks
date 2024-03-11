@@ -22,9 +22,8 @@ transition: None
 incremental: True
 ---
 
-\include{talk-macros.tex}
 
-\include{_ai/includes/the-diving-bell-butterfly.md}
+\include{_books/includes/the-diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/marcel-renault.md}

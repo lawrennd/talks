@@ -20,6 +20,8 @@ papersize: a4paper
 transition: None
 ---
 
+\define{noSlideTitle}
+
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
 \include{_art/includes/michelangelo-the-creation-of-man.md}
 \include{_physics/includes/the-earth-seen-from-apollo-17.md}
@@ -33,3 +35,8 @@ transition: None
 \include{_art/includes/blake-elohim-creating-adam.md}
 \include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
 \include{_ai/includes/people-culture-communicate.md}
+\include{_ai/includes/bandwidth-vs-complexity.md}
+
+\thanks
+
+\references

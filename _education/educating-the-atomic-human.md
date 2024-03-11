@@ -37,6 +37,7 @@ author:
 date: 2023-11-22
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
+venue: Epsom College
 transition: None
 ---
 \define{noSlideTitle}

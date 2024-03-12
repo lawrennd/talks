@@ -97,8 +97,6 @@ dotx: custom-reference.dotx
 \include{_physics/includes/little-red-bus.md}
 \include{_ai/includes/naca-proving.md}
 \include{_ai/includes/conversation-computer.md}
-<!-- Fritz Heider -->
-\include{_ai/includes/heider-simmel.md}
 
 <!--include{_ai/includes/p-n-fairness.md}-->
 \include{_books/includes/a-question-of-trust.md}
@@ -176,19 +174,34 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/ride-allocation-prediction.md}
 \include{_data-science/includes/data-oriented-architectures-intro.md}
 
+\subsection{How LLMs are Different}
+\notes{So far our description has provided an understanding of how digital computers present problems for our understanding. So what do LLMs do that's different?}
+
 \include{_ai/includes/human-analogue-machines.md}
 \include{_ai/includes/processor-ham.md}
+<!-- Fritz Heider -->
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
 <!-- Conversation LLM -->
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/human-computers-interacting.md}
 \include{_ai/includes/human-culture-interacting.md}
+
+\subsection{Known Biases}
+
 \include{_psychology/includes/selective-attention-bias.md}
 \include{_data-science/includes/hypothesis-as-a-liability.md}
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
+
+\subsection{Conclusions}
+
+\notes{We're not yet in the position where we understand our own systems, intellectual debt is pervasive today sowing the seeds for many more Horizon challenges. Part of the difficulty is that shown by Blake with Newton's focus on the simple while ignoring the complex. LLMs offer us the dual potential to either fix the problem or make it much worse. In practice it's likely they'll do both.}
+
+\slides{* Intellectual debt means we don't understand digital computer.
+* Interaction between focus and context part of how we deal with this challenge.
+* LLMs could make these challenges harder but if well deployed could help.}
 
 <!-- Lecture 3 -->
 \section{Lecture 3}
@@ -261,14 +274,18 @@ Practical examples of what happens understochasticity:
 
 \subsection{The Future}
 
-\notes{What does this mean for the future? Although I've focussed mainly on uncertainty I think that the main area for future research is interaction. Coming back to dynamic systems, but not just interaction between planes and people, interactions of the form of conversation. Interventions intelligently selected rather than emulated.
+\notes{What does this mean for the future? Although I've focussed mainly on uncertainty I think that the main area for future research is interaction. Coming back to dynamic systems, but not just interaction between planes and people, interactions of the form of conversation. Interventions intelligently selected rather than emulated.}
+
+\slides{* Uncertainty important ...
+* But also interaction (intervention, causality)}
 
 \subsection{Conclusions}
 
 \notes{The probabilistic modelling community has evolved in an era where the assumption was that ambiguous conclusions are best shared with a (trained) professional through probabilities. Recent advances in generative AI offer the possibility of machines that have a better understanding of human subjective ambiguities and therefore machines that can summarise information in a way that can be interogated rather than just through a series of numbers.}
 
 \slides{* HAMs change how we share ambiguous information.
-* We need to think about how that effects our sharing of probabilities.}
+* We need to think about how that effects our sharing of probabilities.
+* May allow the machine to be used more widely as a tool.}
 
 \thanks
 

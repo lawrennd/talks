@@ -100,7 +100,6 @@ dotx: custom-reference.dotx
 \include{_physics/includes/eagle-from-columbia.md}
 \include{_physics/includes/little-red-bus.md}
 \include{_ai/includes/naca-proving.md}
-\include{_ai/includes/human-analogue-machines.md}
 
 <!--include{_ai/includes/p-n-fairness.md}-->
 \include{_books/includes/a-question-of-trust.md}
@@ -139,6 +138,9 @@ dotx: custom-reference.dotx
 \include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
 
+<!-- Lecture 2 -->
+\section{Lecture 2}
+
 <!-- AI Fallacy -->
 \newslide{}
 
@@ -173,7 +175,7 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/ride-allocation-prediction.md}
 \include{_data-science/includes/data-oriented-architectures-intro.md}
 
-\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/human-analogue-machines.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
@@ -181,13 +183,14 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/human-computers-interacting.md}
 \include{_ai/includes/human-culture-interacting.md}
-<!--\include{_psychology/includes/selective-attention-bias.md}-->
-<!--include{_data-science/includes/data-selection-attention-bias.md}-->
+\include{_psychology/includes/selective-attention-bias.md}
+\include{_data-science/includes/data-selection-attention-bias.md}
 
 <!-- Interfaces AI for Science -->
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
 
-<!-- Lecture 2 -->
+<!-- Lecture 3 -->
+\section{Lecture 3}
 
 \include{_physics/includes/richard-feynmann-doubt.md}
 
@@ -220,6 +223,7 @@ Practical examples of what happens understochasticity:
 \include{_simulation/includes/game-of-life.md}
 \include{_physics/includes/emergent-behaviour.md}
 \include{_physics/includes/laplaces-gremlin.md}
+\include{_physics/includes/simulation-scales.md}
 \include{_ai/includes/lenox-globe.md}
 \include{_physics/includes/d-day-weather.md}
 
@@ -229,16 +233,14 @@ Practical examples of what happens understochasticity:
 \include{_physics/includes/lap-engine.md}
 \include{_physics/includes/theory-of-ignorance.md}
 \include{_ai/includes/bear-of-little-brain.md}
-\include{_ai/includes/human-computers-interacting.md}
-
-
+\include{_ml/includes/what-is-ml.md}
 \include{_physics/includes/entropy-intro.md}
 \include{_physics/includes/brownian-wiener.md}
 \include{_physics/includes/kappenball.md}
+\include{_ai/includes/prime-air-system.md}
 \include{_gp/includes/gp-intro-very-short.md}
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/maxwells-demon-short.md}
-\include{_ai/includes/conversation-probability.md}
 
 \subsection{Conclusions}
 
@@ -247,14 +249,11 @@ Practical examples of what happens understochasticity:
 \slides{* HAMs change how we share ambiguous information.
 * We need to think about how that effects our sharing of proabilities.}
 
-<!-- lecture 3 -->
 
 \newslide{What is Artificial Intelligence?}
 
 \aligncenter{A chance for us to acknowledge our ignorance and to rediscover interdisplinary science.}
 
-\include{_ai/includes/conversation-llm.md}
-\include{_ai/includes/human-analogue-machines.md}
 \include{_ml/includes/deep-face.md}
 \include{_ml/includes/deep-learning-as-pinball.md}
 <!--Connect supply chain as a "challenge" tot he abstraction of Schroedinger's bridge. Link to Optimal Transport (matching without the "physics"). Maxwell's demon.-->
@@ -265,18 +264,17 @@ Practical examples of what happens understochasticity:
 <!--include{_ai/includes/interfaces-ai-for-science.md}-->
 <!--include{_gp/includes/what-is-a-gp.md} -->
 
-\ifdef{SLIDES}
-\define{pydeepgpInclude}
-\endif
-\define{deepRobotWireless}
+\include{_deepgp/includes/deep-gp.md}
+\include{_deepgp/includes/deep-results.md}
+\include{_health/includes/deep-health-model.md}
 
-\subsection{Deep Gaussian Processes}
+\include{_deepgp/includes/deep-gp-setup-code.md}
+\include{_deepgp/includes/olympic-marathon-deep-gp.md}
+\include{_deepgp/includes/step-function-deep-gp.md}
 
+\subsection{The Future}
 
-* *Deep Gaussian Processes and Variational Propagation of Uncertainty*
-    @Damianou:thesis2015
-
-\include{_deepgp/includes/deep-gaussian-processes.md}
+\notes{What does this mean for the future? Although I've focussed mainly on uncertainty I think that the main area for future research is interaction. Coming back to dynamic systems, but not just interaction between planes and people, interactions of the form of conversation. Interventions intelligently selected rather than emulated.
 
 \subsection{Conclusions}
 

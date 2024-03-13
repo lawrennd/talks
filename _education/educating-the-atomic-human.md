@@ -62,8 +62,9 @@ transition: None
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_art/includes/blake-elohim-creating-adam.md}
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
 \include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
 
 \thanks

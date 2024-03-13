@@ -2,44 +2,29 @@
 title: "The Atomic Human"
 subtitle: "Understanding Ourselves in the Age of AI"
 abstract: |
-  A vital perspective is missing from the discussions we're having
+  A vital perspective is missing from the discussions we’re having
   about Artificial Intelligence: what does it mean for our identity?
- 
+
   Our fascination with AI stems from the perceived uniqueness of human
-  intelligence. We believe it's what differentiates us. Fears of AI
+  intelligence. We believe it’s what differentiates us. Fears of AI
   not only concern how it invades our digital lives, but also the
   implied threat of an intelligence that displaces us from our
   position at the centre of the world.
- 
+
   Atomism, proposed by Democritus, suggested it was impossible to
   continue dividing matter down into ever smaller components:
   eventually we reach a point where a cut cannot be made (the Greek
-  for uncuttable is 'atom'). In the same way, by slicing away at the
+  for uncuttable is ‘atom’). In the same way, by slicing away at the
   facets of human intelligence that can be replaced by machines, AI
   uncovers what is left: an indivisible core that is the essence of
   humanity.
- 
-  By contrasting our own (evolved, locked-in, embodied) intelligence
-  with the capabilities of machine intelligence through history, The
-  Atomic Human reveals the technical origins, capabilities and
-  limitations of AI systems, and how they should be wielded. Not just
-  by the experts, but ordinary people. Either AI is a tool for us, or
-  we become a tool of AI. Understanding this will enable us to choose
-  the future we want.
- 
-  This talk is based on Neil's forthcoming book to be published with
-  Allen Lane in June 2024. Machine learning solutions, in particular
-  those based on deep learning methods, form an underpinning of the
-  current revolution in "artificial intelligence" that has dominated
-  popular press headlines and is having a significant influence on the
-  wider tech agenda.
-  
-  In this talk I will give an overview of where we are now with
-  machine learning solutions, and what challenges we face both in the
-  near and far future. These include practical application of existing
-  algorithms in the face of the need to explain decision making,
-  mechanisms for improving the quality and availability of data,
-  dealing with large unstructured datasets.
+
+  I’ll contrast our own (evolved, locked-in, embodied) intelligence
+  with the capabilities of machine intelligence and speculate on what
+  it means for our futures.
+
+  This talk is based on Neil’s forthcoming book to be published with
+  Allen Lane in June 2024.
 author:
 - family: Lawrence
   given: Neil D.
@@ -47,8 +32,8 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-venue: St Andrews' Distinguished Lecture Series
-date: 2024-03-12
+venue: Vector Institute, Toronto
+date: 2024-03-28
 geometry: ["a4paper", "margin=2cm"]
 notation: talk-notation.tex
 papersize: a4paper
@@ -134,12 +119,10 @@ define{noSlideTitle}
 \include{_art/includes/blake-elohim-creating-adam.md}
 \include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
 \include{_ai/includes/people-culture-communicate.md}
+\include{_ai/includes/bandwidth-vs-complexity.md}
 
 <!-- Lecture 2 -->
 \section{Lecture 2}
-
-\include{_ai/includes/bandwidth-vs-complexity.md}
-
 
 <!-- AI Fallacy -->
 \newslide{}
@@ -183,111 +166,12 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ai/includes/processor-ham.md}
 <!-- Fritz Heider -->
 \include{_data-science/includes/new-flow-of-information-ham.md}
-
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
 <!-- Conversation LLM -->
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/human-computers-interacting.md}
 \include{_ai/includes/human-culture-interacting.md}
 
-\subsection{Known Biases}
-
-\include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/hypothesis-as-a-liability.md}
-
-<!-- Interfaces AI for Science -->
-<!--include{_ai/includes/interfaces-ai-for-science.md}-->
-
-\subsection{Conclusions}
-
-\notes{We're not yet in the position where we understand our own systems, intellectual debt is pervasive today sowing the seeds for many more Horizon challenges. Part of the difficulty is that shown by Blake with Newton's focus on the simple while ignoring the complex. LLMs offer us the dual potential to either fix the problem or make it much worse. In practice it's likely they'll do both.}
-
-\slides{* Intellectual debt means we don't understand digital computer.
-* Interaction between focus and context part of how we deal with this challenge.
-* LLMs could make these challenges harder but if well deployed could help.}
-
-<!-- Lecture 3 -->
-\section{Lecture 3}
-
-\include{_physics/includes/richard-feynmann-doubt.md}
-
-
-<!-- Conversation LLM -->
-\include{_ai/includes/conversation-probability.md}
-
-\newslide{}
-
-<!--
-Time scales, how when you expand or contract time signal becomes noise and noise becomes signal illustrate with Dirac delta and and stochastic processes in Fourier space, ito calculus. Latent force models.
-
-Practical examples of what happens understochasticity:
-
-0) Derive U = W + TS?? Go from microscopic to macroscopic. 
-
-1) Kappenball --- world in between where interesting things happen,
-
-2) Queue efficiency (M/M/1  1/(1-\rho))
-
-3) Input to the system being in the form of bias and variance (or perhaps Brownian motion, wiener process)
-
-(Latent force models being driven by this???? Latent force as high frequency information processing? Environment as slow?-->
-
-<!-- Mathematical Statistics -->
-\include{_data-science/includes/lies-damned-lies.md}
-\include{_physics/includes/laplaces-demon.md}
-\include{_simulation/includes/game-of-life.md}
-\include{_physics/includes/emergent-behaviour.md}
-\include{_physics/includes/laplaces-gremlin.md}
-\include{_physics/includes/simulation-scales.md}
-\include{_ai/includes/lenox-globe.md}
-\include{_physics/includes/d-day-weather.md}
-
-\notes{Modern artificial intelligence solutions are using very large amounts of data to build a landscape in which this interpolation can take place. Tools like ChatGPT are allowing us to interpolate between different human concepts. This is an amazing achievement, but it is also a challenge.}
-
-<!-- thermodynamics -->
-\include{_physics/includes/lap-engine.md}
-\include{_physics/includes/theory-of-ignorance.md}
-\include{_physics/includes/entropy-billiards.md}
-\include{_physics/includes/entropy-histogram.md}
-\include{_physics/includes/maxwells-demon-short.md}
-\include{_ai/includes/bear-of-little-brain.md}
-\include{_ml/includes/what-is-ml.md}
-\include{_physics/includes/kappenball.md}
-\include{_ai/includes/prime-air-system.md}
-\include{_gp/includes/gp-intro-very-short.md}
-
-\define{appendixOn}
-
-
-\include{_ml/includes/deep-face.md}
-\include{_ml/includes/deep-learning-as-pinball.md}
-<!--Connect supply chain as a "challenge" tot he abstraction of Schroedinger's bridge. Link to Optimal Transport (matching without the "physics"). Maxwell's demon.-->
-
-<!--Control ability paper with Mauricio and Simo??)-->
-
-<!-- Interfaces AI for Science -->
-<!--include{_ai/includes/interfaces-ai-for-science.md}-->
-<!--include{_gp/includes/what-is-a-gp.md} -->
-\include{_deepnn/includes/deep-neural-network.md}
-\include{_deepgp/includes/deep-gp.md}
-
-\include{_deepgp/includes/deep-gp-setup-code.md}
-\include{_deepgp/includes/olympic-marathon-deep-gp.md}
-\include{_deepgp/includes/step-function-deep-gp.md}
-
-\subsection{The Future}
-
-\notes{What does this mean for the future? Although I've focussed mainly on uncertainty I think that the main area for future research is interaction. Coming back to dynamic systems, but not just interaction between planes and people, interactions of the form of conversation. Interventions intelligently selected rather than emulated.}
-
-\slides{* Uncertainty important ...
-* But also interaction (intervention, causality)}
-
-\subsection{Conclusions}
-
-\notes{The probabilistic modelling community has evolved in an era where the assumption was that ambiguous conclusions are best shared with a (trained) professional through probabilities. Recent advances in generative AI offer the possibility of machines that have a better understanding of human subjective ambiguities and therefore machines that can summarise information in a way that can be interogated rather than just through a series of numbers.}
-
-\slides{* HAMs change how we share ambiguous information.
-* We need to think about how that effects our sharing of probabilities.
-* May allow the machine to be used more widely as a tool.}
 
 \thanks
 

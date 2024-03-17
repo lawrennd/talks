@@ -121,57 +121,6 @@ define{noSlideTitle}
 \include{_ai/includes/people-culture-communicate.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
 
-<!-- Lecture 2 -->
-\section{Lecture 2}
-
-<!-- AI Fallacy -->
-\newslide{}
-\undef{noSlideTitle}
-
-\notes{\subsection{Artificial Intelligence}}
-
-\notes{One of the struggles of artificial intelligence is that the term means different things to different people. Our intelligence is precious to us, and the notion that it can be easily recreated is disturbing to us. This leads to some dystopian notions of artificial intelligence, such as the singularity.}
-
-\notes{Depending on whether this powerful technology is viewed as beneficent or maleficent, it can be viewed either as a helpful assistant, in the manner of Jeeves, or a tyrannical dictator.}
-
-<!-- AI Fallacy -->
-\include{_ai/includes/the-great-ai-fallacy.md}
-\include{_ai/includes/ai-as-manservant.md}
-
-\notes{The history of automation and technology is a history of us adapting to technological change. The invention of the railways, and the need for consistent national times to timetable our movements. The development of the factory system in the mills of Derbyshire required workers to operate and maintain the machines that replaced them.}
-
-\notes{Listening to modern to conversations about artificial intelligence, I think the use of the term *intelligence* has given rise to an idea that this technology will be the But amoung these different assessments of artificial intelligence is buried an idea, one that will be the first technology to adapt to us.}
-
-\notes{In Greek mythology, Panacea was the goddess of the universal remedy. One consequence of the pervasive potential of AI is that it is positioned, like Panacea, as the purveyor of a universal solution. Whether it is overcoming industry’s productivity challenges, or as a salve for strained public sector services, or a remedy for pressing global challenges in sustainable development, AI is presented as an elixir to resolve society’s problems.
-
-In practice, translation of AI technology into practical benefit is not simple. Moreover, a growing body of evidence shows that risks and benefits from AI innovations are unevenly distributed across society.
-
-When carelessly deployed, AI risks exacerbating existing social and economic inequalities.}
-
-\notes{I'm reminded of this because from 2015 to 2017 I was on the Working Group that compiled the Royal Society's machine learning report. The process of constructing the report went across the UK Referendum, and the 2016 US election. I remember vividly a meeting we convened at the Society in London which had experts alongside MPs from all parties, policy advisors and civil servants. One of the MPs (likely correctly) pointed out "I suspect no one around this table voted for Brexit" to which I replied "But isn't that the problem? There are a large number of people who aren't empowered  who are experiencing quite a different reality than us. And they aren't reprented in these forums." So it's no surprise that so much of the press conversation around AI is still focussed on how it is likely to effect middle class jobs. We shouldn't underestimate these effects, but it's often the case that better educated people are better placed to deal with such challenges. For example, when stock brokers' roles disappeared they simply moved on to other roles in banks and related industries.}
-
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_software/includes/horizon-scandal.md}
-\include{_software/includes/separation-of-concerns.md}
-\include{_software/includes/mythical-man-month.md}
-\include{_ai/includes/artificial-vs-natural-systems.md}
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/ride-allocation-prediction.md}
-\include{_data-science/includes/data-oriented-architectures-intro.md}
-
-\subsection{How LLMs are Different}
-\notes{So far our description has provided an understanding of how digital computers present problems for our understanding. So what do LLMs do that's different?}
-
-\include{_ai/includes/human-analogue-machines.md}
-\include{_ai/includes/processor-ham.md}
-<!-- Fritz Heider -->
-\include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ai/includes/atrophy-and-cognitive-flattening.md}
-<!-- Conversation LLM -->
-\include{_ai/includes/conversation-computer.md}
-\include{_ai/includes/human-computers-interacting.md}
-\include{_ai/includes/human-culture-interacting.md}
-
 
 \thanks
 

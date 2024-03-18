@@ -69,6 +69,9 @@ dotx: custom-reference.dotx
 
 \include{_books/includes/the-future-of-professions.md}
 \include{_policy/includes/coin-pusher.md}
+\include{_ai/includes/intellectual-debt-short.md}
+\include{_software/includes/horizon-scandal.md}
+\include{_software/includes/separation-of-concerns.md}
 
 \include{_history/includes/code-of-hammurabi.md}
 \include{_history/includes/the-trial-of-siyatu.md}

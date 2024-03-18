@@ -70,7 +70,8 @@ dotx: custom-reference.dotx
 \include{_books/includes/the-future-of-professions.md}
 \include{_policy/includes/coin-pusher.md}
 
-
+\include{_history/includes/code-of-hammurabi.md}
+\include{_history/includes/trial-of-siyatu.md}
 
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}

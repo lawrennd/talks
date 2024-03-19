@@ -20,7 +20,7 @@ abstract: |
 
   I’ll contrast our own (evolved, locked-in, embodied) intelligence
   with the capabilities of machine intelligence and speculate on what
-  it means for our futures.
+  it means for our future with a particular focus on the legal profession.
 
   This talk is based on Neil’s forthcoming book to be published with
   Allen Lane in June 2024.

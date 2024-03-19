@@ -102,7 +102,7 @@ dotx: custom-reference.dotx
 * Future of professions depends on developing and deploying these technologies in a way that empowers individuals.
 }
 
-\appendix
+\define{appendix}
 
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/human-analogue-machines.md}

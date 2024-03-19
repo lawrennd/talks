@@ -73,6 +73,7 @@ dotx: custom-reference.dotx
 \include{_books/includes/the-future-of-professions.md}
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/the-sorcerers-apprentice.md}
+\include{_books/includes/the-open-society-and-its-enemies.md}
 \include{_policy/includes/coin-pusher.md}
 \include{_software/includes/horizon-scandal.md}
 \include{_software/includes/separation-of-concerns.md}
@@ -83,6 +84,23 @@ dotx: custom-reference.dotx
 \include{_ai/includes/conversation-computer.md}
 \include{_ai/includes/p-n-fairness.md}
 \include{_books/includes/a-question-of-trust.md}
+
+\subsection{Conclusions}
+
+\notes{The atomic human emerges from limitations and vulnerabilities. It is that shared experience that gives individual humans and their institutions the authority to make consequential decisions about other humans that may effect their financial status, their reputation, their health, education or their liberty.}
+
+\notes{A challenge we face is that of the "sorcerer's apprentice" where companies have deployed capabilities that they can't control and that have compromised the nature of the open society.}
+
+\notes{As future professionals you will need to be able to wield these capabilities and understand their weaknesses to fulfill your role in society.}
+
+\slides{* The Atomic Human emerges from limitations and vulnerabilities.
+* Consequential decisions need human judgment. 
+* There's a danger of disempowerment of professionals and dereliction of responsibilities.
+  * E.g. as in the "trial by ordeal" of Siyatu compare with Horizon.
+* Future of professions depends on developing and deploying these technologies in a way that empowers individuals.
+}
+
+\appendix
 
 \include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/human-analogue-machines.md}

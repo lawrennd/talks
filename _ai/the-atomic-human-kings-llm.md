@@ -47,7 +47,7 @@ dotx: custom-reference.dotx
 ---
 \define{noSlideTitle}
 
-\include{_ai/includes/the-sorcerors-apprentice.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_ai/includes/henry-ford-intro.md}
 
 \include{_ai/includes/diving-bell-butterfly.md}

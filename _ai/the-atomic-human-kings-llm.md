@@ -85,6 +85,8 @@ dotx: custom-reference.dotx
 \include{_ai/includes/p-n-fairness.md}
 \include{_books/includes/a-question-of-trust.md}
 
+\undef{noSlideTitle}
+
 \subsection{Conclusions}
 
 \notes{The atomic human emerges from limitations and vulnerabilities. It is that shared experience that gives individual humans and their institutions the authority to make consequential decisions about other humans that may effect their financial status, their reputation, their health, education or their liberty.}

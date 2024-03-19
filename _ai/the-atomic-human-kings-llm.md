@@ -47,18 +47,16 @@ dotx: custom-reference.dotx
 ---
 \define{noSlideTitle}
 
-\include{_ai/includes/the-sorcerers-apprentice.md}
-\include{_ai/includes/henry-ford-intro.md}
-
+\include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/diving-bell-butterfly.md}
-
 \include{_ai/includes/jean-dominique-bauby.md}
 
 \newslide
 
 \figure{\columns{\aligncenter{\includejpg{\diagramsDir/ai/Jean-Dominique_Bauby}{100%}}}{\aligncenter{\includejpg{\diagramsDir/ClaudeShannon_MFO3807}{70%}}}}{Claude Shannon developed information theory which allows us to quantify how much Bauby can communicate. This allows us to compare how locked in he is to us.}{bauby-shannon}
 
-\include{_ai/includes/the-atomic-eye.md}
+\addatomic{Shannon, Claude}{10, 30, 61, 74, 98, 126, 134, 140, 143, 149, 260, 264, 269, 277, 315, 358, 363}
+
 \include{_ai/includes/colossus-mark-2.md}
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-tedx.md}
@@ -69,6 +67,7 @@ dotx: custom-reference.dotx
 \include{_ai/includes/cuneiform.md}
 
 \include{_books/includes/the-future-of-professions.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_policy/includes/coin-pusher.md}
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_software/includes/horizon-scandal.md}

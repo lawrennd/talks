@@ -102,21 +102,6 @@ dotx: custom-reference.dotx
 * Future of professions depends on developing and deploying these technologies in a way that empowers individuals.
 }
 
-\define{appendix}
-
-\include{_ai/includes/heider-simmel.md}
-\include{_ai/includes/human-analogue-machines.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
-
-<!-- Conversation LLM -->
-\include{_ai/includes/conversation-computer.md}
-\include{_ai/includes/human-computers-interacting.md}
-\include{_ai/includes/human-culture-interacting.md}
-\include{_ai/includes/people-culture-communicate.md}
-\include{_ai/includes/bandwidth-vs-complexity.md}
-
-
 \thanks
 
 \references

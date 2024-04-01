@@ -86,10 +86,11 @@ dotx: custom-reference.dotx
 \subsection{How LLMs are Different}
 \notes{So far our description has provided an understanding of how digital computers present problems for our understanding. So what do LLMs do that's different?}
 
-\include{_ai/includes/human-analogue-machines.md}
-\include{_ai/includes/processor-ham.md}
-<!-- Fritz Heider -->
+\include{_simulation/includes/the-moniac.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
+
+\include{_ai/includes/human-computers-interacting.md}
+\include{_ai/includes/processor-ham.md}
 
 \include{_ai/includes/bandwidth-vs-complexity.md}
 

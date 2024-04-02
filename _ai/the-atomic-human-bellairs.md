@@ -78,7 +78,8 @@ dotx: custom-reference.dotx
 \include{_books/includes/the-open-society-and-its-enemies.md}
 
 
-\include{_ai/includes/human-analogue-machines.md}
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/conversation-llm.md}
 \include{_ai/includes/processor-ham.md}
 <!-- Fritz Heider -->
 \include{_data-science/includes/new-flow-of-information-ham.md}

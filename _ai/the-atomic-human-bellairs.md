@@ -65,8 +65,6 @@ dotx: custom-reference.dotx
 
 \include{_ai/includes/cuneiform.md}
 
-\include{_books/includes/the-structure-of-scientific-revolutions.md}
-\include{_art/includes/blake-newton.md}
 \include{_ai/includes/people-culture-communicate.md}
 
 \include{_books/includes/the-future-of-professions.md}

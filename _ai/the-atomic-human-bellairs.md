@@ -66,23 +66,16 @@ dotx: custom-reference.dotx
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/baby-shoes.md}
 
-\include{_ml/includes/rs-report-machine-learning.md}
-\include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
 \include{_ai/includes/cuneiform.md}
 
 \include{_books/includes/the-structure-of-scientific-revolutions.md}
 \include{_art/includes/blake-newton.md}
-\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
-\include{_art/includes/blake-elohim-creating-adam.md}
-\include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
 \include{_ai/includes/people-culture-communicate.md}
 
 \include{_books/includes/the-future-of-professions.md}
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_books/includes/the-open-society-and-its-enemies.md}
-\include{_policy/includes/coin-pusher.md}
 
 
 \include{_ai/includes/human-analogue-machines.md}
@@ -90,7 +83,6 @@ dotx: custom-reference.dotx
 <!-- Fritz Heider -->
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
-\include{_ai/includes/bandwidth-vs-complexity.md}
 
 
 \thanks

@@ -58,11 +58,8 @@ dotx: custom-reference.dotx
 
 \addatomic{Shannon, Claude}{10, 30, 61, 74, 98, 126, 134, 140, 143, 149, 260, 264, 269, 277, 315, 358, 363}
 
-\include{_ai/includes/colossus-mark-2.md}
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-tedx.md}
-\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
-\include{_art/includes/michelangelo-the-creation-of-man.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/baby-shoes.md}
 

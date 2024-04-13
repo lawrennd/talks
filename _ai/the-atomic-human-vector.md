@@ -36,6 +36,7 @@ venue: Vector Institute, Toronto
 date: 2024-03-28
 geometry: ["a4paper", "margin=2cm"]
 notation: talk-notation.tex
+youtube: EWAmzLu6WddgKuyQ
 papersize: a4paper
 transition: None
 slidesipynb: True

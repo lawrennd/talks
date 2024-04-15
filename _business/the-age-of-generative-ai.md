@@ -20,7 +20,7 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 potx: judge-exec-reference-2024.potx
-pptx: True
+pptx: False
 categories:
 - notes
 ---

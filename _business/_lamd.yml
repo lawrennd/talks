@@ -1,4 +1,3 @@
-layout: talk
 author:
 - given: Neil D.
   family: Lawrence
@@ -10,16 +9,34 @@ author:
 talkscam:
 url: https://inverseprobability.com/
 talkcss: https://inverseprobability.com/assets/css/talks.css
-baseurl: talks/
+bibdir: $HOME/lawrennd/bibliography/
 postsdir: ../_posts/
-notebooksdir: ../_notebooks/
 slidesdir: $HOME/lawrennd/slides/
-diagramsurl: https://inverseprobability.com
-diagramsdir: ./slides/diagrams/
+notesdir: ../_notes/
+notebooksdir: ../_notebooks/
+practicalsdir: ../_practicals/
 snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
+scriptsdir: https://inverseprobability.com/talks/scripts/
+diagramsdir: ../slides/diagrams/
+slidesheader: slides-header.html
+posts: True
+docx: False
+notespdf: False
+slidesipynb: False
+pptx: False
+pdf: False
+assignment: False
+ipynb: False
+reveal: True
+potx: custom-reference.potx
+dotx: custom-reference.dotx
+baseurl: talks/ # the subpath of your site, e.g. /blog/
 ghub:
 - organization: lawrennd
   repository: talks
   branch: gh-pages
   directory: _business
+layout: talk
+
+  

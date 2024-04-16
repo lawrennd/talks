@@ -31,8 +31,16 @@ categories:
 \include{_ai/includes/shannon-bauby.md}
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/conversation-computer.md}
+
+\section{1. Societal Norms}
+
+\include{_ai/includes/human-culture-interacting.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
 \include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_ai/includes/baby-shoes.md}
+
+
 \include{_data-science/includes/new-flow-of-information.md}
 
 \section{Case Study -- Social Media}
@@ -42,7 +50,8 @@ categories:
 
 \addatomic{Facebook}{1-5, 15, 24, 55, 69-71, 77-78, 80-87, 100-102, 107, 114, 140, 229, 234-236, 302, 322, 349, 365, 371-373}
 
-\include{_ai/includes/baby-shoes.md}
+\section{2. Impact on People Function}
+
 \include{_ai/includes/cuneiform.md}
 \include{_books/includes/the-future-of-professions.md}
 \include{_ai/includes/intellectual-debt-short.md}
@@ -52,7 +61,7 @@ categories:
 
 \include{_software/includes/horizon-scandal.md}
 
-\notes{The horizon example is another example of intellectual debt in practice, but one that didn't involve artificial intelligence, just disempowered professions.}
+\notes{The horizon example is an example of intellectual debt in practice, but one that didn't involve artificial intelligence, just disempowered professions.}
 
 \notes{_ai/includes/intellectual-debt-short.md}
 
@@ -61,17 +70,33 @@ categories:
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_books/includes/the-open-society-and-its-enemies.md}
 
-\include{_ml/includes/rs-report-machine-learning.md}
-\include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
+\section{3. Tasking: Composition, performance, tracking}
 
+\include{_ai/includes/human-computers-interacting.md}
+\include{_books/includes/the-structure-of-scientific-revolutions.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
 \include{_ai/includes/human-computers-interacting.md}
 \include{_ai/includes/processor-ham.md}
 
-\include{_ai/includes/bandwidth-vs-complexity.md}
+\include{_books/includes/a-question-of-trust.md}
+
+\section{Conclusions}
+
+\notes{While it appears that Generative AI is the revolution, really it is just the latest manifestation of the information revolution. The effect where we are now dominated by the computer in its information processing capabilities.}
+
+\notes{These new capabilities offer both benefits and pitfalls in terms of how they will steer the information revolution. Danger that these solutions are being designed centrally for the convenience of the developer not the depployer.}
+
+\notes{Devolved autonomy presents a difficult balance with individual's contextual awareness being important in robust decision making and for consequential desisions human-in-the-loop remaining vital. (See case studies)}
+
+\notes{Danger for businesses in losing the notion of intelligent accountability which renders the human value of their business a function of their processes.}
+
+
+\slides{* Information revolution, not intelligence
+* Capabilities typically designed by developer not deployer.
+* Providing opportunities to empower employees, but temptation to treat as automatons
+* Intelligent accountability (Baroness O'Neill) will remain vital.}
 
 \thanks
 

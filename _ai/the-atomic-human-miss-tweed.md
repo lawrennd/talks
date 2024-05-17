@@ -64,7 +64,6 @@ categories:
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_books/includes/the-open-society-and-its-enemies.md}
 
-\section{3. Tasking: Composition, performance, tracking}
 
 \include{_ai/includes/human-computers-interacting.md}
 \include{_books/includes/the-structure-of-scientific-revolutions.md}

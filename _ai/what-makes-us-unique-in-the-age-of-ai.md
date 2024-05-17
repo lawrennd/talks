@@ -23,6 +23,12 @@ abstract: |
   Atomic Human reveals the technical origins, capabilities and
   limitations of AI systems, and how they should be wielded. Not just
   by the experts, but ordinary people. 
+  
+  We are undergoing a cognitive revolution tha is akin to the cosmological
+  revolution Nicolaus Copernicus triggered in 1543. But just like the Earth
+  became no less interesting because it isn't at the centre of the 
+  cosmological universe, our intelligence is no less interesting because
+  it doesn't dominate the cognitive universe. 
  
   The thinking in this talk comes from Neil's forthcoming book to be
   published with Allen Lane in June 2024. The main premise is that AI 
@@ -36,7 +42,7 @@ author:
 date: 2024-05-17
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: Starmus, Bratislava
+venue: "Starmus VII: Starmus Earth, Bratislava, Slovakia"
 transition: None
 ---
 \define{noSlideTitle}

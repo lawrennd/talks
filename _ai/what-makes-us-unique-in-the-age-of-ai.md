@@ -81,6 +81,7 @@ transition: None
 
 \notes{We are in the midst of a cognitive Corpenican revolution that is as significant as the cosmological Copernican revolution. A combination of observer bias and self-serving bias have caused some to place our intelligence at the centre of the cogntiive universe. In fact our intelligence is a consequence of our context. It reflects our limitations and our vulnerabilities. It is to be treasured not because it has objective primacy over other forms of information processing but because, like our ecology, it is irreplaceable and remarkable for what it is in itself.}
 
+\notes{We're at a moment of steerage, and one where the international conversation around artificial intelligence has flattened the complexity of the human experience into a comical cartoon of what it means for us to exist as individuals and as a species. We need to push back against that reject the technobabble and put the human back at the centre of these conversations.}
 
 \thanks
 

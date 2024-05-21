@@ -78,6 +78,10 @@ transition: None
 
 \notes{Looking forward to seeing you there!}
 
+\section{Also}
+
+\include{_books/includes/the-atomic-human.md}
+
 
 \thanks
 

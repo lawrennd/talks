@@ -38,6 +38,7 @@ transition: None
 \include{_neurips/includes/neurips-experiment-speculation.md}
 \include{_neurips/includes/neurips-experiment-results.md}
 \include{_neurips/includes/neurips-experiment-reaction.md}
+\include{_neurips/includes/neurips-2021-experiment.md}
 \include{_neurips/includes/neurips-experiment-random-committee.md}
 
 <!--include{_neurips/includes/neurips-experiment.md}-->
@@ -45,15 +46,9 @@ transition: None
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
 
-\notes{\include{_neurips/includes/effect-of-late-reviewers.md}}
-
-\newslide{Late Reviewers}
-
-\slides{\figure{\includediagram{\diagramsDir/neurips/correlation-duplicate-reviews-bootstrap}{70%}}{}{correlation-duplicate-reviews-bootstrap}}
-
 \include{_neurips/includes/impact-of-papers-seven-years-on.md}
 
-\newslide{Conclusion}
+\newslide{My Conclusion}
 
 \slides{* Inconsistent errors are better than consistent errors
 * NeurIPS and Impractical Knives}
@@ -67,6 +62,21 @@ transition: None
 
 \comment{Post from Balazs Kegl: <https://balazskegl.medium.com/embrace-the-random-2957d078bfb3>}
 
+\section{My Solution}
+
+\slides{* Inspired by PMLR experience.
+* And reissue of [AISTATS 2001 proceedings](https://proceedings.mlr.press/r3/).
+* Launching the "Sorrento Single Author Paper Conference".
+* To be held w/c 7th April at the [Grand Hotel Vesuvio](https://www.vesuviosorrento.com/).
+}
+
+\notes{I've worked on many community initiatives to improve the sharing of ideas, joining arXiv's scientific advisory board is just the latest. In 2005 I launched what has become PMLR, which has around 250 volumes of ML research from conferences varying from ICML to "I Can't believe it's not better". It also supported "FAcT" at launch and other successful conferences.}
+
+\notes{On seeing that some historic proceedings were disappearing from the web, we launched a reissue series. For expample, the [AISTATS 2001 reissue](https://proceedings.mlr.press/r3/). Inspired by the spirit of these conferences next year I will organise the "Sorrento Single Author Paper Conference", where the constraint is that each paper can only have one author, with the exception that PhD students can co-author with their supervisors.}
+
+\notes{The event will be held in w/c 7th April, likely venue the [Grand Hotel Vesuvio](https://www.vesuviosorrento.com/) in Sorrento.}
+
+\notes{Looking forward to seeing you there!}
 
 
 \thanks

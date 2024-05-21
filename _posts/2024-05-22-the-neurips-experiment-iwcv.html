@@ -436,6 +436,47 @@ that of the main conference. This could be due to a bias for the
 duplicated papers, or statistical sampling error. We look at these
 questions below. First, to get the reader primed for thinking about
 these numbers we discuss some context for placing these numbers.</p>
+<h1 id="neurips-2021-experiment">NeurIPS 2021 Experiment</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includes/neurips-2021-experiment.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_neurips/includes/neurips-2021-experiment.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The experiment was repeated in 2021 with broadly the same set up
+<span class="citation" data-cites="Beygelzimer-neurips23">(Beygelzimer
+et al., 2023)</span>, only a much larger conference. The conference had
+increased in size by five times to over 9,000 submissions and 9,000
+programme committee members.</p>
+<div class="figure">
+<div id="neurips-2021-snippet-1-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//neurips/neurips-2021-snippet-1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="neurips-2021-snippet-1-magnify" class="magnify"
+onclick="magnifyFigure(&#39;neurips-2021-snippet-1&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="neurips-2021-snippet-1-caption" class="caption-frame">
+<p>Figure: Snippet from the NeurIPS 2021 experiment paper explaining the
+change in circumstances.</p>
+</div>
+</div>
+<div class="figure">
+<div id="neurips-2021-snippet-1-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//neurips/neurips-2021-snippet-2.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="neurips-2021-snippet-1-magnify" class="magnify"
+onclick="magnifyFigure(&#39;neurips-2021-snippet-1&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="neurips-2021-snippet-1-caption" class="caption-frame">
+<p>Figure: Snippet from the NeurIPS 2021 experiment paper explaining the
+results.</p>
+</div>
+</div>
 <h2 id="a-random-committee-25">A Random Committee @ 25%</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1498,366 +1539,6 @@ onclick="magnifyFigure(&#39;where-do-neurips-papers-go&#39;)">
 system from submission to eventual publication.</p>
 </div>
 </div>
-<h2 id="effect-of-late-reviews">Effect of Late Reviews</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includes/effect-of-late-reviewers.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_neurips/includes/effect-of-late-reviewers.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>This notebook analyzes the reduction in reviewer confidence between
-reviewers that submit their reviews early and those that arrive late.
-The reviews are first loaded in from files Corinna and Neil saved and
-stored in a pickle. The function for doing that is
-<code>nips.load_review_history</code>.</p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy </span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>reviews <span class="op">=</span> nipsy.load_review_history()</span></code></pre></div>
-<h2 id="review-submission-times">Review Submission Times</h2>
-<p>All reviews are now in <code>pandas</code> data frame called reviews,
-they are ready for processing. First of all, let's take a look at when
-the reviews were submitted. The function
-<code>nipsy.reviews_before</code> gives a snapshot of the reviews as
-they stood at a particular date. So we simply create a data series
-across the data range of reviews (<code>nipsy.review_data_range</code>)
-that shows the counts.</p>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>review_count <span class="op">=</span> pd.Series(index<span class="op">=</span>nipsy.review_date_range)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> nipsy.review_date_range:</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    review_count.loc[date] <span class="op">=</span> nipsy.reviews_before(reviews, date).Quality.shape[<span class="dv">0</span>]</span></code></pre></div>
-<div class="figure">
-<div id="review-count-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-count.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="review-count-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-count&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-count-caption" class="caption-frame">
-<p>Figure: Cumulative count of number of received reviews over time.</p>
-</div>
-</div>
-<p>We worked hard to try and ensure that all papers had three reviews
-before the start of the rebuttal. This next plot shows the numbers of
-papers that had less than three reviews across the review period. First
-let’s look at the overall statistics of what the count of reviewers per
-paper were. Below we plot mean, maximum, median, and minimum over
-time.</p>
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>lastseen <span class="op">=</span> reviews.drop_duplicates(subset<span class="op">=</span><span class="st">&#39;ID&#39;</span>).set_index(<span class="st">&#39;ID&#39;</span>)</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>lastseen <span class="op">=</span> lastseen[<span class="st">&#39;LastSeen&#39;</span>]</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>review_count <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>reviews.ID.unique(), columns<span class="op">=</span>nipsy.review_date_range)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> nipsy.review_date_range:</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    counts <span class="op">=</span> nipsy.reviews_status(reviews, date, column<span class="op">=</span><span class="st">&#39;Quality&#39;</span>).count(level<span class="op">=</span><span class="st">&#39;ID&#39;</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    review_count[date] <span class="op">=</span> counts.fillna(<span class="dv">0</span>)</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>review_count.fillna(<span class="dv">0</span>, inplace<span class="op">=</span><span class="va">True</span>)    </span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>review_count <span class="op">=</span> review_count.T</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> col <span class="kw">in</span> review_count.columns:</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> pd.notnull(lastseen[col]):</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>        review_count[col][review_count.index<span class="op">&gt;</span>lastseen[col]] <span class="op">=</span> np.NaN</span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>review_count <span class="op">=</span> review_count.T</span></code></pre></div>
-<div class="figure">
-<div id="number-of-reviews-over-time-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/number-of-reviews-over-time.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="number-of-reviews-over-time-magnify" class="magnify"
-onclick="magnifyFigure(&#39;number-of-reviews-over-time&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="number-of-reviews-over-time-caption" class="caption-frame">
-<p>Figure: Plot representing number of reviewers per paper over time
-showing maximum number of reviewers per paper, minimum, median, and
-mean.</p>
-</div>
-</div>
-<p>But perhaps the more important measure is how many papers had less
-than 3 reviewers over time. In this plot you can see that by the time
-rebuttal starts almost all papers have three reviewers.</p>
-<div class="sourceCode" id="cb47"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> pd.Series(index<span class="op">=</span>nipsy.review_date_range)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> nipsy.review_date_range:</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    count[date] <span class="op">=</span> (review_count[date]<span class="op">&lt;</span><span class="dv">3</span>).<span class="bu">sum</span>()</span></code></pre></div>
-<div class="figure">
-<div id="paper-short-reviews-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/paper-short-reviews.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="paper-short-reviews-magnify" class="magnify"
-onclick="magnifyFigure(&#39;paper-short-reviews&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="paper-short-reviews-caption" class="caption-frame">
-<p>Figure: Number of papers with less than three reviewers as a function
-of time.</p>
-</div>
-</div>
-<h2 id="review-confidence">Review Confidence</h2>
-<p>Now we will check the confidence of reviews as the come in over time.
-We’ve written a small helper function that looks in a four-day window
-around each time point and summarises the associated score (in the first
-case, confidence, <code>Conf</code>) with its across the four day window
-and 95% confidence intervals computed from the standard error of the
-mean estimate.</p>
-<div class="figure">
-<div id="review-confidence-time-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-confidence-time.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="review-confidence-time-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-confidence-time&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-confidence-time-caption" class="caption-frame">
-<p>Figure: Average confidence of reviews as computed across a four-day
-moving window, plot includes sandard error the mean estimate.</p>
-</div>
-</div>
-<p>It looks like there might be a reduction in confidence as we pass the
-review deadline on 21st July, but is the difference in confidence for
-the reviews that came in later significant?</p>
-<p>We now simplify the question by looking at the average confidence for
-reviews that arrived before 21st July (the reviewing deadline) and
-reviews that arrived after the 21st July (i.e. those that were chased or
-were allocated late) but before the rebuttal period started (4th
-August). Below we select these two groups and estimate the estimate of
-the mean confidence with (again with error bars).</p>
-<div class="figure">
-<div id="review-confidence-early-late-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-confidence-early-late.svg" width="50%" style=" ">
-</object>
-</div>
-<div id="review-confidence-early-late-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-confidence-early-late&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-confidence-early-late-caption" class="caption-frame">
-<p>Figure: Average confindence for reviews that arrived before 21st July
-(the reviewing deadline) and reviews that arrived after. Histogram shows
-mean values and confidence intervals. A <span
-class="math inline">\(t\)</span>-test shows the difference to be
-significant with a <span class="math inline">\(p\)</span>-value of
-0.048%, although the magnitude of the difference is small (about
-0.1).</p>
-</div>
-</div>
-<p>So, it looks like there is a small but significant difference between
-the average confidence of the submitted reviews before and after the
-deadline, the statistical significance is confirmed with a <span
-class="math inline">\(t\)</span>-test with a <span
-class="math inline">\(p\)</span>-value at 0.048%. The magnitude of the
-difference is small (about 0.1) but may indicate a tendency for later
-reviewers to be a little more rushed.</p>
-<h3 id="quality-score">Quality Score</h3>
-<p>This begs the question, is there an effect on the other scores of
-their reviews which cover ‘quality’ and ‘impact’. Quality of papers is
-scored on a 10-point scale with a recommendation of 6 being accept and
-We can form a similar plots for quality as shown in Figures <span
-class="math inline">\(\ref{review-quality-time}\)</span> and <span
-class="math inline">\(\ref{review-quality-early-late}\)</span>.</p>
-<div class="figure">
-<div id="review-quality-time-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-quality-time.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="review-quality-time-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-quality-time&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-quality-time-caption" class="caption-frame">
-<p>Figure: Plot of average review quality score as a function of time
-using a four day moving window. Standard error is also shown in the
-plot.</p>
-</div>
-</div>
-<div class="figure">
-<div id="review-quality-early-late-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-quality-early-late.svg" width="50%" style=" ">
-</object>
-</div>
-<div id="review-quality-early-late-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-quality-early-late&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-quality-early-late-caption" class="caption-frame">
-<p>Figure: Bar plot of average quality scores for on-time reviews and
-late reviews, standard errors shown. Under a <span
-class="math inline">\(t\)</span>-test the difference in values is
-statistically significant with a <span
-class="math inline">\(p\)</span>-value of 0.007%.</p>
-</div>
-</div>
-<p>There is another statistically significant difference between
-perceived quality scores after the reviewing deadline than before. On
-average reviewers tend to be more generous in their quality perceptions
-when the review is late. The <span
-class="math inline">\(p\)</span>-value is computed as 0.007%. We can
-also check if there is a similar on the impact score. The impact score
-was introduced by Ghahramani and Welling to get reviewers not just to
-think about the technical side of the paper, but whether it is driving
-the field forward. The score is binary, with 1 being for a paper that is
-unlikely to have high impact and 2 being for a paper that is likely to
-have a high impact.</p>
-<div class="figure">
-<div id="review-impact-time-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-impact-time.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="review-impact-time-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-impact-time&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-impact-time-caption" class="caption-frame">
-<p>Figure: Average impact score for papers over time, again using a
-moving average with a window of four days and with standard error of the
-mean computation shown.</p>
-</div>
-</div>
-<div class="figure">
-<div id="review-impact-early-late-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-impact-early-late.svg" width="50%" style=" ">
-</object>
-</div>
-<div id="review-impact-early-late-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-impact-early-late&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-impact-early-late-caption" class="caption-frame">
-<p>Figure: Bar plot showing the average impact score of reviews
-submitted before the deadline and after the deadline. The difference in
-means did not prove to be statistically significant under a <span
-class="math inline">\(t\)</span>-test (<span
-class="math inline">\(p\)</span>-value 5.9%).</p>
-</div>
-</div>
-<p>We find the difference is not quite statistically significant for the
-impact score (<span class="math inline">\(p\)</span>-value of 5.9%), but
-if anything, there is a trend to have slightly higher impacts for later
-reviews (see Figures <span
-class="math inline">\(\ref{review-impact-time}\)</span> and <span
-class="math inline">\(\ref{review-impact-early-late}\)</span>).</p>
-<h3 id="review-length">Review Length</h3>
-<p>A final potential indicator of review quality is the length of the
-reviews, we can check if there is a difference between the combined
-length of the review summary and the main body comments for late and
-early reviews (see Figures <span
-class="math inline">\(\ref{review-length-time}\)</span> and <span
-class="math inline">\(\ref{review-length-early-late}\)</span>).</p>
-<div class="figure">
-<div id="review-length-time-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-length-time.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="review-length-time-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-length-time&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-length-time-caption" class="caption-frame">
-<p>Figure: Average length of reviews submitted plotted as a function of
-time with standard error of the mean computation included.</p>
-</div>
-</div>
-<div class="figure">
-<div id="review-length-early-late-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/review-length-early-late.svg" width="50%" style=" ">
-</object>
-</div>
-<div id="review-length-early-late-magnify" class="magnify"
-onclick="magnifyFigure(&#39;review-length-early-late&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="review-length-early-late-caption" class="caption-frame">
-<p>Figure: Bar plot of the average length of reviews submitted before
-and after the deadline with standard errors included. The difference of
-around 100 words is statistically significant under a <span
-class="math inline">\(t\)</span>-test (<span
-class="math inline">\(p\)</span>-value 0.55%).</p>
-</div>
-</div>
-<p>Once again we find a small but statistically significant difference,
-here, as we might expect late reviews are shorter than those submitted
-on time, by about 100 words in a 2,400 word review.</p>
-<div class="sourceCode" id="cb48"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>review_quality <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>reviews.ID.unique(), columns<span class="op">=</span>nipsy.review_date_range)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> date <span class="kw">in</span> nipsy.review_date_range:</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    qual <span class="op">=</span> nipsy.reviews_status(reviews, date, column<span class="op">=</span><span class="st">&#39;Quality&#39;</span>)</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    review_quality[date] <span class="op">=</span> qual.<span class="bu">sum</span>(level<span class="op">=</span><span class="st">&#39;ID&#39;</span>)<span class="op">/</span>qual.count(level<span class="op">=</span><span class="st">&#39;ID&#39;</span>) <span class="co"># There&#39;s a bug where mean doesn&#39;t work in Pandas 1.2.4??</span></span></code></pre></div>
-<div class="sourceCode" id="cb49"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>original_pairs <span class="op">=</span> pd.read_csv(os.path.join(nipsy.review_store, <span class="st">&#39;Duplicate_PaperID_Pairs.csv&#39;</span>), index_col<span class="op">=</span><span class="st">&#39;original&#39;</span>)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>duplicate_pairs <span class="op">=</span> pd.read_csv(os.path.join(nipsy.review_store, <span class="st">&#39;Duplicate_PaperID_Pairs.csv&#39;</span>), index_col<span class="op">=</span><span class="st">&#39;duplicate&#39;</span>)</span></code></pre></div>
-<p>Perform an ‘inner join’ on duplicate papers and their originals with
-their reviews, and set the index of the duplicated papers to match the
-original. This gives us data frames with matching indices containing
-scores over time of the duplicate and original papers.</p>
-<div class="sourceCode" id="cb50"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>duplicate_reviews <span class="op">=</span> duplicate_pairs.join(review_quality, how<span class="op">=</span><span class="st">&quot;inner&quot;</span>).set_index(<span class="st">&#39;original&#39;</span>)</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>original_reviews <span class="op">=</span> original_pairs.join(review_quality, how<span class="op">=</span><span class="st">&quot;inner&quot;</span>)</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> original_reviews[<span class="st">&quot;duplicate&quot;</span>]</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>corr_series <span class="op">=</span> duplicate_reviews.corrwith(original_reviews)</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>corr_series.index <span class="op">=</span> pd.to_datetime(corr_series.index)</span></code></pre></div>
-<div class="sourceCode" id="cb52"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>bootstrap_corr_df <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>corr_series.index)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    ind <span class="op">=</span> bootstrap_index(original_reviews)</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    b_corr_series <span class="op">=</span> duplicate_reviews.loc[ind].corrwith(original_reviews.loc[ind])</span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    b_corr_series.index <span class="op">=</span> pd.to_datetime(b_corr_series.index)</span>
-<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    bootstrap_corr_df[i] <span class="op">=</span> b_corr_series</span></code></pre></div>
-<div class="sourceCode" id="cb53"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span></code></pre></div>
-<div class="figure">
-<div id="correlation-duplicate-reviews-bootstrap-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/correlation-duplicate-reviews-bootstrap.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="correlation-duplicate-reviews-bootstrap-magnify"
-class="magnify"
-onclick="magnifyFigure(&#39;correlation-duplicate-reviews-bootstrap&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="correlation-duplicate-reviews-bootstrap-caption"
-class="caption-frame">
-<p>Figure: Average correlation of duplicate papers over time. To give an
-estimate of the uncertainty the correlation is computed with bootstrap
-samples. Here to allow comparison between the trend lines similar, the
-bootstrap samples are set so they converge on the same point on the
-right of the graph.</p>
-</div>
-</div>
-<div class="figure">
-<div id="correlation-duplicate-reviews-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/correlation-duplicate-reviews.svg" width="70%" style=" ">
-</object>
-</div>
-<div id="correlation-duplicate-reviews-magnify" class="magnify"
-onclick="magnifyFigure(&#39;correlation-duplicate-reviews&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="correlation-duplicate-reviews-caption" class="caption-frame">
-<p>Figure: Average correlation of duplicate papers over time.</p>
-</div>
-</div>
-<p>We need to do a bit more analysis on the estimation of the
-correlation for the earlier submissions, but from what we see above, it
-looks like the correlation is being damaged by late reviews, and we
-never quite recover the consistency of reviews we had at the submission
-deadline even after the discussion phase is over.</p>
-<h2 id="late-reviewers-summary">Late Reviewers Summary</h2>
-<p>In summary we find that late reviews are on average less confident
-and shorter, but rate papers as higher quality and perhaps as higher
-impact. Each of the effects is small (around 5%) but overall a picture
-emerges of a different category of review from those that delay their
-assessment.</p>
 <h2 id="impact-of-papers-seven-years-on">Impact of Papers Seven Years
 On</h2>
 <div style="text-align:right">
@@ -1867,50 +1548,50 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includ
 </div>
 <p>Now we look at the actual impact of the papers published using the
 Semantic Scholar data base for tracking citations.</p>
-<div class="sourceCode" id="cb54"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span></code></pre></div>
-<div class="sourceCode" id="cb55"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb56"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>papers <span class="op">=</span> cu.Papers()</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>papers <span class="op">=</span> cu.Papers()</span></code></pre></div>
 <p><a href="https://proceedings.neurips.cc/paper/2014"
 class="uri">https://proceedings.neurips.cc/paper/2014</a></p>
-<div class="sourceCode" id="cb57"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>UPDATE_IMPACTS <span class="op">=</span> <span class="va">False</span> <span class="co"># Set to True to download impacts from Semantic Scholar</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>UPDATE_IMPACTS <span class="op">=</span> <span class="va">False</span> <span class="co"># Set to True to download impacts from Semantic Scholar</span></span></code></pre></div>
 <p>The impact of the different papers is downloaded from Semantic
 scholar using their REST API. This can take some time, and they also
 throttle the calls. At the moment the code below deosn’t handle the
 throttling correctly. However, you it will load the cached version of of
 citations scores from the given date.</p>
-<div class="sourceCode" id="cb58"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>datetime.today().strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="st">&quot;2021-06-11&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb59"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rerun to download impacts from Semantic Scholar</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>    semantic_ids <span class="op">=</span> nipsy.load_semantic_ids()</span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>    citations_dict <span class="op">=</span> citations.to_dict(orient<span class="op">=</span><span class="st">&#39;index&#39;</span>)</span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to be a bit cleverer here. Semantic scholar will throttle this call.</span></span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>    sscholar <span class="op">=</span> nipsy.download_citation_counts(citations_dict<span class="op">=</span>citations_dict, semantic_ids<span class="op">=</span>semantic_ids)</span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> pd.DataFrame.from_dict(citations_dict, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>) </span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>    citations.to_pickle(date <span class="op">+</span> <span class="st">&#39;-semantic-scholar-info.pickle&#39;</span>)</span>
-<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>datetime.today().strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="st">&quot;2021-06-11&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rerun to download impacts from Semantic Scholar</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    semantic_ids <span class="op">=</span> nipsy.load_semantic_ids()</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    citations_dict <span class="op">=</span> citations.to_dict(orient<span class="op">=</span><span class="st">&#39;index&#39;</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to be a bit cleverer here. Semantic scholar will throttle this call.</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    sscholar <span class="op">=</span> nipsy.download_citation_counts(citations_dict<span class="op">=</span>citations_dict, semantic_ids<span class="op">=</span>semantic_ids)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> pd.DataFrame.from_dict(citations_dict, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>) </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    citations.to_pickle(date <span class="op">+</span> <span class="st">&#39;-semantic-scholar-info.pickle&#39;</span>)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span></code></pre></div>
 <p>The final decision sheet provides information about what happened to
 all of the papers.</p>
-<div class="sourceCode" id="cb60"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span></code></pre></div>
 <p>This is joined with the citation information to provide our main
 ability to understand the impact of these papers.</p>
-<div class="sourceCode" id="cb61"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span></code></pre></div>
 <h3 id="correlation-of-quality-scores-and-citation">Correlation of
 Quality Scores and Citation</h3>
 <p>Our first study will be to check the correlation between quality
@@ -2057,17 +1738,17 @@ each point is corrupted by differentially private noise in the plot
 noise).</p>
 </div>
 </div>
-<div class="sourceCode" id="cb62"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> [<span class="st">&quot;average_quality&quot;</span>, <span class="st">&quot;average_impact&quot;</span>, <span class="st">&quot;average_confidence&quot;</span>]:</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    cor <span class="op">=</span> []</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>        ind <span class="op">=</span> bootstrap_index(joindf.loc[joindf.accept])</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>        cor.append(joindf.loc[ind][column].corr(np.log(<span class="dv">1</span><span class="op">+</span>joindf.loc[ind][<span class="st">&#39;numCitedBy&#39;</span>])))</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>    cora <span class="op">=</span> np.array(cor)</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> cora.mean()</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>    twosd <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(cora.var())</span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{column}</span><span class="st">&quot;</span>.<span class="bu">format</span>(column<span class="op">=</span>column.replace(<span class="st">&quot;_&quot;</span>, <span class="st">&quot; &quot;</span>)))</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Mean correlation is </span><span class="sc">{rho}</span><span class="st"> +/- </span><span class="sc">{twosd}</span><span class="st">&quot;</span>.<span class="bu">format</span>(rho<span class="op">=</span>rho, twosd<span class="op">=</span>twosd))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> [<span class="st">&quot;average_quality&quot;</span>, <span class="st">&quot;average_impact&quot;</span>, <span class="st">&quot;average_confidence&quot;</span>]:</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    cor <span class="op">=</span> []</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        ind <span class="op">=</span> bootstrap_index(joindf.loc[joindf.accept])</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        cor.append(joindf.loc[ind][column].corr(np.log(<span class="dv">1</span><span class="op">+</span>joindf.loc[ind][<span class="st">&#39;numCitedBy&#39;</span>])))</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    cora <span class="op">=</span> np.array(cor)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> cora.mean()</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    twosd <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(cora.var())</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{column}</span><span class="st">&quot;</span>.<span class="bu">format</span>(column<span class="op">=</span>column.replace(<span class="st">&quot;_&quot;</span>, <span class="st">&quot; &quot;</span>)))</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Mean correlation is </span><span class="sc">{rho}</span><span class="st"> +/- </span><span class="sc">{twosd}</span><span class="st">&quot;</span>.<span class="bu">format</span>(rho<span class="op">=</span>rho, twosd<span class="op">=</span>twosd))</span></code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -2123,6 +1804,24 @@ I suspect the same is true of many other meetings. So, a publication a
 NeurIPS does seem to indicate that the author has some of the skills
 required, but it does not necessarily imply that the paper will be
 impactful.</p>
+<h1 id="my-solution">My Solution</h1>
+<p>I’ve worked on many community initiatives to improve the sharing of
+ideas, joining arXiv’s scientific advisory board is just the latest. In
+2005 I launched what has become PMLR, which has around 250 volumes of ML
+research from conferences varying from ICML to “I Can’t believe it’s not
+better”. It also supported “FAcT” at launch and other successful
+conferences.</p>
+<p>On seeing that some historic proceedings were disappearing from the
+web, we launched a reissue series. For expample, the <a
+href="https://proceedings.mlr.press/r3/">AISTATS 2001 reissue</a>.
+Inspired by the spirit of these conferences next year I will organise
+the “Sorrento Single Author Paper Conference”, where the constraint is
+that each paper can only have one author, with the exception that PhD
+students can co-author with their supervisors.</p>
+<p>The event will be held in w/c 7th April, likely venue the <a
+href="https://www.vesuviosorrento.com/">Grand Hotel Vesuvio</a> in
+Sorrento.</p>
+<p>Looking forward to seeing you there!</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to
 check the following resources.</p>
@@ -2139,5 +1838,14 @@ Page</a></li>
 <li>blog: <a
 href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<h1 id="references">References</h1>
+<h1 class="unnumbered" id="references">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-Beygelzimer-neurips23" class="csl-entry" role="listitem">
+Beygelzimer, A., Dauphin, Y.N., Liang, P., Vaughan, J.W., 2023. <a
+href="https://arxiv.org/abs/2306.03262">Has the machine learning review
+process become more arbitrary as the field has grown? The NeurIPS 2021
+consistency experiment</a>, ArXiv e-prints.
+</div>
+</div>
 

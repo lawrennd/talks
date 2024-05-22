@@ -68,7 +68,7 @@ transition: None
 
 \slides{* Inspired by PMLR experience.
 * And reissue of [AISTATS 2001 proceedings](https://proceedings.mlr.press/r3/).
-* Launching the "Sorrento Single Author Paper Conference".
+* Launching the "[Sorrento 'Single Author Paper' Meeting](https://inverseprobability.com/sorrento/)".
 * To be held w/c 7th April at the [Grand Hotel Vesuvio](https://www.vesuviosorrento.com/).
 }
 

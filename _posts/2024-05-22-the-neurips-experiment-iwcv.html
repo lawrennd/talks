@@ -1539,12 +1539,12 @@ onclick="magnifyFigure(&#39;where-do-neurips-papers-go&#39;)">
 system from submission to eventual publication.</p>
 </div>
 </div>
-<h2 id="impact-of-papers-seven-years-on">Impact of Papers Seven Years
+<h2 id="impact-of-papers-ten-years-on">Impact of Papers Ten Years
 On</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includes/impact-of-papers-seven-years-on.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_neurips/includes/impact-of-papers-seven-years-on.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includes/impact-of-papers-ten-years-on.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_neurips/includes/impact-of-papers-ten-years-on.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Now we look at the actual impact of the papers published using the
 Semantic Scholar data base for tracking citations.</p>
@@ -1657,6 +1657,31 @@ each point is corrupted by differentially private noise in the plot
 noise).</p>
 </div>
 </div>
+<div class="figure">
+<div
+id="citations-vs-average-calibrated-quality-accept-2024-05-22-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/2024-05-22-citations-vs-average-calibrated-quality-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div
+id="citations-vs-average-calibrated-quality-accept-2024-05-22-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-accept-2024-05-22&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div
+id="citations-vs-average-calibrated-quality-accept-2024-05-22-caption"
+class="caption-frame">
+<p>Figure: Scatter plot of <span
+class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the
+average calibrated quality score for accepted papers. To prevent
+reidentification of individual papers quality scores and citation count,
+each point is corrupted by differentially private noise in the plot
+(correlation is computed before adding differentially private
+noise).</p>
+</div>
+</div>
 <p>Conversely, looking at rejected papers only, we do see a slight
 trend, with higher scoring papers achieving more citations on average.
 This, combined with the lower average number of citations in the
@@ -1674,6 +1699,31 @@ onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-reject&#39;)
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="citations-vs-average-calibrated-quality-reject-caption"
+class="caption-frame">
+<p>Figure: Scatter plot of <span
+class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the
+average calibrated quality score for rejected papers. To prevent
+reidentification of individual papers quality scores and citation count,
+each point is corrupted by differentially private noise in the plot
+(correlation is computed before adding differentially private
+noise).</p>
+</div>
+</div>
+<div class="figure">
+<div
+id="citations-vs-average-calibrated-quality-reject-2024-05-22-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/2024-05-22-citations-vs-average-calibrated-quality-reject.svg" width="70%" style=" ">
+</object>
+</div>
+<div
+id="citations-vs-average-calibrated-quality-reject-2024-05-22-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;citations-vs-average-calibrated-quality-reject-2024-05-22&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div
+id="citations-vs-average-calibrated-quality-reject-2024-05-22-caption"
 class="caption-frame">
 <p>Figure: Scatter plot of <span
 class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the
@@ -1709,6 +1759,27 @@ corrupted by differentially private noise in the plot (correlation is
 computed before adding differentially private noise).</p>
 </div>
 </div>
+<div class="figure">
+<div id="citations-vs-average-impact-accept-2024-05-22-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/2024-05-22-citations-vs-average-impact-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-impact-accept-2024-05-22-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;citations-vs-average-impact-accept-2024-05-22&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-impact-accept-2024-05-22-caption"
+class="caption-frame">
+<p>Figure: Scatter plot of <span
+class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the
+average impact score for accepted papers. To prevent reidentification of
+individual papers quality scores and citation count, each point is
+corrupted by differentially private noise in the plot (correlation is
+computed before adding differentially private noise).</p>
+</div>
+</div>
 <p>Finally, we also looked at correlation between the
 <em>confidence</em> score and the impact. Here correlation is somewhat
 stronger. Why should confidence be an indicator of higher citations? A
@@ -1728,6 +1799,28 @@ onclick="magnifyFigure(&#39;citations-vs-average-confidence-accept&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="citations-vs-average-confidence-accept-caption"
+class="caption-frame">
+<p>Figure: Scatter plot of <span
+class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the
+average confidence score for accepted papers. To prevent
+reidentification of individual papers quality scores and citation count,
+each point is corrupted by differentially private noise in the plot
+(correlation is computed before adding differentially private
+noise).</p>
+</div>
+</div>
+<div class="figure">
+<div id="citations-vs-average-confidence-accept-2024-05-22-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/2024-05-22-citations-vs-average-confidence-accept.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="citations-vs-average-confidence-accept-2024-05-22-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;citations-vs-average-confidence-accept-2024-05-22&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="citations-vs-average-confidence-accept-2024-05-22-caption"
 class="caption-frame">
 <p>Figure: Scatter plot of <span
 class="math inline">\(\log_{10}(1+\text{citations})\)</span> against the

@@ -76,7 +76,7 @@ transition: None
 
 \notes{On seeing that some historic proceedings were disappearing from the web, we launched a reissue series. For expample, the [AISTATS 2001 reissue](https://proceedings.mlr.press/r3/). Inspired by the spirit of these conferences next year I will organise the "Sorrento Single Author Paper Conference", where the constraint is that each paper can only have one author, with the exception that PhD students can co-author with their supervisors.}
 
-\notes{The event will be held in w/c 7th April, likely venue the [Grand Hotel Vesuvio](https://www.vesuviosorrento.com/) in Sorrento.}
+\notes{[The event will be held in w/c 7th April](https://inverseprobability.com/sorrento/), likely venue the [Grand Hotel Vesuvio](https://www.vesuviosorrento.com/) in Sorrento.}
 
 \notes{Looking forward to seeing you there!}
 

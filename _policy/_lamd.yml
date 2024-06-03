@@ -1,0 +1,39 @@
+author:
+- given: Neil D.
+  family: Lawrence
+  gscholar: r3SJcvoAAAAJ
+  institute: University of Cambridge
+  twitter: lawrennd
+  orcid: 0000-0001-9258-1030
+  url: https://inverseprobability.com
+talkscam:
+url: https://inverseprobability.com/
+talkcss: https://inverseprobability.com/assets/css/talks.css
+bibdir: $HOME/lawrennd/bibliography/
+postsdir: ../_posts/
+slidesdir: $HOME/lawrennd/slides/
+notesdir: ../_notes/
+notebooksdir: ../_notebooks/
+practicalsdir: ../_practicals/
+snippetsdir: $HOME/lawrennd/snippets/
+writediagramsdir: .
+scriptsdir: https://inverseprobability.com/talks/scripts/
+diagramsdir: ../slides/diagrams/
+slidesheader: slides-header.html
+posts: True
+docx: False
+notespdf: False
+slidesipynb: False
+pptx: False
+pdf: False
+assignment: False
+ipynb: False
+reveal: True
+potx: custom-reference.potx
+dotx: custom-reference.dotx
+baseurl: talks/ # the subpath of your site, e.g. /blog/
+ghub:
+- organization: lawrennd
+  repository: talks
+  branch: gh-pages
+  directory: _policy

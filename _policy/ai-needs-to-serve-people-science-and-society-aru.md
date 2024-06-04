@@ -33,8 +33,7 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ml/includes/chat-gpt-mercutio.md}
 
 \include{_books/includes/a-question-of-trust.md}
-
-
+\include{_books/includes/the-open-society-and-its-enemies.md}
 \include{_books/includes/the-atomic-human.md}
 
 \thanks

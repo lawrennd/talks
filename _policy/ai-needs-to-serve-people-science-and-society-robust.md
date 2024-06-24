@@ -37,6 +37,12 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \notes{Building this pipeline requires coordination across research, engineering, policy and practice. It also requires action to address the digital divides that influence who benefits from AI advances. These include digital divides within the socioeconomic strata that need to be overcome – AI must not exacerbate existing equalities or create new ones. In addressing these challenges, we can be hindered by divides that exist between traditional academic disciplines. We need to develop common understanding of the problems and a shared knowledge of possible solutions.}
 
+
+\include{_ai/includes/embodiment-factors-short.md}
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+
 \notes{\subsection{Making AI equitable}}
 
 \notes{[ai@cam](https://ai.cam.ac.uk) is a flagship University mission that seeks to address these challenges. It recognises that development of safe and effective AI-enabled innovations requires this mix of expertise from across research domains, businesses, policy-makers, civill society, and from affected communities. ai@cam is setting out a vision for AI-enabled innovation that benefits science, citizens and society.
@@ -49,10 +55,8 @@ AI is not a universal remedy. It is a set of tools, techniques and practices tha
 
 In that sense AI@Cam’s mission is close in spirit to that of Panacea’s elder sister Hygeia. It is focussed on building and maintaining the hygiene of a robust and equitable AI research ecosystem.}
 
-\include{_ai/includes/p-n-fairness.md}
-
-
 \include{_ai/includes/ai-at-cam.md}
+
 
 \thanks
 

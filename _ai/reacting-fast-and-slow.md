@@ -31,13 +31,17 @@ dotx: custom-reference.dotx
 \include{_ai/includes/naca-proving.md}
 \include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/colossus-mark-2.md}
+\subsection{Slow Intelligence}
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_data-science/includes/new-flow-of-information.md}
+\subsection{Fast Intelligence}
+<!-- Braitenberg, Mackay, Chater --> 
 \include{_art/includes/blake-elohim-creating-adam.md}
 
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-<!-- Braitenberg, Mackay, Chater -->
+
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
 \undef{noSlideTitle}
 
 \subsection{Conclusions}

@@ -72,10 +72,7 @@ dotx: custom-reference.dotx
 \include{_policy/includes/coin-pusher.md}
 
 \include{_software/includes/horizon-scandal.md}
-\include{_software/includes/separation-of-concerns.md}
 
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_data-science/includes/data-oriented-architectures-intro.md}
 
 \subsection{How LLMs are Different}
 \notes{So far our description has provided an understanding of how digital computers present problems for our understanding. So what do LLMs do that's different?}
@@ -83,10 +80,8 @@ dotx: custom-reference.dotx
 \include{_simulation/includes/the-moniac.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
-\include{_ai/includes/human-computers-interacting.md}
 \include{_ai/includes/processor-ham.md}
 
-\include{_ai/includes/bandwidth-vs-complexity.md}
 
 
 \thanks

@@ -33,6 +33,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 venue: ELISE Wrap Up and ELLIS Community Event, Scandic Grand Marina Congress Centre, Helsinki, Finland
+youtube: CeproI25OVg
 date: 2024-06-27
 geometry: ["a4paper", "margin=2cm"]
 notation: talk-notation.tex

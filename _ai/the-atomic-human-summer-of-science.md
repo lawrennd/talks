@@ -26,7 +26,7 @@ transition: None
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
-\include{_ai/includes/embodiment-factors-short.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/new-flow-of-information.md}

@@ -261,7 +261,7 @@ how locked in he is to us.</p>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-tedx.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-tedx.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <div class="figure">
 <div id="embodiment-factors-table-figure" class="figure-frame">
@@ -270,12 +270,17 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/em
 <td>
 </td>
 <td align="center">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor.svg" width="15%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//computer.svg" width="100%" style=" ">
 </object>
 </td>
 <td align="center">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//human.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//human.svg" width="100%" style=" ">
 </object>
+</td>
+<td align="center">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/Jean-Dominique_Bauby.jpg" width="150%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
 </td>
 </tr>
 <tr>
@@ -286,15 +291,21 @@ bits/min
 billions
 </td>
 <td align="center">
-2,000
+2000
+</td>
+<td align="center">
+6
 </td>
 </tr>
 <tr>
 <td>
-billion <br>calculations/s
+billion<br>calculations/s
 </td>
 <td align="center">
 ~100
+</td>
+<td align="center">
+a billion
 </td>
 <td align="center">
 a billion
@@ -310,6 +321,9 @@ embodiment
 <td align="center">
 5 billion years
 </td>
+<td align="center">
+15 trillion years
+</td>
 </tr>
 </table>
 </div>
@@ -319,49 +333,84 @@ onclick="magnifyFigure(&#39;embodiment-factors-table&#39;)">
 </div>
 <div id="embodiment-factors-table-caption" class="caption-frame">
 <p>Figure: Embodiment factors are the ratio between our ability to
-compute and our ability to communicate. Relative to the machine we are
-also locked in. In the table we represent embodiment as the length of
-time it would take to communicate one second’s worth of computation. For
-computers it is a matter of minutes, but for a human, it is a matter of
-thousands of millions of years. See also “Living Together: Mind and
-Machine Intelligence” <span class="citation"
-data-cites="Lawrence:embodiment17">Lawrence (2017)</span></p>
+compute and our ability to communicate. Jean Dominique Bauby suffered
+from locked-in syndrome. The embodiment factors show that relative to
+the machine we are also locked in. In the table we represent embodiment
+as the length of time it would take to communicate one second’s worth of
+computation. For computers it is a matter of minutes, but for a human,
+whether locked in or not, it is a matter of many millions of years.</p>
 </div>
 </div>
-<p>There is a fundamental limit placed on our intelligence based on our
-ability to communicate. Claude Shannon founded the field of information
-theory. The clever part of this theory is it allows us to separate our
-measurement of information from what the information pertains to.<a
-href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a></p>
-<p>Shannon measured information in bits. One bit of information is the
-amount of information I pass to you when I give you the result of a coin
-toss. Shannon was also interested in the amount of information in the
-English language. He estimated that on average a word in the English
-language contains 12 bits of information.</p>
-<p>Given typical speaking rates, that gives us an estimate of our
-ability to communicate of around 100 bits per second <span
-class="citation" data-cites="Reed-information98">(Reed and Durlach,
-1998)</span>. Computers on the other hand can communicate much more
-rapidly. Current wired network speeds are around a billion bits per
-second, ten million times faster.</p>
-<p>When it comes to compute though, our best estimates indicate our
-computers are slower. A typical modern computer can process make around
-100 billion floating-point operations per second, each floating-point
-operation involves a 64 bit number. So the computer is processing around
-6,400 billion bits per second.</p>
-<p>It’s difficult to get similar estimates for humans, but by some
-estimates the amount of compute we would require to <em>simulate</em> a
-human brain is equivalent to that in the UK’s fastest computer <span
-class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan
-et al., 2009)</span>, the MET office machine in Exeter, which in 2018
-ranked as the 11th fastest computer in the world. That machine simulates
-the world’s weather each morning, and then simulates the world’s climate
-in the afternoon. It is a 16-petaflop machine, processing around 1,000
-<em>trillion</em> bits per second.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> embodiment factor p. 13, 29, 35, 79, 87, 105, 197,
-216-217, 249, 269, 353, 369.</p>
+<p>Let me explain what I mean. Claude Shannon introduced a mathematical
+concept of information for the purposes of understanding telephone
+exchanges.</p>
+<p>Information has many meanings, but mathematically, Shannon defined a
+bit of information to be the amount of information you get from tossing
+a coin.</p>
+<p>If I toss a coin, and look at it, I know the answer. You don’t. But
+if I now tell you the answer I communicate to you 1 bit of information.
+Shannon defined this as the fundamental unit of information.</p>
+<p>If I toss the coin twice, and tell you the result of both tosses, I
+give you two bits of information. Information is additive.</p>
+<p>Shannon also estimated the average information associated with the
+English language. He estimated that the average information in any word
+is 12 bits, equivalent to twelve coin tosses.</p>
+<p>So every two minutes Bauby was able to communicate 12 bits, or six
+bits per minute.</p>
+<p>This is the information transfer rate he was limited to, the rate at
+which he could communicate.</p>
+<p>Compare this to me, talking now. The average speaker for TEDX speaks
+around 160 words per minute. That’s 320 times faster than Bauby or
+around a 2000 bits per minute. 2000 coin tosses per minute.</p>
+<p>But, just think how much thought Bauby was putting into every
+sentence. Imagine how carefully chosen each of his words was. Because he
+was communication constrained he could put more thought into each of his
+words. Into thinking about his audience.</p>
+<p>So, his intelligence became locked in. He thinks as fast as any of
+us, but can communicate slower. Like the tree falling in the woods with
+no one there to hear it, his intelligence is embedded inside him.</p>
+<p>Two thousand coin tosses per minute sounds pretty impressive, but
+this talk is not just about us, it’s about our computers, and the type
+of intelligence we are creating within them.</p>
+<p>So how does two thousand compare to our digital companions? When
+computers talk to each other, they do so with billions of coin tosses
+per minute.</p>
+<p>Let’s imagine for a moment, that instead of talking about
+communication of information, we are actually talking about money. Bauby
+would have 6 dollars. I would have 2000 dollars, and my computer has
+billions of dollars.</p>
+<p>The internet has interconnected computers and equipped them with
+extremely high transfer rates.</p>
+<p>However, by our very best estimates, computers actually think slower
+than us.</p>
+<p>How can that be? You might ask, computers calculate much faster than
+me. That’s true, but underlying your conscious thoughts there are a lot
+of calculations going on.</p>
+<p>Each thought involves many thousands, millions or billions of
+calculations. How many exactly, we don’t know yet, because we don’t know
+how the brain turns calculations into thoughts.</p>
+<p>Our best estimates suggest that to simulate your brain a computer
+would have to be as large as the UK Met Office machine here in Exeter.
+That’s a 250 million pound machine, the fastest in the UK. It can do 16
+billion billon calculations per second.</p>
+<p>It simulates the weather across the word every day, that’s how much
+power we think we need to simulate our brains.</p>
+<p>So, in terms of our computational power we are extraordinary, but in
+terms of our ability to explain ourselves, just like Bauby, we are
+locked in.</p>
+<p>For a typical computer, to communicate everything it computes in one
+second, it would only take it a couple of minutes. For us to do the same
+would take 15 billion years.</p>
+<p>If intelligence is fundamentally about processing and sharing of
+information. This gives us a fundamental constraint on human
+intelligence that dictates its nature.</p>
+<p>I call this ratio between the time it takes to compute something, and
+the time it takes to say it, the embodiment factor <span
+class="citation" data-cites="Lawrence:embodiment17">(Lawrence,
+2017)</span>. Because it reflects how embodied our cognition is.</p>
+<p>If it takes you two minutes to say the thing you have thought in a
+second, then you are a computer. If it takes you 15 billion years, then
+you are a human.</p>
 <h3 id="bandwidth-constrained-conversations">Bandwidth Constrained
 Conversations</h3>
 <div style="text-align:right">
@@ -844,15 +893,6 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
-<div id="ref-Ananthanarayanan-cat09" class="csl-entry" role="listitem">
-Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The
-cat is out of the bag: Cortical simulations with <span
-class="math inline">\(10^9\)</span> neurons, <span
-class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the
-Conference on High Performance Computing Networking, Storage and
-Analysis - SC ’09. <a
-href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
-</div>
 <div id="ref-Lawrence-atomic24" class="csl-entry" role="listitem">
 Lawrence, N.D., 2024. <a
 href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
@@ -862,25 +902,10 @@ atomic human: Understanding ourselves in the age of AI</a>. Allen Lane.
 Lawrence, N.D., 2017. <a href="https://arxiv.org/abs/1705.07996">Living
 together: Mind and machine intelligence</a>. arXiv.
 </div>
-<div id="ref-Reed-information98" class="csl-entry" role="listitem">
-Reed, C., Durlach, N.I., 1998. Note on information transfer rates in
-human communication. Presence Teleoperators &amp; Virtual Environments
-7, 509–518. <a
-href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>
-</div>
 <div id="ref-Scally-mutation16" class="csl-entry" role="listitem">
 Scally, A., 2016. Mutation rates and the evolution of germline
 structure. Philosophical Transactions of the Royal Society B 371. <a
 href="https://doi.org/10.1098/rstb.2015.0137">https://doi.org/10.1098/rstb.2015.0137</a>
 </div>
 </div>
-<aside id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>the challenge of understanding what information pertains
-to is known as knowledge representation.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</aside>
 

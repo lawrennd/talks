@@ -20,29 +20,21 @@ transition: None
 ---
 \define{noSlideTitle}
 
-\include{_physics/includes/the-earth-seen-from-apollo-17.md}
-\include{_physics/includes/eagle-from-columbia.md}
-\include{_physics/includes/little-red-bus.md}
-\include{_ai/includes/naca-proving.md}
+
+\include{_ai/includes/henry-ford-intro.md}
 \include{_ai/includes/the-atomic-eye.md}
-\include{_ai/includes/colossus-mark-2.md}
+\include{_ai/includes/diving-bell-butterfly.md}
+\include{_ai/includes/jean-dominique-bauby.md}
+\include{_ai/includes/shannon-bauby.md}
 \include{_ai/includes/embodiment-factors-short.md}
-\include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/conversation-tedx.md}
-\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
-\include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/baby-shoes.md}
-\include{_ai/includes/cuneiform.md}
-\include{_books/includes/the-structure-of-scientific-revolutions.md}
 \include{_art/includes/blake-newton.md}
-\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
-\include{_ai/includes/people-culture-communicate.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ai/includes/atrophy-and-cognitive-flattening.md}
-\include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
-\include{_art/includes/blake-elohim-creating-adam.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
 
 \thanks

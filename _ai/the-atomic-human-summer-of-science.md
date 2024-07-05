@@ -1,39 +1,17 @@
 ---
 title: "The Atomic Human"
 abstract: |
-  A vital perspective is missing from the discussions we're having
-  about Artificial Intelligence: what does it mean for our identity?
- 
-  Our fascination with AI stems from the perceived uniqueness of human
-  intelligence. We believe it's what differentiates us. Fears of AI
-  not only concern how it invades our digital lives, but also the
-  implied threat of an intelligence that displaces us from our
-  position at the centre of the world.
- 
-  Atomism, proposed by Democritus, suggested it was impossible to
-  continue dividing matter down into ever smaller components:
-  eventually we reach a point where a cut cannot be made (the Greek
-  for uncuttable is 'atom'). In the same way, by slicing away at the
-  facets of human intelligence that can be replaced by machines, AI
-  uncovers what is left: an indivisible core that is the essence of
-  humanity.
- 
-  By contrasting our own (evolved, locked-in, embodied) intelligence
-  with the capabilities of machine intelligence through history, The
-  Atomic Human reveals the technical origins, capabilities and
-  limitations of AI systems, and how they should be wielded. Not just
-  by the experts, but ordinary people. 
- 
-  The thinking in this talk comes from Neil's forthcoming book to be
-  published with Allen Lane in June 2024. The questions raised in this
-  talk will be around how we educate the atomic human in the age of
-  AI.
-  
-  Either AI is a tool for us, or we become a tool of AI. Understanding
-  this will enable us to choose the future we want.
+  What if machines could think like humans? Can AI truly understand us? Ever wondered how AI will shape our future? 
+
+  Discover some of the answers with Neil Lawrence, one of the world’s foremost experts in AI and machine learning. In this insightful talk, Neil Lawrence will reveal how AI serves as a powerful assistant to human intelligence, not a replacement. He will discuss the limits of AI in replicating human thought and its profound impact on society and information management.
+
+  Additionally, the talk will explore our society’s fascination and fears about AI, examining its influence on human identity. Lawrence will give an overview of the current state of AI, the challenges we face, and the importance of transparency and data quality. This session will offer valuable insights into the real-world applications of AI and its future. 
+
+  Neil Lawrence is the inaugural DeepMind Professor of Machine Learning at the University of Cambridge where he is also the academic lead of AI@Cam, the University’s flagship mission on AI. He has been working on machine learning models for over 25 years. He returned to academia in 2019 after three years as Director of Machine Learning at Amazon. He is also a Senior AI Fellow at the Alan Turing Institute, visiting Professor at the University of Sheffield and author of the forthcoming book The Atomic Human - understanding ourselves in the age of AI.
 author:
 - family: Lawrence
   given: Neil D.
+html: https://royalsociety.org/science-events-and-lectures/2024/07/the-atomic-human-friday/
 date: 2024-07-05
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

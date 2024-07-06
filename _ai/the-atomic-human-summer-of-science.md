@@ -7,7 +7,7 @@ abstract: |
 
   Additionally, the talk will explore our society’s fascination and fears about AI, examining its influence on human identity. Lawrence will give an overview of the current state of AI, the challenges we face, and the importance of transparency and data quality. This session will offer valuable insights into the real-world applications of AI and its future. 
 
-  Neil Lawrence is the inaugural DeepMind Professor of Machine Learning at the University of Cambridge where he is also the academic lead of AI@Cam, the University’s flagship mission on AI. He has been working on machine learning models for over 25 years. He returned to academia in 2019 after three years as Director of Machine Learning at Amazon. He is also a Senior AI Fellow at the Alan Turing Institute, visiting Professor at the University of Sheffield and author of the forthcoming book The Atomic Human - understanding ourselves in the age of AI.
+  Neil Lawrence is the inaugural DeepMind Professor of Machine Learning at the University of Cambridge where he is also the academic lead of AI@Cam, the University’s flagship mission on AI. He has been working on machine learning models for over 25 years. He returned to academia in 2019 after three years as Director of Machine Learning at Amazon. He is also a Senior AI Fellow at the Alan Turing Institute, visiting Professor at the University of Sheffield and author of the book The Atomic Human - understanding ourselves in the age of AI.
 author:
 - family: Lawrence
   given: Neil D.

@@ -12,6 +12,7 @@ author:
 - family: Lawrence
   given: Neil D.
 html: https://royalsociety.org/science-events-and-lectures/2024/07/the-atomic-human-friday/
+youtube: hcgqkbSknM8
 date: 2024-07-05
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

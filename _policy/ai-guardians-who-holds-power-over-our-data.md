@@ -1,6 +1,6 @@
 ---
 title: "AI guardians: who holds power over our data"
-abstract: >
+abstract: |
   This event will explore ethics and bias in AI, and examine the need
   for diverse and inclusive data teams and decision-makers.
 

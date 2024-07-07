@@ -19,7 +19,7 @@ abstract: >
   and author of the forthcoming book The Atomic Human (release date 6th June 
   2024).
 
-  Sadiqah Musa (@Sadiqah_BiD) has over 12 years of experience in data and 
+  Sadiqah Musa has over 12 years of experience in data and 
   analytics. She started her career analysing seismic data as an Interpretation 
   Geophysicist. With the desire to expand her knowledge and expertise, Sadiqah 
   moved into customer and behavioural analytics. She is currently working as a 
@@ -27,14 +27,14 @@ abstract: >
   Data where she is an advocate for increased representation of ethnic 
   diversity within data. 
 
-  Kenneth Benoit (@kenbenoit) is Director of the Data Science Institute at the 
+  Kenneth Benoit is Director of the Data Science Institute at the 
   London School of Economics and Political Science, and Professor of 
   Computational Social Science in the Department of Methodology. He is also 
   Professor (Part-time) in the School of Politics and International Relations, 
   Australian National University. He has previously held positions in the 
   Department of Political Science at Trinity College Dublin and at the Central 
   European University (Budapest). 
-url: https://www.lse.ac.uk/Events/LSE-Festival/2024/0615/AI
+webpage: https://www.lse.ac.uk/Events/LSE-Festival/2024/0615/AI
 date: 2024-06-15
 youtube: NDis21-dZSU
 reveal: False

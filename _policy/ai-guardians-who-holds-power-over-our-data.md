@@ -4,7 +4,7 @@ abstract: |
   This event will explore ethics and bias in AI, and examine the need
   for diverse and inclusive data teams and decision-makers.
 
-  Chandrima Ganguly is a Data and AI Ethicist working in the CDAO. Their 
+  *Chandrima Ganguly* is a Data and AI Ethicist working in the CDAO. Their 
   background is research in AI Ethics and Theoretical physics and they 
   hold a PhD in the letter from the University of Cambridge. They are also 
   a community organizer working for many years in the gender justice space. 
@@ -12,14 +12,14 @@ abstract: |
   in which technology can help people come together to find ways of better 
   existing in community with each other and wider society. 
 
-  Neil Lawrence is the inaugural DeepMind Professor of Machine Learning at 
+  *Neil Lawrence* is the inaugural DeepMind Professor of Machine Learning at 
   the University of Cambridge where he is also the academic lead of AI@Cam, 
   the University’s flagship mission on AI. He is also a Senior AI Fellow at 
   the Alan Turing Institute, visiting Professor at the University of Sheffield 
   and author of the forthcoming book The Atomic Human (release date 6th June 
   2024).
 
-  Sadiqah Musa has over 12 years of experience in data and 
+  *Sadiqah Musa* has over 12 years of experience in data and 
   analytics. She started her career analysing seismic data as an Interpretation 
   Geophysicist. With the desire to expand her knowledge and expertise, Sadiqah 
   moved into customer and behavioural analytics. She is currently working as a 
@@ -27,7 +27,7 @@ abstract: |
   Data where she is an advocate for increased representation of ethnic 
   diversity within data. 
 
-  Kenneth Benoit is Director of the Data Science Institute at the 
+  *Kenneth Benoit* is Director of the Data Science Institute at the 
   London School of Economics and Political Science, and Professor of 
   Computational Social Science in the Department of Methodology. He is also 
   Professor (Part-time) in the School of Politics and International Relations, 

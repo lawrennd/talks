@@ -36,17 +36,20 @@ dotx: custom-reference.dotx
 \include{_data-science/includes/new-flow-of-information.md}
 \subsection{Fast Intelligence}
 \include{_ai/includes/braitenberg-vehicles.md}
+\include{_ai/includes/donald-mackay-brain.md}
+\include{_books/includes/the-mind-is-flat.md}
 <!-- Braitenberg, Mackay, Chater --> 
 \subsection{Slow Intelligence}
 \include{_art/includes/blake-elohim-creating-adam.md}
 
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-
+\include{_books/includes/behind-the-mirror.md}
 \include{_ai/includes/atrophy-and-cognitive-flattening.md}
+\include{_books/includes/the-atomic-human.md}
+
 \undef{noSlideTitle}
 
-\subsection{Conclusions}
 
 
 \thanks

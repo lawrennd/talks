@@ -23,7 +23,8 @@ abstract: |
   with the capabilities of machine intelligence and speculate on what
   it means for our futures.
 
-  This talk is based on Neil’s book, The Atomic Human.
+  This talk is based on Neil’s book, The Atomic Human,published with
+  Allen Lane.
 author:
 - family: Lawrence
   given: Neil D.
@@ -31,9 +32,8 @@ author:
   institute: University of Cambridge
   twitter: lawrennd
   url: http://inverseprobability.com
-venue: ELISE Wrap Up and ELLIS Community Event, Scandic Grand Marina Congress Centre, Helsinki, Finland
-youtube: CeproI25OVg
-date: 2024-06-27
+venue: ELLIS Summer School
+date: 2024-07-19
 geometry: ["a4paper", "margin=2cm"]
 notation: talk-notation.tex
 papersize: a4paper
@@ -64,7 +64,8 @@ dotx: custom-reference.dotx
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
 \include{_ai/includes/cuneiform.md}
-
+\include{_history/includes/the-trial-of-siyatu.md}
+\include{_history/includes/gutenberg-press.md}
 \include{_books/includes/the-future-of-professions.md}
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/the-sorcerers-apprentice.md}

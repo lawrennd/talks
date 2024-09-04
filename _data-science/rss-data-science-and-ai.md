@@ -122,12 +122,12 @@ Our board includes experts from various institutions:
 
 Our editorial board covers a wide range of expertise:
 
-- Machine Learning and AI: Chiappa, Lawrence, Cranmer, De Balle Pigem, Murphy, Wilson
-- Statistical Methodology: Mukherjee, Doucet, Lee, Meinshausen
-- Biostatistics and Computational Biology: Dudoit, Frigessi
+- Machine Learning and AI: Chiappa, Lawrence, Cranmer, Mukherjee, De Balle Pigem, Murphy, Wilson
+- Statistical Methodology: Doucet, Dudoit, Lee, Meinshausen, Nichols, Frigessi
+- Biostatistics and Computational Biology: Dudoit, Frigessi, Mukherjee
 - Natural Language Processing: Liakata
 - Neuroimaging: Nichols
-- Causal Inference: Shalit, Valera
+- Causal Inference: Shalit, Valera, Mukherjee
 
 \notes{This diverse expertise ensures comprehensive and rigorous peer review across the spectrum of data science and AI research.}
 

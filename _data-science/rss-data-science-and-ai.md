@@ -133,6 +133,7 @@ Our editorial board covers a wide range of expertise:
 \newslide{Open Access and Submission Policy}
 
 RSS: Data Science and Artificial Intelligence is:
+
 - Fully open access
 - Following a submission policy similar to JMLR (accept submissions published at workshops or conferences, permit pre-print publication (such as arXiv))
 - Committed to rigorous peer review

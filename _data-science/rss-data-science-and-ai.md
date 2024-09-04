@@ -142,6 +142,7 @@ RSS: Data Science and Artificial Intelligence is:
 \newslide{Call for Papers}
 
 We invite submissions in areas including but not limited to:
+
 - Novel methodologies in AI and ML
 - Statistical approaches to big data
 - Ethical considerations in data science

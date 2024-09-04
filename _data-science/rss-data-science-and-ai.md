@@ -108,6 +108,9 @@ Our board includes experts from various institutions:
 - Arnoldo Frigessi (University of Oslo)
 - Anthony Lee (University of Bristol)
 - Maria Liakata (Queen Mary University of London)
+
+\newslide{}
+
 - Nicolai Meinshausen (ETH Zürich)
 - Kevin Murphy (Google DeepMind)
 - Tom Nichols (University of Oxford)

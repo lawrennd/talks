@@ -82,8 +82,7 @@ The journal will focus on papers that:
 
 We encourage papers that explore:
 
-- Robustness of AI/ML systems
-- Fairness in algorithmic decision-making
+- Responsible Algorithms: Robustness, Fairness and Privacy of AI/ML systems
 - Reliability of data-driven solutions
 - Epistemological questions in data science
 
@@ -122,12 +121,12 @@ Our board includes experts from various institutions:
 
 Our editorial board covers a wide range of expertise:
 
-- Machine Learning and AI: Chiappa, Lawrence, Cranmer, Mukherjee, De Balle Pigem, Murphy, Wilson
-- Statistical Methodology: Doucet, Dudoit, Lee, Meinshausen, Nichols, Frigessi
-- Biostatistics and Computational Biology: Dudoit, Frigessi, Mukherjee
-- Natural Language Processing: Liakata
-- Neuroimaging: Nichols
-- Causal Inference: Shalit, Valera, Mukherjee
+* Machine Learning and AI: Chiappa, Lawrence, Mukherjee, Cranmer, De Balle Pigem, Murphy, Wilson
+* Statistical Methodology: Doucet, Dudoit, Lee, Meinshausen, Nichols, Frigessi
+* Biostatistics and Computational Biology: Dudoit, Frigessi, Mukherjee, Nichols
+* Natural Language Processing: Liakata
+* Neuroimaging: Nichols
+* Causal Inference: Shalit, Meinshausen, Valera, Mukherjee
 
 \notes{This diverse expertise ensures comprehensive and rigorous peer review across the spectrum of data science and AI research.}
 
@@ -135,7 +134,7 @@ Our editorial board covers a wide range of expertise:
 
 RSS: Data Science and Artificial Intelligence is:
 - Fully open access
-- Following a submission policy similar to JMLR
+- Following a submission policy similar to JMLR (accept submissions published at workshops or conferences, permit pre-print publication (such as arXiv))
 - Committed to rigorous peer review
 
 \notes{This approach ensures wide accessibility of cutting-edge research while maintaining high standards of quality.}

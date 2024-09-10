@@ -1,0 +1,43 @@
+---
+title: "The Atomic Human"
+subtitle: What makes us unique in the age of AI
+abstract: |
+  The Cambridge Bay Area Ring and Cambridge in America (CAm) invite you to a book talk and reception with Professor Neil D. Lawrence, author of Atomic Human: Understanding Ourselves in the Age of AI, a visionary new book on the evolution of human and machine intelligence.
+
+  By contrasting our own (evolved, locked-in, embodied) intelligence
+  with the capabilities of machine intelligence through history, The
+  Atomic Human reveals the technical origins, capabilities and
+  limitations of AI systems, and how they should be wielded. Not just
+  by the experts, but ordinary people. Either AI is a tool for us, or
+  we become a tool of AI. Understanding this will enable us to choose
+  the future we want.
+
+  The book reveals the technical origins, capabilities and limitations of AI systems, and how they should be wielded; not just by the experts, but also ordinary people.
+
+  An informal reception will follow the talk. This event is kindly hosted at the office of the CAm Bay Area Advisory Committee member Ronjon Nag (Wolfson 1984).
+author:
+- family: Lawrence
+  given: Neil D.
+date: 2024-09-10
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+venue: Cambridge in America, Valley Bio Services, Mountain View, CA
+transition: None
+---
+\define{noSlideTitle}
+
+
+\include{_ai/includes/the-atomic-eye.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_books/includes/the-atomic-human.md}
+
+\thanks
+
+\references

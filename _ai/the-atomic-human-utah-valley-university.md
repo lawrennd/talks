@@ -2,8 +2,6 @@
 title: "The Atomic Human"
 subtitle: What makes us unique in the age of AI
 abstract: |
-  The Cambridge Bay Area Ring and Cambridge in America (CAm) invite you to a book talk and reception with Professor Neil D. Lawrence, author of Atomic Human: Understanding Ourselves in the Age of AI, a visionary new book on the evolution of human and machine intelligence.
-
   By contrasting our own (evolved, locked-in, embodied) intelligence
   with the capabilities of machine intelligence through history, The
   Atomic Human reveals the technical origins, capabilities and

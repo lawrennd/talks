@@ -12,16 +12,14 @@ abstract: |
 
   The book reveals the technical origins, capabilities and limitations of AI systems, and how they should be wielded; not just by the experts, but also ordinary people.
 
-  The talk will be followed by a Q&A with David Mindell.
+  An informal reception will follow the talk.
 author:
 - family: Lawrence
   given: Neil D.
-- family: Mindell
-  given: David
-date: 2024-09-13
+date: 2024-09-16
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: MIT Museum
+venue: Elevated, NYC
 transition: None
 ---
 \define{noSlideTitle}

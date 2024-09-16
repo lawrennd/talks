@@ -40,13 +40,13 @@ transition: None
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
+\include{_art/includes/blake-newton.md}
 \include{_ai/includes/cuneiform.md}
 \include{_history/includes/the-trial-of-siyatu.md}
 \include{_history/includes/gutenberg-press.md}
 \include{_books/includes/the-future-of-professions.md}
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_books/includes/the-open-society-and-its-enemies.md}
-\include{_art/includes/blake-newton.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}

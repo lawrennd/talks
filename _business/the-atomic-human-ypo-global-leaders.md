@@ -38,12 +38,7 @@ transition: None
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_books/includes/the-atomic-human-us.md}
-
-\subsection{An Attention Economy}
-
-* Human attention will always be a "scarce resource"
-* Humans will never stop being interested in other humans.
-* Organisations will keep trying to "capture" the attention economy.
+\include{_business/includes/an-attention-economy.md}
 
 \thanks
 

@@ -24,7 +24,7 @@ transition: None
 
 
 \include{_ai/includes/henry-ford-intro.md}
-\include{_ai/includes/the-atomic-eye-us.md}
+\include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
@@ -37,7 +37,7 @@ transition: None
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_books/includes/the-atomic-human-us.md}
+\include{_books/includes/the-atomic-human.md}
 \include{_business/includes/an-attention-economy.md}
 
 \thanks

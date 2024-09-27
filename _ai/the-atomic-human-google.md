@@ -1,5 +1,6 @@
 ---
 title: "The Atomic Human"
+subtitle: In Conversation with Zoubin Ghahramani
 abstract: |
   What if machines could think like humans? Can AI truly understand us? Ever wondered how AI will shape our future? 
 
@@ -11,6 +12,8 @@ abstract: |
 author:
 - family: Lawrence
   given: Neil D.
+- family: Ghahramani
+  given: Zoubin
 date: 2024-09-18
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

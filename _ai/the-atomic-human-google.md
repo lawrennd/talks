@@ -10,6 +10,7 @@ author:
   given: Neil D.
 - family: Ghahramani
   given: Zoubin
+youtube: QB7hG5pr5xA
 date: 2024-09-18
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

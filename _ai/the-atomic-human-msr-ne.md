@@ -19,6 +19,7 @@ author:
   given: Mary
 date: 2024-09-12
 geometry: ["a4paper", "margin=2cm"]
+reveal: False
 papersize: a4paper
 venue: MSR New England, Cambridge MA
 transition: None

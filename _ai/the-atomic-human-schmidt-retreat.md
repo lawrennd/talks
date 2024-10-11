@@ -1,5 +1,5 @@
 ---
-title: "Law and the Atomic Human"
+title: "The Atomic Human"
 abstract: |
   A vital perspective is missing from the discussions we’re having
   about Artificial Intelligence: what does it mean for our identity?
@@ -20,10 +20,7 @@ abstract: |
 
   I’ll contrast our own (evolved, locked-in, embodied) intelligence
   with the capabilities of machine intelligence and speculate on what
-  it means for our future with a particular focus on the legal profession.
-
-  This talk is based on Neil’s forthcoming book to be published with
-  Allen Lane in June 2024.
+  it means for our future.
 author:
 - family: Lawrence
   given: Neil D.

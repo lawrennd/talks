@@ -21,6 +21,7 @@ transition: None
 \include{_physics/includes/max-planck.md}
 \include{_physics/includes/max-planck-letter.md}
 \include{_physics/includes/erwin-planck.md}
+\include{_politics/includes/manfred-rommel.md}
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
@@ -33,12 +34,11 @@ transition: None
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
 \include{_ai/includes/people-culture-communicate.md}
-
-\include{_physics/includes/the-earth-seen-from-apollo-17.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
+\include{_books/includes/the-open-society-and-its-enemies.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ai/includes/bandwidth-vs-complexity.md}
 
 \thanks
 

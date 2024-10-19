@@ -1,7 +1,7 @@
 ---
 title: "The Atomic Human"
 abstract: |
-  A vital perspective is missing from the discussions we’re having about Artificial Intelligence: what does it mean for our identity?
+  A vital perspective is missing from the discussions we are having about Artificial Intelligence: what does it mean for our identity?
 
   Our fascination with AI stems from the perceived uniqueness of human intelligence. We believe it’s what differentiates us. Fears of AI not only concern how it invades our digital lives, but also the implied threat of an intelligence that displaces us from our position at the centre of the world.
 
@@ -30,25 +30,47 @@ transition: None
 \include{_ai/includes/shannon-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/conversation-tedx.md}
-\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
-\include{_art/includes/michelangelo-the-creation-of-man.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/baby-shoes.md}
-\include{_ml/includes/rs-report-machine-learning.md}
-\include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
+
 \include{_art/includes/blake-newton.md}
-\include{_ai/includes/cuneiform.md}
-\include{_history/includes/the-trial-of-siyatu.md}
-\include{_history/includes/gutenberg-press.md}
-\include{_books/includes/the-future-of-professions.md}
-\include{_ai/includes/the-sorcerers-apprentice.md}
-\include{_books/includes/the-open-society-and-its-enemies.md}
-\include{_simulation/includes/the-moniac.md}
+
+<!-- System Zero -->
+\include{_ai/includes/elephant-boy-poster.md}
+\include{_ai/includes/elephant-system-one.md}
+\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{ This was also written in 2015.}
+
+\addreading{@Lawrence-atomic24}{Chapter 8}
+
+\newslide{}
+
+\include{_ai/includes/mechanical-elephant.md}
+
+\newslide{}
+
+\includejpg{\diagramsDir/ai/star-trek-borg}{80%}
+\include{_ai/includes/thinking-fast-and-slow.md}
+\include{_ai/includes/the-hindoo-earth.md}
+
+\newslide{}
+
+\includejpg{\diagramsDir/ai/discworld-anhk-morpork-cover-art}{70%}
+
+<!-- Complexities of manipulation -->
+\include{_physics/includes/little-red-bus.md}
+\include{_ai/includes/naca-proving.md}
+\include{_physics/includes/eagle-from-columbia.md}
+
+
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_books/includes/the-atomic-human-us.md}
+
+\include{_physics/includes/the-earth-seen-from-apollo-17.md}
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
+
+\include{_books/includes/the-atomic-human.md}
 
 \thanks
 

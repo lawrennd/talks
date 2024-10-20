@@ -8,9 +8,9 @@ abstract: >
   rational, data-driven and automated. The first step to digital
   transformation is mapping the world of atoms (material, customers,
   logistic networks) into the world of bits. But the real challenges
-  may start once this is complete. In this talk we introduce the
-  notion of 'post digital transformation': the challenges of doing
-  business in a digital world.
+  may start once this is complete. In this talk we consider the challenge
+  of bringing technology to bear on the problems we care about, how to
+  "bridge the innovation economy".
 date: 2024-11-07
 time: "9:00"
 pptx: False

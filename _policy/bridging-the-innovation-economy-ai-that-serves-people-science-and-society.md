@@ -30,20 +30,11 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 \include{_ml/includes/chat-gpt-mercutio.md}
 
 \include{_books/includes/a-question-of-trust.md}
-
-\include{_ai/includes/naca-proving.md}
-\include{_policy/includes/innovation-economy.md}
-\include{_ai/includes/p-n-fairness.md}
-
 \include{_ai/includes/the-great-ai-fallacy.md}
 
+\include{_policy/includes/innovation-economy.md}
 
-\include{_accelerate/includes/accelerate-programme.md}
 
-\notes{\include{_governance/includes/data-trusts.md}}
-\include{_governance/includes/data-trusts-initiative.md}
-
-\include{_ai/includes/ai-at-cam.md}
 
 \thanks
 

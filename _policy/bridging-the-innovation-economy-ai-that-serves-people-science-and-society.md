@@ -9,9 +9,9 @@ author:
   url: http://inverseprobability.com
 - given: Jessica
   family: Montgomery
-date: 2024-10-20
+date: 2024-12-03
 abstract: Artificial intelligence offers great promise, but we must ensure it does not deepen inequalities.  Today we are setting out our vision for AI@Cam, a new flagship mission at the University of Cambridge. 
-venue: TBA
+venue: Public Policy Annual Lecture, The Bennet Institute
 transition: None
 ---
 

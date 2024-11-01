@@ -20,6 +20,9 @@ venue: The Zangwill Lecture
 room: Ground Floor Lecture Theatre, Department of Psychology, University of Cambridge
 transition: None
 ---
+
+\subsection{Pre-emptive Apology}
+
 \define{noSlideTitle}
 
 
@@ -30,47 +33,22 @@ transition: None
 \include{_ai/includes/shannon-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/conversation-tedx.md}
+\include{_ai/includes/heider-simmel.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/baby-shoes.md}
 
 \include{_art/includes/blake-newton.md}
 
+\undef{slideNoTitle}
 <!-- System Zero -->
-\include{_ai/includes/elephant-boy-poster.md}
-\include{_ai/includes/elephant-system-one.md}
-\notes{You can also check my }\addblog{System Zero}{2015/12/04/what-kind-of-ai}\notes{ This was also written in 2015.}
-
-\addreading{@Lawrence-atomic24}{Chapter 8}
-
-\newslide{}
-
-\include{_ai/includes/mechanical-elephant.md}
-
-\newslide{}
-
-\includejpg{\diagramsDir/ai/star-trek-borg}{80%}
-\include{_ai/includes/thinking-fast-and-slow.md}
-\include{_ai/includes/the-hindoo-earth.md}
-
-\newslide{}
-
-\includejpg{\diagramsDir/ai/discworld-anhk-morpork-cover-art}{70%}
+\include{_ai/includes/system-zero.md}
 
 <!-- Complexities of manipulation -->
-\include{_physics/includes/little-red-bus.md}
-\include{_ai/includes/naca-proving.md}
-\include{_physics/includes/eagle-from-columbia.md}
+\include{_ai/includes/reacting-fast-and-slow.md}
 
-
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
-
-\include{_physics/includes/the-earth-seen-from-apollo-17.md}
-\include{_ai/includes/atrophy-and-cognitive-flattening.md}
-\include{_art/includes/blake-elohim-creating-adam.md}
-
-\include{_books/includes/the-atomic-human.md}
+<!-- New challenges -->
+\include{_ai/includes/bridging-quantitative-qualitative.md}
 
 \thanks
 

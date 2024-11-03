@@ -11,6 +11,7 @@ author:
 html: https://royalsociety.org/science-events-and-lectures/2024/07/the-atomic-human-friday/
 date: 2024-09-28
 geometry: ["a4paper", "margin=2cm"]
+youtube: ARhVhSNqtmc
 papersize: a4paper
 venue: Cambridge Alumni Festival
 transition: None

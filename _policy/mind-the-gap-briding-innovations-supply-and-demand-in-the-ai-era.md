@@ -20,6 +20,8 @@ venue: Public Policy Annual Lecture, The Bennett Institute
 transition: None
 ---
 
+<!-- Negotiating Innovation: institutions slow speed of adoption allow people to negotiate how the technologies are used. -->
+
 \include{_ai/includes/henry-ford-intro.md}
 \include{_policy/includes/panacea-solves-problems.md}
 \include{_ai/includes/cuneiform.md}

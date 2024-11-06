@@ -68,6 +68,7 @@ transition: None
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
+\include{_ai/includes/ai-at-cam-public-dialogue.md}
 
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}

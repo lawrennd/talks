@@ -37,7 +37,7 @@ transition: None
 \section{Introduction}
 
 
-\slides{\aligncenter{\neilLawrencePicture{20%}}
+\slides{\aligncenter{\neilDLawrencePicture{20%}}
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 

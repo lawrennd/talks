@@ -49,9 +49,8 @@ transition: None
 3. visibility and some influence
 4. leader (lead on data and AI developments)}
 
-\section{Intellectual Debt}
 
-\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
+\include{_books/includes/the-atomic-human.md}
 
 <!-- Embodiment Factors-->
 
@@ -61,30 +60,33 @@ transition: None
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/new-flow-of-information.md}
 
-\include{_ai/includes/the-atomic-eye.md}
+
+\section{Intellectual Debt}
+
+\figure{\includepng{\diagramsDir/ai/2020-02-12-intellectual-debt}{70%}}{Jonathan Zittrain's term to describe the challenges of explanation that come with AI is Intellectual Debt.}{intellectual-debt}
 
 \include{_ai/includes/cuneiform.md}
 \include{_policy/includes/coin-pusher.md}
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
+
 \include{_dialogue/includes/ai-at-cam-public-dialogue.md}
+
+\include{_books/includes/a-question-of-trust.md}
+\include{_ai/includes/the-great-ai-fallacy.md}
+\include{_business/includes/digital-economy-failures.md}
+
+\include{_psychology/includes/selective-attention-bias.md}
+\include{_data-science/includes/data-inattention-bias.md}
+
+\include{_art/includes/blake-newton.md}
 
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
-\include{_books/includes/a-question-of-trust.md}
-\include{_ai/includes/the-great-ai-fallacy.md}
-\include{_ai/includes/naca-proving.md}
-
-\include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
 \include{_business/includes/gorilla-conclusion.md}
-
-\include{_policy/includes/innovation-economy.md}
-
-\include{_books/includes/the-atomic-human.md}
 
 \reading
 

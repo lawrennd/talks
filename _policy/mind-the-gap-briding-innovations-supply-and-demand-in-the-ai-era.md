@@ -29,6 +29,8 @@ transition: None
 \include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
+\include{_dialogue/includes/ai-at-cam-public-dialogue.md}
+
 \include{_books/includes/a-question-of-trust.md}
 \include{_ai/includes/the-great-ai-fallacy.md}
 \include{_ai/includes/naca-proving.md}

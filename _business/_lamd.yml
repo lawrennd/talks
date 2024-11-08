@@ -38,6 +38,3 @@ ghub:
   repository: talks
   branch: gh-pages
   directory: _business
-layout: talk
-
-  

@@ -26,9 +26,17 @@ transition: None
 
 \newslide{Engineering Systems and Complexity}
 
-\include{_ai/includes/colossus-mark-2.md}
-\include{_art/includes/blake-newton.md}
 
+\include{_ai/includes/colossus-mark-2.md}
+
+\notes{The early programmers of these systems like Dorothy and Elsie were women, but over time female programmers were marginalised from these roles [@Light-computers99,@Ensmenger-computer2012,@Hicks-programmed17].}
+
+\notes{From the website of @Hicks-programmed17.
+
+> In Programmed Inequality, Marie Hicks explores the story of labor feminization and gendered technocracy that undercut British efforts to computerize. That failure sprang from the government's systematic neglect of its largest trained technical workforce simply because they were women. Women were a hidden engine of growth in high technology from World War II to the 1960s. As computing experienced a gender flip, becoming male-identified in the 1960s and 1970s, labor problems grew into structural ones and gender discrimination caused the nation's largest computer user―the civil service and sprawling public sector―to make decisions that were disastrous for the British computer industry and the nation as a whole.
+}
+
+\include{_art/includes/blake-newton.md}
 \include{_software/includes/separation-of-concerns.md}
 
 \include{_engineering/includes/engineering-complexity.md}
@@ -50,13 +58,14 @@ transition: None
 \subsection{The Atomic Human in Engineering}
 
 \slides{* Human-Machine Interface:
-    * Apollo's careful design balance
-    * HAMs as convergent evolution
-    * Digital systems need human agency
+  * Apollo's careful design balance
+  * HAMs as convergent evolution
+  * Digital systems need human agency
+
 * Engineering Future:
-    * Tools not replacements
-    * Institutional accountability
-    * Understanding capabilities AND limitations}
+  * Tools not replacements
+  * Institutional accountability
+  * Understanding capabilities AND limitations}
 
 
 \notes{The connection between classical feedback control and linguistic interaction has been pioneered in the "Closed-Loop Data Science" project at the University of Glasgow led by Rod Murray-Smith [@Murray-Smith-closedloop18]. This EPSRC-funded research recognizes a crucial challenge: when we act on data, we change the world, potentially invalidating older data. Just as test pilots needed continuous feedback to adapt to changing conditions, modern AI systems need mechanisms for ongoing adaptation and experimentation. The project demonstrates how principles from control engineering can inform the design of interactive AI systems that maintain human agency while dealing with complex, evolving data landscapes.}

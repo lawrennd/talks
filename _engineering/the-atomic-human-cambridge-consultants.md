@@ -8,6 +8,7 @@ author:
   given: Neil D.
 venue: Cambridge Consultants
 date: 2024-11-08
+transition: None
 ---
 
 \include{_ai/includes/henry-ford-intro.md}
@@ -56,9 +57,6 @@ date: 2024-11-08
     * Tools not replacements
     * Institutional accountability
     * Understanding capabilities AND limitations}
-
-
-\addatomic{conclusions}{340-341, 344, 346-347, 358-359, 365-370}
 
 
 \notes{The connection between classical feedback control and linguistic interaction has been pioneered in the "Closed-Loop Data Science" project at the University of Glasgow led by Rod Murray-Smith [@Murray-Smith-closedloop18]. This EPSRC-funded research recognizes a crucial challenge: when we act on data, we change the world, potentially invalidating older data. Just as test pilots needed continuous feedback to adapt to changing conditions, modern AI systems need mechanisms for ongoing adaptation and experimentation. The project demonstrates how principles from control engineering can inform the design of interactive AI systems that maintain human agency while dealing with complex, evolving data landscapes.}

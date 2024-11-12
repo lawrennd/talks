@@ -19,8 +19,6 @@ venue: BBC Lectures on ML
 transition: None
 ---
 
-\include{talk-macros.gpp}
-
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
@@ -37,19 +35,8 @@ transition: None
 
 \subsection{Lean Startup Methodology}
 
-\includes{_software/includes/mythical-man-month.md}
-
-\figure{\includejpg{\diagramsDir/ai/Mythical_man-month_(book_cover)}{40%}}{The Mythical Man-month [@Brooks:mythical75] is a 1975 book focussed on the challenges of software project coordination.}{intellectual-debt}
-
-\subsection{Separation of Concerns}
-
-\newslide{Intellectual Debt}
-
--   Technical debt is the inability to *maintain* your complex software
-    system.
-
--   Intellectual debt is the inability to *explain* your software
-    system.
+\include{_engineering/includes/mythical-man-month.md}
+\include{_engineering/includes/separation-of-concerns.md}
 
 
 \subsection{Virtual Gemba Walks}

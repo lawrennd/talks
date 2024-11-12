@@ -169,8 +169,8 @@ When carelessly deployed, AI risks exacerbating existing social and economic ine
 
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_software/includes/horizon-scandal.md}
-\include{_software/includes/separation-of-concerns.md}
-\include{_software/includes/mythical-man-month.md}
+\include{_engineering/includes/separation-of-concerns.md}
+\include{_engineering/includes/mythical-man-month.md}
 \include{_ai/includes/artificial-vs-natural-systems.md}
 \include{_ai/includes/ml-system-decomposability.md}
 \include{_ai/includes/ride-allocation-prediction.md}

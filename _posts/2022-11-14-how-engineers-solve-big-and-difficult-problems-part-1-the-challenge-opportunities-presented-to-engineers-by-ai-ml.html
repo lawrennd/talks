@@ -20,10 +20,9 @@ author:
   twitter: lawrennd
   gscholar: r3SJcvoAAAAJ
   orcid: 
-edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_ai/how-engineers-solve-big-and-difficult-problems-part-1-the-challenge-opportunities-presented-to-engineers-by-ai-ml.md
+edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_engineering/how-engineers-solve-big-and-difficult-problems-part-1-the-challenge-opportunities-presented-to-engineers-by-ai-ml.md
 date: 2022-11-14
 published: 2022-11-14
-week: 0
 reveal: 2022-11-14-how-engineers-solve-big-and-difficult-problems-part-1-the-challenge-opportunities-presented-to-engineers-by-ai-ml.slides.html
 transition: None
 ipynb: 2022-11-14-how-engineers-solve-big-and-difficult-problems-part-1-the-challenge-opportunities-presented-to-engineers-by-ai-ml.ipynb
@@ -54,7 +53,7 @@ class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>This small package is a helper package for various notebook utilities
-used</p>
+used below.</p>
 <p>The software can be installed using</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install notutils</span></code></pre></div>
@@ -113,7 +112,8 @@ class="uri">https://github.com/lawrennd/mlai</a></p>
 <p>Once <code>mlai</code> is installed, it can be imported in the usual
 manner.</p>
 <div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai <span class="im">import</span> plot</span></code></pre></div>
 <h2 id="complexity-in-action">Complexity in Action</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -270,6 +270,11 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a h
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>female_corr, _ <span class="op">=</span> pearsonr(female_steps, female_bmi)</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Pearson&#39;s correlation for females: </span><span class="sc">{corr}</span><span class="st">&quot;</span>.<span class="bu">format</span>(corr<span class="op">=</span>female_corr))</span></code></pre></div>
 <h2 id="a-hypothesis-as-a-liability">A Hypothesis as a Liability</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/hypothesis-as-a-liability.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/hypothesis-as-a-liability.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p>This analysis is from an article titled “A Hypothesis as a Liability”
 <span class="citation" data-cites="Yanai-hypothesis20">(Yanai and
 Lercher, 2020)</span>, they start their article with the following quite
@@ -292,7 +297,7 @@ Magnus Rattray and Guido Sanguinetti.</p>
 <div class="figure">
 <div id="licsb-popper-quote-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//data-science/licsb-popper-quote.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//data-science/licsb-popper-quote.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="licsb-popper-quote-magnify" class="magnify"
@@ -381,7 +386,7 @@ mind. In this sense it has strong relations to classical statistics.</p>
 <p>Classically artificial intelligence worried more about <em>logic</em>
 and <em>planning</em> and focused less on data driven decision making.
 Modern machine learning owes more to the field of <em>Cybernetics</em>
-<span class="citation" data-cites="Wiener:cybernetics48">(Wiener,
+<span class="citation" data-cites="Wiener-cybernetics48">(Wiener,
 1948)</span> than artificial intelligence. Related fields include
 <em>robotics</em>, <em>speech recognition</em>, <em>language
 understanding</em> and <em>computer vision</em>.</p>
@@ -463,7 +468,7 @@ mathematical statistics was developed to help temper this tendency and
 understand when we are valid in drawing conclusions from data.</p>
 <div class="figure">
 <div id="new-flow-of-information-3-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/slides/diagrams//data-science/new-flow-of-information003.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information003.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="new-flow-of-information-3-magnify" class="magnify"
@@ -503,7 +508,7 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/i
 <div class="figure">
 <div id="data-science-africa-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//data-science-africa-logo.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//data-science-africa-logo.png" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="data-science-africa-magnify" class="magnify"
@@ -519,7 +524,7 @@ artificial intelligence on the African continent.</p>
 </div>
 <div class="figure">
 <div id="dsa-events-october-2021-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/slides/diagrams//dsa/dsa-events-october-2021.svg" width="60%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//dsa/dsa-events-october-2021.svg" width="60%" style=" ">
 </object>
 </div>
 <div id="dsa-events-october-2021-magnify" class="magnify"
@@ -533,10 +538,11 @@ onclick="magnifyFigure(&#39;dsa-events-october-2021&#39;)">
 <p>Data Science Africa is a bottom up initiative for capacity building
 in data science, machine learning and artificial intelligence on the
 African continent.</p>
-<p>As of October 2021 there have been five workshops and five schools,
-located in Nyeri, Kenya (twice); Kampala, Uganda; Arusha, Tanzania;
-Abuja, Nigeria; Addis Ababa, Ethiopia; Accra, Ghana; Kampala, Uganda and
-Kimberley, South Africa.</p>
+<p>As of May 2023 there have been eleven workshops and schools, located
+in seven different countries: Nyeri, Kenya (twice); Kampala, Uganda;
+Arusha, Tanzania; Abuja, Nigeria; Addis Ababa, Ethiopia; Accra, Ghana;
+Kampala, Uganda and Kimberley, South Africa (virtual), and in Kigali,
+Rwanda.</p>
 <p>The main notion is <em>end-to-end</em> data science. For example,
 going from data collection in the farmer’s field to decision making in
 the Ministry of Agriculture. Or going from malaria disease counts in
@@ -555,7 +561,7 @@ scientists and academics based on the African continent.</p>
 <div class="figure">
 <div id="africa-benefit-data-revolution-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//data-science/africa-benefit-data-revolution.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//data-science/africa-benefit-data-revolution-2024.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="africa-benefit-data-revolution-magnify" class="magnify"
@@ -583,7 +589,7 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_health/include
 </div>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip0">
+<defs> <clipPath id="clip62">
 <style>
 circle {
   fill: black;
@@ -593,10 +599,10 @@ circle {
 <title>
 Martin Mubangizi
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/slides/diagrams//people/martin-mubangizi.png" clip-path="url(#clip0)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/martin-mubangizi.png" clip-path="url(#clip62)"/>
 </svg>
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip1">
+<defs> <clipPath id="clip13">
 <style>
 circle {
   fill: black;
@@ -604,12 +610,12 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/> </clipPath> </defs>
 <title>
-Ricardo Andrade Pacecho
+Ricardo Andrade Pacheco
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/slides/diagrams//people/ricardo-andrade-pacheco.png" clip-path="url(#clip1)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/ricardo-andrade-pacheco.png" clip-path="url(#clip13)"/>
 </svg>
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip2">
+<defs> <clipPath id="clip60">
 <style>
 circle {
   fill: black;
@@ -619,7 +625,7 @@ circle {
 <title>
 John Quinn
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/slides/diagrams//people/john-quinn.jpg" clip-path="url(#clip2)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/john-quinn.jpg" clip-path="url(#clip60)"/>
 </svg>
 </div>
 <p>As an example of using Gaussian process models within the full
@@ -652,7 +658,7 @@ based in the Tororo district.</p>
 <div class="figure">
 <div id="uganda-districts-2006-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//health/uganda-districts-2006.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//health/uganda-districts-2006.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="uganda-districts-2006-magnify" class="magnify"
@@ -677,7 +683,7 @@ data-cites="Gething:hmis06">(Gething et al., 2006)</span> and diagnosis
 of diseases like typhoid and malaria may be confounded.</p>
 <div class="figure">
 <div id="tororo-district-in-uganda-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/slides/diagrams//health/Tororo_District_in_Uganda.svg" width="50%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//health/Tororo_District_in_Uganda.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="tororo-district-in-uganda-magnify" class="magnify"
@@ -699,7 +705,7 @@ Nagongera.</p>
 <div class="figure">
 <div id="sentinel-nagongera-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="negate" src="https://inverseprobability.com/slides/diagrams//health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="negate" src="https://inverseprobability.com/talks/../slides/diagrams//health/sentinel_nagongera.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="sentinel-nagongera-magnify" class="magnify"
@@ -721,7 +727,7 @@ rainfall and temperature, to improve predictions from HMIS data of
 levels of malaria.</p>
 <div class="figure">
 <div id="mubende-district-in-uganda-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/slides/diagrams//health/Mubende_District_in_Uganda.svg" width="50%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//health/Mubende_District_in_Uganda.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="mubende-district-in-uganda-magnify" class="magnify"
@@ -735,7 +741,7 @@ onclick="magnifyFigure(&#39;mubende-district-in-uganda&#39;)">
 <div class="figure">
 <div id="malaria-prediction-mubende-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//health/mubende.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//health/mubende.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="malaria-prediction-mubende-magnify" class="magnify"
@@ -748,8 +754,8 @@ onclick="magnifyFigure(&#39;malaria-prediction-mubende&#39;)">
 </div>
 <div class="figure">
 <div id="-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//gpss/1157497_513423392066576_1845599035_n.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//gpss/1157497_513423392066576_1845599035_n.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
@@ -764,7 +770,7 @@ Data Science Africa initiative.</p>
 <h2 id="early-warning-systems">Early Warning Systems</h2>
 <div class="figure">
 <div id="kabarole-district-in-uganda-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/slides/diagrams//health/Kabarole_District_in_Uganda.svg" width="50%" style=" ">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//health/Kabarole_District_in_Uganda.svg" width="50%" style=" ">
 </object>
 </div>
 <div id="kabarole-district-in-uganda-magnify" class="magnify"
@@ -778,7 +784,7 @@ onclick="magnifyFigure(&#39;kabarole-district-in-uganda&#39;)">
 <div class="figure">
 <div id="kabarole-disease-over-time-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//health/kabarole.gif" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="kabarole-disease-over-time-magnify" class="magnify"
@@ -813,7 +819,7 @@ the effect is small.</p>
 <div class="figure">
 <div id="early-warning-system-map-figure" class="figure-frame">
 <div class="centered" style="">
-<img class="" src="https://inverseprobability.com/slides/diagrams//health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//health/monitor.gif" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="early-warning-system-map-magnify" class="magnify"
@@ -832,6 +838,9 @@ disease across the country.</p>
 <p>For more information on these subjects and more you might want to
 check the following resources.</p>
 <ul>
+<li>book: <a
+href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
+Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
 <li>podcast: <a href="http://thetalkingmachines.com">The Talking
 Machines</a></li>
@@ -843,56 +852,50 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
-role="doc-bibliography">
-<div id="ref-Andrade:consistent14" class="csl-entry"
-role="doc-biblioentry">
+role="list">
+<div id="ref-Andrade:consistent14" class="csl-entry" role="listitem">
 Andrade-Pacheco, R., Mubangizi, M., Quinn, J., Lawrence, N.D., 2014.
 Consistent mapping of government malaria records across a changing
 territory delimitation. Malaria Journal 13. <a
 href="https://doi.org/10.1186/1475-2875-13-S1-P5">https://doi.org/10.1186/1475-2875-13-S1-P5</a>
 </div>
-<div id="ref-Felin-data20" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Felin-data20" class="csl-entry" role="listitem">
 Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R.,
 2021. The data-hypothesis relationship. Genome Biology 22. <a
 href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>
 </div>
-<div id="ref-Gething:hmis06" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Gething:hmis06" class="csl-entry" role="listitem">
 Gething, P.W., Noor, A.M., Gikandi, P.W., Ogara, E.A.A., Hay, S.I.,
 Nixon, M.S., Snow, R.W., Atkinson, P.M., 2006. Improving imperfect data
 from health management information systems in <span>A</span>frica using
 space–time geostatistics. PLoS Medicine 3. <a
 href="https://doi.org/10.1371/journal.pmed.0030271">https://doi.org/10.1371/journal.pmed.0030271</a>
 </div>
-<div id="ref-Lawrence:dsa15" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Lawrence:dsa15" class="csl-entry" role="listitem">
 Lawrence, N.D., 2015. <a
 href="https://www.theguardian.com/media-network/2015/aug/25/africa-benefit-data-science-information">How
 <span>A</span>frica can benefit from the data revolution</a>.
 </div>
-<div id="ref-Lawrence:licsbintro10" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-Lawrence:licsbintro10" class="csl-entry" role="listitem">
 Lawrence, N.D., 2010. Introduction to learning and inference in
 computational systems biology.
 </div>
-<div id="ref-Mubangizi:malaria14" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-Mubangizi:malaria14" class="csl-entry" role="listitem">
 Mubangizi, M., Andrade-Pacheco, R., Smith, M.T., Quinn, J., Lawrence,
 N.D., 2014. Malaria surveillance with multiple data sources using
 <span>Gaussian</span> process models, in: 1st International Conference
 on the Use of Mobile <span>ICT</span> in Africa.
 </div>
-<div id="ref-Simons-gorillas99" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-Simons-gorillas99" class="csl-entry" role="listitem">
 Simons, D.J., Chabris, C.F., 1999. Gorillas in our midst: Sustained
 inattentional blindness for dynamic events. Perception 28, 1059–1074. <a
 href="https://doi.org/10.1068/p281059">https://doi.org/10.1068/p281059</a>
 </div>
-<div id="ref-Wiener:cybernetics48" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-Wiener-cybernetics48" class="csl-entry" role="listitem">
 Wiener, N., 1948. Cybernetics: Control and communication in the animal
-and the machine. MIT Press, Cambridge, MA.
+and the machine. mitp, Cambridge, MA.
 </div>
-<div id="ref-Yanai-hypothesis20" class="csl-entry"
-role="doc-biblioentry">
+<div id="ref-Yanai-hypothesis20" class="csl-entry" role="listitem">
 Yanai, I., Lercher, M., 2020. A hypothesis is a liability. Genome
 Biology 21.
 </div>

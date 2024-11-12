@@ -23,8 +23,8 @@ transition: None
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
-\include{_software/includes/separation-of-concerns.md}
-\include{_software/includes/mythical-man-month.md}
+\include{_engineering/includes/separation-of-concerns.md}
+\include{_engineering/includes/mythical-man-month.md}
 \include{_ai/includes/ml-system-decomposability.md}
 
 \include{_ai/includes/embodiment-factors-celsius.md}

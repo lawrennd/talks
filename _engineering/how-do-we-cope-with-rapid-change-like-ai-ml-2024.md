@@ -22,7 +22,7 @@ ipynb: True
 transition: None
 ---
 
-\slides{\aligncenter{\neilLawrencePicture{20%}}
+\slides{\aligncenter{\neilDLawrencePicture{20%}}
 \aligncenter{Neil Lawrence}
 \aligncenter{Professor of Machine Learning}}
 
@@ -33,7 +33,7 @@ transition: None
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_data-science/includes/new-flow-of-information.md}
-
+\include{_dialogue/includes/ai-at-cam-public-dialogue.md}
 \newslide{The Challenges of Modern Systems}
 
 \include{_ai/includes/intellectual-debt-short.md}

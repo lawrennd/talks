@@ -1179,807 +1179,764 @@ increasingly abstract?</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
 (2024)</span> feedback failure p. 163-168, 189-196, 211-213, 334-336,
 340, 342-343, 365-366.</p>
-<h2 id="blakes-newton">Blake’s Newton</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>William Blake’s rendering of Newton captures humans in a particular
-state. He is trance-like absorbed in simple geometric shapes. The feel
-of dreams is enhanced by the underwater location, and the nature of the
-focus is enhanced because he ignores the complexity of the sea life
-around him.</p>
+<h2 id="summary-1">Summary</h2>
+<p>We’ve looked at the key difference between human and machine in terms
+of information bandwidth. We’ve seen how we can collaborate to create
+complex systems through separation of concerns. Engineering feedback
+gives us an ability to work with tools in a responsive way. In complex
+digital systems it has become hard to close the feedback loop in a
+sociotechnical system. When we fail to listen we create brittle systems
+that impose upon their users and when they fail the human consequences
+are severe.</p>
+<!--  -->
+<!-- 
+
+
+
+
+## Blake's Newton
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+William Blake's rendering of Newton captures humans in a particular state. He is trance-like absorbed in simple geometric shapes. The feel of dreams is enhanced by the underwater location, and the nature of the focus is enhanced because he ignores the complexity of the sea life around him.
+
 <div class="figure">
-<div id="blake-newton-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-newton.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="blake-newton-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-newton.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="blake-newton-magnify" onclick="magnifyFigure('blake-newton')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="blake-newton-caption">
+Figure: William Blake's *Newton*. 1795c-1805
 </div>
 </div>
-<div id="blake-newton-magnify" class="magnify"
-onclick="magnifyFigure(&#39;blake-newton&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="blake-newton-caption" class="caption-frame">
-<p>Figure: William Blake’s <em>Newton</em>. 1795c-1805</p>
-</div>
-</div>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> Blake, William <em>Newton</em> p. 121–123.</p>
-<p>The caption in the Tate Britain reads:</p>
-<blockquote>
-<p>Here, Blake satirises the 17th-century mathematician Isaac Newton.
-Portrayed as a muscular youth, Newton seems to be underwater, sitting on
-a rock covered with colourful coral and lichen. He crouches over a
-diagram, measuring it with a compass. Blake believed that Newton’s
-scientific approach to the world was too reductive. Here he implies
-Newton is so fixated on his calculations that he is blind to the world
-around him. This is one of only 12 large colour prints Blake made. He
-seems to have used an experimental hybrid of printing, drawing, and
-painting.</p>
-<p>From the <a
-href="https://www.tate.org.uk/art/artworks/blake-newton-n05058">Tate
-Britain</a></p>
-</blockquote>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> Blake, William <em>Newton</em> p. 121–123, 258, 260, 283,
-284, 301, 306.</p>
-<h2 id="engineering-complexity-and-understanding">Engineering Complexity
-and Understanding</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/engineering-complexity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/engineering-complexity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The challenge of understanding complex systems has evolved
-dramatically since the early days of mechanical engineering. While the
-Apollo guidance computer contained 145,000 lines of code that were
-deeply understood by its creators, modern cars contain over 100 million
-lines. This increase in complexity isn’t just about quantity - it
-represents a fundamental shift in our ability to comprehend the systems
-we build.</p>
-<p>The Apollo 11 landing provides a crucial lesson. When program alarms
-indicated computer overload, it was the deep understanding of the
-system’s priorities by the Mission Control team that allowed them to
-continue safely. This level of comprehension is increasingly rare in
-modern systems, where layers of abstraction and automation obscure the
-underlying mechanisms.</p>
-<p>For service oriented architectures, as companies have grown in
-complexity they have more complex interactions between different
-services.</p>
-<h2 id="microservices-at-amazon-and-netflix">Microservices at Amazon and
-Netflix</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_architectures/includes/netflix-and-amazon-soa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_architectures/includes/netflix-and-amazon-soa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+See @Lawrence-atomic24 Blake, William *Newton* p. 121–123.
+
+The caption in the Tate Britain reads:
+
+> Here, Blake satirises the 17th-century mathematician Isaac Newton. Portrayed as a muscular youth, Newton seems to be underwater, sitting on a rock covered with colourful coral and lichen. He crouches over a diagram, measuring it with a compass. Blake believed that Newton’s scientific approach to the world was too reductive. Here he implies Newton is so fixated on his calculations that he is blind to the world around him. This is one of only 12 large colour prints Blake made. He seems to have used an experimental hybrid of printing, drawing, and painting. 
+>
+> From the [Tate Britain](https://www.tate.org.uk/art/artworks/blake-newton-n05058)
+> 
+
+See @Lawrence-atomic24 Blake, William *Newton* p. 121–123, 258, 260, 283, 284, 301, 306.
+
+
+ -->
+<!-- 
+ -->
+<!-- 
+
+
+
+
+## Engineering Complexity and Understanding
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/engineering-complexity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/engineering-complexity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The challenge of understanding complex systems has evolved dramatically since the early days of mechanical engineering. While the Apollo guidance computer contained 145,000 lines of code that were deeply understood by its creators, modern cars contain over 100 million lines. This increase in complexity isn't just about quantity - it represents a fundamental shift in our ability to comprehend the systems we build.
+
+
+
+The Apollo 11 landing provides a crucial lesson. When program alarms indicated computer overload, it was the deep understanding of the system's priorities by the Mission Control team that allowed them to continue safely. This level of comprehension is increasingly rare in modern systems, where layers of abstraction and automation obscure the underlying mechanisms.
+
+For service oriented architectures, as companies have grown in complexity they have more complex interactions between different services.
+
+
+
+
+
+
+## Microservices at Amazon and Netflix
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_architectures/includes/netflix-and-amazon-soa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_architectures/includes/netflix-and-amazon-soa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="amazon-netflix-microservices-scandal-figure"
-class="figure-frame">
-<table>
-<tr>
-<td width="40%">
-<center>
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//architectures/amazon-microservices.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="amazon-netflix-microservices-scandal-figure">
+<table><tr><td width="40%"><center><div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//architectures/amazon-microservices.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div></center><object class="" data="https://inverseprobability.com/talks/../slides/diagrams//logos/amazon.svg" width="30%" style=" "></object></td><td width="2%"></td><td width="40%"><center><div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//architectures/netflix-microservices.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div><object class="" data="https://inverseprobability.com/talks/../slides/diagrams//logos/netflix.svg" width="" style=" "></object></center></td></tr></table>
 </div>
-</center>
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//logos/amazon.svg" width="30%" style=" ">
-</object>
-</td>
-<td width="2%">
-</td>
-<td width="40%">
-<center>
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//architectures/netflix-microservices.png" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//logos/netflix.svg" width style=" ">
-</object>
-</center>
-</td>
-</tr>
-</table>
-</div>
-<div id="amazon-netflix-microservices-scandal-magnify" class="magnify"
-onclick="magnifyFigure(&#39;amazon-netflix-microservices-scandal&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="amazon-netflix-microservices-scandal-caption"
-class="caption-frame">
-<p>Figure: Microservice architectures in different companies as shared
-by <a
-href="https://www.cloudflight.io/en/blog/10-companies-that-implemented-the-microservice-architecture-and-paved-the-way-for-others/">this
-blog by Aleksandra Kwiecień</a>.</p>
+<div class="magnify" id="amazon-netflix-microservices-scandal-magnify" onclick="magnifyFigure('amazon-netflix-microservices-scandal')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="amazon-netflix-microservices-scandal-caption">
+Figure: Microservice architectures in different companies as shared by [this blog by Aleksandra Kwiecień](https://www.cloudflight.io/en/blog/10-companies-that-implemented-the-microservice-architecture-and-paved-the-way-for-others/).
 </div>
 </div>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> engineering complexity p. 198-204, 342-343, 365-366.</p>
-<h2 id="engineering-consultation-in-the-age-of-ai">Engineering
-Consultation in the Age of AI</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/consulting-challenges.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/consulting-challenges.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Engineering consultants today face a unique challenge at the
-intersection of human and machine capabilities. The tendency to focus
-purely on technical solutions can obscure crucial human factors that
-determine a system’s success or failure in practice.</p>
-<p>When developing solutions, four critical factors must be
-balanced:</p>
-<ol type="1">
-<li>How will humans interact with and understand the system?</li>
-<li>What assumptions are we embedding in our design?</li>
-<li>How can we maintain human agency while leveraging automation?</li>
-<li>Where should we prioritize explainability over efficiency?</li>
-</ol>
-<p>These questions reflect the fundamental tension between human
-understanding and machine capability that lies at the heart of modern
-engineering challenges.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> consultation challenges p. 340-341, 348-349, 351-352,
-363-366, 369-370.</p>
-<h2 id="the-moniac">The MONIAC</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_simulation/includes/the-moniac.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_simulation/includes/the-moniac.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p><a href="https://en.wikipedia.org/wiki/MONIAC">The MONIAC</a> was an
-analogue computer designed to simulate the UK economy. Analogue
-comptuers work through analogy, the analogy in the MONIAC is that both
-money and water flow. The MONIAC exploits this through a system of
-tanks, pipes, valves and floats that represent the flow of money through
-the UK economy. Water flowed from the treasury tank at the top of the
-model to other tanks representing government spending, such as health
-and education. The machine was initially designed for teaching support
-but was also found to be a useful economic simulator. Several were built
-and today you can see the original at Leeds Business School, there is
-also one in the London Science Museum and one <a
-href="https://www.econ.cam.ac.uk/economics-alumni/drip-down-economics-phillips-machine">in
-the Unisversity of Cambridge’s economics faculty</a>.</p>
+
+
+
+
+See @Lawrence-atomic24 engineering complexity p. 198-204, 342-343, 365-366.
+
+
+ -->
+<!--  -->
+<!-- 
+ -->
+<!-- 
+ -->
+<!-- 
+ -->
+<!-- 
+
+
+
+
+## Engineering Consultation in the Age of AI
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/consulting-challenges.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/consulting-challenges.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+Engineering consultants today face a unique challenge at the intersection of human and machine capabilities. The tendency to focus purely on technical solutions can obscure crucial human factors that determine a system's success or failure in practice.
+
+
+
+When developing solutions, four critical factors must be balanced:
+
+1. How will humans interact with and understand the system?
+2. What assumptions are we embedding in our design?
+3. How can we maintain human agency while leveraging automation?
+4. Where should we prioritize explainability over efficiency?
+
+These questions reflect the fundamental tension between human understanding and machine capability that lies at the heart of modern engineering challenges.
+
+See @Lawrence-atomic24 consultation challenges p. 340-341, 348-349, 351-352, 363-366, 369-370.
+
+
+ -->
+<!--  -->
+<!-- 
+
+
+
+
+
+
+
+
+
+## The MONIAC
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_simulation/includes/the-moniac.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_simulation/includes/the-moniac.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+[The MONIAC](https://en.wikipedia.org/wiki/MONIAC) was an analogue computer designed to simulate the UK economy. Analogue comptuers work through analogy, the analogy in the MONIAC is that both money and water flow. The MONIAC exploits this through a system of tanks, pipes, valves and floats that represent the flow of money through the UK economy. Water flowed from the treasury tank at the top of the model to other tanks representing government spending, such as health and education. The machine was initially designed for teaching support but was also found to be a useful economic simulator. Several were built and today you can see the original at Leeds Business School, there is also one in the London Science Museum and one [in the Unisversity of Cambridge's economics faculty](https://www.econ.cam.ac.uk/economics-alumni/drip-down-economics-phillips-machine).
+
 <div class="figure">
-<div id="the-moniac-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/Phillips_and_MONIAC_LSE.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="the-moniac-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//simulation/Phillips_and_MONIAC_LSE.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="the-moniac-magnify" onclick="magnifyFigure('the-moniac')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="the-moniac-caption">
+Figure: Bill Phillips and his MONIAC (completed in 1949). The machine is an analogue computer designed to simulate the workings of the UK economy.
 </div>
 </div>
-<div id="the-moniac-magnify" class="magnify"
-onclick="magnifyFigure(&#39;the-moniac&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="the-moniac-caption" class="caption-frame">
-<p>Figure: Bill Phillips and his MONIAC (completed in 1949). The machine
-is an analogue computer designed to simulate the workings of the UK
-economy.</p>
-</div>
-</div>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> MONIAC p. 232-233, 266, 343.</p>
-<h2 id="donald-mackay">Donald MacKay</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+See @Lawrence-atomic24 MONIAC p. 232-233, 266, 343.
+
+
+
+
+
+
+
+## Donald MacKay
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="donald-maccrimmon-mackay-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//people/DonaldMacKay1952.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="donald-maccrimmon-mackay-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//people/DonaldMacKay1952.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="donald-maccrimmon-mackay-magnify" onclick="magnifyFigure('donald-maccrimmon-mackay')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="donald-maccrimmon-mackay-caption">
+Figure: Donald M. 
+MacKay (1922-1987), a physicist who was an early member of the cybernetics 
+community and member of the Ratio Club.
 </div>
 </div>
-<div id="donald-maccrimmon-mackay-magnify" class="magnify"
-onclick="magnifyFigure(&#39;donald-maccrimmon-mackay&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="donald-maccrimmon-mackay-caption" class="caption-frame">
-<p>Figure: Donald M. MacKay (1922-1987), a physicist who was an early
-member of the cybernetics community and member of the Ratio Club.</p>
-</div>
-</div>
-<p>Donald MacKay was a physicist who worked on naval gun targeting
-during the Second World War. The challenge with gun targeting for ships
-is that both the target and the gun platform are moving. This was
-tackled using analogue computers - for example, in the US the <a
-href="https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer">Mark I
-fire control computer</a>, which was a mechanical computer. MacKay
-worked on radar systems for gun laying, where the velocity and distance
-of the target could be assessed through radar and a
-mechanical-electrical analogue computer.</p>
-<h2 id="fire-control-systems">Fire Control Systems</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Naval gunnery systems deal with targeting guns while taking into
-account movement of ships. The Royal Navy’s Gunnery Pocket Book <span
-class="citation" data-cites="Admiralty-gunnery45">(The Admiralty,
-1945)</span> gives details of one system for gun laying.</p>
-<p>Like many challenges we face today, in the second world war, fire
-control was handled by a hybrid system of humans and computers. This
-means deploying human beings for the tasks that they can manage, and
-machines for the tasks that are better performed by a machine. This
-leads to a division of labour between the machine and the human that can
-still be found in our modern digital ecosystems.</p>
+
+Donald MacKay was a physicist who worked on naval gun targeting 
+during the Second World War. The challenge with gun targeting for ships 
+is that both the target and the gun platform are moving. This was tackled 
+using analogue computers - for example, in the US the [Mark I fire control 
+computer](https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer), 
+which was a mechanical computer. MacKay worked on radar systems for gun 
+laying, where the velocity and distance of the target could be assessed 
+through radar and a mechanical-electrical analogue computer.
+
+
+
+
+
+
+
+
+## Fire Control Systems
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+Naval gunnery systems deal with targeting guns while taking into account movement of ships. The Royal Navy's Gunnery Pocket Book [@Admiralty-gunnery45] gives details of one system for gun laying.
+
+Like many challenges we face today, in the second world war, fire control was handled by a hybrid system of humans and computers. This means deploying human beings for the tasks that they can manage, and machines for the tasks that are better performed by a machine. This leads to a division of labour between the machine and the human that can still be found in our modern digital ecosystems.
+
 <div class="figure">
-<div id="low-angle-fire-control-team-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/low-angle-fire-control-team.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="low-angle-fire-control-team-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/low-angle-fire-control-team.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="low-angle-fire-control-team-magnify" onclick="magnifyFigure('low-angle-fire-control-team')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="low-angle-fire-control-team-caption">
+Figure: The fire control computer set at the centre of a system of observation and tracking [@Admiralty-gunnery45].
 </div>
 </div>
-<div id="low-angle-fire-control-team-magnify" class="magnify"
-onclick="magnifyFigure(&#39;low-angle-fire-control-team&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="low-angle-fire-control-team-caption" class="caption-frame">
-<p>Figure: The fire control computer set at the centre of a system of
-observation and tracking <span class="citation"
-data-cites="Admiralty-gunnery45">(The Admiralty, 1945)</span>.</p>
-</div>
-</div>
-<p>As analogue computers, fire control computers from the second world
-war would contain components that directly represented the different
-variables that were important in the problem to be solved, such as the
-inclination between two ships.</p>
+
+
+
+As analogue computers, fire control computers from the second world war would contain components that directly represented the different variables that were important in the problem to be solved, such as the inclination between two ships.
+
 <div class="figure">
-<div id="the-measurement-of-inclination-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/the-measurement-of-inclination.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="the-measurement-of-inclination-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/the-measurement-of-inclination.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="the-measurement-of-inclination-magnify" onclick="magnifyFigure('the-measurement-of-inclination')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="the-measurement-of-inclination-caption">
+Figure: Measuring inclination between two ships [@Admiralty-gunnery45]. Sophisticated fire control computers allowed the ship to continue to fire while under maneuvers.
 </div>
 </div>
-<div id="the-measurement-of-inclination-magnify" class="magnify"
-onclick="magnifyFigure(&#39;the-measurement-of-inclination&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="the-measurement-of-inclination-caption" class="caption-frame">
-<p>Figure: Measuring inclination between two ships <span
-class="citation" data-cites="Admiralty-gunnery45">(The Admiralty,
-1945)</span>. Sophisticated fire control computers allowed the ship to
-continue to fire while under maneuvers.</p>
-</div>
-</div>
-<p>The fire control systems were electro-mechanical analogue computers
-that represented the “state variables” of interest, such as inclination
-and ship speed with gears and cams within the machine.</p>
+
+
+
+The fire control systems were electro-mechanical analogue computers that represented the "state variables" of interest, such as inclination and ship speed with gears and cams within the machine.
+
 <div class="figure">
-<div id="typical-modern-fire-control-table-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/typical-modern-fire-control-table.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="typical-modern-fire-control-table-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/typical-modern-fire-control-table.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="typical-modern-fire-control-table-magnify" onclick="magnifyFigure('typical-modern-fire-control-table')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="typical-modern-fire-control-table-caption">
+Figure: A second world war gun computer's control table [@Admiralty-gunnery45].
 </div>
 </div>
-<div id="typical-modern-fire-control-table-magnify" class="magnify"
-onclick="magnifyFigure(&#39;typical-modern-fire-control-table&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="typical-modern-fire-control-table-caption"
-class="caption-frame">
-<p>Figure: A second world war gun computer’s control table <span
-class="citation" data-cites="Admiralty-gunnery45">(The Admiralty,
-1945)</span>.</p>
-</div>
-</div>
-<p>For more details on fire control computers, you can watch a 1953 film
-on the the US the <a
-href="https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer">Mark
-IA fire control computer</a> from Periscope Film.</p>
+
+
+
+For more details on fire control computers, you can watch a 1953 film on the the US the [Mark IA fire control computer](https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer) from Periscope Film.
+
 <div class="figure">
-<div id="us-navy-training-film-figure" class="figure-frame">
-<iframe width="600" height="450" src="https://www.youtube.com/embed/gwf5mAlI7Ug?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<div class="figure-frame" id="us-navy-training-film-figure">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/gwf5mAlI7Ug?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div id="us-navy-training-film-magnify" class="magnify"
-onclick="magnifyFigure(&#39;us-navy-training-film&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="us-navy-training-film-caption" class="caption-frame">
-<p>Figure: U.S. Navy training film MN-6783a. Basic Mechanisms of Fire
-Control Computers. Mechanical Computer Instructional Film 27794 (1953)
-for the Mk 1A Fire Control Computer.</p>
+<div class="magnify" id="us-navy-training-film-magnify" onclick="magnifyFigure('us-navy-training-film')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="us-navy-training-film-caption">
+Figure: U.S. Navy training film MN-6783a. Basic Mechanisms of Fire Control Computers. Mechanical Computer Instructional Film 27794 (1953) for the Mk 1A Fire Control Computer.
 </div>
 </div>
-<h2 id="behind-the-eye">Behind the Eye</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+
+
+
+
+
+
+
+
+## Behind the Eye
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="behind-the-eye-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/behind-the-eye.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="behind-the-eye-figure">
+<div class="centered centered" style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/behind-the-eye.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="behind-the-eye-magnify" onclick="magnifyFigure('behind-the-eye')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="behind-the-eye-caption">
+Figure: [Behind the Eye](https://www.amazon.co.uk/Behind-Eye-Gifford-Lectures-MACKAY/dp/0631173323) [@Mackay-behind91] summarises MacKay's Gifford Lectures, where MacKay uses the operation of the eye as a window on the operation of the brain.
 </div>
 </div>
-<div id="behind-the-eye-magnify" class="magnify"
-onclick="magnifyFigure(&#39;behind-the-eye&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="behind-the-eye-caption" class="caption-frame">
-<p>Figure: <a
-href="https://www.amazon.co.uk/Behind-Eye-Gifford-Lectures-MACKAY/dp/0631173323">Behind
-the Eye</a> <span class="citation" data-cites="Mackay-behind91">(MacKay,
-1991)</span> summarises MacKay’s Gifford Lectures, where MacKay uses the
-operation of the eye as a window on the operation of the brain.</p>
-</div>
-</div>
-<p>Donald MacKay completed his PhD at King’s College, just down the road
-from Bill Phillips who was building the MONIAC at LSE. He was part of
-the Ratio Club - a group of early career scientists interested in
-communication and control in animals and humans, or more specifically in
-computers and brains. They were part of an international movement known
-as cybernetics .</p>
-<p>Donald MacKay wrote of the influence that his own work on radar had
-on his interest in the brain.</p>
-<blockquote>
-<p>… during the war I had worked on the theory of automated and
-electronic computing and on the theory of information, all of which are
-highly relevant to such things as automatic pilots and automatic gun
-direction. I found myself grappling with problems in the design of
-artificial sense organs for naval gun-directors and with the principles
-on which electronic circuits could be used to simulate situations in the
-external world so as to provide goal-directed guidance for ships,
-aircraft, missiles and the like.</p>
-</blockquote>
-<blockquote>
-<p>Later in the 1940’s, when I was doing my Ph.D. work, there was much
-talk of the brain as a computer and of the early digital computers that
-were just making the headlines as “electronic brains.” As an analogue
-computer man I felt strongly convinced that the brain, whatever it was,
-was not a digital computer. I didn’t think it was an analogue computer
-either in the conventional sense.</p>
-</blockquote>
-<blockquote>
-<p>But this naturally rubbed under my skin the question: well, if it is
-not either of these, what kind of system is it? Is there any way of
-following through the kind of analysis that is appropriate to their
-artificial automata so as to understand better the kind of system the
-human brain is? That was the beginning of my slippery slope into brain
-research.</p>
-<p><em>Behind the Eye</em> pg 40. Edited version of the 1986 Gifford
-Lectures given by Donald M. MacKay and edited by Valerie MacKay</p>
-</blockquote>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> MacKay, Donald, <em>Behind the Eye</em> p. 268-270,
-316.</p>
-<p>MacKay’s distinction between <em>analogue</em> and <em>digital</em>
-computers is key. As an expert in analogue machines, he understood that
-an analogue computer is <em>literally</em> an analogue - its components
-(resistors, capacitors, inductors, or mechanical parts like cams and
-gears) have states that are physically analogous to the states in system
-being modeled. Engineers designed these computers by exploiting
-mathematical dualities between the computer and the real world. For
-example a mechanical system (mass-spring-damper) and electrical circuit
-(inductor-resistor-capacitor) could be described by the same
-second-order differential equations, allowing designers to map
-real-world problems through mathematics into virtual
-representations.</p>
-<p>MacKay’s insights remain relevant when considering modern AI systems.
-His questioning of whether the brain was truly digital or analogue might
-parallel current debates about large language models like Claude and
-ChatGPT, which seem to operate in ways that don’t neatly fit either
-paradigm. His work reminds us that understanding the fundamental nature
-of intelligent systems - whether biological or artificial - requires
-looking beyond simple categorizations.</p>
-<h2 id="human-analogue-machine">Human Analogue Machine</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The machine learning systems we have built today that can reconstruct
-human text, or human classification of images, necessarily must have
-some aspects to them that are analagous to our understanding. As MacKay
-suggests the brain is neither a digital or an analogue computer, and the
-same can be said of the modern neural network systems that are being
-tagged as “artificial intelligence”.</p>
-<p>I believe a better term for them is “human-analogue machines”,
-because what we have built is not a system that can make intelligent
-decisions from first principles (a rational approach) but one that
-observes how humans have made decisions through our data and
-reconstructs that process. Machine learning is more empiricist than
-rational, but now we have an empirical approach that distils our evolved
-intelligence.</p>
-<p>HAMs are not representing states of the outside world with analogous
-states inside the machine, they are also not (directly) processing
-digital states through logic gates to draw their conclusions (although
-they are implemented on digital computers that do this to enable them to
-update).</p>
+
+
+
+
+
+
+
+Donald MacKay completed his PhD at King's College, just down 
+the road from Bill Phillips who was building the MONIAC at LSE. He was 
+part of the Ratio Club - a group of early career 
+scientists interested in communication and control in animals and humans, 
+or more specifically in computers and brains. They were part of an international 
+movement known as cybernetics
+.
+ 
+Donald MacKay wrote of the influence that his own work on radar had on
+his interest in the brain.
+
+> ... during the war I had worked on the theory of automated and
+> electronic computing and on the theory of information, all of which
+> are highly relevant to such things as automatic pilots and automatic
+> gun direction. I found myself grappling with problems in the design of
+> artificial sense organs for naval gun-directors and with the
+> principles on which electronic circuits could be used to simulate
+> situations in the external world so as to provide goal-directed
+> guidance for ships, aircraft, missiles and the like.
+
+> Later in the 1940's, when I was doing my Ph.D. work, there was much
+> talk of the brain as a computer and of the early digital computers
+> that were just making the headlines as "electronic brains." As an
+> analogue computer man I felt strongly convinced that the brain,
+> whatever it was, was not a digital computer. I didn't think it was an
+> analogue computer either in the conventional sense.
+
+
+> But this naturally rubbed under my skin the question: well, if it is
+> not either of these, what kind of system is it? Is there any way of
+> following through the kind of analysis that is appropriate to their
+> artificial automata so as to understand better the kind of system the
+> human brain is? That was the beginning of my slippery slope into brain
+> research.
+>
+> *Behind the Eye* pg 40. Edited version of the 1986 Gifford Lectures given by Donald M. MacKay and edited by Valerie MacKay
+
+
+See @Lawrence-atomic24 MacKay, Donald, *Behind the Eye* p. 268-270, 316.
+
+MacKay's distinction between *analogue* and *digital* computers 
+is key. As an expert in analogue machines, he understood that an 
+analogue computer is *literally* an analogue - its components (resistors, 
+capacitors, inductors, or mechanical parts like cams and gears) have states
+that are physically analogous to the states in system being modeled. Engineers 
+designed these computers by exploiting mathematical dualities between the 
+computer and the real world. For example a mechanical system (mass-spring-damper) 
+and electrical circuit (inductor-resistor-capacitor) could be described by the 
+same second-order differential equations, allowing designers to map real-world 
+problems through mathematics into virtual representations.
+
+MacKay's insights remain relevant when considering modern AI systems. 
+His questioning of whether the brain was truly digital or analogue might parallel 
+current debates about large language models like Claude and ChatGPT, which seem to 
+operate in ways that don't neatly fit either paradigm. His work reminds us that 
+understanding the fundamental nature of intelligent systems - whether biological 
+or artificial - requires looking beyond simple categorizations.
+
+
+
+
+
+
+
+
+## Human Analogue Machine
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The machine learning systems we have built today that can reconstruct human text, or human classification of images, necessarily must have some aspects to them that are analagous to our understanding. As MacKay suggests the brain is neither a digital or an analogue computer, and the same can be said of the modern neural network systems that are being tagged as "artificial intelligence".
+
+I believe a better term for them is "human-analogue machines", because what we have built is not a system that can make intelligent decisions from first principles (a rational approach) but one that observes how humans have made decisions through our data and reconstructs that process. Machine learning is more empiricist than rational, but now we have an empirical approach that distils our evolved intelligence.
+
+HAMs are not representing states of the outside world with analogous states inside the machine, they are also not (directly) processing digital states through logic gates to draw their conclusions (although they are implemented on digital computers that do this to enable them to update).
+
 <div class="figure">
-<div id="human-analogue-machine-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/human-analogue-machine.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="human-analogue-machine-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/human-analogue-machine.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="human-analogue-machine-magnify" onclick="magnifyFigure('human-analogue-machine')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="human-analogue-machine-caption">
+Figure: The human analogue machine creates a feature space which is analagous to that we use to reason, one way of doing this is to have a machine attempt to compress all human generated text in an auto-regressive manner.
 </div>
 </div>
-<div id="human-analogue-machine-magnify" class="magnify"
-onclick="magnifyFigure(&#39;human-analogue-machine&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="human-analogue-machine-caption" class="caption-frame">
-<p>Figure: The human analogue machine creates a feature space which is
-analagous to that we use to reason, one way of doing this is to have a
-machine attempt to compress all human generated text in an
-auto-regressive manner.</p>
-</div>
-</div>
-<h3 id="heider-and-simmel-1944">Heider and Simmel (1944)</h3>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Heider and Simmel (1944)
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="heider-simmel-shapes-figure" class="figure-frame">
-<iframe width="600" height="450" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<div class="figure-frame" id="heider-simmel-shapes-figure">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div id="heider-simmel-shapes-magnify" class="magnify"
-onclick="magnifyFigure(&#39;heider-simmel-shapes&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="heider-simmel-shapes-caption" class="caption-frame">
-<p>Figure: Fritz Heider and Marianne Simmel’s video of shapes from <span
-class="citation" data-cites="Heider-experimental44">Heider and Simmel
-(1944)</span>.</p>
+<div class="magnify" id="heider-simmel-shapes-magnify" onclick="magnifyFigure('heider-simmel-shapes')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="heider-simmel-shapes-caption">
+Figure: Fritz Heider and Marianne Simmel's video of shapes from @Heider-experimental44.
 </div>
 </div>
-<p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a>
-and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne
-Simmel</a>’s experiments with animated shapes from 1944 <span
-class="citation" data-cites="Heider-experimental44">(Heider and Simmel,
-1944)</span>. Our interpretation of these objects as showing motives and
-even emotion is a combination of our desire for narrative, a need for
-understanding of each other, and our ability to empathize. At one level,
-these are crudely drawn objects, but in another way, the animator has
-communicated a story through simple facets such as their relative
-motions, their sizes and their actions. We apply our psychological
-representations to these faceless shapes to interpret their actions
-[Heider-interpersonal58].</p>
-<p>See also a recent review paper on Human Cooperation by <span
-class="citation" data-cites="Joseph-origins21">Henrich and Muthukrishna
-(2021)</span>. See <span class="citation"
-data-cites="Lawrence-atomic24">Lawrence (2024)</span> psychological
-representation p. 326–329, 344–345, 353, 361, 367.</p>
-<p>The perils of developing this capability include counterfeit people,
-a notion that the philosopher <a
-href="https://www.theatlantic.com/technology/archive/2023/05/problem-counterfeit-people/674075/">Daniel
-Dennett has described in <em>The Atlantic</em></a>. This is where
-computers can represent themselves as human and fool people into doing
-things on that basis.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> human-analogue machine p. 343–5, 346–7, 358–9, 365–8.</p>
-<h2 id="llm-conversations">LLM Conversations</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+[Fritz Heider](https://en.wikipedia.org/wiki/Fritz_Heider) and [Marianne Simmel](https://en.wikipedia.org/wiki/Marianne_Simmel)'s experiments with animated shapes from 1944 [@Heider-experimental44]. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathize. At one level, these are crudely drawn objects, but in another way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes to interpret their actions [Heider-interpersonal58].
+
+See also a recent review paper on Human Cooperation by @Joseph-origins21.
+See @Lawrence-atomic24 psychological representation  p. 326–329,
+344–345, 353, 361, 367.
+
+
+
+
+
+
+The perils of developing this capability include counterfeit people, a notion that the philosopher [Daniel Dennett has described in *The Atlantic*](https://www.theatlantic.com/technology/archive/2023/05/problem-counterfeit-people/674075/). This is where computers can represent themselves as human and fool people into doing things on that basis.
+
+
+
+
+
+
+
+See @Lawrence-atomic24 human-analogue machine p. 343–5, 346–7, 358–9, 365–8.
+
+
+
+
+
+
+
+
+
+## LLM Conversations
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+
 <div class="figure">
-<div id="anne-llm-conversation-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/anne-llm-conversation.svg" width="80%" style=" ">
-</object>
+<div class="figure-frame" id="anne-llm-conversation-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/anne-llm-conversation.svg" width="80%" style=" "></object>
 </div>
-<div id="anne-llm-conversation-magnify" class="magnify"
-onclick="magnifyFigure(&#39;anne-llm-conversation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="anne-llm-conversation-caption" class="caption-frame">
-<p>Figure: The focus so far has been on reducing uncertainty to a few
-representative values and sharing numbers with human beings. We forget
-that most people can be confused by basic probabilities for example the
-prosecutor’s fallacy.</p>
+<div class="magnify" id="anne-llm-conversation-magnify" onclick="magnifyFigure('anne-llm-conversation')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="anne-llm-conversation-caption">
+Figure: The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor's fallacy.
 </div>
 </div>
+
+
+
+
+
+
+
 <div class="figure">
-<div id="ai-for-data-analytics-figure" class="figure-frame">
-<iframe width="600" height="450" src="https://www.youtube.com/embed/0sJjdxn5kcI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
+<div class="figure-frame" id="ai-for-data-analytics-figure">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/0sJjdxn5kcI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
-<div id="ai-for-data-analytics-magnify" class="magnify"
-onclick="magnifyFigure(&#39;ai-for-data-analytics&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ai-for-data-analytics-caption" class="caption-frame">
-<p>Figure: The Inner Monologue paper suggests using LLMs for robotic
-planning <span class="citation" data-cites="Huang-inner22">(Huang et
-al., 2023)</span>.</p>
+<div class="magnify" id="ai-for-data-analytics-magnify" onclick="magnifyFigure('ai-for-data-analytics')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="ai-for-data-analytics-caption">
+Figure: The Inner Monologue paper suggests using LLMs for robotic planning [@Huang-inner22].
 </div>
 </div>
-<p>By interacting directly with machines that have an understanding of
-human cultural context, it should be possible to share the nature of
-uncertainty in the same way humans do. See for example the paper <a
-href="https://innermonologue.github.io/">Inner Monologue: Embodied
-Reasoning through Planning</a> <span class="citation"
-data-cites="Huang-inner22">Huang et al. (2023)</span>.</p>
-<p>But if we can avoid the pitfalls of counterfeit people, this also
-offers us an opportunity to <em>psychologically represent</em> <span
-class="citation" data-cites="Heider-interpersonal58">(Heider,
-1958)</span> the machine in a manner where humans can communicate
-without special training. This in turn offers the opportunity to
-overcome the challenge of <em>intellectual debt</em>.</p>
-<p>Despite the lack of interpretability of machine learning models, they
-allow us access to what the machine is doing in a way that bypasses many
-of the traditional techniques developed in statistics. But understanding
-this new route for access is a major new challenge.</p>
-<h2 id="ham">HAM</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The Human-Analogue Machine or HAM therefore provides a route through
-which we could better understand our world through improving the way we
-interact with machines.</p>
+
+By interacting directly with machines that have an understanding of human cultural context, it should be possible to share the nature of uncertainty in the same way humans do. See for example the paper [Inner Monologue: Embodied Reasoning through Planning](https://innermonologue.github.io/) @Huang-inner22.
+
+
+
+
+
+
+
+But if we can avoid the pitfalls of counterfeit people, this also offers us an opportunity to *psychologically represent* [@Heider-interpersonal58] the machine in a manner where humans can communicate without special training. This in turn offers the opportunity to overcome the challenge of *intellectual debt*.
+
+Despite the lack of interpretability of machine learning models, they allow us access to what the machine is doing in a way that bypasses many of the traditional techniques developed in statistics. But understanding this new route for access is a major new challenge.
+
+
+
+
+
+
+## HAM
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The Human-Analogue Machine or HAM therefore provides a route through which we could better understand our world through improving the way we interact with machines.
+
 <div class="figure">
-<div id="new-flow-of-information-4-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information004.svg" width="70%" style=" ">
-</object>
+<div class="figure-frame" id="new-flow-of-information-4-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information004.svg" width="70%" style=" "></object>
 </div>
-<div id="new-flow-of-information-4-magnify" class="magnify"
-onclick="magnifyFigure(&#39;new-flow-of-information-4&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="new-flow-of-information-4-caption" class="caption-frame">
-<p>Figure: The trinity of human, data, and computer, and highlights the
-modern phenomenon. The communication channel between computer and data
-now has an extremely high bandwidth. The channel between human and
-computer and the channel between data and human is narrow. New direction
-of information flow, information is reaching us mediated by the
-computer. The focus on classical statistics reflected the importance of
-the direct communication between human and data. The modern challenges
-of data science emerge when that relationship is being mediated by the
-machine.</p>
+<div class="magnify" id="new-flow-of-information-4-magnify" onclick="magnifyFigure('new-flow-of-information-4')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="new-flow-of-information-4-caption">
+Figure: The trinity of human, data, and computer, and highlights the modern phenomenon. The communication channel between computer and data now has an extremely high bandwidth. The channel between human and computer and the channel between data and human is narrow. New direction of information flow, information is reaching us mediated by the computer. The focus on classical statistics reflected the importance of the direct communication between human and data. The modern challenges of data science emerge when that relationship is being mediated by the machine.
 </div>
 </div>
-<p>The HAM can provide an interface between the digital computer and the
-human allowing humans to work closely with computers regardless of their
-understandin gf the more technical parts of software engineering.</p>
+
+
+
+The HAM can provide an interface between the digital computer and the human allowing humans to work closely with computers regardless of their understandin gf the more technical parts of software engineering.
+
 <div class="figure">
-<div id="new-flow-of-information-ham-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information-ham.svg" width="70%" style=" ">
-</object>
+<div class="figure-frame" id="new-flow-of-information-ham-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//data-science/new-flow-of-information-ham.svg" width="70%" style=" "></object>
 </div>
-<div id="new-flow-of-information-ham-magnify" class="magnify"
-onclick="magnifyFigure(&#39;new-flow-of-information-ham&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="new-flow-of-information-ham-caption" class="caption-frame">
-<p>Figure: The HAM now sits between us and the traditional digital
-computer.</p>
+<div class="magnify" id="new-flow-of-information-ham-magnify" onclick="magnifyFigure('new-flow-of-information-ham')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="new-flow-of-information-ham-caption">
+Figure: The HAM now sits between us and the traditional digital computer.
 </div>
 </div>
-<p>Of course this route provides new routes for manipulation, new ways
-in which the machine can undermine our autonomy or exploit our cognitive
-foibles. The major challenge we face is steering between these worlds
-where we gain the advantage of the computer’s bandwidth without
-undermining our culture and individual autonomy.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> human-analogue machine (HAMs) p. 343-347, 359-359,
-365-368.</p>
-<h2 id="networked-interactions">Networked Interactions</h2>
-<p>Our modern society intertwines the machine with human interactions.
-The key question is who has control over these interfaces between humans
-and machines.</p>
+
+Of course this route provides new routes for manipulation, new ways in which the machine can undermine our autonomy or exploit our cognitive foibles. The major challenge we face is steering between these worlds where we gain the advantage of the computer's bandwidth without undermining our culture and individual autonomy.
+
+See @Lawrence-atomic24 human-analogue machine (HAMs) p. 343-347, 359-359, 365-368.
+
+
+
+
+
+
+
+## Networked Interactions
+
+
+
+
+
+Our modern society intertwines the machine with human interactions. The key question is who has control over these interfaces between humans and machines.
+
 <div class="figure">
-<div id="human-computers-interacting-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/human-computers-interacting.svg" width="80%" style=" ">
-</object>
+<div class="figure-frame" id="human-computers-interacting-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/human-computers-interacting.svg" width="80%" style=" "></object>
 </div>
-<div id="human-computers-interacting-magnify" class="magnify"
-onclick="magnifyFigure(&#39;human-computers-interacting&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="human-computers-interacting-caption" class="caption-frame">
-<p>Figure: Humans and computers interacting should be a major focus of
-our research and engineering efforts.</p>
+<div class="magnify" id="human-computers-interacting-magnify" onclick="magnifyFigure('human-computers-interacting')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="human-computers-interacting-caption">
+Figure: Humans and computers interacting should be a major focus of our research and engineering efforts.
 </div>
 </div>
-<p>So the real challenge that we face for society is understanding which
-systemic interventions will encourage the right interactions between the
-humans and the machine at all of these interfaces.</p>
-<h2 id="human-analogue-machine-1">Human Analogue Machine</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Recent breakthroughs in generative models, particularly large
-language models, have enabled machines that, for the first time, can
-converse plausibly with other humans.</p>
-<p>The Apollo guidance computer provided Armstrong with an analogy when
-he landed it on the Moon. He controlled it through a stick which
-provided him with an analogy. The analogy is based in the experience
-that Amelia Earhart had when she flew her plane. Armstrong’s control
-exploited his experience as a test pilot flying planes that had control
-columns which were directly connected to their control surfaces.</p>
+
+So the real challenge that we face for society is understanding which systemic interventions will encourage the right interactions between the humans and the machine at all of these interfaces.
+
+
+
+
+
+
+ -->
+<!-- 
+
+
+
+
+## Human Analogue Machine
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+Recent breakthroughs in generative models, particularly large language models, have enabled machines that, for the first time, can converse plausibly with other humans.
+
+The Apollo guidance computer provided Armstrong with an analogy when he landed it on the Moon. He controlled it through a stick which provided him with an analogy. The analogy is based in the experience that Amelia Earhart had when she flew her plane. Armstrong's control exploited his experience as a test pilot flying planes that had control columns which were directly connected to their control surfaces.
+
 <div class="figure">
-<div id="human-analogue-machine-2-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.svg" width="40%" style=" ">
-</object>
+<div class="figure-frame" id="human-analogue-machine-2-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.svg" width="40%" style=" "></object>
 </div>
-<div id="human-analogue-machine-2-magnify" class="magnify"
-onclick="magnifyFigure(&#39;human-analogue-machine-2&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="human-analogue-machine-2-caption" class="caption-frame">
-<p>Figure: The human analogue machine is the new interface that large
-language models have enabled the human to present. It has the
-capabilities of the computer in terms of communication, but it appears
-to present a “human face” to the user in terms of its ability to
-communicate on our terms. (Image quite obviously <em>not</em> drawn by
-generative AI!)</p>
+<div class="magnify" id="human-analogue-machine-2-magnify" onclick="magnifyFigure('human-analogue-machine-2')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="human-analogue-machine-2-caption">
+Figure: The human analogue machine is the new interface that large language models have enabled the human to present. It has the capabilities of the computer in terms of communication, but it appears to present a "human face" to the user in terms of its ability to communicate on our terms. (Image quite obviously *not* drawn by generative AI!)
 </div>
 </div>
-<p>The generative systems we have produced do not provide us with the
-“AI” of science fiction. Because their intelligence is based on
-emulating human knowledge. Through being forced to reproduce our
-literature and our art they have developed aspects which are analogous
-to the cultural proxy truths we use to describe our world.</p>
-<p>These machines are to humans what the MONIAC was the British economy.
-Not a replacement, but an analogue computer that captures some aspects
-of humanity while providing advantages of high bandwidth of the
-machine.</p>
-<h2 id="royal-society-report">Royal Society Report</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-machine-learning.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-machine-learning.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+The generative systems we have produced do not provide us with the "AI" of science fiction. Because their intelligence is based on emulating human knowledge. Through being forced to reproduce our literature and our art they have developed aspects which are analogous to the cultural proxy truths we use to describe our world.
+
+These machines are to humans what the MONIAC was the British economy. Not a replacement, but an analogue computer that captures some aspects of humanity while providing advantages of high bandwidth of the machine.
+
+
+ -->
+<!-- 
+ -->
+<!-- 
+
+
+
+
+## Royal Society Report
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-machine-learning.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-machine-learning.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="ml-report-cover-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/ml-report-cover-page.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="ml-report-cover-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/ml-report-cover-page.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="ml-report-cover-magnify" onclick="magnifyFigure('ml-report-cover')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="ml-report-cover-caption">
+Figure: The Royal Society report on Machine Learning was released on 25th April 2017
 </div>
 </div>
-<div id="ml-report-cover-magnify" class="magnify"
-onclick="magnifyFigure(&#39;ml-report-cover&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="ml-report-cover-caption" class="caption-frame">
-<p>Figure: The Royal Society report on Machine Learning was released on
-25th April 2017</p>
-</div>
-</div>
-<p>A useful reference for state of the art in machine learning is the UK
-Royal Society Report, <a
-href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Machine
-Learning: Power and Promise of Computers that Learn by Example</a>.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
-(2024)</span> Royal Society; machine learning review and p. 25, 321,
-395.</p>
-<h2 id="public-research">Public Research</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-mori-poll-art.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-mori-poll-art.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+
+
+
+
+
+
+A useful reference for state of the art in machine learning is the UK Royal Society Report, [Machine Learning: Power and Promise of Computers that Learn by Example](https://royalsociety.org/~/media/policy/projects/machine-learning/publications/machine-learning-report.pdf).
+
+
+
+
+See @Lawrence-atomic24 Royal Society; machine learning review and p. 25, 321, 395.
+
+
+
+ -->
+<!-- 
+
+
+
+
+## Public Research
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-mori-poll-art.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/rs-report-mori-poll-art.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="rs-report-mori-poll-cover-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-report-mori-poll-cover.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="rs-report-mori-poll-cover-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-report-mori-poll-cover.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="rs-report-mori-poll-cover-magnify" onclick="magnifyFigure('rs-report-mori-poll-cover')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="rs-report-mori-poll-cover-caption">
+Figure: The Royal Society comissioned [public research from Mori](https://royalsociety.org/-/media/policy/projects/machine-learning/publications/public-views-of-machine-learning-ipsos-mori.pdf) as part of the machine learning review.
 </div>
 </div>
-<div id="rs-report-mori-poll-cover-magnify" class="magnify"
-onclick="magnifyFigure(&#39;rs-report-mori-poll-cover&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="rs-report-mori-poll-cover-caption" class="caption-frame">
-<p>Figure: The Royal Society comissioned <a
-href="https://royalsociety.org/-/media/policy/projects/machine-learning/publications/public-views-of-machine-learning-ipsos-mori.pdf">public
-research from Mori</a> as part of the machine learning review.</p>
-</div>
-</div>
-<p>As is often the cas when members of the public are well convened,
-they offered sensible opinions about the utility and challenges of
-machine learning methods.</p>
+
+As is often the cas when members of the public are well convened, they offered sensible opinions about the utility and challenges of machine learning methods.
+
+
+
 <div class="figure">
-<div id="rs-report-mori-poll-1-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="rs-report-mori-poll-1-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-1.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="rs-report-mori-poll-1-magnify" onclick="magnifyFigure('rs-report-mori-poll-1')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="rs-report-mori-poll-1-caption">
+Figure: One of the questions focussed on machine learning applications.
 </div>
 </div>
-<div id="rs-report-mori-poll-1-magnify" class="magnify"
-onclick="magnifyFigure(&#39;rs-report-mori-poll-1&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="rs-report-mori-poll-1-caption" class="caption-frame">
-<p>Figure: One of the questions focussed on machine learning
-applications.</p>
-</div>
-</div>
-<p>A range of different scenaios were captured by this qualitative
-work.</p>
+
+A range of different scenaios were captured by this qualitative work.
+
+
+
 <div class="figure">
-<div id="rs-report-mori-poll-2-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-2.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="rs-report-mori-poll-2-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-2.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="rs-report-mori-poll-2-magnify" onclick="magnifyFigure('rs-report-mori-poll-2')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="rs-report-mori-poll-2-caption">
+Figure: The public were broadly supportive of a range of application areas.
 </div>
 </div>
-<div id="rs-report-mori-poll-2-magnify" class="magnify"
-onclick="magnifyFigure(&#39;rs-report-mori-poll-2&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="rs-report-mori-poll-2-caption" class="caption-frame">
-<p>Figure: The public were broadly supportive of a range of application
-areas.</p>
-</div>
-</div>
+
+
+
 <div class="figure">
-<div id="rs-report-mori-poll-3-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-3.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="rs-report-mori-poll-3-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/rs-mori-views-of-specific-ml-applications-3.png" width="" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="rs-report-mori-poll-3-magnify" onclick="magnifyFigure('rs-report-mori-poll-3')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="rs-report-mori-poll-3-caption">
+Figure: But they failed to see the point in AI's that could produce poetry.
 </div>
 </div>
-<div id="rs-report-mori-poll-3-magnify" class="magnify"
-onclick="magnifyFigure(&#39;rs-report-mori-poll-3&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="rs-report-mori-poll-3-caption" class="caption-frame">
-<p>Figure: But they failed to see the point in AI’s that could produce
-poetry.</p>
-</div>
-</div>
-<p>The one scenario where the public were unable to perceive any
-advantage in machine learning was an example from art, the creation of
-poetry. This was felt to be a fundamentally human activity that machines
-could only emulate at best.</p>
-<h2 id="mercutio">Mercutio</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/chat-gpt-mercutio.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/chat-gpt-mercutio.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>It’s ironic that despite the public focus on transport, health,
-cities, crime and their confusion as to why we might want AI to do art,
-one area where significant progress has been made is on AIs that can
-create literature.</p>
+
+The one scenario where the public were unable to perceive any advantage in machine learning was an example from art, the creation of poetry. This was felt to be a fundamentally human activity that machines could only emulate at best.
+
+
+ -->
+<!-- 
+
+
+
+
+## Mercutio
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/chat-gpt-mercutio.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/chat-gpt-mercutio.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+It's ironic that despite the public focus on transport, health, cities, crime and their confusion as to why we might want AI to do art, one area where significant progress has been made is on AIs that can create literature.
+
 <div class="figure">
-<div id="chat-gpt-mercutio-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/chat-gpt-mercutio-2.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="figure-frame" id="chat-gpt-mercutio-figure">
+<div class="centered " style=""><img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/chat-gpt-mercutio-2.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle"></div>
+</div>
+<div class="magnify" id="chat-gpt-mercutio-magnify" onclick="magnifyFigure('chat-gpt-mercutio')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="chat-gpt-mercutio-caption">
+Figure: Despite the public's desire to see challenges in health, finance, transport, crime solved by machine learning and their skepticism around poetry, one of the problems we have solved seems to be poetry.
 </div>
 </div>
-<div id="chat-gpt-mercutio-magnify" class="magnify"
-onclick="magnifyFigure(&#39;chat-gpt-mercutio&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="chat-gpt-mercutio-caption" class="caption-frame">
-<p>Figure: Despite the public’s desire to see challenges in health,
-finance, transport, crime solved by machine learning and their
-skepticism around poetry, one of the problems we have solved seems to be
-poetry.</p>
-</div>
-</div>
-<blockquote>
-<p><strong>User</strong>: Hi ChatGPT, Could you write soliloquy that
-introduces what a Large Language Model is as spoken by Mercutio?</p>
-<p><strong>Machine</strong>: Ah, friends, lend me your ears, I prithee,
-For now I must utter a tale of wonder, Of a creation divine, called the
-Large Language Model, An oracle, a sorcerer, a wordsmith, yea verily, a
-master of the quill.</p>
-<p>From the depths of this scholarly dominion, A creature of artifice
-did rise; Twas wrought of ones and zeroes, woven as if by Puck’s own
-hand, To mimic our thoughts, our voice, our very essence.</p>
-<p>A thousand minds, nay, a millionfold, Conjoined in this digital
-Athenaeum, Words and phrases, like soldiers in battle, Marching to form
-the verses of our age.</p>
-<p>This Large Language Model, a changeling so fair, Hath the power to
-bring forth wisdom, To transmute our queries, our curiosities, Into
-answers, clear as a midsummer’s day.</p>
-<p>Yet, beware, my companions, for magic hath its limits, Not unlike the
-mortal bounds of we who dwell in flesh, The Large Language Model hath
-its strengths, But ’tis not an all-knowing oracle, a god it is not.</p>
-<p>As Mercutio, your humble servant, doth stand before thee, I marvel at
-the art and science that hath brought forth this wondrous creation, This
-Large Language Model, a testament to man’s yearning, To comprehend the
-world and make meaning of the great tapestry of existence.</p>
-<p>In faith, dear friends, let us embrace the magic and beauty of this
-digital bard, And mayhaps, by its grace, we shall glean some wisdom, As
-we wander together, hand in hand, Through this boundless realm of
-knowledge and wonder.</p>
-<p>ChatGPT transcript, 14th April 2023.</p>
-</blockquote>
+
+> **User**: Hi ChatGPT, Could you write soliloquy that introduces what a Large Language Model is as spoken by Mercutio?
+>
+> **Machine**: Ah, friends, lend me your ears, I prithee,
+> For now I must utter a tale of wonder,
+> Of a creation divine, called the Large Language Model,
+> An oracle, a sorcerer, a wordsmith, yea verily, a master of the quill.
+> 
+> From the depths of this scholarly dominion,
+> A creature of artifice did rise;
+> Twas wrought of ones and zeroes, woven as if by Puck's own hand,
+> To mimic our thoughts, our voice, our very essence.
+> 
+> A thousand minds, nay, a millionfold,
+> Conjoined in this digital Athenaeum,
+> Words and phrases, like soldiers in battle,
+> Marching to form the verses of our age.
+> 
+> This Large Language Model, a changeling so fair,
+> Hath the power to bring forth wisdom,
+> To transmute our queries, our curiosities,
+> Into answers, clear as a midsummer's day.
+> 
+> Yet, beware, my companions, for magic hath its limits,
+> Not unlike the mortal bounds of we who dwell in flesh,
+> The Large Language Model hath its strengths,
+> But 'tis not an all-knowing oracle, a god it is not.
+> 
+> As Mercutio, your humble servant, doth stand before thee,
+> I marvel at the art and science that hath brought forth this wondrous creation,
+> This Large Language Model, a testament to man's yearning,
+> To comprehend the world and make meaning of the great tapestry of existence.
+> 
+> In faith, dear friends, let us embrace the magic and beauty of this digital bard,
+> And mayhaps, by its grace, we shall glean some wisdom,
+> As we wander together, hand in hand,
+> Through this boundless realm of knowledge and wonder.
+>
+> ChatGPT transcript, 14th April 2023.
+
+
+
+
+
+ -->
+<!-- 
+ -->
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to
 check the following resources.</p>
@@ -2019,29 +1976,6 @@ Cabrera, C., Paleyes, A., Thodoroff, P., Lawrence, N.D., 2023. <a
 href="https://arxiv.org/abs/2302.04810">Real-world machine learning
 systems: A survey from a data-oriented architecture perspective</a>.
 </div>
-<div id="ref-Heider-interpersonal58" class="csl-entry" role="listitem">
-Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
-</div>
-<div id="ref-Heider-experimental44" class="csl-entry" role="listitem">
-Heider, F., Simmel, M., 1944. An experimental study of apparent
-behavior. The American Journal of Psychology 57, 243–259. <a
-href="https://doi.org/10.2307/1416950">https://doi.org/10.2307/1416950</a>
-</div>
-<div id="ref-Joseph-origins21" class="csl-entry" role="listitem">
-Henrich, J., Muthukrishna, M., 2021. The origins and psychology of human
-cooperation. Annual Review of Psychology 72, 207–240. <a
-href="https://doi.org/10.1146/annurev-psych-081920-042106">https://doi.org/10.1146/annurev-psych-081920-042106</a>
-</div>
-<div id="ref-Huang-inner22" class="csl-entry" role="listitem">
-Huang, W., Xia, F., Xiao, T., Chan, H., Liang, J., Florence, P., Zeng,
-A., Tompson, J., Mordatch, I., Chebotar, Y., Sermanet, P., Jackson, T.,
-Brown, N., Luu, L., Levine, S., Hausman, K., ichter, brian, 2023. <a
-href="https://proceedings.mlr.press/v205/huang23c.html">Inner monologue:
-Embodied reasoning through planning with language models</a>, in: Liu,
-K., Kulic, D., Ichnowski, J. (Eds.), Proceedings of the 6th Conference
-on Robot Learning, Proceedings of Machine Learning Research. PMLR, pp.
-1769–1782.
-</div>
 <div id="ref-Justinia-npfit17" class="csl-entry" role="listitem">
 Justinia, T., 2017. The UK’s national programme for IT: Why was it
 dismantled? Health Services Management Research 1, 2–9. <a
@@ -2055,9 +1989,6 @@ atomic human: Understanding ourselves in the age of AI</a>. Allen Lane.
 <div id="ref-Lawrence:embodiment17" class="csl-entry" role="listitem">
 Lawrence, N.D., 2017. <a href="https://arxiv.org/abs/1705.07996">Living
 together: Mind and machine intelligence</a>. arXiv.
-</div>
-<div id="ref-Mackay-behind91" class="csl-entry" role="listitem">
-MacKay, D.M., 1991. Behind the eye. Basil Blackwell.
 </div>
 <div id="ref-Reed-information98" class="csl-entry" role="listitem">
 Reed, C., Durlach, N.I., 1998. Note on information transfer rates in
@@ -2073,10 +2004,6 @@ technical debt in machine learning systems</a>, in: Cortes, C.,
 Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in
 Neural Information Processing Systems 28. Curran Associates, Inc., pp.
 2503–2511.
-</div>
-<div id="ref-Admiralty-gunnery45" class="csl-entry" role="listitem">
-The Admiralty, 1945. <a href="https://www.maritime.org/doc/br224/">The
-gunnery pocket book, b.r. 224/45</a>.
 </div>
 <div id="ref-Thomson-popular89" class="csl-entry" role="listitem">
 Thomson, W., 1889. <a

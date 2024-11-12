@@ -46,30 +46,44 @@ transition: None
 \include{_engineering/includes/feedback-loops.md}
 \include{_engineering/includes/feedback-failure.md}
 
-\newslide{Engineering Systems and Complexity}
+\subsection{Summary}
 
-\include{_art/includes/blake-newton.md}
-\include{_engineering/includes/separation-of-concerns.md}
+\slides{* Human-machine information bandwidth gap
+* Complex systems through separation of concerns 
+* Engineering feedback enables tool responsiveness
+* Challenge of feedback in digital (sociotechnical) systems
+* Consequences of not listening
+    * Brittle systems
+    * User imposition 
+    * Human impact of failures}
 
-\include{_engineering/includes/engineering-complexity.md}
+\notes{We've looked at the key difference between human and machine in terms of information bandwidth. We've seen how we can collaborate to create complex systems through separation of concerns. Engineering feedback gives us an ability to work with tools in a responsive way. In complex digital systems it has become hard to close the feedback loop in a sociotechnical system. When we fail to listen we create brittle systems that impose upon their users and when they fail the human consequences are severe.}
 
-\newslide{The Challenges of Modern Systems}
 
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_ai/includes/ml-system-decomposability.md}
-\include{_ai/includes/artificial-vs-natural-systems.md}
+<!-- \newslide{Engineering Systems and Complexity} -->
 
-\include{_engineering/includes/consulting-challenges.md}
+<!-- \include{_art/includes/blake-newton.md} -->
+<!-- \include{_engineering/includes/separation-of-concerns.md} -->
 
-\newslide{The Path Forward}
+<!-- \include{_engineering/includes/engineering-complexity.md} -->
 
-\include{_ai/includes/human-analogue-machines.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ml/includes/rs-report-machine-learning.md}
-\include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
-\include{_ai/includes/human-analogue-machines.md}
+<!-- \newslide{The Challenges of Modern Systems} -->
+
+<!-- \include{_ai/includes/intellectual-debt-short.md} -->
+<!-- \include{_ai/includes/ml-system-decomposability.md} -->
+<!-- \include{_ai/includes/artificial-vs-natural-systems.md} -->
+
+<!-- \include{_engineering/includes/consulting-challenges.md} -->
+
+<!-- \newslide{The Path Forward} -->
+
+<!-- \include{_ai/includes/human-analogue-machines.md} -->
+<!-- \include{_ai/includes/processor-ham.md} -->
+<!-- \include{_data-science/includes/new-flow-of-information-ham.md} -->
+<!-- \include{_ml/includes/rs-report-machine-learning.md} -->
+<!-- \include{_ml/includes/rs-report-mori-poll-art.md} -->
+<!-- \include{_ml/includes/chat-gpt-mercutio.md} -->
+<!-- \include{_ai/includes/human-analogue-machines.md} -->
 
 
 \thanks

@@ -19,10 +19,15 @@ author:
 date: 2024-11-28
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
+length:
+  talk: 40
+  questions: 30
 venue: Highgate Literary & Scientific Institution
 transition: None
 ---
 \define{noSlideTitle}
+
+
 
 \include{_physics/includes/the-earth-seen-from-apollo-17.md}
 \include{_physics/includes/eagle-from-columbia.md}

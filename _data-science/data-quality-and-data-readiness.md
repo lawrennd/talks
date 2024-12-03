@@ -42,8 +42,9 @@ $$\text{data} + \text{model} \rightarrow \text{prediction}$$
 
 \subsection{Conclusions}
 
-* Data is modern software
-* We need to revisit software engineering and computer science in this context.
+\slides{* Data is modern software
+* We need to revisit software engineering and computer science in this context.}
+
 
 
 \thanks

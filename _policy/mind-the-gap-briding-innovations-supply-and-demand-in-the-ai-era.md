@@ -178,6 +178,7 @@ flowchart LR
 * HPC Pioneer projects (with RCS, C2D3)
 * Accelerate programme (Schmidt Sciences funded)
 }
+\notes{
 \subsection{1. Bridging Macro and Micro Levels}
 
 \notes{**Challenge**: There is often a disconnect between high-level AI research and real-world needs that must be addressed.
@@ -242,7 +243,7 @@ The Steering Group provides crucial oversight through representatives from vario
 
 \notes{**Challenge**: Academic innovations often struggle to connect with and address industry needs effectively.
 
-The Industry Engagement initiative develops meaningful industrial partnerships through collaboration with the Strategic Partnerships Office, helping translate research into real-world solutions. The planned sciencepreneurship initiative aims to create a structured pathway from academic research to entrepreneurial ventures, helping ensure that innovations can effectively reach and benefit society.}
+The Industry Engagement initiative develops meaningful industrial partnerships through collaboration with the Strategic Partnerships Office, helping translate research into real-world solutions. The planned sciencepreneurship initiative aims to create a structured pathway from academic research to entrepreneurial ventures, helping ensure that innovations can effectively reach and benefit society.}}
 
 \section{Innovation Economy Conclusion}
 

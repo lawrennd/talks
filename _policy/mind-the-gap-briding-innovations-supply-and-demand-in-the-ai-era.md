@@ -118,9 +118,8 @@ flowchart LR
 
 \section{What's the solution?}
 
+\include{_business/includes/ft-op-ed.md}
 \include{_data-science/includes/data-science-africa.md}
-
-\include{_business/includes/supply-chain-of-ideas.md}
 
 \notes{\subsection{Making AI equitable}}
 

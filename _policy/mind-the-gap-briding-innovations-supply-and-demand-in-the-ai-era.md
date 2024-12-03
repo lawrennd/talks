@@ -135,10 +135,14 @@ flowchart LR
     C --> |"Reinvests in"| D["Quality Attention"]
     D --> |"Develops"| A
 </pre>
-	
+
+\subsection{Example: Data Science Africa}
+
+\notes{Data science Africa is a grass roots initiative that focuses on capacity building to develop ways of solving on the ground problems in health, education, transport and conservation in way that is grounded in local needs and capabilities.}
+
 \include{_data-science/includes/data-science-africa.md}
 
-\notes{\subsection{Making AI equitable}}
+\subsection{Example: Cambridge Approach}
 
 \subsection{ai@cam}
 
@@ -158,40 +162,24 @@ flowchart LR
 
 \notes{The initiative was funded in November 2022 where a £5M investment from the University.}
 
-\newslide{ai@cam}
 
-\slides{Progress:
-
-* 30+ departments/institutes involved 
-* 6 funding bids supported
-* 5 A-Ideas projects launched
-* Policy Lab established
-* 46 computing projects started}
 
 \notes{The progress made so far has been substantial and wide-reaching across the University community. We have successfully engaged with over members spanning more than 30 departments and institutes, bringing together academics, researchers, start-ups, and large businesses to collaborate on AI initiatives. The program has already supported 6 new funding bids and launched five interdisciplinary A-Ideas projects that bring together diverse expertise to tackle complex challenges. The establishment of the Policy Lab has created a crucial bridge between research and policy-making. Additionally, through the Pioneer program, we have initiated 46 computing projects that are helping to build our technical infrastructure and capabilities.}
 
 
 \subsection{How ai@cam is Addressing Innovation Challenges}
 
+\slides{* A-Ideas (across 20 departments)
+* Policy lab (with Bennett, Minderoo)
+* HPC Pioneer projects (with RCS, C2D3)
+* Accelerate programme (Schmidt Sciences funded)
+}
 \subsection{1. Bridging Macro and Micro Levels}
-
-\slides{**A-Ideas**
-
-* Interdisciplinary projects
-* 19 Departments, 6 Schools
-* Climate, health, language equity}
 
 \notes{**Challenge**: There is often a disconnect between high-level AI research and real-world needs that must be addressed.
 
 The A-Ideas Initiative represents an effort to bridge this gap by funding interdisciplinary projects that span 19 departments across 6 schools. This ensures diverse perspectives are brought to bear on pressing challenges. Projects focusing on climate change, mental health, and language equity demonstrate how macro-level AI capabilities can be effectively applied to micro-level societal needs.}
 
-\newslide{}
-
-\slides{**Policy Lab**
-
-* Research → Policy bridge
-* Public engagement
-* Policy briefs}
 
 \notes{**Challenge**: Academic insights often fail to translate into actionable policy changes.
 
@@ -199,27 +187,12 @@ The Policy Lab initiative addresses this by creating direct connections between 
 
 \subsection{2. Addressing Data, Compute, and Capability Gaps}
 
-\slides{**Data Solutions**
-
-* Data intermediaries
-* Quality assessment
-* Maturity frameworks}
-
 \notes{**Challenge**: Organizations struggle to balance data accessibility with security and privacy concerns.
 
 The data intermediaries initiative establishes trusted entities that represent the interests of data originators, helping to establish secure and ethical frameworks for data sharing and use. Alongside approaches for protecting data we need to improve our approach to processing data. Careful assessment of data quality and organizational data maturity ensures that data can be shared and used effectively. Together these approaches help to ensure that data can be used to serve science, citizens and society.}
 
-\notes{\include{_governance/includes/data-trusts.md}}
-\include{_governance/includes/data-trusts-initiative.md}
 
 \subsection{2. Addressing data, Compute and Capability Gaps}
-
-\slides{**HPC Pioneer**
-
-* Dawn supercomputer access
-* 46 projects
-* 20 departments
-* ICAIN Initiative}
 
 \notes{**Challenge**: Many researchers lack access to necessary computational resources for modern research.
 
@@ -227,36 +200,17 @@ The HPC Pioneer Project addresses this by providing access to the Dawn supercomp
 
 \newslide{2. Capability gaps contd ...}
 
-\slides{**Accelerate Programmes**
-
-* Multi-level AI training
-* Peer learning
-* AI Clubs}
-
 \notes{**Challenge**: There is a significant skills gap in applying AI across different academic disciplines.
 
 The Accelerate Programme for Scientific Discovery addresses this through a comprehensive approach to building AI capabilities. Through a tiered training system that ranges from basic to advanced levels, the programme ensures that domain experts can develop the AI skills relevant to their field. The initiative particularly emphasizes peer-to-peer learning creating sustainable communities of practice where researchers can share knowledge and experiences through "AI Clubs".}
 
-\include{_accelerate/includes/accelerate-programme.md}
+\notes{\include{_accelerate/includes/accelerate-programme.md}}
 
 \subsection{3. Stakeholder Engagement and Feedback Mechanisms}
-
-\slides{**Hopes and Fears Labs**
-
-* Public dialogue
-* Diverse voices
-* Ethics focus}
 
 \notes{**Challenge**: AI development often proceeds without adequate incorporation of public perspectives and concerns.
 
 Our public dialogue work, conducted in collaboration with the Kavli Centre for Ethics, Science, and the Public, creates structured spaces for public dialogue about AI's potential benefits and risks. The approach ensures that diverse voices and perspectives are heard and considered in AI development.}
-
-\newslide{}
-\slides{**Cross-University Workshops**
-
-* Teaching collaboration
-* Staff engagement
-* Capability building}
 
 \notes{**Challenge**: AI initiatives often fail to align with diverse academic needs across institutions.
 
@@ -264,23 +218,11 @@ Cross-University Workshops serve as vital platforms for alignment, bringing toge
 
 \subsection{4. Flexible and Adaptable Approaches}
 
-\slides{**AI-deas Challenge**
-
-* Bottom-up approach
-* Collaborative refinement
-* Researcher-led priorities}
-
 \notes{**Challenge**: Traditional rigid, top-down research agendas often fail to address real needs effectively.
 
 The AI-deas Challenge Development program empowers researchers to identify and propose challenge areas based on their expertise and understanding of field needs. Through collaborative workshops, these initial ideas are refined and developed, ensuring that research directions emerge organically from the academic community while maintaining alignment with broader strategic goals.}
 
 \subsection{5. Phased Implementation and Realistic Planning}
-
-\slides{**Strategy**
-
-* Pilot first
-* Learn and adapt
-* Gradual scaling}
 
 \notes{**Challenge**: Ambitious AI initiatives often fail due to unrealistic implementation timelines and expectations.
 
@@ -288,23 +230,11 @@ The overall strategy emphasizes careful, phased deployment to ensure sustainable
 
 \subsection{6. Independent Oversight and Diverse Perspectives}
 
-\slides{**Steering Group**
-
-* Cross-institutional
-* Diverse expertise
-* Global connections}
-
 \notes{**Challenge**: AI initiatives often lack balanced guidance and oversight from diverse perspectives.
 
 The Steering Group provides crucial oversight through representatives from various academic disciplines and professional services. Working with a cross-institutional team, it ensures balanced decision-making that considers multiple perspectives. The group maintains close connections with external initiatives like ELLIS, ICAIN, and Data Science Africa, enabling the university to benefit from and contribute to broader AI developments.}
 
 \subsection{7. Addressing the Innovation Supply Chain}
-
-\slides{**Industry Links**
-
-* Strategic partnerships
-* Entrepreneurship bridge
-* Research translation}
 
 \notes{**Challenge**: Academic innovations often struggle to connect with and address industry needs effectively.
 
@@ -312,32 +242,16 @@ The Industry Engagement initiative develops meaningful industrial partnerships t
 
 \section{Innovation Economy Conclusion}
 
+\slides{* Interact directly with micro-demand
+* Release *quality attention*
+* Reinvest *human* capital in more innovation}
+  
 \notes{ai@cam's approach aims to address the macro-micro disconnects in AI innovation through several key strategies. We are building bridges between macro and micro levels, fostering interdisciplinary collaboration, engaging diverse stakeholders and voices, and providing crucial resources and training. Through these efforts, ai@cam is working to create a more integrated and effective AI innovation ecosystem.}
 
 \notes{Our implementation approach emphasizes several critical elements learned from past IT implementation failures. We focus on flexibility to adapt to changing needs, phased rollout of initiatives to manage risk, establishing continuous feedback loops for improvement, and maintaining a learning mindset throughout the process.}
 
 \notes{Looking to the future, we recognize that AI technologies and their applications will continue to evolve rapidly. This evolution requires strategic agility and a continued focus on effective implementation. We will need to remain adaptable, continuously assessing and adjusting our strategies while working to bridge capability gaps between high-level AI capabilities and on-the-ground implementation challenges.}
 
-\newslide{Addressing Gaps}
-\slides{
-* Macro-micro bridges
-* Collaboration
-* Diverse voices
-* Resources}
-
-\newslide{Implementation}
-\slides{
-* Flexibility
-* Phased rollout
-* Feedback loops
-* Learning mindset}
-
-\newslide{Future Focus}
-\slides{
-* Technology evolution
-* Strategic agility
-* Implementation focus
-* Bridging capability need gaps}
 
 
 \thanks

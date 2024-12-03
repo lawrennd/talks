@@ -38,6 +38,16 @@ transition: None
 
 \include{_economics/includes/human-capital-index.md}
 
+\newslide{Productivity Flywheel}
+flowchart LR
+      classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
+      linkStyle default stroke-width:5px fill:none color:#67b246
+      A["R&D Investment"] --> |"Enables"| B["Technical Innovation"]
+      B --> |"Creates"| C["Productivity Gains"]
+      C --> |"Generates"| D["Economic Surplus"]
+      D --> |"Funds"| A
+```
+
 \subsection{Inflation of Human Capital}
 
 \slides{* Strength in Human Capital double edged sword.

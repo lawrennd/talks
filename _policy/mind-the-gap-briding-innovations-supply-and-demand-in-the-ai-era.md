@@ -22,7 +22,7 @@ transition: None
 
 <!-- Negotiating Innovation: institutions slow speed of adoption allow people to negotiate how the technologies are used. -->
 
-\subsection{Financial Times Op-ed}
+
 
 \include{_economics/includes/philosophers-stone.md}
 

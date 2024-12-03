@@ -133,6 +133,7 @@ transition: None
 \newslide{ai@cam}
 
 \slides{Progress:
+
 * 30+ departments/institutes involved 
 * 6 funding bids supported
 * 5 A-Ideas projects launched
@@ -147,6 +148,7 @@ transition: None
 \subsection{1. Bridging Macro and Micro Levels}
 
 \slides{**A-Ideas**
+
 * Interdisciplinary projects
 * 19 Departments, 6 Schools
 * Climate, health, language equity}
@@ -158,6 +160,7 @@ The A-Ideas Initiative represents an effort to bridge this gap by funding interd
 \newslide{}
 
 \slides{**Policy Lab**
+
 * Research → Policy bridge
 * Public engagement
 * Policy briefs}
@@ -169,6 +172,7 @@ The Policy Lab initiative addresses this by creating direct connections between 
 \subsection{2. Addressing Data, Compute, and Capability Gaps}
 
 \slides{**Data Solutions**
+
 * Data intermediaries
 * Quality assessment
 * Maturity frameworks}
@@ -183,16 +187,20 @@ The data intermediaries initiative establishes trusted entities that represent t
 \subsection{2. Addressing data, Compute and Capability Gaps}
 
 \slides{**HPC Pioneer**
+
 * Dawn supercomputer access
 * 46 projects
-* 20 departments}
+* 20 departments
+* ICAIN Initiative}
 
 \notes{**Challenge**: Many researchers lack access to necessary computational resources for modern research.
 
 The HPC Pioneer Project addresses this by providing access to the Dawn supercomputer, enabling 46 diverse projects across 20 departments to conduct advanced computational research. This democratization of computing resources ensures that researchers from various disciplines can leverage high-performance computing for their work. The ai@cam project also supports the ICAIN initiative, further strengthening the computational infrastructure available to researchers with a particular focus on emerging economies.}
 
 \newslide{2. Capability gaps contd ...}
+
 \slides{**Accelerate Programme**
+
 * Multi-level AI training
 * Peer learning
 * AI Clubs}
@@ -206,6 +214,7 @@ The Accelerate Programme for Scientific Discovery addresses this through a compr
 \subsection{3. Stakeholder Engagement and Feedback Mechanisms}
 
 \slides{**Hopes and Fears Labs**
+
 * Public dialogue
 * Diverse voices
 * Ethics focus}
@@ -216,6 +225,7 @@ Our public dialogue work, conducted in collaboration with the Kavli Centre for E
 
 \newslide{}
 \slides{**Cross-University Workshops**
+
 * Teaching collaboration
 * Staff engagement
 * Capability building}
@@ -227,6 +237,7 @@ Cross-University Workshops serve as vital platforms for alignment, bringing toge
 \subsection{4. Flexible and Adaptable Approaches}
 
 \slides{**AI-deas Challenge**
+
 * Bottom-up approach
 * Collaborative refinement
 * Researcher-led priorities}
@@ -238,6 +249,7 @@ The AI-deas Challenge Development program empowers researchers to identify and p
 \subsection{5. Phased Implementation and Realistic Planning}
 
 \slides{**Strategy**
+
 * Pilot first
 * Learn and adapt
 * Gradual scaling}
@@ -249,6 +261,7 @@ The overall strategy emphasizes careful, phased deployment to ensure sustainable
 \subsection{6. Independent Oversight and Diverse Perspectives}
 
 \slides{**Steering Group**
+
 * Cross-institutional
 * Diverse expertise
 * Global connections}
@@ -260,6 +273,7 @@ The Steering Group provides crucial oversight through representatives from vario
 \subsection{7. Addressing the Innovation Supply Chain}
 
 \slides{**Industry Links**
+
 * Strategic partnerships
 * Entrepreneurship bridge
 * Research translation}

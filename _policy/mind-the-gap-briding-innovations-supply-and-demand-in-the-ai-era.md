@@ -84,17 +84,6 @@ flowchart LR
 
 \notes{We won’t find the atomic human in the percentage of A grades that our children are achieving at schools or the length of waiting lists we have in our hospitals. It sits behind all this. We see the atomic human in the way a nurse spends an extra few minutes ensuring a patient is comfortable or a bus driver pauses to allow a pensioner to cross the road or a teacher praises a struggling student to build their confidence.}
 
-\section{What do People Want?}
-
-\include{_ml/includes/rs-report-machine-learning.md}
-\include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
-\include{_dialogue/includes/ai-at-cam-public-dialogue.md}
-\include{_policy/includes/coin-pusher.md}
-
-\include{_books/includes/a-question-of-trust.md}
-\include{_ai/includes/the-great-ai-fallacy.md}
-
 \subsection{New Productivity Paradox}
 
 \slides{* Classical tools of economic intervention cannot map hard-to-measure supply and demand of quality human attention}
@@ -116,10 +105,23 @@ flowchart LR
 
 \notes{To preserve our human capital and harness our potential, we need the AI alchemists to provide us with solutions that can serve both science and society.}
 
+\include{_policy/includes/coin-pusher.md}
+
 
 \include{_policy/includes/innovation-economy.md}
 
+\section{What do People Want?}
+
+\include{_ml/includes/rs-report-machine-learning.md}
+\include{_ml/includes/rs-report-mori-poll-art.md}
+\include{_ml/includes/chat-gpt-mercutio.md}
+\include{_dialogue/includes/public-dialogue-overview.md}
+\include{_dialogue/includes/public-dialogue-health.md}
+\include{_dialogue/includes/public-dialogue-education.md}
+\include{_dialogue/includes/public-dialogue-summary.md}
+
 \section{What's the solution?}
+\include{_business/includes/supply-chain-of-ideas.md}
 
 \include{_business/includes/ft-op-ed.md}
 

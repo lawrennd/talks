@@ -26,7 +26,7 @@ transition: None
 
 \include{_economics/includes/philosophers-stone.md}
 
-\notes{The philosopher’s stone is a mythical material that can convert base metals to gold. In our modern economy, automation has the same effect. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
+\notes{In our modern economy, automation has the same effect. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
 
 \include{_economics/includes/herbert-simon-information.md}
 

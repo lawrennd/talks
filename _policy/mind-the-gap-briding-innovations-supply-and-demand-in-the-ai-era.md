@@ -119,6 +119,7 @@ flowchart LR
 
 \include{_data-science/includes/data-science-africa.md}
 
+\include{_business/includes/supply-chain-of-ideas.md}
 
 \notes{\subsection{Making AI equitable}}
 

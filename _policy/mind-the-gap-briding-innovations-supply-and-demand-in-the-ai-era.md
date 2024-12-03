@@ -39,6 +39,7 @@ transition: None
 \include{_economics/includes/human-capital-index.md}
 
 \newslide{Productivity Flywheel}
+```mermaid
 flowchart LR
       classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
       linkStyle default stroke-width:5px fill:none color:#67b246

@@ -39,15 +39,18 @@ transition: None
 \include{_economics/includes/human-capital-index.md}
 
 \newslide{Productivity Flywheel}
-```mermaid
+
+<pre class="mermaid">
 flowchart LR
-      classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
-      linkStyle default stroke-width:5px fill:none color:#67b246
-      A["R&D Investment"] --> |"Enables"| B["Technical Innovation"]
-      B --> |"Creates"| C["Productivity Gains"]
-      C --> |"Generates"| D["Economic Surplus"]
-      D --> |"Funds"| A
-```
+    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
+    linkStyle default stroke-width:5px fill:none color:#67b246
+    A["R&D Investment"] --> |"Enables"| B["Technical Innovation"]
+    B --> |"Creates"| C["Productivity Gains"]
+    C --> |"Generates"| D["Economic Surplus"]
+    D --> |"Funds"| A
+</pre>
+
+\notes{The productivity flywheel should return the gains released by productivity through funding. This relies on the economic value mapping the underlying value.}
 
 \subsection{Inflation of Human Capital}
 
@@ -119,6 +122,20 @@ flowchart LR
 \section{What's the solution?}
 
 \include{_business/includes/ft-op-ed.md}
+
+\subsection{New Attention Flywheel}
+
+<pre class="mermaid">
+flowchart LR
+    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
+    linkStyle default stroke-width:5px fill:none color:#67b246
+
+    A["Human Capital"] --> |"Enables"| B["Real-World Innovation"]
+    B --> |"Creates"| C["Efficiency Gains"]
+    C --> |"Reinvests in"| D["Quality Attention"]
+    D --> |"Develops"| A
+</pre>
+	
 \include{_data-science/includes/data-science-africa.md}
 
 \notes{\subsection{Making AI equitable}}

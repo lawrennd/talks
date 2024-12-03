@@ -194,13 +194,18 @@ capital index</a> is one area where the UK is a leading international
 economy, or at least an area where we currently outperform both the USA
 and China. The index is a measure of education and health of a
 population.</p>
-<pre class="mermaid"><code>flowchart LR
-      classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
-      linkStyle default stroke-width:5px fill:none color:#67b246
-      A[&quot;R&amp;D Investment&quot;] --&gt; |&quot;Enables&quot;| B[&quot;Technical Innovation&quot;]
-      B --&gt; |&quot;Creates&quot;| C[&quot;Productivity Gains&quot;]
-      C --&gt; |&quot;Generates&quot;| D[&quot;Economic Surplus&quot;]
-      D --&gt; |&quot;Funds&quot;| A</code></pre>
+<pre class="mermaid">
+flowchart LR
+    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
+    linkStyle default stroke-width:5px fill:none color:#67b246
+    A["R&D Investment"] --> |"Enables"| B["Technical Innovation"]
+    B --> |"Creates"| C["Productivity Gains"]
+    C --> |"Generates"| D["Economic Surplus"]
+    D --> |"Funds"| A
+</pre>
+<p>The productivity flywheel should return the gains released by
+productivity through funding. This relies on the economic value mapping
+the underlying value.</p>
 <h2 id="inflation-of-human-capital">Inflation of Human Capital</h2>
 <p>This transformation creates efficiency. But it also devalues the
 skills that form the backbone of human capital and create a happy,
@@ -1087,6 +1092,17 @@ piece in the FT</a> that describes the idea of a social flywheel to
 drive the targeted growth we need in AI innovation.</p>
 </div>
 </div>
+<h2 id="new-attention-flywheel">New Attention Flywheel</h2>
+<pre class="mermaid">
+flowchart LR
+    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
+    linkStyle default stroke-width:5px fill:none color:#67b246
+
+    A["Human Capital"] --> |"Enables"| B["Real-World Innovation"]
+    B --> |"Creates"| C["Efficiency Gains"]
+    C --> |"Reinvests in"| D["Quality Attention"]
+    D --> |"Develops"| A
+</pre>
 <h2 id="data-science-africa">Data Science Africa</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span

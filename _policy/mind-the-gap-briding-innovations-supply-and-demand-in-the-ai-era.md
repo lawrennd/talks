@@ -40,15 +40,7 @@ transition: None
 
 \newslide{Productivity Flywheel}
 
-<pre class="mermaid">
-flowchart LR
-    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
-    linkStyle default stroke-width:5px fill:none color:#67b246
-    A["R&D Investment"] --> |"Enables"| B["Technical Innovation"]
-    B --> |"Creates"| C["Productivity Gains"]
-    C --> |"Generates"| D["Economic Surplus"]
-    D --> |"Funds"| A
-</pre>
+\figure{\includediagram{\diagramsDir/economics/productivity-flywheel}{60%}}{The productivity flywheel suggests technical innovation is reinvested.}{productivity-flywheel}
 
 \notes{The productivity flywheel should return the gains released by productivity through funding. This relies on the economic value mapping the underlying value.}
 
@@ -129,16 +121,7 @@ flowchart LR
 
 \subsection{New Attention Flywheel}
 
-<pre class="mermaid">
-flowchart LR
-    classDef default fill:#4a90e2,stroke:#357abd,color:#fff,rx:10,font-weight:bold
-    linkStyle default stroke-width:5px fill:none color:#67b246
-
-    A["Human Capital"] --> |"Enables"| B["Real-World Innovation"]
-    B --> |"Creates"| C["Efficiency Gains"]
-    C --> |"Reinvests in"| D["Quality Attention"]
-    D --> |"Develops"| A
-</pre>
+\figure{\includediagram{\diagramsDir/economics/attention-flywheel}{60%}}{The attention flywheel focusses on reinvesting human capital.}{attention-flywheel}
 
 \subsection{Example: Data Science Africa}
 

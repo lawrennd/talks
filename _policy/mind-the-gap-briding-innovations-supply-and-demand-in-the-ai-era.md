@@ -10,6 +10,7 @@ author:
 - given: Jessica
   family: Montgomery
 date: 2024-12-03
+youtube: r6-cw4WWUng
 abstract: |
   Despite its transformative potential, artificial intelligence risks following a well-worn path where technological innovation fails to address society’s most pressing problems. The UK's experience with major IT projects shows this disconnect: from the Horizon scandal's wrongful prosecutions to the £10 billion failure of the NHS Lorenzo project. These weren’t only technical failures but a failure to bridge between needs and the provided solution, a failure to match supply and demand. 
 

@@ -1,6 +1,6 @@
 ---
 title: Revisiting the Revisiting of the Revisit of the 2014 NeurIPS Experiment
-venue: IWCV
+venue: ELLIS Unconference
 author:
 - given: Neil D.
   family: Lawrence

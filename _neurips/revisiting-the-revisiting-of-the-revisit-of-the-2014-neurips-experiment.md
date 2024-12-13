@@ -39,6 +39,7 @@ transition: None
 \include{_neurips/includes/paper-scoring.md}
 <!--include{_neurips/includes/neurips-experiment.md}-->
 \include{_neurips/includes/neurips-reviewer-calibration.md}
+\include{_business/includes/subjectivity-of-superiority.md}
 \include{_neurips/includes/neurips-simulation.md}
 \include{_neurips/includes/where-do-the-rejected-papers-go.md}
 

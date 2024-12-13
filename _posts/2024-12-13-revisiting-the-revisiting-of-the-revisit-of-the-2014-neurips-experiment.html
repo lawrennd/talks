@@ -794,6 +794,70 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a h
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>revs[<span class="st">&#39;comment_length&#39;</span>]<span class="op">=</span>revs.<span class="bu">apply</span>(len_comments, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the computed information to disk</span></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co">#revs.to_csv(os.path.join(cu.cmt_data_directory, date + &#39;_processed_reviews.csv&#39;), encoding=&#39;utf-8&#39;)</span></span></code></pre></div>
+<h2 id="subjectivity-of-superiority">Subjectivity of Superiority</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/subjectivity-of-superiority.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/subjectivity-of-superiority.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>There’s a concept known as the phenomenon of illusory superiority,
+where individuals all think they are better than average at a given
+task/role.</p>
+<p>But because many tasks/roles are not uniquely defined, imagining that
+you can rank these roles is flawed. If there is a ranking, it’s
+subjective according to how different people perceive the role. And
+under individuals different perception of the role, we <em>can</em> all
+be better than average, because we each have a different idea of what
+the ideal looks like.</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for academics</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_academics():</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    categories <span class="op">=</span> [</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Mentorship&quot;</span>, <span class="st">&quot;Research Quality&quot;</span>, <span class="st">&quot;Teaching Inspiration&quot;</span>, <span class="st">&quot;Teaching Dedication&quot;</span>,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Public Understanding&quot;</span>, <span class="st">&quot;Technical Depth&quot;</span>, <span class="st">&quot;Collaboration&quot;</span>, <span class="st">&quot;Professionalism&quot;</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    academic_profiles <span class="op">=</span> {</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Innovative Researcher&quot;</span>: [<span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">8</span>, <span class="dv">6</span>],</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Dedicated Teacher&quot;</span>: [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>],</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Public Communicator&quot;</span>: [<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>],</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Well-Rounded Academic&quot;</span>: [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>]</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>    generate_spider_plots(academic_profiles, categories)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example for drivers</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_drivers():</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    categories <span class="op">=</span> [</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Reaction Time&quot;</span>, <span class="st">&quot;Vehicle Control&quot;</span>, <span class="st">&quot;Awareness&quot;</span>, <span class="st">&quot;Adherence to Rules&quot;</span>,</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Risk Assessment&quot;</span>, <span class="st">&quot;Passenger Comfort&quot;</span>, <span class="st">&quot;Defensive Driving&quot;</span>, <span class="st">&quot;Error Recovery&quot;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    driver_profiles <span class="op">=</span> {</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Aggressive Driver&quot;</span>: [<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>],</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Defensive Driver&quot;</span>: [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">6</span>],</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Inexperienced Driver&quot;</span>: [<span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">4</span>],</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Balanced Driver&quot;</span>: [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    generate_spider_plots(driver_profiles, categories)</span></code></pre></div>
+<div class="figure">
+<div id="academic-capability-plots-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//business/academic_capability_plots.svg" width="50%" style=" ">
+</object>
+</div>
+<div id="academic-capability-plots-magnify" class="magnify"
+onclick="magnifyFigure(&#39;academic-capability-plots&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="academic-capability-plots-caption" class="caption-frame">
+<p>Figure: There is no first principles definition of what it means to
+be a good academic.</p>
+</div>
+</div>
 <h2 id="conference-simulation">Conference Simulation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -820,40 +884,40 @@ precision.</p>
 50% objective, in line with the results we see from the NeurIPS 2014
 calibration model. We vary the number of reviewers in the simulation to
 see the effect of increasing reviewers on the accept precision.</p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>We repeat the experiment <code>samples</code> number of times, here
 we’ve set this to be 100000. The subjectivity portion gives how much of
 the scores for each paper is subjective.</p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>num_papers <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>subjectivity_portion <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>accept_rates <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.25</span>, </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.3</span>, <span class="fl">0.35</span>, <span class="fl">0.4</span>, <span class="fl">0.45</span>, <span class="fl">0.5</span>, </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.55</span>, <span class="fl">0.6</span>, <span class="fl">0.65</span>, <span class="fl">0.7</span>, <span class="fl">0.75</span>, </span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.8</span>, <span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">1.0</span>]</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>all_accepts <span class="op">=</span> []</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num_reviewers <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">7</span>):</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    consistent_accepts <span class="op">=</span> []</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> accept_rate <span class="kw">in</span> accept_rates:</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        objective <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>subjectivity_portion)<span class="op">*</span>np.random.randn(num_papers) </span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        subjective_0 <span class="op">=</span> subjectivity_portion<span class="op">*</span>np.random.randn(num_papers, num_reviewers).mean(<span class="dv">1</span>)</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        subjective_1 <span class="op">=</span> subjectivity_portion<span class="op">*</span>np.random.randn(num_papers, num_reviewers).mean(<span class="dv">1</span>)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        score_0 <span class="op">=</span> objective <span class="op">+</span> subjective_0    </span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        score_1 <span class="op">=</span> objective <span class="op">+</span> subjective_1</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        accept_0 <span class="op">=</span> score_0.argsort()[:<span class="bu">int</span>(num_papers<span class="op">*</span>accept_rate)]</span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>        accept_1 <span class="op">=</span> score_1.argsort()[:<span class="bu">int</span>(num_papers<span class="op">*</span>accept_rate)]</span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>        consistent_accept <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(accept_0).intersection(<span class="bu">set</span>(accept_1)))</span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>        consistent_accepts.append(consistent_accept<span class="op">/</span>(num_papers<span class="op">*</span>accept_rate))</span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Percentage consistently accepted: </span><span class="sc">{prop}</span><span class="st">&#39;</span>.<span class="bu">format</span>(prop<span class="op">=</span>consistent_accept<span class="op">/</span>(num_papers<span class="op">*</span>accept_rate)))</span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>    all_accepts.append(consistent_accepts)</span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>all_accepts <span class="op">=</span> np.array(all_accepts)</span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>consistent_accepts <span class="op">=</span> np.array(consistent_accepts)</span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>accept_rate <span class="op">=</span> np.array(accept_rate)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>num_papers <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>subjectivity_portion <span class="op">=</span> <span class="fl">0.5</span></span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>accept_rates <span class="op">=</span> [<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>, <span class="fl">0.25</span>, </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.3</span>, <span class="fl">0.35</span>, <span class="fl">0.4</span>, <span class="fl">0.45</span>, <span class="fl">0.5</span>, </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.55</span>, <span class="fl">0.6</span>, <span class="fl">0.65</span>, <span class="fl">0.7</span>, <span class="fl">0.75</span>, </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fl">0.8</span>, <span class="fl">0.85</span>, <span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">1.0</span>]</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>all_accepts <span class="op">=</span> []</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> num_reviewers <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">7</span>):</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    consistent_accepts <span class="op">=</span> []</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> accept_rate <span class="kw">in</span> accept_rates:</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        objective <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>subjectivity_portion)<span class="op">*</span>np.random.randn(num_papers) </span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>        subjective_0 <span class="op">=</span> subjectivity_portion<span class="op">*</span>np.random.randn(num_papers, num_reviewers).mean(<span class="dv">1</span>)</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>        subjective_1 <span class="op">=</span> subjectivity_portion<span class="op">*</span>np.random.randn(num_papers, num_reviewers).mean(<span class="dv">1</span>)</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>        score_0 <span class="op">=</span> objective <span class="op">+</span> subjective_0    </span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>        score_1 <span class="op">=</span> objective <span class="op">+</span> subjective_1</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>        accept_0 <span class="op">=</span> score_0.argsort()[:<span class="bu">int</span>(num_papers<span class="op">*</span>accept_rate)]</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>        accept_1 <span class="op">=</span> score_1.argsort()[:<span class="bu">int</span>(num_papers<span class="op">*</span>accept_rate)]</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>        consistent_accept <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(accept_0).intersection(<span class="bu">set</span>(accept_1)))</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>        consistent_accepts.append(consistent_accept<span class="op">/</span>(num_papers<span class="op">*</span>accept_rate))</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;Percentage consistently accepted: </span><span class="sc">{prop}</span><span class="st">&#39;</span>.<span class="bu">format</span>(prop<span class="op">=</span>consistent_accept<span class="op">/</span>(num_papers<span class="op">*</span>accept_rate)))</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>    all_accepts.append(consistent_accepts)</span>
+<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a>all_accepts <span class="op">=</span> np.array(all_accepts)</span>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>consistent_accepts <span class="op">=</span> np.array(consistent_accepts)</span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a>accept_rate <span class="op">=</span> np.array(accept_rate)</span></code></pre></div>
 <div class="figure">
 <div id="accept-precision-vs-accept-rate-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/accept-precision-vs-accept-rate.svg" width="50%" style=" ">
@@ -906,25 +970,25 @@ NeurIPS submission’s contact author was also in the author list. We were
 able to track down 680 papers.</p>
 <p>This code analyzes those 680 papers extracting their final
 publication venue using the Semantic Scholar API.</p>
-<div class="sourceCode" id="cb36"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install cmtutils</span></code></pre></div>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span></code></pre></div>
-<div class="sourceCode" id="cb38"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span></code></pre></div>
 <div class="sourceCode" id="cb39"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(os.path.join(nipsy.review_store, nipsy.outlet_name_mapping), <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    mapping <span class="op">=</span> yaml.load(f, Loader<span class="op">=</span>yaml.FullLoader)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>date <span class="op">=</span> <span class="st">&quot;2021-06-11&quot;</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>joindf[<span class="st">&#39;short_venue&#39;</span>] <span class="op">=</span> joindf.venue.replace(mapping)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install cmtutils</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yaml</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(os.path.join(nipsy.review_store, nipsy.outlet_name_mapping), <span class="st">&#39;r&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    mapping <span class="op">=</span> yaml.load(f, Loader<span class="op">=</span>yaml.FullLoader)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>date <span class="op">=</span> <span class="st">&quot;2021-06-11&quot;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>joindf[<span class="st">&#39;short_venue&#39;</span>] <span class="op">=</span> joindf.venue.replace(mapping)</span></code></pre></div>
 <div class="figure">
 <div id="where-do-neurips-papers-go-figure" class="figure-frame">
 <iframe src="https://inverseprobability.com/talks/../slides/diagrams//neurips/where-do-neurips-papers-go.html" width="600" height="450" allowtransparency="true" frameborder="0">
@@ -979,50 +1043,50 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_neurips/includ
 </div>
 <p>Now we look at the actual impact of the papers published using the
 Semantic Scholar data base for tracking citations.</p>
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>papers <span class="op">=</span> cu.Papers()</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils <span class="im">as</span> cu</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.nipsy <span class="im">as</span> nipsy</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmtutils.plot <span class="im">as</span> plot</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>papers <span class="op">=</span> cu.Papers()</span></code></pre></div>
 <p><a href="https://proceedings.neurips.cc/paper/2014"
 class="uri">https://proceedings.neurips.cc/paper/2014</a></p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>UPDATE_IMPACTS <span class="op">=</span> <span class="va">False</span> <span class="co"># Set to True to download impacts from Semantic Scholar</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>UPDATE_IMPACTS <span class="op">=</span> <span class="va">False</span> <span class="co"># Set to True to download impacts from Semantic Scholar</span></span></code></pre></div>
 <p>The impact of the different papers is downloaded from Semantic
 scholar using their REST API. This can take some time, and they also
 throttle the calls. At the moment the code below deosn’t handle the
 throttling correctly. However, you it will load the cached version of of
 citations scores from the given date.</p>
-<div class="sourceCode" id="cb44"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>datetime.today().strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="st">&quot;2024-12-12&quot;</span></span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rerun to download impacts from Semantic Scholar</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    semantic_ids <span class="op">=</span> nipsy.load_semantic_ids()</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>    citations_dict <span class="op">=</span> citations.to_dict(orient<span class="op">=</span><span class="st">&#39;index&#39;</span>)</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to be a bit cleverer here. Semantic scholar will throttle this call.</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    sscholar <span class="op">=</span> nipsy.download_citation_counts(citations_dict<span class="op">=</span>citations_dict, semantic_ids<span class="op">=</span>semantic_ids)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> pd.DataFrame.from_dict(citations_dict, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>) </span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    citations.to_pickle(date <span class="op">+</span> <span class="st">&#39;-semantic-scholar-info.pickle&#39;</span>)</span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    date<span class="op">=</span>datetime.today().strftime(<span class="st">&#39;%Y-%m-</span><span class="sc">%d</span><span class="st">&#39;</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>    date <span class="op">=</span> <span class="st">&quot;2024-12-12&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rerun to download impacts from Semantic Scholar</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> UPDATE_IMPACTS:</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    semantic_ids <span class="op">=</span> nipsy.load_semantic_ids()</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    citations_dict <span class="op">=</span> citations.to_dict(orient<span class="op">=</span><span class="st">&#39;index&#39;</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Need to be a bit cleverer here. Semantic scholar will throttle this call.</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    sscholar <span class="op">=</span> nipsy.download_citation_counts(citations_dict<span class="op">=</span>citations_dict, semantic_ids<span class="op">=</span>semantic_ids)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> pd.DataFrame.from_dict(citations_dict, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>) </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    citations.to_pickle(date <span class="op">+</span> <span class="st">&#39;-semantic-scholar-info.pickle&#39;</span>)</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>: </span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    citations <span class="op">=</span> nipsy.load_citation_counts(date<span class="op">=</span>date)</span></code></pre></div>
 <p>The final decision sheet provides information about what happened to
 all of the papers.</p>
-<div class="sourceCode" id="cb46"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>decisions <span class="op">=</span> nipsy.load_decisions()</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>nipsy.augment_decisions(decisions)</span></code></pre></div>
 <p>This is joined with the citation information to provide our main
 ability to understand the impact of these papers.</p>
-<div class="sourceCode" id="cb47"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>joindf <span class="op">=</span> nipsy.join_decisions_citations(decisions, citations)</span></code></pre></div>
 <h3 id="correlation-of-quality-scores-and-citation">Correlation of
 Quality Scores and Citation</h3>
 <p>Our first study will be to check the correlation between quality
@@ -1292,17 +1356,17 @@ each point is corrupted by differentially private noise in the plot
 noise).</p>
 </div>
 </div>
-<div class="sourceCode" id="cb48"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> [<span class="st">&quot;average_quality&quot;</span>, <span class="st">&quot;average_impact&quot;</span>, <span class="st">&quot;average_confidence&quot;</span>]:</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    cor <span class="op">=</span> []</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>        ind <span class="op">=</span> bootstrap_index(joindf.loc[joindf.accept])</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>        cor.append(joindf.loc[ind][column].corr(np.log(<span class="dv">1</span><span class="op">+</span>joindf.loc[ind][<span class="st">&#39;numCitedBy&#39;</span>])))</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    cora <span class="op">=</span> np.array(cor)</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> cora.mean()</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    twosd <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(cora.var())</span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{column}</span><span class="st">&quot;</span>.<span class="bu">format</span>(column<span class="op">=</span>column.replace(<span class="st">&quot;_&quot;</span>, <span class="st">&quot; &quot;</span>)))</span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Mean correlation is </span><span class="sc">{rho}</span><span class="st"> +/- </span><span class="sc">{twosd}</span><span class="st">&quot;</span>.<span class="bu">format</span>(rho<span class="op">=</span>rho, twosd<span class="op">=</span>twosd))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> [<span class="st">&quot;average_quality&quot;</span>, <span class="st">&quot;average_impact&quot;</span>, <span class="st">&quot;average_confidence&quot;</span>]:</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    cor <span class="op">=</span> []</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>):</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>        ind <span class="op">=</span> bootstrap_index(joindf.loc[joindf.accept])</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        cor.append(joindf.loc[ind][column].corr(np.log(<span class="dv">1</span><span class="op">+</span>joindf.loc[ind][<span class="st">&#39;numCitedBy&#39;</span>])))</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    cora <span class="op">=</span> np.array(cor)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    rho <span class="op">=</span> cora.mean()</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    twosd <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.sqrt(cora.var())</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;</span><span class="sc">{column}</span><span class="st">&quot;</span>.<span class="bu">format</span>(column<span class="op">=</span>column.replace(<span class="st">&quot;_&quot;</span>, <span class="st">&quot; &quot;</span>)))</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Mean correlation is </span><span class="sc">{rho}</span><span class="st"> +/- </span><span class="sc">{twosd}</span><span class="st">&quot;</span>.<span class="bu">format</span>(rho<span class="op">=</span>rho, twosd<span class="op">=</span>twosd))</span></code></pre></div>
 <h2 id="conclusion">Conclusion</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1701,10 +1765,10 @@ Combining across the two committees for the duplicated papers, we see
 that 87 papers in total were recommended for accept out of a total of
 340 trials. out of 166 trials would be given by a binomial distribution
 as depicted below.</p>
-<div class="sourceCode" id="cb49"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> binom</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML</span></code></pre></div>
 <div class="figure">
 <div id="uncertainty-accept-rate-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//neurips/uncertainty-accept-rate.svg" width="70%" style=" ">
@@ -1828,22 +1892,22 @@ trials (166 in our case) and <span class="math inline">\(\alpha_0 =
 \sum_{i=1}^3\alpha_i\)</span>. This allows us to compute the expected
 value of the probabilities and their variances under the posterior as
 follows.</p>
-<div class="sourceCode" id="cb50"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> posterior_mean_var(k, alpha):</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Compute the mean and variance of the Dirichlet posterior.&quot;&quot;&quot;</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    alpha_0 <span class="op">=</span> alpha.<span class="bu">sum</span>()</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> k.<span class="bu">sum</span>()</span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> (k <span class="op">+</span> alpha)</span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    m <span class="op">/=</span> m.<span class="bu">sum</span>()</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> (alpha<span class="op">+</span>k)<span class="op">*</span>(alpha_0 <span class="op">-</span> alpha <span class="op">+</span> n <span class="op">+</span> k)<span class="op">/</span>((alpha_0<span class="op">+</span>n)<span class="op">**</span><span class="dv">2</span><span class="op">*</span>(alpha_0<span class="op">+</span>n<span class="op">+</span><span class="dv">1</span>))</span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> m, v</span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.asarray([<span class="dv">22</span>, <span class="dv">43</span>, <span class="dv">101</span>])</span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> np.ones((<span class="dv">3</span>,))</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>m, v <span class="op">=</span> posterior_mean_var(k, alpha)</span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>outcome <span class="op">=</span> [<span class="st">&#39;consistent accept&#39;</span>, <span class="st">&#39;inconsistent decision&#39;</span>, <span class="st">&#39;consistent reject&#39;</span>]</span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    display(HTML(<span class="st">&quot;&lt;h4&gt;Probability of &quot;</span> <span class="op">+</span> outcome[i] <span class="op">+</span><span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="bu">str</span>(m[i]) <span class="op">+</span>  <span class="st">&quot;+/-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">2</span><span class="op">*</span>np.sqrt(v[i])) <span class="op">+</span> <span class="st">&quot;&lt;/h4&gt;&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> posterior_mean_var(k, alpha):</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Compute the mean and variance of the Dirichlet posterior.&quot;&quot;&quot;</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    alpha_0 <span class="op">=</span> alpha.<span class="bu">sum</span>()</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> k.<span class="bu">sum</span>()</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> (k <span class="op">+</span> alpha)</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    m <span class="op">/=</span> m.<span class="bu">sum</span>()</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> (alpha<span class="op">+</span>k)<span class="op">*</span>(alpha_0 <span class="op">-</span> alpha <span class="op">+</span> n <span class="op">+</span> k)<span class="op">/</span>((alpha_0<span class="op">+</span>n)<span class="op">**</span><span class="dv">2</span><span class="op">*</span>(alpha_0<span class="op">+</span>n<span class="op">+</span><span class="dv">1</span>))</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> m, v</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> np.asarray([<span class="dv">22</span>, <span class="dv">43</span>, <span class="dv">101</span>])</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> np.ones((<span class="dv">3</span>,))</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>m, v <span class="op">=</span> posterior_mean_var(k, alpha)</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>outcome <span class="op">=</span> [<span class="st">&#39;consistent accept&#39;</span>, <span class="st">&#39;inconsistent decision&#39;</span>, <span class="st">&#39;consistent reject&#39;</span>]</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    display(HTML(<span class="st">&quot;&lt;h4&gt;Probability of &quot;</span> <span class="op">+</span> outcome[i] <span class="op">+</span><span class="st">&#39; &#39;</span> <span class="op">+</span> <span class="bu">str</span>(m[i]) <span class="op">+</span>  <span class="st">&quot;+/-&quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">2</span><span class="op">*</span>np.sqrt(v[i])) <span class="op">+</span> <span class="st">&quot;&lt;/h4&gt;&quot;</span>))</span></code></pre></div>
 <p>So we have a probability of consistent accept as <span
 class="math inline">\(0.136 \pm 0.06\)</span>, the probability of
 inconsistent decision as <span class="math inline">\(0.260 \pm
@@ -1860,24 +1924,24 @@ Distributions</a>. However, we can use Monte Carlo to estimate the
 expected accept precision, reject precision, and agreed accept rate as
 well as their variances. We can use these results to give us error bars
 and histograms of these statistics.</p>
-<div class="sourceCode" id="cb51"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_precisions(k, alpha, num_samps):</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Helper function to sample from the posterior distibution of accept, </span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co">    reject and inconsistent probabilities and compute other statistics of interest </span></span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">    from the samples.&quot;&quot;&quot;</span></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.random.dirichlet(k<span class="op">+</span>alpha, size<span class="op">=</span>num_samps)</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Factors of 2 appear because inconsistent decisions </span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># are being accounted for across both committees.</span></span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>    ap <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">0</span>]<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">0</span>]<span class="op">+</span>k[:, <span class="dv">1</span>])</span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    rp <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">2</span>]<span class="op">/</span>(k[:, <span class="dv">1</span>]<span class="op">+</span><span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">2</span>])</span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>    aa <span class="op">=</span> k[:, <span class="dv">0</span>]<span class="op">/</span>(k[:, <span class="dv">0</span>]<span class="op">+</span>k[:, <span class="dv">2</span>])</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ap, rp, aa</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>ap, rp, aa <span class="op">=</span> sample_precisions(k, alpha, <span class="dv">10000</span>)</span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ap.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(ap.var()))</span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rp.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(rp.var()))</span>
-<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aa.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(aa.var()))</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sample_precisions(k, alpha, num_samps):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Helper function to sample from the posterior distibution of accept, </span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">    reject and inconsistent probabilities and compute other statistics of interest </span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">    from the samples.&quot;&quot;&quot;</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    k <span class="op">=</span> np.random.dirichlet(k<span class="op">+</span>alpha, size<span class="op">=</span>num_samps)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Factors of 2 appear because inconsistent decisions </span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># are being accounted for across both committees.</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    ap <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">0</span>]<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">0</span>]<span class="op">+</span>k[:, <span class="dv">1</span>])</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    rp <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">2</span>]<span class="op">/</span>(k[:, <span class="dv">1</span>]<span class="op">+</span><span class="dv">2</span><span class="op">*</span>k[:, <span class="dv">2</span>])</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>    aa <span class="op">=</span> k[:, <span class="dv">0</span>]<span class="op">/</span>(k[:, <span class="dv">0</span>]<span class="op">+</span>k[:, <span class="dv">2</span>])</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ap, rp, aa</span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>ap, rp, aa <span class="op">=</span> sample_precisions(k, alpha, <span class="dv">10000</span>)</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ap.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(ap.var()))</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rp.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(rp.var()))</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(aa.mean(), <span class="st">&#39;+/-&#39;</span>, <span class="dv">2</span><span class="op">*</span>np.sqrt(aa.var()))</span></code></pre></div>
 <p>Giving an accept precision of <span class="math inline">\(0.51 \pm
 0.13\)</span>, a reject precision of <span class="math inline">\(0.82
 \pm 0.05\)</span> and an agreed accept rate of <span

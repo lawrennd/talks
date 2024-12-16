@@ -31,7 +31,7 @@ transition: None
 \include{_ai/includes/the-atomic-eye.md}
 \include{_economics/includes/homo-atomicus.md}
 
-\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/conversation-computer.md}
 

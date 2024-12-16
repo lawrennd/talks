@@ -14,11 +14,9 @@ papersize: a4paper
 venue: The Astrazeneca Discovery Centre, Cambridge
 transition: None
 ---
-\define{noSlideTitle}
 
 
 \include{_economics/includes/philosophers-stone.md}
-
 \notes{In our modern economy, automation has the same effect. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
 
 \include{_economics/includes/the-attention-economy.md}
@@ -37,10 +35,11 @@ transition: None
 \include{_ai/includes/conversation-tedx.md}
 \include{_ai/includes/conversation-computer.md}
 
-\include{_policy/includes/new-productivity-paradox.md}
 \include{_data-science/includes/new-flow-of-information.md}
+\include{_policy/includes/new-productivity-paradox.md}
 
 \include{_policy/includes/innovation-economy.md}
+\include{_business/includes/two-types-of-stochastic-parrot.md}
 
 \section{What do People Want?}
 
@@ -61,7 +60,8 @@ transition: None
 
 \include{_business/includes/attention-flywheel-example-dsa.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
-\includes{_policy/includes/innovation-economy-conclusion.md}
+\include{_policy/includes/innovation-economy-conclusion.md}
+\include{_books/includes/the-atomic-human.md}
 
 
 

@@ -59,7 +59,7 @@ transition: None
 \include{_business/includes/supply-chain-of-ideas.md}
 \include{_business/includes/ft-op-ed.md}
 \include{_business/includes/attention-flywheel.md}
-
+\undef{aiAtCam}
 \include{_business/includes/attention-flywheel-example-dsa.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
 \includes{_policy/includes/innovation-economy-conclusion.md}

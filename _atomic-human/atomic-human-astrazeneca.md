@@ -47,6 +47,9 @@ transition: None
 \include{_dialogue/includes/public-dialogue-health.md}
 \include{_dialogue/includes/public-dialogue-education.md}
 \include{_dialogue/includes/public-dialogue-summary.md}
+\include{_ml/includes/rs-report-machine-learning.md}
+\include{_ml/includes/rs-report-mori-poll-art.md}
+\include{_ml/includes/chat-gpt-mercutio.md}
 
 \section{What's the solution?}
 

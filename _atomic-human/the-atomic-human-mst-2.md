@@ -1,5 +1,5 @@
 ---
-title: "Politics and the Atomic Human"
+title: "Achievement and the Atomic Human"
 subtitle: Session 2
 abstract: |
   In this talk Neil will reflect on the political themes that arose in

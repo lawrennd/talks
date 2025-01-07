@@ -22,6 +22,8 @@ transition: None
 ---
 \define{noSlideTitle}
 
+\include{_book/includes/the-open-society-and-its-enemies.md}
+\include{_business/includes/two-types-of-stochastic-parrot.md}
 
 \include{_ai/includes/baby-shoes.md}
 \include{_art/includes/blake-newton.md}

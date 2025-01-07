@@ -32,8 +32,6 @@ venue: AI and data science in the age of COVID-19
 transition: None
 ---
 
-\include{../talk-macros.gpp}
-
 
 \include{_delve/includes/delve-timeline.md}
 

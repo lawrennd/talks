@@ -1,7 +1,18 @@
 ---
 title: "Policy, Science and the Convening Power of Data"
 venue: "AI and data science in the age of COVID-19"
-abstract: "<p>With the world watching case numbers increase and publics and policymakers scrutinising projections from epidemiological models, the covid-19 pandemic brought with it increased attention on the use of data to inform policy. Alongside this scrutiny came a new wave of interest in the ability of data and artificial intelligence (AI) to help tackle major scientific and social challenges: could our increasing ability to collect, combine and interrogate large datasets lead to new insights that unlock more effective policy responses? Experiences from the DELVE Initiative, convened to bring data science to bear on covid-19 policy, suggests achieving this aim requires wider adoption of open data science methods to deploy data science and AI expertise and resources to tackle real-world problems.</p>"
+abstract: "<p>With the world watching case numbers increase and publics
+and policymakers scrutinising projections from epidemiological models,
+the covid-19 pandemic brought with it increased attention on the use of
+data to inform policy. Alongside this scrutiny came a new wave of
+interest in the ability of data and artificial intelligence (AI) to help
+tackle major scientific and social challenges: could our increasing
+ability to collect, combine and interrogate large datasets lead to new
+insights that unlock more effective policy responses? Experiences from
+the DELVE Initiative, convened to bring data science to bear on covid-19
+policy, suggests achieving this aim requires wider adoption of open data
+science methods to deploy data science and AI expertise and resources to
+tackle real-world problems.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -17,11 +28,11 @@ author:
   twitter: 
   gscholar: 
   orcid: 
-blog: null
+edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_policy/policy-science-and-the-convening-power-of-data.md
 date: 2020-11-24
 published: 2020-11-24
-week: 0
 reveal: 2020-11-24-policy-science-and-the-convening-power-of-data.slides.html
+transition: None
 youtube: "-QjJLgRni-M"
 layout: talk
 categories:
@@ -39,147 +50,285 @@ categories:
 
 -->
 <h2 id="delve-timeline">Delve Timeline</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <ul>
 <li>First contact <em>3rd April</em></li>
 <li>First meeting <em>7th April</em></li>
 <li>First working group <em>16th April</em></li>
 </ul>
-<p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
-<p>Right from the start the, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
-<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative 2020b)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
+<p>The Delve initiative is a group that was convened by the Royal
+Society to help provide data-driven insights about the pandemic, with an
+initial focus on exiting the first lockdown and particular interest in
+using the variation of strategies across different international
+governments to inform policy.</p>
+<p>Right from the start, data was at the heart of what DELVE does, but
+the reality is that little can be done without domain expertise and
+often the data we required wasn’t available.</p>
+<p>However, even when it is not present, the notion of what data might
+be needed can also have a convening effect, bringing together multiple
+disciplines around the policy questons at hand. The Delve Data Readiness
+report <span class="citation" data-cites="Delve-data20">(The DELVE
+Initiative, 2020a)</span> makes recommendations for how we can improve
+our processes around data, but this talk also focuses on how data brings
+different disciplines together around data.</p>
 <h1 id="formal-background">Formal Background</h1>
 <h2 id="embodiment-factors">Embodiment Factors</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="embodiment-factors-table-figure" class="figure-frame">
 <table>
 <tr>
 <td>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/IBM_Blue_Gene_P_supercomputer.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor.svg" width="15%" style=" ">
+</object>
 </td>
 <td align="center">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ClaudeShannon_MFO3807.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//human.svg" width="60%" style=" ">
+</object>
 </td>
 </tr>
 <tr>
 <td>
-compute
+bits/min
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 100 gigaflops</span><br />
+billions
 </td>
 <td align="center">
-<br /><span class="math display"> ≈ 16 petaflops</span><br />
+2,000
 </td>
 </tr>
 <tr>
 <td>
-communicate
+billion <br>calculations/s
 </td>
 <td align="center">
-<br /><span class="math display">1 gigbit/s</span><br />
+~100
 </td>
 <td align="center">
-<br /><span class="math display">100 bit/s</span><br />
+a billion
 </td>
 </tr>
 <tr>
 <td>
-(compute/communicate)
+embodiment
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>4</sup></span><br />
+20 minutes
 </td>
 <td align="center">
-<br /><span class="math display">10<sup>14</sup></span><br />
+5 billion years
 </td>
 </tr>
 </table>
-<p>See <a href="https://arxiv.org/abs/1705.07996" target="_blank" >“Living Together: Mind and Machine Intelligence” <span class="citation" data-cites="Lawrence:embodiment17">Lawrence (2017)</span></a></p>
-<p>There is a fundamental limit placed on our intelligence based on our ability to communicate. Claude Shannon founded the field of information theory. The clever part of this theory is it allows us to separate our measurement of information from what the information pertains to<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Shannon measured information in bits. One bit of information is the amount of information I pass to you when I give you the result of a coin toss. Shannon was also interested in the amount of information in the English language. He estimated that on average a word in the English language contains 12 bits of information.</p>
-<p>Given typical speaking rates, that gives us an estimate of our ability to communicate of around 100 bits per second <span class="citation" data-cites="Reed-information98">(Reed and Durlach 1998)</span>. Computers on the other hand can communicate much more rapidly. Current wired network speeds are around a billion bits per second, ten million times faster.</p>
-<p>When it comes to compute though, our best estimates indicate our computers are slower. A typical modern computer can process make around 100 billion floating point operations per second, each floating point operation involves a 64 bit number. So the computer is processing around 6,400 billion bits per second.</p>
-<p>It’s difficult to get similar estimates for humans, but by some estimates the amount of compute we would require to <em>simulate</em> a human brain is equivalent to that in the UK’s fastest computer <span class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan et al. 2009)</span>, the MET office machine in Exeter, which in 2018 ranks as the 11th fastest computer in the world. That machine simulates the world’s weather each morning, and then simulates the world’s climate in the afternoon. It is a 16 petaflop machine, processing around 1,000 <em>trillion</em> bits per second.</p>
+</div>
+<div id="embodiment-factors-table-magnify" class="magnify"
+onclick="magnifyFigure(&#39;embodiment-factors-table&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="embodiment-factors-table-caption" class="caption-frame">
+<p>Figure: Embodiment factors are the ratio between our ability to
+compute and our ability to communicate. Relative to the machine we are
+also locked in. In the table we represent embodiment as the length of
+time it would take to communicate one second’s worth of computation. For
+computers it is a matter of minutes, but for a human, it is a matter of
+thousands of millions of years. See also “Living Together: Mind and
+Machine Intelligence” <span class="citation"
+data-cites="Lawrence:embodiment17">Lawrence (2017)</span></p>
+</div>
+</div>
+<p>There is a fundamental limit placed on our intelligence based on our
+ability to communicate. Claude Shannon founded the field of information
+theory. The clever part of this theory is it allows us to separate our
+measurement of information from what the information pertains to.<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>Shannon measured information in bits. One bit of information is the
+amount of information I pass to you when I give you the result of a coin
+toss. Shannon was also interested in the amount of information in the
+English language. He estimated that on average a word in the English
+language contains 12 bits of information.</p>
+<p>Given typical speaking rates, that gives us an estimate of our
+ability to communicate of around 100 bits per second <span
+class="citation" data-cites="Reed-information98">(Reed and Durlach,
+1998)</span>. Computers on the other hand can communicate much more
+rapidly. Current wired network speeds are around a billion bits per
+second, ten million times faster.</p>
+<p>When it comes to compute though, our best estimates indicate our
+computers are slower. A typical modern computer can process make around
+100 billion floating-point operations per second, each floating-point
+operation involves a 64 bit number. So the computer is processing around
+6,400 billion bits per second.</p>
+<p>It’s difficult to get similar estimates for humans, but by some
+estimates the amount of compute we would require to <em>simulate</em> a
+human brain is equivalent to that in the UK’s fastest computer <span
+class="citation" data-cites="Ananthanarayanan-cat09">(Ananthanarayanan
+et al., 2009)</span>, the MET office machine in Exeter, which in 2018
+ranked as the 11th fastest computer in the world. That machine simulates
+the world’s weather each morning, and then simulates the world’s climate
+in the afternoon. It is a 16-petaflop machine, processing around 1,000
+<em>trillion</em> bits per second.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence
+(2024)</span> embodiment factor p. 13, 29, 35, 79, 87, 105, 197,
+216-217, 249, 269, 353, 369.</p>
 <h2 id="human-communication">Human Communication</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>For human conversation to work, we require an internal model of who we are speaking to. We model each other, and combine our sense of who they are, who they think we are, and what has been said. This is our approach to dealing with the limited bandwidth connection we have. Empathy and understanding of intent. Mental dispositional concepts are used to augment our limited communication bandwidth.</p>
-<p>Fritz Heider referred to the important point of a conversation as being that they are happenings that are “<em>psychologically represented</em> in each of the participants” (his emphasis) <span class="citation" data-cites="Heider:interpersonal58">(Heider 1958)</span>.</p>
-<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained Conversations</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>For human conversation to work, we require an internal model of who
+we are speaking to. We model each other, and combine our sense of who
+they are, who they think we are, and what has been said. This is our
+approach to dealing with the limited bandwidth connection we have.
+Empathy and understanding of intent. Mental dispositional concepts are
+used to augment our limited communication bandwidth.</p>
+<p>Fritz Heider referred to the important point of a conversation as
+being that they are happenings that are “<em>psychologically
+represented</em> in each of the participants” (his emphasis) <span
+class="citation" data-cites="Heider-interpersonal58">(Heider,
+1958)</span>.</p>
+<h3 id="bandwidth-constrained-conversations">Bandwidth Constrained
+Conversations</h3>
 <div class="figure">
 <div id="anne-bob-conversation-civil-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation006.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation006.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="anne-bob-conversation-civil-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
+<div id="anne-bob-conversation-civil-magnify" class="magnify"
+onclick="magnifyFigure(&#39;anne-bob-conversation-civil&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="anne-bob-conversation-civil-caption" class="caption-frame">
-<p>Figure: Conversation relies on internal models of other individuals.</p>
+<p>Figure: Conversation relies on internal models of other
+individuals.</p>
 </div>
 </div>
 <div class="figure">
 <div id="anne-bob-conversation-argument-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/anne-bob-conversation007.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation007.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="anne-bob-conversation-argument-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
+<div id="anne-bob-conversation-argument-magnify" class="magnify"
+onclick="magnifyFigure(&#39;anne-bob-conversation-argument&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="anne-bob-conversation-argument-caption" class="caption-frame">
-<p>Figure: Misunderstanding of context and who we are talking to leads to arguments.</p>
+<p>Figure: Misunderstanding of context and who we are talking to leads
+to arguments.</p>
 </div>
 </div>
-<p>Embodiment factors imply that, in our communication between humans, what is <em>not</em> said is, perhaps, more important than what is said. To communicate with each other we need to have a model of who each of us are.</p>
-<p>To aid this, in society, we are required to perform roles. Whether as a parent, a teacher, an employee or a boss. Each of these roles requires that we conform to certain standards of behaviour to facilitate communication between ourselves.</p>
+<p>Embodiment factors imply that, in our communication between humans,
+what is <em>not</em> said is, perhaps, more important than what is said.
+To communicate with each other we need to have a model of who each of us
+are.</p>
+<p>To aid this, in society, we are required to perform roles. Whether as
+a parent, a teacher, an employee or a boss. Each of these roles requires
+that we conform to certain standards of behaviour to facilitate
+communication between ourselves.</p>
 <p>Control of self is vitally important to these communications.</p>
-<p>The high availability of data available to humans undermines human-to-human communication channels by providing new routes to undermining our control of self.</p>
+<p>The high availability of data available to humans undermines
+human-to-human communication channels by providing new routes to
+undermining our control of self.</p>
 <h2 id="what-is-machine-learning">What is Machine Learning?</h2>
-<p><br /><span class="math display">$$ \text{data} + \text{model} \stackrel{\text{compute}}{\rightarrow} \text{prediction}$$</span><br /></p>
-<p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
+<p><span class="math display">\[ \text{data} + \text{model}
+\stackrel{\text{compute}}{\rightarrow} \text{prediction}\]</span></p>
+<p>Any policy question can be framed in a number of different ways -
+what are the health outcomes; what is the impact on NHS capacity; how
+are different groups affected; what is the economic impact – and each
+has different types of evidence associated with it. Complex and
+uncertain challenges require efforts to draw insights together from
+across disciplines.</p>
 <h2 id="data-as-a-convener">Data as a Convener</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/data-as-a-convener.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/data-as-a-convener.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>To improve communication, we need to ‘externalise cognition’: have objects that are outside our brains, are persistent in the real world, that we can combine with our individual knowledge. Doing otherwise leaves us imagining the world as our personal domain-utopias, ignoring the ugly realities of the way things actual progress.</p>
-<p>Data can provide an excellent convener, because even if it doesn’t exist it allows conversations to occur about what data should or could exist and how it might allow us to address the questions of importance.</p>
-<p>Models, while also of great potential value in externalising cognition, can be two complex to have conversations about and they can entrench beliefs, triggering <em>model induced blindness</em> (a variation on Kahneman’s <em>theory induced blindness</em> <span class="citation" data-cites="Kahneman:fastslow11">(Kahneman 2011)</span>).</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/data-as-a-convener.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/data-as-a-convener.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To improve communication, we need to ‘externalise cognition’: have
+objects that are outside our brains, are persistent in the real world,
+that we can combine with our individual knowledge. Doing otherwise
+leaves us imagining the world as our personal domain-utopias, ignoring
+the ugly realities of the way things actual progress.</p>
+<p>Data can provide an excellent convener, because even if it doesn’t
+exist it allows conversations to occur about what data should or could
+exist and how it might allow us to address the questions of
+importance.</p>
+<p>Models, while also of great potential value in externalising
+cognition, can be two complex to have conversations about and they can
+entrench beliefs, triggering <em>model induced blindness</em> (a
+variation on Kahneman’s <em>theory induced blindness</em> <span
+class="citation" data-cites="Kahneman-fastslow11">(Kahneman,
+2011)</span>).</p>
 <div class="figure">
 <div id="anne-bob-model-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/policy/anne-bob-model.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//policy/anne-bob-model.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="anne-bob-model-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-model&#39;)">
+<div id="anne-bob-model-magnify" class="magnify"
+onclick="magnifyFigure(&#39;anne-bob-model&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="anne-bob-model-caption" class="caption-frame">
-<p>Figure: Models can also be used to externalise cognition, but if the model is highly complex it’s difficult for two individuals to understand each others’ models. This shuts down conversation, often “mathematical intimidation” is used to shut down a line of questioning. This is highly destructive of the necessary cognitive diversity.</p>
+<p>Figure: Models can also be used to externalise cognition, but if the
+model is highly complex it’s difficult for two individuals to understand
+each others’ models. This shuts down conversation, often “mathematical
+intimidation” is used to shut down a line of questioning. This is highly
+destructive of the necessary cognitive diversity.</p>
 </div>
 </div>
-<p>Bandwidth constraints on individuals mean that they tend to focus on their own specialism. This can be particularly problematic for those on the more theoretical side, because mathematical models are complex, and require a lot of deep thought. However, when communicating with others, unless they have the same in depth experience of mathematical modelling as the theoreticians, the models do not bring about good information coherehnce. Indeed, many computational models themselves are so complex now that no individual can understand the model whole.</p>
+<p>Bandwidth constraints on individuals mean that they tend to focus on
+their own specialism. This can be particularly problematic for those on
+the more theoretical side, because mathematical models are complex, and
+require a lot of deep thought. However, when communicating with others,
+unless they have the same in depth experience of mathematical modelling
+as the theoreticians, the models do not bring about good information
+coherence. Indeed, many computational models themselves are so complex
+now that no individual can understand the model whole.</p>
 <div class="figure">
 <div id="anne-bob-data-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/policy/anne-bob-data.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//policy/anne-bob-data.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="anne-bob-data-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-bob-data&#39;)">
+<div id="anne-bob-data-magnify" class="magnify"
+onclick="magnifyFigure(&#39;anne-bob-data&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="anne-bob-data-caption" class="caption-frame">
-<p>Figure: Data can be queried, but the simplest query, what data do we need? Doesn’t even require the data to exist. It seems data can be highly effective for convening a multidisciplinary conversation.</p>
+<p>Figure: Data can be queried, but the simplest query, what data do we
+need? Doesn’t even require the data to exist. It seems data can be
+highly effective for convening a multidisciplinary conversation.</p>
 </div>
 </div>
-<p>Fritz Heider referred to happenings that are “<em>psychologically represented</em> in each of the participants” <span class="citation" data-cites="Heider:interpersonal58">(Heider 1958)</span> as a preqequisite for conversation. Data is a route to that psychological representation.</p>
-<p><em>Note</em>: my introduction to Fritz Heider was through a talk by Nick Chater in 2010, you can read Nick’s thoughts on these issues in his book, <em>The Mind is Flat</em> <span class="citation" data-cites="Chater:mindisflat19">(Chater 2019)</span>.</p>
+<p>Fritz Heider referred to happenings that are “<em>psychologically
+represented</em> in each of the participants” <span class="citation"
+data-cites="Heider-interpersonal58">(Heider, 1958)</span> as a
+prerequisite for conversation. Data is a route to that psychological
+representation.</p>
+<p><em>Note</em>: my introduction to Fritz Heider was through a talk by
+Nick Chater in 2010, you can read Nick’s thoughts on these issues in his
+book, <em>The Mind is Flat</em> <span class="citation"
+data-cites="Chater-mindisflat19">(Chater, 2019)</span>.</p>
 <h1 id="supply-chain-of-ideas">Supply Chain of Ideas</h1>
 <h2 id="the-supply-chain-of-ideas">The Supply Chain of Ideas</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/the-supply-chain-of-ideas.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/the-supply-chain-of-ideas.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/the-supply-chain-of-ideas.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/the-supply-chain-of-ideas.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip0">
+<defs> <clipPath id="clip54">
 <style>
 circle {
   fill: black;
@@ -189,63 +338,124 @@ circle {
 <title>
 Narayan Venkatasubramanyan
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/narayan-venkatasubramanyan.png" clip-path="url(#clip0)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/narayan-venkatasubramanyan.png" clip-path="url(#clip54)"/>
 </svg>
 </div>
 <div class="figure">
 <div id="buying-system-components-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/software/buying-schematic.svg" width="40%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//software/buying-schematic.svg" width="40%" style=" ">
 </object>
 </div>
-<div id="buying-system-components-magnify" class="magnify" onclick="magnifyFigure(&#39;buying-system-components&#39;)">
+<div id="buying-system-components-magnify" class="magnify"
+onclick="magnifyFigure(&#39;buying-system-components&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="buying-system-components-caption" class="caption-frame">
 <p>Figure: The components of a buying system</p>
 </div>
 </div>
-<p>Another friend of mine who still works for Jeff is called Narayan. Narayan has spent his life working in supply chain. He liked to tell me about a man by a river in Kerala, South India who sold coconuts. The man sat beside a river and sold coconuts to people on boats. The man would sit under a coconut tree. When someone stopped to buy a coconut the man would climb the tree and cut down a coconut and sell it to the customer. When that tree ran out of coconuts the man would move to another tree. Narayan used to say that this man had the shortest supply chain in the world. Then Narayan would laugh his booming laugh.</p>
-<p>When he’d stopped laughing, Narayan would tell me that the magic of supply chain is it takes the waiting away. It makes all the customers feel that everything grows on trees, and its all sitting there ripe and ready to pluck. And all that’s happening is that the store-owner is popping up the tree and bringing us a fresh one down.</p>
+<p>Another friend of mine who still works for Jeff is called Narayan.
+Narayan has spent his life working in supply chain. He liked to tell me
+about a man by a river in Kerala, South India who sold coconuts. The man
+sat beside a river and sold coconuts to people on boats. The man would
+sit under a coconut tree. When someone stopped to buy a coconut the man
+would climb the tree and cut down a coconut and sell it to the customer.
+When that tree ran out of coconuts the man would move to another tree.
+Narayan used to say that this man had the shortest supply chain in the
+world. Then Narayan would laugh his booming laugh.</p>
+<p>When he’d stopped laughing, Narayan would tell me that the magic of
+supply chain is it takes the waiting away. It makes all the customers
+feel that everything grows on trees, and its all sitting there ripe and
+ready to pluck. And all that’s happening is that the store-owner is
+popping up the tree and bringing us a fresh one down.</p>
 <div class="figure">
 <div id="keralan-coconut-tree-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/business/kerala-coconut.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//business/kerala-coconut.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="keralan-coconut-tree-magnify" class="magnify" onclick="magnifyFigure(&#39;keralan-coconut-tree&#39;)">
+<div id="keralan-coconut-tree-magnify" class="magnify"
+onclick="magnifyFigure(&#39;keralan-coconut-tree&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="keralan-coconut-tree-caption" class="caption-frame">
-<p>Figure: The word Kerala may come from the Malayalam word for “coconut tree land”.</p>
+<p>Figure: The word Kerala may come from the Malayalam word for “coconut
+tree land”.</p>
 </div>
 </div>
-<h2 id="cocount-scientists">Cocount Scientists</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/coconut-scientist.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/coconut-scientist.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>This is where a “supply chain of ideas” comes in. The infrastructure for taking innovative ideas from their source to where they’re required.</p>
-<p>When Narayan said “supply chain of ideas” I realised that I was a coconut scientist.</p>
+<h2 id="coconut-scientists">Coconut Scientists</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/coconut-scientist.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/coconut-scientist.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="kerala-coconut-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//business/kerala-coconut.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="kerala-coconut-magnify" class="magnify"
+onclick="magnifyFigure(&#39;kerala-coconut&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="kerala-coconut-caption" class="caption-frame">
+<p>Figure: The word Kerala may come from the Malayalam word for “coconut
+tree land”.</p>
+</div>
+</div>
 <div class="figure">
 <div id="coconut-science-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/business/coconut-science.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//business/coconut-science.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="coconut-science-magnify" class="magnify" onclick="magnifyFigure(&#39;coconut-science&#39;)">
+<div id="coconut-science-magnify" class="magnify"
+onclick="magnifyFigure(&#39;coconut-science&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="coconut-science-caption" class="caption-frame">
-<p>Figure: The Coconut Palm from Köhler’s Medicinal Plants Volume III pg 526 <span class="citation" data-cites="Koehler-medicinal98">(Köhler et al. 1898)</span>. 1 fruit in longitudinal section; 2 stone core after removal of the middle and outer fruit skin; 3 cut across the same; 4 endosperm after removal of the stone shell (coprah); 5 a piece of the endosperm with the embryo.</p>
+<p>Figure: The Coconut Palm from Köhler’s Medicinal Plants Volume III pg
+526 . 1 fruit in longitudinal section; 2 stone core after removal of the
+middle and outer fruit skin; 3 cut across the same; 4 endosperm after
+removal of the stone shell (coprah); 5 a piece of the endosperm with the
+embryo.</p>
 </div>
 </div>
-<p>Most scientists are like the guy sitting beside the river under a coconut palm. Every time someone stopped at the bank, they climb the tree and gave them a coconunt. But my coconut was a scientific solution, my coconuts are machine learning algorithms. You could have any idea you liked, as long as it was a coconut.</p>
-<p>But in practice, if science is to be translated into something useful then the answers need to be driven by the problems of the real world, this means that the supply chain of ideas needs to be driven by the demand, not the supply. But it should still be driven in that magical way where you’re just sailing up the river and all the different scientific ideas are available.</p>
-<p>Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to Delve’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.</p>
+<p>This is where a “supply chain of ideas” comes in. The infrastructure
+for taking innovative ideas from their source to where they’re
+required.</p>
+<p>When Narayan said “supply chain of ideas” I realised that I was a
+coconut scientist.</p>
+<p>Most scientists are like the guy sitting beside the river under a
+coconut palm. Every time someone stopped at the bank, they climb the
+tree and gave them a coconunt. But my coconut was a scientific solution,
+my coconuts are machine learning algorithms. You could have any idea you
+liked, as long as it was a coconut.</p>
+<p>But in practice, if science is to be translated into something useful
+then the answers need to be driven by the problems of the real world,
+this means that the supply chain of ideas needs to be driven by the
+demand, not the supply. But it should still be driven in that magical
+way where you’re just sailing up the river and all the different
+scientific ideas are available.</p>
+<p>Sustained engagement between government and academia plays an
+important role in building mutual understanding about what each can
+deliver. Core to Delve’s work was the intention that research questions
+be framed in ways that would resonate with the policy challenges being
+seen in government.</p>
+<p>Sustained engagement between government and academia plays an
+important role in building mutual understanding about what each can
+deliver. Core to Delve’s work was the intention that research questions
+be framed in ways that would resonate with the policy challenges being
+seen in government.</p>
 <h2 id="project-structure">Project Structure</h2>
 <div class="figure">
 <div id="committee-structure-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/delve/committee-structure.svg" width="35%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//delve/committee-structure.svg" width="35%" style=" ">
 </object>
 </div>
-<div id="committee-structure-magnify" class="magnify" onclick="magnifyFigure(&#39;committee-structure&#39;)">
+<div id="committee-structure-magnify" class="magnify"
+onclick="magnifyFigure(&#39;committee-structure&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="committee-structure-caption" class="caption-frame">
@@ -253,23 +463,33 @@ Narayan Venkatasubramanyan
 </div>
 </div>
 <h1 id="supply-chain-of-ideas-1">Supply Chain of Ideas</h1>
-<p>The main philosphy of the Delve group was to follow the <a href="http://inverseprobability.com/talks/notes/coconut-science-and-the-supply-chain-of-ideas.html">“Supply Chain of Ideas”</a>.</p>
+<p>The main philosphy of the Delve group was to follow the <a
+href="http://inverseprobability.com/talks/notes/coconut-science-and-the-supply-chain-of-ideas.html">“Supply
+Chain of Ideas”</a>.</p>
 <div class="figure">
 <div id="supply-chain-of-ideas-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/delve/supply-chain-of-ideas.svg" width="90%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//delve/supply-chain-of-ideas.svg" width="90%" style=" ">
 </object>
 </div>
-<div id="supply-chain-of-ideas-magnify" class="magnify" onclick="magnifyFigure(&#39;supply-chain-of-ideas&#39;)">
+<div id="supply-chain-of-ideas-magnify" class="magnify"
+onclick="magnifyFigure(&#39;supply-chain-of-ideas&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="supply-chain-of-ideas-caption" class="caption-frame">
-<p>Figure: The supply chain of ideas avoids ‘coconut science’, assuming your scientific solution is the right one to answer a question that’s been asked. Our science is directed towards policy questions.</p>
+<p>Figure: The supply chain of ideas avoids ‘coconut science’, assuming
+your scientific solution is the right one to answer a question that’s
+been asked. Our science is directed towards policy questions.</p>
 </div>
 </div>
 <h2 id="storming-the-castle">Storming the Castle</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/storming-the-castle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/storming-the-castle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/storming-the-castle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/storming-the-castle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip1">
+<defs> <clipPath id="clip72">
 <style>
 circle {
   fill: black;
@@ -279,50 +499,97 @@ circle {
 <title>
 Sir Lancelot the Brave
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/sir-lancelot-the-brave.jpg" clip-path="url(#clip1)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/sir-lancelot-the-brave.jpg" clip-path="url(#clip72)"/>
 </svg>
-<p>blog post on <a href="http://inverseprobability.com/2020/10/13/storming-the-castle">Storming the Castle: Data Science for Covid 19 Policy</a>.</p>
-<p>The response needed for policy questions is comlplex and uncertain. It requires a multi-disciplinary response. But much of science is actually faith based. To be successful an individual scientist has to learn to believe in their own idea. This faith is required, often across many years. There are struggles of funding, publication and building and maintaining a group. The natural result is that individual scientists are not always very scientific in their thinking.</p>
-<p>In the classic film Monty Python and the Holy Grail, John Cleese, as Sir Lancelot the Brave, finds a note – a plea from a prisoner of Swamp Castle – beseeching the discoverer to help them escape an unwanted marriage. Responding to this distress call, Sir Lancelot singlehandedly storms Swamp Castle, slaying the guards, terrorising the wedding guests, and fighting his way to the Tall Tower. There, instead of the expected damsel in distress, cruelly imprisoned, Sir Lancelot is surprised to find a wayward groom, Prince Herbert, who sent the note after an argument with his father.</p>
-<p>The United Kingdom is considered an international leader in science, and a pioneer in the provision of science advice. The Government has well-established structures for accessing scientific expertise in emergencies through its network of science advisers, the Scientific Advisory Group for Emergencies (SAGE) and departmental advisory committees, including the Science for Pandemic Influenza Groups that provide advice on covid-19 modelling and behavioural science. Together, these structures might call to mind a different Arthurian vision, evoking the works of Thomas Malory: the scientist as Merlin, giving wise counsel to Arthur and honing the Government’s decision-making through deep knowledge of the scientific arts.</p>
-<p>Scientists are concerned citizens, and it is perhaps with this vision of adviser as trusted arbiter that many researchers entered into public and policy debates surrounding covid-19. While pursuing the wise Merlin, however, efforts to advise government can easily drift towards Monty Python’s Lancelot. Confident in his knowledge of castle-storming, his individual dedication and his skills in damsel-rescuing, Sir Lancelot enters the fray with only a partial understanding of the challenges and circumstances at hand.</p>
-<p>Indeed, on his way to the tower, Sir Lancelot is so focussed on his task that he doesn’t notice that he fights his way through the bridal party, knocking the down the bride on his way to the tower.</p>
-<p>We cannot afford to address policy questions in this manner <span class="citation" data-cites="Montgomery-storming20">(Montgomery and Lawrence 2020)</span>.</p>
-<div class="figure">
-<div id="black-box-thinking-rebel-ideas-figure" class="figure-frame">
-<table>
-<tr>
-<td width>
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/health/black-box-thinking.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-</td>
-<td width>
-<div class="centered centered" style="">
-<img class="" src="../slides/diagrams/ai/rebel-ideas.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div id="black-box-thinking-rebel-ideas-magnify" class="magnify" onclick="magnifyFigure(&#39;black-box-thinking-rebel-ideas&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="black-box-thinking-rebel-ideas-caption" class="caption-frame">
-<p>Figure: In <a href="https://www.amazon.co.uk/Black-Box-Thinking-Surprising-Success-ebook/dp/B00PW634YQ">Black Box Thinking</a> Matthew Syed compares the open approach to errors taken in the airline industry to way errors are dealt with in the health system drawing on Martin Bromiley’s experiences. In <a href="https://www.amazon.co.uk/dp/B07CG9MVD1">Rebel Ideas</a> Matthew focusses on the importance of cognitive diversity in decision making. The need for diversity is a consequence of uncertainty.</p>
-</div>
-</div>
+<p>blog post on <a
+href="http://inverseprobability.com/2020/10/13/storming-the-castle">Storming
+the Castle: Data Science for Covid 19 Policy</a>.</p>
+<p>The response needed for policy questions is comlplex and uncertain.
+It requires a multi-disciplinary response. But much of science is
+actually faith based. To be successful an individual scientist has to
+learn to believe in their own idea. This faith is required, often across
+many years. There are struggles of funding, publication and building and
+maintaining a group. The natural result is that individual scientists
+are not always very scientific in their thinking.</p>
+<p>In the classic film Monty Python and the Holy Grail, John Cleese, as
+Sir Lancelot the Brave, finds a note – a plea from a prisoner of Swamp
+Castle – beseeching the discoverer to help them escape an unwanted
+marriage. Responding to this distress call, Sir Lancelot singlehandedly
+storms Swamp Castle, slaying the guards, terrorising the wedding guests,
+and fighting his way to the Tall Tower. There, instead of the expected
+damsel in distress, cruelly imprisoned, Sir Lancelot is surprised to
+find a wayward groom, Prince Herbert, who sent the note after an
+argument with his father.</p>
+<p>The United Kingdom is considered an international leader in science,
+and a pioneer in the provision of science advice. The Government has
+well-established structures for accessing scientific expertise in
+emergencies through its network of science advisers, the Scientific
+Advisory Group for Emergencies (SAGE) and departmental advisory
+committees, including the Science for Pandemic Influenza Groups that
+provide advice on covid-19 modelling and behavioural science. Together,
+these structures might call to mind a different Arthurian vision,
+evoking the works of Thomas Malory: the scientist as Merlin, giving wise
+counsel to Arthur and honing the Government’s decision-making through
+deep knowledge of the scientific arts.</p>
+<p>Scientists are concerned citizens, and it is perhaps with this vision
+of adviser as trusted arbiter that many researchers entered into public
+and policy debates surrounding covid-19. While pursuing the wise Merlin,
+however, efforts to advise government can easily drift towards Monty
+Python’s Lancelot. Confident in his knowledge of castle-storming, his
+individual dedication and his skills in damsel-rescuing, Sir Lancelot
+enters the fray with only a partial understanding of the challenges and
+circumstances at hand.</p>
+<p>Indeed, on his way to the tower, Sir Lancelot is so focussed on his
+task that he doesn’t notice that he fights his way through the bridal
+party, knocking the down the bride on his way to the tower.</p>
+<p>We cannot afford to address policy questions in this manner <span
+class="citation" data-cites="Montgomery-storming20">(Montgomery and
+Lawrence, 2020)</span>.</p>
 <h2 id="propagation-of-best-practice">Propagation of Best Practice</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/black-box-thinking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/black-box-thinking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>We must also be careful to maintain openness in this new genaration of digital solutions across health and society. Matthew Syed’s book, <em>Black Box Thinking</em> <span class="citation" data-cites="Syed:blackbox15">(Syed 2015)</span>, emphasizes the importance of surfacing errors as a route to learning and improved process. Taking aviation as an example, and contrasting it with the culture in medicine, Matthew relates the story of <a href="https://chfg.org/trustees/martin-bromiley/">Martin Bromiley</a>, an airline pilot whose wife died during a routine hospital procedure and his efforts to improve the culture of safety in medicine. The motivation for the book is the difference in culture between aviation and medicine in how errors are acknowledged and dealt with. We must ensure that these high standards of oversight apply to the era of data-driven automated decision making.</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/black-box-thinking.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/black-box-thinking.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>We must also be careful to maintain openness in this new genaration
+of digital solutions across health and society. Matthew Syed’s book,
+<em>Black Box Thinking</em> <span class="citation"
+data-cites="Syed:blackbox15">(Syed, 2015)</span>, emphasizes the
+importance of surfacing errors as a route to learning and improved
+process. Taking aviation as an example, and contrasting it with the
+culture in medicine, Matthew relates the story of <a
+href="https://chfg.org/trustees/martin-bromiley/">Martin Bromiley</a>,
+an airline pilot whose wife died during a routine hospital procedure and
+his efforts to improve the culture of safety in medicine. The motivation
+for the book is the difference in culture between aviation and medicine
+in how errors are acknowledged and dealt with. We must ensure that these
+high standards of oversight apply to the era of data-driven automated
+decision making.</p>
 <h1 id="cognitive-diversity">Cognitive Diversity</h1>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/rebel-ideas.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/rebel-ideas.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>Rebel Ideas focuses on the importance of diversity in problem solving <span class="citation" data-cites="Syed:rebelideas19">(Syed 2019)</span>. This is particularly pronounced in the presence of uncertainty. It is unlikely that there is a single person that knows all the answers, or that even a particular expertise is the only expertise you need in the room. The reality is that a range of different opinions are often required and that the better ideas often lie at the intersection of different expertise.</p>
-<h2 id="science-not-scientists"><em>Science</em> not <em>Scientists</em></h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/science-not-scientists.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/science-not-scientists.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/rebel-ideas.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/rebel-ideas.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Rebel Ideas focuses on the importance of diversity in problem solving
+<span class="citation" data-cites="Syed:rebelideas19">(Syed,
+2019)</span>. This is particularly pronounced in the presence of
+uncertainty. It is unlikely that there is a single person that knows all
+the answers, or that even a particular expertise is the only expertise
+you need in the room. The reality is that a range of different opinions
+are often required and that the better ideas often lie at the
+intersection of different expertise.</p>
+<h2 id="science-not-scientists"><em>Science</em> not
+<em>Scientists</em></h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/science-not-scientists.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/science-not-scientists.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="centered" style="">
 <svg viewBox="0 0 200 200" style="width:15%">
-<defs> <clipPath id="clip2">
+<defs> <clipPath id="clip67">
 <style>
 circle {
   fill: black;
@@ -332,138 +599,393 @@ circle {
 <title>
 Robbie Savage
 </title>
-<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="../slides/diagrams/people/robbie-savage.png" clip-path="url(#clip2)"/>
+<image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="https://inverseprobability.com/talks/../slides/diagrams//people/robbie-savage.png" clip-path="url(#clip67)"/>
 </svg>
 </div>
-<p>The football pundit and former Wales International Robbie Savage is passionate about grassroots football. He has managed youth teams. Robbie’s son also plays at a junior level, following his Dad’s footsteps at Manchester United’s academy. On occasion I’ve heard Robbie on podcasts talking about his son’s fledgling career. In Robbie’s voice you can hear the hopes and concerns that every parent has for their own child as they begin to make their way in the world.</p>
-<p>My son does not play for Manchester United (anyway, he’d prefer to play for Sheffield United) but watching him play Sunday league, I’m aware that I’m not objective about his play, and I’m aware that the parents around me are also not objective. Over my life, my son has played in four different teams with five different managers. And most of these managers also have also had a child playing in the team.</p>
-<p>This makes watching him play different from watching another team. The parents’ presence means that grassroots football is subjective in a particular way. Every parent has an interest in how their child is performing. Different parents have different levels of awareness of this subjectivity, some play down their children’s contribuion, others play it up.</p>
-<p>Scientists are similar to the parents watching their children play grassroots football. Most scientists have a particular field, a particular domain and a particular pet idea. As a result, we should be skeptical about their individual claims, just as we might be more skeptical about a parent’s report of their own child’s performance. Parents and scientists are people, some of them are more self aware and are better at dealing with this subjectivity, but the truth remains that science isn’t scientists.</p>
+<p>The football pundit and former Wales International Robbie Savage is
+passionate about grassroots football. He has managed youth teams.
+Robbie’s son also plays at a junior level, following his Dad’s footsteps
+at Manchester United’s academy. On occasion I’ve heard Robbie on
+podcasts talking about his son’s fledgling career. In Robbie’s voice you
+can hear the hopes and concerns that every parent has for their own
+child as they begin to make their way in the world.</p>
+<p>My son does not play for Manchester United (anyway, he’d prefer to
+play for Sheffield United) but watching him play Sunday league, I’m
+aware that I’m not objective about his play, and I’m aware that the
+parents around me are also not objective. Over my life, my son has
+played in four different teams with five different managers. And most of
+these managers also have also had a child playing in the team.</p>
+<p>This makes watching him play different from watching another team.
+The parents’ presence means that grassroots football is subjective in a
+particular way. Every parent has an interest in how their child is
+performing. Different parents have different levels of awareness of this
+subjectivity, some play down their children’s contribuion, others play
+it up.</p>
+<p>Scientists are similar to the parents watching their children play
+grassroots football. Most scientists have a particular field, a
+particular domain and a particular pet idea. As a result, we should be
+skeptical about their individual claims, just as we might be more
+skeptical about a parent’s report of their own child’s performance.
+Parents and scientists are people, some of them are more self aware and
+are better at dealing with this subjectivity, but the truth remains that
+science isn’t scientists.</p>
 <blockquote>
 <p>Ogni scarrafone è bello a mamma soja</p>
 <p>Neopolitan expression</p>
 </blockquote>
-<p>Scientists are a group of people with particular subjective biases, and their individual opinion may count for a lot within their domain of expertise, but when multidisciplinary questions of policy are in play, then their individual opinions should be treated with some skepticism.</p>
-<p>The process of <em>science</em> involves scientists but it also involves mechanisms that include peer review and debate. Importantly it also includes referees in the form of statisticians, who are trained to treat data subjectively.</p>
-<p>Science itself is also not <em>policy</em>. Policy decisions often have some urgency which means the normal processes of scientific proof do not have time to take their course. These decisions are often about balancing long term versus short term uncertainties.</p>
-<p>See for example this blog post on <a href="http://inverseprobability.com/2020/08/25/a-primer-on-decision-making-with-uncertainty">Primer on Decision Making with Uncertainty</a>..</p>
-<p>In the moment of policy crisis such as what we’ve seen in Covid-19 it also has people who are used to keeping the score. Public health professionals are experienced in disease interventions. Many of them having seen how scientific ideas pan out in practice, which turn out to be successful and which sound promising but repeatedly fail to deliver.</p>
-<p>Kahneman refers to our awe of theory as <em>theory induces blindness</em> <span class="citation" data-cites="Kahneman:fastslow11">(Kahneman 2011)</span>, but I feel a more appropriate phrase is <em>model-induced blindness</em>.</p>
+<p>Scientists are a group of people with particular subjective biases,
+and their individual opinion may count for a lot within their domain of
+expertise, but when multidisciplinary questions of policy are in play,
+then their individual opinions should be treated with some
+skepticism.</p>
+<p>The process of <em>science</em> involves scientists but it also
+involves mechanisms that include peer review and debate. Importantly it
+also includes referees in the form of statisticians, who are trained to
+treat data subjectively.</p>
+<p>Science itself is also not <em>policy</em>. Policy decisions often
+have some urgency which means the normal processes of scientific proof
+do not have time to take their course. These decisions are often about
+balancing long term versus short term uncertainties.</p>
+<p>See for example this blog post on <a
+href="http://inverseprobability.com/2020/08/25/a-primer-on-decision-making-with-uncertainty">Primer
+on Decision Making with Uncertainty</a>..</p>
+<p>In the moment of policy crisis such as what we’ve seen in Covid-19 it
+also has people who are used to keeping the score. Public health
+professionals are experienced in disease interventions. Many of them
+having seen how scientific ideas pan out in practice, which turn out to
+be successful and which sound promising but repeatedly fail to
+deliver.</p>
+<p>Kahneman refers to our awe of theory as <em>theory induces
+blindness</em> <span class="citation"
+data-cites="Kahneman:fastslow11">(<strong>Kahneman:fastslow11?</strong>)</span>,
+but I feel a more appropriate phrase is <em>model-induced
+blindness</em>.</p>
 <h1 id="delve">Delve</h1>
 <h1 id="information-coherence">Information Coherence</h1>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-information-coherence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-information-coherence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>Part of forming an efficient supply chain involves bottleneck analysis. In the supply chain of ideas, and across most organisations, a criticial bottleneck is our individual bandwidth.</p>
-<p>Humans have a information transmission rate (in spoken form) of around 100 bits per second. This is very low compared to e.g. our computers.</p>
-<p>Fortunately we are very intelligent, and investing time in thinking about the project, about those we’re working with, what the challenges we’re facing, allows us to account for one another in our decision making.</p>
-<p>Achieving information coherence is about ensuring that we’re working together towards the same objectives. This reduces the need for detailed communication, because we have a better group-wide understanding of the common goals.</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-information-coherence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-information-coherence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Part of forming an efficient supply chain involves bottleneck
+analysis. In the supply chain of ideas, and across most organisations, a
+criticial bottleneck is our individual bandwidth.</p>
+<p>Humans have a information transmission rate (in spoken form) of
+around 100 bits per second. This is very low compared to e.g. our
+computers.</p>
+<p>Fortunately we are very intelligent, and investing time in thinking
+about the project, about those we’re working with, what the challenges
+we’re facing, allows us to account for one another in our decision
+making.</p>
+<p>Achieving information coherence is about ensuring that we’re working
+together towards the same objectives. This reduces the need for detailed
+communication, because we have a better group-wide understanding of the
+common goals.</p>
 <p>That ensures that the supply chain of ideas runs smoothly.</p>
 <div class="figure">
 <div id="information-coherence-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/delve/information-coherence.svg" width="70%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//delve/information-coherence.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="information-coherence-magnify" class="magnify" onclick="magnifyFigure(&#39;information-coherence&#39;)">
+<div id="information-coherence-magnify" class="magnify"
+onclick="magnifyFigure(&#39;information-coherence&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="information-coherence-caption" class="caption-frame">
-<p>Figure: Our Action team needs to work through trusted connections to the Steering Committee, Working Group and the wider community, while orienting around a policy question and conferring regularly with other members of the Action Team.</p>
+<p>Figure: Our Action team needs to work through trusted connections to
+the Steering Committee, Working Group and the wider community, while
+orienting around a policy question and conferring regularly with other
+members of the Action Team.</p>
 </div>
 </div>
 <h2 id="tenets">Tenets</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-tenets.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-tenets.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>I was fortunate to have had conversations about management of operational science with a lot of people, not just at Amazon. Fortunately, one of those people was <a href="https://www.metoffice.gov.uk/research/people/niall-robinson">Niall Robinson</a> from the Met Office Informatics Lab. Niall and I had talked extensively about ideas for managing operational science, mixing ideas from industry (in particular Amazon) with practices in an operational laboratory, such as the Met Office Informatics Lab. Fortunately, Niall had had some experience placing these ideas into practice and was able to emphasize which had really worked for him.</p>
-<p>One of those is <em>tenets</em>. Amazon uses tenets to understand characterize a team or projects way of operating. A good example is the tenets of the Principle Engieers’ community, which are <a href="https://www.amazon.jobs/en-gb/landing_pages/pe-community-tenets">made public here</a>. Niall and I had both found tenets useful in driving operational science. We therefore created tenets for this group to set the tone in terms of ways of working.</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-tenets.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-tenets.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>I was fortunate to have had conversations about management of
+operational science with a lot of people, not just at Amazon.
+Fortunately, one of those people was <a
+href="https://www.metoffice.gov.uk/research/people/niall-robinson">Niall
+Robinson</a> from the Met Office Informatics Lab. Niall and I had talked
+extensively about ideas for managing operational science, mixing ideas
+from industry (in particular Amazon) with practices in an operational
+laboratory, such as the Met Office Informatics Lab. Fortunately, Niall
+had had some experience placing these ideas into practice and was able
+to emphasize which had really worked for him.</p>
+<p>One of those is <em>tenets</em>. Amazon uses tenets to understand
+characterize a team or projects way of operating. A good example is the
+tenets of the Principle Engieers’ community, which are <a
+href="https://www.amazon.jobs/en-gb/landing_pages/pe-community-tenets">made
+public here</a>. Niall and I had both found tenets useful in driving
+operational science. We therefore created tenets for this group to set
+the tone in terms of ways of working.</p>
 <p>The text below is from our onboarding document.</p>
 <blockquote>
-<p>A keystone of information coherence is our tenets for this project. The Tenets emphasise the prioritisation of our ways of working.</p>
-<p>This project has short deadlines, and quick turn around times. This can lead to stress. In moments of stress it can be difficult to decide how to prioritise. At these moments the Tenets can be particularly useful in reminding what the group priorities are.</p>
-<p>The Tenets are core, but they are not set in stone. If you have better ideas or improvements, please suggest them!</p>
-<p>Tips for good tenets are: avoid platitudes, a good tenet is one that empowers individuals to make better decisions that align with the groups objectives (information coherence).</p>
+<p>A keystone of information coherence is our tenets for this project.
+The Tenets emphasise the prioritisation of our ways of working.</p>
+<p>This project has short deadlines, and quick turn around times. This
+can lead to stress. In moments of stress it can be difficult to decide
+how to prioritise. At these moments the Tenets can be particularly
+useful in reminding what the group priorities are.</p>
+<p>The Tenets are core, but they are not set in stone. If you have
+better ideas or improvements, please suggest them!</p>
+<p>Tips for good tenets are: avoid platitudes, a good tenet is one that
+empowers individuals to make better decisions that align with the groups
+objectives (information coherence).</p>
 <p>Our current list of tenets is:</p>
 </blockquote>
 <ol type="1">
 <li><p>We are steered by policy need.</p></li>
-<li><p>“It is amazing what you can accomplish if you do not care who gets the credit.” We’re here to be as useful as possible, as fast as possible, as a group.</p></li>
-<li><p>This work is multidisciplinary - everyone should ask questions, and expect to answer them to people from other disciplines in ways they can understand and scrutinise.</p></li>
-<li><p>We do not reinvent the wheel: we use existing analysis techniques and datasets wherever possible to answer questions.</p></li>
-<li><p>Being useful is more important than presentee-ism. We should be considerate of people who work different hours and have different commitments.</p></li>
-<li><p>We steer a path between the Hedgehog (too attached to a particular model) and the Fox (always considering worst case outcome).</p></li>
+<li><p>“It is amazing what you can accomplish if you do not care who
+gets the credit.” We’re here to be as useful as possible, as fast as
+possible, as a group.</p></li>
+<li><p>This work is multidisciplinary - everyone should ask questions,
+and expect to answer them to people from other disciplines in ways they
+can understand and scrutinise.</p></li>
+<li><p>We do not reinvent the wheel: we use existing analysis techniques
+and datasets wherever possible to answer questions.</p></li>
+<li><p>Being useful is more important than presentee-ism. We should be
+considerate of people who work different hours and have different
+commitments.</p></li>
+<li><p>We steer a path between the Hedgehog (too attached to a
+particular model) and the Fox (always considering worst case
+outcome).</p></li>
 </ol>
-<p>We combined these tenets with other ideas that built on agile software engineering practice, but adapted for operational science. Including a Trello board, used kanban style, to track projects.</p>
+<p>We combined these tenets with other ideas that built on agile
+software engineering practice, but adapted for operational science.
+Including a Trello board, used kanban style, to track projects.</p>
 <!--include{_delve/includes/delve-sci-ops.md}-->
 <h2 id="multidisciplinarity">Multidisciplinarity</h2>
-<p>The group is purposely multidisciplinary as reflected in tenets. That stems from the belief that good policy decisions can only be made by considering a range of factors.</p>
-<p>Multidisciplinarity brings challenges and opportunities. Among the challenges are the issues with different nomenclature for related technical ideas. The use of jargon in specific fields, and assumptions around what is canoncical knowledge vs what specifics need to be elucidated.</p>
-<p>The solution for these challenges is a motto: there are no stupid questions. Each member of the Action Team has been selected for their talents, they should never feel embarassed to ask for clarification or deeper understanding from another member of the team. Naturally, a consequence of this is each member of the team should be prepared to explain their ideas to others clearly, and using different terminologies.</p>
-<p>A bear-trap is assumption by intimidation. The idea that because someone is technically expert, that they can’t make a foolish error. In fact, the opposit is often true, by being too focussed on a specific technical idea, we can all miss something that is obvious to those who don’t have our individual deep technical understanding. The DELVE aim was to do our very best to avoid this bear-trap.</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-multidisciplinarity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-multidisciplinarity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The group is purposely multidisciplinary as reflected in tenets. That
+stems from the belief that good policy decisions can only be made by
+considering a range of factors.</p>
+<p>Multidisciplinarity brings challenges and opportunities. Among the
+challenges are the issues with different nomenclature for related
+technical ideas. The use of jargon in specific fields, and assumptions
+around what is canonical knowledge vs what specifics need to be
+elucidated.</p>
+<p>The solution for these challenges is a motto: there are no stupid
+questions. Each member of the Action Team has been selected for their
+talents, they should never feel embarassed to ask for clarification or
+deeper understanding from another member of the team. Naturally, a
+consequence of this is each member of the team should be prepared to
+explain their ideas to others clearly, and using different
+terminologies.</p>
+<p>A bear-trap is assumption by intimidation. The idea that because
+someone is technically expert, that they can’t make a foolish error. In
+fact, the opposite is often true, by being too focussed on a specific
+technical idea, we can all miss something that is obvious to those who
+don’t have our individual deep technical understanding. The DELVE aim
+was to do our very best to avoid this bear-trap.</p>
 <h2 id="the-avatar-model">The Avatar Model</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-avatar-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-avatar-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>A common problem where advice is rapidly needed is that those who have most expertise are often under severe time pressure. Royal Society groups normally report over multiple years, and their structures are designed to assimilate evidence from the best experts over time. Our first report was produced for SAGE within two weeks of convening. In the supply chain of ideas this presents a key challenge in that the members of the steering committee and working group can act as a bottleneck. It was important for the project that we had a highly active team that could represent the thoughts of these experts and have rapid access to them. Each member of the steering committee and working group was asked to nominate an Avatar for this purpose. These Avatars brought domain expertise to the action team, as well as a deep understanding of the individual steering committee and working group members.</p>
-<p>As part of the communication bottlenecks, another challenge we face is how to bootstrap the knowledge of our Working Group and Steering Committee. The avatar model is such that each of those individuals should know, and have technical confidence in, at least one member of the Action Team. That member of the Action Team should have a good understanding of their corresponding Steering Group member, and should be able to represent their thought process in the rapid fire Action Team discussions that are resolving the multidisciplinary issues, where many of the tensions and opportunities will exist.</p>
-<p>Each member of the Action Team also knows well the mind of members of the Working Group and the Steering Committee. We will be using specific tools to facilitate the different rhythms of communication we require, ensuring we maintain information coherence both in the immediate time period, the short term weekly turn over of projects, and across the entire duration of the DELVE Initiative.</p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-avatar-model.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-avatar-model.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>A common problem where advice is rapidly needed is that those who
+have most expertise are often under severe time pressure. Royal Society
+groups normally report over multiple years, and their structures are
+designed to assimilate evidence from the best experts over time. Our
+first report was produced for SAGE within two weeks of convening. In the
+supply chain of ideas this presents a key challenge in that the members
+of the steering committee and working group can act as a bottleneck. It
+was important for the project that we had a highly active team that
+could represent the thoughts of these experts and have rapid access to
+them. Each member of the steering committee and working group was asked
+to nominate an Avatar for this purpose. These Avatars brought domain
+expertise to the action team, as well as a deep understanding of the
+individual steering committee and working group members.</p>
+<p>As part of the communication bottlenecks, another challenge we face
+is how to bootstrap the knowledge of our Working Group and Steering
+Committee. The avatar model is such that each of those individuals
+should know, and have technical confidence in, at least one member of
+the Action Team. That member of the Action Team should have a good
+understanding of their corresponding Steering Group member, and should
+be able to represent their thought process in the rapid fire Action Team
+discussions that are resolving the multidisciplinary issues, where many
+of the tensions and opportunities will exist.</p>
+<p>Each member of the Action Team also knows well the mind of members of
+the Working Group and the Steering Committee. We will be using specific
+tools to facilitate the different rhythms of communication we require,
+ensuring we maintain information coherence both in the immediate time
+period, the short term weekly turn over of projects, and across the
+entire duration of the DELVE Initiative.</p>
 <h1 id="explore---exploit">Explore &lt;-&gt; Exploit</h1>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-explore-exploit.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-explore-exploit.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-explore-exploit.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-explore-exploit.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="figure">
 <div id="mccollum-plot-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/delve/mccollum-plot.svg" width="85%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//delve/mccollum-plot.svg" width="85%" style=" ">
 </object>
 </div>
-<div id="mccollum-plot-magnify" class="magnify" onclick="magnifyFigure(&#39;mccollum-plot&#39;)">
+<div id="mccollum-plot-magnify" class="magnify"
+onclick="magnifyFigure(&#39;mccollum-plot&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="mccollum-plot-caption" class="caption-frame">
-<p>Figure: The McCollum Plot shows the manner in which work processes loosen as the Project develops. We use three phases to define our projects. Transition between explore and exploit is occuring at the interaction between Phase 1 and Phase 2.</p>
+<p>Figure: The McCollum Plot shows the manner in which work processes
+loosen as the Project develops. We use three phases to define our
+projects. Transition between explore and exploit is occuring at the
+interaction between Phase 1 and Phase 2.</p>
 </div>
 </div>
-<p>A key mathematical concept we have from areas like <em>reinforcement learning</em> is the evolution of the nature of a project from conception to realisation. At the beginning of a project, there is a need to understand the question, to do research into the issues and develop the best strategy for resolving the question. As the deadline for an answer approaches, it becomes necessary to double down on, and refine, a particular strategy. This transition, from exploration to the refinement of a strategy is known in machine learning as the <em>explore</em>-<em>exploit</em> trade off. In management science, a similar process is known as <em>divergence</em>-<em>convergence</em>.</p>
-<p>In rapid management of science cycling through the explore/exploit phases is a critical aspect of a successful project.</p>
-<p>A critical challenge in the supply chain of ideas is ensuring we’re getting input at the explore stage from all our channels. This type of input is particularly important at the start of the cycle, but new ideas being introduced during the convergence phase can be disruptive.</p>
+<p>A key mathematical concept we have from areas like <em>reinforcement
+learning</em> is the evolution of the nature of a project from
+conception to realisation. At the beginning of a project, there is a
+need to understand the question, to do research into the issues and
+develop the best strategy for resolving the question. As the deadline
+for an answer approaches, it becomes necessary to double down on, and
+refine, a particular strategy. This transition, from exploration to the
+refinement of a strategy is known in machine learning as the
+<em>explore</em>-<em>exploit</em> trade off. In management science, a
+similar process is known as
+<em>divergence</em>-<em>convergence</em>.</p>
+<p>In rapid management of science cycling through the explore/exploit
+phases is a critical aspect of a successful project.</p>
+<p>A critical challenge in the supply chain of ideas is ensuring we’re
+getting input at the explore stage from all our channels. This type of
+input is particularly important at the start of the cycle, but new ideas
+being introduced during the convergence phase can be disruptive.</p>
 <div class="figure">
 <div id="mccollum-plot-03-figure" class="figure-frame">
-<object class="svgplot " data="../slides/diagrams/delve/mccollum-plot-03.svg" width="85%" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//delve/mccollum-plot-03.svg" width="85%" style=" ">
 </object>
 </div>
-<div id="mccollum-plot-03-magnify" class="magnify" onclick="magnifyFigure(&#39;mccollum-plot-03&#39;)">
+<div id="mccollum-plot-03-magnify" class="magnify"
+onclick="magnifyFigure(&#39;mccollum-plot-03&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="mccollum-plot-03-caption" class="caption-frame">
-<p>Figure: The reality of many projects on the McCollum plot. Projects can drop back phases as part of a successful path. Projects that start in explore with tight process or in exploit with loose process will typically fail. Process needs tightening as the goal nears</p>
+<p>Figure: The reality of many projects on the McCollum plot. Projects
+can drop back phases as part of a successful path. Projects that start
+in explore with tight process or in exploit with loose process will
+typically fail. Process needs tightening as the goal nears</p>
 </div>
 </div>
 <h2 id="three-phase-approach">Three Phase Approach</h2>
-<p>To support the introduction of ideas and the transition between explore and exploit. We have a three phase approach to project management. The phases are within the control of the Action Team Members.</p>
-<p>The approach is best illustrated by touring our software tools where we have implemented our ideas.</p>
-<p>Each tool is associated with a particular rhythm of information transfer.</p>
+<p>To support the introduction of ideas and the transition between
+explore and exploit. We have a three phase approach to project
+management. The phases are within the control of the Action Team
+Members.</p>
+<p>The approach is best illustrated by touring our software tools where
+we have implemented our ideas.</p>
+<p>Each tool is associated with a particular rhythm of information
+transfer.</p>
 <h2 id="delve-reports">Delve Reports</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-report-list.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-report-list.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-report-list.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-report-list.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <ol type="1">
-<li>Facemasks <em>4th May 2020</em> <span class="citation" data-cites="Delve-facemasks20">(The DELVE Initiative 2020d)</span></li>
-<li>Test, Trace, Isolate <em>27th May 2020</em> <span class="citation" data-cites="Delve-tti20">(The DELVE Initiative 2020g)</span></li>
-<li>Nosocomial Infections <em>6th July 2020</em> <span class="citation" data-cites="Delve-hospital20">(The DELVE Initiative 2020f)</span></li>
-<li>Schools <em>24th July 2020</em> <span class="citation" data-cites="Delve-schools20">(The DELVE Initiative 2020a)</span></li>
-<li>Economics <em>14th August 2020</em> <span class="citation" data-cites="Delve-economics20">(The DELVE Initiative 2020c)</span></li>
-<li>Vaccines <em>1st October 2020</em> <span class="citation" data-cites="Delve-vaccine20">(The DELVE Initiative 2020e)</span></li>
-<li><strong>Data</strong> <em>24th November 2020</em> <span class="citation" data-cites="Delve-data20">(The DELVE Initiative 2020b)</span></li>
+<li>Facemasks <em>4th May 2020</em> <span class="citation"
+data-cites="Delve-facemasks20">(The DELVE Initiative, 2020b)</span></li>
+<li>Test, Trace, Isolate <em>27th May 2020</em> <span class="citation"
+data-cites="Delve-tti20">(The DELVE Initiative, 2020c)</span></li>
+<li>Nosocomial Infections <em>6th July 2020</em> <span class="citation"
+data-cites="Delve-hospital20">(The DELVE Initiative, 2020d)</span></li>
+<li>Schools <em>24th July 2020</em> <span class="citation"
+data-cites="Delve-schools20">(The DELVE Initiative, 2020e)</span></li>
+<li>Economics <em>14th August 2020</em> <span class="citation"
+data-cites="Delve-economics20">(The DELVE Initiative, 2020f)</span></li>
+<li>Vaccines <em>1st October 2020</em> <span class="citation"
+data-cites="Delve-vaccine20">(The DELVE Initiative, 2020g)</span></li>
+<li>Data <em>24th November 2020</em> <span class="citation"
+data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span></li>
 </ol>
-<p>There is lots of hope for the role data science and AI could play, but we’re still a way off from being AI-ready. Further attention is needed on some of the foundational issues around data use – access, skills, culture – before we can begin to talk in earnest about deploying AI. [link here to data readiness]</p>
+<p>There is lots of hope for the role data science and AI could play,
+but we’re still a way off from being AI-ready. Further attention is
+needed on some of the foundational issues around data use – access,
+skills, culture – before we can begin to talk in earnest about deploying
+AI. [link here to data readiness]</p>
 <h2 id="delve-data-report">Delve Data Report</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-data-report.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-data-report.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
-<p>The DELVE Initiative was established with the ambition that data science could play a role in helping develop policy responses to the COVID-19 pandemic, by identifying lessons from the responses of other countries or by combining datasets to generate novel insights. Such analysis requires access to data, which could come from both official statistics, or from so-called happenstance data, generated as a by-product of daily activities. Drawing from a multidisciplinary team of domain experts in policy, public health, economics, education, immunology, epidemiology, and social science, alongside statisticians, mathematicians, computer scientists and machine learning scientists, DELVE set out to provide advice and analysis that could feed into live policy decisions.</p>
-<p>Our report focusses on what more we can do to ensure that this data is readily available <span class="citation" data-cites="Delve-data20">(The DELVE Initiative 2020b)</span>.</p>
-<h2 id="delve-data-report-recommendations">Delve Data Report: Recommendations</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/data-report-recommendations.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/data-report-recommendations.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-data-report.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-data-report.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The DELVE Initiative was established with the ambition that data
+science could play a role in helping develop policy responses to the
+COVID-19 pandemic, by identifying lessons from the responses of other
+countries or by combining datasets to generate novel insights. Such
+analysis requires access to data, which could come from both official
+statistics, or from so-called happenstance data, generated as a
+by-product of daily activities. Drawing from a multidisciplinary team of
+domain experts in policy, public health, economics, education,
+immunology, epidemiology, and social science, alongside statisticians,
+mathematicians, computer scientists and machine learning scientists,
+DELVE set out to provide advice and analysis that could feed into live
+policy decisions.</p>
+<p>Our report focusses on what more we can do to ensure that this data
+is readily available <span class="citation"
+data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span>.</p>
+<h2 id="delve-data-report-recommendations">Delve Data Report:
+Recommendations</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/data-report-recommendations.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/data-report-recommendations.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <ul>
-<li><p>Government should update the statutory objective of the Office for National Statistics (ONS) to accommodate trustworthy access to happenstance data to generate national and local statistics. Such statistics are required on very short time frames to facilitate fast decision-making for the nation in the rapidly evolving circumstances of a national emergency.</p></li>
-<li><p>The ONS should collaborate closely with the Information Commissioner’s Office (ICO) to formulate a standardized qualification for data access, equivalent to a ‘data driving license’ that would demonstrate trustworthiness and ensure that qualified experts can get rapid access to different data types with the appropriate standardized ethical and legal training in place.</p></li>
-<li><p>Government should fund interdisciplinary pathfinder data projects. These projects should require collaborations between industries, run across government departments and integrate different academic expertise. Each project should target a specific policy question. Beyond the pathfinder role, the projects will leave a legacy in the form of expertise and guidance in understanding the stages of the data-sharing pipeline. Priority areas for pathfinder projects include:</p>
+<li><p>Government should update the statutory objective of the Office
+for National Statistics (ONS) to accommodate trustworthy access to
+happenstance data to generate national and local statistics. Such
+statistics are required on very short time frames to facilitate fast
+decision-making for the nation in the rapidly evolving circumstances of
+a national emergency.</p></li>
+<li><p>The ONS should collaborate closely with the Information
+Commissioner’s Office (ICO) to formulate a standardized qualification
+for data access, equivalent to a ‘data driving license’ that would
+demonstrate trustworthiness and ensure that qualified experts can get
+rapid access to different data types with the appropriate standardized
+ethical and legal training in place.</p></li>
+<li><p>Government should fund interdisciplinary pathfinder data
+projects. These projects should require collaborations between
+industries, run across government departments and integrate different
+academic expertise. Each project should target a specific policy
+question. Beyond the pathfinder role, the projects will leave a legacy
+in the form of expertise and guidance in understanding the stages of the
+data-sharing pipeline. Priority areas for pathfinder projects
+include:</p>
 <ul>
-<li><p>Nowcasting of economic metrics: At least one of these pathfinder projects should create a close collaboration between Cabinet Office and Treasury around nowcasting of classical economic metrics (such as GDP) from happenstance data (e.g. payments data). Efficient resourcing and strategic implementation of data sharing projects will only be possible if Treasury and Cabinet Office are aligned on plausible benefits and costs of data sharing projects.</p></li>
-<li><p>Mobility data: Another project should drive a step-change in the use of mobility data for public policy. To achieve this, the ONS should act as the trusted body to convert happenstance data into high-frequency population mobility statistics. One pathfinder project should produce daily views of population mobility between geographic regions, aggregated from origin to destination counts from mobile phone operators.</p></li>
+<li><p>Nowcasting of economic metrics: At least one of these pathfinder
+projects should create a close collaboration between Cabinet Office and
+Treasury around nowcasting of classical economic metrics (such as GDP)
+from happenstance data (e.g. payments data). Efficient resourcing and
+strategic implementation of data sharing projects will only be possible
+if Treasury and Cabinet Office are aligned on plausible benefits and
+costs of data sharing projects.</p></li>
+<li><p>Mobility data: Another project should drive a step-change in the
+use of mobility data for public policy. To achieve this, the ONS should
+act as the trusted body to convert happenstance data into high-frequency
+population mobility statistics. One pathfinder project should produce
+daily views of population mobility between geographic regions,
+aggregated from origin to destination counts from mobile phone
+operators.</p></li>
 </ul></li>
 </ul>
-<p>Delivering a rapid response requires the ability to quickly convene teams from across disciplines (and often institutions) around a key question. To facilitate this, we also used ideas from blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">open data science</a>. to facilitate communication and understanding.</p>
+<p>Delivering a rapid response requires the ability to quickly convene
+teams from across disciplines (and often institutions) around a key
+question. To facilitate this, we also used ideas from blog post on <a
+href="http://inverseprobability.com/2014/07/01/open-data-science">open
+data science</a>. to facilitate communication and understanding.</p>
 <h2 id="the-delve-action-team">The Delve Action Team</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-action-team.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-action-team.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-action-team.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-action-team.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <style>
 .reveal .threecolumn ul {
   columns: 3;
@@ -479,54 +1001,125 @@ Robbie Savage
 </style>
 <div class="threecolumn" style="">
 <ul>
-<li><a href="https://rs-delve.github.io/people/alex-archibald.html">Alex Archibald</a></li>
-<li><a href="https://rs-delve.github.io/people/andrei-paleyes.html">Andrei Paleyes</a></li>
-<li><a href="https://rs-delve.github.io/people/avishkar-bhoopchand.html">Avishkar Bhoopchand</a></li>
-<li><a href="https://rs-delve.github.io/people/axel-gandy.html">Axel Gandy</a></li>
-<li><a href="https://rs-delve.github.io/people/azhar-hussain.html">Azhar Hussain</a></li>
-<li><a href="https://rs-delve.github.io/people/bill-browne.html">William Browne</a></li>
-<li><a href="https://rs-delve.github.io/people/bobby-he.html">Bobby He</a></li>
-<li><a href="https://rs-delve.github.io/people/bryn-elesedy.html">Bryn Elesedy</a></li>
-<li><a href="https://rs-delve.github.io/people/caroline-wagner.html">Caroline Wagner</a></li>
-<li><a href="https://rs-delve.github.io/people/chris-chiu.html">Chris Chiu</a></li>
-<li><a href="https://rs-delve.github.io/people/david-ellis.html">David Ellis</a></li>
-<li><a href="https://rs-delve.github.io/people/doug-mcneall.html">Doug McNeall</a></li>
-<li><a href="https://rs-delve.github.io/people/fiona-culley.html">Fiona Culley</a></li>
-<li><a href="https://rs-delve.github.io/people/genevie-fernandes.html">Genevie Fernandes</a></li>
-<li><a href="https://rs-delve.github.io/people/guy-harling.html">Guy Harling</a></li>
-<li><a href="https://rs-delve.github.io/people/gwenetta-curry.html">Gwenetta Curry</a></li>
-<li><a href="https://rs-delve.github.io/people/harpreet-sood.html">Harpreet Sood</a></li>
-<li><a href="https://rs-delve.github.io/people/helen-greatrex.html">Helen Greatrex</a></li>
-<li><a href="https://rs-delve.github.io/people/ines-hassan.html">Inès Hassan</a></li>
-<li><a href="https://rs-delve.github.io/people/jamie-mitchell.html">Jamie Mitchell</a></li>
-<li><a href="https://rs-delve.github.io/people/jessica-montgomery.html">Jessica K. Montgomery</a></li>
-<li><a href="https://rs-delve.github.io/people/kevin-donkers.html">Kevin Donkers</a></li>
-<li><a href="https://rs-delve.github.io/people/lois-king.html">Lois King</a></li>
-<li><a href="https://rs-delve.github.io/people/marcel-behr.html">Marcel Behr</a></li>
-<li><a href="https://rs-delve.github.io/people/mark-troll.html">Mark Troll</a></li>
-<li><a href="https://rs-delve.github.io/people/maxine-mackintosh.html">Maxine Mackintosh</a></li>
-<li><a href="https://rs-delve.github.io/people/michael-campbell.html">Michael Campbell</a></li>
-<li><a href="https://rs-delve.github.io/people/michael-hutchinson.html">Michael Hutchinson</a></li>
-<li><a href="https://rs-delve.github.io/people/miqdad-asaria.html">Miqdad Asaria</a></li>
-<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil Lawrence</a></li>
-<li><a href="https://rs-delve.github.io/people/nenad-tomasev.html">Nenad Temasev</a></li>
-<li><a href="https://rs-delve.github.io/people/niall-robinson.html">Niall Robinson</a></li>
-<li><a href="https://rs-delve.github.io/people/nick-latimer.html">Nicholas Latimer</a></li>
-<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel Field</a></li>
-<li><a href="https://rs-delve.github.io/people/rich-wilkinson.html">Richard Wilkinson</a></li>
-<li><a href="https://rs-delve.github.io/people/sang-woo-park.html">Sang Woo (Daniel) Park</a></li>
-<li><a href="https://rs-delve.github.io/people/sarah-filippi.html">Sarah Filippi</a></li>
-<li><a href="https://rs-delve.github.io/people/sheheryar-zaidi.html">Sheheryar Zaidi</a></li>
-<li><a href="https://rs-delve.github.io/people/stephen-hansen.html">Stephen Hansen</a></li>
-<li><a href="https://rs-delve.github.io/people/thiemo-fetzer.html">Thiemo Fetzer</a></li>
-<li><a href="https://rs-delve.github.io/people/ulrich-paquet.html">Ulrich Paquet</a></li>
-<li><a href="https://rs-delve.github.io/people/vasco-carvalho.html">Vasco Carvalho</a></li>
-<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee Whye Teh</a></li>
+<li><a href="https://rs-delve.github.io/people/alex-archibald.html">Alex
+Archibald</a></li>
+<li><a
+href="https://rs-delve.github.io/people/andrei-paleyes.html">Andrei
+Paleyes</a></li>
+<li><a
+href="https://rs-delve.github.io/people/avishkar-bhoopchand.html">Avishkar
+Bhoopchand</a></li>
+<li><a href="https://rs-delve.github.io/people/axel-gandy.html">Axel
+Gandy</a></li>
+<li><a href="https://rs-delve.github.io/people/azhar-hussain.html">Azhar
+Hussain</a></li>
+<li><a href="https://rs-delve.github.io/people/bill-browne.html">William
+Browne</a></li>
+<li><a href="https://rs-delve.github.io/people/bobby-he.html">Bobby
+He</a></li>
+<li><a href="https://rs-delve.github.io/people/bryn-elesedy.html">Bryn
+Elesedy</a></li>
+<li><a
+href="https://rs-delve.github.io/people/caroline-wagner.html">Caroline
+Wagner</a></li>
+<li><a href="https://rs-delve.github.io/people/chris-chiu.html">Chris
+Chiu</a></li>
+<li><a href="https://rs-delve.github.io/people/david-ellis.html">David
+Ellis</a></li>
+<li><a href="https://rs-delve.github.io/people/doug-mcneall.html">Doug
+McNeall</a></li>
+<li><a href="https://rs-delve.github.io/people/fiona-culley.html">Fiona
+Culley</a></li>
+<li><a
+href="https://rs-delve.github.io/people/genevie-fernandes.html">Genevie
+Fernandes</a></li>
+<li><a href="https://rs-delve.github.io/people/guy-harling.html">Guy
+Harling</a></li>
+<li><a
+href="https://rs-delve.github.io/people/gwenetta-curry.html">Gwenetta
+Curry</a></li>
+<li><a
+href="https://rs-delve.github.io/people/harpreet-sood.html">Harpreet
+Sood</a></li>
+<li><a
+href="https://rs-delve.github.io/people/helen-greatrex.html">Helen
+Greatrex</a></li>
+<li><a href="https://rs-delve.github.io/people/ines-hassan.html">Inès
+Hassan</a></li>
+<li><a
+href="https://rs-delve.github.io/people/jamie-mitchell.html">Jamie
+Mitchell</a></li>
+<li><a
+href="https://rs-delve.github.io/people/jessica-montgomery.html">Jessica
+K. Montgomery</a></li>
+<li><a href="https://rs-delve.github.io/people/kevin-donkers.html">Kevin
+Donkers</a></li>
+<li><a href="https://rs-delve.github.io/people/lois-king.html">Lois
+King</a></li>
+<li><a href="https://rs-delve.github.io/people/marcel-behr.html">Marcel
+Behr</a></li>
+<li><a href="https://rs-delve.github.io/people/mark-troll.html">Mark
+Troll</a></li>
+<li><a
+href="https://rs-delve.github.io/people/maxine-mackintosh.html">Maxine
+Mackintosh</a></li>
+<li><a
+href="https://rs-delve.github.io/people/michael-campbell.html">Michael
+Campbell</a></li>
+<li><a
+href="https://rs-delve.github.io/people/michael-hutchinson.html">Michael
+Hutchinson</a></li>
+<li><a
+href="https://rs-delve.github.io/people/miqdad-asaria.html">Miqdad
+Asaria</a></li>
+<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil
+Lawrence</a></li>
+<li><a href="https://rs-delve.github.io/people/nenad-tomasev.html">Nenad
+Temasev</a></li>
+<li><a
+href="https://rs-delve.github.io/people/niall-robinson.html">Niall
+Robinson</a></li>
+<li><a
+href="https://rs-delve.github.io/people/nick-latimer.html">Nicholas
+Latimer</a></li>
+<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel
+Field</a></li>
+<li><a
+href="https://rs-delve.github.io/people/rich-wilkinson.html">Richard
+Wilkinson</a></li>
+<li><a href="https://rs-delve.github.io/people/sang-woo-park.html">Sang
+Woo (Daniel) Park</a></li>
+<li><a href="https://rs-delve.github.io/people/sarah-filippi.html">Sarah
+Filippi</a></li>
+<li><a
+href="https://rs-delve.github.io/people/sheheryar-zaidi.html">Sheheryar
+Zaidi</a></li>
+<li><a
+href="https://rs-delve.github.io/people/stephen-hansen.html">Stephen
+Hansen</a></li>
+<li><a
+href="https://rs-delve.github.io/people/thiemo-fetzer.html">Thiemo
+Fetzer</a></li>
+<li><a
+href="https://rs-delve.github.io/people/ulrich-paquet.html">Ulrich
+Paquet</a></li>
+<li><a
+href="https://rs-delve.github.io/people/vasco-carvalho.html">Vasco
+Carvalho</a></li>
+<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee
+Whye Teh</a></li>
 </ul>
 </div>
-<p>The DELVE action team worked incredibly hard to understand the different domains and pull together recommendations on short time frames. The team contains individuals from a range of different academic backgrounds. It met together three times a week.</p>
+<p>The DELVE action team worked incredibly hard to understand the
+different domains and pull together recommendations on short time
+frames. The team contains individuals from a range of different academic
+backgrounds. It met together three times a week.</p>
 <h2 id="the-delve-working-group">The Delve Working Group</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-working-group.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-working-group.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-working-group.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-working-group.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <style>
 .reveal .threecolumn ul {
   columns: 3;
@@ -542,26 +1135,48 @@ Robbie Savage
 </style>
 <div class="threecolumn" style="">
 <ul>
-<li><a href="https://rs-delve.github.io/people/alison-simmons.html">Alison Simmons</a></li>
-<li><a href="https://rs-delve.github.io/people/anna-vignoles.html">Anna Vignoles</a></li>
-<li><a href="https://rs-delve.github.io/people/aziz-sheikh.html">Aziz Sheikh</a></li>
-<li><a href="https://rs-delve.github.io/people/carol-propper.html">Carol Propper</a></li>
-<li><a href="https://rs-delve.github.io/people/devi-sridhar.html">Devi Sridhar</a></li>
-<li><a href="https://rs-delve.github.io/people/frank-kelly.html">Frank Kelly</a></li>
-<li><a href="https://rs-delve.github.io/people/majid-ezzati.html">Majid Ezzati</a></li>
-<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil Lawrence</a></li>
-<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel Field</a></li>
-<li><a href="https://rs-delve.github.io/people/paul-edelstein.html">Paul Edelstein</a></li>
-<li><a href="https://rs-delve.github.io/people/peter-diggle.html">Peter Diggle</a></li>
-<li><a href="https://rs-delve.github.io/people/rachel-griffith.html">Rachel Griffith</a></li>
-<li><a href="https://rs-delve.github.io/people/rupert-lewis.html">Rupert Lewis</a></li>
-<li><a href="https://rs-delve.github.io/people/simon-burgess.html">Simon Burgess</a></li>
-<li><a href="https://rs-delve.github.io/people/tim-besley.html">Tim Besley</a></li>
-<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee Whye Teh</a></li>
+<li><a
+href="https://rs-delve.github.io/people/alison-simmons.html">Alison
+Simmons</a></li>
+<li><a href="https://rs-delve.github.io/people/anna-vignoles.html">Anna
+Vignoles</a></li>
+<li><a href="https://rs-delve.github.io/people/aziz-sheikh.html">Aziz
+Sheikh</a></li>
+<li><a href="https://rs-delve.github.io/people/carol-propper.html">Carol
+Propper</a></li>
+<li><a href="https://rs-delve.github.io/people/devi-sridhar.html">Devi
+Sridhar</a></li>
+<li><a href="https://rs-delve.github.io/people/frank-kelly.html">Frank
+Kelly</a></li>
+<li><a href="https://rs-delve.github.io/people/majid-ezzati.html">Majid
+Ezzati</a></li>
+<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil
+Lawrence</a></li>
+<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel
+Field</a></li>
+<li><a href="https://rs-delve.github.io/people/paul-edelstein.html">Paul
+Edelstein</a></li>
+<li><a href="https://rs-delve.github.io/people/peter-diggle.html">Peter
+Diggle</a></li>
+<li><a
+href="https://rs-delve.github.io/people/rachel-griffith.html">Rachel
+Griffith</a></li>
+<li><a href="https://rs-delve.github.io/people/rupert-lewis.html">Rupert
+Lewis</a></li>
+<li><a href="https://rs-delve.github.io/people/simon-burgess.html">Simon
+Burgess</a></li>
+<li><a href="https://rs-delve.github.io/people/tim-besley.html">Tim
+Besley</a></li>
+<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee
+Whye Teh</a></li>
 </ul>
 </div>
 <h2 id="the-delve-steering-committee">The Delve Steering Committee</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-steering-committee.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-steering-committee.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-steering-committee.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-steering-committee.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <style>
 .reveal .threecolumn ul {
   columns: 3;
@@ -577,25 +1192,51 @@ Robbie Savage
 </style>
 <div class="threecolumn" style="">
 <ul>
-<li><a href="https://rs-delve.github.io/people/anne-johnson.html">Anne Johnson</a></li>
-<li><a href="https://rs-delve.github.io/people/bryan-grenfell.html">Bryan Grenfell</a></li>
-<li><a href="https://rs-delve.github.io/people/charles-bangham.html">Charles Bangham</a></li>
-<li><a href="https://rs-delve.github.io/people/daniel-kahneman.html">Daniel Kahneman</a></li>
-<li><a href="https://rs-delve.github.io/people/demis-hassabis.html">Demis Hassabis</a></li>
-<li><a href="https://rs-delve.github.io/people/devi-sridhar.html">Devi Sridhar</a></li>
-<li><a href="https://rs-delve.github.io/people/julie-maxton.html">Julie Maxton</a></li>
-<li><a href="https://rs-delve.github.io/people/lalita-ramakrishnan.html">Lalita Ramakrishnan</a></li>
-<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil Lawrence</a></li>
-<li><a href="https://rs-delve.github.io/people/nick-stern.html">Nick Stern</a></li>
-<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel Field</a></li>
-<li><a href="https://rs-delve.github.io/people/sylvia-richardson.html">Sylvia Richardson</a></li>
-<li><a href="https://rs-delve.github.io/people/tim-gowers.html">Tim Gowers</a></li>
-<li><a href="https://rs-delve.github.io/people/venki-ramakrishnan.html">Venki Ramakrishnan</a></li>
-<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee Whye Teh</a></li>
+<li><a href="https://rs-delve.github.io/people/anne-johnson.html">Anne
+Johnson</a></li>
+<li><a
+href="https://rs-delve.github.io/people/bryan-grenfell.html">Bryan
+Grenfell</a></li>
+<li><a
+href="https://rs-delve.github.io/people/charles-bangham.html">Charles
+Bangham</a></li>
+<li><a
+href="https://rs-delve.github.io/people/daniel-kahneman.html">Daniel
+Kahneman</a></li>
+<li><a
+href="https://rs-delve.github.io/people/demis-hassabis.html">Demis
+Hassabis</a></li>
+<li><a href="https://rs-delve.github.io/people/devi-sridhar.html">Devi
+Sridhar</a></li>
+<li><a href="https://rs-delve.github.io/people/julie-maxton.html">Julie
+Maxton</a></li>
+<li><a
+href="https://rs-delve.github.io/people/lalita-ramakrishnan.html">Lalita
+Ramakrishnan</a></li>
+<li><a href="https://rs-delve.github.io/people/neil-lawrence.html">Neil
+Lawrence</a></li>
+<li><a href="https://rs-delve.github.io/people/nick-stern.html">Nick
+Stern</a></li>
+<li><a href="https://rs-delve.github.io/people/nigel-field.html">Nigel
+Field</a></li>
+<li><a
+href="https://rs-delve.github.io/people/sylvia-richardson.html">Sylvia
+Richardson</a></li>
+<li><a href="https://rs-delve.github.io/people/tim-gowers.html">Tim
+Gowers</a></li>
+<li><a
+href="https://rs-delve.github.io/people/venki-ramakrishnan.html">Venki
+Ramakrishnan</a></li>
+<li><a href="https://rs-delve.github.io/people/yee-whye-teh.html">Yee
+Whye Teh</a></li>
 </ul>
 </div>
 <h2 id="the-delve-secretariat">The Delve Secretariat</h2>
-<p><span style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-secretariat.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-secretariat.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></span></p>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-secretariat.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-secretariat.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <style>
 .reveal .threecolumn ul {
   columns: 3;
@@ -611,80 +1252,138 @@ Robbie Savage
 </style>
 <div class="threecolumn" style="">
 <ul>
-<li><a href="https://rs-delve.github.io/people/jessica-montgomery.html">Jessica K. Montgomery</a></li>
-<li><a href="https://rs-delve.github.io/people/natasha-mccarthy.html">Natasha McCarthy</a></li>
-<li><a href="https://rs-delve.github.io/people/people/natasha-mccarthy.html">Rupert Lewis</a></li>
+<li><a
+href="https://rs-delve.github.io/people/jessica-montgomery.html">Jessica
+K. Montgomery</a></li>
+<li><a
+href="https://rs-delve.github.io/people/natasha-mccarthy.html">Natasha
+McCarthy</a></li>
+<li><a
+href="https://rs-delve.github.io/people/people/natasha-mccarthy.html">Rupert
+Lewis</a></li>
 </ul>
 </div>
 <h2 id="conclusions">Conclusions</h2>
-<p>The particular circumstances of the Covid-19 pandemic have highlighted the challenges of integrating scientific ideas to answer policy questions. In this talk, we’ve given a formal introduction to the problem, the difficulty of communicating between individuals (particularly from different domains) and reviewed the ideas and solutions we used in the Delve initiative.</p>
-<p>Recommendations from our most recent report suggest that more effort needs to be placed into working in this manner in normal circumstances, so that when an emergency occurs we are better prepared to deal with the questions we face.</p>
+<p>The particular circumstances of the Covid-19 pandemic have
+highlighted the challenges of integrating scientific ideas to answer
+policy questions. In this talk, we’ve given a formal introduction to the
+problem, the difficulty of communicating between individuals
+(particularly from different domains) and reviewed the ideas and
+solutions we used in the Delve initiative.</p>
+<p>Recommendations from our most recent report suggest that more effort
+needs to be placed into working in this manner in normal circumstances,
+so that when an emergency occurs we are better prepared to deal with the
+questions we face.</p>
 <h2 id="thanks">Thanks!</h2>
-<p>For more information on these subjects and more you might want to check the following resources.</p>
+<p>For more information on these subjects and more you might want to
+check the following resources.</p>
 <ul>
+<li>book: <a
+href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
+Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
-<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
-<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking
+Machines</a></li>
+<li>newspaper: <a
+href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile
+Page</a></li>
+<li>blog: <a
+href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
-<div id="refs" class="references hanging-indent" role="doc-bibliography">
-<div id="ref-Ananthanarayanan-cat09">
-<p>Ananthanarayanan, Rajagopal, Steven K. Esser, Horst D. Simon, and Dharmendra S. Modha. 2009. “The Cat Is Out of the Bag: Cortical Simulations with <span class="math inline">10<sup>9</sup></span> Neurons, <span class="math inline">10<sup>13</sup></span> Synapses.” In <em>Proceedings of the Conference on High Performance Computing Networking, Storage and Analysis - Sc ’09</em>. <a href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>.</p>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-entry-spacing="0" role="list">
+<div id="ref-Ananthanarayanan-cat09" class="csl-entry" role="listitem">
+Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The
+cat is out of the bag: Cortical simulations with <span
+class="math inline">\(10^9\)</span> neurons, <span
+class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the
+Conference on High Performance Computing Networking, Storage and
+Analysis - SC ’09. <a
+href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
 </div>
-<div id="ref-Chater:mindisflat19">
-<p>Chater, Nick. 2019. <em>The Mind Is Flat</em>. Penguin.</p>
+<div id="ref-Chater-mindisflat19" class="csl-entry" role="listitem">
+Chater, N., 2019. The mind is flat. Penguin.
 </div>
-<div id="ref-Heider:interpersonal58">
-<p>Heider, Fritz. 1958. <em>The Psychology of Interpersonal Relations</em>. John Wiley.</p>
+<div id="ref-Heider-interpersonal58" class="csl-entry" role="listitem">
+Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
 </div>
-<div id="ref-Kahneman:fastslow11">
-<p>Kahneman, Daniel. 2011. <em>Thinking Fast and Slow</em>.</p>
+<div id="ref-Kahneman-fastslow11" class="csl-entry" role="listitem">
+Kahneman, D., 2011. Thinking, fast and slow. Farrar, Straus; Giroux, New
+York.
 </div>
-<div id="ref-Koehler-medicinal98">
-<p>Köhler, Hermann Adolph, Walther Otto Müller, C. F. Schmidt, and K. Gunther. 1898. <em>Köhler’s Medizinal-Pflanzen</em>. Vol. III. Gera-Untermhaus: Franz Eugen Köhler.</p>
+<div id="ref-Lawrence-atomic24" class="csl-entry" role="listitem">
+Lawrence, N.D., 2024. <a
+href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
+atomic human: Understanding ourselves in the age of AI</a>. Allen Lane.
 </div>
-<div id="ref-Lawrence:embodiment17">
-<p>Lawrence, Neil D. 2017. “Living Together: Mind and Machine Intelligence.” arXiv. <a href="https://arxiv.org/abs/1705.07996">https://arxiv.org/abs/1705.07996</a>.</p>
+<div id="ref-Lawrence:embodiment17" class="csl-entry" role="listitem">
+Lawrence, N.D., 2017. <a href="https://arxiv.org/abs/1705.07996">Living
+together: Mind and machine intelligence</a>. arXiv.
 </div>
-<div id="ref-Montgomery-storming20">
-<p>Montgomery, Jessica, and Neil D. Lawrence. 2020. “Storming the Castle: Data Science for Covid-19 Policy.” <a href="https://www.bennettinstitute.cam.ac.uk/blog/storming-castle-data-science-covid-19-policy/">https://www.bennettinstitute.cam.ac.uk/blog/storming-castle-data-science-covid-19-policy/</a>.</p>
+<div id="ref-Montgomery-storming20" class="csl-entry" role="listitem">
+Montgomery, J., Lawrence, N.D., 2020. <a
+href="https://www.bennettinstitute.cam.ac.uk/blog/storming-castle-data-science-covid-19-policy/">Storming
+the castle: Data science for covid-19 policy</a>.
 </div>
-<div id="ref-Reed-information98">
-<p>Reed, Charlotte, and Nathaniel I. Durlach. 1998. “Note on Information Transfer Rates in Human Communication.” <em>Presence Teleoperators &amp; Virtual Environments</em> 7 (5): 509–18. <a href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>.</p>
+<div id="ref-Reed-information98" class="csl-entry" role="listitem">
+Reed, C., Durlach, N.I., 1998. Note on information transfer rates in
+human communication. Presence Teleoperators &amp; Virtual Environments
+7, 509–518. <a
+href="https://doi.org/10.1162/105474698565893">https://doi.org/10.1162/105474698565893</a>
 </div>
-<div id="ref-Syed:blackbox15">
-<p>Syed, Matthew. 2015. <em>Black Box Thinking: The Surprising Truth About Success</em>. John Murray.</p>
+<div id="ref-Syed:rebelideas19" class="csl-entry" role="listitem">
+Syed, M., 2019. Rebel ideas: The power of diverse thinking. John Murray.
 </div>
-<div id="ref-Syed:rebelideas19">
-<p>———. 2019. <em>Rebel Ideas: The Power of Diverse Thinking</em>. John Murray.</p>
+<div id="ref-Syed:blackbox15" class="csl-entry" role="listitem">
+Syed, M., 2015. Black box thinking: The surprising truth about success.
+John Murray.
 </div>
-<div id="ref-Delve-schools20">
-<p>The DELVE Initiative. 2020a. “Balancing the Risks of Pupils Returning to Schools.” The Royal Society. <a href="https://rs-delve.github.io/reports/2020/07/24/balancing-the-risk-of-pupils-returning-to-schools.html">https://rs-delve.github.io/reports/2020/07/24/balancing-the-risk-of-pupils-returning-to-schools.html</a>.</p>
+<div id="ref-Delve-data20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020a. <a
+href="http://rs-delve.github.io/reports/2020/11/24/data-readiness-lessons-from-an-emergency.html">Data
+readiness: Lessons from an emergency</a>. The Royal Society.
 </div>
-<div id="ref-Delve-data20">
-<p>———. 2020b. “Data Readiness: Lessons from an Emergency.” The Royal Society. <a href="http://rs-delve.github.io/reports/2020/11/24/data-readiness-lessons-from-an-emergency.html">http://rs-delve.github.io/reports/2020/11/24/data-readiness-lessons-from-an-emergency.html</a>.</p>
+<div id="ref-Delve-economics20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020f. <a
+href="https://rs-delve.github.io/reports/2020/08/14/economic-aspects-of-the-covid19-crisis-in-the-uk.html">Economic
+aspects of the COVID-19 crisis in the UK</a>. The Royal Society.
 </div>
-<div id="ref-Delve-economics20">
-<p>———. 2020c. “Economic Aspects of the Covid-19 Crisis in the Uk.” The Royal Society. <a href="https://rs-delve.github.io/reports/2020/08/14/economic-aspects-of-the-covid19-crisis-in-the-uk.html">https://rs-delve.github.io/reports/2020/08/14/economic-aspects-of-the-covid19-crisis-in-the-uk.html</a>.</p>
+<div id="ref-Delve-facemasks20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020b. <a
+href="https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html">Face
+masks for the general public</a>. The Royal Society.
 </div>
-<div id="ref-Delve-facemasks20">
-<p>———. 2020d. “Face Masks for the General Public.” The Royal Society. <a href="https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html">https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html</a>.</p>
+<div id="ref-Delve-hospital20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020d. <a
+href="https://rs-delve.github.io/reports/2020/07/06/nosocomial-scoping-report.html">Scoping
+report on hospital and health care acquisition of COVID-19 and its
+control</a>. The Royal Society.
 </div>
-<div id="ref-Delve-vaccine20">
-<p>———. 2020e. “SARS-Cov-2 Vaccine Development &amp; Implementation; Scenarios, Options, Key Decisions.” The Royal Society. <a href="http://rs-delve.github.io/reports/2020/10/01/covid19-vaccination-report.html">http://rs-delve.github.io/reports/2020/10/01/covid19-vaccination-report.html</a>.</p>
+<div id="ref-Delve-schools20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020e. <a
+href="https://rs-delve.github.io/reports/2020/07/24/balancing-the-risk-of-pupils-returning-to-schools.html">Balancing
+the risks of pupils returning to schools</a>. The Royal Society.
 </div>
-<div id="ref-Delve-hospital20">
-<p>———. 2020f. “Scoping Report on Hospital and Health Care Acquisition of Covid-19 and Its Control.” The Royal Society. <a href="https://rs-delve.github.io/reports/2020/07/06/nosocomial-scoping-report.html">https://rs-delve.github.io/reports/2020/07/06/nosocomial-scoping-report.html</a>.</p>
+<div id="ref-Delve-tti20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020c. <a
+href="https://rs-delve.github.io/reports/2020/05/27/test-trace-isolate.html">Test,
+trace, isolate</a>. The Royal Society.
 </div>
-<div id="ref-Delve-tti20">
-<p>———. 2020g. “Test, Trace, Isolate.” The Royal Society. <a href="https://rs-delve.github.io/reports/2020/05/27/test-trace-isolate.html">https://rs-delve.github.io/reports/2020/05/27/test-trace-isolate.html</a>.</p>
+<div id="ref-Delve-vaccine20" class="csl-entry" role="listitem">
+The DELVE Initiative, 2020g. <a
+href="http://rs-delve.github.io/reports/2020/10/01/covid19-vaccination-report.html">SARS-CoV-2
+vaccine development &amp; implementation; scenarios, options, key
+decisions</a>. The Royal Society.
 </div>
 </div>
-<section class="footnotes" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1" role="doc-endnote"><p>the challenge of understanding what information pertains to is known as knowledge representation.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>the challenge of understanding what information pertains
+to is known as knowledge representation.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

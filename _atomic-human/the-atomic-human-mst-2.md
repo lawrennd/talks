@@ -67,7 +67,7 @@ transition: None
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/science/machine-learning-frees-up-humans}{80%}}{Machine Learning frees up humans. Still from graphical rendering of [Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{machine-learning-frees-humans}
+\figure{\includejpg{\diagramsDir/science/machine-learning-frees-up-humans}{80%}}{Machine Learning frees up humans. Still from graphical rendering of [Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{machine-learning-frees-humans}
 
 
 \newslide{}

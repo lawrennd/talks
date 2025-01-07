@@ -46,7 +46,9 @@ transition: None
 \include{_ai/includes/ai-nobel-prizes.md}
 \include{_ai/includes/gatsby-unit-legacy.md}
 
-\figure{\includepng{\diagramsDir/diagrams/science/science/2021-11-19_accelerate-science-symposium}{90%}}{We need to bridge between domain expertise and machine learning/AI capability.}{bridging-domain-experts}
+\newslide{}
+
+\figure{\includepng{\diagramsDir/science/2021-11-19_accelerate-science-symposium}{90%}}{We need to bridge between domain expertise and machine learning/AI capability.}{bridging-domain-experts}
 
 \include{_policy/includes/science-not-scientists.md}
 \include{_art/includes/blake-newton.md}
@@ -65,20 +67,20 @@ transition: None
 
 \newslide{}
 
-\figure{\includepng{\diagramsDir/diagrams/science/machine-learning-frees-up-humans}{80%}}{Machine Learning frees up humans. Still from graphical rendering of [Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{machine-learning-frees-humans}
+\figure{\includepng{\diagramsDir/science/machine-learning-frees-up-humans}{80%}}{Machine Learning frees up humans. Still from graphical rendering of [Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{machine-learning-frees-humans}
 
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/diagrams/science/2021-11-19_challenges-in-science-and-maths-original}}{[Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{unworkshop-challenges-science-and-maths}
+\figure{\includejpg{\diagramsDir/science/2021-11-19_challenges-in-science-and-maths-original}}{[Unworkshop on ML for Challenges in Maths and Science](https://the-atomic-human.ai/archive/unworkshop-challenges-in-science-and-maths/) from Accelerate Science Summit 2021.}{unworkshop-challenges-science-and-maths}
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/diagrams/science/2021-11-19_physical-world-original}}{[Unworkshop on ML and the Physical World](https://the-atomic-human.ai/archive/unworkshop-ml-and-the-physical-world/) from Accelerate Science Summit 2021.}{unworkshop-ml-and-the-physical-world}
+\figure{\includejpg{\diagramsDir/science/2021-11-19_physical-world-original}}{[Unworkshop on ML and the Physical World](https://the-atomic-human.ai/archive/unworkshop-ml-and-the-physical-world/) from Accelerate Science Summit 2021.}{unworkshop-ml-and-the-physical-world}
 
 \newslide{}
 
-\figure{\includejpg{\diagramsDir/diagrams/science/2021-11-19_sustainable-design-original}}{[Unworkshop on Sustainable Design](https://the-atomic-human.ai/archive/unworkshop-sustainable-design/) from Accelerate Science Summit 2021.}{unworkshop-sustainable-design}
+\figure{\includejpg{\diagramsDir/science/2021-11-19_sustainable-design-original}}{[Unworkshop on Sustainable Design](https://the-atomic-human.ai/archive/unworkshop-sustainable-design/) from Accelerate Science Summit 2021.}{unworkshop-sustainable-design}
 
 
 \section{The Attention Reinvestment Cycle}

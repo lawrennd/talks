@@ -42,9 +42,9 @@ transition: None
 ---
 \define{noSlideTitle}
 
-\include{_atomic-human/includes/gods-and-robots-scribeysense.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_physics/includes/the-earth-seen-from-apollo-17.md}
-\include{_atomic-human/includes/automatons-scribeysense.md}
+\include{_atomic-human/includes/narratives-vs-statistics.md}
 \include{_physics/includes/eagle-from-columbia.md}
 \include{_physics/includes/little-red-bus.md}
 \include{_ai/includes/naca-proving.md}

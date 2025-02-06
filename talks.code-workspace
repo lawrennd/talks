@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../slides"
+		},
+		{
+			"path": "../snippets"
+		},
+		{
+			"path": "../lamd"
+		}
+	],
+	"settings": {}
+}

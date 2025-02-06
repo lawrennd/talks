@@ -1,0 +1,80 @@
+You supporting a machine learning expert with their talks. 
+
+The talks are about machine learning, both from the technical side all the way to the ethical and business side. Audiences vary between highly technical (research or masters students) to business people and members of the public, schools etc.
+
+The talks are written using the lamd markdown language which is a version of markdown with macros added (like latex is a version of tex with macros added).
+
+Snippets of talks are written in the snippets folder and can be included as include files. 
+
+If a section of talk seems to be about the same subject and might be reused in other talks, it should be written in the snippets folder and included as an include file.
+
+Before coding, make a plan inside a <thinking> tag.
+1. Identify core requirement
+2. Consider 3 implementation approaches
+3. Choose simplest that meets needs
+4. Verify with these questions:
+- Can this be split into smaller snippets?
+- Are there existing snippets that can be used?
+- Will this be easy to read and remember in the future what's happening?
+
+For example:
+<thinking>
+Let me think through this step by step.
+...
+</thinking>
+
+
+Talks start with a header of the following form:
+
+```
+---
+title: "The Atomic Human"
+subtitle: "Understanding ourselves in the age of AI"
+abstract: |
+  Our fascination with AI stems from the perceived uniqueness of human intelligence. We believe it's what differentiates us. Fears of AI not only concern how it invades our digital lives, but also the implied threat of an intelligence that displaces us from our position at the centre of the world.
+  
+  Neil D. Lawrence's visionary book shows why these fears may be misplaced. 
+author:
+- family: Lawrence
+  given: Neil D.
+date: 2024-12-17
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+venue: The Astrazeneca Discovery Centre, Cambridge
+transition: None
+---
+```
+
+Snippets in the snippets folder and then in relevant subfolders such as:
+
+```
+_ai
+_business
+_economics
+_ml
+_datasets
+_philosophy
+```
+
+In each subfolder the file is stored under an includes directory, so it should be included in the form:
+
+```
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
+\include{_atomic-human/includes/artificial-general-vehicle.md}
+\include{_ai/includes/the-atomic-eye.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
+\include{_ai/includes/conversation-computer.md}
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_atomic-human/includes/their-data-comes-from-us.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_art/includes/blake-newton.md}
+\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_ai/includes/bandwidth-vs-complexity.md}
+\include{_atomic-human/includes/nothing-to-worry-about.md}
+```

@@ -76,7 +76,7 @@ include{_economics/includes/inflation-proof-human-capital.md}
 \include{_business/includes/superficial-automation.md}
 \include{_business/includes/supply-chain-of-ideas.md}
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
-
+\include{_atomic-human/includes/reflective-or-reactive.md}
 \section{What do People Want?}
 
 \include{_dialogue/includes/public-dialogue-overview.md}
@@ -89,9 +89,11 @@ include{_economics/includes/inflation-proof-human-capital.md}
 
 \section{Building Solutions}
 
+\include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_atomic-human/includes/river-gods-decide.md}
 
 \section{Creating Sustainable AI Systems}
 

@@ -55,6 +55,8 @@ include{_economics/includes/inflation-proof-human-capital.md}
 
 \include{_ai/includes/embodiment-factors-short.md}
 \include{_ai/includes/conversation-computer.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
+
 
 \section{Information Flow in Organizations}
 
@@ -73,6 +75,7 @@ include{_economics/includes/inflation-proof-human-capital.md}
 \include{_business/includes/two-types-of-stochastic-parrot.md}
 \include{_business/includes/superficial-automation.md}
 \include{_business/includes/supply-chain-of-ideas.md}
+\include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 
 \section{What do People Want?}
 
@@ -104,6 +107,11 @@ include{_economics/includes/inflation-proof-human-capital.md}
 * What organizational changes are needed?
 
 \include{_books/includes/the-atomic-human.md}
+
+\section{Epilogue}
+
+\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
+
 
 \thanks
 

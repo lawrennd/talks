@@ -54,8 +54,9 @@ include{_economics/includes/inflation-proof-human-capital.md}
 \section{Human-AI Interaction}
 
 \include{_ai/includes/embodiment-factors-short.md}
-\include{_ai/includes/conversation-computer.md}
+\include{_ai/includes/conversation-tedx.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}
+\include{_ai/includes/conversation-computer.md}
 
 
 \section{Information Flow in Organizations}

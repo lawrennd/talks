@@ -17,3 +17,48 @@ venue: "Departmental Seminar, Department of Computer Science, University of Manc
 transition: None
 ---
 
+\include{_ml/includes/szilard-intelligence-intro.md}
+\include{_ml/includes/szilard-energy-basics.md}
+
+\subsection{Information and Physical Systems}
+
+\slides{
+* Information processing requires energy
+* Shannon's information theory connects to physics
+* Measurement and observation modify available energy
+* Intelligence as energy-efficient state transformation
+}
+
+\notes{
+The connection between information and physical systems was first formalized by Claude Shannon, but has deep roots in statistical mechanics and thermodynamics. This relationship becomes particularly important when we consider intelligent systems that must process information to make decisions.
+}
+
+\include{_ml/includes/szilard-simulation-spaces.md}
+\include{_ml/includes/szilard-parameters.md}
+
+\subsection{Embodiment and Communication}
+
+\notes{
+A critical aspect of intelligence is how it is embodied in physical systems. This embodiment creates fundamental constraints on both computation and communication.
+}
+
+\include{_ai/includes/embodiment-factors-short.md}
+
+\section{Practical Implications}
+
+\slides{
+* Intelligence requires:
+    * Efficient energy use
+    * Effective state mapping
+    * Resource optimization
+* Applications:
+    * AI system design
+    * Biological systems
+    * Cognitive architectures
+}
+
+\notes{These theoretical connections between thermodynamics and intelligence have practical implications for how we design and understand intelligent systems. The efficiency with which a system uses energy and manages state transformations may provide a fundamental measure of intelligence.}
+
+\thanks
+
+\references

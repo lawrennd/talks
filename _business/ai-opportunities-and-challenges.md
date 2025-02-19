@@ -70,6 +70,7 @@ include{_economics/includes/inflation-proof-human-capital.md}
 * Map your organization's information flows
 * Where are the human bottlenecks?
 * Where could AI help or hinder?
+* How are you including *feedback loops*?
 
 \section{Practical Implementation}
 

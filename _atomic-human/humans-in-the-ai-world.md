@@ -16,47 +16,67 @@ transition: None
 \define{noSlideTitle}
 
 <!--
-Main Message: Herbert Simon, AI Alchemy, undermining existing culture. Willy Wonka experience example
-
-Some ideas form Claude based on book: 
-
+Main Message: Herbert Simon, AI Alchemy, undermining existing culture. 
 1. Beyond Automation to Augmentation:
 
 * Moving past the "faster horse" mindset of viewing AI as replacement
 * Understanding the complementary nature of human and machine intelligence
-* Redesigning work around human strengths in social intelligence and contextual understanding
+* Definition of the atomic human
+
+Table discussion: what is the individible, or is there one?
+-->
 
 
+<!--
 2. The Trust Imperative:
+
+Emulsion (oil and water fixed together)
+Willy Wonka experience example
+
+* Human attention as scarce resource.
+* See the gorilla/basketball example
+  * Blake's Newton image.
+
+* Redesigning work around human strengths in social intelligence and contextual understanding. Human capital as a differentiator.
 
 
 * Managing the tension between automation and human agency
 * Building organizational cultures that maintain human judgment in critical decisions
-* Developing frameworks for ethical AI deployment that protect employee data and privacy
+  * Example: Horizon scandal
+* Developing frameworks for ethical AI deployment that engage employees and build on their understanding of their roles (anecdote - Bezos reflection - mini me, levers at exec level)
 
+Discussion: Feedback and surveys.
+-->
 
+<!--
 3. Cultural Architecture:
 
-
+* Uncertainthy principle of human capital quantification.
 * Leveraging organizational culture as a key differentiator in the AI age
 * Designing systems that balance centralized efficiency with devolved authority
-* Creating environments that foster both fast reflexive and slow reflective decision-making
+* Creating environments that foster both fast reflexive and slow reflective decision-making: example Amazon supply chain and thoughtsday
+-->
 
-
+<!--
 4. Future-Ready Talent Strategy:
 
-
-* Developing new models for skills assessment beyond traditional competencies
+* Developing new models for skills assessment beyond traditional competencies: The Uncertainty Problem.
 * Building learning systems that integrate both human and machine capabilities
-* Creating ethical frameworks for personal data usage in talent decisions
+-->
 
+<!--
 Practical Implications:
 
+Example: 
+* Creating ethical frameworks for personal data usage in talent decisions
+(example: Business development at Amazon, the "difficult to place individuals who were irreplaceable in the company being acquired")
 * New metrics for measuring organizational effectiveness in human-machine collaboration
 * Frameworks for ethical AI deployment in HR processes
 * Strategies for maintaining human agency while leveraging automation
 * Approaches to developing board-level digital literacy
+-->
 
+<!--
 This session will challenge CHROs to move beyond traditional HR functions and become architects of organizations that thrive in the age of AI by protecting and enhancing what makes us uniquely human.
 -->
 

@@ -20,7 +20,6 @@ venue: "Mastercard Evening"
 transition: None
 ---
 
-\include{talk-macros.tex}
 
 \include{_ai/includes/artificial-vs-natural-systems.md}
 

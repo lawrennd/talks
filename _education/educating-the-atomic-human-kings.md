@@ -11,13 +11,15 @@ abstract: |
 date: 2025-03-03
 ---
 
-\include{_atomic-human/includes/fascination-with-ourselves.md}
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 
 <!-- How AI erodes human exceptionalism -->
 \include{_ai/includes/the-atomic-eye.md}
 
+\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/conversation-tedx.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
 <!-- Human capital -->
 \include{_data-science/includes/new-flow-of-information.md}
 
@@ -31,9 +33,10 @@ date: 2025-03-03
 \include{_ai/includes/attention-cycles.md}
 
 <!-- Sylvie risks and dangers -->
+\include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_ai/includes/bandwidth-vs-complexity.md}
 \include{_atomic-human/includes/nothing-to-worry-about.md}
-
-
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
 
 
 <!-- Action Plan missing Skills -->

@@ -18,7 +18,7 @@ venue: Human Intelligence in the Age of AI
 <!-- The heart of the atomic human isn't measurable -->
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
-\section{More like machiness?}
+\section{More like machines?}
 
 <!-- The philosophers stone analogy -->
 \include{_ai/includes/ai-philosophers-stone.md}

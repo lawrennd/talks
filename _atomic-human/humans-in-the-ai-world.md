@@ -26,6 +26,37 @@ Main Message: Herbert Simon, AI Alchemy, undermining existing culture.
 Table discussion: what is the individible, or is there one?
 -->
 
+\section{Introduction: The Age of Human-Analogue Machines}
+
+\include{_ai/includes/henry-ford-intro.md}
+
+\notes{As we enter an era where machines increasingly mimic tasks traditionally undertaken by humans, CHROs face fundamental transformations in how organizations function. The challenges aren't merely operational - they require us to reimagine the very nature of work, human capital, and organizational culture.}
+
+\include{_ml/includes/what-is-ml.md}
+
+\section{Beyond Automation to Augmentation}
+
+\include{_ai/includes/conversation.md}
+
+\notes{The true potential of AI in organizations isn't in replacing humans but in creating complementary systems that enhance human capabilities. Moving beyond the 'faster horse' mindset requires understanding what makes human intelligence uniquely valuable.}
+
+\include{_atomic-human/includes/artificial-general-vehicle.md}
+
+\section{Embodiment Factors: Fundamental Differences Between Humans and Machines}
+
+\include{_ai/includes/embodiment-factors-celsius.md}
+
+\notes{These bandwidth differences explain why AI struggles with context and social understanding - the very domains where humans excel. The challenge for organizations is designing systems that leverage the strengths of both.}
+
+\include{_ai/includes/baby-shoes.md}
+
+\section{The Atomic Human Concept}
+
+\include{_economics/includes/homo-atomicus.md}
+
+\subsection{Table Discussion}
+
+* What is the indivisible essence of human contribution to organizations? 
 
 <!--
 2. The Trust Imperative:
@@ -48,6 +79,38 @@ Willy Wonka experience example
 Discussion: Feedback and surveys.
 -->
 
+\section{The Trust Imperative}
+
+\notes{Organizations operate on trust - trust that enables delegation, collaboration, and organizational coherence. AI systems fundamentally challenge how trust functions in organizations.}
+
+\include{_psychology/includes/selective-attention-bias.md}
+
+
+\section{Human Attention as the Scarce Resource}
+
+\include{_economics/includes/the-attention-economy.md}
+
+\include{_data-science/includes/new-flow-of-information.md}
+
+\notes{In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organizational success.}
+
+\section{Emulsion: Combining Human and Machine Intelligence}
+
+\notes{Organisations are like an emlsion mixing oil and water. The oil could be replaced by the machine, but the water, the viatal life givinghuman-cokmponent cannot be easily separated. Successful organizations need to develop structures that combine human and machine intelligence in stable, productive ways. That means reversign the power dynamics and ensuring the organisation is in touch with its business differentiators, because in the long those differentiators are unlikley to include AI.}
+
+\include{_business/includes/gorilla-conclusion.md}
+
+\subsection{Maintaining Human Judgment in Critical Decisions}
+
+\include{_software/includes/horizon-scandal.md}
+
+\notes{The Horizon scandal dramatically demonstrates what happens when human judgment is subordinated to algorithmic outputs. Organizations must build structures that maintain human judgment in critical decisions.}
+
+
+\subsection{Table Discussion}
+
+* How do we develop feedback systems that capture both algorithmic outputs and essential human judgment?
+
 <!--
 3. Cultural Architecture:
 
@@ -57,12 +120,58 @@ Discussion: Feedback and surveys.
 * Creating environments that foster both fast reflexive and slow reflective decision-making: example Amazon supply chain and thoughtsday
 -->
 
+\section{Cultural Architecture}
+
+\include{_ai/includes/the-atomic-eye.md}
+
+\section{The Uncertainty Principle of Human Capital Quantification}
+
+\include{_economics/includes/human-capital-inflation.md}
+
+\notes{The more we try to precisely quantify human contribution, the more we risk changing the nature of that contribution. This creates fundamental challenges for performance management in AI-augmented organizations.}
+
+\section{Organizational Culture as Competitive Differentiator}
+
+\notes{In an age where algorithms become commoditized, organizational culture becomes the primary competitive advantage. CHROs must be cultural architects.}
+
+\section{Balancing Centralization and Distribution of Authority}
+
+\include{_business/includes/an-attention-economy.md}
+
+\section{Creating Environments for Reflexive and Reflective Decision-Making}
+
+\subsection{Example: Amazon's "Thoughtsday"}
+
+\notes{Amazon's supply chain operations combine rapid algorithmic decisions with dedicated time for deeper human reflection - creating complementary systems that leverage both machine efficiency and human wisdom.}
+
 <!--
 4. Future-Ready Talent Strategy:
 
 * Developing new models for skills assessment beyond traditional competencies: The Uncertainty Problem.
 * Building learning systems that integrate both human and machine capabilities
 -->
+
+\section{Future-Ready Talent Strategy}
+
+\include{_atomic-human/includes/reflective-or-reactive.md}
+
+\section{Beyond Traditional Competencies: The Uncertainty Problem}
+
+\notes{Traditional competency models assume we know what skills will be needed in the future. In a rapidly changing environment driven by AI, this assumption breaks down. We need new approaches to talent development.}
+
+\include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
+
+\include{_data-science/includes/new-flow-of-information-ham.md}
+
+\subsection{Building Integrated Learning Systems}
+
+Organizations need to develop learning systems that:
+1. Capture insights from both human and algorithmic sources
+2. Distribute knowledge efficiently across the organization
+3. Adapt rapidly to changing conditions
+4. Preserve essential human judgment
+
+\include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 
 <!--
 Practical Implications:
@@ -76,10 +185,38 @@ Example:
 * Approaches to developing board-level digital literacy
 -->
 
-<!--
-This session will challenge CHROs to move beyond traditional HR functions and become architects of organizations that thrive in the age of AI by protecting and enhancing what makes us uniquely human.
--->
+\section{Practical Implications for CHROs}
 
+\subsection{Ethical Frameworks for Personal Data}
+
+**Example: Business Development at Amazon**  
+When acquiring companies, we often encountered "difficult to place individuals who were irreplaceable in the acquired company" - these individuals defied algorithmic categorization but were essential to value creation. This required new frameworks for evaluation.
+
+\subsection{New Metrics for Human-Machine Collaboration}
+
+Traditional metrics focused on efficiency must be complemented by measures of:
+* Innovation adaptation rate
+* Decision quality (not just speed)
+* Human-machine collaboration effectiveness
+* Knowledge creation and distribution: Attention Reinvestment
+
+\subsection{Maintaining Human Agency While Leveraging Automation}
+
+\include{_business/includes/superficial-automation.md}
+
+\subsection{Developing Digital Literacy at Board Level}
+
+\notes{CHROs must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation.}
+
+\subsection{Conclusion: Architecting the Future Organization}
+
+\include{_atomic-human/includes/river-gods-decide.md}
+
+\notes{The CHRO role is evolving from administrative leader to organizational architect - designing systems that protect and enhance what makes humans uniquely valuable while leveraging the computational power of AI.}
+
+\notes{The organizations that will succeed will not be those that most aggressively automate, but those that most thoughtfully integrate human and machine intelligence to create systems greater than the sum of their parts.}
+
+\include{_books/includes/the-atomic-human.md}
 
 \thanks
 

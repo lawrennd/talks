@@ -10,6 +10,7 @@ abstract: |
   Drawing parallels between AI as a modern philosopher's stone we argue we are facing a battle between attention capture and reinvestment, and explain how education and skills are at the heart of preserving our human essence within that battle.
 date: 2025-03-03
 venue: Human Intelligence in the Age of AI
+transition: None
 ---
 
 <!-- Introduction - AGI as vaporware -->

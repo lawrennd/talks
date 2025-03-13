@@ -98,6 +98,13 @@ Discussion: Feedback and surveys.
 
 \notes{Organisations are like an emlsion mixing oil and water. The oil could be replaced by the machine, but the water, the viatal life givinghuman-cokmponent cannot be easily separated. Successful organizations need to develop structures that combine human and machine intelligence in stable, productive ways. That means reversign the power dynamics and ensuring the organisation is in touch with its business differentiators, because in the long those differentiators are unlikley to include AI.}
 
+\notes{In the AI age, we need a new model that explicitly values and reinvests human attention. This is what I call the "Attention Reinvestment Flywheel."}
+
+\include{_business/includes/attention-flywheel.md}
+
+\notes{While the traditional productivity flywheel focuses on reinvesting financial capital, the attention flywheel focuses on reinvesting human capital - our most precious resource in an AI-augmented world. This requires deliberately creating systems that capture the value of freed attention and channel it toward human-centered activities that machines cannot replicate.}
+
+
 \include{_business/includes/gorilla-conclusion.md}
 
 \subsection{Maintaining Human Judgment in Critical Decisions}

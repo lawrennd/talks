@@ -223,6 +223,7 @@ When acquiring companies, we often encountered "difficult to place individuals w
 \subsection{New Metrics for Human-Machine Collaboration}
 
 Traditional metrics focused on efficiency must be complemented by measures of:
+
 * Innovation adaptation rate
 * Decision quality (not just speed)
 * Human-machine collaboration effectiveness

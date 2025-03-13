@@ -84,7 +84,26 @@ Discussion: Feedback and surveys.
 \notes{Organizations operate on trust - trust that enables delegation, collaboration, and organizational coherence. AI systems fundamentally challenge how trust functions in organizations.}
 
 \include{_psychology/includes/selective-attention-bias.md}
-\include{_data-science/includes/data-inattention-bias.md}
+
+\section{Techno-Inattention Bias}
+
+\slides{
+* Organizations develop "techno-inattention bias" - focusing on AI details while missing human dynamics
+* The "gorilla" of human relationships, culture, and ethics goes unnoticed
+* Institutional inattentional blindness develops when leadership fixates on technical aspects}
+
+\subsection{The Danger}
+\slides{* AI fascination distracts from nurturing irreplaceable human elements
+* CHRO role critical as "gorilla spotters" - keeping human essentials in focus
+}
+
+\notes{The selective attention phenomenon we just witnessed has a direct parallel in how organizations approach AI and digital transformation. Senior executives are increasingly asked to focus on complex technical details of AI systems and digital technology – counting the passes of the technological basketball, if you will.}
+
+\notes{In this process of technological fascination, they miss the metaphorical gorilla walking through their business – the fundamental human and organizational dynamics that actually determine success. The gorilla represents the human relationships, cultural cohesion, and ethical considerations that technical systems can never replace.}
+
+\notes{When leadership attention is consumed by technical specifications and implementation details, organizations develop a form of institutional inattentional blindness. The danger isn't that AI will replace humans, but that our fascination with AI capabilities will distract us from nurturing what makes humans irreplaceable and our businesses differentiated.}
+
+\notes{This is why the CHRO role becomes critical - you're the gorilla spotters, ensuring the organization doesn't become so focused on technological transformation that it misses the human essentials moving through the frame.}
 
 \section{Human Attention as the Scarce Resource}
 
@@ -168,7 +187,7 @@ Discussion: Feedback and surveys.
 
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 \include{_simulation/includes/the-moniac.md}
-
+-1
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
 \subsection{Building Integrated Learning Systems}

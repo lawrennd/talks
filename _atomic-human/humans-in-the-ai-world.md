@@ -84,7 +84,7 @@ Discussion: Feedback and surveys.
 \notes{Organizations operate on trust - trust that enables delegation, collaboration, and organizational coherence. AI systems fundamentally challenge how trust functions in organizations.}
 
 \include{_psychology/includes/selective-attention-bias.md}
-
+\include{_data-science/includes/data-inattention-bias.md}
 
 \section{Human Attention as the Scarce Resource}
 
@@ -167,6 +167,7 @@ Discussion: Feedback and surveys.
 \notes{Traditional competency models assume we know what skills will be needed in the future. In a rapidly changing environment driven by AI, this assumption breaks down. We need new approaches to talent development.}
 
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
+\include{_simulation/includes/the-moniac.md}
 
 \include{_data-science/includes/new-flow-of-information-ham.md}
 

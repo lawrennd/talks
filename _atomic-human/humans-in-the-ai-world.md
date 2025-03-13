@@ -13,7 +13,7 @@ venue: The Transformational CHRO Programme
 url: https://www.egonzehnder.com/the-transformational-chro-programme
 transition: None
 ---
-\define{noSlideTitle}
+
 
 <!--
 Main Message: Herbert Simon, AI Alchemy, undermining existing culture. 
@@ -193,6 +193,7 @@ Discussion: Feedback and surveys.
 \subsection{Building Integrated Learning Systems}
 
 Organizations need to develop learning systems that:
+
 1. Capture insights from both human and algorithmic sources
 2. Distribute knowledge efficiently across the organization
 3. Adapt rapidly to changing conditions

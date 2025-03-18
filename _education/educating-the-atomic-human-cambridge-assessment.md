@@ -37,7 +37,7 @@ author:
 date: 2025-03-18
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: Cambridge University Press and Assessment
+venue: Digital and Data Day, Cambridge University Press and Assessment
 transition: None
 ---
 \define{noSlideTitle}

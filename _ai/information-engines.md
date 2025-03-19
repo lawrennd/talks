@@ -17,47 +17,82 @@ venue: "Departmental Seminar, Department of Computer Science, University of Manc
 transition: None
 ---
 
+\include{_information-game/includes/information-theory-overview.md}
+
+\section{The Entropy Game: Intelligence as Optimal Information Acquisition}
+
+\notes{
+Intelligence can be viewed as the capacity to efficiently reduce uncertainty about the world. The Information Entropy Game provides a powerful framework for exploring this perspective. In its simplest form, the game asks how we can identify an unknown entity with the minimum number of yes/no questions. This apparently simple problem reveals deep connections between intelligence, thermodynamics, and optimization.
+}
+
+\include{_information-game/includes/entropy-game-introduction.md}
+\include{_information-game/includes/intelligence-thermodynamics-connection.md}
+\include{_information-game/includes/optimal-questioning.md}
+
+\section{Intelligence as an Information Engine}
+
+\notes{
+Having established the framework of the entropy game, we can now explore its connection to thermodynamic systems. Maxwell's demon thought experiment provides an intriguing parallel - a hypothetical entity that seems to decrease entropy through information acquisition. This leads us to consider intelligence itself as a form of "information engine" that converts information into useful work.
+}
+
 \include{_ml/includes/szilard-intelligence-intro.md}
+\include{_ml/includes/information-engines-concept.md}
+
+\subsection{Free Energy and Intelligence}
+
+\slides{
+* Free energy: Energy available to do useful work
+* Intelligence minimizes free energy through:
+  * Accurate perception (reducing prediction errors)
+  * Adaptive action (changing environmental states)
+* Entropy game parallel: Questions reduce free energy of belief state
+}
+
+\notes{
+The free energy principle suggests that intelligent systems operate to minimize a variational free energy bound on surprise. This perspective aligns remarkably well with the entropy game - where intelligent questioning reduces uncertainty (entropy) about the world. Both frameworks view intelligence as a process that minimizes uncertainty through strategic information acquisition.
+}
+
 \include{_ml/includes/szilard-energy-basics.md}
 
-\subsection{Information and Physical Systems}
+\section{Least Action Principles and Entropy Games}
+
+\notes{
+Physics teaches us that systems evolve along paths that minimize action - an integral of the Lagrangian over time. This principle of least action has profound connections to how intelligence operates in the entropy game. The optimal questioning strategy in the entropy game follows a path of maximum entropy reduction - effectively a least action principle for information acquisition.
+}
+
+\include{_information-game/includes/least-action-connection.md}
+
+\section{Schrödinger's Bridge: Connecting Paths in Probability Space}
 
 \slides{
-* Information processing requires energy
-* Shannon's information theory connects to physics
-* Measurement and observation modify available energy
-* Intelligence as energy-efficient state transformation
+* Schrödinger's bridge: Optimal transport between probability distributions
+* Entropy game parallel: Transforming uncertain distribution to certain one
+* Intelligence as optimal path through probability space
+* Questioning as control over stochastic processes
 }
 
 \notes{
-The connection between information and physical systems was first formalized by Claude Shannon, but has deep roots in statistical mechanics and thermodynamics. This relationship becomes particularly important when we consider intelligent systems that must process information to make decisions.
+Schrödinger's bridge problem addresses finding the most likely evolution between two probability distributions. This directly connects to the entropy game, where we transform a distribution representing total uncertainty into one with certainty about our target. Intelligent questioning can be viewed as creating an optimal bridge between these states, with each question guiding the probability mass along this bridge.
 }
 
-\include{_ml/includes/szilard-simulation-spaces.md}
-\include{_ml/includes/szilard-parameters.md}
+\include{_information-game/includes/schrodingers-bridge-perspective.md}
 
-\subsection{Embodiment and Communication}
+\section{Unifying Perspectives on Intelligence}
 
 \notes{
-A critical aspect of intelligence is how it is embodied in physical systems. This embodiment creates fundamental constraints on both computation and communication.
+These multiple perspectives - entropy games, thermodynamic information engines, least action principles, and Schrödinger's bridge - provide complementary views of the same fundamental process: intelligence as optimal information processing. Each framework highlights different aspects of this process, but together they offer a more complete understanding than any single perspective could provide.
 }
-
-\include{_ai/includes/embodiment-factors-short.md}
-
-\section{Practical Implications}
 
 \slides{
-* Intelligence requires:
-    * Efficient energy use
-    * Effective state mapping
-    * Resource optimization
-* Applications:
-    * AI system design
-    * Biological systems
-    * Cognitive architectures
+* Intelligence through multiple lenses:
+  * Entropy game: Intelligence as optimal questioning
+  * Information engines: Intelligence as energy-efficient computation
+  * Least action: Intelligence as path optimization
+  * Schrödinger's bridge: Intelligence as probability transport
+* Unified view: Intelligence as optimal information processing
 }
 
-\notes{These theoretical connections between thermodynamics and intelligence have practical implications for how we design and understand intelligent systems. The efficiency with which a system uses energy and manages state transformations may provide a fundamental measure of intelligence.}
+\include{_information-game/includes/unified-intelligence-perspective.md}
 
 \thanks
 

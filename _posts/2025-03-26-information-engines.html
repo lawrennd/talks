@@ -55,18 +55,22 @@ Thermodynamics</h1>
 class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Information theory, pioneered by Claude Shannon in 1948, provides a
-mathematical framework for quantifying information. What’s fascinating
-is how information theory’s core concepts parallel those found in
-thermodynamics, suggesting deep connections between physical systems and
-information processing.</p>
-<h2 id="entropy-a-shared-concept">Entropy: A Shared Concept</h2>
+<p>Information theory provides a mathematical framework for quantifying
+information. It’s no coincidence that information theory’s core concepts
+parallel those found in thermodynamics. The theory was developed by
+Claude Shannon who spoke extensively to MIT’s Norbert Wiener at while it
+was in development <span class="citation"
+data-cites="Conway-dark05">(Conway and Siegelman, 2005)</span>. Wiener’s
+own ideas about information were inspired by Willard Gibbs, one of the
+pioneers of the mathematical understanding of free energy and entropy.
+Deep connections between physical systems and information processing
+have connected information and energy from the start.</p>
+<h2 id="entropy">Entropy</h2>
 <p>Shannon’s entropy measures the uncertainty or unpredictability of
-information content. This mathematical formulation bears striking
-resemblance to thermodynamic entropy, which describes the dispersal of
-energy in physical systems. This isn’t merely coincidental - both
-concepts quantify the number of possible states and their
-probabilities.</p>
+information content. This mathematical formulation is inspired by
+thermodynamic entropy, which describes the dispersal of energy in
+physical systems. Both concepts quantify the number of possible states
+and their probabilities.</p>
 <div class="figure">
 <div id="maxwell-demon-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/maxwell-demon.svg" width="60%" style=" ">
@@ -81,18 +85,28 @@ onclick="magnifyFigure(&#39;maxwell-demon&#39;)">
 relationship between information and thermodynamics.</p>
 </div>
 </div>
-<h2 id="free-energy-principles">Free Energy Principles</h2>
 <p>In thermodynamics, free energy represents the energy available to do
 work. A system naturally evolves to minimize its free energy, finding
-equilibrium between total energy and entropy. Karl Friston’s Free Energy
-Principle suggests that intelligent systems similarly minimize
-prediction errors by adjusting internal models to match environmental
-observations.</p>
-<p>The general form of the free energy principle suggests that systems
-that maintain their structure against dispersive forces must minimize
-their variational free energy. This principle has been proposed as a
-unifying theory for understanding both biological and artificial
-intelligence.</p>
+equilibrium between total energy and entropy. Free energy principles are
+also pervasive in variational methods in machine learning. They emerge
+from Bayesian approaches to learning and have been heavily promoted by
+e.g. Karl Friston as a model for the brain.</p>
+<p>The relationship between entropy and Free Energy can be explored
+through the Legendre transform. This is most easily reviewed if we
+restrict ourselves to distributions in the exponential family.</p>
+<h2 id="exponential-family">Exponential Family</h2>
+<p>{The exponential family has the form [ (Z) = h(Z) (^T(Z) + A()) ]
+where <span class="math inline">\(h(Z)\)</span> is the base measure,
+<span class="math inline">\(\boldsymbol{\theta}\)</span> is the natural
+parameters, <span class="math inline">\(T(Z)\)</span> is the sufficient
+statistics and $A() is the log partition function. Its entropy can be
+computed as [ S(Z) = A() - ^<em>A() - E</em>{(Z)}, ] where <span
+class="math inline">\(E_{\rho(Z)}\left[\cdot\]\)</span> is the
+expectation under the distribution <span
+class="math inline">\(\rho(Z)\)</span>.</p>
+<h2 id="available-energy">Available Energy</h2>
+<p>Next we will see how these principles are all connected by Ed Jaynes’
+maximum entropy approach.</p>
 <h1
 id="the-entropy-game-intelligence-as-optimal-information-acquisition">The
 Entropy Game: Intelligence as Optimal Information Acquisition</h1>
@@ -165,17 +179,17 @@ Energy-Efficient Process</h1>
 class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>When we view intelligence through the lens of thermodynamics,
-fascinating parallels emerge. Both intelligent systems and physical
-systems appear to be governed by similar principles of energy efficiency
-and entropy management.</p>
+<p>When we view intelligence through the lens of thermodynamics some
+parallels emerge. Both systems appear to be governed by similar
+principles of energy efficiency and entropy management.</p>
 <h2 id="measurement-as-a-thermodynamic-process">Measurement as a
 Thermodynamic Process</h2>
-<p>Every observation or measurement made by an intelligent system can be
-understood as a thermodynamic process. Taking a measurement requires
-energy and produces heat - whether in biological neural systems or
-silicon-based computers. The act of observing itself modifies the energy
-landscape of the system.</p>
+<p>Observations or measurements made by a system can be understood as a
+thermodynamic process. Taking a measurement requires energy and produces
+heat - whether in biological systems or silicon computers. The act of
+observing itself modifies the energy landscape of the system. While in
+theory computation is reversible in practice it involves entropy
+production for error correction.</p>
 <div class="figure">
 <div id="landauer-principle-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/landauer-principle.svg" width="60%" style=" ">
@@ -193,29 +207,50 @@ thermodynamics.</p>
 </div>
 <h2 id="model-approximations-and-thermodynamic-efficiency">Model
 Approximations and Thermodynamic Efficiency</h2>
-<p>Intelligent systems must balance model complexity against energy
-efficiency. A perfect model of the world would require infinite
-computational resources, so approximations are necessary. This mirrors
-how thermodynamic systems find equilibrium states that minimize free
-energy rather than achieving theoretical perfection.</p>
-<p>We can understand various cognitive biases and heuristics as
+<p>Intelligent systems balance model complexity against energy
+efficiency and time requirements. A perfect model of the world would
+require infinite computational resources and speed, so in practice
+approximations are necessary. This leads to uncertainties.
+Thermodynamics can be seen as the physics of uncertainty: at equilibrium
+thermodynamic systems find thermodynamic states that minimize free
+energy, equivalent to maximising entropy.</p>
+<p>We might view cognitive biases and heuristics as attempts at
 thermodynamically efficient approximations - they sacrifice some
 accuracy but dramatically reduce computational (and thus energy)
-requirements. This suggests that intelligence evolved not to find
-perfect solutions but energetically efficient ones.</p>
+requirements. This would suggest that intelligence doesn’t find perfect
+solutions but energetically efficient ones.</p>
 <h2 id="intelligence-as-a-state-change-process">Intelligence as a
 State-Change Process</h2>
-<p>At its core, intelligence can be viewed as a process that efficiently
-changes states in a system. Learning involves altering internal
-configurations to better match environmental patterns, which parallels
-how physical systems reconfigure to minimize free energy. The key
-difference is that intelligent systems do this proactively and with
-purpose.</p>
-<p>This framework helps explain why both natural and artificial
-intelligence systems appear to follow paths of least resistance in their
-learning and decision-making processes. They’re not just processing
-information; they’re traversing energy landscapes in ways that minimize
-thermodynamic costs while maximizing useful work.</p>
+<p>Perpetual motion is impossible, there is no ‘artificial general
+vehicle’, different vehicles make different compromises in their physics
+to adapt to the context. Similarly, different intelligences need to
+adapt to their circumstances to efficiently changes states in a system.
+This adaptation involes modifying internal configurations to better
+match environmental patterns, a process we can think of as learning.
+This parallels how physical systems reconfigure to minimise free
+energy.</p>
+<p>It might seem that the key difference is that intelligent systems do
+this proactively and with purpose, but free energy minimisation also has
+a teleological quality to it. This is perhaps most notable in the
+principle of least action</p>
+<blockquote>
+<p>The idea of causality, that it goes from one point to another, and
+another, and so on, is easy to understand. But the principle of least
+time is a completely different philosophical principle about the way
+nature works. Instead of saying it is a causal thing, that when we do
+one thing, some thing else happens, and so on, it says this: we set up
+the situation, and light decides which is the shortest time, or the
+extreme one, and chooses that path. But what does it do, how does it
+find out? Does it smell the nearby paths, and check them against each
+other?</p>
+<p><span class="citation" data-cites="Feynman-volumeI63">Feynman et al.
+(1963)</span> (Sect. 26-5)</p>
+</blockquote>
+<p>}</p>
+<p>This first attempt to understand intelligence thermodynamically
+suggests that intelligent systems are they traversing energy landscapes
+in ways that minimize thermodynamic costs while maximizing useful
+work.</p>
 <h2 id="the-mathematics-of-optimal-questioning">The Mathematics of
 Optimal Questioning</h2>
 <div style="text-align:right">
@@ -506,5 +541,19 @@ Page</a></li>
 <li>blog: <a
 href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<h1 id="references">References</h1>
+<h1 class="unnumbered" id="references">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+role="list">
+<div id="ref-Conway-dark05" class="csl-entry" role="listitem">
+Conway, F., Siegelman, J., 2005. Dark hero of the information age: In
+search of norbert wiener the father of cybernetics. Basic Books, New
+York.
+</div>
+<div id="ref-Feynman-volumeI63" class="csl-entry" role="listitem">
+Feynman, R.P., Leighton, R.B., Sands, M., 1963. The feynman lectures on
+physics, vol. <span>I</span>: <span>Mainly</span>
+<span>Mechanics</span>, <span>Radiation</span>, and <span>Heat</span>.
+Addison-Wesley.
+</div>
+</div>
 

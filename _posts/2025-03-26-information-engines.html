@@ -99,14 +99,70 @@ restrict ourselves to distributions in the exponential family.</p>
 where <span class="math inline">\(h(Z)\)</span> is the base measure,
 <span class="math inline">\(\boldsymbol{\theta}\)</span> is the natural
 parameters, <span class="math inline">\(T(Z)\)</span> is the sufficient
-statistics and $A() is the log partition function. Its entropy can be
-computed as [ S(Z) = A() - ^<em>A() - E</em>{(Z)}, ] where <span
-class="math inline">\(E_{\rho(Z)}\left[\cdot\]\)</span> is the
-expectation under the distribution <span
-class="math inline">\(\rho(Z)\)</span>.</p>
+statistics and <span
+class="math inline">\(A(\boldsymbol{\theta})\)</span> is the log
+partition function. Its entropy can be computed as [ S(Z) = A() -
+^<em>A() - E</em>{(Z)}, ] where <span
+class="math inline">\(E_{\rho(Z)}[\cdot\]\)</span> is the expectation
+under the distribution <span class="math inline">\(\rho(Z)\)</span>.</p>
 <h2 id="available-energy">Available Energy</h2>
-<p>Next we will see how these principles are all connected by Ed Jaynes’
-maximum entropy approach.</p>
+<h2 id="work-through-measurement">Work through Measurement</h2>
+<p>In machine learning and Bayesian inference, the Markov blanket is the
+set of variables that are conditionally independent of the variable of
+interest given the other variables. To introduce this idea into our
+information system, we first split the system into two parts, the
+variables, <span class="math inline">\(X\)</span>, and the memory <span
+class="math inline">\(M\)</span>.</p>
+<p>The variables are the portion of the system that is stochastically
+evolving over time. The memory is a low entropy partition of the system
+that will give us knowledge about this evolution.</p>
+<p>We can now write the joint entropy of the system in terms of the
+mutual information between the variables and the memory. <span
+class="math display">\[
+S(Z) = S(X,M) = S(X|M) + S(M) = S(X) - I(X;M) + S(M).
+\]</span> This gives us the first hint at the connection between
+information and energy.</p>
+<p>If <span class="math inline">\(M\)</span> is viewed as a measurement
+then the change in entropy of the system before and after measurement is
+given by <span class="math inline">\(S(X|M) - S(X)\)</span> wehich is
+given by <span class="math inline">\(-I(X;M)\)</span>. This is implies
+that measurement increases the amount of available energy we obtain from
+the system <span class="citation"
+data-cites="Parrondo-thermodynamics15">(Parrondo et al.,
+2015)</span>.</p>
+<p>The difference in available energy is given by <span
+class="math display">\[
+\Delta A = A(X) - A(Z|M) = I(X;M),
+\]</span> where we note that the resulting system is no longer in
+thermodynamic equilibrium due to the low entropy of the memory.</p>
+<h2 id="markov-blanket">Markov Blanket</h2>
+<p>We then further split <span class="math inline">\(X\)</span> into
+<span class="math inline">\(X_0\)</span> and <span
+class="math inline">\(X_1\)</span>. <span
+class="math inline">\(X_0\)</span> is past and present of the system,
+<span class="math inline">\(X_1\)</span> is future We introduce the
+conditional mutual information <span
+class="math inline">\(I(X_0;X_1|M)\)</span> which is zero if <span
+class="math inline">\(X_1\)</span> and <span
+class="math inline">\(X_0\)</span> become independent conditioned on
+<span class="math inline">\(M\)</span>.</p>
+<p>We can now write the joint entropy of the system as <span
+class="math display">\[
+S(Z) = S(X,M) = S(X_0, X_1, M) = S(X_0|M) + S(X_1|M) + S(M)-
+I(X_0;X_1|M),
+\]</span> where we would achieve a Markov separation between <span
+class="math inline">\(X_0\)</span> and <span
+class="math inline">\(X_1\)</span> if <span
+class="math inline">\(I(X_0;X_1|M) = 0\)</span>.</p>
+<p>Taking the entropy <span class="math inline">\(S(M)\)</span> to be
+low, we can rewrite our formula for the available energy as, <span
+class="math display">\[
+A(\boldsymbol{\theta}) = U(\boldsymbol{\theta}) - TS(M) = I(X_0;X_1|M) -
+E_\rho\left[\boldsymbol{\theta}^\top T(Z) + \log h(Z)\right].
+\]</span></p>
+<p>This gives us our first hint of the connection between information
+and energy. Next we will see how these principles are all connected by
+Ed Jaynes’ maximum entropy approach.</p>
 <h1
 id="the-entropy-game-intelligence-as-optimal-information-acquisition">The
 Entropy Game: Intelligence as Optimal Information Acquisition</h1>
@@ -122,18 +178,18 @@ connections between intelligence, thermodynamics, and optimization.</p>
 class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-game-introduction.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-game-introduction.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The Entropy Game provides a powerful framework for understanding
-intelligence as a process of efficient uncertainty reduction. In its
-simplest form, we can think of it as finding the optimal strategy for
-identifying an unknown entity by asking the minimum number of yes/no
+<p>The Entropy Game is a framework for understanding efficient
+uncertainty reduction. To start think of finding the optimal strategy
+for identifying an unknown entity by asking the minimum number of yes/no
 questions.</p>
 <h2 id="the-20-questions-paradigm">The 20 Questions Paradigm</h2>
-<p>Consider the classic game of 20 Questions, where one player thinks of
-an object and the other must identify it by asking at most 20 yes/no
-questions. The optimal strategy isn’t to ask random questions but to
-strategically divide the possibility space in half with each question.
-This binary search approach ensures maximum information gain with each
-inquiry.</p>
+<p>In the game of 20 Questions player one (Alice) thinks of an object,
+player two (Bob) must identify it by asking at most 20 yes/no questions.
+The optimal strategy is to divide the possibility space in half with
+each question. The binary search approach ensures maximum information
+gain with each inquiry and can access <span
+class="math inline">\(2^20\)</span> or abou a million different
+objects.</p>
 <div class="figure">
 <div id="binary-search-tree-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/binary-search-tree.svg" width="70%" style=" ">
@@ -155,6 +211,12 @@ as the capacity to efficiently reduce entropy - the uncertainty about
 the state of the world. Each observation or action an intelligent agent
 takes should maximize expected information gain, optimally reducing
 uncertainty given available resources.</p>
+<p>The entropy before the question is <span
+class="math inline">\(S(X)\)</span>. The entropy after the question is
+<span class="math inline">\(S(X|M)\)</span>. The information gain is the
+difference between the two, <span class="math inline">\(I(X;M) = S(X) -
+S(X|M)\)</span>. Intelligent systems maximize this information gain per
+unit cost.</p>
 <p>This framework helps explain why both biological and artificial
 intelligence systems appear to behave as if they’re performing active
 inference - constantly generating predictions and updating models to
@@ -554,6 +616,12 @@ Feynman, R.P., Leighton, R.B., Sands, M., 1963. The feynman lectures on
 physics, vol. <span>I</span>: <span>Mainly</span>
 <span>Mechanics</span>, <span>Radiation</span>, and <span>Heat</span>.
 Addison-Wesley.
+</div>
+<div id="ref-Parrondo-thermodynamics15" class="csl-entry"
+role="listitem">
+Parrondo, J.M.R., Horowitz, J.M., Sagawa, T., 2015. Thermodynamics of
+information. Nature Physics 11, 131–139. <a
+href="https://doi.org/10.1038/nphys3230">https://doi.org/10.1038/nphys3230</a>
 </div>
 </div>
 

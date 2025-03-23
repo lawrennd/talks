@@ -11,6 +11,7 @@ author:
 - family: Lawrence
   given: Neil D.
 date: 2025-03-26
+ipynb: true
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: "Departmental Seminar, Department of Computer Science, University of Manchester"

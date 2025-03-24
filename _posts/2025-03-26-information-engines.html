@@ -566,6 +566,142 @@ class="caption-frame">
 increasing entropy against the number of turns.</p>
 </div>
 </div>
+<p>Note that the entropy starts at a saddle point, increaseases rapidly,
+and the levels off towards the maximum entropy, with the gradient
+decreasing slowly in the manner of Zeno’s paradox.</p>
+<h2 id="valid-games">Valid Games</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The histogram game allows us to explore the notion of valid
+games.</p>
+<p>Our thought experiment suggested that all games should appear to
+start from an <em>origin</em>, a very entropy point. We define a game to
+be valid if it is reachable by steepest ascent from an origin.</p>
+<p>Conceptually we can check whether a game configuration is valid in
+the following manner. Starting with the configuration, we descend the
+entropy gradient in the steepest direction until we reach the origin. We
+then attempt to return to our original configuration through steepest
+ascent. If the original configuration cannot be recovered in this way we
+say that that configuration is invalid.</p>
+<h2 id="jaynes-world-histogram-valid-games-example">Jaynes World
+Histogram Valid Games Example</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram-valid-games-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram-valid-games-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>If we try to play the histogram game by setting <span
+class="math inline">\(\lambda_1 = 1.0\)</span> and <span
+class="math inline">\(\lambda_2 = 0.5, \lambda_3 = 1.5, \lambda_4 =
+0.4\)</span> we obtain a starting configuration of the form,</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="fl">100.0</span>, <span class="fl">50.0</span>, <span class="fl">150.0</span>, <span class="fl">40.0</span>])</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> initial_lambdas<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(initial_lambdas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code></pre></div>
+<div class="figure">
+<div id="jaynes-world-histogram-valid-games-example-1-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-example-1.svg" width="\width" style=" ">
+</object>
+</div>
+<div id="jaynes-world-histogram-valid-games-example-1-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-example-1&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="jaynes-world-histogram-valid-games-example-1-caption"
+class="caption-frame">
+<p>Figure: Jaynes world histogram valid games example 1.</p>
+</div>
+</div>
+<p>If we now descend the entropy gradient in the steepest direction we
+obtain the following configuration.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">-=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest descent</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<div class="figure">
+<div id="jaynes-world-histogram-valid-games-origin-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-origin.svg" width="\width" style=" ">
+</object>
+</div>
+<div id="jaynes-world-histogram-valid-games-origin-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-origin&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="jaynes-world-histogram-valid-games-origin-caption"
+class="caption-frame">
+<p>Figure: Jaynes world histogram valid games example 2.</p>
+</div>
+</div>
+<p>We can now check whether we can return to the original configuration
+through steepest ascent.</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> lambdas_history[<span class="op">-</span><span class="dv">1</span>].copy()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<div class="figure">
+<div id="jaynes-world-histogram-valid-games-end-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-end.svg" width="\width" style=" ">
+</object>
+</div>
+<div id="jaynes-world-histogram-valid-games-end-magnify" class="magnify"
+onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-end&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="jaynes-world-histogram-valid-games-end-caption"
+class="caption-frame">
+<p>Figure: Jaynes world histogram valid games example 3.</p>
+</div>
+</div>
+<p>And if we view the path from the start to the end by visualising the
+sequence of histograms we see that we don’t return to the original
+configuration.</p>
+<div class="figure">
+<div id="jaynes-world-histogram-valid-games-path-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-path.svg" width="\width" style=" ">
+</object>
+</div>
+<div id="jaynes-world-histogram-valid-games-path-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-path&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="jaynes-world-histogram-valid-games-path-caption"
+class="caption-frame">
+<p>Figure: Jaynes world histogram valid games path.</p>
+</div>
+</div>
 <h1
 id="information-engines-intelligence-as-an-energy-efficiency">Information
 Engines: Intelligence as an Energy-Efficiency</h1>

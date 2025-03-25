@@ -547,16 +547,25 @@ will rely on it heavily for the dynamics of the game. In particular, by
 focussing on the <em>natural parameters</em> we find that we are
 optimising within an <em>information geometry</em> <span
 class="citation" data-cites="Amari-information16">(Amari, 2016)</span>.
-In exponential family distributions, the entropy gradient is given by, [
-<em>{}S(Z) = = ^2</em> A((M)) ] And the Fisher information matrix, <span
+In exponential family distributions, the entropy gradient is given by,
+<span class="math display">\[
+\nabla_{\boldsymbol{\theta}}S(Z) = \mathbf{g} =
+\nabla^2_\boldsymbol{\theta} A(\boldsymbol{\theta}(M))
+\]</span> And the Fisher information matrix, <span
 class="math inline">\(G(\boldsymbol{\theta})\)</span>, is also the
-<em>Hessian</em> of the manifold, [ G() = ^2_{} A() = [T(Z)]. ]
-Traditionally, when optimising on an information geometry we take
-<em>natural gradient</em> steps, equivalen to a Newton minimisation
-step, [ = - G()^{-1} , ] but this is not the direction that gives the
-instantaneious maximisation of the entropy production, instead our
-gradient step is given by [ = , ] where <span
-class="math inline">\(\eta\)</span> is a ‘learning rate’.</p>
+<em>Hessian</em> of the manifold, <span class="math display">\[
+G(\boldsymbol{\theta}) = \nabla^2_{\boldsymbol{\theta}}
+A(\boldsymbol{\theta}) = \text{Cov}[T(Z)].
+\]</span> Traditionally, when optimising on an information geometry we
+take <em>natural gradient</em> steps, equivalen to a Newton minimisation
+step, <span class="math display">\[
+\Delta \boldsymbol{\theta} = - G(\boldsymbol{\theta})^{-1} \mathbf{g},
+\]</span> but this is not the direction that gives the instantaneious
+maximisation of the entropy production, instead our gradient step is
+given by <span class="math display">\[
+\Delta \boldsymbol{\theta} = \eta \mathbf{g},
+\]</span> where <span class="math inline">\(\eta\)</span> is a ‘learning
+rate’.</p>
 <h2 id="fourier-duality">Fourier Duality</h2>
 <p>One challenge is how to parameterise our exponential family. We’ve
 mentioned that the variables <span class="math inline">\(Z\)</span> are

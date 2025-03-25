@@ -604,7 +604,12 @@ provides (the capacity <span
 class="math inline">\(c(\boldsymbol{\theta})\)</span> is upper bounded
 by <span class="math inline">\(S(M)\)</span>.</p>
 <h2 id="end-state">End State</h2>
-<p>The <em>end configuration</em> is a high entropy state,</p>
+<p>The <em>end configuration</em> is a high entropy state, near the
+upper bound. Both the minimal entropy and maximal entropy states are
+revealed by Ed Jaynes’ variational minimisation approach and are in the
+exponential family. In many cases a version of Zeno’s paradox will arise
+where the system asymtotes to the final state, taking smaller steps at
+each time. At this point the system is at equilibrium.</p>
 <h2 id="valid-games">Valid Games</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1138,34 +1143,6 @@ control system behaviour.</p>
 class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-uncertainty-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-uncertainty-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>At minimal entropy states, the information reservoir must
-simultaneously maintain precision in the parameters <span
-class="math inline">\(\boldsymbol{\theta}(M)\)</span> (for accurate
-system representation) but it must also provide sufficient capacity
-<span class="math inline">\(c(M)\)</span> (for information storage).
-This creates a trade-off that can be expressed as, <span
-class="math display">\[
-\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M) \geq k,
-\]</span> where <span class="math inline">\(k\)</span> is a constant.
-This trade-off represents a natural <em>uncertainty principle</em> that
-underpins the behaviour of the game. This principle is a necessary
-consequence of information theory. It follows from the requirement for
-the parameter-like states, <span class="math inline">\(M\)</span> to
-have precision and high capacity (in the Shannon sense). The uncertainty
-principle ensures that when parameters are sharply defined (low <span
-class="math inline">\(\Delta\boldsymbol{\theta}\)</span>), the capacity
-variables have high uncertainty (high <span class="math inline">\(\Delta
-c\)</span>), allowing information to be encoded in their relationships
-rather than absolute values.</p>
-<p>Parameters <span
-class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
-variables <span class="math inline">\(c(M)\)</span> form a Fourier-dual
-pair, <span class="math display">\[
-c(M) = \mathcal{F}[\boldsymbol{\theta}
-(M)],
-\]</span> This duality becomes important at saddle points when direct
-gradient ascent stalls.</p>
-<h2 id="fourier-duality">Fourier Duality</h2>
 <p>One challenge is how to parameterise our exponential family. We’ve
 mentioned that the variables <span class="math inline">\(Z\)</span> are
 partitioned into observable variables <span
@@ -1193,13 +1170,41 @@ class="math display">\[
 \rho(X|M) = h(X) \exp(\boldsymbol{\theta}(M)^\top T(X) -
 A(\boldsymbol{\theta}(M))).
 \]</span></p>
-<p>A word of warning here, this assumption implies that <span
+<p>Unfortunately this assumption implies that <span
 class="math inline">\(\boldsymbol{\theta}(\cdot)\)</span> is a delta
-function, and our representation as a compact manifold (bounded below by
-<span class="math inline">\(0\)</span> and above by <span
-class="math inline">\(N\)</span>) does not admit any singularities. To
-see the direct challenges this approximation brings we’ll now consider a
-Markovian decomposition of our system.</p>
+function, and since our representation as a compact manifold (bounded
+below by <span class="math inline">\(0\)</span> and above by <span
+class="math inline">\(N\)</span>) it does not admit any such
+singularities.</p>
+<h2 id="capacity-rightarrow-precision-paradox">Capacity <span
+class="math inline">\(\rightarrow\)</span> Precision Paradox</h2>
+<p>This creates an apparent paradox, at minimal entropy states, the
+information reservoir must simultaneously maintain precision in the
+parameters <span class="math inline">\(\boldsymbol{\theta}(M)\)</span>
+(for accurate system representation) but it must also provide sufficient
+capacity <span class="math inline">\(c(M)\)</span> (for information
+storage).</p>
+<p>The trade-off can be expressed as, <span class="math display">\[
+\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M) \geq k,
+\]</span> where <span class="math inline">\(k\)</span> is a constant.
+This relationship can be recognised as a natural <em>uncertainty
+principle</em> that underpins the behaviour of the game. This principle
+is a necessary consequence of information theory. It follows from the
+requirement for the parameter-like states, <span
+class="math inline">\(M\)</span> to have both precision and high
+capacity (in the Shannon sense). The uncertainty principle ensures that
+when parameters are sharply defined (low <span
+class="math inline">\(\Delta\boldsymbol{\theta}\)</span>), the capacity
+variables have high uncertainty (high <span class="math inline">\(\Delta
+c\)</span>), allowing information to be encoded in their relationships
+rather than absolute values.</p>
+<p>In practice this means that the parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
+variables <span class="math inline">\(c(M)\)</span> must form a
+Fourier-dual pair, <span class="math display">\[
+c(M) = \mathcal{F}[\boldsymbol{\theta}(M)],
+\]</span> This duality becomes important at saddle points when direct
+gradient ascent stalls.</p>
 <h2 id="quantum-vs-classical-information-reservoirs">Quantum vs
 Classical Information Reservoirs</h2>
 <p>The uncertainty principle means that the game can exhibit

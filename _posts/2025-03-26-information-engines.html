@@ -264,14 +264,14 @@ optimising within an <em>information geometry</em> <span
 class="citation"
 data-cites="Amari-geometry">(<strong>Amari-geometry?</strong>)</span>.
 In exponential family distributions, the entropy gradient is given by, [
-<em>{}S(Z) = = ^2</em> A((M)(M) ] And the Fisher information matrix,
-<span class="math inline">\(G(\boldsymbol{\theta})\)</span>, is also the
+<em>{}S(Z) = = ^2</em> A((M)) ] And the Fisher information matrix, <span
+class="math inline">\(G(\boldsymbol{\theta})\)</span>, is also the
 <em>Hessian</em> of the manifold, [ G() = ^2_{} A() = [T(Z)]. ]
 Traditionally, when optimising on an information geometry we take
 <em>natural gradient</em> steps, equivalen to a Newton minimisation
 step, [ = - G()^{-1} , ] but this is not the direction that gives the
 instantaneious maximisation of the entropy production, instead our
-gradient step is tiven by [ = , ] where <span
+gradient step is given by [ = , ] where <span
 class="math inline">\(\eta\)</span> is a ‘learning rate’.</p>
 <h2 id="fourier-duality">Fourier Duality</h2>
 <p>One challenge is how to parameterise our exponential family. We’ve
@@ -312,32 +312,23 @@ Markovian decomposition of our system.</p>
 <p>Now <span class="math inline">\(X\)</span> is further divided into
 past/present <span class="math inline">\(X_0\)</span> and future <span
 class="math inline">\(X_1\)</span>. The entropy can be decomposed into a
-Markovian componen, where <span class="math inline">\(X_0\)</span> and
+Markovian component, where <span class="math inline">\(X_0\)</span> and
 <span class="math inline">\(X_1\)</span> are conditionally independent
 given <span class="math inline">\(M\)</span> and a non-Markovian
 component. The conditional mutual information is <span
 class="math display">\[
-I(X_0; X_1 | M) =,
-\]</span></p>
-<p>then we can expand around the values <span
-class="math inline">\(\boldsymbol{\theta}\)</span> and we assume that
-the entropy of these parameters <span
-class="math inline">\(S(\boldsymbol{\theta})\)</span> is so low as to be
-neglibible. allowing us to rewrite the distribution in a conditional
-form. - <span class="math inline">\(c(M)\)</span>: Maps to high-entropy
-capacity variables</p>
-<ul>
-<li><em>Parameter-Capacity Uncertainty</em>: <span
-class="math inline">\(\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M)
-\geq k\)</span></li>
-</ul>
-<p>Parameters <span
-class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
-variables <span class="math inline">\(c(M)\)</span> form a Fourier-dual
-pair, <span class="math display">\[
-c(M) = \mathcal{F}[\boldsymbol{\theta}(M)],
-\]</span> This duality is particularly important at saddle points where
-direct gradient ascent stalls.</p>
+I(X_0; X_1 | M) = \sum_{x_0,x_1,m} p(x_0,x_1,m) \log
+\frac{p(x_0,x_1|m)}{p(x_0|m)p(x_1|m)},
+\]</span> which measures the remaining dependency between past and
+future given the memory state. This leads to a key insight about memory
+capacity: effective information reservoirs must minimize this
+conditional mutual information while maintaining minimal entropy.</p>
+<p>When <span class="math inline">\(I(X_0; X_1 | M) = 0\)</span>, the
+system becomes perfectly Markovian - the memory variables capture all
+dependencies between past and future. However, achieving this perfect
+Markovianity while maintaining minimal entropy in <span
+class="math inline">\(M\)</span> will create a fundamental tension that
+drives an <em>uncertainty principle</em>.</p>
 <h2 id="system-evolution">System Evolution</h2>
 <p>We are now in a position to summarise the start state and the end
 state of our system, as well as to speculate on the nature of the
@@ -356,50 +347,23 @@ class="math inline">\(c(\boldsymbol{\theta})\)</span> is upper bounded
 by <span class="math inline">\(S(M)\)</span>.</p>
 <h2 id="end-state">End State</h2>
 <p>The <em>end configuration</em> is a high entropy state,</p>
-<h1 id="information-geometry">Information Geometry</h1>
-<h2 id="fisher-information">Fisher Information</h2>
-<h2 id="saddle-point">Saddle Point</h2>
-<p>Saddle points represent critical transitions where</p>
-<ul>
-<li>Gradient <span class="math inline">\(\nabla_{\boldsymbol{\theta}}S
-\approx 0\)</span></li>
-<li>The Fisher information matrix <span
-class="math inline">\(I(\boldsymbol{\theta})\)</span> has eigenvalues
-with significantly different magnitudes</li>
-<li>The system must leverage Fourier duality to continue entropy
-production</li>
-<li>Phase transitions occur between parameter-dominated and
-capacity-dominated regimes</li>
-</ul>
-<h2 id="variable-transitions">Variable Transitions</h2>
-<p>How do the <span class="math inline">\(z_i\)</span> variables
-transitoin between <span class="math inline">\(X\)</span> and <span
-class="math inline">\(M\)</span>? We need an approach to identifing when
-the character of the variables has changed.</p>
-<p>We introduce the moment generating function (MGF) to help identify
-transition candidates, <span class="math display">\[
-M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
-A(\boldsymbol{\theta}))
-\]</span> Variables transition when their contribution to cumulants
-changes significantly.</p>
-<h2 id="saddle-point-seeking-behaviour">Saddle Point Seeking
-Behaviour</h2>
-<p>The use of the exponential family would allow us to ascend the
-<em>natural gradient</em> instead of the steepest ascent direction.</p>
-<h2 id="conceptual-framework">Conceptual Framework</h2>
-<p>The entropy game illustrates fundamental principles of information
-dynamics.</p>
-<ol type="1">
-<li><p><em>Information Conservation</em>: Total information remains
-constant but redistributes between structure and randomness</p></li>
-<li><p><em>Uncertainty Principle</em>: Precision in parameters trades
-off with entropy capacity</p></li>
-<li><p><em>Self-Organization</em>: The system autonomously navigates
-toward maximum entropy while maintaining necessary structure</p></li>
-</ol>
-<p>The zero-player game provides a mathematical model for studying how
-complex systems evolve when they instantaneously maximize entropy
-production.</p>
+<h2 id="valid-games">Valid Games</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The histogram game allows us to explore the notion of valid
+games.</p>
+<p>Our thought experiment suggested that all games should appear to
+start from an <em>origin</em>, a very entropy point. We define a game to
+be valid if it is reachable by steepest ascent from an origin.</p>
+<p>Conceptually we can check whether a game configuration is valid in
+the following manner. Starting with the configuration, we descend the
+entropy gradient in the steepest direction until we reach the origin. We
+then attempt to return to our original configuration through steepest
+ascent. If the original configuration cannot be recovered in this way we
+say that that configuration is invalid.</p>
 <h2 id="histogram-game">Histogram Game</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -467,8 +431,11 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (p<span class="op">*</span>np.log2(p)).<span class="bu">sum</span>()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="four-bin-histogram-entropy-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram.svg" width="70%" style=" ">
@@ -569,30 +536,8 @@ increasing entropy against the number of turns.</p>
 <p>Note that the entropy starts at a saddle point, increaseases rapidly,
 and the levels off towards the maximum entropy, with the gradient
 decreasing slowly in the manner of Zeno’s paradox.</p>
-<h2 id="valid-games">Valid Games</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The histogram game allows us to explore the notion of valid
-games.</p>
-<p>Our thought experiment suggested that all games should appear to
-start from an <em>origin</em>, a very entropy point. We define a game to
-be valid if it is reachable by steepest ascent from an origin.</p>
-<p>Conceptually we can check whether a game configuration is valid in
-the following manner. Starting with the configuration, we descend the
-entropy gradient in the steepest direction until we reach the origin. We
-then attempt to return to our original configuration through steepest
-ascent. If the original configuration cannot be recovered in this way we
-say that that configuration is invalid.</p>
 <h2 id="jaynes-world-histogram-valid-games-example">Jaynes World
 Histogram Valid Games Example</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram-valid-games-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram-valid-games-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <p>If we try to play the histogram game by setting <span
 class="math inline">\(\lambda_1 = 1.0\)</span> and <span
 class="math inline">\(\lambda_2 = 0.5, \lambda_3 = 1.5, \lambda_4 =
@@ -702,6 +647,904 @@ class="caption-frame">
 <p>Figure: Jaynes world histogram valid games path.</p>
 </div>
 </div>
+<h2 id="two-bin-histogram-example">Two-Bin Histogram Example</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/two-bin-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/two-bin-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The simplest possible example of Jaynes’ World is a two-bin histogram
+with probabilities <span class="math inline">\(p\)</span> and <span
+class="math inline">\(1-p\)</span>. This minimal system allows us to
+visualize the entire entropy landscape.</p>
+<p>The natural parameter is <span class="math inline">\(\theta =
+\log\frac{p}{1-p}\)</span>, and the entropy gradient is: <span
+class="math display">\[\frac{dS}{d\theta} = p(1-p)(\log(1-p) - \log
+p)\]</span></p>
+<p>The Fisher information is: <span class="math display">\[G(\theta) =
+p(1-p)\]</span></p>
+<p>This creates a fascinating dynamic: as <span
+class="math inline">\(p\)</span> approaches either 0 or 1 (minimal
+entropy states), the Fisher information approaches zero, creating a
+“critical slowing” effect exactly where information reservoirs would
+form.</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Python visualization code</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dv">1000</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>ax1.plot(p_values, entropy)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;p&#39;</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;Entropy S(p)&#39;</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Entropy Landscape&#39;</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>ax2.plot(p_values, gradient)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;p&#39;</span>)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Entropy Gradient&#39;</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Entropy Gradient vs. Position&#39;</span>)</span></code></pre></div>
+<p>This simple example reveals several key principles: 1. Entropy
+extrema occur at <span class="math inline">\(p = 0\)</span>, <span
+class="math inline">\(p = 0.5\)</span>, and <span
+class="math inline">\(p = 1\)</span> 2. At minimal entropy (<span
+class="math inline">\(p \approx 0\)</span> or <span
+class="math inline">\(p \approx 1\)</span>), the gradient approaches
+zero, creating natural information reservoirs 3. The dynamics slow
+dramatically near these points - critical slowing creates memory</p>
+<h2 id="four-bin-saddle-point-example">Four-Bin Saddle Point
+Example</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-saddle-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-saddle-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To illustrate saddle points and information reservoirs, we need at
+least a 4-bin system. This creates a 3-dimensional parameter space where
+we can observe genuine saddle points.</p>
+<p>Consider a 4-bin system parameterized by natural parameters <span
+class="math inline">\(\theta_1\)</span>, <span
+class="math inline">\(\theta_2\)</span>, and <span
+class="math inline">\(\theta_3\)</span> (with one constraint). A saddle
+point occurs where the gradient <span
+class="math inline">\(\nabla_\theta S = 0\)</span>, but the Hessian has
+mixed eigenvalues - some positive, some negative.</p>
+<p>At these points, the Fisher information matrix <span
+class="math inline">\(G(\theta)\)</span> eigendecomposition reveals: *
+Fast modes: large positive eigenvalues → rapid evolution * Slow modes:
+small positive eigenvalues → gradual evolution * Critical modes:
+near-zero eigenvalues → information reservoirs</p>
+<p>The eigenvectors of <span class="math inline">\(G(\theta)\)</span> at
+the saddle point determine which parameter combinations form information
+reservoirs.</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplified saddle point example</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function with a saddle point (simplified for visualization)</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y):</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> y<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> f(X, Y)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 3D plot</span></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">&#39;3d&#39;</span>)</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>ax.plot_surface(X, Y, Z, cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;θ₁&#39;</span>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;θ₂&#39;</span>)</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>ax.set_zlabel(<span class="st">&#39;Entropy S(θ)&#39;</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Saddle Point in Parameter Space&#39;</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a few gradient vectors</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> X[::stride, ::stride]</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="op">-</span><span class="dv">2</span> <span class="op">*</span> Y[::stride, ::stride]</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> np.zeros_like(u)</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>ax.quiver(X[::stride, ::stride], Y[::stride, ::stride], Z[::stride, ::stride], </span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>          u, v, w, color<span class="op">=</span><span class="st">&#39;r&#39;</span>, length<span class="op">=</span><span class="fl">0.3</span>, normalize<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<p>The animation of system evolution would show: 1. Initial rapid
+movement along high-eigenvalue directions 2. Progressive slowing in
+certain directions 3. Formation of information reservoirs in the
+critically slowed directions 4. Parameter-capacity uncertainty emerging
+naturally at the saddle point</p>
+<h2 id="saddle-points">Saddle Points</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-saddle-points.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-saddle-points.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Saddle points represent critical transitions in the game’s evolution
+where the gradient <span
+class="math inline">\(\nabla_{\boldsymbol{\theta}}S \approx 0\)</span>
+but the game is not at a maximum or minimum. At these points.</p>
+<ol type="1">
+<li>The Fisher information matrix <span
+class="math inline">\(G(\boldsymbol{\theta})\)</span> has eigenvalues
+with significantly different magnitudes</li>
+<li>Some eigenvalues approach zero, creating “critically slowed”
+directions in parameter space</li>
+<li>Other eigenvalues remain large, allowing rapid evolution in certain
+directions</li>
+</ol>
+<p>This creates a natural separation between “memory” variables
+(associated with near-zero eigenvalues) and “processing” variables
+(associated with large eigenvalues). The game’s behavior becomes highly
+non-isotropic in parameter space.</p>
+<p>At saddle points, direct gradient ascent stalls, and the game must
+leverage the Fourier duality between parameters and capacity variables
+to continue entropy production. The duality relationship <span
+class="math display">\[
+c(M) = \mathcal{F}[\boldsymbol{\theta}(M)]
+\]</span> allows the game to progress by temporarily increasing
+uncertainty in capacity space, which creates gradients in previously
+flat directions of parameter space.</p>
+<p>These saddle points often coincide with phase transitions between
+parameter-dominated and capacity-dominated regimes, where the game’s
+fundamental character changes in terms of information processing
+capabilities.</p>
+<h2 id="saddle-point-seeking-behaviour">Saddle Point Seeking
+Behaviour</h2>
+<p>In the game’s evolution, we follow steepest ascent in parameter space
+to maximize entropy. Let’s contrast with the <em>natural gradient</em>
+approach that is often used in information geometry.</p>
+<p>The steepest ascent direction in Euclidean space is given by, <span
+class="math display">\[
+\Delta \boldsymbol{\theta}_{\text{steepest}} = \eta
+\nabla_{\boldsymbol{\theta}} S = \eta \mathbf{g}
+\]</span> where <span class="math inline">\(\eta\)</span> is a learning
+rate and <span class="math inline">\(\mathbf{g}\)</span> is the entropy
+gradient.</p>
+<p>In contrast, the natural gradient adjusts the update direction
+according to the Fisher information geometry, <span
+class="math display">\[
+\Delta \boldsymbol{\theta}_{\text{natural}} = \eta
+G(\boldsymbol{\theta})^{-1} \nabla_{\boldsymbol{\theta}} S = \eta
+G(\boldsymbol{\theta})^{-1} \mathbf{g}
+\]</span> where <span
+class="math inline">\(G(\boldsymbol{\theta})\)</span> is the Fisher
+information matrix. This represents a Newton step in the natural
+parameter space. Often the Newton step is difficult to compute, but for
+exponential families and their entropies the Fisher information has a
+form closely related to the gradients and would be easy to leverage. The
+game <em>explicitly</em> uses steepest ascent and this leads to very
+different behaviour, in particular near saddle points. In this
+regime</p>
+<ol type="1">
+<li><p><em>Steepest ascent</em> slows dramatically in directions where
+the gradient is small, leading to extremely slow progress along the
+critically slowed modes. This actually helps the game by preserving
+information in these modes while allowing continued evolution in other
+directions.</p></li>
+<li><p><em>Natural gradient</em> would normalize the updates by the
+Fisher information, potentially accelerating progress in critically
+slowed directions. This would destroy the natural emergence of
+information reservoirs that we desire.</p></li>
+</ol>
+<p>The use of steepest ascent rather than natural gradient is deliberate
+in our game. It allows the Fisher information matrix’s eigenvalue
+structure to directly influence the temporal dynamics, creating a
+natural separation of timescales that preserves information in
+critically slowed modes while allowing rapid evolution in others.</p>
+<p>As the game approaches a saddle point</p>
+<ol type="1">
+<li><p>The gradient <span
+class="math inline">\(\nabla_{\boldsymbol{\theta}} S\)</span> approaches
+zero in some directions but remains non-zero in others</p></li>
+<li><p>The eigendecomposition of the Fisher information matrix <span
+class="math inline">\(G(\boldsymbol{\theta}) = V \Lambda V^T\)</span>
+reveals which directions are critically slowed</p></li>
+<li><p>Update magnitudes in different directions become proportional to
+their corresponding eigenvalues</p></li>
+<li><p>This creates the hierarchical timescale separation that forms the
+basis of our memory structure</p></li>
+</ol>
+<p>This behavior creates a computational architecture where different
+variables naturally assume different functional roles based on their
+update dynamics, without requiring explicit design. The information
+geometry of the parameter space, combined with steepest ascent dynamics,
+self-organizes the game into memory and processing components.</p>
+<h2 id="gradient-flow-and-least-action-principles">Gradient Flow and
+Least Action Principles</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/gradient-flow-least-action.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/gradient-flow-least-action.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The steepest ascent dynamics in our system naturally connect to least
+action principles in physics. We can demonstrate this connection through
+a simple visualization of gradient flows.</p>
+<p>For our entropy game, we can define an information-theoretic
+action:</p>
+<p><span class="math display">\[\mathcal{A}[\gamma] = \int_0^T
+\left(\frac{1}{2}\dot{\theta}^T G(\theta) \dot{\theta} -
+S(\theta)\right) dt\]</span></p>
+<p>where <span class="math inline">\(\gamma\)</span> is a path through
+parameter space, <span class="math inline">\(G(\theta)\)</span> is the
+Fisher information matrix, and <span
+class="math inline">\(S(\theta)\)</span> is the entropy. The least
+action principle states that the system will follow paths that minimize
+this action.</p>
+<p>This is exactly what our steepest ascent dynamics produce: the system
+follows geodesics in the information geometry while maximizing entropy
+production. As the system evolves, it naturally creates information
+reservoirs in directions where the gradient is small but non-zero.</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing gradient flow and least action path</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> LogNorm</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a potential energy landscape</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potential(x, y):</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">-</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gradient vector field</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient(x, y):</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    dx <span class="op">=</span> <span class="op">-</span>x<span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">+</span> (x<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    dy <span class="op">=</span> <span class="op">-</span>y<span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dx, dy</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> potential(X, Y)</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure</span></span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot potential as contour</span></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>contour <span class="op">=</span> ax.contourf(X, Y, Z, levels<span class="op">=</span><span class="dv">50</span>, cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(contour, ax<span class="op">=</span>ax)</span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>cbar.set_label(<span class="st">&#39;Entropy S(θ)&#39;</span>)</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot gradient field</span></span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>ax.quiver(X[::stride, ::stride], Y[::stride, ::stride], </span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>          dx[::stride, ::stride], dy[::stride, ::stride],</span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>          magnitude[::stride, ::stride],</span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>          cmap<span class="op">=</span><span class="st">&#39;autumn&#39;</span>, scale<span class="op">=</span><span class="dv">50</span>, width<span class="op">=</span><span class="fl">0.002</span>)</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate and plot a particle path following gradient</span></span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_path(start_x, start_y, steps<span class="op">=</span><span class="dv">100</span>, dt<span class="op">=</span><span class="fl">0.1</span>):</span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>    path_x, path_y <span class="op">=</span> [start_x], [start_y]</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> start_x, start_y</span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(steps):</span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>        dx_val, dy_val <span class="op">=</span> gradient(x, y)</span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>        x <span class="op">+=</span> dx_val <span class="op">*</span> dt</span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>        y <span class="op">+=</span> dy_val <span class="op">*</span> dt</span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>        path_x.append(x)</span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>        path_y.append(y)</span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> path_x, path_y</span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a path</span></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>)</span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>ax.plot(path_x, path_y, <span class="st">&#39;r-&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Least action path&#39;</span>)</span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;θ₁&#39;</span>)</span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;θ₂&#39;</span>)</span>
+<span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Gradient Flow and Least Action Path&#39;</span>)</span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span></code></pre></div>
+<p>The visualization shows how a system following the entropy gradient
+naturally traces a path of least action through the parameter space.
+This connection between steepest ascent and least action is profound: it
+suggests that entropy maximization and energy minimization are dual
+aspects of the same fundamental principle.</p>
+<p>At points where the gradient becomes small (near critical points),
+the system exhibits critical slowing, and information reservoirs
+naturally form. These are precisely the regions where parameters become
+effective variables for controlling system behavior with minimal energy
+expenditure.</p>
+<h2 id="uncertainty-principle">Uncertainty Principle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-uncertainty-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-uncertainty-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>At minimal entropy states, the information reservoir must
+simultaneously maintain precision in the parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> (for accurate
+system representation) but it must also provide sufficient capacity
+<span class="math inline">\(c(M)\)</span> (for information storage).
+This creates a trade-off that can be expressed as, <span
+class="math display">\[
+\Delta\boldsymbol{\theta}(M) \cdot \Delta c(M) \geq k,
+\]</span> where <span class="math inline">\(k\)</span> is a constant.
+This trade-off represents a natural <em>uncertainty principle</em> that
+underpins the behaviour of the game. This principle is a necessary
+consequence of information theory. It follows from the requirement for
+the parameter-like states, <span class="math inline">\(M\)</span> to
+have precision and high capacity (in the Shannon sense). The uncertainty
+principle ensures that when parameters are sharply defined (low <span
+class="math inline">\(\Delta\boldsymbol{\theta}\)</span>), the capacity
+variables have high uncertainty (high <span class="math inline">\(\Delta
+c\)</span>), allowing information to be encoded in their relationships
+rather than absolute values.</p>
+<p>Parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
+variables <span class="math inline">\(c(M)\)</span> form a Fourier-dual
+pair, <span class="math display">\[
+c(M) = \mathcal{F}[\boldsymbol{\theta}
+(M)],
+\]</span> This duality becomes important at saddle points when direct
+gradient ascent stalls.</p>
+<h2 id="quantum-vs-classical-information-reservoirs">Quantum vs
+Classical Information Reservoirs</h2>
+<p>The uncertainty principle means that the game can exhibit
+quantum-like information processing regimes during evolution. This
+inspires an information-theoretic perspective on the quantum-classical
+transition.</p>
+<p>At minimal entropy states near the origin, the information reservoir
+has characteristics reminiscent of quantum systems.</p>
+<ol type="1">
+<li><p><em>Wave-like information encoding</em>: The information
+reservoir near the origin necessarily encodes information in
+distributed, interference-capable patterns due to the uncertainty
+principle between parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
+variables <span class="math inline">\(c(M)\)</span>.</p></li>
+<li><p><em>Non-local correlations</em>: Parameters are highly correlated
+through the Fisher information matrix, creating structures where
+information is stored in relationships rather than individual
+variables.</p></li>
+<li><p><em>Uncertainty-saturated regime</em>: The uncertainty
+relationship <span class="math inline">\(\Delta\boldsymbol{\theta}(M)
+\cdot \Delta c(M) \geq k\)</span> is nearly saturated (approaches
+equality), similar to Heisenberg’s uncertainty principle in quantum
+systems.</p></li>
+</ol>
+<p>As the system evolves towards higher entropy states, a transition
+occurs where some variables exhibit classical behavior.</p>
+<ol type="1">
+<li><p><em>From wave-like to particle-like</em>: Variables transitioning
+from <span class="math inline">\(M\)</span> to <span
+class="math inline">\(X\)</span> shift from storing information in
+interference patterns to storing it in definite values with statistical
+uncertainty.</p></li>
+<li><p><em>Decoherence-like process</em>: The uncertainty product <span
+class="math inline">\(\Delta\boldsymbol{\theta}(M) \cdot \Delta
+c(M)\)</span> for these variables grows significantly larger than the
+minimum value <span class="math inline">\(k\)</span>, indicating a
+departure from quantum-like behavior.</p></li>
+<li><p><em>Local information encoding</em>: Information becomes
+increasingly encoded in local variables rather than distributed
+correlations.</p></li>
+</ol>
+<p>The saddle points in our entropy landscape mark critical transitions
+between quantum-like and classical information processing regimes. Near
+these points</p>
+<ol type="1">
+<li><p>The critically slowed modes maintain quantum-like
+characteristics, functioning as coherent memory that preserves
+information through interference patterns.</p></li>
+<li><p>The rapidly evolving modes exhibit classical characteristics,
+functioning as incoherent processors that manipulate information through
+statistical operations.</p></li>
+<li><p>This natural separation creates a hybrid computational
+architecture where quantum-like memory interfaces with classical-like
+processing.</p></li>
+</ol>
+<p>The quantum-classical transition can be quantified using the moment
+generating function <span class="math inline">\(M_Z(t)\)</span>. In
+quantum-like regimes, the MGF exhibits oscillatory behavior with complex
+analytic structure, whereas in classical regimes, it grows monotonically
+with simple analytic structure. The transition between these behaviors
+identifies variables moving between quantum-like and classical
+information processing modes.</p>
+<p>This perspective suggests that what we recognize as “quantum” versus
+“classical” behavior may fundamentally reflect different regimes of
+information processing - one optimized for coherent information storage
+(quantum-like) and the other for flexible information manipulation
+(classical-like). The emergence of both regimes from our
+entropy-maximizing model indicates that nature may exploit this
+computational architecture to optimize information processing across
+multiple scales.</p>
+<h2
+id="visualising-the-parameter-capacity-uncertainty-principle">Visualising
+the Parameter-Capacity Uncertainty Principle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/uncertainty-visualisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/uncertainty-visualisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The uncertainty principle between parameters <span
+class="math inline">\(\theta\)</span> and capacity variables <span
+class="math inline">\(c\)</span> is a fundamental feature of information
+reservoirs. We can visualize this uncertainty relation using phase space
+plots.</p>
+<p>We can demonstrate how the uncertainty principle manifests in
+different regimes:</p>
+<ol type="1">
+<li><p><strong>Quantum-like regime</strong>: Near minimal entropy, the
+uncertainty product <span class="math inline">\(\Delta\theta \cdot
+\Delta c\)</span> approaches the lower bound <span
+class="math inline">\(k\)</span>, creating wave-like interference
+patterns in probability space.</p></li>
+<li><p><strong>Transitional regime</strong>: As entropy increases,
+uncertainty relations begin to decouple, with <span
+class="math inline">\(\Delta\theta \cdot \Delta c &gt;
+k\)</span>.</p></li>
+<li><p><strong>Classical regime</strong>: At high entropy, parameter
+uncertainty dominates, creating diffusion-like dynamics with minimal
+influence from uncertainty relations.</p></li>
+</ol>
+<p>The visualization shows probability distributions for these three
+regimes in both parameter space and capacity space.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of uncertainty ellipses</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Ellipse</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for uncertainty ellipses</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Uncertainty constant</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>centers <span class="op">=</span> [(<span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">2</span>, <span class="dv">2</span>), (<span class="dv">4</span>, <span class="dv">4</span>)]</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>widths <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>heights <span class="op">=</span> [k<span class="op">/</span>w <span class="cf">for</span> w <span class="kw">in</span> widths]</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>]</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Quantum-like&#39;</span>, <span class="st">&#39;Transitional&#39;</span>, <span class="st">&#39;Classical&#39;</span>]</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot uncertainty ellipses</span></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> center, width, height, color, label <span class="kw">in</span> <span class="bu">zip</span>(centers, widths, heights, colors, labels):</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    ellipse <span class="op">=</span> Ellipse(center, width, height, </span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                     edgecolor<span class="op">=</span>color, facecolor<span class="op">=</span><span class="st">&#39;none&#39;</span>, </span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                     linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>label)</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    ax.add_patch(ellipse)</span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add text label</span></span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    ax.text(center[<span class="dv">0</span>], center[<span class="dv">1</span>] <span class="op">+</span> height<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="fl">0.2</span>, </span>
+<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>            label, ha<span class="op">=</span><span class="st">&#39;center&#39;</span>, color<span class="op">=</span>color)</span>
+<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add area label (uncertainty product)</span></span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> np.pi <span class="op">*</span> width <span class="op">*</span> height</span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    ax.text(center[<span class="dv">0</span>], center[<span class="dv">1</span>] <span class="op">-</span> height<span class="op">/</span><span class="dv">2</span> <span class="op">-</span> <span class="fl">0.3</span>, </span>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&#39;Area = </span><span class="sc">{</span>area<span class="sc">:.2f}</span><span class="ss">π&#39;</span>, ha<span class="op">=</span><span class="st">&#39;center&#39;</span>)</span>
+<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels and limits</span></span>
+<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;Parameter θ&#39;</span>)</span>
+<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Capacity c&#39;</span>)</span>
+<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
+<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
+<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
+<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Parameter-Capacity Uncertainty Relation&#39;</span>)</span>
+<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Add diagonal line representing constant uncertainty product</span></span>
+<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.25</span>, <span class="dv">6</span>, <span class="dv">100</span>)</span>
+<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> k<span class="op">/</span>x</span>
+<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, <span class="st">&#39;k--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">&#39;Minimum uncertainty: Δθ·Δc = k&#39;</span>)</span>
+<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper right&#39;</span>)</span></code></pre></div>
+<p>This visualization helps explain why information reservoirs with
+quantum-like properties naturally emerge at minimal entropy. The
+uncertainty principle is not imposed but arises naturally from the
+constraints of Shannon information theory applied to physical systems
+operating at minimal entropy.</p>
+<h2
+id="detecting-transitions-with-moment-generating-functions">Detecting
+Transitions with Moment Generating Functions</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/mgf-analysis-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/mgf-analysis-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The moment generating function (MGF) provides a powerful tool for
+analyzing variable transitions and detecting quantum-like vs. classical
+behavior.</p>
+<p>For each variable in our system, we can compute its moment generating
+function (MGF):</p>
+<p><span class="math display">\[M_{Z_i}(t) = \mathbb{E}[e^{tZ_i}] =
+\exp(A(\theta + te_i) - A(\theta))\]</span></p>
+<p>where <span class="math inline">\(e_i\)</span> is the standard basis
+vector for the <span class="math inline">\(i\)</span>-th coordinate.</p>
+<p>The behavior of this MGF reveals whether a variable is functioning in
+a quantum-like or classical regime:</p>
+<ol type="1">
+<li><strong>Quantum-like variables</strong> show oscillatory MGF
+behavior, with complex analytic structure</li>
+<li><strong>Classical variables</strong> show monotonic MGF growth, with
+simple analytic structure</li>
+</ol>
+<p>This provides a diagnostic tool to identify which variables are
+functioning as quantum-like information reservoirs versus classical
+processing components.</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing MGF differences between quantum-like and classical variables</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define example MGF functions</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quantum_like_mgf(t):</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;MGF with oscillatory behavior (quantum-like)&quot;&quot;&quot;</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(t<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>t)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classical_mgf(t):</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;MGF with monotonic growth (classical)&quot;&quot;&quot;</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(t<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a range of t values</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1000</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute MGFs</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>qm_mgf <span class="op">=</span> quantum_like_mgf(t)</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>cl_mgf <span class="op">=</span> classical_mgf(t)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot MGFs</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, qm_mgf, <span class="st">&#39;b-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Quantum-like variable&#39;</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, cl_mgf, <span class="st">&#39;r-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Classical variable&#39;</span>)</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;t&#39;</span>)</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;M(t)&#39;</span>)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Moment Generating Functions&#39;</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>ax1.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot log derivatives (oscillation index)</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>d_qm_log_mgf <span class="op">=</span> np.gradient(np.log(np.<span class="bu">abs</span>(qm_mgf)), t)</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>d_cl_log_mgf <span class="op">=</span> np.gradient(np.log(cl_mgf), t)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, d_qm_log_mgf, <span class="st">&#39;b-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Quantum-like variable&#39;</span>)</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, d_cl_log_mgf, <span class="st">&#39;r-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Classical variable&#39;</span>)</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;t&#39;</span>)</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;d/dt log M(t)&#39;</span>)</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Log-Derivative of MGF&#39;</span>)</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code></pre></div>
+<p>The oscillation in the derivative of the log-MGF provides a clear
+signature of quantum-like behavior. This “oscillation index” can be used
+to quantify how much a variable displays quantum versus classical
+characteristics.</p>
+<p>This analysis offers a practical method to detect the
+quantum-classical transition in our information reservoirs without
+needing to directly observe the system’s internal state. It connects
+directly to information-theoretic channel properties and provides a
+bridge between our abstract model and experimentally observable
+quantities.</p>
+<h2 id="information-reservoirs">Information Reservoirs</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-information-reservoirs.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-information-reservoirs.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The uncertainty principle means that the game can exhibit
+quantum-like information processing regimes during evolution.</p>
+<p>At minimal entropy states near the origin, the information reservoir
+has characteristics reminiscent of quantum systems.</p>
+<ol type="1">
+<li><p><em>Wave-like information encoding</em>: The information
+reservoir near the origin necessarily encodes information in
+distributed, interference-capable patterns due to the uncertainty
+principle between parameters <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span> and capacity
+variables <span class="math inline">\(c(M)\)</span>.</p></li>
+<li><p><em>Non-local correlations</em>: Parameters are highly correlated
+through the Fisher information matrix, creating structures where
+information is stored in relationships rather than individual
+variables.</p></li>
+<li><p><em>Uncertainty-saturated regime</em>: The uncertainty
+relationship <span class="math inline">\(\Delta\boldsymbol{\theta}(M)
+\cdot \Delta c(M) \geq k\)</span> is nearly saturated (approaches
+equality), similar to Heisenberg’s uncertainty principle in quantum
+systems.</p></li>
+</ol>
+<p>As the system evolves towards higher entropy states, a transition
+occurs where some variables exhibit classical behavior.</p>
+<ol type="1">
+<li><p><em>From wave-like to particle-like</em>: Variables transitioning
+from <span class="math inline">\(M\)</span> to <span
+class="math inline">\(X\)</span> shift from storing information in
+interference patterns to storing it in definite values with statistical
+uncertainty.</p></li>
+<li><p><em>Decoherence-like process</em>: The uncertainty product <span
+class="math inline">\(\Delta\boldsymbol{\theta}(M) \cdot \Delta
+c(M)\)</span> for these variables grows significantly larger than the
+minimum value <span class="math inline">\(k\)</span>, indicating a
+departure from quantum-like behavior.</p></li>
+<li><p><em>Local information encoding</em>: Information becomes
+increasingly encoded in local variables rather than distributed
+correlations.</p></li>
+</ol>
+<p>The saddle points in our entropy landscape mark critical transitions
+between quantum-like and classical information processing regimes. Near
+these points</p>
+<ol type="1">
+<li><p>The critically slowed modes maintain quantum-like
+characteristics, functioning as coherent memory that preserves
+information through interference patterns.</p></li>
+<li><p>The rapidly evolving modes exhibit classical characteristics,
+functioning as incoherent processors that manipulate information through
+statistical operations.</p></li>
+<li><p>This natural separation creates a hybrid computational
+architecture where quantum-like memory interfaces with classical-like
+processing.</p></li>
+</ol>
+<h2 id="classical-hierarchical-memory-structure">Classical Hierarchical
+Memory Structure</h2>
+<p>As the system evolves further toward higher entropy, a purely
+classical hierarchical memory structure can emerge. Unlike quantum-like
+reservoirs that rely on interference patterns and non-local
+correlations, classical information reservoirs in our system organize
+hierarchically:</p>
+<ol type="1">
+<li><p><em>Timescale Hierarchy</em>: Variables separate into distinct
+timescale bands based on eigenvalues of the Fisher information matrix.
+Slower-changing variables (smaller eigenvalues) act as context for
+faster-changing variables (larger eigenvalues), creating a natural
+temporal hierarchy.</p></li>
+<li><p><em>Markov Blanket Formation</em>: Groups of variables form
+statistical “shields” or Markov blankets that conditionally separate one
+part of the system from another. This creates modular information
+processing units with relative statistical independence.</p></li>
+<li><p><em>Mean-Field Dynamics</em>: Fast variables respond to the
+average or “mean field” of slow variables, while slow variables
+integrate the statistics of fast variables. This two-way coupling
+creates stable hierarchical processing without requiring quantum
+coherence.</p></li>
+<li><p><em>Scale-Free Organization</em>: The hierarchical structure
+often exhibits scale-free properties, with similar statistical
+relationships appearing across different scales of organization. This
+enables efficient information compression and retrieval.</p></li>
+</ol>
+<p>This classical hierarchical structure might be evident in systems
+with many variables and complex parameter spaces. It would emerge
+alongside the formation of conditional independence structures, <span
+class="math display">\[
+p(X|M) \approx \prod_i p(X_i|M_{\text{pa}(i)})
+\]</span> Here <span class="math inline">\(M_{\text{pa}(i)}\)</span>
+represents the “parent” memory variables in the hierarchy that directly
+influence <span class="math inline">\(X_i\)</span>. This factorization
+of the joint distribution reflects the emergence of causal hierarchies
+that enable efficient classical information processing.</p>
+<p>Such a hierarchical memory structure would maintains high information
+capacity through multiplexing across timescales rather than through
+quantum-like uncertainty relations. Variables at different levels of the
+hierarchy would simultaneously encode different aspects of
+information.</p>
+<ol type="1">
+<li><em>Slow variables</em>: Encode stable, context-like information
+(akin to semantic memory)</li>
+<li><em>Intermediate variables</em>: Encode relationships and
+transformations (akin to episodic memory)</li>
+<li><em>Fast variables</em>: Encode immediate state information (akin to
+working memory)</li>
+</ol>
+<p>This classical hierarchical structure provides a powerful information
+processing architecture that emerges naturally from entropy
+maximization, without requiring quantum effects. Complex, efficient
+memory systems can develop purely through classical statistical
+mechanics when operating far from the minimal entropy regime.</p>
+<p>The moment generating function <span
+class="math inline">\(M_Z(t)\)</span> still provides the diagnostic:
+classical hierarchical systems show distinct factorization patterns in
+the MGF that reflect the conditional independence structure, with each
+level of the hierarchy contributing characteristic timescales to the
+overall dynamics.</p>
+<h2 id="variable-transitions">Variable Transitions</h2>
+<p>How do the <span class="math inline">\(z_i\)</span> variables
+transition between <span class="math inline">\(X\)</span> and <span
+class="math inline">\(M\)</span>? We need an approach to identifying
+when the character of variables has changed.</p>
+<p>The moment generating function (MGF) can help identify transition
+candidates, <span class="math display">\[
+M_Z(t) = E[e^{t \cdot Z}] = \exp(A(\boldsymbol{\theta}+t) -
+A(\boldsymbol{\theta})).
+\]</span> Taking the logarithm gives us the cumulant generating
+function: <span class="math display">\[
+K_Z(t) = \log M_Z(t) = A(\boldsymbol{\theta}+t) -
+A(\boldsymbol{\theta}).
+\]</span> Variables transition when their contribution to cumulants
+changes significantly. Specifically, we can track the second derivative
+of the cumulant generating function (which gives the variance) for each
+variable, <span class="math display">\[
+\frac{d^2}{dt_i^2}K_Z(t)|_{t=0} = \frac{\partial^2
+A(\boldsymbol{\theta})}{\partial \theta_i^2}.
+\]</span> When a variable’s variance begins to grow rapidly as we move
+along the entropy gradient, it indicates that this variable is
+transitioning from memory (<span class="math inline">\(M\)</span>) to
+observable (<span class="math inline">\(X\)</span>). Conversely, when a
+variable’s contribution to higher-order cumulants decreases, it may be
+transitioning from <span class="math inline">\(X\)</span> to <span
+class="math inline">\(M\)</span>.</p>
+<p>This transition can also be understood as a change in the Shannon
+channel characteristics of the variable - from a low-noise,
+precision-optimized channel (in <span class="math inline">\(M\)</span>)
+to a high-bandwidth, high-entropy channel (in <span
+class="math inline">\(X\)</span>).</p>
+<h2 id="hierarchical-memory-organization-example">Hierarchical Memory
+Organization Example</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hierarchical-memory-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hierarchical-memory-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>As our system evolves from quantum-like to classical regimes, a
+hierarchical memory structure emerges. We can illustrate this with a
+simple dynamical system example.</p>
+<p>Consider a system with 8 variables that undergo steepest ascent
+entropy maximization. As the system evolves, the eigenvalue spectrum of
+the Fisher information matrix reveals a natural separation into
+timescales:</p>
+<ol type="1">
+<li><strong>Very slow variables</strong> (eigenvalues ≈ 0.01) - Deep
+memory, context variables</li>
+<li><strong>Slow variables</strong> (eigenvalues ≈ 0.1) - Long-term
+memory</li>
+<li><strong>Medium variables</strong> (eigenvalues ≈ 1.0) - Intermediate
+processing/memory</li>
+<li><strong>Fast variables</strong> (eigenvalues ≈ 10.0) - Rapid
+processing, minimal memory</li>
+</ol>
+<p>This creates a natural hierarchy where slow variables provide context
+for faster variables, and faster variables provide detailed
+implementation of processes guided by slower variables.</p>
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing hierarchical memory structure</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical structure</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.DiGraph()</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes for different timescales</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>timescales <span class="op">=</span> {</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;blue&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">800</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.01</span>},</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;green&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">500</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.1</span>},</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">300</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">1.0</span>},</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;red&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">100</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">10.0</span>}</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes and connections</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> level <span class="kw">in</span> timescales:</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    G.add_node(level, <span class="op">**</span>timescales[level])</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Add edges (hierarchical connections)</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;long-term&#39;</span>)</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;processing&#39;</span>) </span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;intermediate&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Get node attributes</span></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>node_colors <span class="op">=</span> [G.nodes[n][<span class="st">&#39;color&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>node_sizes <span class="op">=</span> [G.nodes[n][<span class="st">&#39;size&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>eigenvalues <span class="op">=</span> [G.nodes[n][<span class="st">&#39;eigenvalue&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical layout</span></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> {</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: (<span class="dv">0</span>, <span class="dv">3</span>),</span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: (<span class="dv">0</span>, <span class="dv">2</span>), </span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: (<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: (<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the network</span></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx(G, pos, with_labels<span class="op">=</span><span class="va">True</span>, node_color<span class="op">=</span>node_colors, </span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>                node_size<span class="op">=</span>node_sizes, font_color<span class="op">=</span><span class="st">&#39;white&#39;</span>, </span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>                font_weight<span class="op">=</span><span class="st">&#39;bold&#39;</span>, ax<span class="op">=</span>ax, arrowsize<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Add eigenvalue labels</span></span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, position <span class="kw">in</span> pos.items():</span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> G.nodes[node][<span class="st">&#39;eigenvalue&#39;</span>]</span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>    ax.text(position[<span class="dv">0</span>] <span class="op">+</span> <span class="fl">0.2</span>, position[<span class="dv">1</span>], </span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&#39;λ = </span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">&#39;</span>, </span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Hierarchical Memory Organization&#39;</span>)</span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a second plot showing update dynamics</span></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_axes([<span class="fl">0.6</span>, <span class="fl">0.2</span>, <span class="fl">0.35</span>, <span class="fl">0.6</span>])</span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, info <span class="kw">in</span> timescales.items():</span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> info[<span class="st">&#39;eigenvalue&#39;</span>]</span>
+<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> info[<span class="st">&#39;color&#39;</span>]</span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>    ax2.plot(t, np.sin(eigenvalue <span class="op">*</span> t) <span class="op">*</span> np.exp(<span class="op">-</span><span class="fl">0.01</span> <span class="op">*</span> t), </span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span>color, label<span class="op">=</span><span class="ss">f&quot;</span><span class="sc">{</span>node<span class="sc">}</span><span class="ss"> (λ=</span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">)&quot;</span>)</span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;Time&#39;</span>)</span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Parameter value&#39;</span>)</span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Update Dynamics at Different Timescales&#39;</span>)</span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code></pre></div>
+<p>This hierarchical structure emerges naturally during entropy
+maximization, without requiring explicit design. The timescale
+separation creates a computational architecture where information flows
+between levels, with each level operating at its characteristic
+timescale.</p>
+<p>This example illustrates how classical hierarchical information
+reservoirs can achieve high capacity without requiring quantum-like
+interference effects. Different variables specialize in different
+aspects of information processing based purely on their eigenvalue in
+the Fisher information matrix.</p>
+<h2 id="conceptual-framework">Conceptual Framework</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-conceptual-framework.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-conceptual-framework.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The Jaynes’ world game illustrates fundamental principles of
+information dynamics.</p>
+<ol type="1">
+<li><p><em>Information Conservation</em>: Total information remains
+constant but redistributes between structure and randomness. This
+follows from the fundamental uncertainty principle between parameters
+and capacity. As parameters become less precisely specified, capacity
+increases.</p></li>
+<li><p><em>Uncertainty Principle</em>: Precision in parameters trades
+off with entropy capacity. This is not merely a mathematical constraint
+but a necessary feature of any physical information reservoir that must
+maintain both stability and sufficient capacity.</p></li>
+<li><p><em>Self-Organization</em>: The system autonomously navigates
+toward maximum entropy while maintaining necessary structure through
+critically slowed modes. These modes function as information reservoirs
+that preserve essential constraints while allowing maximum entropy
+production elsewhere.</p></li>
+<li><p><em>Information-Energy Duality</em>: The framework connects to
+thermodynamic concepts through the relationship between entropy
+production and available work. As shown by Sagawa and Ueda, information
+gain can be translated into extractable work, suggesting that our
+entropy game has a direct thermodynamic interpretation.</p></li>
+</ol>
+<p>The information-modified second law indicates that the maximum
+extractable work is increased by <span class="math inline">\(k_BT\cdot
+I(X;M)\)</span>, where <span class="math inline">\(I(X;M)\)</span> is
+the mutual information between observable variables and memory. This
+creates a direct connection between our information reservoir model and
+physical thermodynamic systems.</p>
+<p>The zero-player game provides a mathematical model for studying how
+complex systems evolve when they instantaneously maximize entropy
+production.</p>
+<h1 id="conclusion">Conclusion</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-conclusion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-conclusion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The zero-player game Jaynes’ world provides a mathematical model for
+studying how complex systems evolve when they instantaneously maximize
+entropy production.</p>
+<p>Our analysis suggests the game could illustrate the fundamental
+principles of information dynamics, including information conservation,
+an uncertainty principle, self-organization, and information-energy
+duality.</p>
+<p>The game’s architecture should naturally organize into memory and
+processing components, without requiring explicit design.</p>
+<p>The game’s temporal dynamics are based on steepest ascent in
+parameter space, this allows for analysis through the Fisher information
+matrix’s eigenvalue structure to create a natural separation of
+timescales and the natural emergence of information reservoirs.</p>
 <h1
 id="information-engines-intelligence-as-an-energy-efficiency">Information
 Engines: Intelligence as an Energy-Efficiency</h1>

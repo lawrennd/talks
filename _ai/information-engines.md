@@ -18,6 +18,7 @@ venue: "Departmental Seminar, Department of Computer Science, University of Manc
 transition: None
 ---
 
+\include{_physics/includes/entropy-intro.md}
 \include{_information-game/includes/information-theory-overview.md}
 
 \section{The Entropy Game: Intelligence as Optimal Information Acquisition}
@@ -35,6 +36,8 @@ Intelligence can be viewed as the capacity to efficiently reduce uncertainty abo
 \notes{
 Having established the framework of the entropy game, we can now explore its connection to thermodynamic systems. Maxwell's demon thought experiment provides an intriguing parallel - a hypothetical entity that seems to decrease entropy through information acquisition. This leads us to consider intelligence itself as a form of "information engine" that converts information into useful work.
 }
+
+\include{_physics/includes/maxwells-demon.md}
 
 \include{_ml/includes/szilard-intelligence-intro.md}
 \include{_ml/includes/information-engines-concept.md}
@@ -94,6 +97,8 @@ These multiple perspectives - entropy games, thermodynamic information engines, 
 }
 
 \include{_information-game/includes/unified-intelligence-perspective.md}
+
+
 
 \thanks
 

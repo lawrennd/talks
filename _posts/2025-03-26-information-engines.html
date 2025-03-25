@@ -1125,12 +1125,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a h
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
 <p>The visualization shows how a system following the entropy gradient
-naturally traces a path of least action through the parameter space.
-This connection between steepest ascent and least action is profound
-comes because entropy maximization and free energy minimization are dual
-aspects of the same underlying principle.</p>
+traces a path of least action through the parameter space. This
+connection between steepest ascent and least action comes because
+entropy maximization and free energy minimization are dual views of the
+same underlying principle.</p>
 <p>At points where the gradient becomes small (near critical points),
 the system exhibits critical slowing, and information reservoirs
 naturally form. These are the regions where variables, <span

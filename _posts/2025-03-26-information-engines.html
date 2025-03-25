@@ -566,41 +566,6 @@ given by <span class="math display">\[
 \Delta \boldsymbol{\theta} = \eta \mathbf{g},
 \]</span> where <span class="math inline">\(\eta\)</span> is a ‘learning
 rate’.</p>
-<h2 id="fourier-duality">Fourier Duality</h2>
-<p>One challenge is how to parameterise our exponential family. We’ve
-mentioned that the variables <span class="math inline">\(Z\)</span> are
-partitioned into observable variables <span
-class="math inline">\(X\)</span> and memory variables <span
-class="math inline">\(M\)</span>. Given the minimal entropy initial
-state, the obvious initial choice is that at the origin all variables,
-<span class="math inline">\(Z\)</span>, should be in the information
-reservoir, <span class="math inline">\(M\)</span>. This implies that
-they are well determined and present a sensible choice for the source of
-our parameters.</p>
-<p>We define a mapping, <span
-class="math inline">\(\boldsymbol{\theta}(M)\)</span>, that maps the
-information resevoir to a set of values that are equivalent to the
-<em>natural parameters</em>. If the entropy of these parameters is low,
-and the distribution <span
-class="math inline">\(\rho(\boldsymbol{\theta})\)</span> is sharply
-peaked then we can move from treating the memory mapping, <span
-class="math inline">\(\boldsymbol{\theta}(\cdot)\)</span>, as a random
-processe to an assumption that it is a deterministic function. We can
-then follow gradients with respect to these <span
-class="math inline">\(\boldsymbol{\theta}\)</span> values.</p>
-<p>This allows us to rewrite the distribution over <span
-class="math inline">\(Z\)</span> in a conditional form, <span
-class="math display">\[
-\rho(X|M) = h(X) \exp(\boldsymbol{\theta}(M)^\top T(X) -
-A(\boldsymbol{\theta}(M))).
-\]</span></p>
-<p>A word of warning here, this assumption implies that <span
-class="math inline">\(\boldsymbol{\theta}(\cdot)\)</span> is a delta
-function, and our representation as a compact manifold (bounded below by
-<span class="math inline">\(0\)</span> and above by <span
-class="math inline">\(N\)</span>) does not admit any singularities. To
-see the direct challenges this approximation brings we’ll now consider a
-Markovian decomposition of our system.</p>
 <h2 id="markovian-decomposition">Markovian Decomposition</h2>
 <p>Now <span class="math inline">\(X\)</span> is further divided into
 past/present <span class="math inline">\(X_0\)</span> and future <span
@@ -1200,6 +1165,41 @@ c(M) = \mathcal{F}[\boldsymbol{\theta}
 (M)],
 \]</span> This duality becomes important at saddle points when direct
 gradient ascent stalls.</p>
+<h2 id="fourier-duality">Fourier Duality</h2>
+<p>One challenge is how to parameterise our exponential family. We’ve
+mentioned that the variables <span class="math inline">\(Z\)</span> are
+partitioned into observable variables <span
+class="math inline">\(X\)</span> and memory variables <span
+class="math inline">\(M\)</span>. Given the minimal entropy initial
+state, the obvious initial choice is that at the origin all variables,
+<span class="math inline">\(Z\)</span>, should be in the information
+reservoir, <span class="math inline">\(M\)</span>. This implies that
+they are well determined and present a sensible choice for the source of
+our parameters.</p>
+<p>We define a mapping, <span
+class="math inline">\(\boldsymbol{\theta}(M)\)</span>, that maps the
+information resevoir to a set of values that are equivalent to the
+<em>natural parameters</em>. If the entropy of these parameters is low,
+and the distribution <span
+class="math inline">\(\rho(\boldsymbol{\theta})\)</span> is sharply
+peaked then we can move from treating the memory mapping, <span
+class="math inline">\(\boldsymbol{\theta}(\cdot)\)</span>, as a random
+processe to an assumption that it is a deterministic function. We can
+then follow gradients with respect to these <span
+class="math inline">\(\boldsymbol{\theta}\)</span> values.</p>
+<p>This allows us to rewrite the distribution over <span
+class="math inline">\(Z\)</span> in a conditional form, <span
+class="math display">\[
+\rho(X|M) = h(X) \exp(\boldsymbol{\theta}(M)^\top T(X) -
+A(\boldsymbol{\theta}(M))).
+\]</span></p>
+<p>A word of warning here, this assumption implies that <span
+class="math inline">\(\boldsymbol{\theta}(\cdot)\)</span> is a delta
+function, and our representation as a compact manifold (bounded below by
+<span class="math inline">\(0\)</span> and above by <span
+class="math inline">\(N\)</span>) does not admit any singularities. To
+see the direct challenges this approximation brings we’ll now consider a
+Markovian decomposition of our system.</p>
 <h2 id="quantum-vs-classical-information-reservoirs">Quantum vs
 Classical Information Reservoirs</h2>
 <p>The uncertainty principle means that the game can exhibit

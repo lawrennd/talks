@@ -244,11 +244,10 @@ stopped there will nevertheless appear to be an end point we call
 class="math inline">\(N\)</span>.</p>
 <p>This speculation allows us to impose the functional form of our
 proability distribution. As Jaynes has shown <span class="citation"
-data-cites="Jaynes-information57">(<strong>Jaynes-information57?</strong>)</span>,
-the stationary points of a free-form optimisation (minimum or maximum)
-will place the distribution in the, <span
-class="math inline">\(\rho(Z)\)</span> in the <em>expoential
-family</em>, <span class="math display">\[
+data-cites="Jaynes-information57">(Jaynes, 1957)</span>, the stationary
+points of a free-form optimisation (minimum or maximum) will place the
+distribution in the, <span class="math inline">\(\rho(Z)\)</span> in the
+<em>expoential family</em>, <span class="math display">\[
 \rho(Z) = h(Z) \exp(\boldsymbol{\theta}^\top T(Z) -
 A(\boldsymbol{\theta})),
 \]</span> where <span class="math inline">\(h(Z)\)</span> is the base
@@ -261,8 +260,7 @@ parameters</em> of the distribution.}</p>
 will rely on it heavily for the dynamics of the game. In particular, by
 focussing on the <em>natural parameters</em> we find that we are
 optimising within an <em>information geometry</em> <span
-class="citation"
-data-cites="Amari-geometry">(<strong>Amari-geometry?</strong>)</span>.
+class="citation" data-cites="Amari-information16">(Amari, 2016)</span>.
 In exponential family distributions, the entropy gradient is given by, [
 <em>{}S(Z) = = ^2</em> A((M)) ] And the Fisher information matrix, <span
 class="math inline">\(G(\boldsymbol{\theta})\)</span>, is also the
@@ -375,67 +373,24 @@ a simple example using a four bin histogram. The entropy of a four bin
 histogram can be computed as, <span class="math display">\[
 S(p) = - \sum_{i=1}^4 p_i \log_2 p_i.
 \]</span></p>
-<h2 id="mlai">mlai</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The <code>mlai</code> software is a suite of helper functions for
-teaching and demonstrating machine learning algorithms. It was first
-used in the Machine Learning and Adaptive Intelligence course in
-Sheffield in 2013.</p>
-<p>The software can be installed using</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install mlai</span></code></pre></div>
-<p>from the command prompt where you can access your python
-installation.</p>
-<p>The code is also available on GitHub: <a
-href="https://github.com/lawrennd/mlai"
-class="uri">https://github.com/lawrennd/mlai</a></p>
-<p>Once <code>mlai</code> is installed, it can be imported in the usual
-manner.</p>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai <span class="im">import</span> plot</span></code></pre></div>
-<h2 id="notutils">notutils</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>This small package is a helper package for various notebook utilities
-used below.</p>
-<p>The software can be installed using</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install notutils</span></code></pre></div>
-<p>from the command prompt where you can access your python
-installation.</p>
-<p>The code is also available on GitHub: <a
-href="https://github.com/lawrennd/notutils"
-class="uri">https://github.com/lawrennd/notutils</a></p>
-<p>Once <code>notutils</code> is installed, it can be imported in the
-usual manner.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> notutils</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>First we write some helper code to plot the histogram and compute its
 entropy.</p>
 <p>We can compute the entropy of any given histogram.</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="four-bin-histogram-entropy-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram.svg" width="70%" style=" ">
@@ -456,8 +411,8 @@ as a vector of length 4, <span class="math inline">\(\mathbf{
 w}{\lambda} = [\lambda_1, \lambda_2, \lambda_3, \lambda_4]\)</span> and
 define the histogram probabilities to be <span class="math inline">\(p_i
 = \lambda_i^2 / \sum_{j=1}^4 \lambda_j^2\)</span>.</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>We can then ascend the gradeint of the entropy function, starting at
 a parameter setting where the mass is placed in the first bin, we take
 <span class="math inline">\(\lambda_2 = \lambda_3 = \lambda_4 =
@@ -465,46 +420,41 @@ a parameter setting where the mass is placed in the first bin, we take
 100\)</span>.</p>
 <p>First to check our code we compare our numerical and analytic
 gradients.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial parameters (lambda)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>])</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient check</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>numerical_grad <span class="op">=</span> numerical_gradient(entropy, initial_lambdas)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>analytical_grad <span class="op">=</span> entropy_gradient(initial_lambdas)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Numerical Gradient:&quot;</span>, numerical_grad)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Analytical Gradient:&quot;</span>, analytical_grad)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Gradient Difference:&quot;</span>, np.linalg.norm(numerical_grad <span class="op">-</span> analytical_grad))  <span class="co"># Check if close to zero</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial parameters (lambda)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient check</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>numerical_grad <span class="op">=</span> numerical_gradient(entropy, initial_lambdas)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>analytical_grad <span class="op">=</span> entropy_gradient(initial_lambdas)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Numerical Gradient:&quot;</span>, numerical_grad)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Analytical Gradient:&quot;</span>, analytical_grad)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Gradient Difference:&quot;</span>, np.linalg.norm(numerical_grad <span class="op">-</span> analytical_grad))  <span class="co"># Check if close to zero</span></span></code></pre></div>
 <p>Now we can run the steepest ascent algorithm.</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Steepest ascent algorithm</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Steepest ascent algorithm</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
 <p>We can plot the histogram at a set of chosen turn numbers to see the
 progress of the algorithm.</p>
 <h3 id="section"></h3>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <div class="figure">
 <div id="four-bin-histogram-turn-04-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-04.svg" width="\width" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-04.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="four-bin-histogram-turn-04-magnify" class="magnify"
@@ -512,7 +462,8 @@ onclick="magnifyFigure(&#39;four-bin-histogram-turn-04&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="four-bin-histogram-turn-04-caption" class="caption-frame">
-<p>Figure:</p>
+<p>Figure: The final four bin histogram after 15000 iterations of
+gradient ascent.</p>
 </div>
 </div>
 <p>And we can also plot the changing entropy as a function of the number
@@ -520,7 +471,7 @@ of game turns.</p>
 <div class="figure">
 <div id="four-bin-histogram-entropy-vs-turns-figure"
 class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-entropy-vs-turns.svg" width="\width" style=" ">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-entropy-vs-turns.svg" width="70%" style=" ">
 </object>
 </div>
 <div id="four-bin-histogram-entropy-vs-turns-magnify" class="magnify"
@@ -530,7 +481,8 @@ onclick="magnifyFigure(&#39;four-bin-histogram-entropy-vs-turns&#39;)">
 <div id="four-bin-histogram-entropy-vs-turns-caption"
 class="caption-frame">
 <p>Figure: Four bin histogram entropy game. The plot shows the
-increasing entropy against the number of turns.</p>
+increasing entropy against the number of turns across 15000 iterations
+of gradient ascent.</p>
 </div>
 </div>
 <p>Note that the entropy starts at a saddle point, increaseases rapidly,
@@ -542,12 +494,12 @@ Histogram Valid Games Example</h2>
 class="math inline">\(\lambda_1 = 1.0\)</span> and <span
 class="math inline">\(\lambda_2 = 0.5, \lambda_3 = 1.5, \lambda_4 =
 0.4\)</span> we obtain a starting configuration of the form,</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="fl">100.0</span>, <span class="fl">50.0</span>, <span class="fl">150.0</span>, <span class="fl">40.0</span>])</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> initial_lambdas<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(initial_lambdas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="fl">100.0</span>, <span class="fl">50.0</span>, <span class="fl">150.0</span>, <span class="fl">40.0</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> initial_lambdas<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(initial_lambdas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code></pre></div>
 <div class="figure">
 <div id="jaynes-world-histogram-valid-games-example-1-figure"
 class="figure-frame">
@@ -566,22 +518,22 @@ class="caption-frame">
 </div>
 <p>If we now descend the entropy gradient in the steepest direction we
 obtain the following configuration.</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">-=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest descent</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">-=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest descent</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
 <div class="figure">
 <div id="jaynes-world-histogram-valid-games-origin-figure"
 class="figure-frame">
@@ -600,19 +552,19 @@ class="caption-frame">
 </div>
 <p>We can now check whether we can return to the original configuration
 through steepest ascent.</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> lambdas_history[<span class="op">-</span><span class="dv">1</span>].copy()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> lambdas_history[<span class="op">-</span><span class="dv">1</span>].copy()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
 <div class="figure">
 <div id="jaynes-world-histogram-valid-games-end-figure"
 class="figure-frame">
@@ -657,46 +609,59 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-ga
 with probabilities <span class="math inline">\(p\)</span> and <span
 class="math inline">\(1-p\)</span>. This minimal system allows us to
 visualize the entire entropy landscape.</p>
-<p>The natural parameter is <span class="math inline">\(\theta =
-\log\frac{p}{1-p}\)</span>, and the entropy gradient is: <span
-class="math display">\[\frac{dS}{d\theta} = p(1-p)(\log(1-p) - \log
-p)\]</span></p>
-<p>The Fisher information is: <span class="math display">\[G(\theta) =
-p(1-p)\]</span></p>
-<p>This creates a fascinating dynamic: as <span
+<p>The natural parameter is the log odds, <span
+class="math inline">\(\theta = \log\frac{p}{1-p}\)</span>, and the
+update given by the entropy gradient is <span class="math display">\[
+\Delta \theta_{\text{steepest}} = \eta \frac{\text{d}S}{\text{d}\theta}
+= \eta p(1-p)(\log(1-p) - \log p).
+\]</span> The Fisher information is <span class="math display">\[
+G(\theta) = p(1-p)
+\]</span> This creates a dynamic where as <span
 class="math inline">\(p\)</span> approaches either 0 or 1 (minimal
 entropy states), the Fisher information approaches zero, creating a
-“critical slowing” effect exactly where information reservoirs would
-form.</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Python visualization code</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dv">1000</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>ax1.plot(p_values, entropy)</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;p&#39;</span>)</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;Entropy S(p)&#39;</span>)</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Entropy Landscape&#39;</span>)</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>ax2.plot(p_values, gradient)</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;p&#39;</span>)</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Entropy Gradient&#39;</span>)</span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Entropy Gradient vs. Position&#39;</span>)</span></code></pre></div>
-<p>This simple example reveals several key principles: 1. Entropy
-extrema occur at <span class="math inline">\(p = 0\)</span>, <span
-class="math inline">\(p = 0.5\)</span>, and <span
-class="math inline">\(p = 1\)</span> 2. At minimal entropy (<span
-class="math inline">\(p \approx 0\)</span> or <span
+critical slowing” effect. This critical slowing is what leads to the
+formation of <em>information resevoirs</em>. Note also that in the
+<em>natural gradient</em> the updated is given by multiplying the
+gradient by the inverse Fisher information, which would lead to a more
+efficient update of the form, <span class="math display">\[
+\Delta \theta_{\text{natural}} =  \log(1-p) - \log p,
+\]</span> however, it is precisely this efficiency that we want our game
+to avoid, because it is the inefficient behaviour in the reagion of
+saddle points that leads to critical slowing and the emergence of
+information resevoirs.</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.001</span>, <span class="fl">0.999</span>, <span class="dv">1000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
+<div class="figure">
+<div id="two-bin-histogram-entropy-gradients-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-entropy-gradients.svg" width="95%" style=" ">
+</object>
+</div>
+<div id="two-bin-histogram-entropy-gradients-magnify" class="magnify"
+onclick="magnifyFigure(&#39;two-bin-histogram-entropy-gradients&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="two-bin-histogram-entropy-gradients-caption"
+class="caption-frame">
+<p>Figure: Entropy gradients of the two bin histogram agains
+position.</p>
+</div>
+</div>
+<p>This simple example reveals the entropy extrema at <span
+class="math inline">\(p = 0\)</span>, <span class="math inline">\(p =
+0.5\)</span>, and <span class="math inline">\(p = 1\)</span>. At minimal
+entropy (<span class="math inline">\(p \approx 0\)</span> or <span
 class="math inline">\(p \approx 1\)</span>), the gradient approaches
-zero, creating natural information reservoirs 3. The dynamics slow
-dramatically near these points - critical slowing creates memory</p>
+zero, creating natural information reservoirs. The dynamics slow
+dramatically near these points - these are the areas of critical slowing
+that create information reservoirs.</p>
 <h2 id="four-bin-saddle-point-example">Four-Bin Saddle Point
 Example</h2>
 <div style="text-align:right">
@@ -715,51 +680,50 @@ point occurs where the gradient <span
 class="math inline">\(\nabla_\theta S = 0\)</span>, but the Hessian has
 mixed eigenvalues - some positive, some negative.</p>
 <p>At these points, the Fisher information matrix <span
-class="math inline">\(G(\theta)\)</span> eigendecomposition reveals: *
-Fast modes: large positive eigenvalues → rapid evolution * Slow modes:
-small positive eigenvalues → gradual evolution * Critical modes:
-near-zero eigenvalues → information reservoirs</p>
+class="math inline">\(G(\theta)\)</span> eigendecomposition reveals.</p>
+<ul>
+<li>Fast modes: large positive eigenvalues → rapid evolution</li>
+<li>Slow modes: small positive eigenvalues → gradual evolution</li>
+<li>Critical modes: near-zero eigenvalues → information reservoirs</li>
+</ul>
 <p>The eigenvectors of <span class="math inline">\(G(\theta)\)</span> at
 the saddle point determine which parameter combinations form information
 reservoirs.</p>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplified saddle point example</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function with a saddle point (simplified for visualization)</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y):</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> y<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> f(X, Y)</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 3D plot</span></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">&#39;3d&#39;</span>)</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>ax.plot_surface(X, Y, Z, cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;θ₁&#39;</span>)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;θ₂&#39;</span>)</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>ax.set_zlabel(<span class="st">&#39;Entropy S(θ)&#39;</span>)</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Saddle Point in Parameter Space&#39;</span>)</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a few gradient vectors</span></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> X[::stride, ::stride]</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> <span class="op">-</span><span class="dv">2</span> <span class="op">*</span> Y[::stride, ::stride]</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> np.zeros_like(u)</span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>ax.quiver(X[::stride, ::stride], Y[::stride, ::stride], Z[::stride, ::stride], </span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>          u, v, w, color<span class="op">=</span><span class="st">&#39;r&#39;</span>, length<span class="op">=</span><span class="fl">0.3</span>, normalize<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
-<p>The animation of system evolution would show: 1. Initial rapid
-movement along high-eigenvalue directions 2. Progressive slowing in
-certain directions 3. Formation of information reservoirs in the
-critically slowed directions 4. Parameter-capacity uncertainty emerging
-naturally at the saddle point</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplified saddle point example</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a function with a saddle point (simplified for visualization)</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x, y, order<span class="op">=</span><span class="dv">4</span>, yorder<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> yorder <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>         yorder <span class="op">=</span> order</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span>order <span class="op">-</span> y<span class="op">**</span>yorder</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> g(x, y, order<span class="op">=</span><span class="dv">4</span>, yorder<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> yorder <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>         yorder <span class="op">=</span> order</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> order<span class="op">*</span>x<span class="op">**</span>(order<span class="op">-</span><span class="dv">1</span>), <span class="op">-</span>yorder<span class="op">*</span>y<span class="op">**</span>(yorder<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>xorder <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>yorder <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> f(X, Y, xorder, yorder)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>dX, dY <span class="op">=</span> g(X, Y, xorder, yorder)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> dX[::stride, ::stride]</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> dY[::stride, ::stride]</span></code></pre></div>
+<p>The animation of system evolution would show initial rapid movement
+along high-eigenvalue directions, progressive slowing in directions with
+low eigenvalues and formation of information reservoirs in the
+critically slowed directions. Parameter-capacity uncertainty emerges
+naturally at the saddle point.</p>
 <h2 id="saddle-points">Saddle Points</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -865,95 +829,49 @@ style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-ga
 </div>
 <p>The steepest ascent dynamics in our system naturally connect to least
 action principles in physics. We can demonstrate this connection through
-a simple visualization of gradient flows.</p>
-<p>For our entropy game, we can define an information-theoretic
-action:</p>
-<p><span class="math display">\[\mathcal{A}[\gamma] = \int_0^T
-\left(\frac{1}{2}\dot{\theta}^T G(\theta) \dot{\theta} -
-S(\theta)\right) dt\]</span></p>
-<p>where <span class="math inline">\(\gamma\)</span> is a path through
-parameter space, <span class="math inline">\(G(\theta)\)</span> is the
-Fisher information matrix, and <span
-class="math inline">\(S(\theta)\)</span> is the entropy. The least
-action principle states that the system will follow paths that minimize
-this action.</p>
-<p>This is exactly what our steepest ascent dynamics produce: the system
+a simple visualisation of gradient flows.</p>
+<p>For our entropy game, we can define an information-theoretic action,
+<span class="math display">\[
+\mathcal{A}[\gamma] = \int_0^T
+\left(\frac{1}{2}\dot{\boldsymbol{\theta}}^\top G(\boldsymbol{\theta})
+\dot{\boldsymbol{\theta}} - S(\boldsymbol{\theta})\right) \text{d}t
+\]</span> where <span class="math inline">\(\gamma\)</span> is a path
+through parameter space, <span
+class="math inline">\(G(\boldsymbol{\theta})\)</span> is the Fisher
+information matrix, and <span
+class="math inline">\(S(\boldsymbol{\theta})\)</span> is the entropy.
+The least action principle states that the system will follow paths that
+extremise this action.</p>
+<p>This is also what our steepest ascent dynamics produce: the system
 follows geodesics in the information geometry while maximizing entropy
 production. As the system evolves, it naturally creates information
 reservoirs in directions where the gradient is small but non-zero.</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing gradient flow and least action path</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.colors <span class="im">import</span> LogNorm</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a potential energy landscape</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> potential(x, y):</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">-</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create gradient vector field</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gradient(x, y):</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    dx <span class="op">=</span> <span class="op">-</span>x<span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">+</span> (x<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>    dy <span class="op">=</span> <span class="op">-</span>y<span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> y<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">4</span>) <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>) <span class="op">*</span> np.exp(<span class="op">-</span>((x<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (y<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span><span class="dv">1</span>)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dx, dy</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> potential(X, Y)</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the figure</span></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot potential as contour</span></span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>contour <span class="op">=</span> ax.contourf(X, Y, Z, levels<span class="op">=</span><span class="dv">50</span>, cmap<span class="op">=</span><span class="st">&#39;viridis&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(contour, ax<span class="op">=</span>ax)</span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>cbar.set_label(<span class="st">&#39;Entropy S(θ)&#39;</span>)</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot gradient field</span></span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>ax.quiver(X[::stride, ::stride], Y[::stride, ::stride], </span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>          dx[::stride, ::stride], dy[::stride, ::stride],</span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>          magnitude[::stride, ::stride],</span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>          cmap<span class="op">=</span><span class="st">&#39;autumn&#39;</span>, scale<span class="op">=</span><span class="dv">50</span>, width<span class="op">=</span><span class="fl">0.002</span>)</span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate and plot a particle path following gradient</span></span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_path(start_x, start_y, steps<span class="op">=</span><span class="dv">100</span>, dt<span class="op">=</span><span class="fl">0.1</span>):</span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>    path_x, path_y <span class="op">=</span> [start_x], [start_y]</span>
-<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a>    x, y <span class="op">=</span> start_x, start_y</span>
-<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(steps):</span>
-<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>        dx_val, dy_val <span class="op">=</span> gradient(x, y)</span>
-<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>        x <span class="op">+=</span> dx_val <span class="op">*</span> dt</span>
-<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a>        y <span class="op">+=</span> dy_val <span class="op">*</span> dt</span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a>        path_x.append(x)</span>
-<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>        path_y.append(y)</span>
-<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> path_x, path_y</span>
-<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a path</span></span>
-<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>)</span>
-<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a>ax.plot(path_x, path_y, <span class="st">&#39;r-&#39;</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">&#39;Least action path&#39;</span>)</span>
-<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;θ₁&#39;</span>)</span>
-<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;θ₂&#39;</span>)</span>
-<span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Gradient Flow and Least Action Path&#39;</span>)</span>
-<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing gradient flow and least action path</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> potential(X, Y)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="op">-</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">2</span>)</span></code></pre></div>
 <p>The visualization shows how a system following the entropy gradient
 naturally traces a path of least action through the parameter space.
-This connection between steepest ascent and least action is profound: it
-suggests that entropy maximization and energy minimization are dual
-aspects of the same fundamental principle.</p>
+This connection between steepest ascent and least action is profound
+comes because entropy maximization and free energy minimization are dual
+aspects of the same underlying principle.</p>
 <p>At points where the gradient becomes small (near critical points),
 the system exhibits critical slowing, and information reservoirs
-naturally form. These are precisely the regions where parameters become
-effective variables for controlling system behavior with minimal energy
-expenditure.</p>
+naturally form. These are the regions where variables, <span
+class="math inline">\(X\)</span>, become information reservoirs and
+effective parameters, <span class="math inline">\(M\)</span>, that
+control system behaviour.</p>
 <h2 id="uncertainty-principle">Uncertainty Principle</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1089,55 +1007,8 @@ influence from uncertainty relations.</p></li>
 </ol>
 <p>The visualization shows probability distributions for these three
 regimes in both parameter space and capacity space.</p>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualization of uncertainty ellipses</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Ellipse</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for uncertainty ellipses</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Uncertainty constant</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>centers <span class="op">=</span> [(<span class="dv">0</span>, <span class="dv">0</span>), (<span class="dv">2</span>, <span class="dv">2</span>), (<span class="dv">4</span>, <span class="dv">4</span>)]</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>widths <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>heights <span class="op">=</span> [k<span class="op">/</span>w <span class="cf">for</span> w <span class="kw">in</span> widths]</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>colors <span class="op">=</span> [<span class="st">&#39;blue&#39;</span>, <span class="st">&#39;green&#39;</span>, <span class="st">&#39;red&#39;</span>]</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">&#39;Quantum-like&#39;</span>, <span class="st">&#39;Transitional&#39;</span>, <span class="st">&#39;Classical&#39;</span>]</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot uncertainty ellipses</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> center, width, height, color, label <span class="kw">in</span> <span class="bu">zip</span>(centers, widths, heights, colors, labels):</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    ellipse <span class="op">=</span> Ellipse(center, width, height, </span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>                     edgecolor<span class="op">=</span>color, facecolor<span class="op">=</span><span class="st">&#39;none&#39;</span>, </span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>                     linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>label)</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    ax.add_patch(ellipse)</span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add text label</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>    ax.text(center[<span class="dv">0</span>], center[<span class="dv">1</span>] <span class="op">+</span> height<span class="op">/</span><span class="dv">2</span> <span class="op">+</span> <span class="fl">0.2</span>, </span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>            label, ha<span class="op">=</span><span class="st">&#39;center&#39;</span>, color<span class="op">=</span>color)</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add area label (uncertainty product)</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>    area <span class="op">=</span> np.pi <span class="op">*</span> width <span class="op">*</span> height</span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    ax.text(center[<span class="dv">0</span>], center[<span class="dv">1</span>] <span class="op">-</span> height<span class="op">/</span><span class="dv">2</span> <span class="op">-</span> <span class="fl">0.3</span>, </span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&#39;Area = </span><span class="sc">{</span>area<span class="sc">:.2f}</span><span class="ss">π&#39;</span>, ha<span class="op">=</span><span class="st">&#39;center&#39;</span>)</span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Set axis labels and limits</span></span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&#39;Parameter θ&#39;</span>)</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&#39;Capacity c&#39;</span>)</span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">3</span>, <span class="dv">7</span>)</span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">&#39;equal&#39;</span>)</span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Parameter-Capacity Uncertainty Relation&#39;</span>)</span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Add diagonal line representing constant uncertainty product</span></span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.25</span>, <span class="dv">6</span>, <span class="dv">100</span>)</span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> k<span class="op">/</span>x</span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>ax.plot(x, y, <span class="st">&#39;k--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">&#39;Minimum uncertainty: Δθ·Δc = k&#39;</span>)</span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">&#39;upper right&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>This visualization helps explain why information reservoirs with
 quantum-like properties naturally emerge at minimal entropy. The
 uncertainty principle is not imposed but arises naturally from the
@@ -1171,51 +1042,16 @@ simple analytic structure</li>
 <p>This provides a diagnostic tool to identify which variables are
 functioning as quantum-like information reservoirs versus classical
 processing components.</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div class="sourceCode" id="cb22"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing MGF differences between quantum-like and classical variables</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Define example MGF functions</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> quantum_like_mgf(t):</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;MGF with oscillatory behavior (quantum-like)&quot;&quot;&quot;</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(t<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>) <span class="op">*</span> np.cos(<span class="dv">2</span><span class="op">*</span>t)</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> classical_mgf(t):</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;MGF with monotonic growth (classical)&quot;&quot;&quot;</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(t<span class="op">**</span><span class="dv">2</span><span class="op">/</span><span class="dv">2</span>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a range of t values</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1000</span>)</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute MGFs</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>qm_mgf <span class="op">=</span> quantum_like_mgf(t)</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>cl_mgf <span class="op">=</span> classical_mgf(t)</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot MGFs</span></span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, qm_mgf, <span class="st">&#39;b-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Quantum-like variable&#39;</span>)</span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>ax1.plot(t, cl_mgf, <span class="st">&#39;r-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Classical variable&#39;</span>)</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">&#39;t&#39;</span>)</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">&#39;M(t)&#39;</span>)</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">&#39;Moment Generating Functions&#39;</span>)</span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>ax1.legend()</span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>ax1.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot log derivatives (oscillation index)</span></span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>d_qm_log_mgf <span class="op">=</span> np.gradient(np.log(np.<span class="bu">abs</span>(qm_mgf)), t)</span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>d_cl_log_mgf <span class="op">=</span> np.gradient(np.log(cl_mgf), t)</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, d_qm_log_mgf, <span class="st">&#39;b-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Quantum-like variable&#39;</span>)</span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>ax2.plot(t, d_cl_log_mgf, <span class="st">&#39;r-&#39;</span>, label<span class="op">=</span><span class="st">&#39;Classical variable&#39;</span>)</span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;t&#39;</span>)</span>
-<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;d/dt log M(t)&#39;</span>)</span>
-<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Log-Derivative of MGF&#39;</span>)</span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
-<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code></pre></div>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a range of t values</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1000</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute MGFs</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>qm_mgf <span class="op">=</span> quantum_like_mgf(t)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>cl_mgf <span class="op">=</span> classical_mgf(t)</span></code></pre></div>
 <p>The oscillation in the derivative of the log-MGF provides a clear
 signature of quantum-like behavior. This “oscillation index” can be used
 to quantify how much a variable displays quantum versus classical
@@ -2564,6 +2400,11 @@ href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
+<div id="ref-Amari-information16" class="csl-entry" role="listitem">
+Amari, S., 2016. Information geometry and its applications, Applied
+mathematical sciences. Springer, Tokyo. <a
+href="https://doi.org/10.1007/978-4-431-55978-8">https://doi.org/10.1007/978-4-431-55978-8</a>
+</div>
 <div id="ref-Ashby-design52" class="csl-entry" role="listitem">
 Ashby, W.R., 1952. Design for a brain: The origin of adaptive behaviour.
 Chapman &amp; Hall, London.
@@ -2584,6 +2425,11 @@ role="listitem">
 Jarzynski, C., 1997. Nonequilibrium equality for free energy
 differences. Physical Review Letters 78, 2690–2693. <a
 href="https://doi.org/10.1103/PhysRevLett.78.2690">https://doi.org/10.1103/PhysRevLett.78.2690</a>
+</div>
+<div id="ref-Jaynes-information57" class="csl-entry" role="listitem">
+Jaynes, E.T., 1957. Information theory and statistical mechanics.
+Physical Review 106, 620–630. <a
+href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
 <div id="ref-Landauer-irreversibility61" class="csl-entry"
 role="listitem">

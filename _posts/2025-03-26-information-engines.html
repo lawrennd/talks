@@ -499,7 +499,7 @@ class="math display">\[
   S(Z) = A(\boldsymbol{\theta}) - \boldsymbol{\theta}^\top
 \nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_{\rho(Z)}\left[\log
 h(Z)\right],
-\]</span> where <span class="math inline">\(E_{\rho(Z)}[\cdot\]\)</span>
+\]</span> where <span class="math inline">\(E_{\rho(Z)}[\cdot]\)</span>
 is the expectation under the distribution <span
 class="math inline">\(\rho(Z)\)</span>.</p>
 <h2 id="available-energy">Available Energy</h2>
@@ -584,44 +584,6 @@ be understood as a special case of systems that efficiently extract,
 process, and utilize free energy from their environments, with
 thermodynamic principles setting fundamental constraints on what’s
 possible.</p>
-<h2 id="the-mathematics-of-optimal-questioning">The Mathematics of
-Optimal Questioning</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the entropy game, our goal is to identify an unknown entity from a
-set of possibilities by asking yes/no questions. Each question
-partitions the probability space, and our objective is to minimize the
-expected number of questions needed.</p>
-<p>If we have a discrete random variable <span
-class="math inline">\(X\)</span> with probability mass function <span
-class="math inline">\(P(X)\)</span>, the optimal question should split
-the probability mass as evenly as possible. Mathematically, if we ask a
-question that partitions the space into sets <span
-class="math inline">\(A\)</span> and <span
-class="math inline">\(A^c\)</span> (the complement of <span
-class="math inline">\(A\)</span>), the expected information gain is:</p>
-<p><span class="math display">\[IG(A) = H(X) - \left[P(A)H(X|A) +
-P(A^c)H(X|A^c)\right]\]</span></p>
-<p>The optimal question maximizes this information gain. It can be shown
-that this occurs when <span class="math inline">\(P(A) \approx P(A^c)
-\approx 0.5\)</span>.</p>
-<p>This principle underlies many algorithms in computer science and
-artificial intelligence, from binary search to decision trees. It also
-provides a foundational perspective on intelligence: intelligent systems
-ask questions (or make observations) that maximally reduce entropy about
-their environment.</p>
-<h3 id="exercise-1">Exercise 1</h3>
-<p>Consider a murder mystery with four suspects: Alice, Bob, Charlie,
-and Diana, with probabilities 0.4, 0.3, 0.2, and 0.1 respectively.</p>
-<ol type="1">
-<li>Calculate the initial entropy</li>
-<li>What is the optimal first question?</li>
-<li>Calculate the expected entropy after this question</li>
-<li>How does this relate to intelligence in detective work?</li>
-</ol>
 <h1
 id="information-engines-intelligence-as-an-energy-efficiency">Information
 Engines: Intelligence as an Energy-Efficiency</h1>
@@ -655,10 +617,10 @@ class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
 W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
 \]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
 extractable work and it is upper bounded by the negative change in free
-energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
-energy gained from measurement, <span
+energy, <span class="math inline">\(\Delta \mathcal{F}\)</span>, plus
+the energy gained from measurement, <span
 class="math inline">\(k_BTI(X;M)\)</span>. This is the
-information-modified second law.}</p>
+information-modified second law.</p>
 <p>The measurements can be seen as a thermodynamic process. In theory
 measurement, like computation is reversible. But in practice the process
 of measurement is likely to erode the free energy somewhat, but as long
@@ -681,7 +643,7 @@ an ensemble to the free energy difference between initial and final
 states <span class="citation"
 data-cites="Jarzynski-nonequilibrium97">(Jarzynski, 1997)</span>, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right) \rangle =
+\langle \exp\left(-\frac{W}{k_B T}\right) \rangle =
 \exp\left(-\frac{\Delta\mathcal{F}}{k_BT}\right),
 \]</span> where <span class="math inline">\(\langle W \rangle\)</span>
 is the average work done across an ensemble of trajectories, <span
@@ -692,7 +654,7 @@ change in entropy. Sagawa and Ueda extended this equality to to include
 information gain from measurement <span class="citation"
 data-cites="Sagawa-generalized10">(Sagawa and Ueda, 2010)</span>, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right)
+\langle \exp\left(-\frac{W}{k_B T}\right)
 \exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)
 \exp\left(-\mathcal{I}(X;M)\right)\rangle = 1,
 \]</span> where <span class="math inline">\(\mathcal{I}(X;M) = \log
@@ -704,7 +666,7 @@ as the average information gain.}</p>
 Ueda introduce an <em>efficacy</em> term that captures the effect of
 feedback on the system they note in the presence of feedback, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right)
+\langle \exp\left(-\frac{W}{k_B T}\right)
 \exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\rangle = \gamma,
 \]</span> where <span class="math inline">\(\gamma\)</span> is the
 efficacy. We can also introduce an efficiency, <span
@@ -994,23 +956,6 @@ revealed by Ed Jaynes’ variational minimisation approach and are in the
 exponential family. In many cases a version of Zeno’s paradox will arise
 where the system asymtotes to the final state, taking smaller steps at
 each time. At this point the system is at equilibrium.</p>
-<h2 id="valid-games">Valid Games</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/valid-games.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The histogram game allows us to explore the notion of valid
-games.</p>
-<p>Our thought experiment suggested that all games should appear to
-start from an <em>origin</em>, a very entropy point. We define a game to
-be valid if it is reachable by steepest ascent from an origin.</p>
-<p>Conceptually we can check whether a game configuration is valid in
-the following manner. Starting with the configuration, we descend the
-entropy gradient in the steepest direction until we reach the origin. We
-then attempt to return to our original configuration through steepest
-ascent. If the original configuration cannot be recovered in this way we
-say that that configuration is invalid.</p>
 <h2 id="histogram-game">Histogram Game</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1137,117 +1082,6 @@ of gradient ascent.</p>
 <p>Note that the entropy starts at a saddle point, increaseases rapidly,
 and the levels off towards the maximum entropy, with the gradient
 decreasing slowly in the manner of Zeno’s paradox.</p>
-<h2 id="jaynes-world-histogram-valid-games-example">Jaynes World
-Histogram Valid Games Example</h2>
-<p>If we try to play the histogram game by setting <span
-class="math inline">\(\lambda_1 = 1.0\)</span> and <span
-class="math inline">\(\lambda_2 = 0.5, \lambda_3 = 1.5, \lambda_4 =
-0.4\)</span> we obtain a starting configuration of the form,</p>
-<div class="sourceCode" id="cb10"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="fl">100.0</span>, <span class="fl">50.0</span>, <span class="fl">150.0</span>, <span class="fl">40.0</span>])</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> initial_lambdas<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(initial_lambdas<span class="op">**</span><span class="dv">2</span>).<span class="bu">sum</span>()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code></pre></div>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-example-1-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-example-1.svg" width="\width" style=" ">
-</object>
-</div>
-<div id="jaynes-world-histogram-valid-games-example-1-magnify"
-class="magnify"
-onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-example-1&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="jaynes-world-histogram-valid-games-example-1-caption"
-class="caption-frame">
-<p>Figure: Jaynes world histogram valid games example 1.</p>
-</div>
-</div>
-<p>If we now descend the entropy gradient in the steepest direction we
-obtain the following configuration.</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">-=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest descent</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-origin-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-origin.svg" width="\width" style=" ">
-</object>
-</div>
-<div id="jaynes-world-histogram-valid-games-origin-magnify"
-class="magnify"
-onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-origin&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="jaynes-world-histogram-valid-games-origin-caption"
-class="caption-frame">
-<p>Figure: Jaynes world histogram valid games example 2.</p>
-</div>
-</div>
-<p>We can now check whether we can return to the original configuration
-through steepest ascent.</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> lambdas_history[<span class="op">-</span><span class="dv">1</span>].copy()</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-end-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-end.svg" width="\width" style=" ">
-</object>
-</div>
-<div id="jaynes-world-histogram-valid-games-end-magnify" class="magnify"
-onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-end&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="jaynes-world-histogram-valid-games-end-caption"
-class="caption-frame">
-<p>Figure: Jaynes world histogram valid games example 3.</p>
-</div>
-</div>
-<p>And if we view the path from the start to the end by visualising the
-sequence of histograms we see that we don’t return to the original
-configuration.</p>
-<div class="figure">
-<div id="jaynes-world-histogram-valid-games-path-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/jaynes-world-histogram-valid-games-path.svg" width="\width" style=" ">
-</object>
-</div>
-<div id="jaynes-world-histogram-valid-games-path-magnify"
-class="magnify"
-onclick="magnifyFigure(&#39;jaynes-world-histogram-valid-games-path&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="jaynes-world-histogram-valid-games-path-caption"
-class="caption-frame">
-<p>Figure: Jaynes world histogram valid games path.</p>
-</div>
-</div>
 <h2 id="two-bin-histogram-example">Two-Bin Histogram Example</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1273,20 +1107,20 @@ formation of <em>information resevoirs</em>. Note also that in the
 <em>natural gradient</em> the updated is given by multiplying the
 gradient by the inverse Fisher information, which would lead to a more
 efficient update of the form, <span class="math display">\[
-\Delta \theta_{\text{natural}} =  \log(1-p) - \log p,
+\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p),
 \]</span> however, it is precisely this efficiency that we want our game
 to avoid, because it is the inefficient behaviour in the reagion of
 saddle points that leads to critical slowing and the emergence of
 information resevoirs.</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.000001</span>, <span class="fl">0.999999</span>, <span class="dv">10000</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.000001</span>, <span class="fl">0.999999</span>, <span class="dv">10000</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
 <div class="figure">
 <div id="two-bin-histogram-entropy-gradients-figure"
 class="figure-frame">
@@ -1338,88 +1172,88 @@ class="math inline">\(G(\theta)\)</span> eigendecomposition reveals.</p>
 <p>The eigenvectors of <span class="math inline">\(G(\theta)\)</span> at
 the saddle point determine which parameter combinations form information
 reservoirs.</p>
-<div class="sourceCode" id="cb18"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponential family entropy with saddle point</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponential_family_entropy(theta1, theta2, theta3<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute entropy of a 4-bin exponential family distribution</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">    parameterized by natural parameters theta1, theta2, theta3</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">    (with the constraint that probabilities sum to 1)</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If theta3 is not provided, we&#39;ll use a function of theta1 and theta2</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> theta3 <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the log-partition function (normalization constant)</span></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    theta4 <span class="op">=</span> <span class="op">-</span>(theta1 <span class="op">+</span> theta2 <span class="op">+</span> theta3)  <span class="co"># Constraint</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    log_Z <span class="op">=</span> np.log(np.exp(theta1) <span class="op">+</span> np.exp(theta2) <span class="op">+</span> np.exp(theta3) <span class="op">+</span> np.exp(theta4))</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute probabilities</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> np.exp(theta1 <span class="op">-</span> log_Z)</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> np.exp(theta2 <span class="op">-</span> log_Z)</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    p3 <span class="op">=</span> np.exp(theta3 <span class="op">-</span> log_Z)</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    p4 <span class="op">=</span> np.exp(theta4 <span class="op">-</span> log_Z)</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute entropy: -sum(p_i * log(p_i))</span></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    entropy <span class="op">=</span> <span class="op">-</span>np.<span class="bu">sum</span>(</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>        np.array([p1, p2, p3, p4]) <span class="op">*</span> </span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>        np.log(np.array([p1, p2, p3, p4])), </span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>        axis<span class="op">=</span><span class="dv">0</span>, where<span class="op">=</span>np.array([p1, p2, p3, p4])<span class="op">&gt;</span><span class="dv">0</span></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> entropy</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> entropy_gradient(theta1, theta2, theta3<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute the gradient of the entropy with respect to theta1 and theta2</span></span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If theta3 is not provided, we&#39;ll use a function of theta1 and theta2</span></span>
-<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> theta3 <span class="kw">is</span> <span class="va">None</span>:</span>
-<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the log-partition function</span></span>
-<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    theta4 <span class="op">=</span> <span class="op">-</span>(theta1 <span class="op">+</span> theta2 <span class="op">+</span> theta3)  <span class="co"># Constraint</span></span>
-<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    log_Z <span class="op">=</span> np.log(np.exp(theta1) <span class="op">+</span> np.exp(theta2) <span class="op">+</span> np.exp(theta3) <span class="op">+</span> np.exp(theta4))</span>
-<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute probabilities</span></span>
-<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> np.exp(theta1 <span class="op">-</span> log_Z)</span>
-<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> np.exp(theta2 <span class="op">-</span> log_Z)</span>
-<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>    p3 <span class="op">=</span> np.exp(theta3 <span class="op">-</span> log_Z)</span>
-<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>    p4 <span class="op">=</span> np.exp(theta4 <span class="op">-</span> log_Z)</span>
-<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For the gradient, we need to account for the constraint on theta3</span></span>
-<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># When theta3 = -0.5(theta1 + theta2), we have:</span></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># theta4 = -(theta1 + theta2 + theta3) = -(theta1 + theta2 - 0.5(theta1 + theta2)) = -0.5(theta1 + theta2)</span></span>
-<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient components with chain rule applied</span></span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta1: ∂S/∂theta1 + ∂S/∂theta3 * ∂theta3/∂theta1 + ∂S/∂theta4 * ∂theta4/∂theta1</span></span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>    grad_theta1 <span class="op">=</span> (p1 <span class="op">*</span> (np.log(p1) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta2: ∂S/∂theta2 + ∂S/∂theta3 * ∂theta3/∂theta2 + ∂S/∂theta4 * ∂theta4/∂theta2</span></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>    grad_theta2 <span class="op">=</span> (p2 <span class="op">*</span> (np.log(p2) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grad_theta1, grad_theta2</span>
-<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
-<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy and its gradient at each point</span></span>
-<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> exponential_family_entropy(X, Y)</span>
-<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>dX, dY <span class="op">=</span> entropy_gradient(X, Y)</span>
-<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
-<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
-<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
-<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
-<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
-<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
-<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exponential family entropy with saddle point</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exponential_family_entropy(theta1, theta2, theta3<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute entropy of a 4-bin exponential family distribution</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">    parameterized by natural parameters theta1, theta2, theta3</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">    (with the constraint that probabilities sum to 1)</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If theta3 is not provided, we&#39;ll use a function of theta1 and theta2</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> theta3 <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the log-partition function (normalization constant)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    theta4 <span class="op">=</span> <span class="op">-</span>(theta1 <span class="op">+</span> theta2 <span class="op">+</span> theta3)  <span class="co"># Constraint</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    log_Z <span class="op">=</span> np.log(np.exp(theta1) <span class="op">+</span> np.exp(theta2) <span class="op">+</span> np.exp(theta3) <span class="op">+</span> np.exp(theta4))</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute probabilities</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> np.exp(theta1 <span class="op">-</span> log_Z)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> np.exp(theta2 <span class="op">-</span> log_Z)</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    p3 <span class="op">=</span> np.exp(theta3 <span class="op">-</span> log_Z)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    p4 <span class="op">=</span> np.exp(theta4 <span class="op">-</span> log_Z)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute entropy: -sum(p_i * log(p_i))</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    entropy <span class="op">=</span> <span class="op">-</span>np.<span class="bu">sum</span>(</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>        np.array([p1, p2, p3, p4]) <span class="op">*</span> </span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        np.log(np.array([p1, p2, p3, p4])), </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>        axis<span class="op">=</span><span class="dv">0</span>, where<span class="op">=</span>np.array([p1, p2, p3, p4])<span class="op">&gt;</span><span class="dv">0</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> entropy</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> entropy_gradient(theta1, theta2, theta3<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute the gradient of the entropy with respect to theta1 and theta2</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># If theta3 is not provided, we&#39;ll use a function of theta1 and theta2</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> theta3 <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute the log-partition function</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    theta4 <span class="op">=</span> <span class="op">-</span>(theta1 <span class="op">+</span> theta2 <span class="op">+</span> theta3)  <span class="co"># Constraint</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>    log_Z <span class="op">=</span> np.log(np.exp(theta1) <span class="op">+</span> np.exp(theta2) <span class="op">+</span> np.exp(theta3) <span class="op">+</span> np.exp(theta4))</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute probabilities</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> np.exp(theta1 <span class="op">-</span> log_Z)</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> np.exp(theta2 <span class="op">-</span> log_Z)</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>    p3 <span class="op">=</span> np.exp(theta3 <span class="op">-</span> log_Z)</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    p4 <span class="op">=</span> np.exp(theta4 <span class="op">-</span> log_Z)</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For the gradient, we need to account for the constraint on theta3</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># When theta3 = -0.5(theta1 + theta2), we have:</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># theta4 = -(theta1 + theta2 + theta3) = -(theta1 + theta2 - 0.5(theta1 + theta2)) = -0.5(theta1 + theta2)</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient components with chain rule applied</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta1: ∂S/∂theta1 + ∂S/∂theta3 * ∂theta3/∂theta1 + ∂S/∂theta4 * ∂theta4/∂theta1</span></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>    grad_theta1 <span class="op">=</span> (p1 <span class="op">*</span> (np.log(p1) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta2: ∂S/∂theta2 + ∂S/∂theta3 * ∂theta3/∂theta2 + ∂S/∂theta4 * ∂theta4/∂theta2</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>    grad_theta2 <span class="op">=</span> (p2 <span class="op">*</span> (np.log(p2) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grad_theta1, grad_theta2</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy and its gradient at each point</span></span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> exponential_family_entropy(X, Y)</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>dX, dY <span class="op">=</span> entropy_gradient(X, Y)</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
 <p>The animation of system evolution would show initial rapid movement
 along high-eigenvalue directions, progressive slowing in directions with
 low eigenvalues and formation of information reservoirs in the
@@ -1547,21 +1381,21 @@ extremise this action.</p>
 follows geodesics in the information geometry while maximizing entropy
 production. As the system evolves, it naturally creates information
 reservoirs in directions where the gradient is small but non-zero.</p>
-<div class="sourceCode" id="cb20"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb21"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing gradient flow and least action path</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> potential(X, Y)</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing gradient flow and least action path</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">100</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> potential(X, Y)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate gradient field</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
 <p>The visualization shows how a system following the entropy gradient
 traces a path of least action through the parameter space. This
 connection between steepest ascent and least action comes because
@@ -1743,8 +1577,8 @@ influence from uncertainty relations.</p></li>
 </ol>
 <p>The visualization shows probability distributions for these three
 regimes in both parameter space and capacity space.</p>
-<div class="sourceCode" id="cb22"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>This visualization helps explain why information reservoirs with
 quantum-like properties naturally emerge at minimal entropy. The
 uncertainty principle is not imposed but arises naturally from the
@@ -1778,16 +1612,16 @@ simple analytic structure</li>
 <p>This provides a diagnostic tool to identify which variables are
 functioning as quantum-like information reservoirs versus classical
 processing components.</p>
-<div class="sourceCode" id="cb23"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb24"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a range of t values</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1000</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute MGFs</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>qm_mgf <span class="op">=</span> quantum_like_mgf(t)</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>cl_mgf <span class="op">=</span> classical_mgf(t)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a range of t values</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1000</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute MGFs</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>qm_mgf <span class="op">=</span> quantum_like_mgf(t)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>cl_mgf <span class="op">=</span> classical_mgf(t)</span></code></pre></div>
 <p>The oscillation in the derivative of the log-MGF provides a clear
 signature of quantum-like behavior. This “oscillation index” can be used
 to quantify how much a variable displays quantum versus classical
@@ -1975,81 +1809,81 @@ processing, minimal memory</li>
 <p>This creates a natural hierarchy where slow variables provide context
 for faster variables, and faster variables provide detailed
 implementation of processes guided by slower variables.</p>
-<div class="sourceCode" id="cb25"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing hierarchical memory structure</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical structure</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.DiGraph()</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes for different timescales</span></span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>timescales <span class="op">=</span> {</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;blue&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">800</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.01</span>},</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;green&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">500</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.1</span>},</span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">300</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">1.0</span>},</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;red&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">100</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">10.0</span>}</span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes and connections</span></span>
-<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> level <span class="kw">in</span> timescales:</span>
-<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    G.add_node(level, <span class="op">**</span>timescales[level])</span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Add edges (hierarchical connections)</span></span>
-<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;long-term&#39;</span>)</span>
-<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
-<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
-<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
-<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;processing&#39;</span>) </span>
-<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;intermediate&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
-<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
-<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Get node attributes</span></span>
-<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>node_colors <span class="op">=</span> [G.nodes[n][<span class="st">&#39;color&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
-<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>node_sizes <span class="op">=</span> [G.nodes[n][<span class="st">&#39;size&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>eigenvalues <span class="op">=</span> [G.nodes[n][<span class="st">&#39;eigenvalue&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
-<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical layout</span></span>
-<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> {</span>
-<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: (<span class="dv">0</span>, <span class="dv">3</span>),</span>
-<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: (<span class="dv">0</span>, <span class="dv">2</span>), </span>
-<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: (<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: (<span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the network</span></span>
-<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx(G, pos, with_labels<span class="op">=</span><span class="va">True</span>, node_color<span class="op">=</span>node_colors, </span>
-<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>                node_size<span class="op">=</span>node_sizes, font_color<span class="op">=</span><span class="st">&#39;white&#39;</span>, </span>
-<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>                font_weight<span class="op">=</span><span class="st">&#39;bold&#39;</span>, ax<span class="op">=</span>ax, arrowsize<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Add eigenvalue labels</span></span>
-<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, position <span class="kw">in</span> pos.items():</span>
-<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> G.nodes[node][<span class="st">&#39;eigenvalue&#39;</span>]</span>
-<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>    ax.text(position[<span class="dv">0</span>] <span class="op">+</span> <span class="fl">0.2</span>, position[<span class="dv">1</span>], </span>
-<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&#39;λ = </span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">&#39;</span>, </span>
-<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Hierarchical Memory Organization&#39;</span>)</span>
-<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
-<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a second plot showing update dynamics</span></span>
-<span id="cb25-62"><a href="#cb25-62" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_axes([<span class="fl">0.6</span>, <span class="fl">0.2</span>, <span class="fl">0.35</span>, <span class="fl">0.6</span>])</span>
-<span id="cb25-63"><a href="#cb25-63" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
-<span id="cb25-64"><a href="#cb25-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, info <span class="kw">in</span> timescales.items():</span>
-<span id="cb25-65"><a href="#cb25-65" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> info[<span class="st">&#39;eigenvalue&#39;</span>]</span>
-<span id="cb25-66"><a href="#cb25-66" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> info[<span class="st">&#39;color&#39;</span>]</span>
-<span id="cb25-67"><a href="#cb25-67" aria-hidden="true" tabindex="-1"></a>    ax2.plot(t, np.sin(eigenvalue <span class="op">*</span> t) <span class="op">*</span> np.exp(<span class="op">-</span><span class="fl">0.01</span> <span class="op">*</span> t), </span>
-<span id="cb25-68"><a href="#cb25-68" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span>color, label<span class="op">=</span><span class="ss">f&quot;</span><span class="sc">{</span>node<span class="sc">}</span><span class="ss"> (λ=</span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">)&quot;</span>)</span>
-<span id="cb25-69"><a href="#cb25-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-70"><a href="#cb25-70" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;Time&#39;</span>)</span>
-<span id="cb25-71"><a href="#cb25-71" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Parameter value&#39;</span>)</span>
-<span id="cb25-72"><a href="#cb25-72" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Update Dynamics at Different Timescales&#39;</span>)</span>
-<span id="cb25-73"><a href="#cb25-73" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
-<span id="cb25-74"><a href="#cb25-74" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing hierarchical memory structure</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical structure</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.DiGraph()</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes for different timescales</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>timescales <span class="op">=</span> {</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;blue&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">800</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.01</span>},</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;green&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">500</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">0.1</span>},</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">300</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">1.0</span>},</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: {<span class="st">&#39;color&#39;</span>: <span class="st">&#39;red&#39;</span>, <span class="st">&#39;size&#39;</span>: <span class="dv">100</span>, <span class="st">&#39;eigenvalue&#39;</span>: <span class="fl">10.0</span>}</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Add nodes and connections</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> level <span class="kw">in</span> timescales:</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    G.add_node(level, <span class="op">**</span>timescales[level])</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Add edges (hierarchical connections)</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;long-term&#39;</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;context&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;intermediate&#39;</span>)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;long-term&#39;</span>, <span class="st">&#39;processing&#39;</span>) </span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>G.add_edge(<span class="st">&#39;intermediate&#39;</span>, <span class="st">&#39;processing&#39;</span>)</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Create figure</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Get node attributes</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>node_colors <span class="op">=</span> [G.nodes[n][<span class="st">&#39;color&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>node_sizes <span class="op">=</span> [G.nodes[n][<span class="st">&#39;size&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>eigenvalues <span class="op">=</span> [G.nodes[n][<span class="st">&#39;eigenvalue&#39;</span>] <span class="cf">for</span> n <span class="kw">in</span> G.nodes]</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a hierarchical layout</span></span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> {</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;context&#39;</span>: (<span class="dv">0</span>, <span class="dv">3</span>),</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;long-term&#39;</span>: (<span class="dv">0</span>, <span class="dv">2</span>), </span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;intermediate&#39;</span>: (<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;processing&#39;</span>: (<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw the network</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx(G, pos, with_labels<span class="op">=</span><span class="va">True</span>, node_color<span class="op">=</span>node_colors, </span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>                node_size<span class="op">=</span>node_sizes, font_color<span class="op">=</span><span class="st">&#39;white&#39;</span>, </span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>                font_weight<span class="op">=</span><span class="st">&#39;bold&#39;</span>, ax<span class="op">=</span>ax, arrowsize<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Add eigenvalue labels</span></span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, position <span class="kw">in</span> pos.items():</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> G.nodes[node][<span class="st">&#39;eigenvalue&#39;</span>]</span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    ax.text(position[<span class="dv">0</span>] <span class="op">+</span> <span class="fl">0.2</span>, position[<span class="dv">1</span>], </span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&#39;λ = </span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">&#39;</span>, </span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&#39;Hierarchical Memory Organization&#39;</span>)</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a second plot showing update dynamics</span></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_axes([<span class="fl">0.6</span>, <span class="fl">0.2</span>, <span class="fl">0.35</span>, <span class="fl">0.6</span>])</span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, info <span class="kw">in</span> timescales.items():</span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>    eigenvalue <span class="op">=</span> info[<span class="st">&#39;eigenvalue&#39;</span>]</span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> info[<span class="st">&#39;color&#39;</span>]</span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a>    ax2.plot(t, np.sin(eigenvalue <span class="op">*</span> t) <span class="op">*</span> np.exp(<span class="op">-</span><span class="fl">0.01</span> <span class="op">*</span> t), </span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span>color, label<span class="op">=</span><span class="ss">f&quot;</span><span class="sc">{</span>node<span class="sc">}</span><span class="ss"> (λ=</span><span class="sc">{</span>eigenvalue<span class="sc">}</span><span class="ss">)&quot;</span>)</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">&#39;Time&#39;</span>)</span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">&#39;Parameter value&#39;</span>)</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">&#39;Update Dynamics at Different Timescales&#39;</span>)</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>ax2.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span></code></pre></div>
 <p>This hierarchical structure emerges naturally during entropy
 maximization, without requiring explicit design. The timescale
 separation creates a computational architecture where information flows

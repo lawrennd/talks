@@ -24,7 +24,6 @@ transition: None
 \include{_information-game/includes/information-theory-overview.md}
 
 \include{_information-game/includes/the-animal-game.md}
-\include{_information-game/includes/optimal-questioning.md}
 
 \include{_information-game/includes/intelligence-thermodynamics-connection.md}
 \include{_information-game/includes/least-action-connection.md}
@@ -45,10 +44,9 @@ Schrödinger's bridge problem addresses finding the most likely evolution betwee
 \include{_information-game/includes/schrodingers-bridge-perspective.md}
 
 \include{_information-game/includes/jaynes-world.md}
-\include{_information-game/includes/valid-games.md}
+\include{_information-game/includes/jaynes-world-histogram.md}
 
 \include{_information-game/includes/two-bin-example.md}
-\include{_information-game/includes/jaynes-world-histogram.md}
 
 \include{_information-game/includes/four-bin-saddle-example.md}
 \include{_information-game/includes/jaynes-world-saddle-points.md}

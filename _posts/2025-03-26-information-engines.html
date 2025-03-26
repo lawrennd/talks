@@ -643,7 +643,7 @@ an ensemble to the free energy difference between initial and final
 states <span class="citation"
 data-cites="Jarzynski-nonequilibrium97">(Jarzynski, 1997)</span>, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}\right) \rangle =
+\left\langle \exp\left(-\frac{W}{k_B T}\right) \right\rangle =
 \exp\left(-\frac{\Delta\mathcal{F}}{k_BT}\right),
 \]</span> where <span class="math inline">\(\langle W \rangle\)</span>
 is the average work done across an ensemble of trajectories, <span
@@ -654,24 +654,24 @@ change in entropy. Sagawa and Ueda extended this equality to to include
 information gain from measurement <span class="citation"
 data-cites="Sagawa-generalized10">(Sagawa and Ueda, 2010)</span>, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}\right)
+\left\langle \exp\left(-\frac{W}{k_B T}\right)
 \exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)
-\exp\left(-\mathcal{I}(X;M)\right)\rangle = 1,
+\exp\left(-\mathcal{I}(X;M)\right)\right\rangle = 1,
 \]</span> where <span class="math inline">\(\mathcal{I}(X;M) = \log
 \frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
 measurement, and the mutual information is recovered <span
-class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
-as the average information gain.</p>
+class="math inline">\(I(X;M) = \left\langle \mathcal{I}(X;M)
+\right\rangle\)</span> as the average information gain.</p>
 <p>This allows us toe estimate the efficiency of feedback. Sagawa and
 Ueda introduce an <em>efficacy</em> term that captures the effect of
 feedback on the system they note in the presence of feedback, <span
 class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}\right)
-\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\rangle = \gamma,
+\left\langle \exp\left(-\frac{W}{k_B T}\right)
+\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\right\rangle = \gamma,
 \]</span> where <span class="math inline">\(\gamma\)</span> is the
 efficacy. We can also introduce an efficiency, <span
 class="math display">\[
-\eta = \frac{\langle \Delta \mathcal{F} - W\rangle}{I(X; M)},
+\eta = \frac{\left\langle \Delta \mathcal{F} - W\right\rangle}{I(X; M)},
 \]</span> This allows us to estimate the efficiency of feedback control
 as <span class="math display">\[
 \frac{W}{k_BT} = \frac{\Delta\mathcal{F}}{k_BT} - \mathcal{I}(X;M) + \ln
@@ -1182,15 +1182,17 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a h
 <span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
 <span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot Visualisation of a saddle point projected down to two dimensions." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style="simplified-saddle-point-example ">
+<div id="simplified-saddle-point-example-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="simplified-saddle-point-example-magnify" class="magnify"
+onclick="magnifyFigure(&#39;simplified-saddle-point-example&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="simplified-saddle-point-example-caption" class="caption-frame">
+<p>Figure: Visualisation of a saddle point projected down to two
+dimensions.</p>
 </div>
 </div>
 <p>The animation of system evolution would show initial rapid movement
@@ -1336,15 +1338,16 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot Visualisation of the gradient flow and least action path." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/gradient-flow-least-action.svg" width="70%" style="gradient-flow-least-action ">
+<div id="gradient-flow-least-action-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/gradient-flow-least-action.svg" width="70%" style=" ">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="gradient-flow-least-action-magnify" class="magnify"
+onclick="magnifyFigure(&#39;gradient-flow-least-action&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="gradient-flow-least-action-caption" class="caption-frame">
+<p>Figure: Visualisation of the gradient flow and least action path.</p>
 </div>
 </div>
 <p>The visualization shows how a system following the entropy gradient
@@ -1531,15 +1534,17 @@ regimes in both parameter space and capacity space.</p>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div class="figure">
-<div id="-figure" class="figure-frame">
-<object class="svgplot Visualisaiton of the uncertainty trade-off between parameter precision and capacity." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/uncertainty-ellipses.svg" width="50%" style="uncertainty-ellipses ">
+<div id="uncertainty-ellipses-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/uncertainty-ellipses.svg" width="50%" style=" ">
 </object>
 </div>
-<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<div id="uncertainty-ellipses-magnify" class="magnify"
+onclick="magnifyFigure(&#39;uncertainty-ellipses&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="-caption" class="caption-frame">
-<p>Figure:</p>
+<div id="uncertainty-ellipses-caption" class="caption-frame">
+<p>Figure: Visualisaiton of the uncertainty trade-off between parameter
+precision and capacity.</p>
 </div>
 </div>
 <p>This visualization helps explain why information reservoirs with

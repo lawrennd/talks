@@ -1173,6 +1173,18 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a h
 <span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
 <span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Visualisation of a saddle point projected down to two dimensions." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style="simplified-saddle-point-example ">
+</object>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <p>The animation of system evolution would show initial rapid movement
 along high-eigenvalue directions, progressive slowing in directions with
 low eigenvalues and formation of information reservoirs in the
@@ -1286,7 +1298,7 @@ action principles in physics. We can demonstrate this connection through
 a simple visualisation of gradient flows.</p>
 <p>For our entropy game, we can define an information-theoretic action,
 <span class="math display">\[
-\mathcal{A}[\gamma] = \int_0^T
+\mathcal{A}[\gamma] = \int_0^\top
 \left(\frac{1}{2}\dot{\boldsymbol{\theta}}^\top G(\boldsymbol{\theta})
 \dot{\boldsymbol{\theta}} - S(\boldsymbol{\theta})\right) \text{d}t
 \]</span> where <span class="math inline">\(\gamma\)</span> is a path
@@ -1315,6 +1327,18 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a h
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>dx, dy <span class="op">=</span> gradient(X, Y)</span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>magnitude <span class="op">=</span> np.sqrt(dx<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dy<span class="op">**</span><span class="dv">2</span>)</span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>path_x, path_y <span class="op">=</span> simulate_path(<span class="dv">2</span>, <span class="dv">3</span>)</span></code></pre></div>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Visualisation of the gradient flow and least action path." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/gradient-flow-least-action.svg" width="70%" style="gradient-flow-least-action ">
+</object>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <p>The visualization shows how a system following the entropy gradient
 traces a path of least action through the parameter space. This
 connection between steepest ascent and least action comes because
@@ -1498,6 +1522,18 @@ influence from uncertainty relations.</p></li>
 regimes in both parameter space and capacity space.</p>
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<object class="svgplot Visualisaiton of the uncertainty trade-off between parameter precision and capacity." data="https://inverseprobability.com/talks/../slides/diagrams//information-game/uncertainty-ellipses.svg" width="70%" style="uncertainty-ellipses ">
+</object>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure:</p>
+</div>
+</div>
 <p>This visualization helps explain why information reservoirs with
 quantum-like properties naturally emerge at minimal entropy. The
 uncertainty principle is not imposed but arises naturally from the

@@ -38,7 +38,7 @@ transition: None
 
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
 \include{_information-game/includes/uncertainty-visualisation.md}
-\include{_information-game/includes/mgf-analysis-example.md}
+\notes{\include{_information-game/includes/mgf-analysis-example.md}}
 
 \include{_information-game/includes/jaynes-world-information-reservoirs.md}
 \include{_information-game/includes/hierarchical-memory-example.md}

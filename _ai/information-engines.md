@@ -27,6 +27,22 @@ transition: None
 \include{_information-game/includes/optimal-questioning.md}
 
 \include{_information-game/includes/intelligence-thermodynamics-connection.md}
+\include{_information-game/includes/least-action-connection.md}
+
+\section{Schrödinger's Bridge: Connecting Paths in Probability Space}
+
+\slides{
+* Schrödinger's bridge: Optimal transport between probability distributions
+* Entropy game parallel: Transforming uncertain distribution to certain one
+* Intelligence as optimal path through probability space
+* Questioning as control over stochastic processes
+}
+
+\notes{
+Schrödinger's bridge problem addresses finding the most likely evolution between two probability distributions. This directly connects to the entropy game, where we transform a distribution representing total uncertainty into one with certainty about our target. Intelligent questioning can be viewed as creating an optimal bridge between these states, with each question guiding the probability mass along this bridge.
+}
+
+\include{_information-game/includes/schrodingers-bridge-perspective.md}
 
 \include{_information-game/includes/jaynes-world.md}
 \include{_information-game/includes/valid-games.md}
@@ -55,22 +71,6 @@ transition: None
 Physics teaches us that systems evolve along paths that minimize action - an integral of the Lagrangian over time. This principle of least action has profound connections to how intelligence operates in the entropy game. The optimal questioning strategy in the entropy game follows a path of maximum entropy reduction - effectively a least action principle for information acquisition.
 }
 
-\include{_information-game/includes/least-action-connection.md}
-
-\section{Schrödinger's Bridge: Connecting Paths in Probability Space}
-
-\slides{
-* Schrödinger's bridge: Optimal transport between probability distributions
-* Entropy game parallel: Transforming uncertain distribution to certain one
-* Intelligence as optimal path through probability space
-* Questioning as control over stochastic processes
-}
-
-\notes{
-Schrödinger's bridge problem addresses finding the most likely evolution between two probability distributions. This directly connects to the entropy game, where we transform a distribution representing total uncertainty into one with certainty about our target. Intelligent questioning can be viewed as creating an optimal bridge between these states, with each question guiding the probability mass along this bridge.
-}
-
-\include{_information-game/includes/schrodingers-bridge-perspective.md}
 
 \section{Unifying Perspectives on Intelligence}
 

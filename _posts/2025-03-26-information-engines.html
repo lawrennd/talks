@@ -1005,28 +1005,37 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a h
 <span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>    p3 <span class="op">=</span> np.exp(theta3 <span class="op">-</span> log_Z)</span>
 <span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>    p4 <span class="op">=</span> np.exp(theta4 <span class="op">-</span> log_Z)</span>
 <span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient components</span></span>
-<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta1: d(entropy)/d(theta1)</span></span>
-<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>    grad_theta1 <span class="op">=</span> p1 <span class="op">*</span> (np.log(p1) <span class="op">+</span> <span class="dv">1</span>) <span class="op">-</span> p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For the gradient, we need to account for the constraint on theta3</span></span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>    <span class="co"># When theta3 = -0.5(theta1 + theta2), we have:</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># theta4 = -(theta1 + theta2 + theta3) = -(theta1 + theta2 - 0.5(theta1 + theta2)) = -0.5(theta1 + theta2)</span></span>
 <span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta2: d(entropy)/d(theta2)</span></span>
-<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    grad_theta2 <span class="op">=</span> p2 <span class="op">*</span> (np.log(p2) <span class="op">+</span> <span class="dv">1</span>) <span class="op">-</span> p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grad_theta1, grad_theta2</span>
-<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
-<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy and its gradient at each point</span></span>
-<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> exponential_family_entropy(X, Y)</span>
-<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>dX, dY <span class="op">=</span> entropy_gradient(X, Y)</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient components with chain rule applied</span></span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta1: ∂S/∂theta1 + ∂S/∂theta3 * ∂theta3/∂theta1 + ∂S/∂theta4 * ∂theta4/∂theta1</span></span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a>    grad_theta1 <span class="op">=</span> (p1 <span class="op">*</span> (np.log(p1) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a>    <span class="co"># For theta2: ∂S/∂theta2 + ∂S/∂theta3 * ∂theta3/∂theta2 + ∂S/∂theta4 * ∂theta4/∂theta2</span></span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a>    grad_theta2 <span class="op">=</span> (p2 <span class="op">*</span> (np.log(p2) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p3 <span class="op">*</span> (np.log(p3) <span class="op">+</span> <span class="dv">1</span>)) <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (p4 <span class="op">*</span> (np.log(p4) <span class="op">+</span> <span class="dv">1</span>))</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> grad_theta1, grad_theta2</span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of points</span></span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
 <span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
-<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>u <span class="op">=</span> dX[::stride, ::stride]</span>
-<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> dY[::stride, ::stride]</span></code></pre></div>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy and its gradient at each point</span></span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> exponential_family_entropy(X, Y)</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a>dX, dY <span class="op">=</span> entropy_gradient(X, Y)</span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
 <p>The animation of system evolution would show initial rapid movement
 along high-eigenvalue directions, progressive slowing in directions with
 low eigenvalues and formation of information reservoirs in the

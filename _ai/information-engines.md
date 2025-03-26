@@ -38,7 +38,7 @@ transition: None
 
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
 \include{_information-game/includes/uncertainty-visualisation.md}
-\notes{\include{_information-game/includes/mgf-analysis-example.md}}
+<!--\notes{include{_information-game/includes/mgf-analysis-example.md}}-->
 
 \include{_information-game/includes/jaynes-world-information-reservoirs.md}
 \include{_information-game/includes/hierarchical-memory-example.md}
@@ -57,7 +57,7 @@ Physics teaches us that systems evolve along paths that minimize action - an int
 \section{Unifying Perspectives on Intelligence}
 
 \notes{
-These multiple perspectives - entropy games, thermodynamic information engines, least action principles, and Schrödinger's bridge - provide complementary views of the same fundamental process: intelligence as optimal information processing. Each framework highlights different aspects of this process, but together they offer a more complete understanding than any single perspective could provide.
+There are multiple perspectives we can take to understanding optimal decision making: entropy games, thermodynamic information engines, least action principles (and optimal control), and Schrödinger's bridge - provide different views. Through introducing Jaynes' world we look to explore the relationship between these different views of decision making to provide a more complete perspective of the limitations and possibilities for making optimal decisions.
 }
 
 \slides{
@@ -66,7 +66,7 @@ These multiple perspectives - entropy games, thermodynamic information engines, 
   * Information engines: Intelligence as energy-efficient computation
   * Least action: Intelligence as path optimization
   * Schrödinger's bridge: Intelligence as probability transport
-* Unified view: Intelligence as optimal information processing
+* Jaynes' world: Initial attempt to Bridge between different views.
 }
 
 \include{_information-game/includes/unified-intelligence-perspective.md}

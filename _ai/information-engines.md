@@ -26,22 +26,6 @@ transition: None
 \include{_information-game/includes/the-animal-game.md}
 
 \include{_information-game/includes/intelligence-thermodynamics-connection.md}
-\include{_information-game/includes/least-action-connection.md}
-
-\section{Schrödinger's Bridge: Connecting Paths in Probability Space}
-
-\slides{
-* Schrödinger's bridge: Optimal transport between probability distributions
-* Entropy game parallel: Transforming uncertain distribution to certain one
-* Intelligence as optimal path through probability space
-* Questioning as control over stochastic processes
-}
-
-\notes{
-Schrödinger's bridge problem addresses finding the most likely evolution between two probability distributions. This directly connects to the entropy game, where we transform a distribution representing total uncertainty into one with certainty about our target. Intelligent questioning can be viewed as creating an optimal bridge between these states, with each question guiding the probability mass along this bridge.
-}
-
-\include{_information-game/includes/schrodingers-bridge-perspective.md}
 
 \include{_information-game/includes/jaynes-world.md}
 \include{_information-game/includes/jaynes-world-histogram.md}

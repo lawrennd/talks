@@ -19,44 +19,35 @@ transition: None
 ---
 
 \include{_physics/includes/entropy-intro.md}
-\include{_information-game/includes/information-theory-overview.md}
-
-\section{The Entropy Game: Intelligence as Optimal Information Acquisition}
-
-\notes{
-Intelligence can be viewed as the capacity to efficiently reduce uncertainty about the world. The Information Entropy Game provides a powerful framework for exploring this perspective. In its simplest form, the game asks how we can identify an unknown entity with the minimum number of yes/no questions. This apparently simple problem reveals deep connections between intelligence, thermodynamics, and optimization.
-}
-
-\include{_information-game/includes/entropy-game-introduction.md}
-\include{_information-game/includes/intelligence-thermodynamics-connection.md}
-\include{_information-game/includes/optimal-questioning.md}
-
-\section{Intelligence as an Information Engine}
-
-\notes{
-Having established the framework of the entropy game, we can now explore its connection to thermodynamic systems. Maxwell's demon thought experiment provides an intriguing parallel - a hypothetical entity that seems to decrease entropy through information acquisition. This leads us to consider intelligence itself as a form of "information engine" that converts information into useful work.
-}
-
 \include{_physics/includes/maxwells-demon.md}
 
-\include{_ml/includes/szilard-intelligence-intro.md}
-\include{_ml/includes/information-engines-concept.md}
+\include{_information-game/includes/information-theory-overview.md}
 
-\subsection{Free Energy and Intelligence}
+\include{_information-game/includes/the-animal-game.md}
+\include{_information-game/includes/optimal-questioning.md}
 
-\slides{
-* Free energy: Energy available to do useful work
-* Intelligence minimizes free energy through:
-  * Accurate perception (reducing prediction errors)
-  * Adaptive action (changing environmental states)
-* Entropy game parallel: Questions reduce free energy of belief state
-}
+\include{_information-game/includes/intelligence-thermodynamics-connection.md}
 
-\notes{
-The free energy principle suggests that intelligent systems operate to minimize a variational free energy bound on surprise. This perspective aligns remarkably well with the entropy game - where intelligent questioning reduces uncertainty (entropy) about the world. Both frameworks view intelligence as a process that minimizes uncertainty through strategic information acquisition.
-}
+\include{_information-game/includes/jaynes-world.md}
+\include{_information-game/includes/valid-games.md}
 
-\include{_ml/includes/szilard-energy-basics.md}
+\include{_information-game/includes/two-bin-example.md}
+\include{_information-game/includes/jaynes-world-histogram.md}
+
+\include{_information-game/includes/four-bin-saddle-example.md}
+\include{_information-game/includes/jaynes-world-saddle-points.md}
+\include{_information-game/includes/gradient-flow-least-action.md}
+
+\include{_information-game/includes/jaynes-world-uncertainty-principle.md}
+\include{_information-game/includes/uncertainty-visualisation.md}
+\include{_information-game/includes/mgf-analysis-example.md}
+
+\include{_information-game/includes/jaynes-world-information-reservoirs.md}
+\include{_information-game/includes/hierarchical-memory-example.md}
+
+\include{_information-game/includes/jaynes-world-conceptual-framework.md}
+\include{_information-game/includes/jaynes-world-conclusion.md}
+
 
 \section{Least Action Principles and Entropy Games}
 

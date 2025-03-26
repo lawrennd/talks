@@ -329,6 +329,116 @@ transgress the second law of thermodynamics, although later Hawking was
 able to show that blackholes do evaporate, but the time scales at which
 this evaporation occurs is many orders of magnitude slower than other
 processes in the universe.</p>
+<h2 id="maxwells-demon">Maxwell’s Demon</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Maxwell’s demon is a thought experiment described by James Clerk
+Maxwell in his book, <em>Theory of Heat</em> <span class="citation"
+data-cites="Maxwell-theory71">(Maxwell, 1871)</span> on page 308.</p>
+<blockquote>
+<p>But if we conceive a being whose faculties are so sharpened that he
+can follow every molecule in its course, such a being, whose attributes
+are still as essentially finite as our own, would be able to do what is
+at present impossible to us. For we have seen that the molecules in a
+vessel full of air at uniform temperature are moving with velocities by
+no means uniform, though the mean velocity of any great number of them,
+arbitrarily selected, is almost exactly uniform. Now let us suppose that
+such a vessel is divided into two portions, A and B, by a division in
+which there is a small hole, and that a being, who can see the
+individual molecules, opens and closes this hole, so as to allow only
+the swifter molecules to pass from A to B, and the only the slower ones
+to pass from B to A. He will thus, without expenditure of work, raise
+the temperature of B and lower that of A, in contradiction to the second
+law of thermodynamics.</p>
+<p>James Clerk Maxwell in <em>Theory of Heat</em> <span class="citation"
+data-cites="Maxwell-theory71">(Maxwell, 1871)</span> page 308</p>
+</blockquote>
+<p>He goes onto say:</p>
+<blockquote>
+<p>This is only one of the instances in which conclusions which we have
+draw from our experience of bodies consisting of an immense number of
+molecules may be found not to be applicable to the more delicate
+observations and experiments which we may suppose made by one who can
+perceive and handle the individual molecules which we deal with only in
+large masses</p>
+</blockquote>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=0p8AAAAAMAAJ&amp;pg=PA308&amp;output=embed" width="700" height="500">
+</iframe>
+</div>
+<div id="maxwells-demon-magnify" class="magnify"
+onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="maxwells-demon-caption" class="caption-frame">
+<p>Figure: Maxwell’s demon was designed to highlight the statistical
+nature of the second law of thermodynamics.</p>
+</div>
+</div>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div>
+<div style="width:68%;float:left">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left">
+</canvas>
+</div>
+<div style="width:28%;float:right;margin:auto">
+<div style="float:right;width:100%;margin:auto">
+Entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas"
+style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
+
+</div>
+</div>
+</div>
+<div>
+<button id="maxwell-newball" style="text-align:right">
+New Ball
+</button>
+<button id="maxwell-pause" style="text-align:right">
+Pause
+</button>
+<button id="maxwell-skip" style="text-align:right">
+Skip 1000s
+</button>
+<button id="maxwell-histogram" style="text-align:right">
+Histogram
+</button>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
+</div>
+<div id="maxwells-demon-magnify" class="magnify"
+onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="maxwells-demon-caption" class="caption-frame">
+<p>Figure: Maxwell’s Demon. The demon decides balls are either cold
+(blue) or hot (red) according to their velocity. Balls are allowed to
+pass the green membrane from right to left only if they are cold, and
+from left to right, only if they are hot.</p>
+</div>
+</div>
+<p>Maxwell’s demon allows us to connect thermodynamics with information
+theory (see e.g. <span class="citation"
+data-cites="Hosoya-demon15">Hosoya et al. (2015)</span>;<span
+class="citation" data-cites="Hosoya-maxwell11">Hosoya et al.
+(2011)</span>;<span class="citation" data-cites="Bub-maxwell01">Bub
+(2001)</span>;<span class="citation"
+data-cites="Brillouin-maxwell51">Brillouin (1951)</span>;<span
+class="citation" data-cites="Szilard-intelligenter29">Szilard
+(1929)</span>). The connection arises due to a fundamental connection
+between information erasure and energy consumption <span
+class="citation" data-cites="Landauer-irreversibility61">Landauer
+(1961)</span>.</p>
+<p><span class="citation" data-cites="Alemi-therml18">Alemi and Fischer
+(2019)</span></p>
 <h1 id="information-theory-and-thermodynamics">Information Theory and
 Thermodynamics</h1>
 <div style="text-align:right">
@@ -337,15 +447,15 @@ class="editsection"
 style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>Information theory provides a mathematical framework for quantifying
-information. It’s no coincidence that information theory’s core concepts
-parallel those found in thermodynamics. The theory was developed by
-Claude Shannon who spoke extensively to MIT’s Norbert Wiener at while it
-was in development <span class="citation"
-data-cites="Conway-dark05">(Conway and Siegelman, 2005)</span>. Wiener’s
-own ideas about information were inspired by Willard Gibbs, one of the
-pioneers of the mathematical understanding of free energy and entropy.
-Deep connections between physical systems and information processing
-have connected information and energy from the start.</p>
+information. Many of information theory’s core concepts parallel those
+found in thermodynamics. The theory was developed by Claude Shannon who
+spoke extensively to MIT’s Norbert Wiener at while it was in development
+<span class="citation" data-cites="Conway-dark05">(Conway and Siegelman,
+2005)</span>. Wiener’s own ideas about information were inspired by
+Willard Gibbs, one of the pioneers of the mathematical understanding of
+free energy and entropy. Deep connections between physical systems and
+information processing have connected information and energy from the
+start.</p>
 <h2 id="entropy">Entropy</h2>
 <p>Shannon’s entropy measures the uncertainty or unpredictability of
 information content. This mathematical formulation is inspired by
@@ -422,25 +532,6 @@ class="math display">\[
 \Delta A = A(X) - A(Z|M) = I(X;M),
 \]</span> where we note that the resulting system is no longer in
 thermodynamic equilibrium due to the low entropy of the memory.</p>
-<p><em>note on temperature here?</em></p>
-<p><strong>To here need to add material showing scales at which these
-thermodynamic principes apply, ATP Synthase and
-Photosynthesis.</strong></p>
-<h1
-id="the-entropy-game-intelligence-as-optimal-information-acquisition">The
-Entropy Game: Intelligence as Optimal Information Acquisition</h1>
-<p>Intelligence can be viewed as the capacity to efficiently reduce
-uncertainty about the world. The Information Entropy Game provides a
-powerful framework for exploring this perspective. In its simplest form,
-the game asks how we can identify an unknown entity with the minimum
-number of yes/no questions. This apparently simple problem reveals deep
-connections between intelligence, thermodynamics, and optimization.</p>
-<h1 id="entropy-games">Entropy Games</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-game-introduction.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-game-introduction.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <h2 id="the-animal-game">The Animal Game</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -493,6 +584,226 @@ be understood as a special case of systems that efficiently extract,
 process, and utilize free energy from their environments, with
 thermodynamic principles setting fundamental constraints on what’s
 possible.</p>
+<h2 id="the-mathematics-of-optimal-questioning">The Mathematics of
+Optimal Questioning</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In the entropy game, our goal is to identify an unknown entity from a
+set of possibilities by asking yes/no questions. Each question
+partitions the probability space, and our objective is to minimize the
+expected number of questions needed.</p>
+<p>If we have a discrete random variable <span
+class="math inline">\(X\)</span> with probability mass function <span
+class="math inline">\(P(X)\)</span>, the optimal question should split
+the probability mass as evenly as possible. Mathematically, if we ask a
+question that partitions the space into sets <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(A^c\)</span> (the complement of <span
+class="math inline">\(A\)</span>), the expected information gain is:</p>
+<p><span class="math display">\[IG(A) = H(X) - \left[P(A)H(X|A) +
+P(A^c)H(X|A^c)\right]\]</span></p>
+<p>The optimal question maximizes this information gain. It can be shown
+that this occurs when <span class="math inline">\(P(A) \approx P(A^c)
+\approx 0.5\)</span>.</p>
+<p>This principle underlies many algorithms in computer science and
+artificial intelligence, from binary search to decision trees. It also
+provides a foundational perspective on intelligence: intelligent systems
+ask questions (or make observations) that maximally reduce entropy about
+their environment.</p>
+<h3 id="exercise-1">Exercise 1</h3>
+<p>Consider a murder mystery with four suspects: Alice, Bob, Charlie,
+and Diana, with probabilities 0.4, 0.3, 0.2, and 0.1 respectively.</p>
+<ol type="1">
+<li>Calculate the initial entropy</li>
+<li>What is the optimal first question?</li>
+<li>Calculate the expected entropy after this question</li>
+<li>How does this relate to intelligence in detective work?</li>
+</ol>
+<h1
+id="information-engines-intelligence-as-an-energy-efficiency">Information
+Engines: Intelligence as an Energy-Efficiency</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The entropy game shows some parallels between thermodynamics and
+measurement. This allows us to imagine <em>information engines</em>,
+simple systems that convert information to energy. This is our first
+simple model of intelligence.</p>
+<h2
+id="measurement-as-a-thermodynamic-process-information-modified-second-law">Measurement
+as a Thermodynamic Process: Information-Modified Second Law</h2>
+<p>The second law of thermodynamics was generalised to include the
+effect of measurement by Sagawa and Ueda <span class="citation"
+data-cites="Sagawa-second08">(Sagawa and Ueda, 2008)</span>. They showed
+that the maximum extractable work from a system can be increased by
+<span class="math inline">\(k_BTI(X;M)\)</span> where <span
+class="math inline">\(k_B\)</span> is Boltzmann’s constant, <span
+class="math inline">\(T\)</span> is temperature and <span
+class="math inline">\(I(X;M)\)</span> is the information gained by
+making a measurement, <span class="math inline">\(M\)</span>, <span
+class="math display">\[
+I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
+\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
+joint probability of the system and measurement (see e.g. eq 14 in <span
+class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
+(2008)</span>). This can be written as <span class="math display">\[
+W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
+\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
+extractable work and it is upper bounded by the negative change in free
+energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
+energy gained from measurement, <span
+class="math inline">\(k_BTI(X;M)\)</span>. This is the
+information-modified second law.}</p>
+<p>The measurements can be seen as a thermodynamic process. In theory
+measurement, like computation is reversible. But in practice the process
+of measurement is likely to erode the free energy somewhat, but as long
+as the energy gained from information, <span
+class="math inline">\(kTI(X;M)\)</span> is greater than that spent in
+measurement the pricess can be thermodynamically efficient.</p>
+<p>The modified second law shows that the maximum additional extractable
+work is proportional to the information gained. So information
+acquisition creates extractable work potential. Thermodynamic
+consistency is maintained by properly accounting for information-entropy
+relationships.</p>
+<h2 id="efficacy-and-efficiency-of-feedback-control">Efficacy and
+Efficiency of Feedback Control</h2>
+<p>Sagawa and Ueda extended this relationship to provide a
+<em>generalised Jarzynski equality</em> for feedback processes <span
+class="citation" data-cites="Sagawa-generalized10">(Sagawa and Ueda,
+2010)</span>. The Jarzynski equality is an imporant result from
+nonequilibrium thermodynamics that relates the average work done across
+an ensemble to the free energy difference between initial and final
+states <span class="citation"
+data-cites="Jarzynski-nonequilibrium97">(Jarzynski, 1997)</span>, <span
+class="math display">\[
+\langle \exp\left(-\frac{W}{k_B T}right) \rangle =
+\exp\left(-\frac{\Delta\mathcal{F}}{k_BT}\right),
+\]</span> where <span class="math inline">\(\langle W \rangle\)</span>
+is the average work done across an ensemble of trajectories, <span
+class="math inline">\(\Delta\mathcal{F}\)</span> is the change in free
+energy, <span class="math inline">\(k_B\)</span> is Boltzmann’s
+constant, and <span class="math inline">\(\Delta S\)</span> is the
+change in entropy. Sagawa and Ueda extended this equality to to include
+information gain from measurement <span class="citation"
+data-cites="Sagawa-generalized10">(Sagawa and Ueda, 2010)</span>, <span
+class="math display">\[
+\langle \exp\left(-\frac{W}{k_B T}right)
+\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)
+\exp\left(-\mathcal{I}(X;M)\right)\rangle = 1,
+\]</span> where <span class="math inline">\(\mathcal{I}(X;M) = \log
+\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
+measurement, and the mutual information is recovered <span
+class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
+as the average information gain.}</p>
+<p>This allows us toe estimate the efficiency of feedback. Sagawa and
+Ueda introduce an <em>efficacy</em> term that captures the effect of
+feedback on the system they note in the presence of feedback, <span
+class="math display">\[
+\langle \exp\left(-\frac{W}{k_B T}right)
+\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\rangle = \gamma,
+\]</span> where <span class="math inline">\(\gamma\)</span> is the
+efficacy. We can also introduce an efficiency, <span
+class="math display">\[
+\eta = \frac{\langle \Delta \mathcal{F} - W\rangle}{I(X; M)},
+\]</span> This allows us to estimate the efficiency of feedback control
+as <span class="math display">\[
+\frac{W}{k_BT} = \frac{\Delta\mathcal{F}}{k_BT} - \mathcal{I}(X;M) + \ln
+\gamma.
+\]</span></p>
+<h2 id="channel-coding-perspective-on-memory">Channel Coding Perspective
+on Memory</h2>
+<p>When viewing <span class="math inline">\(M\)</span> as an information
+channel between past and future states, Shannon’s channel coding
+theorems apply. The channel capacity <span
+class="math inline">\(C\)</span> represents the maximum rate of reliable
+information transmission [ C = _{(M)} I(X_1;M) ] and for a memory of
+<span class="math inline">\(n\)</span> bits we have [ C n, ] as the
+mutual information is upper bounded by the entropy of <span
+class="math inline">\(\rho(M)\)</span> which is at most <span
+class="math inline">\(n\)</span> bits.</p>
+<p>This relationship closely aligns with Ashby’s Law of Requisite
+Variety (pg 229 <span class="citation" data-cites="Ashby-design52">Ashby
+(1952)</span>), which states that a control system must have at least as
+much ‘variety’ as the system it aims to control. In the context of
+memory systems, this means that to maintain temporal correlations
+effectively, the memory’s state space must be at least as large as the
+information content it needs to preserve. This provides a lower bound on
+the necessary memory capacity that complements the bound we get from
+Shannon for channel capacity.</p>
+<p>This helps determine the required memory size for maintaining
+temporal correlations, optimal coding strategies, and fundamental limits
+on temporal correlation preservation.</p>
+<h1 id="decomposition-into-past-and-future">Decomposition into Past and
+Future</h1>
+<h2 id="model-approximations-and-thermodynamic-efficiency">Model
+Approximations and Thermodynamic Efficiency</h2>
+<p>Intelligent systems must balance measurement against energy
+efficiency and time requirements. A perfect model of the world would
+require infinite computational resources and speed, so approximations
+are necessary. This leads to uncertainties. Thermodynamics might be
+thought of as the physics of uncertainty: at equilibrium thermodynamic
+systems find thermodynamic states that minimize free energy, equivalent
+to maximising entropy.</p>
+<h2 id="markov-blanket">Markov Blanket</h2>
+<p>To introduce some structure to the model assumption. We split <span
+class="math inline">\(X\)</span> into <span
+class="math inline">\(X_0\)</span> and <span
+class="math inline">\(X_1\)</span>. <span
+class="math inline">\(X_0\)</span> is past and present of the system,
+<span class="math inline">\(X_1\)</span> is future The conditional
+mutual information <span class="math inline">\(I(X_0;X_1|M)\)</span>
+which is zero if <span class="math inline">\(X_1\)</span> and <span
+class="math inline">\(X_0\)</span> are independent conditioned on <span
+class="math inline">\(M\)</span>.</p>
+<p>First note that by definition of the mutual information we have [
+I(X_0, X_1; M) = I(X_0; X_1) + I(M; X_1|X_0) ] by the chain rule of
+information theory. Here we would achieve a Markov separation between
+<span class="math inline">\(X_0\)</span> and <span
+class="math inline">\(X_1\)</span> if <span
+class="math inline">\(I(X_0;X_1|M) = 0\)</span>.</p>
+<!--Start Include here -->
+<h2 id="at-what-scales-does-this-apply">At What Scales Does this
+Apply?</h2>
+<p>The equipartition theorem tells us that at equilibrium the average
+energy is <span class="math inline">\(kT/2\)</span> per degree of
+freedom. This means that for most practical systems the amount of energy
+available is many orders of magnitude larger than the amount of
+information we can store in memory.</p>
+<p>This suggests that the amount of information we can store in memory
+is a small perturbation of the system and that the system is
+approximately in equilibrium, unless the system is at small scale.</p>
+<h2
+id="small-scale-biochemical-systems-and-information-processing">Small-Scale
+Biochemical Systems and Information Processing</h2>
+<p>While macroscopic systems operate in regimes where traditional
+thermodynamics dominates, microscopic biological systems operate at
+scales where information and thermal fluctuations become critically
+important. Here we examine how the framework applies to molecular
+machines and processes that have evolved to operate efficiently at these
+scales.</p>
+<h2 id="molecular-machines-as-information-engines">Molecular Machines as
+Information Engines</h2>
+<p>Molecular machines like ATP synthase, kinesin motors, and the
+photosynthetic apparatus can be viewed as sophisticated information
+engines that convert energy while processing information about their
+environment. These systems have evolved to exploit thermal fluctuations
+rather than fight against them, using information processing to extract
+useful work.</p>
+<p>ATP Synthase: Nature’s Rotary Engine</p>
+<p>ATP synthase functions as a rotary molecular motor that synthesizes
+ATP from ADP and inorganic phosphate using a proton gradient. The system
+uses the proton gradient as both an energy source and an information
+source about the cell’s energetic state and exploits Brownian motion
+through a ratchet mechanism. It converts information about proton
+locations into mechanical rotation and ultimately chemical energy with
+approximately 3-4 protons required per ATP.</p>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/kXpzp4RDGJI?start=130" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
 <h2 id="jaynes-world">Jaynes’ World</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1733,988 +2044,6 @@ processing components, without requiring explicit design.</p>
 parameter space, this allows for analysis through the Fisher information
 matrix’s eigenvalue structure to create a natural separation of
 timescales and the natural emergence of information reservoirs.</p>
-<h1
-id="information-engines-intelligence-as-an-energy-efficiency">Information
-Engines: Intelligence as an Energy-Efficiency</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The entropy game shows some parallels between thermodynamics and
-measurement. This allows us to imagine <em>information engines</em>,
-simple systems that convert information to energy. This is our first
-simple model of intelligence.</p>
-<h2
-id="measurement-as-a-thermodynamic-process-information-modified-second-law">Measurement
-as a Thermodynamic Process: Information-Modified Second Law</h2>
-<p>The second law of thermodynamics was generalised to include the
-effect of measurement by Sagawa and Ueda <span class="citation"
-data-cites="Sagawa-second08">(Sagawa and Ueda, 2008)</span>. They showed
-that the maximum extractable work from a system can be increased by
-<span class="math inline">\(k_BTI(X;M)\)</span> where <span
-class="math inline">\(k_B\)</span> is Boltzmann’s constant, <span
-class="math inline">\(T\)</span> is temperature and <span
-class="math inline">\(I(X;M)\)</span> is the information gained by
-making a measurement, <span class="math inline">\(M\)</span>, <span
-class="math display">\[
-I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
-\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
-joint probability of the system and measurement (see e.g. eq 14 in <span
-class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
-(2008)</span>). This can be written as <span class="math display">\[
-W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
-\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
-extractable work and it is upper bounded by the negative change in free
-energy, <span class="math inline">\(\Delta\mathcal{F}\)</span>, plus the
-energy gained from measurement, <span
-class="math inline">\(k_BTI(X;M)\)</span>. This is the
-information-modified second law.}</p>
-<p>The measurements can be seen as a thermodynamic process. In theory
-measurement, like computation is reversible. But in practice the process
-of measurement is likely to erode the free energy somewhat, but as long
-as the energy gained from information, <span
-class="math inline">\(kTI(X;M)\)</span> is greater than that spent in
-measurement the pricess can be thermodynamically efficient.</p>
-<p>The modified second law shows that the maximum additional extractable
-work is proportional to the information gained. So information
-acquisition creates extractable work potential. Thermodynamic
-consistency is maintained by properly accounting for information-entropy
-relationships.</p>
-<h2 id="efficacy-and-efficiency-of-feedback-control">Efficacy and
-Efficiency of Feedback Control</h2>
-<p>Sagawa and Ueda further extend this relationship to provide a
-<em>generalised Jarzynski equality</em> for feedback processes <span
-class="citation" data-cites="Sagawa-generalized10">(Sagawa and Ueda,
-2010)</span>. The Jarzynski equality is an imporant result from
-nonequilibrium thermodynamics that relates the average work done across
-an ensemble to the free energy difference between initial and final
-states <span class="citation"
-data-cites="Jarzynski-nonequilibrium97">(Jarzynski, 1997)</span>, <span
-class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right) \rangle =
-\exp\left(-\frac{\Delta\mathcal{F}}{k_BT}\right),
-\]</span> where <span class="math inline">\(\langle W \rangle\)</span>
-is the average work done across an ensemble of trajectories, <span
-class="math inline">\(\Delta\mathcal{F}\)</span> is the change in free
-energy, <span class="math inline">\(k_B\)</span> is Boltzmann’s
-constant, and <span class="math inline">\(\Delta S\)</span> is the
-change in entropy. Sagawa and Ueda extended this equality to to include
-information gain from measurement <span class="citation"
-data-cites="Sagawa-generalized10">(Sagawa and Ueda, 2010)</span>, <span
-class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right)
-\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)
-\exp\left(-\mathcal{I}(X;M)\right)\rangle = 1,
-\]</span> where <span class="math inline">\(\mathcal{I}(X;M) = \log
-\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
-measurement, and the mutual information is recovered <span
-class="math inline">\(I(X;M) = \langle \mathcal{I}(X;M) \rangle\)</span>
-as the average information gain.}</p>
-<p>This allows us to address the situation when feedback is present and
-estimate its efficiency. Sagawa and Ueda introduce an <em>efficacy</em>
-term that captures the effect of feedback on the system they note in the
-presence of feedback, <span class="math display">\[
-\langle \exp\left(-\frac{W}{k_B T}right)
-\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\rangle = \gamma,
-\]</span> where <span class="math inline">\(\gamma\)</span> is the
-efficacy. We can also introduce an efficiency, <span
-class="math display">\[
-\eta = \frac{\langle \Delta \mathcal{F} - W\rangle}{I(X; M)},
-\]</span> This allows us to estimate the efficiency of feedback control
-as <span class="math display">\[
-\frac{W}{k_BT} = \frac{\Delta\mathcal{F}}{k_BT} - \mathcal{I}(X;M) + \ln
-\gamma.
-\]</span></p>
-<p>This allows us to # Decomposition into Past and Future</p>
-<h2 id="model-approximations-and-thermodynamic-efficiency">Model
-Approximations and Thermodynamic Efficiency</h2>
-<p>Intelligent systems must balance measurement against energy
-efficiency and time requirements. A perfect model of the world would
-require infinite computational resources and speed, so approximations
-are necessary. This leads to uncertainties. Thermodynamics might be
-thought of as the physics of uncertainty: at equilibrium thermodynamic
-systems find thermodynamic states that minimize free energy, equivalent
-to maximising entropy.</p>
-<h2 id="markov-blanket">Markov Blanket</h2>
-<p>Now we introduce some structure to the model assumption. We split
-<span class="math inline">\(X\)</span> into <span
-class="math inline">\(X_0\)</span> and <span
-class="math inline">\(X_1\)</span>. <span
-class="math inline">\(X_0\)</span> is past and present of the system,
-<span class="math inline">\(X_1\)</span> is future The conditional
-mutual information <span class="math inline">\(I(X_0;X_1|M)\)</span>
-which is zero if <span class="math inline">\(X_1\)</span> and <span
-class="math inline">\(X_0\)</span> are independent conditioned on <span
-class="math inline">\(M\)</span>.</p>
-<p>First note that by definition of the mutual information we have [
-I(X_0, X_1; M) = I(X_0; X_1) + I(M; X_1|X_0) ] by the chain rule of
-information theory. Here we would achieve a Markov separation between
-<span class="math inline">\(X_0\)</span> and <span
-class="math inline">\(X_1\)</span> if <span
-class="math inline">\(I(X_0;X_1|M) = 0\)</span>.</p>
-<!--Start Include here -->
-<p>Consider a system <span class="math inline">\(X\)</span> that can be
-decomposed into past (<span class="math inline">\(X_0\)</span>) and
-future (<span class="math inline">\(X_1\)</span>) states, along with a
-memory system <span class="math inline">\(M\)</span>. The mutual
-information between the system and memory is: [ I(X_0X_1;M) =
-_{x_0,x_1,m} (x_0,x_1,m) . ]</p>
-<h3 id="conditional-factorization-decomposition">Conditional
-Factorization Decomposition</h3>
-<p>We can decompose this mutual information by considering a
-conditionally factorized distribution [ <em>f(x_0,x_1,m) =
-(x_0|m)(x_1|m)(m). ] The KL divergence between the true and factorized
-distributions gives us: [ I(X_0X_1;M) = D</em>{KL}(||<em>f) +
-I_f(X_0X_1;M). ] The factorized mutual information further decomposes
-into separate past and future components [ I_f(X_0X_1;M) = I(X_0;M) +
-I(X_1;M). ] This gives the complete decomposition [ I(X_0X_1;M) =
-D</em>{KL}(||_f) + I(X_0;M) + I(X_1;M). ]</p>
-<h3 id="simulation-in-the-temporal-framework">Simulation in the Temporal
-Framework</h3>
-<p>Simulation can be viewed as a special configuration of memory where
-the primary goal is to maximize predictive power <span
-class="math inline">\(I(X_1;M_{\text{predict}}|X_0)\)</span> rather than
-control effectiveness. The memory system is configured to evolve
-according to dynamics that mirror the target system: [ = g(m, t) f(x, t)
-] where <span class="math inline">\(f(x, t)\)</span> represents the true
-system dynamics and <span class="math inline">\(g(m, t)\)</span>
-represents the simulation dynamics.</p>
-<p>This perspective reveals an important duality: while control systems
-use memory to influence future states, simulation systems use memory to
-predict future states without necessarily influencing them. Both
-processes are governed by the same information-thermodynamic principles
-but optimize different objectives.</p>
-<h3 id="bayesian-inference-as-memory-update">Bayesian Inference as
-Memory Update</h3>
-<p>Bayesian inference provides a principled framework for updating
-memory representations as new information arrives. In the
-information-thermodynamic framework, Bayesian updating can be understood
-as the process of modifying <span
-class="math inline">\(M_{\text{store}}\)</span> to incorporate new
-observations while maintaining uncertainty representations.</p>
-<h4 id="prior-knowledge-as-initial-memory-state">Prior Knowledge as
-Initial Memory State</h4>
-<p>The Bayesian prior <span class="math inline">\(p(\theta)\)</span>
-represents the initial state of <span
-class="math inline">\(M_{\text{store}}\)</span> before new observations,
-[ I(X_{past};M_{}) = D_{KL}(p()||p_0()), ] where <span
-class="math inline">\(p_0(\theta)\)</span> represents a reference state
-of no information. The prior encodes both: 1. Previous observations
-stored in memory 2. Structural knowledge about the system</p>
-<h4 id="likelihood-as-observation-model">Likelihood as Observation
-Model</h4>
-<p>The likelihood function <span class="math inline">\(p(x|θ)\)</span>
-represents how <span class="math inline">\(M_{\text{obs}}\)</span>
-relates to the true system state, [ I(X_0;M_{}|) = _{p(x|)}[p(x|)]. ]
-This quantifies how much information each observation provides about the
-system state.</p>
-<h4 id="posterior-as-updated-memory-state">Posterior as Updated Memory
-State</h4>
-<p>The posterior distribution <span
-class="math inline">\(p(\theta|x)\)</span> represents the updated state
-of <span class="math inline">\(M_{\text{store}}\)</span> after
-incorporating new observations, [ p(|x) = . ] The information gain from
-updating is: [ I = D_{KL}(p(|x)||p()). ] This represents the change in
-mutual information between memory and system state.</p>
-<h4 id="thermodynamic-cost-of-bayesian-updates">Thermodynamic Cost of
-Bayesian Updates</h4>
-<p>The Bayesian update process incurs a minimum thermodynamic cost: [
-W_{update} kT (2) D_{KL}(p(|x)||p()) ] This connects to Landauer’s
-principle <span class="citation"
-data-cites="Landauer-irreversibility61">(Landauer, 1961)</span>, showing
-that information updates require physical work.</p>
-<h4 id="variational-inference-under-resource-constraints">Variational
-Inference Under Resource Constraints</h4>
-<p>When exact Bayesian updates are computationally intractable,
-variational inference provides a bounded rationality approach, [ q^*() =
-<em>{q } D</em>{KL}(q()||p(|x)), ] where <span
-class="math inline">\(\mathcal{Q}\)</span> represents a constrained
-family of distributions that <span
-class="math inline">\(M_{\text{store}}\)</span> can represent within its
-computational and memory limitations.</p>
-<p>This framework explains why: 1. Bayesian methods naturally handle
-uncertainty 2. Approximate inference methods are often necessary in
-practice 3. The choice of prior matters more when data is limited</p>
-<p>The Maximum Caliber principle suggests that optimal inference
-strategies will balance the information gain from updates against their
-thermodynamic costs.</p>
-<h3 id="channel-coding-perspective-on-memory">Channel Coding Perspective
-on Memory</h3>
-<p>When viewing <span class="math inline">\(M\)</span> as an information
-channel between past and future states, Shannon’s channel coding
-theorems apply. The channel capacity <span
-class="math inline">\(C\)</span> represents the maximum rate of reliable
-information transmission [ C = _{(M)} I(X_1;M) ] and for a memory of
-<span class="math inline">\(n\)</span> bits we have [ C n, ] as the
-mutual information is upper bounded by the entropy of <span
-class="math inline">\(\rho(M)\)</span> which is at most <span
-class="math inline">\(n\)</span> bits.</p>
-<p>This relationship closely aligns with Ashby’s Law of Requisite
-Variety (pg 229 <span class="citation" data-cites="Ashby-design52">Ashby
-(1952)</span>), which states that a control system must have at least as
-much ‘variety’ as the system it aims to control. In the context of
-memory systems, this means that to maintain temporal correlations
-effectively, the memory’s state space must be at least as large as the
-information content it needs to preserve. This provides a lower bound on
-the necessary memory capacity that complements the bound we get from
-Shannon for channel capacity.</p>
-<p>This helps determine the required memory size for maintaining
-temporal correlations, optimal coding strategies, and fundamental limits
-on temporal correlation preservation.</p>
-<h3
-id="statistical-modeling-and-machine-learning-through-memory-decomposition">Statistical
-Modeling and Machine Learning Through Memory Decomposition</h3>
-<p>The memory decomposition framework provides a unifying perspective on
-classical statistical modeling and machine learning approaches. Both can
-be understood as different emphases within the same
-information-theoretic structure.</p>
-<h4 id="classical-statistics-as-observation-focused">Classical
-Statistics as Observation-Focused</h4>
-<p>Classical statistics primarily focuses on the relationship between
-<span class="math inline">\(M_{\text{obs}}\)</span> and <span
-class="math inline">\(X_0\)</span> - the observation model. The central
-goal is to accurately encode current system states in memory and
-interpret the resulting parameters:</p>
-<p>[ I(X_0;M_{}) ]</p>
-<p>Key elements of statistical practice map directly to the framework.
-1. <em>parameter estimation</em>: Finding memory parameters that best
-explain observed data 2. <em>experimental design</em>: Carefully
-structuring observations to maximize information capture while
-minimizing confounding factors 3. <em>hypothesis testing</em>:
-Evaluating competing models of the observation process</p>
-<p>Maximum likelihood estimation, a cornerstone of statistical
-inference, can be viewed as minimizing the KL divergence between the
-true data distribution <span class="math inline">\(\rho(x_0)\)</span>
-and the model distribution <span
-class="math inline">\(p_\theta(x_0)\)</span>, [ <em>{MLE} =
-</em>D_{KL}((x_0)||p_(x_0)). ] This connects directly to the
-information-theoretic bounds, as this divergence determines how much
-information about <span class="math inline">\(X_0\)</span> is captured
-in the model parameters.</p>
-<h4 id="the-bootstrap-estimating-uncertainty-through-resampling">The
-Bootstrap: Estimating Uncertainty Through Resampling</h4>
-<p>When direct computation of uncertainties is intractable or the true
-distribution is unknown, the bootstrap provides a powerful way to
-estimate uncertainties by resampling from <span
-class="math inline">\(M_{\text{obs}}\)</span>. This can be understood in
-the framework as a method for estimating the information content
-actually captured in memory, [ I(X_0;M_{}) _{b=1}^B
-I(X_0<sup>b;M_{}</sup>b), ] where <span
-class="math inline">\(X_0^b\)</span> and <span
-class="math inline">\(M_{\text{obs}}^b\)</span> represent the b-th
-bootstrap sample. This approach: 1. Requires no additional observations
-beyond those already in memory 2. Provides estimates of parameter
-uncertainty without assuming a specific distribution 3. Reveals how much
-information about <span class="math inline">\(X_0\)</span> is reliably
-encoded in <span class="math inline">\(M_{\text{obs}}\)</span></p>
-<p>The bootstrap’s effectiveness stems from its ability to estimate the
-sampling distribution of statistics using only the information already
-present in memory, making it particularly valuable under bounded
-rationality constraints where additional observations are costly or
-impossible.</p>
-<h4 id="machine-learning-as-prediction-focused">Machine Learning as
-Prediction-Focused</h4>
-<p>Machine learning shifts emphasis toward <span
-class="math inline">\(M_{\text{predict}}\)</span> and its relationship
-with <span class="math inline">\(X_1\)</span> - the prediction model.
-The central goal is to maximize predictive power: [ I(X_1;M_{}|X_0) ]
-Key elements of machine learning practice also map to the framework. 1.
-<strong>Predictive Accuracy</strong>: Optimizing the ability to predict
-future states 2. <strong>Feature Engineering</strong>: Transforming raw
-observations to maximize predictive utility 3.
-<strong>Regularization</strong>: Managing the information capacity of
-<span class="math inline">\(M_{\text{store}}\)</span> to prevent
-overfitting</p>
-<p>Empirical risk minimization, the foundation of supervised learning,
-can similarly be viewed as minimizing the KL divergence between the true
-conditional distribution <span
-class="math inline">\(\rho(x_1|x_0)\)</span> and the model’s predictive
-distribution <span class="math inline">\(p_\theta(x_1|x_0)\)</span>: [
-<em>{ERM} = </em>D_{KL}((x_1|x_0)||p_(x_1|x_0)). ]</p>
-<h4 id="unifying-view-through-information-flow">Unifying View Through
-Information Flow</h4>
-<p>Both paradigms can be unified through the memory decomposition
-framework: - Statistics emphasizes the flow of information from <span
-class="math inline">\(X_0\)</span> to <span
-class="math inline">\(M_{\text{obs}}\)</span> and <span
-class="math inline">\(M_{\text{store}}\)</span> - Machine learning
-emphasizes the flow from <span
-class="math inline">\(M_{\text{store}}\)</span> and <span
-class="math inline">\(M_{\text{obs}}\)</span> to <span
-class="math inline">\(M_{\text{predict}}\)</span> - Recent causal
-machine learning approaches aim to understand the entire information
-flow from <span class="math inline">\(X_0\)</span> through <span
-class="math inline">\(M\)</span> to <span
-class="math inline">\(X_1\)</span></p>
-<p>This perspective explains why certain techniques are more prevalent
-in each field and suggests how they might be combined for more effective
-information processing systems. For example, we see more complex neural
-network models being used in machine learning for their predictive
-power, but when we are looking for interpretability of these models
-there’s a tendency to revert to techniques such as linear extrapolation
-around an operating point such as LIME [@]. This approach of local
-linear approximation has a long history across many fields - from
-linearization of differential equations in dynamical systems analysis,
-to small-signal models in electronics, to perturbation methods in
-physics. The success of these methods stems from the fact that many
-complex nonlinear systems behave approximately linearly when examined
-over a small enough region around an operating point. LIME extends this
-classical technique to machine learning models, providing interpretable
-local approximations of complex black-box predictors. Similarly, the use
-of surrogate models (emulators) for sensitivity analysis or optimisation
-of complex models (@) builds on a rich history of reduced-order modeling
-across engineering and the physical sciences.</p>
-<h3
-id="bias-variance-dilemma-through-the-information-theoretic-lens">Bias-Variance
-Dilemma Through the Information-Theoretic Lens</h3>
-<p>The classical bias-variance dilemma in statistical learning can be
-reinterpreted through the mutual information framework, providing deeper
-insights into this trade-off.</p>
-<h4
-id="information-theoretic-decomposition-of-prediction-error">Information-Theoretic
-Decomposition of Prediction Error</h4>
-<p>Normally, when we consider the bias variance dilemma the expected
-error is decomposed into bias, variance, and irreducible error: [ [(Y -
-(X))^2] = ^2 + + . ] In the information-theoretic framework, this
-decomposition relates directly to mutual information quantities. The
-<em>bias</em> corresponds to systematic information loss between <span
-class="math inline">\(X_0\)</span> and <span
-class="math inline">\(M_{\text{obs}}\)</span>, [ H(X_0) - I(X_0;M_{}) ]
-This represents the information about <span
-class="math inline">\(X_0\)</span> that is systematically not captured
-in the memory representation.</p>
-<p>The <em>variance</em> corresponds to spurious information in <span
-class="math inline">\(M_{\text{predict}}\)</span> that doesn’t reflect
-<span class="math inline">\(X_1\)</span>, [ I(M_{};D) - I(X_1;M_{}|X_0)
-] where <span class="math inline">\(D\)</span> represents the specific
-training dataset (a subset of <span class="math inline">\(X_0\)</span>).
-This measures how much the prediction depends on the particular training
-samples rather than the true relationship.</p>
-<p>The <em>irreducible error</em> corresponds to the entropy of <span
-class="math inline">\(X_1\)</span> conditional on <span
-class="math inline">\(X_0\)</span>, [ H(X_1|X_0), ] which represents the
-fundamental unpredictability of the future given the past.</p>
-<h4 id="model-complexity-as-information-capacity">Model Complexity as
-Information Capacity</h4>
-<p>Model complexity in this framework relates directly to the
-information capacity of memory:</p>
-<p>[ |M_{}| ]</p>
-<p>As model complexity increases: - The potential mutual information
-<span class="math inline">\(I(X_0;M_{\text{store}})\)</span> increases
-(reducing bias) - The risk of capturing dataset-specific patterns
-increases (increasing variance) #### Regularization as Information
-Bottleneck</p>
-<p>Regularization techniques can be understood as creating an
-information bottleneck that limits how much information from the
-training data is stored in the model, [ I(D;M) C_{reg}, ] where <span
-class="math inline">\(C_{reg}\)</span> is controlled by the
-regularization strength. This bottleneck: - Reduces variance by limiting
-dataset-specific information - May increase bias by restricting the
-model’s capacity to represent the true relationship</p>
-<h4
-id="regularization-as-system-wide-information-constraint">Regularization
-as System-Wide Information Constraint</h4>
-<p>Regularization techniques can also be understood as creating
-information bottlenecks through the memory system, not just in storage.
-These constraints affect how information flows through the information
-resevoir, [ I(X_0;M) + I(M;X_1) C_{reg}, ] where <span
-class="math inline">\(C_{reg}\)</span> represents the overall
-information capacity of the system. This constraint manifests in
-different ways across memory components:</p>
-<ol type="1">
-<li><strong>Observation Constraints</strong> (<span
-class="math inline">\(M_{\text{obs}}\)</span>):
-<ul>
-<li>Limits which patterns are treated as signal versus noise</li>
-<li>Influences feature extraction and attention mechanisms</li>
-<li>Controls sensitivity to input variations [ I(X_0;M_{}) C_{obs}
-]</li>
-</ul></li>
-<li><strong>Prediction Constraints</strong> (<span
-class="math inline">\(M_{predict}\)</span>):
-<ul>
-<li>Restricts complexity of input-output mappings</li>
-<li>Creates bottleneck between observations and predictions</li>
-<li>Prevents overfitting to training-specific patterns [
-I(M_{predict};X_1|X_0) C_{pred} ]</li>
-</ul></li>
-<li><strong>System-Wide Effects</strong>:
-<ul>
-<li>Shapes overall information flow architecture</li>
-<li>Balances complexity across components</li>
-<li>Determines effective model capacity [ I(X_0;X_1|M) H(X_1|X_0) -
-C_{reg} ]</li>
-</ul></li>
-</ol>
-<p>This system-wide perspective explains why: 1. Different
-regularization methods (L1, L2, dropout) affect learning in distinct
-ways 2. Regularization interacts with both feature learning and
-prediction 3. The most effective regularization strategy depends on
-where information bottlenecks are most needed</p>
-<p>The MaxCal principle suggests that optimal regularization should
-distribute constraints across the system to minimize total information
-loss while preventing overfitting.</p>
-<h4 id="optimal-information-capacity">Optimal Information Capacity</h4>
-<p>The optimal model complexity balances these competing information
-flows, [ = <em>{|M</em>{}|} . ] ThE information-theoretic perspective
-explains why simple models (low <span
-class="math inline">\(|M_{\text{store}}|\)</span>) perform well when
-data is limited, complex models (high <span
-class="math inline">\(|M_{\text{store}}|\)</span>) perform well when
-data is abundant and the optimal model complexity scales with dataset
-size. Although we will revisit this idea when we look at Bayesian
-approaches.</p>
-<h3 id="the-information-bottleneck">The Information Bottleneck</h3>
-<p>Tishby’s Information Bottleneck (IB) principle provides a theoretical
-framework for understanding how memory systems can optimally compress
-past information while preserving predictive power. In the framework,
-this corresponds to finding a memory representation <span
-class="math inline">\(M\)</span> that optimally balances compression of
-<span class="math inline">\(X_0\)</span> against prediction of <span
-class="math inline">\(X_1\)</span>.</p>
-<h4 id="cross-validation-as-information-separation">Cross-Validation as
-Information Separation</h4>
-<p>Cross-validation can be viewed as a technique to estimate [ I(M_{};D)
-- I(X_1;M_{}|X_0). ] By evaluating the model on held-out data, we
-measure how much of the information in <span
-class="math inline">\(M_{\text{predict}}\)</span> generalizes beyond the
-specific training samples.</p>
-<p>This information-theoretic reframing of the bias-variance dilemma
-provides a principled way to understand model selection and
-regularization within the broader framework of information flow through
-memory systems.</p>
-<h2 id="bounding-mutual-information">Bounding Mutual Information</h2>
-<p>When the true joint distribution <span
-class="math inline">\(\rho(x,m)\)</span> is not directly accessible, we
-can bound the mutual information using a distribution <span
-class="math inline">\(p_\theta(x,m)\)</span>, [ I(X_0;M) = <em>0() +
-D</em>{KL}(||p_), ] where <span class="math inline">\(\theta\)</span>
-are the parameters and are a subset of <span
-class="math inline">\(M\)</span> that controls the form of <span
-class="math inline">\(p_\theta(x,m)\)</span>. [ <em>0() = </em>{x_0,m}
-(x_0,m) ] Since <span class="math inline">\(D_{KL}(\rho||p) \geq
-0\)</span>, we have [ I(X_0;M) _0(). ] This bound depends only on the
-approximating distribution <span
-class="math inline">\(p_\theta(x,m)\)</span> and the true distribution
-<span class="math inline">\(\rho(x_0,m)\)</span>.</p>
-<p>A similar bound can be derived for the future [ I(X_1;M) _1(). ]</p>
-<h2 id="implications">Implications</h2>
-<p>The framework shows how the memory creates independence between past
-and future states giving us the information cost of maintaining temporal
-correlations.</p>
-<h3 id="simulation-as-information-processing">Simulation as Information
-Processing</h3>
-<p>We can view simulation as a special case of information processing
-where a memory system <span class="math inline">\(M\)</span> is
-configured to mirror the dynamics of the target system <span
-class="math inline">\(X\)</span>. The simulator can be see as a model
-system that has analogous state transitions to (some of) those of the
-target system while typically operating at different energy scales or
-timescales.</p>
-<p>The fidelity of a simulation can be quantified through the mutual
-information between the simulated trajectories and the target system
-trajectories, [ I(X(t);M(t)) = _{x(t),m(t)} p(x(t),m(t)) . ] Quantum
-systems are difficult to simulate on classical systems because the state
-space of the quantum system grows exponentially with the number of
-particles, requiring exponentially large memory systems to maintain
-simulation fidelity. To address this in the framework we could extend it
-to a quantum memory system for which the temperature is given by <span
-class="math inline">\(h\)</span>, the Planck constant multiplied by
-<span class="math inline">\(i\)</span>, the imaginary unit. That
-analysis falls beyond the scope of this paper other than to note that a
-Wick rotation would map the system back to the form of the classical one
-we’re considering.</p>
-<h2 id="at-what-scales-does-this-apply">At What Scales Does this
-Apply?</h2>
-<p>The equipartition theorem tells us that at equilibrium the average
-energy is <span class="math inline">\(kT/2\)</span> per degree of
-freedom. This means that for most practical systems the amount of energy
-available is many orders of magnitude larger than the amount of
-information we can store in memory.</p>
-<p>This suggests that the amount of information we can store in memory
-is a small perturbation of the system and that the system is
-approximately in equilibrium, unless the system is at small scale.</p>
-<h3
-id="small-scale-biochemical-systems-and-information-processing">Small-Scale
-Biochemical Systems and Information Processing</h3>
-<p>While macroscopic systems operate in regimes where traditional
-thermodynamics dominates, microscopic biological systems operate at
-scales where information and thermal fluctuations become critically
-important. Here we examine how the framework applies to molecular
-machines and processes that have evolved to operate efficiently at these
-scales.</p>
-<h4 id="molecular-machines-as-information-engines">Molecular Machines as
-Information Engines</h4>
-<p>Molecular machines like ATP synthase, kinesin motors, and the
-photosynthetic apparatus can be viewed as sophisticated information
-engines that convert energy while processing information about their
-environment. These systems have evolved to exploit thermal fluctuations
-rather than fight against them, using information processing to extract
-useful work.</p>
-<h5 id="atp-synthase-natures-rotary-engine">ATP Synthase: Nature’s
-Rotary Engine</h5>
-<p>ATP synthase functions as a rotary molecular motor that synthesizes
-ATP from ADP and inorganic phosphate using a proton gradient. The system
-uses the proton gradient as both an energy source and an information
-source about the cell’s energetic state and exploits Brownian motion
-through a ratchet mechanism. It converts information about proton
-locations into mechanical rotation and ultimately chemical energy.</p>
-<p>From an information-thermodynamic perspective, we can estimate the
-efficiency: [ _{ATP} = ] where <span
-class="math inline">\(I_{process}\)</span> represents the information
-processed per ATP molecule synthesized. With approximately 3-4 protons
-required per ATP <span class="citation"
-data-cites="Boyer1997">(<strong>Boyer1997?</strong>)</span>, the free
-energy available from the proton gradient is about 21 kJ/mol per proton
-<span class="citation"
-data-cites="Mitchell1961">(<strong>Mitchell1961?</strong>)</span>. The
-synthesis of one ATP molecule requires approximately 50-60 kJ/mol <span
-class="citation"
-data-cites="Junge2009">(<strong>Junge2009?</strong>)</span>, yielding a
-thermodynamic efficiency of 80-90% when accounting for the 3-4 protons
-used.</p>
-<p>The theoretical maximum efficiency according to the framework would
-be: [ _{max} = ] where <span class="math inline">\(I_{min}\)</span>
-represents the minimum information required to coordinate the proton
-flow. Recent biophysical measurements by [Toyabe-information10] and
-<span class="citation"
-data-cites="Zimmermann-rotation12">(<strong>Zimmermann-rotation12?</strong>)</span>
-suggest that ATP synthase operates within 5-10% of this theoretical
-limit, processing approximately 4-5 bits of information per ATP molecule
-synthesized. This remarkable efficiency, confirmed through
-single-molecule experiments <span class="citation"
-data-cites="Yasuda-rotation01">(<strong>Yasuda-rotation01?</strong>)</span>,
-indicates that evolution has optimized ATP synthase to approach the
-fundamental thermodynamic limits of energy conversion while minimizing
-information processing costs.</p>
-<h5
-id="photosynthesis-quantum-coherence-and-information">Photosynthesis:
-Quantum Coherence and Information</h5>
-<p>Photosynthetic light-harvesting complexes capture photons and
-transferring excitation energy to reaction centers. Recent evidence
-suggests quantum coherence may play a role in this efficiency <span
-class="citation"
-data-cites="Engel-evidence07 Collini-coherence10 Panitchayangkoon-longlived10">(<strong>Engel-evidence07?</strong>;
-<strong>Collini-coherence10?</strong>;
-<strong>Panitchayangkoon-longlived10?</strong>)</span>, which from the
-framework can be viewed as:</p>
-<ol type="1">
-<li>A quantum memory effect that maintains correlations between
-excitation pathways <span class="citation"
-data-cites="Ishizaki-quantum09">(<strong>Ishizaki-quantum09?</strong>)</span></li>
-<li>Information processing that directs excitation energy along optimal
-pathways <span class="citation"
-data-cites="Mohseni-environment08 Rebentrost-environment09">(<strong>Mohseni-environment08?</strong>;
-<strong>Rebentrost-environment09?</strong>)</span></li>
-<li>A mechanism that reduces entropy production during energy transfer
-<span class="citation"
-data-cites="Lloyd-quantum11">(<strong>Lloyd-quantum11?</strong>)</span></li>
-</ol>
-<p>The energy transfer efficiency in photosynthetic complexes can reach
-over 95% in optimal conditions <span class="citation"
-data-cites="Blankenship-comparing11">(<strong>Blankenship-comparing11?</strong>)</span>.
-This approaches theoretical limits when we account for, [ F_{avail} = E
-- T S + kT I_{quantum}, ] where <span
-class="math inline">\(I_{quantum}\)</span> represents the information
-maintained through quantum coherence. Estimates suggest this quantum
-information processing could contribute 10-15% of the total efficiency
-advantage <span class="citation"
-data-cites="Sarovar-quantum10 Caruso-entanglement10">(<strong>Sarovar-quantum10?</strong>;
-<strong>Caruso-entanglement10?</strong>)</span>.</p>
-<h4 id="molecular-recognition-and-information-gain">Molecular
-Recognition and Information Gain</h4>
-<p>Molecular recognition processes, such as enzyme-substrate binding,
-antibody-antigen interactions, and DNA-protein binding, can also be
-analyzed through this framework.</p>
-<ol type="1">
-<li>The binding process reduces configurational entropy while gaining
-binding energy <span class="citation"
-data-cites="Janin-principles10 DuBay-entropy15">(<strong>Janin-principles10?</strong>;
-<strong>DuBay-entropy15?</strong>)</span></li>
-<li>Specificity can be quantified as mutual information between
-molecular shapes <span class="citation"
-data-cites="Schneider-molecular86 Zuckerkandl-recognition94">(<strong>Schneider-molecular86?</strong>;
-<strong>Zuckerkandl-recognition94?</strong>)</span></li>
-<li>The thermodynamic cost of maintaining specificity is offset by
-energy released during binding <span class="citation"
-data-cites="Qian-coupling01 Ouldridge-thermodynamics17">(<strong>Qian-coupling01?</strong>;
-<strong>Ouldridge-thermodynamics17?</strong>)</span></li>
-</ol>
-<p>For example, in enzyme catalysis, [ G_{catalysis} G_{uncatalyzed} -
-kT I(E;S), ] where <span class="math inline">\(I(E;S)\)</span>
-represents the mutual information between enzyme and substrate <span
-class="citation"
-data-cites="Frey-enzymatic06">(<strong>Frey-enzymatic06?</strong>)</span>.
-This relationship can be derived from transition state theory, where the
-enzyme lowers the activation energy barrier by an amount proportional to
-the information it contains about the substrate <span class="citation"
-data-cites="Wolfenden-transition06">(<strong>Wolfenden-transition06?</strong>)</span>.</p>
-<p>Quantitatively, the catalytic efficiency (<span
-class="math inline">\(k_{cat}/K_M\)</span>) relates to mutual
-information as: [ e^{I(E;S)} ] where <span
-class="math inline">\(h\)</span> is Planck’s constant <span
-class="citation"
-data-cites="BarEven-moderate11">(<strong>BarEven-moderate11?</strong>)</span>.
-Typical enzyme catalytic rate enhancements of <span
-class="math inline">\(10^6\)</span> to <span
-class="math inline">\(10^{17}\)</span> <span class="citation"
-data-cites="Wolfenden-enormous11 Lad-understanding03">(<strong>Wolfenden-enormous11?</strong>;
-<strong>Lad-understanding03?</strong>)</span> correspond to information
-advantages of approximately 14-40 bits per reaction, calculated as: [
-I(E;S) _2() ] For example, orotidine 5′-monophosphate decarboxylase
-accelerates its reaction by a factor of <span
-class="math inline">\(10^{17}\)</span> <span class="citation"
-data-cites="Radzicka-proficiency95">(<strong>Radzicka-proficiency95?</strong>)</span>,
-corresponding to approximately 56.5 bits of mutual information between
-enzyme and transition state.</p>
-<h4
-id="implications-for-synthetic-biology-and-bioengineering">Implications
-for Synthetic Biology and Bioengineering</h4>
-<p>The information-thermodynamic framework suggests several avenues for
-biomimetic engineering:</p>
-<ol type="1">
-<li>Designing molecular machines that exploit thermal fluctuations
-through information processing</li>
-<li>Creating synthetic proteins with optimized information-energy
-tradeoffs</li>
-<li>Developing hybrid systems that combine biological information
-processing with synthetic energy conversion</li>
-</ol>
-<p>Current synthetic molecular machines operate at efficiencies 1-2
-orders of magnitude below their biological counterparts. The analysis
-suggests this gap could be closed by incorporating more sophisticated
-information processing mechanisms that have evolved in biological
-systems over billions of years.</p>
-<p>The thermodynamic analysis of these small-scale biochemical systems
-reveals that significant energy gains (10-40% beyond conventional
-thermodynamic expectations) are plausible when accounting for
-information processing. This advantage becomes most pronounced at scales
-where thermal fluctuations are significant relative to overall system
-energy.</p>
-<h3 id="information-and-control-at-macroscopic-scales">Information and
-Control at Macroscopic Scales</h3>
-<p>Despite the dominance of energetic considerations at macroscopic
-scales, information-theoretic principles maintain their fundamental
-relevance through their connection to control theory. Just as the
-Maximum Caliber principle reduces to the principle of least action in
-the zero temperature limit, we can demonstrate that it similarly reduces
-to optimal control theory in this same limit.</p>
-<p>When we consider a composite system of physical world (X) and memory
-space (M), the MaxCal principle applied to this joint system yields
-stochastic optimal control at finite temperatures. As temperature
-approaches zero, the stochasticity vanishes, and we recover
-deterministic optimal control—the same mathematical framework used in
-classical control theory.</p>
-<p>This connection explains why control systems—whether engineered or
-biological—follow principles that can be derived from
-information-theoretic considerations, even when operating in
-predominantly deterministic regimes. The memory system’s interaction
-with the physical world follows paths that optimize information transfer
-while respecting physical constraints, which in the zero-temperature
-limit manifests as optimal control trajectories.</p>
-<!--End Include here -->
-<p>Taking the entropy <span class="math inline">\(S(M)\)</span> to be
-low, we can rewrite our formula for the available energy as, <span
-class="math display">\[
-A(\boldsymbol{\theta}) = U(\boldsymbol{\theta}) - TS(M) = I(X_0;X_1|M) -
-E_\rho\left[\boldsymbol{\theta}^\top T(Z) + \log h(Z)\right].
-\]</span></p>
-<p>This gives us our first hint of the connection between information
-and energy. Next we will see how these principles are all connected by
-Ed Jaynes’ maximum entropy approach.</p>
-<p>We might view cognitive biases and heuristics as attempts at
-thermodynamically efficient approximations - they sacrifice some
-accuracy but dramatically reduce computational (and thus energy)
-requirements. This would suggest that intelligence doesn’t find perfect
-solutions but energetically efficient ones.</p>
-<h2 id="intelligence-as-a-state-change-process">Intelligence as a
-State-Change Process</h2>
-<p>Perpetual motion is impossible, there is no ‘artificial general
-vehicle’, different vehicles make different compromises in their physics
-to adapt to the context. Similarly, different intelligences need to
-adapt to their circumstances to efficiently changes states in a system.
-This adaptation involes modifying internal configurations to better
-match environmental patterns, a process we can think of as learning.
-This parallels how physical systems reconfigure to minimise free
-energy.</p>
-<p>It might seem that the key difference is that intelligent systems do
-this proactively and with purpose, but free energy minimisation also has
-a teleological quality to it. This is perhaps most notable in the
-principle of least action</p>
-<blockquote>
-<p>The idea of causality, that it goes from one point to another, and
-another, and so on, is easy to understand. But the principle of least
-time is a completely different philosophical principle about the way
-nature works. Instead of saying it is a causal thing, that when we do
-one thing, some thing else happens, and so on, it says this: we set up
-the situation, and light decides which is the shortest time, or the
-extreme one, and chooses that path. But what does it do, how does it
-find out? Does it smell the nearby paths, and check them against each
-other?</p>
-<p><span class="citation" data-cites="Feynman-volumeI63">Feynman et al.
-(1963)</span> (Sect. 26-5)</p>
-</blockquote>
-<p>This first attempt to understand intelligence thermodynamically
-suggests that intelligent systems are they traversing energy landscapes
-in ways that minimize thermodynamic costs while maximizing useful
-work.</p>
-<h2 id="the-mathematics-of-optimal-questioning">The Mathematics of
-Optimal Questioning</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/optimal-questioning.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the entropy game, our goal is to identify an unknown entity from a
-set of possibilities by asking yes/no questions. Each question
-partitions the probability space, and our objective is to minimize the
-expected number of questions needed.</p>
-<p>If we have a discrete random variable <span
-class="math inline">\(X\)</span> with probability mass function <span
-class="math inline">\(P(X)\)</span>, the optimal question should split
-the probability mass as evenly as possible. Mathematically, if we ask a
-question that partitions the space into sets <span
-class="math inline">\(A\)</span> and <span
-class="math inline">\(A^c\)</span> (the complement of <span
-class="math inline">\(A\)</span>), the expected information gain is:</p>
-<p><span class="math display">\[IG(A) = H(X) - \left[P(A)H(X|A) +
-P(A^c)H(X|A^c)\right]\]</span></p>
-<p>The optimal question maximizes this information gain. It can be shown
-that this occurs when <span class="math inline">\(P(A) \approx P(A^c)
-\approx 0.5\)</span>.</p>
-<p>This principle underlies many algorithms in computer science and
-artificial intelligence, from binary search to decision trees. It also
-provides a foundational perspective on intelligence: intelligent systems
-ask questions (or make observations) that maximally reduce entropy about
-their environment.</p>
-<h3 id="exercise-1">Exercise 1</h3>
-<p>Consider a murder mystery with four suspects: Alice, Bob, Charlie,
-and Diana, with probabilities 0.4, 0.3, 0.2, and 0.1 respectively.</p>
-<ol type="1">
-<li>Calculate the initial entropy</li>
-<li>What is the optimal first question?</li>
-<li>Calculate the expected entropy after this question</li>
-<li>How does this relate to intelligence in detective work?</li>
-</ol>
-<h1 id="intelligence-as-an-information-engine">Intelligence as an
-Information Engine</h1>
-<p>Having established the framework of the entropy game, we can now
-explore its connection to thermodynamic systems. Maxwell’s demon thought
-experiment provides an intriguing parallel - a hypothetical entity that
-seems to decrease entropy through information acquisition. This leads us
-to consider intelligence itself as a form of “information engine” that
-converts information into useful work.</p>
-<h2 id="maxwells-demon">Maxwell’s Demon</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Maxwell’s demon is a thought experiment described by James Clerk
-Maxwell in his book, <em>Theory of Heat</em> <span class="citation"
-data-cites="Maxwell-theory71">(Maxwell, 1871)</span> on page 308.</p>
-<blockquote>
-<p>But if we conceive a being whose faculties are so sharpened that he
-can follow every molecule in its course, such a being, whose attributes
-are still as essentially finite as our own, would be able to do what is
-at present impossible to us. For we have seen that the molecules in a
-vessel full of air at uniform temperature are moving with velocities by
-no means uniform, though the mean velocity of any great number of them,
-arbitrarily selected, is almost exactly uniform. Now let us suppose that
-such a vessel is divided into two portions, A and B, by a division in
-which there is a small hole, and that a being, who can see the
-individual molecules, opens and closes this hole, so as to allow only
-the swifter molecules to pass from A to B, and the only the slower ones
-to pass from B to A. He will thus, without expenditure of work, raise
-the temperature of B and lower that of A, in contradiction to the second
-law of thermodynamics.</p>
-<p>James Clerk Maxwell in <em>Theory of Heat</em> <span class="citation"
-data-cites="Maxwell-theory71">(Maxwell, 1871)</span> page 308</p>
-</blockquote>
-<p>He goes onto say:</p>
-<blockquote>
-<p>This is only one of the instances in which conclusions which we have
-draw from our experience of bodies consisting of an immense number of
-molecules may be found not to be applicable to the more delicate
-observations and experiments which we may suppose made by one who can
-perceive and handle the individual molecules which we deal with only in
-large masses</p>
-</blockquote>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=0p8AAAAAMAAJ&amp;pg=PA308&amp;output=embed" width="700" height="500">
-</iframe>
-</div>
-<div id="maxwells-demon-magnify" class="magnify"
-onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="maxwells-demon-caption" class="caption-frame">
-<p>Figure: Maxwell’s demon was designed to highlight the statistical
-nature of the second law of thermodynamics.</p>
-</div>
-</div>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<div>
-<div style="width:68%;float:left">
-<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:inline;text-align:left">
-</canvas>
-</div>
-<div style="width:28%;float:right;margin:auto">
-<div style="float:right;width:100%;margin:auto">
-Entropy:
-<output id="maxwell-entropy">
-</output>
-</div>
-<div id="maxwell-histogram-canvas"
-style="width:300px;height:250px;display:inline-block;text-align:right;margin:auto">
-
-</div>
-</div>
-</div>
-<div>
-<button id="maxwell-newball" style="text-align:right">
-New Ball
-</button>
-<button id="maxwell-pause" style="text-align:right">
-Pause
-</button>
-<button id="maxwell-skip" style="text-align:right">
-Skip 1000s
-</button>
-<button id="maxwell-histogram" style="text-align:right">
-Histogram
-</button>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
-</div>
-<div id="maxwells-demon-magnify" class="magnify"
-onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="maxwells-demon-caption" class="caption-frame">
-<p>Figure: Maxwell’s Demon. The demon decides balls are either cold
-(blue) or hot (red) according to their velocity. Balls are allowed to
-pass the green membrane from right to left only if they are cold, and
-from left to right, only if they are hot.</p>
-</div>
-</div>
-<p>Maxwell’s demon allows us to connect thermodynamics with information
-theory (see e.g. <span class="citation"
-data-cites="Hosoya-demon15">Hosoya et al. (2015)</span>;<span
-class="citation" data-cites="Hosoya-maxwell11">Hosoya et al.
-(2011)</span>;<span class="citation" data-cites="Bub-maxwell01">Bub
-(2001)</span>;<span class="citation"
-data-cites="Brillouin-maxwell51">Brillouin (1951)</span>;<span
-class="citation" data-cites="Szilard-intelligenter29">Szilard
-(1929)</span>). The connection arises due to a fundamental connection
-between information erasure and energy consumption <span
-class="citation" data-cites="Landauer-irreversibility61">Landauer
-(1961)</span>.</p>
-<p><span class="citation" data-cites="Alemi-therml18">Alemi and Fischer
-(2019)</span></p>
-<h2 id="szilard-intelligence">Szilard Intelligence</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/szilard-intelligence-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/szilard-intelligence-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The objective is to provide a mathematical definition of intelligence
-that grounds our intelligence in the physical sciences. Previous efforts
-at mathematically defining universal intelligence have reviewed the
-literature to distil the facets of intelligence, taking a descriptive
-approach to modeling intelligence.</p>
-<p>Our definition is inspired by statistical mechanics descriptions of
-the universe and the simple idea that an intelligent decision is one
-that achieves a desired state change within the universe with the
-minimal use of resource. From a physical perspective there are two
-principal resources we can consider:</p>
-<ul>
-<li>Time</li>
-<li>Energy</li>
-</ul>
-<p>In practice energy is conserved, so the resource of interest is
-<em>free energy</em> - the energy available to us to do work.</p>
-<p>This work builds on ideas from Leo Szilard’s 1929 paper “On the
-decrease of entropy in a thermodynamic system by the intervention of
-intelligent beings” which established fundamental connections between
-information and thermodynamics.</p>
-<h2
-id="information-engines-intelligence-as-thermodynamic-work">Information
-Engines: Intelligence as Thermodynamic Work</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/information-engines-concept.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/information-engines-concept.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>An information engine converts information into useful work. The
-classic example is Maxwell’s demon - a hypothetical entity that observes
-the velocities of gas molecules and operates a trap door to separate
-fast and slow molecules, creating a temperature gradient that could
-potentially do work.</p>
-<p>The resolution of this apparent paradox came through recognizing that
-information processing itself requires energy. The demon must expend
-energy to acquire and process information about the molecules, and this
-energy cost prevents violation of the second law of thermodynamics.</p>
-<p>This insight provides a powerful metaphor for intelligence.
-Intelligent systems can be viewed as information engines that:</p>
-<ol type="1">
-<li>Acquire information about their environment (measurement)</li>
-<li>Process this information to update their internal models
-(computation)</li>
-<li>Use these updated models to generate useful work (action)</li>
-</ol>
-<p>Each of these steps has an energetic cost, and the efficiency of this
-process can serve as a measure of intelligence. More intelligent systems
-extract more useful work from the same amount of information, or require
-less information to achieve the same work.</p>
-<p>In the entropy game framework, each question represents an
-information acquisition step, with an associated cost. The efficiency
-with which questions reduce entropy directly parallels how information
-engines convert information to useful work.</p>
-<h2 id="free-energy-and-intelligence">Free Energy and Intelligence</h2>
-<p>The free energy principle suggests that intelligent systems operate
-to minimize a variational free energy bound on surprise. This
-perspective aligns remarkably well with the entropy game - where
-intelligent questioning reduces uncertainty (entropy) about the world.
-Both frameworks view intelligence as a process that minimizes
-uncertainty through strategic information acquisition.</p>
-<h2 id="energy-and-intelligence">Energy and Intelligence</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/szilard-energy-basics.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/szilard-energy-basics.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the physical universe, any form of intelligence - whether
-biological or artificial - must operate within the constraints of
-fundamental physical laws. The two most critical resources that bound
-intelligent behavior are:</p>
-<ol type="1">
-<li>Time: The duration required to achieve a desired state change</li>
-<li>Free Energy: The portion of total energy available to perform useful
-work</li>
-</ol>
-<p>While total energy in a closed system is conserved (first law of
-thermodynamics), free energy represents the energy available for useful
-work. This distinction is crucial because:</p>
-<ul>
-<li>Not all energy can be converted to useful work</li>
-<li>Some energy is always lost to entropy (second law of
-thermodynamics)</li>
-<li>Intelligent systems must optimize their use of available free
-energy</li>
-</ul>
-<p>This framework allows us to quantify intelligence in terms of how
-efficiently a system uses these fundamental resources to achieve its
-objectives.</p>
-<p>The connection between intelligence and thermodynamics was first
-explored in Leo Szilard’s seminal 1929 paper, which showed that the act
-of measurement and decision-making by an intelligent being has an
-associated energy cost. This established a fundamental link between
-information processing (a key aspect of intelligence) and physical
-resources.</p>
 <h1 id="least-action-principles-and-entropy-games">Least Action
 Principles and Entropy Games</h1>
 <p>Physics teaches us that systems evolve along paths that minimize
@@ -2911,12 +2240,6 @@ York.
 Eddington, A.S., 1929. The nature of the physical world. Dent (London).
 <a
 href="https://doi.org/10.2307/2180099">https://doi.org/10.2307/2180099</a>
-</div>
-<div id="ref-Feynman-volumeI63" class="csl-entry" role="listitem">
-Feynman, R.P., Leighton, R.B., Sands, M., 1963. The <span>F</span>eynman
-lectures on physics, vol. <span>I</span>: <span>Mainly</span>
-<span>Mechanics</span>, <span>Radiation</span>, and <span>Heat</span>.
-Addison-Wesley.
 </div>
 <div id="ref-Hosoya-demon15" class="csl-entry" role="listitem">
 Hosoya, A., Maruyama, K., Shikano, Y., 2015. Operational derivation of

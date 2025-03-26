@@ -961,7 +961,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a hr
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas)</span></code></pre></div>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas.copy())</span></code></pre></div>
 <p>We can plot the histogram at a set of chosen turn numbers to see the
 progress of the algorithm.</p>
 <h3 id="section"></h3>
@@ -975,8 +975,7 @@ onclick="magnifyFigure(&#39;four-bin-histogram-turn-04&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="four-bin-histogram-turn-04-caption" class="caption-frame">
-<p>Figure: The final four bin histogram after 15000 iterations of
-gradient ascent.</p>
+<p>Figure: An intermediate stage of the histogram entropy game.</p>
 </div>
 </div>
 <p>And we can also plot the changing entropy as a function of the number

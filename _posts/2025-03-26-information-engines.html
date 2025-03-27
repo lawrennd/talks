@@ -632,8 +632,7 @@ work is proportional to the information gained. So information
 acquisition creates extractable work potential. Thermodynamic
 consistency is maintained by properly accounting for information-entropy
 relationships.</p>
-<h2 id="efficacy-and-efficiency-of-feedback-control">Efficacy and
-Efficiency of Feedback Control</h2>
+<h2 id="efficacy-of-feedback-control">Efficacy of Feedback Control</h2>
 <p>Sagawa and Ueda extended this relationship to provide a
 <em>generalised Jarzynski equality</em> for feedback processes <span
 class="citation" data-cites="Sagawa-generalized10">(Sagawa and Ueda,
@@ -662,33 +661,26 @@ class="math display">\[
 measurement, and the mutual information is recovered <span
 class="math inline">\(I(X;M) = \left\langle \mathcal{I}(X;M)
 \right\rangle\)</span> as the average information gain.</p>
-<p>This allows us toe estimate the efficiency of feedback. Sagawa and
-Ueda introduce an <em>efficacy</em> term that captures the effect of
-feedback on the system they note in the presence of feedback, <span
-class="math display">\[
+<p>Sagawa and Ueda introduce an <em>efficacy</em> term that captures the
+effect of feedback on the system they note in the presence of feedback,
+<span class="math display">\[
 \left\langle \exp\left(-\frac{W}{k_B T}\right)
 \exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\right\rangle = \gamma,
 \]</span> where <span class="math inline">\(\gamma\)</span> is the
-efficacy. We can also introduce an efficiency, <span
-class="math display">\[
-\eta = \frac{\left\langle \Delta \mathcal{F} - W\right\rangle}{I(X; M)},
-\]</span> This allows us to estimate the efficiency of feedback control
-as <span class="math display">\[
-\frac{W}{k_BT} = \frac{\Delta\mathcal{F}}{k_BT} - \mathcal{I}(X;M) + \ln
-\gamma.
-\]</span></p>
+efficacy.</p>
 <h2 id="channel-coding-perspective-on-memory">Channel Coding Perspective
 on Memory</h2>
 <p>When viewing <span class="math inline">\(M\)</span> as an information
 channel between past and future states, Shannon’s channel coding
-theorems apply. The channel capacity <span
-class="math inline">\(C\)</span> represents the maximum rate of reliable
-information transmission [ C = _{(M)} I(X_1;M) ] and for a memory of
-<span class="math inline">\(n\)</span> bits we have [ C n, ] as the
-mutual information is upper bounded by the entropy of <span
+theorems apply <span class="citation"
+data-cites="Shannon-info48">(Shannon, 1948)</span>. The channel capacity
+<span class="math inline">\(C\)</span> represents the maximum rate of
+reliable information transmission [ C = _{(M)} I(X_1;M) ] and for a
+memory of <span class="math inline">\(n\)</span> bits we have [ C n, ]
+as the mutual information is upper bounded by the entropy of <span
 class="math inline">\(\rho(M)\)</span> which is at most <span
 class="math inline">\(n\)</span> bits.</p>
-<p>This relationship closely aligns with Ashby’s Law of Requisite
+<p>This relationship seems to align with Ashby’s Law of Requisite
 Variety (pg 229 <span class="citation" data-cites="Ashby-design52">Ashby
 (1952)</span>), which states that a control system must have at least as
 much ‘variety’ as the system it aims to control. In the context of
@@ -726,12 +718,18 @@ class="math inline">\(M\)</span>.</p>
 Apply?</h2>
 <p>The equipartition theorem tells us that at equilibrium the average
 energy is <span class="math inline">\(kT/2\)</span> per degree of
-freedom. This means that for most practical systems the amount of energy
-available is many orders of magnitude larger than the amount of
-information we can store in memory.</p>
-<p>This suggests that the amount of information we can store in memory
-is a small perturbation of the system and that the system is
-approximately in equilibrium, unless the system is at small scale.</p>
+freedom. This means that for systems that operate at “human scale” the
+energy involved is many orders of magnitude larger than the amount of
+information we can store in memory. For a car engine producing 70 kW of
+power at 370 Kelvin, this implies <span class="math display">\[
+\frac{2 \times 70,000}{370 \times k_B} = \frac{2 \times
+70,000}{370\times 1.380649×10−23} = 2.74 × 10^{25}
+\]</span> degrees of freedom per second. If we make a conservative
+assumption of one bit per degree of freedom, then the mutual information
+we would require in one second for comparative energy production would
+be around 3400 zettabytes, implying a memory bandwidth of around 3,400
+zettabytes per second. In 2025 the estimate of all the data in the world
+stands at 149 zettabytes.</p>
 <h2
 id="small-scale-biochemical-systems-and-information-processing">Small-Scale
 Biochemical Systems and Information Processing</h2>
@@ -758,6 +756,23 @@ locations into mechanical rotation and ultimately chemical energy with
 approximately 3-4 protons required per ATP.</p>
 <iframe width="800" height="600" src="https://www.youtube.com/embed/kXpzp4RDGJI?start=130" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+<p>Estimates suggest that one synapse firing may require <span
+class="math inline">\(10^4\)</span> ATP molecules, so around <span
+class="math inline">\(4 \times 10^4\)</span> protons. If we take the
+human brain as containing around <span
+class="math inline">\(10^14\)</span> synapses, and if we suggest each
+synapse only fires about once every five seconds, we would require
+approximately <span class="math inline">\(10^18\)</span> protons per
+second to power the synapses in our brain. With each proton having six
+degrees of freedom. Under these rough calculations the memory capacity
+distributed across the ATP Synthase in our brain must be of order <span
+class="math inline">\(6 \times 10^18\)</span> bits per second or 750
+petabytes of information per second. Of course this memory capacity
+would be devolved across the billions of neurons within hundreds or
+thousands of mitochondria that each can contain thousands of ATP
+synthase molecules. By composition of extremely small systems we can see
+it’s possible to improve efficiencies in ways that seem very impractical
+for a car engine.</p>
 <h2 id="jaynes-world">Jaynes’ World</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1779,6 +1794,10 @@ href="https://doi.org/10.1103/PhysRevLett.104.090602">https://doi.org/10.1103/Ph
 Sagawa, T., Ueda, M., 2008. Second law of thermodynamics with discrete
 quantum feedback control. Physical Review Letters 100, 080403. <a
 href="https://doi.org/10.1103/PhysRevLett.100.080403">https://doi.org/10.1103/PhysRevLett.100.080403</a>
+</div>
+<div id="ref-Shannon-info48" class="csl-entry" role="listitem">
+Shannon, C.E., 1948. A mathematical theory of communication. The Bell
+System Technical Journal 27, 379-423 and 623-656.
 </div>
 <div id="ref-Kim-translation15" class="csl-entry" role="listitem">
 Sharp, K., Matschinsky, F., 2015. Translation of <span>L</span>udwig

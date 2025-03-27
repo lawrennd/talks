@@ -40,21 +40,15 @@ transition: None
 \include{_information-game/includes/uncertainty-visualisation.md}
 <!--\notes{include{_information-game/includes/mgf-analysis-example.md}}-->
 
-\include{_information-game/includes/jaynes-world-information-reservoirs.md}
-\include{_information-game/includes/hierarchical-memory-example.md}
+<!--include{_information-game/includes/jaynes-world-information-reservoirs.md}-->
+<!--include{_information-game/includes/hierarchical-memory-example.md}-->
 
 \include{_information-game/includes/jaynes-world-conceptual-framework.md}
 \include{_information-game/includes/jaynes-world-conclusion.md}
 
 
-\section{Least Action Principles and Entropy Games}
 
-\notes{
-Physics teaches us that systems evolve along paths that minimize action - an integral of the Lagrangian over time. This principle of least action has profound connections to how intelligence operates in the entropy game. The optimal questioning strategy in the entropy game follows a path of maximum entropy reduction - effectively a least action principle for information acquisition.
-}
-
-
-\section{Unifying Perspectives on Intelligence}
+\subsection{Unifying Perspectives on Intelligence}
 
 \notes{
 There are multiple perspectives we can take to understanding optimal decision making: entropy games, thermodynamic information engines, least action principles (and optimal control), and Schrödinger's bridge - provide different views. Through introducing Jaynes' world we look to explore the relationship between these different views of decision making to provide a more complete perspective of the limitations and possibilities for making optimal decisions.

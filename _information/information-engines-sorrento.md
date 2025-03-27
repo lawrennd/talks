@@ -10,7 +10,7 @@ abstract: |
 author:
 - family: Lawrence
   given: Neil D.
-date: 2025-03-26
+date: 2025-04-15
 ipynb: true
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -37,11 +37,13 @@ transition: None
 \include{_information-game/includes/gradient-flow-least-action.md}
 
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
+\include{_information-game/includes/minimal-entropy-states.md}
 \include{_information-game/includes/uncertainty-visualisation.md}
+\include{_information-game/includes/landauer-shannon-connection.md}
 \include{_information-game/includes/mgf-analysis-example.md}
 
-\include{_information-game/includes/jaynes-world-information-reservoirs.md}-->
-\include{_information-game/includes/hierarchical-memory-example.md}-->
+\include{_information-game/includes/jaynes-world-information-reservoirs.md}
+\include{_information-game/includes/hierarchical-memory-example.md}
 
 \include{_information-game/includes/jaynes-world-conceptual-framework.md}
 \include{_information-game/includes/jaynes-world-conclusion.md}

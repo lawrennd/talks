@@ -27,19 +27,22 @@ transition: None
 
 \include{_information-game/includes/intelligence-thermodynamics-connection.md}
 
+\include{_physics/includes/jaynes-maximum-entropy.md}
 \include{_information-game/includes/jaynes-world.md}
+\include{_physics/includes/jaynes-minimal-entropy.md}
 \include{_information-game/includes/jaynes-world-histogram.md}
 
 \include{_information-game/includes/two-bin-example.md}
 
-\include{_information-game/includes/four-bin-saddle-example.md}
-\include{_information-game/includes/jaynes-world-saddle-points.md}
-\include{_information-game/includes/gradient-flow-least-action.md}
-
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
+\include{_physics/includes/jaynes-density-matrices.md}
 \include{_information-game/includes/quantum-exponential-family.md}
 \include{_information-game/includes/minimal-entropy-states.md}
 \include{_information-game/includes/gradient-ascent-uncertainty.md}
+\include{_information-game/includes/gradient-ascent-large-system.md}
+\include{_information-game/includes/four-bin-saddle-example.md}
+\include{_information-game/includes/jaynes-world-saddle-points.md}
+\include{_information-game/includes/gradient-flow-least-action.md}
 \include{_information-game/includes/uncertainty-visualisation.md}
 \include{_information-game/includes/landauer-shannon-connection.md}
 \include{_information-game/includes/mgf-analysis-example.md}

@@ -32,9 +32,6 @@ transition: None
 \include{_physics/includes/jaynes-minimal-entropy.md}
 \include{_information-game/includes/jaynes-world-histogram.md}
 \include{_information-game/includes/two-bin-example.md}
-\include{_information-game/includes/four-bin-example.md}
-
-
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
 \include{_physics/includes/jaynes-density-matrices.md}
 \include{_information-game/includes/quantum-exponential-family.md}

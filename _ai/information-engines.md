@@ -28,7 +28,7 @@ transition: None
 \include{_information-game/includes/intelligence-thermodynamics-connection.md}
 
 \include{_information-game/includes/jaynes-world.md}
-\include{_information-game/includes/jaynes-world-histogram.md}
+\include{_information-game/includes/four-bin-example.md}
 
 \include{_information-game/includes/two-bin-example.md}
 

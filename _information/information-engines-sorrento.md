@@ -38,6 +38,7 @@ transition: None
 \include{_information-game/includes/minimal-entropy-states.md}
 \include{_information-game/includes/gradient-ascent-uncertainty.md}
 \include{_information-game/includes/uncertainty-visualisation.md}
+\include{_information-game/includes/spontaneous-organization.md}
 \include{_information-game/includes/gradient-ascent-large-system.md}
 \include{_information-game/includes/four-bin-saddle-example.md}
 \include{_information-game/includes/jaynes-world-saddle-points.md}

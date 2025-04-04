@@ -9,6 +9,7 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2025-04-04
+pptx: True
 abstract: |
   Despite its transformative potential, artificial intelligence risks following a well-worn path where technological innovation fails to address society’s most pressing problems.  
 
@@ -58,13 +59,17 @@ include{_dialogue/includes/public-dialogue-summary.md}
 \include{_business/includes/ft-op-ed.md}
 \include{_business/includes/attention-flywheel.md}
 
-\include{_supply-chain/includes/supply-chain.md}
-\subsection{Historical Industrial Regions}
-\slides{* Emilia Romagna in 18th century
-* The Black Country  in 18th century
+\include{_supply-chain/includes/burbage-bridge.md}
+
+\include{_supply-chain/includes/cromford.md}
+
+\subsection{Distretti Industriali}
+\slides{* 18th Century Emilia Romagna: Silk, Paper
+* The Black Country 
 * Exhibit: 
   Strength in Community
   Strength in Diversity
+  Poor economies of scale
 * Requires: Strength in Europe}
 
 \notes{Some inspiration can be found in historical industrial regions like 18th Century Emilia Romagna, The Black Country or the Sheffield steel making region. Interconnected dependencies, local communities and talent development. Craft culture being shared.}

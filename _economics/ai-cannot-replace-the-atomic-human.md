@@ -20,12 +20,14 @@ transition: None
 <!-- Negotiating Innovation: institutions slow speed of adoption allow people to negotiate how the technologies are used. -->
 
 
+\include{_atomic-human/includes/artificial-general-vehicle.md}
 
 \include{_economics/includes/philosophers-stone.md}
 
-\notes{In our modern economy, automation has the same effect. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
+\notes{In our modern economy, automation has the same effect as the philosopher's stone. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
 
 \include{_economics/includes/the-attention-economy.md}
+\include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 <!--include{_ai/includes/cuneiform.md}-->
 <!--include{_books/includes/the-future-of-professions.md}-->
 
@@ -55,7 +57,20 @@ include{_dialogue/includes/public-dialogue-summary.md}
 \include{_business/includes/supply-chain-of-ideas.md}
 \include{_business/includes/ft-op-ed.md}
 \include{_business/includes/attention-flywheel.md}
+
+\include{_supply-chain/includes/supply-chain.md}
+\subsection{Historical Industrial Regions}
+\slides{* Emilia Romagna in 18th century
+* The Black Country  in 18th century
+* Exhibit: 
+  Strength in Community
+  Strength in Diversity
+* Requires: Strength in Europe}
+
+\notes{Some inspiration can be found in historical industrial regions like 18th Century Emilia Romagna, The Black Country or the Sheffield steel making region. Interconnected dependencies, local communities and talent development. Craft culture being shared.}
+
 <!--include{_business/includes/attention-flywheel-example-dsa.md}-->
+\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
 \includes{_policy/includes/innovation-economy-conclusion.md}
 

@@ -21,6 +21,7 @@ writediagramsdir: .
 scriptsdir: https://inverseprobability.com/talks/scripts/
 diagramsdir: ../slides/diagrams/
 slidesheader: slides-header.html
+notation: talk-notation.tex
 posts: True
 docx: False
 notespdf: False

@@ -30,99 +30,99 @@ This model explores how structure, time, causality, and locality can emerge with
 
 \subsubsection{System Structure}
 
-- Let \( Z = \{Z_1, Z_2, \dots, Z_n\} \) be the full set of system variables.
-- At time \( t \), define a partition:
-  - \( X(t) \subseteq Z \): active variables (currently contributing to entropy)
-  - \( M(t) = Z \setminus X(t) \): latent or frozen variables (information reservoir)
+- Let $ Z = \{Z_1, Z_2, \dots, Z_n\} $ be the full set of system variables.
+- At time $ t $, define a partition:
+  - $ X(t) \subseteq Z $: active variables (currently contributing to entropy)
+  - $ M(t) = Z \setminus X(t) $: latent or frozen variables (information reservoir)
 
 \subsubsection{Representation via Density Matrix}
 
 - The system’s state is given by a density matrix
-  \[
+  $$
   \rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
-  \]
+  $$
   where
-  - \( \boldsymbol{\theta} \in \mathbb{R}^d \): natural parameters,
-  - \( H_i \): Hermitian operators associated with observables,
-  - \( Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)] \)
+  - $ \boldsymbol{\theta} \in \mathbb{R}^d $: natural parameters,
+  - $ H_i $: Hermitian operators associated with observables,
+  - $ Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)] $
 
 - The *log-partition function* is
-  \[
+  $$
   A(\boldsymbol{\theta}) = \log Z(\boldsymbol{\theta})
-  \]
+  $$
 
 - The *entropy* is
-  \[
+  $$
   S(\boldsymbol{\theta}) = A(\boldsymbol{\theta}) - \boldsymbol{\theta}^\top \nabla A(\boldsymbol{\theta})
-  \]
+  $$
 
 - The *Fisher Information Matrix* is
-  \[
+  $$
   G_{ij}(\boldsymbol{\theta}) = \frac{\partial^2 A}{\partial \theta_i \partial \theta_j}
-  \]
+  $$
 
 \subsubsection{Entropy Capacity and Resolution}
 
-- The system has a *maximum entropy* of \( N \) bits.
+- The system has a *maximum entropy* of $ N $ bits.
 - This defines a *minimum detectable resolution* in natural parameter space
-  \[
+  $$
   \varepsilon \sim \frac{1}{2^N}
-  \]
+  $$
 
-- Changes smaller than \( \varepsilon \) are treated as *invisible* by the system.
+- Changes smaller than $ \varepsilon $ are treated as *invisible* by the system.
 - As a result, system dynamics exhibit *discrete, detectable transitions* between distinguishable states.
 
 \subsubsection{Clarification: Dual Role of Parameters and Variables}
 
-- Each variable \( Z_i \) is associated with a generator \( H_i \), and a natural parameter \( \theta_i \).
-- When we say a parameter \( \theta_i \in X(t) \), we mean:
-  - The component of the system associated with \( H_i \) is active at time \( t \),
-  - And its parameter is evolving with \( |\dot{\theta}_i| \geq \varepsilon \).
+- Each variable $ Z_i $ is associated with a generator $ H_i $, and a natural parameter $ \theta_i $.
+- When we say a parameter $ \theta_i \in X(t) $, we mean:
+  - The component of the system associated with $ H_i $ is active at time $ t $,
+  - And its parameter is evolving with $ |\dot{\theta}_i| \geq \varepsilon $.
 - This reflects the duality between *variables*, *observables*, and *natural parameters* within exponential family representations.
 
 \subsection{Core Axiom: Entropic Dynamics}
 
 The system evolves by steepest ascent in entropy
-\[
+$$
 \frac{d\boldsymbol{\theta}}{dt} = -G(\boldsymbol{\theta}) \boldsymbol{\theta}
-\]
+$$
 
 \subsection{Constructed Quantities and Lemmas}
 
 \subsubsection{Variable Partition}
 
-\[
+$$
 X(t) = \left\{ i \mid \left| \frac{d\theta_i}{dt} \right| \geq \varepsilon \right\}, \quad M(t) = Z \setminus X(t)
-\]
+$$
 
 \subsubsection{Lemma 1: Symmetry Breaking}
 
-If \( \theta_k \in M(t) \) and \( |\dot{\theta}_k| \geq \varepsilon \), then
-\[
+If $ \theta_k \in M(t) $ and $ |\dot{\theta}_k| \geq \varepsilon $, then
+$$
 \theta_k \in X(t + \delta)
-\]
+$$
 
 \subsubsection{Entropy-Time}
 
-\[
+$$
 \tau(t) := S_{X(t)}(t)
-\]
+$$
 
 \subsubsection{Lemma 2: Monotonicity of Entropy-Time}
 
-\[
+$$
 \tau(t_2) \geq \tau(t_1) \quad \text{for all } t_2 > t_1
-\]
+$$
 
 \subsubsection{Corollary: Irreversibility}
 
-\( \tau(t) \) increases monotonically, preventing time-reversal globally.
+$ \tau(t) $ increases monotonically, preventing time-reversal globally.
 
 \subsubsection{Variational Principle Within a Symmetry Class}
 
-\[
+$$
 \delta \int_{\tau_i}^{\tau_{i+1}} \boldsymbol{\theta}_{X_i}^\top G_{X_i X_i} \boldsymbol{\theta}_{X_i} \, d\tau = 0
-\]
+$$
 
 
 \subsection{Speculative Implications and Hypotheses}
@@ -130,7 +130,7 @@ If \( \theta_k \in M(t) \) and \( |\dot{\theta}_k| \geq \varepsilon \), then
 - *Local Reversibility* within fixed symmetry classes
 - *Latent Memory*: influence of inactive variables through curvature
 - *Pseudo-Saddles*: slow evolution from flat entropy curvature
-- *Conditional Independence*: emergent locality via block structure in \( G \)
+- *Conditional Independence*: emergent locality via block structure in $ G $
 - *Domain Transitions*: new behaviour as variables emerge or stall
 
 \subsection{Interpretation and Nuance}
@@ -145,7 +145,7 @@ Finite entropy bounds imply resolution constraints, producing discrete transitio
 
 \subsubsection{3. Dual Role of Parameters and Variables}
 
-“\( \theta_i \in X(t) \)” means the observable governed by \( H_i \) is actively evolving. Variables, parameters, and observables are dual facets of the representation.
+“$ \theta_i \in X(t) $” means the observable governed by $ H_i $ is actively evolving. Variables, parameters, and observables are dual facets of the representation.
 
 \subsubsection{4. Irreversibility vs Local Reversibility}
 
@@ -153,7 +153,7 @@ Monotonic entropy-time induces global irreversibility, but local symmetry classe
 
 \subsubsection{5. Fisher Information is an Analytic Tool}
 
-\( G(\boldsymbol{\theta}) \) helps us understand evolution—it is not known or used by the system itself.
+$ G(\boldsymbol{\theta}) $ helps us understand evolution—it is not known or used by the system itself.
 
 \subsubsection{6. No Observer or Collapse Needed}
 

@@ -81,6 +81,16 @@ $$\frac{d\boldsymbol{\theta}}{dt} = -G(\boldsymbol{\theta}) \boldsymbol{\theta}$
 
 $$X(t) = \left\{ i \mid \left| \frac{d\theta_i}{dt} \right| \geq \varepsilon \right\}, \quad M(t) = Z \setminus X(t)$$
 
+\subsection{Lemma 1: Form of the Minimal Entropy Configuration}
+
+The minimal-entropy state compatible with the system’s resolution constraint and regularity condition is represented by a density matrix of the exponential form:
+$$\rho(\boldsymbol{\theta}_0) = \frac{1}{Z(\boldsymbol{\theta}_0)} \exp\left( \sum_i \theta_{0i} H_i \right)$$
+
+where $\boldsymbol{\theta}_0 \approx \boldsymbol{0}$, and all components $\theta_{0i}$ are sub-threshold:
+$$|\dot{\theta}_{0i}| < \varepsilon$$
+
+This state minimizes entropy under the constraint that it remains regular, continuous, and detectable only above a resolution scale $\varepsilon \sim 1/2^N$. Its structure can be derived via a *minimum-entropy analogue of Jaynes' formalism*, using the same density matrix geometry but inverted optimization.
+
 \subsubsection{Lemma 1: Symmetry Breaking}
 
 If $\theta_k \in M(t)$ and $|\dot{\theta}_k| \geq \varepsilon$, then

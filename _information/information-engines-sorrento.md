@@ -77,6 +77,15 @@ $$\frac{d\boldsymbol{\theta}}{dt} = -G(\boldsymbol{\theta}) \boldsymbol{\theta}$
 
 \subsection{Constructed Quantities and Lemmas}
 
+\subsubsection{Definition: Latent-to-Active Information Flow Functional}
+
+Define the *information flow from latent structure to active parameters* as:
+$$
+\Psi(t) := \boldsymbol{\theta}_{X(t)}^\top G_{X(t) M(t)} \boldsymbol{\theta}_{M(t)}
+$$
+This functional captures the curvature-mediated coupling between the current active system $X(t)$ and the latent reservoir $M(t)$. It reflects the degree to which structural information in $M$ contributes to entropy growth in $X$.
+
+
 \subsubsection{Variable Partition}
 
 $$X(t) = \left\{ i \mid \left| \frac{d\theta_i}{dt} \right| \geq \varepsilon \right\}, \quad M(t) = Z \setminus X(t)$$
@@ -112,6 +121,15 @@ $\tau(t)$ increases monotonically, preventing time-reversal globally.
 
 $$\delta \int_{\tau_i}^{\tau_{i+1}} \boldsymbol{\theta}_{X_i}^\top G_{X_i X_i} \boldsymbol{\theta}_{X_i} \, d\tau = 0$$
 
+\subsection{Lemma 3: Frieden-Analogous Extremal Flow
+
+At points where the latent-to-active flow functional $\Psi(t)$ is locally extremal (i.e., $\frac{d\Psi}{dt} = 0 $), the system may exhibit:
+
+- Temporary stability or critical slowing,
+- Transitions between symmetry classes (e.g., emergence of a new active variable),
+- Reconfiguration of internal curvature flow.
+
+These transitions play a role analogous to *extremizing an internal information exchange*, similar in spirit to Frieden’s $\delta(I - J) = 0$ condition, but realized without requiring an observer or measurement.
 
 \subsection{Speculative Implications and Hypotheses}
 
@@ -155,6 +173,29 @@ True singularities (e.g. delta functions) are excluded; minimal-entropy states a
 
 Only valid within fixed symmetry classes. It offers insight but is not required by the system’s evolution.
 
+
+\subsection{Connection to Frieden’s EPI: A Conceptual Analogue}
+
+This model is not built to explain or reproduce any specific physical theory, but it reveals structural patterns that *resemble variational information principles*, such as those used in Frieden’s Extreme Physical Information (EPI) framework.
+
+Frieden’s principle proposes that physical systems arise by extremizing a quantity $I - J$, where:
+
+- $J$ is source (intrinsic) information,
+- $I$ is Fisher information extracted by an observer.
+
+In this model:
+
+- No observer is present,
+- But we still have a structure ($G(\boldsymbol{\theta})$) that defines *latent curvature* (reservoir $M$),
+- And *detectable entropy flow* (active $X$).
+
+The *information flow functional*:
+$$
+\Psi(t) = \boldsymbol{\theta}_X^\top G_{XM} \boldsymbol{\theta}_M
+$$
+serves as a natural analogue to *internal information exchange*, without reference to measurement.
+
+When $\Psi(t)$ is extremal, the system may undergo a qualitative shift in its active structure—suggesting an internal, geometry-driven analogue to EPI, but interpreted entirely within the unfolding of the system itself.
 
 \include{_physics/includes/entropy-intro.md}
 \include{_physics/includes/maxwells-demon.md}

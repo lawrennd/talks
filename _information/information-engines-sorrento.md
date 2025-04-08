@@ -31,9 +31,9 @@ This model explores how structure, time, causality, and locality can emerge with
 \subsubsection{System Structure}
 
 - Let $ Z = \{Z_1, Z_2, \dots, Z_n\} $ be the full set of system variables.
-- At time $ t $, define a partition:
-  - $ X(t) \subseteq Z $: active variables (currently contributing to entropy)
-  - $ M(t) = Z \setminus X(t) $: latent or frozen variables (information reservoir)
+- At time $t$, define a partition:
+  - $X(t) \subseteq Z$: active variables (currently contributing to entropy)
+  - $M(t) = Z \setminus X(t)$: latent or frozen variables (information reservoir)
 
 \subsubsection{Representation via Density Matrix}
 
@@ -42,9 +42,9 @@ This model explores how structure, time, causality, and locality can emerge with
   \rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
   $$
   where
-  - $ \boldsymbol{\theta} \in \mathbb{R}^d $: natural parameters,
-  - $ H_i $: Hermitian operators associated with observables,
-  - $ Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)] $
+  - $\boldsymbol{\theta} \in \mathbb{R}^d $: natural parameters,
+  - $H_i$: Hermitian operators associated with observables,
+  - $Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)]$
 
 - The *log-partition function* is
   $$
@@ -63,7 +63,7 @@ This model explores how structure, time, causality, and locality can emerge with
 
 \subsubsection{Entropy Capacity and Resolution}
 
-- The system has a *maximum entropy* of $ N $ bits.
+- The system has a *maximum entropy* of $N$ bits.
 - This defines a *minimum detectable resolution* in natural parameter space
   $$
   \varepsilon \sim \frac{1}{2^N}

@@ -1,12 +1,12 @@
 ---
-title: "Information Engines"
-subtitle: "Exploring Connections Between Intelligence and Thermodynamics"
+title: "Jaynes' World"
+subtitle: "An Entropy-Based Information Game"
 abstract: |
   The relationship between physical systems and intelligence has long fascinated researchers in computer science and physics. This talk explores fundamental connections between thermodynamic systems and intelligent decision-making through the lens of free energy principles.
   
   We examine how concepts from statistical mechanics - particularly the relationship between total energy, free energy, and entropy - might provide novel insights into the nature of intelligence and learning. By drawing parallels between physical systems and information processing, we consider how measurement and observation can be viewed as processes that modify available energy. The discussion encompasses how model approximations and uncertainties might be understood through thermodynamic analogies, and explores the implications of treating intelligence as an energy-efficient state-change process.
   
-  While these connections remain speculative, they offer intriguing perspectives for discussing the fundamental nature of intelligence and learning systems. The talk aims to stimulate discussion about these potential relationships rather than present definitive conclusions.
+  While these connections remain speculative, they offer a potential shared language for discussing the emergence of natural laws and societal systems through the lens of information.
 author:
 - family: Lawrence
   given: Neil D.
@@ -14,138 +14,158 @@ date: 2025-04-15
 ipynb: true
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: "Departmental Seminar, Department of Computer Science, University of Manchester"
+venue: Sorrento Meeting
 transition: None
 ---
 
-# Some notes from discussing with ChatGPT-4o
 
-# Unfolding Systems: An Entropy-Based Information Game
+\subsection{Purpose}
 
-## Overview
+This model explores how structure, time, causality, and locality can emerge within a system governed solely by internal information-theoretic constraints. It serves as
 
-This document outlines a model designed to explore how structure, causality, and time can emerge within a system governed solely by internal information dynamics—without relying on assumptions from traditional physics such as observers, measurements, or collapse. The model serves two purposes:
+- A *research framework* for observer-free dynamics and entropy-based emergence,
+- A *conceptual tool* for introducing deep ideas in physics in an accessible, internally consistent setting.
 
-* As a research framework for exploring how physical-like phenomena may emerge from constrained information flows;
-* As a tutorial tool to help non-physicists grasp deep ideas from physics through simple, internally coherent rules.
+\subsection{Definitions and Global Constraints}
+
+\subsubsection{System Structure}
+
+- Let \( Z = \{Z_1, Z_2, \dots, Z_n\} \) be the full set of system variables.
+- At time \( t \), define a partition:
+  - \( X(t) \subseteq Z \): active variables (currently contributing to entropy)
+  - \( M(t) = Z \setminus X(t) \): latent or frozen variables (information reservoir)
+
+\subsubsection{Representation via Density Matrix}
+
+- The system’s state is given by a density matrix
+  \[
+  \rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
+  \]
+  where
+  - \( \boldsymbol{\theta} \in \mathbb{R}^d \): natural parameters,
+  - \( H_i \): Hermitian operators associated with observables,
+  - \( Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)] \)
+
+- The *log-partition function* is
+  \[
+  A(\boldsymbol{\theta}) = \log Z(\boldsymbol{\theta})
+  \]
+
+- The *entropy* is
+  \[
+  S(\boldsymbol{\theta}) = A(\boldsymbol{\theta}) - \boldsymbol{\theta}^\top \nabla A(\boldsymbol{\theta})
+  \]
+
+- The *Fisher Information Matrix* is
+  \[
+  G_{ij}(\boldsymbol{\theta}) = \frac{\partial^2 A}{\partial \theta_i \partial \theta_j}
+  \]
+
+\subsubsection{Entropy Capacity and Resolution}
+
+- The system has a *maximum entropy* of \( N \) bits.
+- This defines a *minimum detectable resolution* in natural parameter space
+  \[
+  \varepsilon \sim \frac{1}{2^N}
+  \]
+
+- Changes smaller than \( \varepsilon \) are treated as *invisible* by the system.
+- As a result, system dynamics exhibit *discrete, detectable transitions* between distinguishable states.
+
+\subsubsection{Clarification: Dual Role of Parameters and Variables}
+
+- Each variable \( Z_i \) is associated with a generator \( H_i \), and a natural parameter \( \theta_i \).
+- When we say a parameter \( \theta_i \in X(t) \), we mean:
+  - The component of the system associated with \( H_i \) is active at time \( t \),
+  - And its parameter is evolving with \( |\dot{\theta}_i| \geq \varepsilon \).
+- This reflects the duality between *variables*, *observables*, and *natural parameters* within exponential family representations.
+
+\subsection{Core Axiom: Entropic Dynamics}
+
+The system evolves by steepest ascent in entropy
+\[
+\frac{d\boldsymbol{\theta}}{dt} = -G(\boldsymbol{\theta}) \boldsymbol{\theta}
+\]
+
+\subsection{Constructed Quantities and Lemmas}
+
+\subsubsection{Variable Partition}
+
+\[
+X(t) = \left\{ i \mid \left| \frac{d\theta_i}{dt} \right| \geq \varepsilon \right\}, \quad M(t) = Z \setminus X(t)
+\]
+
+\subsubsection{Lemma 1: Symmetry Breaking}
+
+If \( \theta_k \in M(t) \) and \( |\dot{\theta}_k| \geq \varepsilon \), then
+\[
+\theta_k \in X(t + \delta)
+\]
+
+\subsubsection{Entropy-Time}
+
+\[
+\tau(t) := S_{X(t)}(t)
+\]
+
+\subsubsection{Lemma 2: Monotonicity of Entropy-Time}
+
+\[
+\tau(t_2) \geq \tau(t_1) \quad \text{for all } t_2 > t_1
+\]
+
+\subsubsection{Corollary: Irreversibility}
+
+\( \tau(t) \) increases monotonically, preventing time-reversal globally.
+
+\subsubsection{Variational Principle Within a Symmetry Class}
+
+\[
+\delta \int_{\tau_i}^{\tau_{i+1}} \boldsymbol{\theta}_{X_i}^\top G_{X_i X_i} \boldsymbol{\theta}_{X_i} \, d\tau = 0
+\]
 
 
-## Motivation
+\subsection{Speculative Implications and Hypotheses}
 
-Many fundamental concepts in physics—like entropy, symmetry breaking, irreversibility, causality, and measurement—can be difficult to explain without invoking the machinery of classical or quantum mechanics. This model offers an alternative:
+- *Local Reversibility* within fixed symmetry classes
+- *Latent Memory*: influence of inactive variables through curvature
+- *Pseudo-Saddles*: slow evolution from flat entropy curvature
+- *Conditional Independence*: emergent locality via block structure in \( G \)
+- *Domain Transitions*: new behaviour as variables emerge or stall
 
-A minimalist system that evolves purely through information-theoretic constraints, yet gives rise to many structures familiar from physics.
+\subsection{Interpretation and Nuance}
 
-This allows students or researchers to watch these concepts emerge rather than taking them as axioms, offering a bottom-up route to intuition.
+\subsubsection{1. Apparent Zero-Entropy Start}
 
-## Core Ingredients
+The model behaves as if it originates at low entropy, but this is a consequence of the entropy ascent, not an assumption.
 
-## State Variables
+\subsubsection{2. Discretisation from Entropy Capacity}
 
-	* The system consists of a set of variables $Z$, partitioned at any time into:
-		* $M$: latent variables (the information reservoir)
-		* $X$: active variables, contributing to observable structure
+Finite entropy bounds imply resolution constraints, producing discrete transitions without discretizing the space.
 
-## Initial Condition
-	
-	* The system starts in a zero-entropy state:
-	* This is a pure quantum state
-	* All variables are in $M$: no observable structure exists
-	* A maximum entropy bound $N$ bits is imposed
+\subsubsection{3. Dual Role of Parameters and Variables}
 
-## Information Representation
+“\( \theta_i \in X(t) \)” means the observable governed by \( H_i \) is actively evolving. Variables, parameters, and observables are dual facets of the representation.
 
-	* States are described via density matrices \rho(\eta) belonging to a (quantum) exponential family
-    $$
-	\rho(\eta) = \frac{1}{Z(\eta)} \exp\left( \sum_i \eta_i H_i \right)
-	$$
-	* \eta: natural parameters, defining the system’s informational geometry
+\subsubsection{4. Irreversibility vs Local Reversibility}
 
+Monotonic entropy-time induces global irreversibility, but local symmetry classes may evolve reversibly.
 
-## Dynamics: Steepest Ascent in Entropy Geometry
-	
-	* The system evolves via steepest ascent of entropy in natural parameter space:
-$$
-\frac{d\eta}{dt} = -\mathcal{I}(\eta) \eta
-$$
-	* \mathcal{I}(\eta): Fisher Information Matrix, defining the system's local curvature
+\subsubsection{5. Fisher Information is an Analytic Tool}
 
-## Resolution Threshold
-	
-	* The system has a finite resolution $\varepsilon$
-	* A variable $\eta_i$ is detectably active if:
-$$
-|\dot{\eta}_i| \geq \varepsilon
-$$
+\( G(\boldsymbol{\theta}) \) helps us understand evolution—it is not known or used by the system itself.
 
-## Key Mechanism: Emergence through Symmetry Breaking
-	
-	* The system begins in a maximally symmetric state (e.g., full mixture or isotropic curvature)
-	* Due to curvature anisotropy and resolution limits, some directions emerge first
-	* When $\eta_i$ crosses threshold, it moves from $M$ to $X$
-	* This triggers a symmetry-breaking event and expands the system's active dimensionality
+\subsubsection{6. No Observer or Collapse Needed}
 
-## Entropy-Time and Irreversibility
+Structure emerges from the system’s internal curvature and resolution constraint, without measurement postulates.
 
-	* Define entropy-time $\tau$:
-	$$
-	\tau(t) := S_X(t)
-	$$
-	* This internal, monotonic parameter replaces coordinate time
-	* It tracks the unfolding of structure and defines:
-	* Causal order of variable emergence
-	* Irreversibility (since $\tau$ only increases)
-	* Time directionality based on entropy growth
+\subsubsection{7. Singularity Avoidance}
 
+True singularities (e.g. delta functions) are excluded; minimal-entropy states are regularized via density matrices.
 
-## Information Flow and Locality
-	
-	* The off-diagonal terms $\mathcal{I}_{XM}$ represent curvature coupling between active and latent variables
-	* These terms define:
-	* Information flow from $M$ to $X$
-	* Influence without activation (latent memory)
-	* Conditions for conditional independence and emergent locality
+\subsubsection{8. Variational Principle is Optional}
 
-## Variational Structure (Inspired by Frieden's EPI)
-
-	* Reinterpreting Frieden's principle:
-	* $J$: latent curvature in $M$
-	* $I$: active Fisher information in $X$
-	* Variational principles apply within symmetry classes:
-    $$
-	\delta \int_{\tau_i}^{\tau_{i+1}} \eta_X^T \mathcal{I}_{XX} \eta_X \, d\tau = 0
-	$$
-	* Transitions (symmetry-breaking events) are discrete and define the boundaries of valid variational domains
-
-## Emergent Structures
-
-From these simple ingredients, we recover rich behaviour:
-
-| Emergent Feature | Mechanism |
-+------------------+-----------+
-| Causality	| Ordered emergence in entropy-time
-| Memory	| Latent variables steer active evolution
-| Irreversibility	| Entropy-time monotonicity
-| Locality	| Conditional independence via weak curvature coupling
-| Dimensional expansion	| Variable emergence through detectable curvature
-| Action-like dynamics	| Piecewise entropy-gradient flow
-| No observers or collapse	| All structure emerges internally from constraints
-
-## Next Steps / Directions
-
-This structure sets the stage for:
-	
-  * Visualization of unfolding entropy geometry
-  * Exploring agency, predictability, or self-reference
-  * Mapping to thermodynamic concepts (without thermodynamics)
-  * Extending to computational or epistemic systems
-
-It also invites research into:
-
-  * Observer-free generalizations of variational principles
-  * How different resolution thresholds affect trajectory space
-  * Whether time-reversal or memory-erasure is possible in subspaces
-
+Only valid within fixed symmetry classes. It offers insight but is not required by the system’s evolution.
 
 
 \include{_physics/includes/entropy-intro.md}

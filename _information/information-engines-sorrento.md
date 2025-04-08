@@ -36,6 +36,7 @@ transition: None
 \include{_information-game/includes/two-bin-example.md}
 \include{_information-game/includes/jaynes-world-uncertainty-principle.md}
 \include{_physics/includes/jaynes-density-matrices.md}
+\include{_information-game/includes/minimal-entropy-density-matrix.md}
 \include{_information-game/includes/quantum-exponential-family.md}
 \include{_information-game/includes/minimal-entropy-states.md}
 \include{_information-game/includes/gradient-ascent-uncertainty.md}

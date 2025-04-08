@@ -30,7 +30,7 @@ This model explores how structure, time, causality, and locality can emerge with
 
 \subsubsection{System Structure}
 
-- Let $ Z = \{Z_1, Z_2, \dots, Z_n\} $ be the full set of system variables.
+- Let $Z = \{Z_1, Z_2, \dots, Z_n\}$ be the full set of system variables.
 - At time $t$, define a partition:
   - $X(t) \subseteq Z$: active variables (currently contributing to entropy)
   - $M(t) = Z \setminus X(t)$: latent or frozen variables (information reservoir)
@@ -38,11 +38,9 @@ This model explores how structure, time, causality, and locality can emerge with
 \subsubsection{Representation via Density Matrix}
 
 - The system’s state is given by a density matrix
-  $$
-  \rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
-  $$
+  $$\rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)$$
   where
-  - $\boldsymbol{\theta} \in \mathbb{R}^d $: natural parameters,
+  - $\boldsymbol{\theta} \in \mathbb{R}^d$: natural parameters,
   - $H_i$: Hermitian operators associated with observables,
   - $Z(\boldsymbol{\theta}) = \mathrm{Tr}[\exp(\sum_i \theta_i H_i)]$
 

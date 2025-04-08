@@ -18,7 +18,6 @@ venue: Sorrento Meeting
 transition: None
 ---
 
-\include{_information-game/includes/jaynes-world-overview-and-definitions.md}
 
 \include{_physics/includes/entropy-intro.md}
 \include{_physics/includes/maxwells-demon.md}
@@ -31,6 +30,7 @@ transition: None
 
 \include{_physics/includes/jaynes-maximum-entropy.md}
 \include{_information-game/includes/jaynes-world.md}
+\include{_information-game/includes/jaynes-world-overview-and-definitions.md}
 \include{_physics/includes/jaynes-minimal-entropy.md}
 \include{_information-game/includes/jaynes-world-histogram.md}
 \include{_information-game/includes/two-bin-example.md}

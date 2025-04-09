@@ -54,10 +54,6 @@ transition: None
 
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
-\include{_business/includes/supply-chain-of-ideas.md}
-
-\notes{The supply chain of ideas avoids 'coconut science', assuming your scientific solution is the right one to answer a question that's been asked. Our science is directed towards policy questions.}
-
 \section{Examples of Human-Centered Data Science}
 
 \include{_business/includes/attention-flywheel-example-dsa.md}
@@ -71,6 +67,8 @@ transition: None
 \section{Conclusion: The Innovation Economy}
 
 \include{_policy/includes/innovation-economy-conclusion.md}
+
+\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
 \thanks
 

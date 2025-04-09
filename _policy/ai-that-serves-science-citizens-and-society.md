@@ -29,7 +29,6 @@ transition: None
 
 \include{_policy/includes/learning-from-failures.md}
 
-\section{The Attention Economy in Science}
 
 \include{_economics/includes/the-attention-economy.md}
 

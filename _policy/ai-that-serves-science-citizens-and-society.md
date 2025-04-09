@@ -37,13 +37,23 @@ transition: None
 
 \section{Building from the Ground Up}
 
-\notes{Examples of successful human-centered AI implementation in scientific contexts, showing how collaboration between researchers and practitioners leads to better outcomes.}
+\notes{We can look to two contrasting but complementary examples of successful human-centered AI implementation that demonstrate how the attention reinvestment cycle works in practice.}
 
-\include{_policy/includes/building-from-ground-up.md}
+\include{_business/includes/attention-flywheel-example-dsa.md}
+
+\notes{Data Science Africa demonstrates how local capacity building and end-to-end data science creates sustainable innovation cycles. This bottom-up approach ensures solutions are grounded in real needs and local context.}
+
+\include{_business/includes/attention-flywheel-example-ai-at-cam.md}
+
+\notes{The ai@cam example shows how this approach can be scaled within a major institution, creating structured pathways for knowledge sharing while maintaining the core principle of human-centered innovation.}
 
 \section{The Attention Reinvestment Cycle}
 
-\notes{How saving professional time through AI can be reinvested in knowledge sharing and mentoring, allowing solutions to spread organically through professional networks.}
+\notes{These examples demonstrate an important principle: when we save professional time through AI, we must deliberately reinvest it in knowledge sharing and mentoring. This creates a virtuous cycle where:
+* Technical capabilities grow organically through professional networks
+* Local expertise guides implementation
+* Solutions evolve to meet real needs
+* Communities of practice emerge naturally}
 
 \include{_business/includes/attention-reinvestment-cycle.md}
 

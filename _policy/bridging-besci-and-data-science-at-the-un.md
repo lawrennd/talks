@@ -13,7 +13,7 @@ abstract: >
   How can behavioural science and data science come together to drive meaningful change in the UN? 
   
   This advanced session will explore innovative and existing approaches to using BeSci and data for efficiency gains, informed decision-making, and strategic insights. Professor Neil Lawrence (University of Cambridge) will provide opening remarks, setting the stage for a discussion on human-centred data science in UN contexts. Colleagues from UNHCR and UNICEF will then share real-world examples, discuss the challenges of integrating data and BeSci, and highlight the value of partnerships and research. From overcoming data constraints to investing in the right skill sets, this session will examine how to maximise BeSci and analytics for scalable impact particularly in resource-sensitive environments.
-venue: High-level Opening session of the 2025 UN Behavioural Science Week
+venue: Bridging Behavioural Science and Data Science in the UN
 transition: None
 ---
 

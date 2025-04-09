@@ -29,11 +29,8 @@ transition: None
 
 \include{_business/includes/the-productivity-flywheel.md}
 
-\notes{The productivity flywheel should return the gains released by productivity through funding. This relies on the economic value mapping the underlying value.}
-
 \include{_business/includes/attention-flywheel.md}
 
-\notes{While the traditional productivity flywheel focuses on reinvesting financial capital, the attention flywheel focuses on reinvesting human capital - our most precious resource in an AI-augmented world. This requires deliberately creating systems that capture the value of freed attention and channel it toward human-centered activities that machines cannot replicate.}
 
 \section{Public Dialogue and Human-Centered Design}
 
@@ -41,11 +38,11 @@ transition: None
 
 \notes{Public dialogue work reveals that AI should enhance rather than replace human capabilities, with strong governance frameworks in place before deployment. Public engagement and transparency are essential, and benefits must be distributed fairly across society.}
 
-\include{_dialogue/includes/public-dialogue-health.md}
+\notes{\include{_dialogue/includes/public-dialogue-health.md}
 
 \include{_dialogue/includes/public-dialogue-education.md}
 
-\include{_dialogue/includes/public-dialogue-summary.md}
+\include{_dialogue/includes/public-dialogue-summary.md}}
 
 \section{Bridging Behavioral Science and Data Science}
 
@@ -54,6 +51,8 @@ transition: None
 \include{_policy/includes/new-productivity-paradox.md}
 
 \notes{The new productivity paradox highlights the challenges of measuring human attention in economic terms and the need for agile policy responses to public needs.}
+
+\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \include{_business/includes/supply-chain-of-ideas.md}
 

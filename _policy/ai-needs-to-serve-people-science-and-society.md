@@ -11,8 +11,6 @@ author:
   family: Montgomery
 date: 2023-03-14
 abstract: Artificial intelligence offers great promise, but we must ensure it does not deepen inequalities.  Today we are setting out our vision for AI@Cam, a new flagship mission at the University of Cambridge. 
-venue: "Public Sector Innovation Conference, RSA, London"
-transition: None
 venue: 5th Public Sector Innovation Conference
 transition: None
 ---

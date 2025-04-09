@@ -23,6 +23,16 @@ transition: None
 
 \include{_ai/includes/the-great-ai-fallacy.md}
 
+
+Three things we can say about the future
+
+Human attention will remain the bottleneck
+Humans won't stop being interested in other humans
+Companies won't stop trying to corner that market
+
+
+Digital revolution so far: companies out of touch with their customers and governments out of touch woth citizens. Why?
+
 \section{Learning from Past Failures}
 
 \notes{Historical examples like the Horizon Post Office and Lorenzo NHS IT scandals demonstrate how technology projects can fail when they don't account for local needs and human factors.}

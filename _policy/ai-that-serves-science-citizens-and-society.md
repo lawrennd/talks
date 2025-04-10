@@ -21,6 +21,7 @@ transition: None
 
 \notes{Just as there's no such thing as a general-purpose vehicle that's optimal for all transportation needs, there's no single AI solution that can address all of society's challenges. We need targeted, human-centered approaches.}
 
+\include{_atomic-human/includes/fascination-with-ourselves.md}
 
 \include{_economics/includes/philosophers-stone.md}
 
@@ -29,8 +30,8 @@ transition: None
 \include{_economics/includes/the-attention-economy.md}
 \include{_ai/includes/cuneiform.md}
 \include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
-\include{_books/includes/the-future-of-professions.md}
-\include{_atomic-human/includes/fascination-with-ourselves.md}
+
+
 
 \include{_economics/includes/human-capital-index.md}
 \include{_business/includes/the-productivity-flywheel.md}

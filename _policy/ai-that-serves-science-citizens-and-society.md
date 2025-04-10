@@ -21,7 +21,7 @@ transition: None
 
 \notes{Just as there's no such thing as a general-purpose vehicle that's optimal for all transportation needs, there's no single AI solution that can address all of society's challenges. We need targeted, human-centered approaches.}
 
-\include{_atomic-human/includes/fascination-with-ourselves.md}
+
 
 \include{_economics/includes/philosophers-stone.md}
 
@@ -35,20 +35,22 @@ transition: None
 
 \include{_economics/includes/human-capital-index.md}
 \include{_business/includes/the-productivity-flywheel.md}
-\include{_atomic-human/includes/their-data-comes-from-us.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
+
 \include{_economics/includes/human-capital-inflation.md}
+\include{_atomic-human/includes/their-data-comes-from-us.md}
+
 \include{_economics/includes/inflation-proof-human-capital.md}
 \include{_economics/includes/homo-atomicus.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
+
 \include{_policy/includes/new-productivity-paradox.md}
 \include{_policy/includes/coin-pusher.md}
-
 
 \include{_policy/includes/innovation-economy.md}
 
 \section{What do People Want?}
 
-\include{_ml/includes/rs-report-machine-learning.md}
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
 \include{_dialogue/includes/public-dialogue-overview.md}

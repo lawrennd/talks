@@ -31,9 +31,14 @@ transition: None
 \include{_ai/includes/cuneiform.md}
 \include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 
-
-
 \include{_economics/includes/human-capital-index.md}
+
+\newslide{Human Capital Index}
+
+\slides{* World Bank Human Capital Index 2020
+* Finland is ranked 5th in the world
+* Measures *health* and *education*}
+
 \include{_business/includes/the-productivity-flywheel.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 
@@ -42,7 +47,7 @@ transition: None
 
 \include{_economics/includes/inflation-proof-human-capital.md}
 \include{_economics/includes/homo-atomicus.md}
-\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
+\include{_books/includes/the-atomic-human.md}
 
 \include{_policy/includes/new-productivity-paradox.md}
 \include{_policy/includes/coin-pusher.md}
@@ -53,18 +58,29 @@ transition: None
 
 \include{_ml/includes/rs-report-mori-poll-art.md}
 \include{_ml/includes/chat-gpt-mercutio.md}
+\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 \include{_dialogue/includes/public-dialogue-overview.md}
 \include{_dialogue/includes/public-dialogue-health.md}
 \include{_dialogue/includes/public-dialogue-education.md}
 \include{_dialogue/includes/public-dialogue-summary.md}
 \include{_atomic-human/includes/river-gods-decide.md}
 
+\newslide{The Problem}
+
+\notes{Companies have fallen out of touch with their customers and governments have fallen out of touch with their citizens.}
+
+\slides{* Companies out of touch with customers.
+* Governments out of touch with citizens.}
 
 \section{What's the solution?}
+
 
 \include{_business/includes/supply-chain-of-ideas.md}
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 \include{_business/includes/ft-op-ed.md}
+
+\section{Agile Education is Key}
+
 \include{_business/includes/attention-flywheel.md}
 \include{_business/includes/attention-flywheel-example-dsa.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}

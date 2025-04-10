@@ -38,9 +38,9 @@ transition: None
 \include{_economics/includes/human-capital-inflation.md}
 \include{_economics/includes/inflation-proof-human-capital.md}
 \include{_economics/includes/homo-atomicus.md}
+\include{_book/includes/the-atomic-human.md}
 \include{_policy/includes/new-productivity-paradox.md}
 \include{_policy/includes/coin-pusher.md}
-
 
 \include{_policy/includes/innovation-economy.md}
 

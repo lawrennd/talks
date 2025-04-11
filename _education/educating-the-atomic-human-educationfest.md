@@ -31,7 +31,7 @@ abstract: |
 author:
 - family: Lawrence
   given: Neil D.
-date: 2025-04-04
+date: 2025-07-04
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: UK Festival of Education, Wellington College

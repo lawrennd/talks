@@ -10,88 +10,102 @@ author:
   url: http://inverseprobability.com
 date: 2025-04-10
 abstract: |
-  Despite its transformative potential, artificial intelligence risks following a well-worn path where technological innovation fails to address society's most pressing problems. The UK's experience with major IT projects shows this disconnect: from the Horizon scandal's wrongful prosecutions to the £10 billion failure of the NHS Lorenzo project. These weren't only technical failures but a failure to bridge between needs and the provided solution.
+  Artificial intelligence promises to transform our world, but will it be for the better? We've seen how technology can fail when it doesn't understand real people's needs - from the Post Office scandal to healthcare systems that don't work for patients. 
 
-  This talk examines how we can ensure AI truly serves citizens, science, and society. We'll explore why conventional approaches to technology deployment continue to fall short and propose changes needed to build human-centered AI innovation that delivers real benefits while maintaining human agency and values.
+  This talk explores how we can make sure AI truly helps people, rather than just making things more complicated. We'll look at what's gone wrong in the past, what people actually want from AI, and how we can build technology that serves humanity's needs while preserving what makes us human.
 venue: Finnish Ministry of Education Science and Culture Vision 2040 Seminar
 transition: None
 ---
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 
-\notes{Just as there's no such thing as a general-purpose vehicle that's optimal for all transportation needs, there's no single AI solution that can address all of society's challenges. We need targeted, human-centered approaches.}
-
-
+\notes{Think about cars - there's no perfect vehicle for every journey. A sports car isn't great for moving furniture, and a truck isn't ideal for a family holiday. AI is the same - we need different tools for different jobs, not one solution that tries to do everything.}
 
 \include{_economics/includes/philosophers-stone.md}
 
-\notes{In our modern economy, automation has the same effect. During the industrial revolution, steel and steam replaced human manual labour. Today, silicon and electrons are being combined to replace human mental labour.}
+\notes{Throughout history, we've looked for magic solutions to our problems. Today, many people see AI as a magic wand that can fix everything. But like the philosopher's stone, this promise often leads to disappointment.}
 
 \include{_economics/includes/the-attention-economy.md}
+
+\notes{In a world full of information, our attention is precious. Think about how hard it is to focus when your phone keeps buzzing with notifications. AI should help us focus on what matters, not distract us further.}
+
 \include{_ai/includes/cuneiform.md}
 \include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 
-\include{_economics/includes/human-capital-index.md}
+\notes{We often end up changing how we work to fit technology, rather than the other way around. It's like having to learn a new language just to use your phone. This needs to change.}
 
-\newslide{Human Capital Index}
+\newslide{What Makes a Country Strong?}
 
-\slides{* World Bank Human Capital Index 2020
-* Finland is ranked 5th in the world
-* Measures *health* and *education*}
+\slides{* Health and education matter most
+* Finland ranks 5th in the world
+* These are the foundations of human potential}
 
-\include{_business/includes/the-productivity-flywheel.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 
-\include{_economics/includes/human-capital-inflation.md}
+\notes{We're fascinated by AI because it makes us think about what makes us human. But we need to focus on how AI can help us be more human, not replace what makes us human.}
+
 \include{_atomic-human/includes/their-data-comes-from-us.md}
 
-\include{_economics/includes/inflation-proof-human-capital.md}
-\include{_economics/includes/homo-atomicus.md}
+\notes{AI systems learn from us - our data, our choices, our interactions. This means we have power to shape how AI develops. We need to use this power wisely.}
+
 \include{_books/includes/the-atomic-human.md}
 
-\include{_policy/includes/new-productivity-paradox.md}
-\include{_policy/includes/coin-pusher.md}
-
-\include{_policy/includes/innovation-economy.md}
-
-\section{What do People Want?}
+\section{What Do People Actually Want?}
 
 \include{_ml/includes/rs-report-mori-poll-art.md}
-\include{_ml/includes/chat-gpt-mercutio.md}
+
+\notes{When we ask people what they want from AI, they talk about practical things - better healthcare, better education, safer communities. They don't care about AI making art or writing poetry.}
+
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
-\include{_dialogue/includes/public-dialogue-overview.md}
+
+\notes{AI can do impressive things, but that doesn't mean it should replace human connection and understanding. A robot might be able to paint, but it can't create art that speaks to the human experience.}
+
 \include{_dialogue/includes/public-dialogue-health.md}
 \include{_dialogue/includes/public-dialogue-education.md}
-\include{_dialogue/includes/public-dialogue-summary.md}
+
+\notes{People want AI that helps with real problems - making healthcare more accessible, helping teachers reach every student, making our communities safer and healthier.}
+
 \include{_atomic-human/includes/river-gods-decide.md}
 
-\newslide{The Problem}
+\notes{We shouldn't just hand over our decisions to AI, like ancient people might have prayed to river gods. We need to stay in control and make sure AI serves our needs.}
 
-\notes{Companies have fallen out of touch with their customers and governments have fallen out of touch with their citizens.}
+\newslide{The Real Problem}
 
-\slides{* Companies out of touch with customers.
-* Governments out of touch with citizens.}
+\slides{* Technology has become disconnected from people
+* Companies and governments have lost touch
+* We need to bring humanity back to technology}
 
-\section{What's the solution?}
-
+\section{How Do We Fix This?}
 
 \include{_business/includes/supply-chain-of-ideas.md}
-\include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
-\include{_business/includes/ft-op-ed.md}
 
-\section{Agile Education is Key}
+\notes{Just like a good recipe needs the right ingredients, we need the right mix of people and ideas to make AI work for everyone.}
+
+\include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
+
+\notes{Different problems need different solutions. Just like a garden needs different plants to be healthy, we need diverse approaches to make our society stronger.}
+
+\section{Learning Together}
 
 \include{_business/includes/attention-flywheel.md}
+
+\notes{When we learn together and share knowledge, we create a virtuous cycle - each person's learning helps others learn more.}
+
 \include{_business/includes/attention-flywheel-example-dsa.md}
+
+\notes{In Africa, we're seeing how teaching data science locally creates lasting change. When people understand technology, they can use it to solve their own problems.}
+
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
-\includes{_policy/includes/innovation-economy-conclusion.md}
 
+\notes{At Cambridge, we're working to make AI research more accessible and useful to everyone. Universities can be bridges between complex technology and real-world needs.}
 
-\section{Vision for 2040}
-
+\section{Looking to 2040}
 
 \include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
+\notes{As we look to the future, we face complex challenges - climate change, inequality, health crises. AI can help us tackle these problems, but only if we keep people at the center of our thinking.}
+
+\notes{The key is to remember that technology should serve humanity, not the other way around. By working together and staying focused on what really matters to people, we can build a future where AI helps us create a better world for everyone.}
 
 \thanks
 

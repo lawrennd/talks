@@ -24,10 +24,7 @@ abstract: |
   limitations of AI systems, and how they should be wielded. Not just
   by the experts, but ordinary people. 
  
-  The thinking in this talk comes from Neil's forthcoming book to be
-  published with Allen Lane in June 2024. The questions raised in this
-  talk will be around how we educate the atomic human in the age of
-  AI.
+  The thinking in this talk comes from Neil's book The Atomic Human.
   
   Either AI is a tool for us, or we become a tool of AI. Understanding
   this will enable us to choose the future we want.

@@ -55,6 +55,7 @@ transition: None
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
+<!-- Requested to particularly reference climate as one challenge -->
 \include{_ai/includes/bandwidth-vs-complexity.md}
 \include{_atomic-human/includes/nothing-to-worry-about.md}
 

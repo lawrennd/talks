@@ -139,6 +139,299 @@ parameters is given by <span class="math display">\[
 \frac{d\boldsymbol{\theta}}{dt} = -G(\boldsymbol{\theta})
 \boldsymbol{\theta}
 \]</span></p>
+<h2 id="histogram-game">Histogram Game</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/jaynes-world-histogram.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To illustrate the concept of the Jaynes’ world entropy game we’ll run
+a simple example using a four bin histogram. The entropy of a four bin
+histogram can be computed as, <span class="math display">\[
+S(p) = - \sum_{i=1}^4 p_i \log_2 p_i.
+\]</span></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<p>First we write some helper code to plot the histogram and compute its
+entropy.</p>
+<p>We can compute the entropy of any given histogram.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="four-bin-histogram-entropy-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="four-bin-histogram-entropy-magnify" class="magnify"
+onclick="magnifyFigure(&#39;four-bin-histogram-entropy&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="four-bin-histogram-entropy-caption" class="caption-frame">
+<p>Figure: The entropy of a four bin histogram.</p>
+</div>
+</div>
+<p>We can play the entropy game by starting with a histogram with all
+the probability mass in the first bin and then ascending the gradient of
+the entropy function.</p>
+<h2 id="two-bin-histogram-example">Two-Bin Histogram Example</h2>
+<p>The simplest possible example of Jaynes’ World is a two-bin histogram
+with probabilities <span class="math inline">\(p\)</span> and <span
+class="math inline">\(1-p\)</span>. This minimal system allows us to
+visualize the entire entropy landscape.</p>
+<p>The natural parameter is the log odds, <span
+class="math inline">\(\theta = \log\frac{p}{1-p}\)</span>, and the
+update given by the entropy gradient is <span class="math display">\[
+\Delta \theta_{\text{steepest}} = \eta \frac{\text{d}S}{\text{d}\theta}
+= \eta p(1-p)(\log(1-p) - \log p).
+\]</span> The Fisher information is <span class="math display">\[
+G(\theta) = p(1-p)
+\]</span> This creates a dynamic where as <span
+class="math inline">\(p\)</span> approaches either 0 or 1 (minimal
+entropy states), the Fisher information approaches zero, creating a
+critical slowing” effect. This critical slowing is what leads to the
+formation of <em>information resevoirs</em>. Note also that in the
+<em>natural gradient</em> the updated is given by multiplying the
+gradient by the inverse Fisher information, which would lead to a more
+efficient update of the form, <span class="math display">\[
+\Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p),
+\]</span> however, it is this efficiency that we want our game to avoid,
+because it is the inefficient behaviour in the reagion of saddle points
+that leads to critical slowing and the emergence of information
+resevoirs.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.000001</span>, <span class="fl">0.999999</span>, <span class="dv">10000</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
+<div class="figure">
+<div id="two-bin-histogram-entropy-gradients-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-entropy-gradients.svg" width="95%" style=" ">
+</object>
+</div>
+<div id="two-bin-histogram-entropy-gradients-magnify" class="magnify"
+onclick="magnifyFigure(&#39;two-bin-histogram-entropy-gradients&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="two-bin-histogram-entropy-gradients-caption"
+class="caption-frame">
+<p>Figure: Entropy gradients of the two bin histogram agains
+position.</p>
+</div>
+</div>
+<p>This example reveals the entropy extrema at <span
+class="math inline">\(p = 0\)</span>, <span class="math inline">\(p =
+0.5\)</span>, and <span class="math inline">\(p = 1\)</span>. At minimal
+entropy (<span class="math inline">\(p \approx 0\)</span> or <span
+class="math inline">\(p \approx 1\)</span>), the gradient approaches
+zero, creating natural information reservoirs. The dynamics slow
+dramatically near these points - these are the areas of critical slowing
+that create information reservoirs.</p>
+<h2 id="gradient-ascent-in-natural-parameter-space">Gradient Ascent in
+Natural Parameter Space</h2>
+<p>We can visualize the entropy maximization process by performing
+gradient ascent in the natural parameter space <span
+class="math inline">\(\theta\)</span>. Starting from a low-entropy
+state, we follow the gradient of entropy with respect to <span
+class="math inline">\(\theta\)</span> to reach the maximum entropy
+state.</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for gradient ascent</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>theta_initial <span class="op">=</span> <span class="op">-</span><span class="fl">9.0</span>  <span class="co"># Start with low entropy </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="dv">1500</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>theta_current <span class="op">=</span> theta_initial</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>theta_history <span class="op">=</span> [theta_current]</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>p_history <span class="op">=</span> [theta_to_p(theta_current)]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>entropy_history <span class="op">=</span> [entropy(theta_current)]</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform gradient ascent in theta space</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> step <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute gradient</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(theta_current)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update theta</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    theta_current <span class="op">=</span> theta_current <span class="op">+</span> learning_rate <span class="op">*</span> grad</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store history</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    theta_history.append(theta_current)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    p_history.append(theta_to_p(theta_current))</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    entropy_history.append(entropy(theta_current))</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Step </span><span class="sc">{</span>step<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: θ = </span><span class="sc">{</span>theta_current<span class="sc">:.4f}</span><span class="ss">, p = </span><span class="sc">{</span>p_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">, Entropy = </span><span class="sc">{</span>entropy_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="two-bin-histogram-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-evolution.svg" width="95%" style=" ">
+</object>
+</div>
+<div id="two-bin-histogram-evolution-magnify" class="magnify"
+onclick="magnifyFigure(&#39;two-bin-histogram-evolution&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="two-bin-histogram-evolution-caption" class="caption-frame">
+<p>Figure: Evolution of the two-bin histogram during gradient ascent in
+natural parameter space.</p>
+</div>
+</div>
+<div class="figure">
+<div id="two-bin-entropy-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-entropy-evolution.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="two-bin-entropy-evolution-magnify" class="magnify"
+onclick="magnifyFigure(&#39;two-bin-entropy-evolution&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="two-bin-entropy-evolution-caption" class="caption-frame">
+<p>Figure: Entropy evolution during gradient ascent for the two-bin
+histogram.</p>
+</div>
+</div>
+<div class="figure">
+<div id="two-bin-trajectory-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-trajectory.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="two-bin-trajectory-magnify" class="magnify"
+onclick="magnifyFigure(&#39;two-bin-trajectory&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="two-bin-trajectory-caption" class="caption-frame">
+<p>Figure: Gradient ascent trajectory in the natural parameter space for
+the two-bin histogram.</p>
+</div>
+</div>
+<p>The gradient ascent visualization shows how the system evolves in the
+natural parameter space <span class="math inline">\(\theta\)</span>.
+Starting from a negative <span class="math inline">\(\theta\)</span>
+(corresponding to a low-entropy state with <span class="math inline">\(p
+&lt;&lt; 0.5\)</span>), the system follows the gradient of entropy with
+respect to <span class="math inline">\(\theta\)</span> until it reaches
+<span class="math inline">\(\theta = 0\)</span> (corresponding to <span
+class="math inline">\(p = 0.5\)</span>), which is the maximum entropy
+state.</p>
+<p>Note that the maximum entropy occurs at <span
+class="math inline">\(\theta = 0\)</span>, which corresponds to <span
+class="math inline">\(p = 0.5\)</span>. The gradient of entropy with
+respect to <span class="math inline">\(\theta\)</span> is zero at this
+point, making it a stable equilibrium for the gradient ascent
+process.</p>
+<h2 id="four-bin-histogram-entropy-game">Four Bin Histogram Entropy
+Game</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To do this we represent the histogram parameters as a vector of
+length 4, <span class="math inline">\(\mathbf{ w}{\lambda} = [\lambda_1,
+\lambda_2, \lambda_3, \lambda_4]\)</span> and define the histogram
+probabilities to be <span class="math inline">\(p_i = \lambda_i^2 /
+\sum_{j=1}^4 \lambda_j^2\)</span>.</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<p>We can then ascend the gradeint of the entropy function, starting at
+a parameter setting where the mass is placed in the first bin, we take
+<span class="math inline">\(\lambda_2 = \lambda_3 = \lambda_4 =
+0.01\)</span> and <span class="math inline">\(\lambda_1 =
+100\)</span>.</p>
+<p>First to check our code we compare our numerical and analytic
+gradients.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial parameters (lambda)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient check</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>numerical_grad <span class="op">=</span> numerical_gradient(entropy, initial_lambdas)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>analytical_grad <span class="op">=</span> entropy_gradient(initial_lambdas)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Numerical Gradient:&quot;</span>, numerical_grad)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Analytical Gradient:&quot;</span>, analytical_grad)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Gradient Difference:&quot;</span>, np.linalg.norm(numerical_grad <span class="op">-</span> analytical_grad))  <span class="co"># Check if close to zero</span></span></code></pre></div>
+<p>Now we can run the steepest ascent algorithm.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Steepest ascent algorithm</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas.copy())</span></code></pre></div>
+<p>We can plot the histogram at a set of chosen turn numbers to see the
+progress of the algorithm.</p>
+<h3 id="section"></h3>
+<div class="figure">
+<div id="four-bin-histogram-turns-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-00.svg" width="20%" style=" ">
+</object>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-02.svg" width="20%" style=" ">
+</object>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-04.svg" width="20%" style=" ">
+</object>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-06.svg" width="20%" style=" ">
+</object>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-turn-08.svg" width="20%" style=" ">
+</object>
+</div>
+<div id="four-bin-histogram-turns-magnify" class="magnify"
+onclick="magnifyFigure(&#39;four-bin-histogram-turns&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="four-bin-histogram-turns-caption" class="caption-frame">
+<p>Figure: Intermediate stages of the histogram entropy game. After 0,
+1000, 5000, 10000 and 15000 iterations.</p>
+</div>
+</div>
+<p>And we can also plot the changing entropy as a function of the number
+of game turns.</p>
+<div class="figure">
+<div id="four-bin-histogram-entropy-vs-turns-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram-entropy-vs-turns.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="four-bin-histogram-entropy-vs-turns-magnify" class="magnify"
+onclick="magnifyFigure(&#39;four-bin-histogram-entropy-vs-turns&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="four-bin-histogram-entropy-vs-turns-caption"
+class="caption-frame">
+<p>Figure: Four bin histogram entropy game. The plot shows the
+increasing entropy against the number of turns across 15000 iterations
+of gradient ascent.</p>
+</div>
+</div>
+<p>Note that the entropy starts at a saddle point, increaseases rapidly,
+and the levels off towards the maximum entropy, with the gradient
+decreasing slowly in the manner of Zeno’s paradox.</p>
 <h2 id="constructed-quantities-and-lemmas">Constructed Quantities and
 Lemmas</h2>
 <h3 id="variable-partition">Variable Partition</h3>
@@ -187,6 +480,139 @@ class="math inline">\(|\dot{\theta}_k| \geq \varepsilon\)</span>, then
 <span class="math display">\[
 \theta_k \in X(t + \delta t).
 \]</span></p>
+<h2 id="four-bin-saddle-point-example">Four-Bin Saddle Point
+Example</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-saddle-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/four-bin-saddle-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To illustrate saddle points and information reservoirs, we need at
+least a 4-bin system. This creates a 3-dimensional parameter space where
+we can observe genuine saddle points.</p>
+<p>Consider a 4-bin system parameterized by natural parameters <span
+class="math inline">\(\theta_1\)</span>, <span
+class="math inline">\(\theta_2\)</span>, and <span
+class="math inline">\(\theta_3\)</span> (with one constraint). A saddle
+point occurs where the gradient <span
+class="math inline">\(\nabla_\theta S = 0\)</span>, but the Hessian has
+mixed eigenvalues - some positive, some negative.</p>
+<p>At these points, the Fisher information matrix <span
+class="math inline">\(G(\theta)\)</span> eigendecomposition reveals.</p>
+<ul>
+<li>Fast modes: large positive eigenvalues → rapid evolution</li>
+<li>Slow modes: small positive eigenvalues → gradual evolution</li>
+<li>Critical modes: near-zero eigenvalues → information reservoirs</li>
+</ul>
+<p>The eigenvectors of <span class="math inline">\(G(\theta)\)</span> at
+the saddle point determine which parameter combinations form information
+reservoirs.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the gradient calculation</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> np.array([<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.1</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> test_theta <span class="op">-</span> np.mean(test_theta)  <span class="co"># Ensure constraint is satisfied</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Testing gradient calculation:&quot;</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>analytical_grad, numerical_grad <span class="op">=</span> check_gradient(test_theta)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify if we&#39;re ascending or descending</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>entropy_before <span class="op">=</span> exponential_family_entropy(test_theta)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>step_size <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>test_theta_after <span class="op">=</span> test_theta <span class="op">+</span> step_size <span class="op">*</span> analytical_grad</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>entropy_after <span class="op">=</span> exponential_family_entropy(test_theta_after)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy before step: </span><span class="sc">{</span>entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy after step: </span><span class="sc">{</span>entropy_after<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Change in entropy: </span><span class="sc">{</span>entropy_after <span class="op">-</span> entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> entropy_after <span class="op">&gt;</span> entropy_before:</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are ascending the entropy gradient&quot;</span>)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are descending the entropy gradient&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize with asymmetric distribution (away from saddle point)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> theta_init <span class="op">-</span> np.mean(theta_init)  <span class="co"># Ensure constraint is satisfied</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run gradient ascent</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>theta_history, entropy_history <span class="op">=</span> gradient_ascent_four_bin(theta_init, steps<span class="op">=</span><span class="dv">100</span>, learning_rate<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid for visualization</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy at each grid point (with constraint on theta3 and theta4)</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> np.zeros_like(X)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint that sum is zero</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>        Z[i,j] <span class="op">=</span> exponential_family_entropy(theta)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute gradient field</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>dX <span class="op">=</span> np.zeros_like(X)</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>dY <span class="op">=</span> np.zeros_like(Y)</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint</span></span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get full gradient and project</span></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>        grad <span class="op">=</span> entropy_gradient(theta)</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>        proj_grad <span class="op">=</span> project_gradient(theta, grad)</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store first two components</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>        dX[i,j] <span class="op">=</span> proj_grad[<span class="dv">0</span>]</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>        dY[i,j] <span class="op">=</span> proj_grad[<span class="dv">1</span>]</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
+<div class="figure">
+<div id="simplified-saddle-point-example-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="simplified-saddle-point-example-magnify" class="magnify"
+onclick="magnifyFigure(&#39;simplified-saddle-point-example&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="simplified-saddle-point-example-caption" class="caption-frame">
+<p>Figure: Visualisation of a saddle point projected down to two
+dimensions.</p>
+</div>
+</div>
+<div class="figure">
+<div id="four-bin-entropy-evolution-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-entropy-evolution.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="four-bin-entropy-evolution-magnify" class="magnify"
+onclick="magnifyFigure(&#39;four-bin-entropy-evolution&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="four-bin-entropy-evolution-caption" class="caption-frame">
+<p>Figure: Entropy evolution during gradient ascent on the four-bin
+system.</p>
+</div>
+</div>
+<p>The animation of system evolution would show initial rapid movement
+along high-eigenvalue directions, progressive slowing in directions with
+low eigenvalues and formation of information reservoirs in the
+critically slowed directions. Parameter-capacity uncertainty emerges
+naturally at the saddle point.</p>
 <h3 id="entropy-time">Entropy-Time</h3>
 <p><span class="math display">\[
 \tau(t) := S_{X(t)}(t)

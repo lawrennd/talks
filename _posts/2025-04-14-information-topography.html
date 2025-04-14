@@ -57,8 +57,8 @@ constraints.</li>
 <h2 id="definitions-and-global-constraints">Definitions and Global
 Constraints</h2>
 <h3 id="system-structure">System Structure</h3>
-<p>{ Let <span class="math inline">\(Z = \{Z_1, Z_2, \dots,
-Z_n\}\)</span> be the full set of system variables. At game turn <span
+<p>Let <span class="math inline">\(Z = \{Z_1, Z_2, \dots, Z_n\}\)</span>
+be the full set of system variables. At game turn <span
 class="math inline">\(t\)</span>, define a partition where <span
 class="math inline">\(X(t) \subseteq Z\)</span>: are active variables
 (currently contributing to entropy) and <span class="math inline">\(M(t)
@@ -154,10 +154,10 @@ active variables <span class="math inline">\(X(t)\)</span> and latent
 information reservoir <span class="math inline">\(M(t)\)</span>: <span
 class="math display">\[
 G(\boldsymbol{\theta}) =
-\begin{pmatrix}
+\begin{bmatrix}
 G_{XX} &amp; G_{XM} \\
 G_{MX} &amp; G_{MM}
-\end{pmatrix}
+\end{bmatrix}
 \]</span> where <span class="math inline">\(G_{XX}\)</span> represents
 the information geometry within active variables, <span
 class="math inline">\(G_{MM}\)</span> within the latent reservoir, and
@@ -169,26 +169,24 @@ structure.</p>
 of the Minimal Entropy Configuration</h2>
 <p>The minimal-entropy state compatible with the system’s resolution
 constraint and regularity condition is represented by a density matrix
-of the exponential form: <span class="math display">\[
-\rho(\boldsymbol{\theta}_0) = \frac{1}{Z(\boldsymbol{\theta}_0)}
-\exp\left( \sum_i \theta_{0i} H_i \right),
-\]</span> where <span class="math inline">\(\boldsymbol{\theta}_0
-\approx \boldsymbol{0}\)</span>, and all components <span
-class="math inline">\(\theta_{0i}\)</span> are sub-threshold: <span
+of the exponential form, <span class="math display">\[
+\rho(\boldsymbol{\theta}_o) = \frac{1}{Z(\boldsymbol{\theta}_o)}
+\exp\left( \sum_i \theta_{oi} H_i \right),
+\]</span> where all components <span
+class="math inline">\(\theta_{oi}\)</span> are sub-threshold: <span
 class="math display">\[
-|\dot{\theta}_{0i}| &lt; \varepsilon
+|\dot{\theta}_{oi}| &lt; \varepsilon
 \]</span></p>
 <p>This state minimizes entropy under the constraint that it remains
-regular, continuous, and detectable only above a resolution scale <span
-class="math inline">\(\varepsilon \sim \frac{1}{2^N}\)</span>. Its
-structure can be derived via a <em>minimum-entropy</em> analogue of
+regular, continuous, and detectable only above a resolution scale $$.
+Its structure can be derived via a <em>minimum-entropy</em> analogue of
 Jaynes’ formalism, using the same density matrix geometry but inverted
 optimization.</p>
 <h3 id="lemma-2-symmetry-breaking">Lemma 2: Symmetry Breaking</h3>
 <p>If <span class="math inline">\(\theta_k \in M(t)\)</span> and <span
 class="math inline">\(|\dot{\theta}_k| \geq \varepsilon\)</span>, then
 <span class="math display">\[
-\theta_k \in X(t + \delta.
+\theta_k \in X(t + \delta t).
 \]</span></p>
 <h3 id="entropy-time">Entropy-Time</h3>
 <p><span class="math display">\[
@@ -231,7 +229,7 @@ Page</a></li>
 <li>blog: <a
 href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
-<h1 id="references">References</h1>
+<h1 id="appendix">Appendix</h1>
 <h2
 id="variational-derivation-of-the-initial-curvature-structure">Variational
 Derivation of the Initial Curvature Structure</h2>
@@ -400,6 +398,7 @@ ensures the system begins in a <em>regular, latent, low-entropy
 state</em>.</p>
 <p>This is the configuration from which entropy ascent and
 symmetry-breaking transitions emerge.</p>
+<h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
 <div id="ref-Beckner-fourier75" class="csl-entry" role="listitem">

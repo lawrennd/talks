@@ -44,8 +44,9 @@ transition: None
 \include{_information-game/includes/gradient-ascent-large-system.md}
 \include{_information-game/includes/four-bin-saddle-example.md}
 \include{_information-game/includes/jaynes-world-saddle-points.md}
-\include{_information-game/includes/gradient-flow-least-action.md}
-\include{_information-game/includes/epi-entropy-equivalence.md}
+\include{_information-game/includes/jaynes-world-gradient-flow.md}
+<!--\include{_information-game/includes/gradient-flow-least-action.md}
+\include{_information-game/includes/epi-entropy-equivalence.md}-->
 \include{_information-game/includes/spontaneous-organization.md}
 \include{_information-game/includes/conditional-independence-structures.md}
 \include{_information-game/includes/landauer-shannon-connection.md}

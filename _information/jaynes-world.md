@@ -43,7 +43,6 @@ transition: None
 <!-- How the system evolves and what properties emerge naturally -->
 <!-- Demonstrates the connection between information theory and physical dynamics -->
 \include{_information-game/includes/variable-activation-mechanism.md}
-\include{_information-game/includes/wave-equation-emergence.md}
 \include{_information-game/includes/emergent-observables.md}
 
 <!-- Part 5: Geometric Interpretation -->

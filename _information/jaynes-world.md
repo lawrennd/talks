@@ -30,6 +30,8 @@ transition: None
 \include{_information-game/includes/jaynesian-derivation-minimal-entropy.md}
 \include{_information-game/includes/jaynes-world-minimal-resolution.md}
 \include{_information-game/includes/fisher-information-matrix.md}
+\include{_information-game/includes/minimal-resolution-example.md}
+
 \include{_information-game/includes/entropy-dependence-views.md}
 \include{_information-game/includes/action-potential-formulation.md}
 
@@ -38,12 +40,14 @@ transition: None
 <!-- Shows how the system's evolution is bounded by information-theoretic principles -->
 
 \include{_information-game/includes/curvature-and-latency-conditions.md}
+\include{_information-game/includes/interaction-geometry-example.md}
 
 <!-- Part 4: Emergent Dynamics -->
 <!-- How the system evolves and what properties emerge naturally -->
 <!-- Demonstrates the connection between information theory and physical dynamics -->
 \include{_information-game/includes/variable-activation-mechanism.md}
 \include{_information-game/includes/emergent-observables.md}
+\include{_information-game/includes/classical-transition-example.md}
 
 <!-- Part 5: Geometric Interpretation -->
 <!-- The geometric and topographic structure of information -->

@@ -19,8 +19,6 @@ transition: None
 \include{_information-game/includes/jaynes-world-overview-and-definitions.md}
 \include{_information-game/includes/jaynes-world-speculations-and-interpretations.md}
 
-<!-- Software Setup -->
-\include{_software/includes/mlai-software.md}
 
 <!-- Part 1: Foundations and Motivation -->
 <!-- Historical context and introduction to the minimal entropy density matrix approach -->

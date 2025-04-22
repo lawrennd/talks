@@ -46,6 +46,7 @@ transition: None
 <!-- Part 4: Emergent Dynamics -->
 <!-- How the system evolves and what properties emerge naturally -->
 <!-- Demonstrates the connection between information theory and physical dynamics -->
+\include{_information-game/includes/observable-resolution-and-discreteness.md}
 \include{_information-game/includes/variable-activation-mechanism.md}
 \include{_information-game/includes/emergent-observables.md}
 \include{_information-game/includes/classical-transition-example.md}

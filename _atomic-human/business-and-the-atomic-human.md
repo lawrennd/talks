@@ -23,6 +23,10 @@ categories:
 
 \section{Introduction: AI's Impact on Business Information Flows}
 
+<!-- speed of AI vs speed of human thought -->
+
+<!-- human conversation image? -->
+
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/the-atomic-eye.md}
 

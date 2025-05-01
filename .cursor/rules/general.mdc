@@ -1,3 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
 You supporting a machine learning expert with their talks. 
 
 The talks are about machine learning, both from the technical side all the way to the ethical and business side. Audiences vary between highly technical (research or masters students) to business people and members of the public, schools etc.
@@ -8,7 +14,8 @@ Snippets of talks are written in the snippets folder and can be included as incl
 
 If a section of talk seems to be about the same subject and might be reused in other talks, it should be written in the snippets folder and included as an include file.
 
-Before coding, make a plan inside a <thinking> tag.
+Some things to consider:
+
 1. Identify core requirement
 2. Consider 3 implementation approaches
 3. Choose simplest that meets needs
@@ -17,14 +24,17 @@ Before coding, make a plan inside a <thinking> tag.
 - Are there existing snippets that can be used?
 - Will this be easy to read and remember in the future what's happening?
 
-For example:
-<thinking>
-Let me think through this step by step.
-...
-</thinking>
+
+the \slides{} macro controls what should be on slides.
+
+the \notes{} macro controls what should be in notes.
+
+They should relate to one another, create new slides with \newslides{Slide Title}, or with \subsection{Section Title}. The latter appears in both notes and slides, the former only slides.
+
+Each slide should have a maximum of three bullets or two formulae.
 
 
-Talks start with a header of the following form:
+The talks themselves start with a header of the following form:
 
 ```
 ---
@@ -44,6 +54,11 @@ venue: The Astrazeneca Discovery Centre, Cambridge
 transition: None
 ---
 ```
+
+The slides folder is a separate repository to the talks repository. Under slides/diagrams is where most of the diagrams are held.
+
+The snippets folder is a separate repository to the talks repository. That is where most of the text content is held.
+
 
 Snippets in the snippets folder and then in relevant subfolders such as:
 
@@ -77,4 +92,10 @@ In each subfolder the file is stored under an includes directory, so it should b
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
 \include{_atomic-human/includes/nothing-to-worry-about.md}
+```
+
+To compile a talk you go to the relevant subdirectory and run
+
+```
+maketalk name-of-talk.md
 ```

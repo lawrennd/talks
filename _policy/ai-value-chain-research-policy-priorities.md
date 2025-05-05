@@ -158,7 +158,7 @@ transition: None
 \subsection{The Attention Reinvestment Cycle}
 
 \slides{
-* AI economy increasingly driven by attention rather than productivity
+* Productivity cycle relies on financial signals
 * Disconnection between macro interventions and micro incentives
 * Leads to different power dynamics and distribution of benefits
 }
@@ -169,7 +169,7 @@ transition: None
 
 \include{_business/includes/attention-flywheel.md}
 
-\notes{This shift creates a fundamental challenge for policy. Traditional macroeconomic interventions don't necessarily connect to the microeconomic incentives in an attention-driven economy. Investments in infrastructure or education don't automatically translate to broadly shared benefits when the core dynamic is capturing and monetizing attention.}
+\notes{This shift creates a challenge for policy. Traditional macroeconomic interventions don't connect to the microeconomic incentives in an attention-driven economy. Investments in infrastructure or education don't automatically translate to broadly shared benefits when the core dynamic is capturing and monetising attention.}
 
 \section{Policy Implications for the AI Value Chain}
 
@@ -185,7 +185,7 @@ transition: None
 
 \notes{\include{_data-science/includes/data-readiness-levels-short.md}}
 
-\notes{Second, we need institutional innovations that can bridge between macro-level policy interventions and micro-level incentives in an attention economy. This might include data trusts, platform governance models, and other mechanisms that align corporate incentives with public benefits.}
+\notes{Second, we need institutional innovations that can bridge between macro-level policy interventions and micro-level incentives in an attention economy. This might include data trusts, platform governance models, and other mechanisms that align corporate incentives with public benefits. Overall we situate these interventions in the attention reinvestment cycle.}
 
 \include{_business/includes/supply-chain-of-ideas.md}
 
@@ -196,7 +196,7 @@ transition: None
 \notes{To guide effective policy development, several key research priorities emerge from this analysis of the AI value chain.}
 
 \slides{
-* How to connect macro policy to micro incentives in AI
+* How to connect macro policy to micro incentives 
 * Institutional innovations for data governance
 * Methods for effective public participation in AI governance
 }

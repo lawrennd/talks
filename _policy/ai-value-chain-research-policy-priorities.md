@@ -133,7 +133,7 @@ transition: None
 
 \notes{Work with the Royal Society showed that the public has nuanced and thoughtful views on AI technologies. They're not technophobic - they want AI that solves real problems in healthcare, education, and other domains. But they're concerned about transparency, accountability, and the distribution of benefits.}
 
-\include{_dialogue/includes/public-dialogue-health.md}
+\notes{\include{_dialogue/includes/public-dialogue-health.md}}
 
 \notes{O'Neill would likely argue that earning public trust in AI requires more than transparency - it requires demonstrating trustworthiness through institutions with clear duties and the capacity to fulfill them. In the AI value chain, this means creating governance structures that can bridge between high-level values and concrete practices, while maintaining the agency and professional judgment needed for intelligent accountability.}
 
@@ -183,7 +183,7 @@ transition: None
 
 \notes{First, policy must recognize data as the critical resource flowing through the AI value chain. The concentration of data collection and processing capabilities creates power imbalances that need to be addressed through thoughtful governance.}
 
-\include{_data-science/includes/data-readiness-levels-short.md}
+\notes{\include{_data-science/includes/data-readiness-levels-short.md}}
 
 \notes{Second, we need institutional innovations that can bridge between macro-level policy interventions and micro-level incentives in an attention economy. This might include data trusts, platform governance models, and other mechanisms that align corporate incentives with public benefits.}
 
@@ -207,9 +207,10 @@ transition: None
 
 \notes{And we need better methods for incorporating public values and priorities into AI governance across the value chain. This isn't just about consultation but about creating legitimate processes for societal direction-setting in technology development.}
 
+\notes{
 \include{_policy/includes/innovation-economy.md}
 \include{_policy/includes/innovation-economy-conclusion.md}
-
+}
 \section{Conclusion: Serving People, Science and Society}
 
 \slides{

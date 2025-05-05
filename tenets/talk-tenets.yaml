@@ -1,0 +1,7 @@
+tenets:
+- !!python/object/apply:collections.OrderedDict
+  - - - id
+      - audience-centered-design
+- !!python/object/apply:collections.OrderedDict
+  - - - id
+      - slide-simplicity

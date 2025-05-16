@@ -60,3 +60,15 @@ analytics:
 markdown: kramdown
 #future: true 
 future: true
+
+# Exclude these directories from being processed by Jekyll
+exclude:
+  - tenets
+  - cip
+  - backlog
+  - .cursor
+  - "*.sh"
+  - makefile
+  - Gemfile
+  - Gemfile.lock
+  - README.md

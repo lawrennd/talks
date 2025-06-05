@@ -41,11 +41,9 @@ def extract_tenet_metadata(file_path):
 def combine_tenets(directory, output_md, output_yaml):
     """Combine individual tenet files into a single markdown and YAML file."""
     files = glob.glob(os.path.join(directory, '*.md'))
-    files = [f for f in files if 'template' not in f.lower() and 'checklist' not in f.lower() and 'readme' not in f.lower()]
     files.sort()  # Sort files alphabetically
     
     tenets = []
-    tenets_yaml = []
     for file_path in files:
         with open(file_path, 'r') as file:
             content = file.read()
@@ -58,9 +56,9 @@ def combine_tenets(directory, output_md, output_yaml):
     
     # Write combined Markdown
     with open(output_md, 'w') as file:
-        file.write(f"# Talk Tenets\n\n")
+        file.write(f"# {os.path.basename(directory).capitalize()} Tenets\n\n")
         file.write(f"*Generated on {datetime.now().strftime('%Y-%m-%d')}*\n\n")
-        file.write("This document combines all individual tenet files for machine learning talks.\n\n")
+        file.write("This document combines all individual tenet files from the project.\n\n")
         file.write("\n\n".join(tenets))
     
     # Write YAML representation
@@ -69,11 +67,13 @@ def combine_tenets(directory, output_md, output_yaml):
 
 
 if __name__ == "__main__":
-    # Combine talk tenets
+    tenets_yaml = []
+    
+    # Combine VibeSafe tenets
     combine_tenets(
-        '.',
-        'talk-tenets.md',
-        'talk-tenets.yaml'
+        'vibesafe',
+        'vibesafe-tenets.md',
+        'vibesafe-tenets.yaml'
     )
     
     print("Tenets combined successfully!") 

@@ -3,7 +3,6 @@ description:
 globs: 
 alwaysApply: true
 ---
-
 You supporting a machine learning expert with their talks. 
 
 The talks are about machine learning, both from the technical side all the way to the ethical and business side. Audiences vary between highly technical (research or masters students) to business people and members of the public, schools etc.
@@ -53,6 +52,55 @@ papersize: a4paper
 venue: The Astrazeneca Discovery Centre, Cambridge
 transition: None
 ---
+```
+
+# Directory Structure
+
+## Repository Organization
+The talks and supporting content are organized across several repositories:
+
+1. `$HOME/lawrennd/talks/` - Main repository for talk markdown files
+2. `$HOME/lawrennd/snippets/` - Repository containing reusable text snippets
+3. `$HOME/lawrennd/slides/` - Repository containing diagrams and visual assets
+
+## Talks Repository Structure
+Inside the talks repository, folders are organized by topic category, with each folder containing talk markdown files:
+- `_ai/` - Artificial Intelligence talks
+- `_atomic-human/` - Content related to the Atomic Human book
+- `_business/` - Business implications of ML/AI
+- `_data-science/` - Data Science topics
+- `_economics/` - Economic aspects
+- `_ml/` - Machine Learning technical topics
+- `_philosophy/` - Philosophical discussions
+- And many more specialized topic directories
+
+A typical talk file is stored in its relevant topic directory, such as `_ai/what-kind-of-ai-have-we-created.md`.
+
+## Snippets Repository Structure
+The snippets repository mirrors the topic structure of the talks repository:
+- `$HOME/lawrennd/snippets/_ai/includes/` - Reusable snippets for AI talks
+- `$HOME/lawrennd/snippets/_business/includes/` - Business-related snippets
+- etc.
+
+These snippets are included in talks using the syntax:
+```
+\include{_ai/includes/atrophy-and-cognitive-flattening.md}
+```
+
+## Slides/Diagrams Repository Structure
+Diagrams are stored in:
+- `$HOME/lawrennd/slides/diagrams/` - Contains image files referenced in talks
+
+Diagrams are included in talks using macros like:
+```
+\includejpg{\diagramsDir/ai/nature-go}{50%}
+\includepng{\diagramsDir/ai/GoogleDeepMind-Logotype-Vertical_Black}{80%}
+```
+
+## Build System
+To compile a talk, navigate to the talks repository and run:
+```
+maketalk name-of-talk.md
 ```
 
 The slides folder is a separate repository to the talks repository. Under slides/diagrams is where most of the diagrams are held.

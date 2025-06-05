@@ -35,7 +35,7 @@ Each CIP can have one of the following statuses:
 
 ## Current CIPs
 
-- [CIP-0001](./cip0001.md): Establishing Talk Tenets
+- [CIP-0001](./cip0001.md): 
 
 ## Creating a Good CIP
 

@@ -80,9 +80,9 @@ Our bandwidth limitation is an intrinsic aspect of our intelligence that is over
 }
 
 \notes{
-The atomic human isn't only about understanding our limitations - it's about building systems that overcome them by working in synergy with who we are.
+The atomic human is reflected in our limitations and weaknesses, but also in how we build systems and cultures to overcome those limitations.
 
-The new paradigm of the HAM leaves an opportunity for Africa to show the world what this looks like in practice. Not by copying what others have done, but by building on the continent's own strengths and approaches. The 5 Ps framework was developed here by this community, it can now be deployed here to support the wider community.
+The HAM provides a paradigm that vies an opportunity for DSA to continue to show what this look likes in practice by building on the continent's own strengths and existing approaches approaches. The 5 Ps framework was developed here by this community, it can now be deployed here to support the wider community.
 
 By building these communities decade after decade, eventually we'll be in a position where the question is no longer whether Africa can catch up to the rest of the world. Instead it becomes whether the rest of the world can keep up with Africa's innovation in human-grounded technology and instituions.
 

@@ -6,7 +6,7 @@ abstract: >
 author:
 - family: Lawrence
   given: Neil D.
-date: 2025-06-09
+date: 2025-06-10
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: Advances in Data Science and Artificial Intelligence Conference 2025, Manchester

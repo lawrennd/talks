@@ -31,6 +31,8 @@ transition: None
 
 \include{_policy/includes/shannon-information.md}
 
+\subsection{Stochastic Parrots}
+
 \include{_atomic-human/includes/information-flows-diagram.md}
 
 \include{_ai/includes/bandwidth-vs-complexity.md}
@@ -64,6 +66,8 @@ transition: None
 \include{_policy/includes/innovation-flywheel.md}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
+
+\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \newslides{Learning from Africa}
 

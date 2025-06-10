@@ -78,6 +78,7 @@ transition: None
 * Engage with piecemeal social engineers
 * Move from grand narratives to practical deployment
 * Bridge technical and social domains
+* ai@cam <https://ai.cam.ac.uk>
 }
 
 \notes{In Cambridge, [we are putting these ideas into practice](https://ai.cam.ac.uk) through collaborative networks that use multidisciplinary, community-centered approaches to build capacity. We are developing solutions grounded in local context and needs @Cabrera-realworld23.}

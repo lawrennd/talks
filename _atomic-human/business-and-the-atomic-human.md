@@ -55,48 +55,25 @@ categories:
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_ai/includes/bandwidth-vs-complexity.md}
-
-\subsection{Understanding the Limitations}
-
-\include{_ai/includes/sedolian-voids.md}
-\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
-
-\section{System Zero: The Risk of Data-Driven Manipulation}
-
-\include{_ai/includes/system-zero.md}
-\include{_atomic-human/includes/their-data-comes-from-us.md}
-
 \newslides{The Business Challenge}
 
-\include{_business/includes/two-types-of-stochastic-parrot.md}
-\include{_business/includes/superficial-automation.md}
-
-\section{Building Trust and Accountability in AI Systems}
-
-\include{_business/includes/institutional-character.md}
-\include{_business/includes/black-box-thinking.md}
-
-\section{Practical Solutions for Business Implementation}
-
-\include{_business/includes/three-ai-actions.md}
-\include{_business/includes/attention-flywheel.md}
-\include{_ai/includes/intellectual-debt-short.md}
-\include{_business/includes/dealing-with-intellectual-debt.md}
-
-\newslides{Strategic Framework for Business AI}
-
-\include{_business/includes/supply-chain-of-ideas.md}
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 
 \section{Conclusion: The Business Imperative}
 
 \include{_business/includes/ft-op-ed.md}
-\include{_atomic-human/includes/nothing-to-worry-about.md}
+
+\newslide{Conclusion}
 
 \slides{
 * AI reshapes information flows - understand your information topography
 * Balance centralized control and devolved decision-making
 * Recognize LLMs as interfaces, not substitutes for human judgment
+}
+
+\newslide{Conclusion}
+
+\slides{
 * Build intelligent accountability into your AI deployments
 * Focus on domain expertise leading AI implementation
 * Invest in developing institutional character around AI use

@@ -49,7 +49,7 @@ transition: None
 
 \notes{The printing press left a legacy for Europe in an educational advantage that persists today. Human capital is a measure of the educated and healthy workforce. A 2019 World Bank report measured human capital and ranked 14 out of the top 20 countries were European. We can think of human capital as some form of measure of "human attention". In the attention economy it's the shortage of human attention the presents a bottleneck so this implies that in the attention economy Europe should have a significant advantage.}
 
-\newslides{The Automation Challenge}
+\newslide{The Automation Challenge}
 
 \slides{
 * Machines automate human "mental labor" with algorithmic decisions
@@ -64,6 +64,7 @@ transition: None
 \include{_policy/includes/productivity-paradox.md}
 
 \include{_policy/includes/innovation-flywheel.md}
+
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
 

@@ -15,11 +15,15 @@ transition: None
 
 \include{_policy/includes/ai-policy-challenges.md}
 
+\subsection{Society's Wicked Problems}
+
 \include{_atomic-human/includes/societys-wicked-problems-diagram.md}
 
 \notes{The question we face is how to bridge the gap between the remarkable technical capabilities of AI and their application to society's most pressing challenges. This requires understanding both the technical capabilities of these systems and the social contexts in which they operate.}
 
 \include{_policy/includes/philosophers-stone-to-agi.md}
+
+\subsection{Artificial General Vehicle}
 
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 
@@ -36,6 +40,8 @@ transition: None
 \include{_ai/includes/cuneiform.md}
 
 \include{_policy/includes/digital-autocracy.md}
+
+\subsection{Trust, Autonomy and Embodiment}
 
 \include{_atomic-human/includes/trust-autonomy-embodiment-diagram.md}
 

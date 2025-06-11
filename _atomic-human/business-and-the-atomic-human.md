@@ -25,12 +25,19 @@ categories:
 
 <!-- speed of AI vs speed of human thought -->
 
+\subsection{Artificial General Vehicle}
+
+\include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
+
+\notes{From a societal perspective, when understanding our new AI capabilities, one challenge we face is that notions of intelligence are very personal to us. Calling a machine intelligent triggers us to imagine a human-like intelligence as the drive behind the machine's decision-making capabilities. We anthropomorphize, but our anthropomorphizing becomes conflated with our understanding of the undoubted strengths of the machine.}
+
 <!-- human conversation image? -->
-
-\include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/the-atomic-eye.md}
+\include{_policy/includes/shannon-information.md}
+\include{_data-science/includes/new-flow-of-information.md}
 
-\newslides{The Evolution of Decision Making}
+
+\newslide{The Evolution of Decision Making}
 
 \include{_ai/includes/human-computers-interacting.md}
 \include{_business/includes/the-api-mandate-bezos.md}
@@ -45,23 +52,36 @@ categories:
 \include{_business/includes/bezos-question-mark-email.md}
 \include{_business/includes/executive-sponsorship.md}
 
-\newslides{Case Study: AI-Driven Decision Making at Scale}
+\newslide{Generative AI as HAM}
 
-\include{_ai/includes/facebook-us-elections.md}
-\include{_ai/includes/techonomy-facebook-congress.md}
+\slides{* Generative AI provides us with an "analogue human"
+* An information amplifier with a multiplier of 300,000,000.
+* Radically changes information infrastructure
+* From Conway's Law: All existing models redundant.}
 
 \section{Human-Analogue Machines (HAMs) as Business Tools}
 
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ai/includes/bandwidth-vs-complexity.md}
-\newslides{The Business Challenge}
+\newslide{The Business Challenge}
 
-\include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
+
+\newslide{What to do?}
+
+\slides{* We know weverything we're doing now is wrong.
+* We don't know how it's wrong.
+* "Marconi approach" unlikely to work
+
+}
 
 \section{Conclusion: The Business Imperative}
-
 \include{_business/includes/ft-op-ed.md}
+
+\newslide{Atomic Human Approach}
+
+\slides{* Human attention the differentiator.
+* Focus on how your human capital needs to adapt.
+* People first approach, not Ai first.}
 
 \newslide{Conclusion}
 

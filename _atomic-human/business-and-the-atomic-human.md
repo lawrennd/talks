@@ -81,13 +81,13 @@ categories:
 
 \slides{* Human attention the differentiator.
 * Focus on how your human capital needs to adapt.
-* People first approach, not Ai first.}
+* People first approach, not AI first.}
 
 \newslide{Conclusion}
 
 \slides{
 * AI reshapes information flows - understand your information topography
-* Balance centralized control and devolved decision-making
+* Balance centralised control and devolved decision-making
 * Recognize LLMs as interfaces, not substitutes for human judgment
 }
 

@@ -6,7 +6,7 @@ abstract: >
 author:
 - family: Lawrence
   given: Neil D.
-date: 2025-16-10
+date: 2025-06-16
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: CHIA Conference

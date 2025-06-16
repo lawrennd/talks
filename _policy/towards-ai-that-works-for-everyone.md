@@ -1,5 +1,5 @@
 ---
-title: "Mind the Gap: Bridging Innovation's Supply and Demand in the AI Era" 
+title: "Towards AI that Works for Everyone" 
 subtitle: "Addressing the disconnect between AI capabilities and societal needs"
 abstract: >
   Despite significant advances in machine learning technologies, public dialogues indicate that artificial intelligence is failing to deliver in the areas of most importance to UK citizens. In this talk we examine why this may be the case and using case studies of previous digital deployments suggest that there may be a dislocation between macroeconomic incentives for deployment and the micro economic demand. As a result, the innovation flywheel stalls for many of the domains we care about most leading to a new productivity paradox where the fruits of new technology are unevenly distributed through society. We examine an alternative model of innovation deployment that we call the attention reinvestment cycle.
@@ -9,7 +9,7 @@ author:
 date: 2025-06-16
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: CHIA Conference
+venue: Shaping the Future of AI, CHIA Annual Conference, West Court, Jesus College
 transition: None
 ---
 

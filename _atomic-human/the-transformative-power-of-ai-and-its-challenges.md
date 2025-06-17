@@ -187,7 +187,6 @@ Discussion: Feedback and surveys.
 
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 \include{_simulation/includes/the-moniac.md}
--1
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
 \subsection{Building Integrated Learning Systems}
@@ -228,6 +227,10 @@ Traditional metrics focused on efficiency must be complemented by measures of:
 * Decision quality (not just speed)
 * Human-machine collaboration effectiveness
 * Knowledge creation and distribution: Attention Reinvestment
+
+\subsection{Table Discussion}
+
+* How does personal automation vs systems automation vary with Generative AI?
 
 \subsection{Maintaining Human Agency While Leveraging Automation}
 

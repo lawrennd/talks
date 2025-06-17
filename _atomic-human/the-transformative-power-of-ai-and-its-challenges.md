@@ -185,9 +185,61 @@ Discussion: Feedback and surveys.
 
 \notes{Traditional competency models assume we know what skills will be needed in the future. In a rapidly changing environment driven by AI, this assumption breaks down. We need new approaches to talent development.}
 
+\newslide{The Evolution of Decision Making}
+
+\include{_ai/includes/human-computers-interacting.md}
+\include{_business/includes/the-api-mandate-bezos.md}
+
+\section{Information Topography: How AI Reshapes Organizational Decision Making}
+
+\include{_business/includes/an-attention-economy.md}
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+
+\subsection{Balancing Centralized Control with Devolved Authority}
+
+\include{_business/includes/bezos-question-mark-email.md}
+\include{_business/includes/executive-sponsorship.md}
+
+\newslide{Generative AI as HAM}
+
+\slides{* Generative AI provides us with an "analogue human"
+* An information amplifier with a multiplier of 300,000,000.
+* Radically changes information infrastructure
+* From Conway's Law: All existing models redundant.}
+
+\section{Human-Analogue Machines (HAMs) as Business Tools}
+
 \include{_atomic-human/includes/a-diversity-of-approaches-brings-resilience.md}
 \include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
+
+\newslide{The Business Challenge}
+
+\newslide{What to do?}
+
+\slides{* We know weverything we're doing now is wrong.
+* We don't know how it's wrong.
+* "Marconi approach" unlikely to work
+}
+
+\section{Conclusion: The Business Imperative}
+
+\include{_business/includes/ft-op-ed.md}
+
+\newslide{Atomic Human Approach}
+
+\slides{* Human attention the differentiator.
+* Focus on how your human capital needs to adapt.
+* People first approach, not AI first.}
+
+\newslide{Conclusion}
+
+\slides{
+* AI reshapes information flows - understand your information topography
+* Balance centralised control and devolved decision-making
+* Recognize LLMs as interfaces, not substitutes for human judgment
+}
 
 \subsection{Building Integrated Learning Systems}
 
@@ -216,7 +268,7 @@ Example:
 
 \subsection{Ethical Frameworks for Personal Data}
 
-**Example: Business Development at Amazon**  
+*Example: Business Development at Amazon*  
 When acquiring companies, we often encountered "difficult to place individuals who were irreplaceable in the acquired company" - these individuals defied algorithmic categorization but were essential to value creation. This required new frameworks for evaluation.
 
 \subsection{New Metrics for Human-Machine Collaboration}

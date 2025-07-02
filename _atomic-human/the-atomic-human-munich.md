@@ -28,6 +28,7 @@ transition: None
 \include{_ai/includes/shannon-bauby.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/conversation-tedx.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_ai/includes/conversation-computer.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/cuneiform.md}
@@ -35,6 +36,7 @@ transition: None
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
 \include{_ai/includes/people-culture-communicate.md}
+\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_books/includes/the-open-society-and-its-enemies.md}
 \include{_simulation/includes/the-moniac.md}

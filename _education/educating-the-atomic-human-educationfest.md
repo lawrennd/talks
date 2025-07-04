@@ -1,5 +1,6 @@
 ---
 title: "Educating the Atomic Human"
+subtitle: Preserving the Human in the Age of AI
 abstract: |
   A vital perspective is missing from the discussions we're having
   about Artificial Intelligence: what does it mean for our identity?
@@ -42,7 +43,7 @@ transition: None
 \include{_ai/includes/atrophy-and-cognitive-flattening.md}
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 \include{_ai/includes/the-atomic-eye.md}
-\include{_ai/includes/embodiment-factors-tedx.md}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_ai/includes/conversation-computer.md}

@@ -49,13 +49,24 @@ transition: None
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
 \include{_ai/includes/baby-shoes.md}
+
+\include{_ai/includes/cuneiform.md}
+\include{_books/includes/the-structure-of-scientific-revolutions.md}
 \include{_art/includes/blake-newton.md}
+\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_ai/includes/people-culture-communicate.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
+\include{_books/includes/the-open-society-and-its-enemies.md}
+\include{_art/includes/blake-newton.md}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 <!-- Requested to particularly reference climate as one challenge -->
+
+\section{Parallels with Climate}
+
 \include{_ai/includes/bandwidth-vs-complexity.md}
 \include{_atomic-human/includes/nothing-to-worry-about.md}
 

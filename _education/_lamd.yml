@@ -11,6 +11,7 @@ url: https://inverseprobability.com/
 talkcss: https://inverseprobability.com/assets/css/talks.css
 bibdir: $HOME/lawrennd/bibliography/
 people: $HOME/lawrennd/snippets/_people/people.yml
+macrosdir: $HOME/lawrennd/lamd/lamd/macros
 postsdir: ../_posts/
 slidesdir: $HOME/lawrennd/slides/
 notesdir: ../_notes/

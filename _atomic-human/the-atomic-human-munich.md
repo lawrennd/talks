@@ -19,13 +19,10 @@ transition: None
 
 \include{_ai/includes/henry-ford-intro.md}
 \include{_ai/includes/the-atomic-eye.md}
-\include{_physics/includes/max-planck.md}
-\include{_physics/includes/max-planck-letter.md}
-\include{_physics/includes/erwin-planck.md}
-\include{_politics/includes/manfred-rommel.md}
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/conversation-tedx.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}

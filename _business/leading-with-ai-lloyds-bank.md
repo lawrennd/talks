@@ -13,7 +13,7 @@ venue: Leading with AI Programme, Cambridge Judge Business School
 transition: None
 ---
 
-<!-- TIMING: 0:00-15:00 (15 minutes) -->
+<!-- TIMING: 0:00-15:00 (15 minutes) - OPTIONAL CUT: Skip atomic eye to save 3-4 minutes -->
 \section{Introduction: The Age of Human-Analogue Machines}
 
 \include{_ai/includes/henry-ford-intro.md}
@@ -24,7 +24,7 @@ transition: None
 
 \notes{Our fascination with AI stems from the perceived uniqueness of human intelligence. We believe it's what differentiates us. But to understand how AI will reshape banking, we first need to understand what makes human intelligence unique and how it differs from machine intelligence.}
 
-<!-- TIMING: 15:00-35:00 (20 minutes) -->
+<!-- TIMING: 15:00-35:00 (20 minutes) - OPTIONAL CUTS: Skip shannon-bauby (save 2 min) and conversation-tedx (save 3 min) -->
 \section{Understanding Human vs Machine Intelligence}
 
 \include{_ai/includes/diving-bell-butterfly.md}
@@ -43,7 +43,7 @@ transition: None
 
 \notes{The true potential of AI in banking isn't in replacing humans but in creating complementary systems that enhance human capabilities. Moving beyond the 'faster horse' mindset requires understanding what makes human intelligence uniquely valuable in financial services.}
 
-<!-- TIMING: 35:00-50:00 (15 minutes) -->
+<!-- TIMING: 35:00-50:00 (15 minutes) - OPTIONAL CUT: Skip evolution of decision making section to save 5 minutes -->
 \section{The Information Revolution in Banking}
 
 \include{_data-science/includes/new-flow-of-information.md}
@@ -71,17 +71,12 @@ transition: None
 
 \notes{In banking, this balance is particularly critical. You need centralized oversight for compliance and risk management, but you also need devolved decision-making for customer service and innovation. AI can help achieve both, but only if properly designed.}
 
-<!-- TIMING: 50:00-70:00 (20 minutes) -->
+<!-- TIMING: 50:00-70:00 (20 minutes) - OPTIONAL: Could combine with next section to save time -->
 \section{Maintaining Human Judgment in Critical Banking Decisions}
 
 \include{_software/includes/horizon-scandal.md}
 
 \notes{The Horizon scandal dramatically demonstrates what happens when human judgment is subordinated to algorithmic outputs. In banking, where decisions can have profound consequences for customers and the economy, maintaining human judgment is not optional - it's essential.}
-
-\notes{This doesn't mean rejecting AI, but rather designing systems that enhance human judgment rather than replace it.}
-
-<!-- TIMING: 70:00-90:00 (20 minutes) -->
-\section{The Trust Imperative in Banking}
 
 \notes{Banking is fundamentally built on trust - trust between customers and the bank, trust in the financial system, trust in the accuracy of information and decisions. AI systems fundamentally challenge how trust functions in banking organizations.}
 
@@ -145,30 +140,15 @@ transition: None
 
 \notes{The challenge for banking executives is that we know our current approaches to AI implementation are likely wrong, but we don't yet know exactly how they're wrong. This requires a different approach than the traditional "Marconi approach" of building the technology first and figuring out the applications later.}
 
-<!-- TIMING: 90:00-110:00 (20 minutes) -->
+<!-- TIMING: 90:00-110:00 (20 minutes) - OPTIONAL CUTS: Skip Amazon Thoughtsday example (save 5 min) -->
 \section{The Uncertainty Principle of Human Capital Quantification}
 
 \include{_economics/includes/human-capital-inflation.md}
 
 \notes{The more we try to precisely quantify human contribution in banking, the more we risk changing the nature of that contribution. This creates fundamental challenges for performance management in AI-augmented banking organizations.}
 
-\section{Organizational Culture as Competitive Differentiator in Banking}
-
 \notes{In an age where algorithms become commoditized, organizational culture becomes the primary competitive advantage. This is particularly true in banking where trust, relationships, and ethical behavior are central to success.}
 
-\section{Creating Environments for Reflexive and Reflective Decision-Making}
-
-\subsection{Example: Amazon's "Thoughtsday"}
-
-\notes{Amazon's supply chain operations combine rapid algorithmic decisions with dedicated time for deeper human reflection - creating complementary systems that leverage both machine efficiency and human wisdom. Banking organizations need similar structures.}
-
-\section{Information Topography: Strategic Implications for Banking}
-
-\include{_atomic-human/includes/trust-autonomy-embodiment.md}
-
-\notes{Understanding the information topography of your organization is crucial for strategic AI implementation. This means mapping how information flows through your organization and identifying where human judgment is most critical.}
-
-<!-- TIMING: 110:00-130:00 (20 minutes) -->
 \section{The Business Imperative: People First, Not AI First}
 
 \include{_business/includes/ft-op-ed.md}
@@ -181,25 +161,6 @@ transition: None
 
 \notes{The organizations that will succeed in the AI age will not be those that most aggressively automate, but those that most thoughtfully integrate human and machine intelligence to create systems greater than the sum of their parts.}
 
-<!-- TIMING: 130:00-140:00 (10 minutes) -->
-\section{Practical Implications for Banking Executives}
-
-\subsection{Ethical Frameworks for AI in Banking}
-
-*Example: Risk Assessment and Customer Service*  
-In banking, AI systems must be designed with ethical frameworks that ensure fair treatment of customers, appropriate risk assessment, and transparent decision-making processes.
-
-\subsection{New Metrics for Human-Machine Collaboration in Banking}
-
-Traditional banking metrics focused on efficiency must be complemented by measures of:
-
-* Customer trust and satisfaction
-* Decision quality (not just speed)
-* Human-machine collaboration effectiveness
-* Regulatory compliance and ethical behavior
-* Knowledge creation and distribution: Attention Reinvestment
-
-\subsection{Maintaining Human Agency While Leveraging Automation}
 
 \include{_business/includes/superficial-automation.md}
 
@@ -209,16 +170,11 @@ Traditional banking metrics focused on efficiency must be complemented by measur
 
 \notes{Banking executives must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight.}
 
+<!-- TIMING: 140:00-150:00 (10 minutes) - OPTIONAL: Could combine with conclusion -->
 \section{The Future of Banking: Architecting Human-Machine Collaboration}
 
 \include{_atomic-human/includes/river-gods-decide.md}
 
-\notes{The role of banking executives is evolving from operational leaders to organizational architects - designing systems that protect and enhance what makes humans uniquely valuable while leveraging the computational power of AI.}
-
-\notes{The banks that will succeed will not be those that most aggressively automate, but those that most thoughtfully integrate human and machine intelligence to create systems greater than the sum of their parts.}
-
-<!-- TIMING: 140:00-150:00 (10 minutes) -->
-\section{Conclusion: Strategic Priorities for Banking Leaders}
 
 \newslide{Conclusion}
 
@@ -239,6 +195,27 @@ Traditional banking metrics focused on efficiency must be complemented by measur
 }
 
 \notes{The future of banking in the AI age is not about choosing between humans and machines, its about creating systems that leverage the best of both. The organizations that will thrive will be those that understand that human attention, judgment, and relationships remain the most valuable assets in banking, even as AI becomes ubiquitous.}
+
+<!-- TIMING: 160:00-180:00 (20 minutes) - DISCUSSION TIME FOR SENIOR EXECUTIVES -->
+<!-- SUGGESTED DISCUSSION TOPICS: -->
+<!-- 1. What are the biggest challenges you're facing with AI implementation? -->
+<!-- 2. How are you balancing automation with human judgment in your organization? -->
+<!-- 3. What does "people first, not AI first" mean in practice for your bank? -->
+<!-- 4. How are you maintaining customer trust while implementing AI? -->
+
+<!-- TOTAL TIMING: 180 minutes (3 hours) - NEED TO CUT TO 90 minutes for 1.5-hour session -->
+<!-- SUGGESTED CUTS TO REACH 90 MINUTES: -->
+<!-- 1. Skip atomic eye (save 3-4 min) -->
+<!-- 2. Skip shannon-bauby and conversation-tedx (save 5 min) -->
+<!-- 3. Skip evolution of decision making section (save 5 min) -->
+<!-- 4. Combine judgment and trust sections (save 10 min) -->
+<!-- 5. Skip Amazon Thoughtsday example (save 5 min) -->
+<!-- 6. Skip detailed metrics section (save 5 min) -->
+<!-- 7. Skip board literacy section (save 3 min) -->
+<!-- 8. Streamline conclusion (save 5 min) -->
+<!-- TOTAL SAVINGS: ~41 minutes, bringing total to ~139 minutes -->
+<!-- ADDITIONAL CUTS NEEDED: ~49 minutes to reach 90 minutes -->
+<!-- CONSIDER: Reducing discussion time to 15 minutes, cutting more examples, or creating a shorter version -->
 
 \include{_books/includes/the-atomic-human.md}
 

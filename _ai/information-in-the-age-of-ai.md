@@ -1,7 +1,7 @@
 ---
 title: "Information in the Age of AI"
 abstract: >
-  : As AI technologies reshape the business landscape, leaders face questions about balancing automation with individual judgment, information flows, and organisational decision-making. This talk builds on the ideas in Atomic Human to explore the practical implications of AI for businesses through the lens of information topography, decision-making structures, and human-AI collaboration. Drawing from real-world examples and insights from *The Atomic Human* we’ll explore how businesses can strategically implement AI while maintaining human agency, intelligent accountability, and organisational effectiveness.
+  As AI technologies reshape the business landscape, leaders face questions about balancing automation with individual judgment, information flows, and organisational decision-making. This talk builds on the ideas in Atomic Human to explore the practical implications of AI for businesses through the lens of information topography, decision-making structures, and human-AI collaboration. Drawing from real-world examples and insights from *The Atomic Human* we’ll explore how businesses can strategically implement AI while maintaining human agency, intelligent accountability, and organisational effectiveness.
 author:
 - given: Neil D.
   family: Lawrence
@@ -11,6 +11,7 @@ author:
   gscholar: r3SJcvoAAAAJ
   orcid: 
 date: 2025-09-04
+venue: Remote, from Nyeri, Kenya
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -83,16 +84,30 @@ categories:
 * Focus on how your human capital needs to adapt.
 * People first approach, not AI first.}
 
-\newslide{Example: The Trent Approach}
+\section{Why am I in Kenya?}
+
+\notes{I'm currently deliverying a four week course on machine learning foundations to colleagues at Dedan Kimathi University of Technology in Nyeri, Kenya. How is this relevant to the Trent mission? From a technological perspective, Africa is very advanced with large band width mobile phone networks. But from a classical infrastructure perspective, and in areas such of health and education there is a lot of work to do. However, this presents a significant opportunity of understanding. I first came to Nyeri 10 years ago, the philosophy of how Data Science Africa works is laid out in a Guardian article from the time.
+A large advantage of the African landscape is that new solutions can be imagined using local capabilities and modern technology.
+
+Most of the ideas I worked on in Amazon are inspired by challenges my colleagues experience in the African context, that turn out to also be unresolved challenges for large tech companies such as Amazon.}
+
+\include{_data-science/includes/data-science-africa.md}
+
+\subsection{The Trent Approach}
 
 \figure{\includepng{\diagramsDir/logos/trent-white}{80%}}{}{trent-logo}
 
-\newslide{Example: The Trent Approach}
+\notes{At trent.ai we are putting this into practice by working closely with the *People* who are close to the *Systems*. We are addressing real pain points *now*. But ensuring we have a view on the long term change that comes with this radical disruption to our information systems. We are doing this by bridging in to the best agentic AI technology, both our proprietary work and commercial tools.}
+
+\newslide{ The Trent Approach}
 
 \slides{* Work with People who are close to Systems.
 * Address real pain points now.
 * Hold a view on the long term change (information systems).
 * Use the best agentic AI technology (proprietary).}
+
+
+
 
 \newslide{Conclusion}
 

@@ -1,7 +1,7 @@
 ---
 title: "Information in the Age of AI"
 abstract: >
-  : As AI technologies reshape the business landscape, leaders face questions about balancing automation with individual judgment, information flows, and organisational decision-making. This talk builds on the ideas in Atomic Human to explore the practical implications of AI for businesses through the lens of information topography, decision-making structures, and human-AI collaboration. Drawing from real-world examples and insights from the book we’ll explore how businesses can strategically implement AI while maintaining human agency, intelligent accountability, and organisational effectiveness.
+  : As AI technologies reshape the business landscape, leaders face questions about balancing automation with individual judgment, information flows, and organisational decision-making. This talk builds on the ideas in Atomic Human to explore the practical implications of AI for businesses through the lens of information topography, decision-making structures, and human-AI collaboration. Drawing from real-world examples and insights from *The Atomic Human* we’ll explore how businesses can strategically implement AI while maintaining human agency, intelligent accountability, and organisational effectiveness.
 author:
 - given: Neil D.
   family: Lawrence
@@ -22,6 +22,8 @@ categories:
 \section{Introduction: AI's Impact on Business Information Flows}
 
 <!-- speed of AI vs speed of human thought -->
+
+\include{_books/includes/the-atomic-human.md}
 
 \subsection{Artificial General Vehicle}
 
@@ -81,11 +83,16 @@ categories:
 * Focus on how your human capital needs to adapt.
 * People first approach, not AI first.}
 
-\newslide{The Trent Approach}
+\newslide{Example: The Trent Approach}
 
-\slides{* Address real pain points now (cybersecurity).
-* With a view on the long term change (information systems).
-* With the best agentic AI technology (proprietary).}
+\figure{\includepng{\diagramsDir/logos/trent-white}{80%}}{}{trent-logo}
+
+\newslide{Example: The Trent Approach}
+
+\slides{* Work with People who are close to Systems.
+* Address real pain points now.
+* Hold a view on the long term change (information systems).
+* Use the best agentic AI technology (proprietary).}
 
 \newslide{Conclusion}
 

@@ -36,6 +36,8 @@ Each CIP can have one of the following statuses:
 ## Current CIPs
 
 - [CIP-0001](./cip0001.md): 
+- [CIP-0002](./cip0002.md): Data Science Africa Keynote: The Atomic Human and Africa's Digital Future
+- [CIP-0003](./cip0003.md): AI and Security Talk for Startup: From Bandwidth to Practical Security Implications
 
 ## Creating a Good CIP
 

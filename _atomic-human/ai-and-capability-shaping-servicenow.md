@@ -14,7 +14,7 @@ author:
   gscholar: r3SJcvoAAAAJ
   orcid: 
 date: 2025-11-05
-venue: ServiceNow Corporate Event
+venue: ServiceNow AI Conference
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

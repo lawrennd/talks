@@ -112,6 +112,9 @@ categories:
 
 \comment{Connect directly to ServiceNow leadership capabilities. Make this actionable for leaders in the room.}
 
+\include{_data-science/includes/data-science-africa.md}
+\include{_business/includes/why-start-trent.md}
+
 \newslide{Conclusion}
 
 \slides{

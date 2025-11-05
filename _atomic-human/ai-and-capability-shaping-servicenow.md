@@ -41,6 +41,7 @@ categories:
 \include{_ai/includes/the-atomic-eye.md}
 \include{_policy/includes/shannon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}
+\include{_ai/includes/conversation-tedx.md}
 
 \comment{Connect information bandwidth to team collaboration. ServiceNow values "Create Belonging" - AI can help bridge information gaps that prevent effective teamwork.}
 
@@ -59,25 +60,19 @@ categories:
 
 \comment{Trust is one of ServiceNow's core capabilities. Emphasize that AI deployment requires trust - both in systems and between team members. Organizations that "Build Trust" will be most successful with AI.}
 
-\subsection{Balancing Centralized Control with Devolved Authority}
+\subsection{Balancing Centralised Control with Devolved Authority}
 
 \include{_business/includes/bezos-question-mark-email.md}
 \include{_business/includes/executive-sponsorship.md}
 
-\comment{Connect to "Shapes Enterprise Vision and Strategy" capability. Leaders need to create conditions where AI empowers teams rather than centralizing control.}
+\comment{Connect to "Shapes Enterprise Vision and Strategy" capability. Leaders need to create conditions where AI empowers teams rather than centralising control.}
 
-\newslide{Generative AI as HAM}
 
-\slides{* Generative AI provides us with an "analogue human"
-* An information amplifier with a multiplier of 300,000,000.
-* Radically changes information infrastructure
-* From Conway's Law: All existing models redundant.}
 
 \comment{Frame as opportunity for those who are "Hungry and Humble" - willingness to learn new ways of working becomes competitive advantage.}
 
-\section{Human-Analogue Machines: Amplifying Your Team's Capabilities}
+\include{_simulation/includes/the-moniac.md}
 
-\comment{Retitle and reframe this section. HAMs as tools that make hungry, curious teams more effective. Connect to "Innovates Relentlessly" - AI enables faster iteration and experimentation for teams with growth mindset.}
 
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
@@ -93,15 +88,9 @@ categories:
 * "Marconi approach" unlikely to work
 }
 
-\comment{Add practical guidance here. How do teams stay "Hungry and Humble" in face of AI change? Growth mindset, experimentation, learning together.}
+\section{The Human Capital Advantage: Invest in People}
 
-\section{The Human Capital Advantage: Why Companies that Invest in People Win}
-
-\comment{NEW SECTION. This should be the climax. Companies that recognize human capital as differentiator will win with AI. Those that see people as costs to be automated away will lose. Connect to ServiceNow's "Create Belonging" and "Wow Our Customers" - customers are wowed by empowered, AI-enhanced teams, not by replacing humans with chatbots.}
-
-\comment{Include examples of companies that enhanced vs replaced. Show business outcomes - customer satisfaction, innovation, retention. Make the business case for human-capital-first AI strategy.}
-
-\section{Conclusion: Winning as a Team in the AI Age}
+\include{_business/includes/attention-reinvestment-cycle.md}
 
 \comment{Reframe conclusion around ServiceNow principles. Teams that embrace AI while staying hungry and humble. Organizations that create belonging through technology. Leaders who build trust while deploying AI.}
 
@@ -111,10 +100,8 @@ categories:
 
 \slides{* AI amplifies human capabilities - if you invest in people
 * Human judgment, creativity, and collaboration become MORE valuable
-* Companies that recognize human capital as differentiator will win
+* Companies that recognise human capital is diffrentiator
 * Fear is natural - but growth mindset is competitive advantage}
-
-\comment{This should inspire and motivate. Address the fear directly but show the opportunity. Those who lean in will thrive.}
 
 \newslide{Your Leadership Imperative}
 

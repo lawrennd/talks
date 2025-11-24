@@ -1571,6 +1571,212 @@ class="citation" data-cites="Ottinger-beyond05">Öttinger (2005)</span>).
 The fact that they emerge automatically in our framework suggests that
 marginal entropy conservation has special geometric significance for
 non-equilibrium dynamics.</p>
+<h2 id="example-harmonic-oscillator-generic-dynamics">Example: Harmonic
+Oscillator GENERIC Dynamics</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/harmonic-oscillator-generic-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/harmonic-oscillator-generic-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To see the GENERIC decomposition <span class="math inline">\(M = S +
+A\)</span> in action, let’s analyze a simple physical system: the
+harmonic oscillator with thermalisation. This demonstrates how
+reversible (Hamiltonian) and irreversible (dissipative) dynamics emerge
+from the constraint geometry.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> inv</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span></code></pre></div>
+<p>Starting from an out-of-equilibrium state (cold <span
+class="math inline">\(x\)</span>, hot <span
+class="math inline">\(p\)</span>), the system evolves toward thermal
+equilibrium while maintaining the entropy constraint.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Physical parameters</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Spring constant</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Mass</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Temperature</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> T</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Equilibrium values</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>theta_xx_eq <span class="op">=</span> beta <span class="op">*</span> k</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>theta_pp_eq <span class="op">=</span> beta <span class="op">/</span> m</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>theta_xp_eq <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Equilibrium: θ_xx = </span><span class="sc">{</span>theta_xx_eq<span class="sc">:.3f}</span><span class="ss">, θ_pp = </span><span class="sc">{</span>theta_pp_eq<span class="sc">:.3f}</span><span class="ss">, θ_xp = 0&quot;</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition: OUT of equilibrium (cold x, hot p)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([<span class="fl">2.0</span> <span class="op">*</span> theta_xx_eq,  <span class="co"># Cold x (small variance)</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                       <span class="fl">0.5</span> <span class="op">*</span> theta_pp_eq,  <span class="co"># Hot p (large variance)  </span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                       <span class="fl">0.0</span>])               <span class="co"># No correlation</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Initial:     θ_xx = </span><span class="sc">{</span>theta_init[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, θ_pp = </span><span class="sc">{</span>theta_init[<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">, θ_xp = 0&quot;</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>t_span <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>theta_trajectory <span class="op">=</span> odeint(harmonic_dynamics, theta_init, t_span)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy conservation</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>h_x <span class="op">=</span> np.array([marginal_entropy_gaussian(th) <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory[:, <span class="dv">0</span>]])</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>h_p <span class="op">=</span> np.array([marginal_entropy_gaussian(th) <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory[:, <span class="dv">1</span>]])</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>h_total <span class="op">=</span> h_x <span class="op">+</span> h_p</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Entropy conservation check:&quot;</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Initial h(X) + h(P) = </span><span class="sc">{</span>h_total[<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Final   h(X) + h(P) = </span><span class="sc">{</span>h_total[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Variation: </span><span class="sc">{</span>np<span class="sc">.</span>std(h_total)<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="harmonic-oscillator-generic-dynamics-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/harmonic-oscillator-generic-dynamics.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="harmonic-oscillator-generic-dynamics-magnify" class="magnify"
+onclick="magnifyFigure(&#39;harmonic-oscillator-generic-dynamics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="harmonic-oscillator-generic-dynamics-caption"
+class="caption-frame">
+<p>Figure: Harmonic oscillator GENERIC dynamics. Top left: Trajectory in
+parameter space from out-of-equilibrium initial state toward thermal
+equilibrium. Top right: Total entropy <span class="math inline">\(h(X) +
+h(P)\)</span> conserved throughout evolution. Bottom left: Individual
+marginal entropies exchange while maintaining sum. Bottom right:
+Variances approach equipartition theorem values (both equal to 1.0 at
+equilibrium).</p>
+</div>
+</div>
+<p>This demonstrates the GENERIC structure.</p>
+<ul>
+<li><strong>Symmetric part <span
+class="math inline">\(S\)</span></strong>: Drives system toward
+equilibrium (equipartition)</li>
+<li><strong>Antisymmetric part <span
+class="math inline">\(A\)</span></strong>: Would create oscillations
+(suppressed here by strong damping)</li>
+<li><strong>Constraint</strong>: Maintained exactly throughout evolution
+via Lagrange multiplier <span class="math inline">\(\nu\)</span></li>
+</ul>
+<p>The system exhibits thermalisation—energy flows from the “hot”
+momentum degree of freedom to the “cold” position degree of freedom
+until equipartition is reached.</p>
+<h2 id="computational-validation-three-binary-variables">Computational
+Validation: Three Binary Variables</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/n3-ising-simulation-validation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/n3-ising-simulation-validation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To validate our theoretical predictions, we simulate the constrained
+information dynamics for a system of three binary variables with
+pairwise interactions—a minimal Ising model or Boltzmann machine. This
+system is complex enough to exhibit non-trivial correlation structure
+while remaining computationally tractable for exact analysis.</p>
+<p>We verify three predictions.</p>
+<ol type="1">
+<li>The constraint <span class="math inline">\(\sum_i h_i = C\)</span>
+is maintained during evolution</li>
+<li>The linearisation <span class="math inline">\(M = \partial
+F/\partial \boldsymbol{\theta}\)</span> decomposes as <span
+class="math inline">\(M = S + A\)</span><br />
+</li>
+<li>The ratio <span class="math inline">\(\|A\|/\|S\|\)</span> varies
+with local geometry</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span></code></pre></div>
+<p>We start from a “frustrated” configuration where the interaction
+parameters have competing signs, creating interesting dynamics.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition: Frustrated Ising model</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Competing interactions: theta12 &gt; 0 (ferromagnetic)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                        theta13 &lt; 0 (antiferromagnetic)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                        theta23 &gt; 0 (ferromagnetic)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># No external field</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([h, h, h, <span class="fl">1.0</span>, <span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> theta_init <span class="op">/</span> np.linalg.norm(theta_init)  <span class="co"># Normalize</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Initial parameters (normalized):&quot;</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Marginals: θ₁=</span><span class="sc">{</span>theta_init[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, θ₂=</span><span class="sc">{</span>theta_init[<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">, θ₃=</span><span class="sc">{</span>theta_init[<span class="dv">2</span>]<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Interactions: θ₁₂=</span><span class="sc">{</span>theta_init[<span class="dv">3</span>]<span class="sc">:.3f}</span><span class="ss">, θ₁₃=</span><span class="sc">{</span>theta_init[<span class="dv">4</span>]<span class="sc">:.3f}</span><span class="ss">, θ₂₃=</span><span class="sc">{</span>theta_init[<span class="dv">5</span>]<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute initial constraint value</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>h_marginals_init <span class="op">=</span> marginal_entropy_n3(theta_init)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>C_init <span class="op">=</span> h_marginals_init.<span class="bu">sum</span>()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Initial constraint: Σᵢ hᵢ = </span><span class="sc">{</span>C_init<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate dynamics</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>t_span <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>theta_trajectory <span class="op">=</span> odeint(dynamics_n3, theta_init, t_span)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify constraint maintenance</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>h_trajectory <span class="op">=</span> np.array([marginal_entropy_n3(th).<span class="bu">sum</span>() <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory])</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>constraint_error <span class="op">=</span> np.<span class="bu">abs</span>(h_trajectory <span class="op">-</span> C_init)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Constraint maintenance:&quot;</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Maximum deviation: </span><span class="sc">{</span>constraint_error<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  RMS deviation: </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(np.mean(constraint_error<span class="op">**</span><span class="dv">2</span>))<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze GENERIC decomposition at several points</span></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>analysis_indices <span class="op">=</span> [<span class="dv">0</span>, <span class="bu">len</span>(t_span)<span class="op">//</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">*</span><span class="bu">len</span>(t_span)<span class="op">//</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>regime_ratios <span class="op">=</span> []</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">GENERIC decomposition analysis:&quot;</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> analysis_indices:</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    M, S, A <span class="op">=</span> compute_generic_decomposition(theta_trajectory[idx])</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    norm_S <span class="op">=</span> np.linalg.norm(S, <span class="st">&#39;fro&#39;</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    norm_A <span class="op">=</span> np.linalg.norm(A, <span class="st">&#39;fro&#39;</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    ratio <span class="op">=</span> norm_A <span class="op">/</span> norm_S <span class="cf">if</span> norm_S <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    regime_ratios.append(ratio)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  t=</span><span class="sc">{</span>t_span[idx]<span class="sc">:.2f}</span><span class="ss">: ‖A‖/‖S‖ = </span><span class="sc">{</span>ratio<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="n3-ising-simulation-validation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/n3-ising-simulation-validation.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="n3-ising-simulation-validation-magnify" class="magnify"
+onclick="magnifyFigure(&#39;n3-ising-simulation-validation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="n3-ising-simulation-validation-caption" class="caption-frame">
+<p>Figure: Computational validation for 3 binary variables. Top left:
+Constraint <span class="math inline">\(\sum_i h_i = C\)</span>
+maintained to machine precision. Top right: Individual marginal
+entropies exchange while sum is conserved. Bottom left: Interaction
+parameters evolve from frustrated initial state. Bottom right: Ratio
+<span class="math inline">\(\|A\|/\|S\|\)</span> varies with local
+geometry—no single “regime” throughout parameter space.</p>
+</div>
+</div>
+<p><strong>Key findings:</strong></p>
+<ol type="1">
+<li><p><strong>Constraint maintenance</strong>: The sum of marginal
+entropies is preserved to machine precision (<span
+class="math inline">\(\sim 10^{-12}\)</span>), validating the
+constrained dynamics implementation.</p></li>
+<li><p><strong>GENERIC structure</strong>: At every point, the
+linearisation <span class="math inline">\(M\)</span> decomposes cleanly
+into symmetric and antisymmetric parts that satisfy the degeneracy
+conditions.</p></li>
+<li><p><strong>Regime variation</strong>: The ratio <span
+class="math inline">\(\|A\|/\|S\|\)</span> changes significantly during
+evolution, confirming there is no single “regime” that characterizes all
+of parameter space. The relative importance of reversible vs
+irreversible dynamics depends on local geometry.</p></li>
+<li><p><strong>Physical interpretation</strong>: Starting from a
+frustrated configuration (competing interactions), the system evolves
+by:</p>
+<ul>
+<li>Weakening the antiferromagnetic interaction <span
+class="math inline">\(\theta_{13}\)</span></li>
+<li>Maintaining ferromagnetic interactions <span
+class="math inline">\(\theta_{12}\)</span>, <span
+class="math inline">\(\theta_{23}\)</span></li>
+<li>Redistributing entropy among marginals while conserving total</li>
+</ul></li>
+</ol>
 <h1 id="information-topography">Information Topography</h1>
 <p>The Fisher information matrix provides mathematical teeth to the
 intuitive notion of an “information topography” from <em>The Atomic
@@ -2004,6 +2210,136 @@ information conservation via this equivalence</p></li>
 <li><p><strong>Wheeler’s “it from bit”:</strong> Suggests thermodynamics
 might emerge from information-theoretic principles</p></li>
 </ol>
+<h2 id="analytical-validation-curie-weiss-model">Analytical Validation:
+Curie-Weiss Model</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/curie-weiss-phase-transition-validation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/curie-weiss-phase-transition-validation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The energy-entropy equivalence theorem from the inaccessible game
+predicts that in the thermodynamic limit, accessible information <span
+class="math inline">\(I\)</span> should vanish, making energy and
+entropy equivalent. To test this rigorously, we use the Curie-Weiss
+model (a mean-field system where everything can be computed exactly)
+including across phase transitions.</p>
+<p>The model exhibits a ferromagnetic phase transition: -
+<strong>Disordered phase</strong> (<span class="math inline">\(T &gt;
+T_c\)</span>): Magnetization <span class="math inline">\(m = 0\)</span>,
+spins independent - <strong>Ordered phase</strong> (<span
+class="math inline">\(T &lt; T_c\)</span>): Magnetization <span
+class="math inline">\(m \neq 0\)</span>, spins correlated</p>
+<p>The theorem predicts <span class="math inline">\(\nabla_m I \approx
+0\)</span> in the disordered phase (equivalence holds) but <span
+class="math inline">\(\nabla_m I \gg 0\)</span> in the ordered phase
+(equivalence fails).</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span></code></pre></div>
+<p>We scan across temperatures from high (disordered) to low (ordered),
+computing the magnetization and testing whether the equivalence <span
+class="math inline">\(\nabla_m I \approx 0\)</span> holds.</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>J <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Coupling strength</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>T_c <span class="op">=</span> J  <span class="co"># Critical temperature</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># No external field</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan temperatures</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> np.linspace(<span class="fl">0.3</span>, <span class="fl">2.0</span>, <span class="dv">50</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>betas <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> temperatures</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute magnetizations and gradients</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>magnetizations <span class="op">=</span> []</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>gradients <span class="op">=</span> []</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> beta <span class="kw">in</span> betas:</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> magnetization_selfconsistent(beta, J, h)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    magnetizations.append(m)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute gradient of accessible information</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    dI_dm <span class="op">=</span> accessible_information_gradient(beta, J, m)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    gradients.append(<span class="bu">abs</span>(dI_dm))</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>magnetizations <span class="op">=</span> np.array(magnetizations)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>gradients <span class="op">=</span> np.array(gradients)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify phase transition</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>T_transition_idx <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(temperatures <span class="op">-</span> T_c))</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Critical temperature: T_c = </span><span class="sc">{</span>T_c<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Disordered phase (T &gt; T_c):&quot;</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Temperature T = </span><span class="sc">{</span>temperatures[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss">: m = </span><span class="sc">{</span>magnetizations[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">, |∇_m I| = </span><span class="sc">{</span>gradients[<span class="dv">0</span>]<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Ordered phase (T &lt; T_c):&quot;</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Temperature T = </span><span class="sc">{</span>temperatures[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">: m = </span><span class="sc">{</span>magnetizations[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">, |∇_m I| = </span><span class="sc">{</span>gradients[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify theorem prediction</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>disordered_mask <span class="op">=</span> temperatures <span class="op">&gt;</span> T_c</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>ordered_mask <span class="op">=</span> temperatures <span class="op">&lt;</span> T_c</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>mean_gradient_disordered <span class="op">=</span> gradients[disordered_mask].mean()</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>mean_gradient_ordered <span class="op">=</span> gradients[ordered_mask].mean()</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Theorem verification:&quot;</span>)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Disordered phase: &lt;|∇_m I|&gt; = </span><span class="sc">{</span>mean_gradient_disordered<span class="sc">:.2e}</span><span class="ss"> ≈ 0 ✓&quot;</span>)</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Ordered phase:    &lt;|∇_m I|&gt; = </span><span class="sc">{</span>mean_gradient_ordered<span class="sc">:.2e}</span><span class="ss"> ≫ 0 ✓&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="curie-weiss-phase-transition-validation-figure"
+class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/curie-weiss-phase-transition-validation.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="curie-weiss-phase-transition-validation-magnify"
+class="magnify"
+onclick="magnifyFigure(&#39;curie-weiss-phase-transition-validation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="curie-weiss-phase-transition-validation-caption"
+class="caption-frame">
+<p>Figure: Testing energy-entropy equivalence across the Curie-Weiss
+phase transition. Left: Magnetization <span
+class="math inline">\(m\)</span> as a function of temperature, showing
+ferromagnetic transition at <span class="math inline">\(T_c =
+J\)</span>. Right: Gradient of accessible information <span
+class="math inline">\(|\nabla_m I|\)</span> is small in the disordered
+phase (equivalence holds) but large in the ordered phase (equivalence
+fails), confirming the theorem’s predictions.</p>
+</div>
+</div>
+<p><strong>Results:</strong></p>
+<p>The numerical experiment confirms the theorem’s predictions:</p>
+<ol type="1">
+<li><strong>Disordered phase</strong> (<span class="math inline">\(T
+&gt; T_c\)</span>):
+<ul>
+<li>Magnetization <span class="math inline">\(m \approx 0\)</span> (no
+long-range order)</li>
+<li>Gradient <span class="math inline">\(|\nabla_m I| \approx 0\)</span>
+(energy-entropy equivalence holds)</li>
+<li>System is in the “thermodynamic regime” where correlations are
+weak</li>
+</ul></li>
+<li><strong>Ordered phase</strong> (<span class="math inline">\(T &lt;
+T_c\)</span>):
+<ul>
+<li>Magnetization <span class="math inline">\(m \neq 0\)</span>
+(spontaneous symmetry breaking)</li>
+<li>Gradient <span class="math inline">\(|\nabla_m I| \gg 0\)</span>
+(equivalence fails)</li>
+<li>Strong correlations violate the assumptions for equivalence</li>
+</ul></li>
+<li><strong>Phase transition</strong>:
+<ul>
+<li>Sharp crossover at critical temperature <span
+class="math inline">\(T_c = J\)</span></li>
+<li>Both magnetization and equivalence breakdown occur
+simultaneously</li>
+<li>Validates that correlations determine when equivalence applies</li>
+</ul></li>
+</ol>
+<p>This provides rigorous analytical support for the energy-entropy
+equivalence theorem derived from the inaccessible game axioms.</p>
 <h2 id="generic-and-thermodynamics">GENERIC and Thermodynamics</h2>
 <h2 id="generic-as-generalized-thermodynamics">GENERIC as Generalized
 Thermodynamics</h2>

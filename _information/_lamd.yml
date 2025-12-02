@@ -10,6 +10,7 @@ talkscam:
 url: https://inverseprobability.com/
 talkcss: https://inverseprobability.com/assets/css/talks.css
 bibdir: $HOME/lawrennd/bibliography/
+macrosdir: $HOME/lawrennd/lamd/lamd/macros
 people: $HOME/lawrennd/snippets/_people/people.yml
 postsdir: ../_posts/
 slidesdir: $HOME/lawrennd/slides/
@@ -28,7 +29,7 @@ slidesipynb: False
 pptx: False
 pdf: False
 assignment: False
-ipynb: False
+ipynb: True
 reveal: True
 potx: custom-reference.potx
 dotx: custom-reference.dotx

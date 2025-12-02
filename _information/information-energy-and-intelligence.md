@@ -55,6 +55,10 @@ transition: None
 
 \include{_physics/includes/degeneracy-conditions-automatic.md}
 
+\include{_physics/includes/harmonic-oscillator-generic-example.md}
+
+\include{_information-game/includes/n3-ising-simulation-validation.md}
+
 \section{Information Topography}
 
 \notes{The Fisher information matrix provides mathematical teeth to the intuitive notion of an "information topography" from *The Atomic Human*.}
@@ -68,6 +72,8 @@ transition: None
 \subsection{The Thermodynamic Limit}
 
 \include{_physics/includes/thermodynamic-limit-equivalence.md}
+
+\include{_information-game/includes/curie-weiss-phase-transition-validation.md}
 
 \subsection{GENERIC and Thermodynamics}
 

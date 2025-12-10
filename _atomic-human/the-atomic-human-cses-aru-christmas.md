@@ -220,6 +220,12 @@ dotx: custom-reference.dotx
 
 These aren't questions with simple answers, but they're important questions to think about as you navigate a world increasingly shaped by artificial intelligence.}
 
+\slides{* When do we prefer AI decisions?
+* What human skills will be *more* valuable?
+* How can we ensure AI reflects our values?
+* What role would you like AI to play in *your* career?
+}
+
 \thanks
 
 \references

@@ -119,16 +119,17 @@ dotx: custom-reference.dotx
 \notes{But here's the key difference: modern AI systems operate at incredible speed. They can process information much faster than we can. But speed isn't everything.}
 
 \include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_ai/includes/bandwidth-vs-complexity.md}
 
 \section{What Makes Us Atomic?}
 
-\notes{So we return to the concept of "The Atomic Human". Atomism, proposed by the ancient Greek philosopher Democritus, suggested that if you kept dividing matter into smaller and smaller pieces, eventually you would reach something that couldn't be divided any further - the atom, from the Greek word for "uncuttable".}
+\notes{So we return to the concept of "The Atomic Human". Atomism, proposed by the ancient Greek philosopher Democritus, suggested that if you kept dividing matter into smaller and smaller pieces, eventually you would reach something that couldn't be divided any further, the atom, from the Greek word for "indivisible".}
 
-\notes{In the same way, as AI takes over more and more tasks that we used to think required human intelligence - playing chess, recognizing faces, translating languages, even writing essays - we discover what's left. What's the part of human intelligence that can't be replaced by a machine?}
+\notes{In the same way, as AI takes over more and more tasks that we used to think required human intelligence - playing chess, recognising faces, translating languages, even writing essays, we discover what's left. What's the part of human intelligence that can't be replaced by a machine?}
 
-\notes{It's not about being better at calculations - machines beat us there. It's not about memory - machines win again. It's not even about pattern recognition - modern AI can do that remarkably well.}
+\notes{It's not about being better at calculations, machines beat us there. It's not about memory, machines win again. It's not even about pattern recognition, modern AI can do that remarkably well.}
 
-\notes{What makes us uniquely human is our embodiment - the fact that we exist in the physical world with all its constraints and richness. It's our ability to understand context and meaning drawn from lived experience. It's our capacity for genuine empathy and connection. It's our creativity born from our limitations, not despite them.}
+\notes{What makes us uniquely human is our limitations and vulnerabilities. This gives us a shared context from which meaning drawn from lived experience. It gives us capacity for genuine empathy and connection. Our creativity is born from our limitations, not despite them.}
 
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 

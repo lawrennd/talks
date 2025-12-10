@@ -46,6 +46,8 @@ dotx: custom-reference.dotx
 
 \notes{You've probably heard a lot about AI recently. It's everywhere: in your phones, in your apps, in the news. Some people say it will solve all our problems. Others worry it will take over the world. But to understand AI, we first need to understand ourselves.}
 
+\include{_ai/includes/henry-ford-intro.md}
+
 \subsection{What Kind of Intelligence Are We Creating?}
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
@@ -56,13 +58,14 @@ dotx: custom-reference.dotx
 
 \include{_ai/includes/the-atomic-eye.md}
 
+\section{How Are We Different from Machines?}
+
 \notes{To understand what makes us special, let me tell you a story about a remarkable man named Jean-Dominique Bauby.}
 
 \include{_ai/includes/diving-bell-butterfly.md}
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
 
-\section{How Are We Different from Machines?}
 
 \subsection{The Embodiment Factor}
 

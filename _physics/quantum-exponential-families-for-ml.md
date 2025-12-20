@@ -29,9 +29,9 @@ categories:
 
 \notes{This talk bridges classical and quantum statistical mechanics through the lens familiar to machine learning practitioners: exponential families and information geometry.
 
-Rather than starting from wavefunctions and postulates, we show how quantum mechanics emerges naturally when you extend probabilistic modeling to allow observables that don't commute. The mathematics stays remarkably similar—you still have log-partition functions, Fisher-like metrics, and natural parameters—but you need one new computational tool (Duhamel calculus) to handle matrix exponentials.
+Rather than starting from wavefunctions and postulates, we show how quantum mechanics emerges naturally when you extend probabilistic modeling to allow observables that don't commute. The mathematics is similar—you still have log-partition functions, Fisher-like metrics, and natural parameters---but you need one new computational tool (Duhamel calculus) to handle matrix exponentials.
 
-**Scope note:** We focus on the state space, expectations, and reversible dynamics. Measurement and update rules (Born rule, POVMs, etc.) are the extra layer we're not emphasizing here—our goal is to show how far you can get with just "exponential families + noncommutativity."}
+**Scope note:** We focus on the state space, expectations, and reversible dynamics. Measurement and update rules (Born rule, POVMs, etc.) are the extra layer we're not emphasising here---our goal is to show how far you can get with just "exponential families + noncommutativity."}
 
 \slides{
 **For ML + info-geometry folks:**
@@ -46,6 +46,20 @@ Classical exponential families $\rightarrow$ quantum exponential families
 \section{From Classical to Quantum: The Exponential Family Bridge}
 
 \include{_physics/includes/exponential-family-classical-to-quantum.md}
+
+\section{Worked Example: Pauli Matrices (2×2 Case)}
+
+\notes{Before moving to dynamics, let's make the quantum exponential family concrete with the simplest nontrivial case: a qubit (2-level system) using Pauli matrices.
+
+This example shows exactly where noncommutativity appears, why naive differentiation fails, and how Duhamel resolves it.}
+
+\slides{
+**Concrete example:** 2×2 qubit exponential family
+
+Shows: where noncommutativity bites + how Duhamel fixes it
+}
+
+\include{_physics/includes/pauli-exponential-family-example.md}
 
 \section{Reversible Dynamics and Unitarity}
 

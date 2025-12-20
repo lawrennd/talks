@@ -29,14 +29,18 @@ categories:
 
 \notes{This talk bridges classical and quantum statistical mechanics through the lens familiar to machine learning practitioners: exponential families and information geometry.
 
-Rather than starting from wavefunctions and postulates, we show how quantum mechanics emerges naturally when you extend probabilistic modeling to allow observables that don't commute. The mathematics stays remarkably similar—you still have log-partition functions, Fisher-like metrics, and natural parameters—but you need one new computational tool (Duhamel calculus) to handle matrix exponentials.}
+Rather than starting from wavefunctions and postulates, we show how quantum mechanics emerges naturally when you extend probabilistic modeling to allow observables that don't commute. The mathematics stays remarkably similar—you still have log-partition functions, Fisher-like metrics, and natural parameters—but you need one new computational tool (Duhamel calculus) to handle matrix exponentials.
+
+**Scope note:** We focus on the state space, expectations, and reversible dynamics. Measurement and update rules (Born rule, POVMs, etc.) are the extra layer we're not emphasizing here—our goal is to show how far you can get with just "exponential families + noncommutativity."}
 
 \slides{
-**For ML + information geometry folks:**
+**For ML + info-geometry folks:**
 
 Same structure, one new obstacle (noncommutativity)
 
-Classical exponential families → quantum exponential families
+Classical exponential families $\rightarrow$ quantum exponential families
+
+*Focus:* states, expectations, reversible dynamics (not measurement)
 }
 
 \section{From Classical to Quantum: The Exponential Family Bridge}
@@ -109,21 +113,22 @@ The "origin" configuration: globally pure + locally maximal uncertainty
 
 \notes{The key message for ML practitioners:
 
-- **Quantum mechanics is not a different paradigm from probabilistic modeling**—it's an extension to handle noncommuting observables.
+- **For states, expectations, and reversible dynamics**, quantum mechanics extends probabilistic modeling to handle noncommuting observables—it's not a wholesale paradigm replacement.
 - **The exponential-family structure survives intact**: you still have log-partition functions, Fisher-like metrics (now BKM), natural parameters, and duality.
 - **Duhamel calculus is the computational fix** for matrix exponentials, analogous to how you already use matrix calculus in deep learning.
-- **Reversible dynamics (unitarity) is structural**, not arbitrary: it's the natural notion of information-preserving transformation in noncommutative probability.
+- **Reversible dynamics (unitarity) is structural**, not arbitrary: it's the natural notion of information-preserving transformation in noncommutative probability for closed finite-dimensional systems.
 
-With these tools, quantum statistical mechanics becomes accessible to anyone with a solid grounding in information geometry and exponential families.}
+With these tools, quantum statistical mechanics becomes accessible to anyone with a solid grounding in information geometry and exponential families. The measurement/update layer (Born rule, POVMs) adds additional structure beyond what we've covered, but the foundation is the same convex-analytic machinery you already know.}
 
 \slides{
 **Take-home for ML folks:**
 
-1. Quantum = probabilistic modeling + noncommutativity
+1. Quantum (states/dynamics) = probabilistic modeling + noncommutativity
 2. Exponential families work the same way (with Duhamel for derivatives)
-3. BKM metric = quantum Fisher information (Hessian of $\psi$)
-4. Unitarity = reversibility (entropy preservation)
-5. You already have 90% of the conceptual framework
+3. BKM metric = canonical quantum Fisher (Hessian of $\psi$)
+4. Unitarity = reversibility (closed systems, entropy preservation)
+5. Measurement layer adds more structure (Born rule, POVMs)
+6. You already have 90% of the conceptual framework
 }
 
 \subsection{Further Directions}

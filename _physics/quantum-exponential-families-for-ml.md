@@ -143,7 +143,7 @@ Each of these areas becomes more accessible once you see quantum mechanics as "e
 
 - Quantum natural gradient
 - Variational quantum algorithms  
-- Quantum neural networks (parameterized circuits)
+- Quantum neural networks (parameterised circuits)
 - Quantum-classical hybrid models
 - Quantum generative models
 

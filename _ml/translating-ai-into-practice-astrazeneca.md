@@ -13,7 +13,7 @@ author:
 date: 2026-01-12
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: The AstraZeneca Discovery Centre, Cambridge
+venue: Easbrook House, Cambridge
 transition: None
 ---
 

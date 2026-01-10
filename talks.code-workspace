@@ -4,6 +4,9 @@
 			"path": "."
 		},
 		{
+			"path": "../vibesafe"
+		},
+		{
 			"path": "../slides"
 		},
 		{

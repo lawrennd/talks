@@ -57,10 +57,15 @@ the lens familiar to machine learning practitioners: exponential
 families and information geometry.</p>
 <p>Rather than starting from wavefunctions and postulates, we show how
 quantum mechanics emerges naturally when you extend probabilistic
-modeling to allow observables that don’t commute. The mathematics stays
-remarkably similar—you still have log-partition functions, Fisher-like
-metrics, and natural parameters—but you need one new computational tool
-(Duhamel calculus) to handle matrix exponentials.</p>
+modeling to allow observables that don’t commute. The mathematics is
+similar—you still have log-partition functions, Fisher-like metrics, and
+natural parameters—but you need one new computational tool (Duhamel
+calculus) to handle matrix exponentials.</p>
+<p><strong>Scope note:</strong> We focus on the state space,
+expectations, and reversible dynamics. Measurement and update rules
+(Born rule, POVMs, etc.) are the extra layer we’re not emphasising
+here—our goal is to show how far you can get with just “exponential
+families + noncommutativity.”</p>
 <h1 id="from-classical-to-quantum-the-exponential-family-bridge">From
 Classical to Quantum: The Exponential Family Bridge</h1>
 <h2 id="from-classical-to-quantum-exponential-families">From Classical
@@ -137,15 +142,22 @@ exponential),</li>
 matrix (analogous to the probability density <span
 class="math inline">\(p\)</span>).</li>
 </ul>
+<p>(Physics often writes <span class="math inline">\(K=-\beta H\)</span>
+with a minus sign; here we absorb signs into the <span
+class="math inline">\(\theta_i\)</span> parameters.)</p>
 <p></p>
 <ol type="1">
 <li><strong>Expectations from <span
 class="math inline">\(\psi\)</span></strong>: <span
 class="math inline">\(\langle F_i\rangle=\text{tr}(\rho F_i)=\partial_i
-\psi(\theta)\)</span>.</li>
+\psi(\theta)\)</span>. Noncommutativity complicates <span
+class="math inline">\(\partial_i e^K\)</span>, but trace cyclicity plus
+Duhamel still yields this identity.</li>
 <li><strong>Fisher-like metric</strong>: <span
 class="math inline">\(G_{ij}(\theta)=\partial_i\partial_j\psi(\theta)\)</span>
-is the Bogoliubov–Kubo–Mori (BKM) metric.</li>
+is the Bogoliubov–Kubo–Mori (BKM) metric, one canonical quantum analog
+of Fisher information, and the one that naturally appears in
+thermodynamic linear response.</li>
 <li><strong>Geometry</strong>: <span class="math inline">\(G\)</span> is
 still a Riemannian metric governing local linear response.</li>
 <li><strong><span class="math inline">\(\psi\)</span> is still a scalar
@@ -283,6 +295,165 @@ networks, etc.</p></li>
 <p>The punchline: if you know exponential families + Fisher information
 + natural gradients, you already understand the quantum story—you just
 need Duhamel to handle the matrix algebra.</p>
+<h1 id="worked-example-pauli-matrices-22-case">Worked Example: Pauli
+Matrices (2×2 Case)</h1>
+<p>Before moving to dynamics, let’s make the quantum exponential family
+concrete with the simplest nontrivial case: a qubit (2-level system)
+using Pauli matrices.</p>
+<p>This example shows exactly where noncommutativity appears, why naive
+differentiation fails, and how Duhamel resolves it.</p>
+<h2 id="concrete-example-22-pauli-exponential-family">Concrete Example:
+2×2 Pauli Exponential Family</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span
+class="editsection"
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/pauli-exponential-family-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/pauli-exponential-family-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>To make the quantum exponential family concrete, let’s work through
+the simplest nontrivial case: a 2-level system (qubit) using Pauli
+matrices.</p>
+<p>This example shows exactly where noncommutativity appears, why the
+classical derivative formula fails, and how Duhamel fixes it.</p>
+<h3 id="the-pauli-basis">The Pauli basis</h3>
+<p>The Pauli matrices are <span class="math display">\[
+\sigma_x = \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix},\quad
+\sigma_z = \begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}.
+\]</span></p>
+<p>These are Hermitian, traceless, and : <span class="math display">\[
+\sigma_x \sigma_z = \begin{pmatrix}0&amp;-1\\1&amp;0\end{pmatrix},\quad
+\sigma_z \sigma_x = \begin{pmatrix}0&amp;1\\-1&amp;0\end{pmatrix},
+\]</span> so <span
+class="math inline">\([\sigma_x,\sigma_z]=\sigma_x\sigma_z-\sigma_z\sigma_x
+= 2i\sigma_y \neq 0\)</span>.</p>
+<p>We’ll use these as sufficient statistics <span
+class="math inline">\(F_1=\sigma_x\)</span>, <span
+class="math inline">\(F_2=\sigma_z\)</span>.</p>
+<h3 id="quantum-exponential-family-for-a-qubit">Quantum exponential
+family for a qubit</h3>
+<p>Define a 2-parameter exponential family: <span
+class="math display">\[
+\rho(\theta_1,\theta_2) = \frac{1}{Z(\theta)} \exp(\theta_1 \sigma_x +
+\theta_2 \sigma_z),
+\]</span> where <span class="math display">\[
+K(\theta)=\theta_1\sigma_x+\theta_2\sigma_z,\qquad
+Z(\theta)=\text{tr}\,e^{K(\theta)},\qquad \psi(\theta)=\log Z(\theta).
+\]</span></p>
+<p>The density matrix <span class="math inline">\(\rho\)</span> is <span
+class="math inline">\(2\times 2\)</span>, Hermitian, positive
+semidefinite, with trace 1.</p>
+<p><strong>Question:</strong> How do we compute <span
+class="math inline">\(\partial_1\psi\)</span> (the expectation of <span
+class="math inline">\(\sigma_x\)</span>)?</p>
+<h3 id="why-the-classical-formula-fails">Why the classical formula
+fails</h3>
+<p>In the classical case, we would write <span
+class="math inline">\(\psi=\log\int e^{\theta^\top \mathbf{F}}
+\text{d}\mu\)</span> and differentiate: <span class="math display">\[
+\partial_1 e^{\theta_1 F_1+\theta_2 F_2} = F_1 e^{\theta_1 F_1+\theta_2
+F_2}.
+\]</span> This works because scalars commute.</p>
+<p>In the quantum case, <span class="math inline">\(F_1\)</span> and
+<span class="math inline">\(F_2\)</span> are matrices (<span
+class="math inline">\(\sigma_x\)</span> and <span
+class="math inline">\(\sigma_z\)</span>), and they don’t commute. So
+<span class="math display">\[
+\partial_1 e^{\theta_1\sigma_x+\theta_2\sigma_z} \neq \sigma_x
+e^{\theta_1\sigma_x+\theta_2\sigma_z}.
+\]</span></p>
+<p>To see this concretely, note that <span
+class="math inline">\(\sigma_x K(\theta) \neq K(\theta)\sigma_x\)</span>
+in general (try it with <span
+class="math inline">\(\theta_1=\theta_2=1\)</span> for a numerical
+check).</p>
+<p>So we cannot “pull down” <span
+class="math inline">\(\sigma_x\)</span> from inside the exponential
+naively.</p>
+<h3 id="duhamel-formula-fixes-it">Duhamel formula fixes it</h3>
+<p>The correct derivative formula is the Duhamel integral (Fréchet
+derivative): <span class="math display">\[
+\partial_1 e^{K(\theta)} = \int_0^1 e^{(1-s)K(\theta)} \sigma_x
+e^{sK(\theta)}\,\text{d}s.
+\]</span></p>
+<p><strong>Computational note:</strong> In practice, you’d compute this
+using the block-matrix trick: <span class="math display">\[
+L_{\exp}(K,\sigma_x)=\exp\begin{pmatrix}K&amp;\sigma_x\\0&amp;K\end{pmatrix}_{(1,2)},
+\]</span> where the subscript means “take the upper-right <span
+class="math inline">\(2\times 2\)</span> block” of the <span
+class="math inline">\(4\times 4\)</span> exponential. This is how
+autodiff frameworks implement gradients through <code>expm</code>.</p>
+<p>Now compute <span class="math inline">\(\partial_1\psi\)</span>:
+<span class="math display">\[
+\partial_1\psi = \frac{1}{Z(\theta)}\,\text{tr}\left(\partial_1
+e^{K(\theta)}\right)
+= \frac{1}{Z(\theta)}\int_0^1 \text{tr}\!\left(e^{(1-s)K}\sigma_x
+e^{sK}\right)\text{d}s.
+\]</span></p>
+<p>Use cyclicity of trace: <span
+class="math inline">\(\text{tr}(ABC)=\text{tr}(CAB)\)</span>, so <span
+class="math display">\[
+\text{tr}\!\left(e^{(1-s)K}\sigma_x e^{sK}\right) =
+\text{tr}\!\left(e^{K}\sigma_x\right).
+\]</span> (The <span class="math inline">\(s\)</span>-dependence
+cancels!)</p>
+<p>Thus <span class="math display">\[
+\partial_1\psi = \frac{1}{Z}\,\text{tr}(e^K \sigma_x) =
+\text{tr}(\rho\,\sigma_x) = \langle \sigma_x\rangle.
+\]</span></p>
+<p>So the expectation identity <span
+class="math inline">\(\partial_i\psi=\langle F_i\rangle\)</span> holds,
+but only after using Duhamel plus trace cyclicity.</p>
+<h3 id="the-bkm-metric-quantum-fisher-information">The BKM metric
+(quantum Fisher information)</h3>
+<p>The Hessian <span
+class="math inline">\(G_{ij}=\partial_i\partial_j\psi\)</span> gives the
+Bogoliubov–Kubo–Mori metric.</p>
+<p>For our qubit family, <span class="math display">\[
+G_{11}=\partial_1^2\psi,\quad G_{12}=\partial_1\partial_2\psi,\quad
+G_{22}=\partial_2^2\psi.
+\]</span></p>
+<p>In the classical exponential family, the Fisher metric equals the
+covariance matrix of sufficient statistics: <span
+class="math display">\[
+G_{ij}^\text{classical}=\text{Cov}(F_i,F_j).
+\]</span></p>
+<p>In the quantum case, the BKM metric is simply the covariance of <span
+class="math inline">\(\sigma_x\)</span> and <span
+class="math inline">\(\sigma_z\)</span>. Instead, it involves operator
+orderings (Kubo–Mori inner product). The difference arises precisely
+because the operators don’t commute.</p>
+<p>For <span class="math inline">\(\theta=0\)</span> (the maximally
+mixed state <span class="math inline">\(\rho=I/2\)</span>), the BKM
+metric simplifies and you can compute it explicitly: <span
+class="math display">\[
+G_{ij}(0)=\frac{1}{2}\text{tr}(\sigma_i\sigma_j)=\frac{1}{2}\delta_{ij}.
+\]</span> (This uses <span
+class="math inline">\(\text{tr}(\sigma_i\sigma_j)=2\delta_{ij}\)</span>
+and the fact that at <span class="math inline">\(\theta=0\)</span>, the
+state is maximally mixed.)</p>
+<p>Away from <span class="math inline">\(\theta=0\)</span>, the metric
+is state-dependent and reflects the curvature of the quantum state space
+(the Bloch sphere).</p>
+<h3 id="summary-what-noncommutativity-changes">Summary: what
+noncommutativity changes</h3>
+<p>This 2×2 example makes concrete what happens when you extend
+exponential families to the quantum setting:</p>
+<ol type="1">
+<li><strong>Structure stays the same</strong>: You still have <span
+class="math inline">\(\rho=e^{K-\psi}\)</span>, with <span
+class="math inline">\(K=\sum_i\theta_i F_i\)</span>.</li>
+<li><strong>Expectations from <span class="math inline">\(\psi\)</span>
+still work</strong>: <span class="math inline">\(\partial_i\psi=\langle
+F_i\rangle\)</span>, but the proof requires Duhamel + trace
+cyclicity.</li>
+<li><strong>Derivatives of exponentials need Duhamel</strong>: You can’t
+pull <span class="math inline">\(F_i\)</span> down naively because <span
+class="math inline">\([F_i,K]\neq 0\)</span>.</li>
+<li><strong>The metric is more subtle</strong>: The BKM metric involves
+operator orderings, not just classical covariance.</li>
+</ol>
+<p>For ML practitioners: if you can compute matrix exponentials and
+traces, you can work with quantum exponential families using exactly the
+same conceptual framework.</p>
 <h1 id="reversible-dynamics-and-unitarity">Reversible Dynamics and
 Unitarity</h1>
 <p>With the exponential-family structure in place, we now turn to
@@ -343,13 +514,16 @@ around’’ in <span class="math inline">\(\Omega\)</span>.</p>
 commute. So ``reversibility’’ can’t mean a pointwise relabelling of
 outcomes; instead it means an isomorphism of the (a <span
 class="math inline">\(*\)</span>-isomorphism) that preserves the
-expectation structure. In finite dimensions those algebra isomorphisms
-are implemented by unitary conjugation.</p>
-<p>In noncommutative probability, the reversible transformations are
-exactly the ones implemented by unitary conjugation: [ UU<sup>,U</sup>U
-= I. ] This is not an additional modelling assumption; it is the
-structural notion of ``symmetry’’ compatible with noncommutative
-probability.</p>
+expectation structure. In finite dimensions, for , those algebra
+isomorphisms are implemented by unitary (or antiunitary)
+conjugation.</p>
+<p>For closed finite-dimensional quantum systems, the reversible
+transformations are exactly the ones implemented by unitary conjugation:
+[ UU<sup>,U</sup>U = I. ] This is not an additional modelling
+assumption; it is the structural notion of ``symmetry’’ compatible with
+noncommutative probability. (Open systems with dissipation require the
+broader class of completely positive trace-preserving maps; unitary is
+the reversible special case.)</p>
 <h3 id="infinitesimal-form-commutator-dynamics">Infinitesimal form:
 commutator dynamics</h3>
 <p>The paper’s perspective is that . So we should describe reversible
@@ -437,6 +611,11 @@ class="math display">\[
 \]</span> So ``noncommutative probability’’ collapses to classical
 probability on the finite sample space <span
 class="math inline">\(\Omega=\{1,\dots,d\}\)</span>.</p>
+<p>Structural note: the diagonal matrices form a —the only matrices that
+commute with all diagonal matrices are themselves diagonal. So
+restricting to commuting observables isn’t just a convenience; it’s the
+structural reason why classical probability sits inside quantum
+probability as a special case.</p>
 <p>Now look at reversible transformations. If we want to stay inside the
 diagonal algebra, the allowed unitaries are permutations of the basis.
 Let <span class="math inline">\(U_\pi\)</span> be the permutation matrix
@@ -458,7 +637,7 @@ class="math inline">\([H,\rho]=H \rho - \rho H=0\)</span> and the
 commutator dynamics is trivial. The only reversible transformations that
 preserve diagonality are discrete relabellings (permutations), whereas
 general unitaries give you the genuinely noncommutative ``rotation’’,
-i.e. basis-change behaviour.</p>
+i.e. basis-change behaviour.}</p>
 <h3 id="bridge-back-poisson-brackets-as-the-commutative-shadow">Bridge
 back: Poisson brackets as the commutative shadow</h3>
 <p>Why does this belong in today’s Poisson-bracket lecture?</p>
@@ -510,14 +689,16 @@ derivatives cleanly. The key pedagogical point is: this is , not
 additional structure. The structure came from invariance (what
 reversible maps must look like); Duhamel calculus is how we actually
 compute within that structure.</p>
-<h3 id="the-duhamel-formula-derivative-of-a-matrix-exponential">The
-Duhamel formula (derivative of a matrix exponential)</h3>
+<h3
+id="the-duhamel-formula-fréchet-derivative-of-the-matrix-exponential">The
+Duhamel formula (Fréchet derivative of the matrix exponential)</h3>
 <p>Let <span class="math inline">\(K(\theta)\)</span> be a matrix
 depending smoothly on parameters <span
 class="math inline">\(\theta\)</span>, and let <span
 class="math inline">\(F_i=\partial K/\partial \theta_i\)</span>.</p>
 <p>In general, <span class="math inline">\(F_i e^{K} \neq
-e^{K}F_i\)</span>, so we use the Duhamel formula: <span
+e^{K}F_i\)</span>, so we use the Duhamel formula (also called the
+Fréchet derivative of the matrix exponential): <span
 class="math display">\[
 \frac{\partial}{\partial \theta_i} e^{K(\theta)}
 = \int_0^1 e^{(1-s)K(\theta)}\, F_i\, e^{sK(\theta)}\,\text{d}s.
@@ -526,6 +707,42 @@ class="math display">\[
 class="math inline">\(s\in[0,1]\)</span> as “how far through the
 exponential you insert the derivative”. It is an device, not a time
 variable.</p>
+<p>In the matrix functions literature this is written as the Fréchet
+derivative <span class="math inline">\(L_{\exp}(K, F_i)\)</span>,
+meaning the directional derivative of <span
+class="math inline">\(\exp\)</span> at <span
+class="math inline">\(K\)</span> in direction <span
+class="math inline">\(F_i\)</span>. The integral representation follows
+from solving the variation-of-constants ODE for <span
+class="math inline">\(\frac{d}{ds}(e^{-sK} e^{(K+\epsilon F)s})\)</span>
+and integrating from 0 to 1—the real connection to Duhamel’s classical
+principle for inhomogeneous ODEs.</p>
+<h3 id="how-to-compute-the-fréchet-derivative-efficiently">How to
+compute the Fréchet derivative efficiently</h3>
+<p>The integral <span class="math inline">\(\int_0^1
+e^{(1-s)K}F\,e^{sK}\,\text{d}s\)</span> is not evaluated by numerical
+quadrature in practice. For small-to-medium matrices, there is a
+beautiful block-matrix trick:</p>
+<p><span class="math display">\[
+L_{\exp}(K,F) = \exp\begin{pmatrix}K &amp; F \\ 0 &amp;
+K\end{pmatrix}_{(1,2)}
+\]</span></p>
+<p>where the subscript <span class="math inline">\((1,2)\)</span>
+denotes the upper-right <span class="math inline">\(n\times n\)</span>
+block of the <span class="math inline">\(2n\times 2n\)</span>
+exponential. This reduces the Fréchet derivative to a single matrix
+exponential of twice the size.</p>
+<p>For ML practitioners: this means automatic differentiation through
+<code>expm</code> (matrix exponential) can be implemented efficiently
+using standard algorithms (Padé approximation after
+scaling-and-squaring). Modern frameworks like JAX and PyTorch use
+variants of this approach.</p>
+<p><strong>Numerical note:</strong> The exponential map can be
+ill-conditioned when <span class="math inline">\(K\)</span> has widely
+separated eigenvalues or large imaginary parts (common for Hamiltonians
+<span class="math inline">\(K=-iHt\)</span>). The BKM metric inherits
+this conditioning—relevant for quantum natural gradient
+optimization.</p>
 <h3
 id="kubomori-derivatives-and-the-bkm-metric-quantum-fisher-information">Kubo–Mori
 derivatives and the BKM metric (quantum Fisher information)</h3>
@@ -539,16 +756,35 @@ classical case appears as the Hessian of <span
 class="math inline">\(\psi\)</span>: <span class="math display">\[
 G_{ij}(\theta)=\frac{\partial^2 \psi}{\partial \theta_i\partial
 \theta_j}.
-\]</span> In the quantum literature this is (one form of) the
-Bogoliubov–Kubo–Mori (BKM) metric; it can be expressed in several
-equivalent ways involving operator orderings.</p>
+\]</span> In the quantum literature this is the Bogoliubov–Kubo–Mori
+(BKM) metric. Explicitly, it has the integral representation: <span
+class="math display">\[
+G_{ij}=\int_0^1 \text{tr}\big(\rho^{1-s}(F_i-\langle
+F_i\rangle)\rho^s(F_j-\langle F_j\rangle)\big)\,\text{d}s,
+\]</span> where <span
+class="math inline">\(\rho=e^K/\text{tr}(e^K)\)</span> and <span
+class="math inline">\(\langle F_i\rangle=\text{tr}(\rho F_i)\)</span>.
+This is the Kubo–Mori inner product on the tangent space. The <span
+class="math inline">\(s\)</span>-integral performs a specific
+symmetrisation that handles noncommutativity.</p>
+<p><strong>Key observation:</strong> In the commutative case, <span
+class="math inline">\(\rho^{1-s}F\rho^s=F\rho\)</span> for all <span
+class="math inline">\(s\)</span>, so the integral collapses to <span
+class="math inline">\(\text{tr}(\rho F_iF_j)-\text{tr}(\rho
+F_i)\text{tr}(\rho F_j)=\text{Cov}(F_i,F_j)\)</span>. The classical
+Fisher metric is recovered. The <span
+class="math inline">\(s\)</span>-integral is precisely the minimal
+extension needed for noncommutativity.</p>
 <p>For us, the useful message is simple:</p>
 <ul>
 <li><span class="math inline">\(\psi\)</span> is still a scalar function
 of real parameters,</li>
 <li>so its Hessian is a symmetric positive matrix,</li>
-<li>and it governs local linear response / geometry just like classical
-Fisher information.</li>
+<li>it governs local linear response / geometry just like classical
+Fisher information,</li>
+<li>and the BKM form is one of many possible quantum Fisher metrics (the
+monotone metrics classified by Petz)—it’s the canonical one from
+exponential families and thermodynamic linear response.</li>
 </ul>
 <h3 id="why-lie-closure-makes-things-tractable">Why Lie closure makes
 things tractable</h3>
@@ -649,12 +885,23 @@ track of operator order in time.</p>
 Dyson/Trotter to path integrals (time slicing)</h3>
 <p>Path integrals can be introduced as a computational method by
 time-slicing (Trotterisation).</p>
-<p>For example, in (imaginary-time) statistical mechanics one uses <span
+<p>The Trotter product formula states: <span class="math display">\[
+e^{t(A+B)}
+=\lim_{n\to\infty}\left(e^{tA/n}\,e^{tB/n}\right)^n
+\]</span> for suitable operators <span class="math inline">\(A\)</span>
+and <span class="math inline">\(B\)</span> (e.g., bounded operators, or
+self-adjoint with appropriate domain conditions).</p>
+<p><strong>Error analysis:</strong> The simple splitting above has error
+<span class="math inline">\(O(t^2/n)\)</span>. For practical
+time-stepping, symmetric (Strang) splitting <span
+class="math inline">\(e^{tA/(2n)}e^{tB/n}e^{tA/(2n)}\)</span> gives
+error <span class="math inline">\(O(t^3/n^2)\)</span>. There is a large
+literature on higher-order splittings for numerical simulation.</p>
+<p>For example, in (imaginary-time) statistical mechanics: <span
 class="math display">\[
 e^{-\beta(H_0+V)}
-=\lim_{n\to\infty}\left(e^{-\beta H_0/n}\,e^{-\beta V/n}\right)^n
-\]</span> (Trotter product formula).</p>
-<p>In real time one has an analogous statement for <span
+=\lim_{n\to\infty}\left(e^{-\beta H_0/n}\,e^{-\beta V/n}\right)^n.
+\]</span> In real time one has an analogous statement for <span
 class="math inline">\(e^{-it(H_0+V)}\)</span>.</p>
 <p>Now insert resolutions of the identity between the factors
 (e.g. position eigenstates for particles, spin basis for spins). In the
@@ -709,13 +956,17 @@ class="math inline">\(I=C\)</span>), but</li>
 <p>Informally: the system is globally fully specified (no global
 uncertainty), but every subsystem looks maximally uncertain on its
 own.</p>
-<p>In classical probability (commutative setting), this origin is
-impossible. The obstruction is not a technicality — it is a structural
+<p>If your modeling desiderata include this configuration—globally pure
+but locally maximally uncertain—classical probability cannot represent
+it. The obstruction is not a technicality; it is a structural
 inequality: classical conditional entropy is nonnegative.</p>
-<p>The quantum (noncommutative) resolution is equally structural: von
-Neumann conditional entropy can be negative for entangled states, and
-those are exactly the configurations that look ``locally maximally
-uncertain’’ while remaining globally pure.</p>
+<p>Quantum states (specifically, entangled states) represent this
+configuration: von Neumann conditional entropy can be negative, and
+maximally entangled states are exactly the configurations that achieve
+``locally maximally uncertain’’ while remaining globally pure.</p>
+<p>This does not prove quantum mechanics is necessary for all purposes;
+it shows that if you want this particular constraint set realised, you
+need the quantum framework.</p>
 <h3 id="why-the-classical-origin-is-impossible">Why the classical origin
 is impossible</h3>
 <p>Consider two variables <span class="math inline">\(X,Y\)</span> (the
@@ -791,9 +1042,9 @@ id="conclusion-quantum-as-extended-probabilistic-modeling">Conclusion:
 Quantum as Extended Probabilistic Modeling</h1>
 <p>The key message for ML practitioners:</p>
 <ul>
-<li><strong>Quantum mechanics is not a different paradigm from
-probabilistic modeling</strong>—it’s an extension to handle noncommuting
-observables.</li>
+<li><strong>For states, expectations, and reversible dynamics</strong>,
+quantum mechanics extends probabilistic modeling to handle noncommuting
+observables—it’s not a wholesale paradigm replacement.</li>
 <li><strong>The exponential-family structure survives intact</strong>:
 you still have log-partition functions, Fisher-like metrics (now BKM),
 natural parameters, and duality.</li>
@@ -802,11 +1053,14 @@ matrix exponentials, analogous to how you already use matrix calculus in
 deep learning.</li>
 <li><strong>Reversible dynamics (unitarity) is structural</strong>, not
 arbitrary: it’s the natural notion of information-preserving
-transformation in noncommutative probability.</li>
+transformation in noncommutative probability for closed
+finite-dimensional systems.</li>
 </ul>
 <p>With these tools, quantum statistical mechanics becomes accessible to
 anyone with a solid grounding in information geometry and exponential
-families.</p>
+families. The measurement/update layer (Born rule, POVMs) adds
+additional structure beyond what we’ve covered, but the foundation is
+the same convex-analytic machinery you already know.</p>
 <h2 id="further-directions">Further Directions</h2>
 <p>Topics not covered in this talk but natural extensions for ML
 applications:</p>

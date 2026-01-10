@@ -17,7 +17,7 @@ date: 1970-01-01
 <!--Introduction-->
 
 \include{_deepgp/includes/deep_nn_gp.md}
-\include{_gp/includes/gp_extremely_short.md}
+\include{_gp/includes/gp-extremely-short.md}
 
 \newcommand{\hiddenScalar}{f}
 \newcommand{\latentScalar}{x}
@@ -102,8 +102,8 @@ $$\dataVector|\mappingFunctionVector = \prod_{i} \gaussianSamp{\mappingFunction}
 
 <!--Conclusions-->
 
-\include{_gplvm/includes/ard_model.md}
-\include{_gplvm/includes/ard_results.md}
+\include{_gplvm/includes/ard-model.md}
+\include{_gplvm/includes/ard-results.md}
 
 <!--Gaussian Process Dynamical Systems-->
 

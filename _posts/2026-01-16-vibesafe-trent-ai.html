@@ -1,17 +1,8 @@
 ---
 title: "VibeSafe"
 venue: "Trent.AI"
-abstract: "<p>When working with AI coding assistants, the traditional
-cost model inverts: generating documentation becomes cheap while
-debugging misimplementation becomes expensive. VibeSafe is a framework
-that forces intent to be explicit before implementation. The aim is to
-catch AI misinterpretation when it costs editing a markdown file, not
-unwinding code changes.</p>
-<p>This talk introduces VibeSafe’s philosophy and core components (CIPs,
-Backlog, Tenets, Requirements) and explores how they create shared
-understanding between humans and AI systems. We’ll discuss the workflow,
-benefits, trade-offs, and gather your insights on applying these
-practices to real-world engineering teams.</p>"
+abstract: "<p>When working with AI coding assistants, the traditional cost model inverts: generating documentation becomes cheap while debugging misimplementation becomes expensive. VibeSafe is a framework that forces intent to be explicit before implementation. The aim is to catch AI misinterpretation when it costs editing a markdown file, not unwinding code changes.</p>
+<p>This talk introduces VibeSafe’s philosophy and core components (CIPs, Backlog, Tenets, Requirements) and explores how they create shared understanding between humans and AI systems. We’ll discuss the workflow, benefits, trade-offs, and gather your insights on applying these practices to real-world engineering teams.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -41,286 +32,142 @@ categories:
 -->
 <h2 id="the-ai-development-paradox">The AI Development Paradox</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-opening.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-opening.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-opening.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-opening.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>You’re all experienced engineers. You’ve been using AI coding
-assistants—GitHub Copilot, Cursor, Claude Code, maybe others. And you’ve
-seen the promise: code generation that’s faster than anything we’ve had
-before.</p>
-<p>But you’ve probably also experienced the flip side: debugging code
-that an AI generated based on a misunderstanding of your intent. Maybe
-it was a subtle architectural assumption. Maybe it interpreted “user
-authentication” differently than you meant. And you discovered it late,
-after it was wired through multiple files.</p>
+<p>You’re all experienced engineers. You’ve been using AI coding assistants such as GitHub Copilot, Cursor, Claude Code, maybe others. And you’ve seen the promise: code generation that’s faster than anything we’ve had before.</p>
+<p>But you’ve probably also experienced the flip side: debugging code that an AI generated based on a misunderstanding of your intent. Maybe it was a subtle architectural assumption. Maybe it interpreted “user authentication” differently than you meant. And you discovered it late, after it was wired through multiple files.</p>
 <h2 id="the-cost-model-has-inverted">The Cost Model Has Inverted</h2>
-<p>In traditional development, writing code was the expensive part,
-i.e. human engineering time. Documentation was often deferred or
-skipped.</p>
-<p>With AI assistance, this inverts. The AI can generate documentation
-quickly. But if the AI misunderstands your intent and implements the
-wrong thing, you discover it late. The cost isn’t in writing the
-code—it’s in unwinding the wrong implementation after it’s integrated
-into your system.</p>
+<p>In traditional development, writing code was the expensive part, i.e. human engineering time. Documentation was often deferred or skipped.</p>
+<p>With AI assistance, this inverts. The AI can generate documentation quickly. But if the AI misunderstands your intent and implements the wrong thing, you discover it late. The cost isn’t in writing the code, it’s in unwinding the wrong implementation after it’s integrated into your system.</p>
 <h2 id="a-natural-reaction">A Natural Reaction</h2>
-<p>When you first see VibeSafe, a natural reaction is: “This looks like
-a lot of paperwork.” And you’d be absolutely right to think that … if we
-were still in the traditional cost model where human time writing code
-was the bottleneck.</p>
+<p>When you first see VibeSafe, a natural reaction is: “This looks like a lot of paperwork.” And you’d be absolutely right to think that … if we were still in the traditional cost model where human time writing code was the bottleneck.</p>
 <p>But we’re not in that model anymore. The bottleneck has shifted.</p>
 <h2 id="vibesafes-philosophy">VibeSafe’s Philosophy</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-philosophy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-philosophy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-philosophy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-philosophy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>VibeSafe’s core philosophy is simple: force intent to be explicit
-before implementation. When correcting a misunderstanding costs editing
-a markdown file instead of unwinding code changes, you want to have that
-conversation early.</p>
-<p>This isn’t about creating overhead, it’s about creating a checkpoint
-where humans can catch AI misinterpretation when it’s cheap to fix.</p>
+<p>VibeSafe’s core philosophy is simple: force intent to be explicit before implementation. When correcting a misunderstanding costs editing a markdown file instead of unwinding code changes, you want to have that conversation early.</p>
+<p>This isn’t about creating overhead, it’s about creating a checkpoint where humans can catch AI misinterpretation when it’s cheap to fix.</p>
 <h2 id="human-ai-collaboration">Human-AI Collaboration</h2>
-<p>AI coding assistants are powerful … like the BFG 9000 … but maybe a
-little too powerful. When you underspecify … or even when you correctly
-specify … they include implicit or incorrect assumptions.</p>
-<p>The challenge is to creating shared context and ensuring the AI
-understands not just what you said, but what you meant. VibeSafe
-provides structures for making that context explicit. This isn’t just
-good for you and the current AI, it’s good for you and the rest of the
-team … and future AIs.</p>
+<p>AI coding assistants are powerful … like the BFG 9000 … but maybe a little too powerful. When you underspecify … or even when you correctly specify … they include implicit or incorrect assumptions.</p>
+<p>The challenge is to creating shared context and ensuring the AI understands not just what you said, but what you meant. VibeSafe provides structures for making that context explicit. This isn’t just good for you and the current AI, it’s good for you and the rest of the team … and future AIs.</p>
 <h2 id="from-intent-to-documentation">From Intent to Documentation</h2>
-<p>VibeSafe structures development as a flow from principles to
-implementation to documentation:</p>
+<p>VibeSafe structures development as a flow from principles to implementation to documentation:</p>
 <ul>
-<li><strong>WHY</strong> (Tenets): Your project’s guiding
-principles</li>
-<li><strong>WHAT</strong> (Requirements): Desired outcomes, not
-methods</li>
-<li><strong>HOW</strong> (CIPs): Design decisions and architectural
-choices</li>
+<li><strong>WHY</strong> (Tenets): Your project’s guiding principles</li>
+<li><strong>WHAT</strong> (Requirements): Desired outcomes, not methods</li>
+<li><strong>HOW</strong> (CIPs): Design decisions and architectural choices</li>
 <li><strong>DO</strong> (Backlog): Specific implementation tasks</li>
-<li><strong>DOCUMENT</strong> (Compression): Distilling the development
-history into formal docs</li>
+<li><strong>DOCUMENT</strong> (Compression): Distilling the development history into formal docs</li>
 </ul>
-<p>Each level is explicit, reviewable, and provides a checkpoint for
-ensuring shared understanding.</p>
+<p>Each level is explicit, reviewable, and provides a checkpoint for ensuring shared understanding.</p>
 <h2 id="core-components">Core Components</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-core-components.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-core-components.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-core-components.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-core-components.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<h2 id="tenets-your-projects-principles">Tenets: Your Project’s
-Principles</h2>
-<p>Tenets are your project’s guiding principles—typically 5-7 of them,
-enough to cover key decisions but few enough to actually remember and
-apply.</p>
-<p>They’re not rigid rules. When tenets conflict, you need judgment. For
-example, VibeSafe has a tenet of “User Autonomy Over Prescription” (let
-users configure things) that can conflict with “Simplicity at All
-Levels” (don’t overwhelm with options). The resolution: sensible
-defaults with configuration options.</p>
+<h2 id="tenets-your-projects-principles">Tenets: Your Project’s Principles</h2>
+<p>Tenets are your project’s guiding principles, eventually 5-7 of them, enough to cover key decisions but few enough to actually remember and apply.</p>
+<p>They’re not rigid rules. When tenets conflict, you need judgment. For example, VibeSafe has a tenet of “User Autonomy Over Prescription” (let users configure things) that can conflict with “Simplicity at All Levels” (don’t overwhelm with options). The resolution: sensible defaults with configuration options.</p>
 <h2 id="requirements-what-not-how">Requirements: What, Not How</h2>
-<p>Requirements define <strong>what</strong> needs to be true, not
-<strong>how</strong> to make it true.</p>
-<p>“Users can install VibeSafe with a single command” is a requirement,
-it’s an outcome. “Create an install-minimal.sh script” is
-implementation, it’s a method.</p>
-<p>This separation is crucial because it lets the AI (or you) explore
-multiple approaches to achieving the requirement. Maybe a shell script
-is best. Maybe it’s a Python package. Maybe something else. The
-requirement stays constant while implementations can evolve.</p>
-<h2 id="cips-design-before-implementation">CIPs: Design Before
-Implementation</h2>
-<p>CIPs—Code Improvement Plans—are where you document design decisions
-before implementing them.</p>
-<p>Each CIP includes: - What problem it solves (Motivation) - How it
-solves it (Detailed Description) - Implementation plan with checkpoints
-- Testing strategy - Links to requirements it addresses</p>
-<p>The key: you review and refine the CIP before writing code. When you
-discover the AI misunderstood something, you edit markdown, not
-code.</p>
+<p>Requirements define <strong>what</strong> needs to be true, not <strong>how</strong> to make it true.</p>
+<p>“Users can install VibeSafe with a single command” is a requirement, it’s an outcome. “Create an install-minimal.sh script” is implementation, it’s a method.</p>
+<p>This separation is crucial because it lets the AI (or you) explore multiple approaches to achieving the requirement. Maybe a shell script is best. Maybe it’s a Python package. Maybe something else. The requirement stays constant while implementations can evolve.</p>
+<h2 id="cips-design-before-implementation">CIPs: Design Before Implementation</h2>
+<p>Code/Capability Improvement Plans (CIPs) are where you document design decisions before implementing them.</p>
+<p>Each CIP includes: - What problem it solves (Motivation) - How it solves it (Detailed Description) - Implementation plan with checkpoints - Testing strategy - Links to requirements it addresses</p>
+<p>The key: you review and refine the CIP before writing code. When you discover the AI misunderstood something, you edit markdown, not code.</p>
 <h2 id="backlog-execution-tasks">Backlog: Execution Tasks</h2>
-<p>The backlog contains specific implementation tasks. Critically, you
-create backlog tasks only when a CIP moves from “Proposed” to
-“Accepted.”</p>
-<p>Why wait? Because you don’t want to create detailed implementation
-tasks for a design that might change or be rejected. This avoids wasted
-effort and keeps the backlog focused on approved work.</p>
+<p>The backlog contains specific implementation tasks. Critically, you create backlog tasks only when a CIP moves from “Proposed” to “Accepted.”</p>
+<p>Why wait? Because you don’t want to create detailed implementation tasks for a design that might change or be rejected. This avoids wasted effort and keeps the backlog focused on approved work.</p>
 <h2 id="everything-is-markdown-yaml">Everything is Markdown + YAML</h2>
-<p>A key design decision: everything is stored as standard markdown
-files with YAML frontmatter. No proprietary formats. No platform
-lock-in.</p>
-<p>This means VibeSafe works with Cursor, GitHub Copilot, Claude Code,
-Codex, or any other AI assistant that can read project files. Following
-VibeSafe’s own tenets: user autonomy over prescription.</p>
+<p>A key design decision: everything is stored as standard markdown files with YAML frontmatter. No proprietary formats. No platform lock-in.</p>
+<p>This means VibeSafe works with Cursor, GitHub Copilot, Claude Code, Codex, or any other AI assistant that can read project files. Following VibeSafe’s own tenets: user autonomy over prescription.</p>
 <h2 id="the-workflow-in-practice">The Workflow in Practice</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-workflow.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-workflow.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-workflow.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-workflow.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<h2 id="example-adding-authentication">Example: Adding
-Authentication</h2>
-<p>Let’s walk through a concrete example: adding authentication to your
-application.</p>
-<p>First, you check your project’s tenets. Maybe you have a tenet about
-“Security Without Friction” that guides this decision.</p>
-<p>Then you write a requirement: “Users must authenticate securely with
-support for single sign-on.” This is the <strong>what</strong>—the
-outcome you need.</p>
-<p>Next, you create a CIP to explore the <strong>how</strong>: JWT
-tokens? Session-based auth? OAuth2 integration? The CIP documents your
-reasoning, trade-offs, and chosen approach. You review this with your
-team (human or AI) before implementing.</p>
+<h2 id="example-adding-authentication">Example: Adding Authentication</h2>
+<p>Let’s walk through a concrete example: adding authentication to your application.</p>
+<p>First, you check your project’s tenets. Maybe you have a tenet about “Security Without Friction” that guides this decision.</p>
+<p>Then you write a requirement: “Users must authenticate securely with support for single sign-on.” This is the WHAT—the outcome you need.</p>
+<p>Next, you create a CIP to explore the HOW: JWT tokens? Session-based auth? OAuth2 integration? The CIP documents your reasoning, trade-offs, and chosen approach. You review this with your team (human or AI) before implementing.</p>
 <h2 id="ai-natural-breakpoints">AI Natural Breakpoints</h2>
-<p>VibeSafe defines natural breakpoints in the workflow where AI
-assistants should pause for human review:</p>
+<p>VibeSafe defines natural breakpoints in the workflow where AI assistants should pause for human review:</p>
 <ol type="1">
-<li>After creating a CIP (status: Proposed) — let the human(s) review
-the design</li>
-<li>After accepting a CIP — ask if we should create backlog tasks
-now</li>
-<li>After implementation — let the human test and validate</li>
+<li>After creating a CIP (status: Proposed) let the human(s) review the design.</li>
+<li>After accepting a CIP ask if we should create backlog tasks now.</li>
+<li>After implementation let the human test and validate.</li>
 </ol>
-<p>These aren’t arbitrary, they’re the points where human judgment is
-most valuable. The AI can generate the content, but humans verify it
-matches intent.</p>
+<p>These aren’t arbitrary, they’re the points where human judgment is most valuable. The AI can generate the content, but humans verify it matches intent.</p>
 <h2 id="the-whats-next-script">The What’s Next Script</h2>
-<p>VibeSafe includes a “What’s Next” script that summarizes project
-status:</p>
+<p>VibeSafe includes a “What’s Next” script that summarizes project status:</p>
 <ul>
 <li>Current git branch and recent commits</li>
 <li>CIPs by status (proposed, accepted, in progress, closed)</li>
 <li>Backlog items by priority</li>
 <li>Recommended next steps</li>
 </ul>
-<p>Both humans and AI assistants use this to quickly understand “Where
-are we? What should I work on next?”</p>
-<p>It’s useful when an AI assistant or human starts the session, it gets
-immediate context without reading through dozens of files.</p>
+<p>Both humans and AI assistants use this to quickly understand “Where are we? What should I work on next?”</p>
+<p>It’s useful when an AI assistant or human starts the session, it gets immediate context without reading through dozens of files.</p>
 <h2 id="documentation-compression">Documentation Compression</h2>
-<p>After implementation is complete and a CIP is closed, there’s a final
-step: compression.</p>
-<p>You’ve now got the development history, why you made certain
-decisions, what alternatives you considered, how you implemented it.
-This is valuable, but future developers (human or AI) don’t need to read
-all of that to understand the current state.</p>
-<p>Compression means distilling the closed CIPs into streamlined formal
-documentation (like Sphinx docs). The history is preserved for those who
-need it, but the primary docs stay clean and focused.</p>
+<p>After implementation is complete and a CIP is closed, there’s a final step: compression.</p>
+<p>You’ve now got the development history, why you made certain decisions, what alternatives you considered, how you implemented it. This is valuable, but future developers (human or AI) don’t need to read all of that to understand the current state.</p>
+<p>Compression means distilling the closed CIPs into streamlined formal documentation (like Sphinx docs). The history is preserved for those who need it, but the primary docs stay clean and focused.</p>
 <h1 id="benefits-and-trade-offs">Benefits and Trade-offs</h1>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-benefits-tradeoffs.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-benefits-tradeoffs.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-benefits-tradeoffs.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-benefits-tradeoffs.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <h2 id="what-you-gain">What You Gain</h2>
 <p>What do you gain from this approach?</p>
-<p><strong>Early detection</strong>: You catch AI misunderstandings when
-they’re cheap to fix—editing a CIP instead of unwinding code.</p>
-<p><strong>Shared context</strong>: When a new team member joins (human
-or AI), they can read your tenets, requirements, and CIPs to understand
-not just what the code does, but why it does it that way.</p>
-<p><strong>Traceability</strong>: You can trace from implementation back
-through CIPs to requirements to tenets. “Why did we choose this
-architecture?” has a documented answer.</p>
-<p><strong>Better AI interactions</strong>: By making context explicit,
-AI assistants give better suggestions. They understand your project’s
-principles and constraints.</p>
+<p><em>Early detection</em>: You catch AI misunderstandings when they’re cheap to fix, i.e. editing a CIP instead of unwinding code.</p>
+<p><em>Shared context</em>: When a new team member joins (human or AI), they can read your tenets, requirements, and CIPs to understand not just what the code does, but why it does it that way.</p>
+<p><em>Traceability</em>: You can trace from implementation back through CIPs to requirements to tenets. “Why did we choose this architecture?” has a documented answer.</p>
+<p><em>Better AI interactions</em>: By making context explicit, AI assistants give better suggestions. They understand your project’s principles and constraints.</p>
 <h2 id="what-it-costs">What It Costs</h2>
 <p>What does it cost?</p>
-<p><strong>Upfront time</strong>: Yes, you spend more time documenting
-before implementing. In the old cost model, this was pure overhead. In
-the AI-assisted model, it’s front-loading the verification work.</p>
-<p><strong>Learning curve</strong>: Your team needs to learn the
-VibeSafe workflow. This takes time and adjustment, especially for
-engineers used to moving straight to implementation.</p>
-<p><strong>Maintenance</strong>: More files to keep updated. CIPs need
-status updates. Requirements need validation. Tenets need to be actually
-applied, not just written once and forgotten.</p>
+<p><em>Upfront time</em>: Yes, you spend more time documenting before implementing. In the old cost model, this was pure overhead. In the AI-assisted model, it’s front-loading the verification work.</p>
+<p><em>Learning curve</em>: Your team needs to learn the VibeSafe workflow. This takes time and adjustment, especially for engineers used to moving straight to implementation.</p>
+<p><em>Maintenance</em>: More files to keep updated. CIPs need status updates. Requirements need validation. Tenets need to be actually applied, not just written once and forgotten.</p>
 <h2 id="when-does-this-make-sense">When Does This Make Sense?</h2>
 <p>When does VibeSafe make sense?</p>
-<p>It’s most valuable when: - You’re actively using AI coding assistants
-- You have complex systems where misunderstandings are expensive -
-Multiple engineers need shared context - Your codebase will live for
-years, not months</p>
-<p>It’s probably overkill for: - Small scripts or one-off tools - Solo
-weekend projects - Throwaway prototypes</p>
-<p>The question: Is the cost of potential misimplementation higher than
-the cost of upfront documentation? For many production systems with AI
-assistance, the answer is yes.</p>
+<p>It’s most valuable when: - You’re actively using AI coding assistants - You have complex systems where misunderstandings are expensive - Multiple engineers need shared context - Your codebase will live for years, not months</p>
+<p>It’s probably overkill for: - Small scripts or one-off tools - Solo weekend projects - Throwaway prototypes</p>
+<p>The question: Is the cost of potential misimplementation higher than the cost of upfront documentation? For many production systems with AI assistance, the answer is yes.</p>
 <h2 id="the-real-question">The Real Question</h2>
-<p>But here’s the real question for you, as experienced engineers: Does
-this match how you actually work with AI assistants? Or how you want to
-work?</p>
-<p>We’re still early in understanding how to collaborate effectively
-with AI in software development. VibeSafe is one approach, born from
-practice. But it’s not the only approach, and it may not be the right
-approach for your context.</p>
+<p>But here’s the real question for you, as experienced engineers: Does this match how you actually work with AI assistants? Or how you want to work?</p>
+<p>We’re still early in understanding how to collaborate effectively with AI in software development. VibeSafe is one approach, born from practice. But it’s not the only approach, and it may not be the right approach for your context.</p>
 <p>That’s why we’re here, to get your input.</p>
 <h1 id="discussion">Discussion</h1>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-discussion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-discussion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-discussion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/vibesafe-discussion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <h2 id="questions-for-you">Questions for You</h2>
 <p>I’d like to hear from you:</p>
-<p><strong>Your experiences</strong>: Have you hit cases where an AI
-assistant misunderstood your intent and generated plausible but wrong
-code? How did you discover it? What was the cost?</p>
-<p><strong>Current practices</strong>: How do you currently ensure
-shared understanding between team members and AI assistants? Do you have
-patterns that work well?</p>
-<p><strong>Improvements</strong>: Looking at VibeSafe, what would make
-it more useful for your team? What seems like unnecessary overhead?
-What’s missing?</p>
+<p><strong>Your experiences</strong>: Have you hit cases where an AI assistant misunderstood your intent and generated plausible but wrong code? How did you discover it? What was the cost?</p>
+<p><strong>Current practices</strong>: How do you currently ensure shared understanding between team members and AI assistants? Do you have patterns that work well?</p>
+<p><strong>Improvements</strong>: Looking at VibeSafe, what would make it more useful for your team? What seems like unnecessary overhead? What’s missing?</p>
 <h2 id="open-questions">Open Questions</h2>
 <p>Some open questions we’re exploring:</p>
-<p><strong>Granularity</strong>: What’s the right level of detail for a
-CIP? Too detailed and it’s busywork. Too high-level and it doesn’t catch
-misunderstandings.</p>
-<p><strong>Tool integration</strong>: How should VibeSafe integrate with
-issue trackers, CI/CD, code review? What would make it feel more natural
-in your workflow?</p>
-<p><strong>Legacy systems</strong>: Most of us aren’t starting
-greenfield. How do you introduce VibeSafe practices to an existing
-codebase? Where do you start?</p>
-<p><strong>Team adoption</strong>: If we wanted to try this with the
-team, what would be the barriers? What would help?</p>
+<p><strong>Granularity</strong>: What’s the right level of detail for a CIP? Too detailed and it’s busywork. Too high-level and it doesn’t catch misunderstandings.</p>
+<p><strong>Tool integration</strong>: How should VibeSafe integrate with issue trackers, CI/CD, code review? What would make it feel more natural in your workflow?</p>
+<p><strong>Legacy systems</strong>: Most of us aren’t starting greenfield. How do you introduce VibeSafe practices to an existing codebase? Where do you start?</p>
+<p><strong>Team adoption</strong>: If we wanted to try this with the team, what would be the barriers? What would help?</p>
 <h2 id="try-it-yourself">Try It Yourself</h2>
 <p>If you’re interested in trying VibeSafe, it’s a one-line install:</p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/lawrennd/vibesafe/main/scripts/install-minimal.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
-<p>It’s on GitHub at lawrennd/vibesafe. MIT licensed. Works with Cursor,
-Copilot, Claude Code, or any AI assistant that can read markdown
-files.</p>
-<p>I’d love to hear how it works (or doesn’t work) for your
-projects.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="at">-c</span> <span class="st">&quot;</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/lawrennd/vibesafe/main/scripts/install-minimal.sh<span class="va">)</span><span class="st">&quot;</span></span></code></pre></div>
+<p>It’s on GitHub at lawrennd/vibesafe. MIT licensed. Works with Cursor, Copilot, Claude Code, or any AI assistant that can read markdown files.</p>
+<p>I’d love to hear how it works (or doesn’t work) for your projects.</p>
 <h2 id="questions">Questions?</h2>
-<p>Thank you. Let’s open it up for discussion. Your experience and
-insights will be invaluable in understanding whether this approach has
-legs, what needs to change, and how it might fit into real engineering
-practice.</p>
+<p>Thank you. Let’s open it up for discussion. Your experience and insights will be invaluable in understanding whether this approach has legs, what needs to change, and how it might fit into real engineering practice.</p>
 <h2 id="thanks">Thanks!</h2>
-<p>For more information on these subjects and more you might want to
-check the following resources.</p>
+<p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
 <li>company: <a href="https://trent.ai">Trent AI</a></li>
-<li>book: <a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
-Atomic Human</a></li>
+<li>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking
-Machines</a></li>
-<li>newspaper: <a
-href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile
-Page</a></li>
-<li>blog: <a
-href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 <h1 id="references">References</h1>
 

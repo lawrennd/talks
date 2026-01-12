@@ -17,20 +17,9 @@ venue: Easbrook House, Cambridge
 transition: None
 ---
 
-<!-- first draft of talk, needs reworking -->
-
 \section{Introduction: The Translation Challenge}
 
-\newslide{From Research to Practice}
-
-\slides{
-* Machine learning research: controlled environments
-* Real-world deployment: messy, evolving data
-* The gap between prototype and production
-}
-
-\notes{Today I want to talk about one of the most significant challenges in modern AI: how we translate machine learning from research prototypes into robust, reliable systems that can operate in the real world. This challenge is particularly acute in industries like pharmaceuticals, where the stakes are high and the tolerance for error is low.}
-
+\include{_ml/includes/translating-ai-introduction.md}
 \include{_ai/includes/what-is-intelligence.md}
 
 \section{The Deployment Challenge}
@@ -58,58 +47,21 @@ transition: None
 
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_ai/includes/embodiment-factors-tedx.md}
-
-\newslide{Human-AI Collaboration}
-
-\slides{
-* AI augments rather than replaces human expertise
-* Critical importance of domain knowledge
-* Trust and transparency in high-stakes decisions
-}
-
-\notes{The pharmaceutical industry exemplifies why we need AI systems that work with human experts rather than attempting to replace them. The complexity of drug discovery, the regulatory environment, and the life-and-death consequences of decisions all require systems that enhance human capabilities while maintaining human oversight and accountability.}
+\include{_ai/includes/human-ai-collaboration-healthcare.md}
 
 \section{Trust, Autonomy, and Embodiment}
 
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
-
-\section{Practical Implications for Industry}
-
-\newslide{Key Lessons for Implementation}
-
-\slides{
-* Design for continuous monitoring and adaptation
-* Invest early in robust system architecture
-* Maintain human expertise in the loop
-}
-
-\notes{Drawing from experience deploying machine learning systems at scale, there are several critical lessons for organizations looking to implement AI in practice. First, the world changes around our deployed systems, requiring continuous monitoring and the ability to adapt. Second, intellectual debt accrues quickly if we don't invest early in proper system design. Third, particularly in domains like healthcare and pharmaceuticals, maintaining human expertise and oversight is not just advisable—it's essential.}
+\include{_ml/includes/practical-implications-ai-implementation.md}
 
 \section{The Path Forward}
 
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
-
-\newslide{Building Trustworthy AI Systems}
-
-\slides{
-* Separate infrastructure concerns from domain expertise
-* Design for interpretability and explainability
-* Establish robust governance and oversight
-}
-
-\notes{The future of AI in critical industries depends on building systems that are not just accurate, but trustworthy. This means separating concerns appropriately—ensuring that security and reliability experts handle infrastructure while domain experts focus on the science. It means designing systems that can explain their decisions. And it means establishing governance frameworks that ensure AI serves human purposes rather than replacing human judgment.}
+\include{_ai/includes/building-trustworthy-ai-systems.md}
 
 \section{Conclusion}
 
-\newslide{Key Takeaways}
-
-\slides{
-* Translation requires new engineering practices
-* Human expertise remains central
-* Success depends on trustworthy, interpretable systems
-}
-
-\notes{The challenge of translating AI into practice is not just technical—it's fundamentally about how we integrate machine intelligence with human intelligence. In sectors like pharmaceuticals, where the consequences of decisions affect human lives, this integration must prioritize trust, transparency, and human oversight. The future belongs not to systems that replace human experts, but to those that amplify human capabilities while maintaining the essential human qualities of judgment, responsibility, and care.}
+\include{_ml/includes/translating-ai-conclusion.md}
 
 \thanks
 

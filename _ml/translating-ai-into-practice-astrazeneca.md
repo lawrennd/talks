@@ -17,52 +17,108 @@ venue: Easbrook House, Cambridge
 transition: None
 ---
 
-\section{Introduction: The Translation Challenge}
+\section{Introduction: AI Enhances People, Not Replaces Them}
 
-\include{_ml/includes/translating-ai-introduction.md}
-\include{_ai/includes/what-is-intelligence.md}
 
-\section{The Deployment Challenge}
 
-\include{_ml/includes/ml-deployment-challenge.md}
+<!-- speed of AI vs speed of human thought -->
 
-\section{Machine Learning Systems Design}
+\subsection{Artificial General Vehicle}
 
-\include{_ai/includes/ml-systems-design-long.md}
+\include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 
-\section{Organizations and Systems: Conway's Law}
+\notes{From a societal perspective, when understanding our new AI capabilities, one challenge we face is that notions of intelligence are very personal to us. Calling a machine intelligent triggers us to imagine a human-like intelligence as the drive behind the machine's decision-making capabilities. We anthropomorphize, but our anthropomorphizing becomes conflated with our understanding of the undoubted strengths of the machine.}
 
+\comment{Emphasize here that misunderstanding AI leads to fear. Like thinking a car is a "general purpose human" rather than a vehicle. AI is a tool that makes teams more effective.}
+
+<!-- human conversation image? -->
+\include{_ai/includes/the-atomic-eye.md}
+\include{_policy/includes/shannon-information.md}
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_ai/includes/conversation-tedx.md}
+
+
+\newslide{The Evolution of Decision Making}
+
+\include{_ai/includes/human-computers-interacting.md}
 \include{_business/includes/the-api-mandate-bezos.md}
 
-\section{Intellectual Debt in AI Systems}
+\section{Information Topography: Building Teams that Win with AI}
 
-\include{_ai/includes/intellectual-debt.md}
 
-\section{The Healthcare Imperative}
-
-\include{_ai/includes/rapid-diagnosis-and-consultation.md}
-\include{_health/includes/rolls-royce-analogy.md}
-
-\section{The Atomic Human Perspective}
-
-\include{_atomic-human/includes/fascination-with-ourselves.md}
-\include{_ai/includes/embodiment-factors-tedx.md}
-\include{_ai/includes/human-ai-collaboration-healthcare.md}
-
-\section{Trust, Autonomy, and Embodiment}
-
+\include{_business/includes/an-attention-economy.md}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
-\include{_ml/includes/practical-implications-ai-implementation.md}
 
-\section{The Path Forward}
+\subsection{Balancing Centralised Control with Devolved Authority}
 
-\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
-\include{_ai/includes/building-trustworthy-ai-systems.md}
+\include{_business/includes/bezos-question-mark-email.md}
+\include{_business/includes/executive-sponsorship.md}
 
-\section{Conclusion}
+\comment{Connect to "Shapes Enterprise Vision and Strategy" capability. Leaders need to create conditions where AI empowers teams rather than centralising control.}
 
-\include{_ml/includes/translating-ai-conclusion.md}
+
+
+\comment{Frame as opportunity for those who are "Hungry and Humble" - willingness to learn new ways of working becomes competitive advantage.}
+
+\include{_simulation/includes/the-moniac.md}
+
+
+\include{_ai/includes/processor-ham.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+
+\newslide{The Business Challenge}
+
+\comment{Address the resistance/fear directly here. Why do people fight it? Because they see replacement not enhancement. Companies that help people see AI as amplification of their unique human capabilities will win.}
+
+\newslide{What to do?}
+
+\slides{* We know everything we're doing now is wrong.
+* We don't know how it's wrong.
+* "Marconi approach" unlikely to work
+}
+
+\section{The Human Capital Advantage: Invest in People}
+
+\include{_business/includes/attention-reinvestment-cycle.md}
+
+\include{_business/includes/ft-op-ed.md}
+
+\newslide{The Team Multiplier Effect}
+
+\slides{* AI amplifies human capabilities - if you invest in people
+* Human judgment, creativity, and collaboration become MORE valuable
+* Companies that recognise human capital is diffrentiator
+* Fear is natural - but growth mindset is competitive advantage}
+
+\newslide{Your Leadership Imperative}
+
+\slides{* Create conditions where AI enhances rather than threatens
+* Build trust through transparent AI deployment
+* Invest in developing talent for AI-augmented roles
+* Shape vision where humans and AI win as a team}
+
+\include{_data-science/includes/data-science-africa.md}
+\include{_business/includes/why-start-trent.md}
+
+\newslide{Conclusion}
+
+\slides{
+* AI reshapes information flows - understand your information topography
+* Balance centralized control and devolved decision-making  
+* Recognize LLMs as interfaces that amplify team capabilities
+* Human capital is your competitive advantage in AI age
+}
+
+\newslide{Final Thought}
+
+\slides{
+* Build intelligent accountability into your AI deployments
+* Foster growth mindset: stay hungry and humble
+* Create belonging through AI, not displacement
+* Win as a team by making AI your team multiplier
+}
 
 \thanks
 
 \references
+

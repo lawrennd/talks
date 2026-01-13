@@ -73,9 +73,11 @@ layout: post
   {% endif %}
 
   {{ content | markdownify }}
-    
-  {%- if site.disqus.shortname -%}
-  {%- include disqus_comments.html -%}
+  
+  {%- if site.comments -%}
+    {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+    {%- endif -%}
   {%- endif -%}
 
   </article>

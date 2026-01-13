@@ -34,8 +34,8 @@ colab: https://colab.research.google.com
 nbviewer: https://nbviewer.jupyter.org
 
 comments: false
-disqus:
-  shortname: inverseprobabilitycom
+#disqus:
+#  shortname: inverseprobabilitycom
 ghub:
   edit: true
   repository: talks
@@ -48,9 +48,6 @@ plugins:
 remote_theme: lawrennd/jekyll-theme
 style: ndltalk
 
-comments: True
-disqus:
-  shortname: inverseprobabilitycom
 
 analytics:
   google:

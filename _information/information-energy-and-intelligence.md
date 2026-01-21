@@ -1,10 +1,12 @@
 ---
 title: "Information, Energy and Intelligence"
-subtitle: "Towards internally adjudicable rules of inference"
+subtitle: "What Emerges from Internal Adjudicability?"
 abstract: |
-  Our fascination with AI and promises of superintelligence mirror the excitement around perpetual motion machines a century ago. Just as thermodynamics places fundamental limits on engines, information theory places fundamental limits on intelligence. This talk introduces the no barber principle and a derived game called the "inaccessible game," an information-theoretic dynamical system built from four axioms. The game reveals how GENERIC structure—combining reversible and irreversible dynamics—emerges from information conservation, how energy and entropy become equivalent in the thermodynamic limit, and why Landauer's principle follows naturally. These results suggest that superintelligence claims violate fundamental information-theoretic constraints, much as perpetual motion violates thermodynamics.
+  David MacKay's work emphasized explicit assumptions and operational clarity in modeling information and inference. In games like Conway's Life, rules are explicit and self-contained. In analytic frameworks, we often take implicit adjudicators for granted—external observers, pre-specified outcome spaces, privileged decompositions. What if we forbid such external adjudication and seek only rules that can be applied from within the system?
   
-  This work is dedicated to the memory of David MacKay, whose approach to cutting through hype with rigorous reasoning inspired this investigation.
+  This talk explores the "inaccessible game," an information-theoretic dynamical system where all rules must be internally adjudicable. Starting from three axioms characterizing information loss (Baez-Fritz-Leinster), we show how a "no-barber principle" selects marginal entropy conservation, maximum entropy dynamics, and specific substrate properties—not by assumption but by consistency requirements. These constraints generate GENERIC structure (combining reversible and irreversible dynamics), imply energy-entropy equivalence in the thermodynamic limit, and yield Landauer's principle as a derived consequence. The framework suggests that certain thermodynamic structures may emerge from information-theoretic consistency rather than being independently imposed, and hints at broader relevance for theory construction.
+  
+  This work is dedicated to the memory of David MacKay.
 author:
 - family: Lawrence
   given: Neil D.
@@ -17,20 +19,29 @@ venue: Cambridge Philosophical Society - David MacKay Memorial Meeting, Cambridg
 transition: None
 ---
 
-\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
 \include{_information/includes/david-mackay-memorial.md}
+\include{_information/includes/mackay-explicit-assumptions.md}
 
-\section{Information, Energy and Fundamental Limits}
+\section{The No-Barber Principle}
 
-\include{_information-game/includes/information-theory-overview.md}
-\include{_information/includes/information-limits-on-intelligence.md}
+\notes{We begin with a conceptual constraint inspired by Russell's paradox: demanding that the rules of our system not appeal to external adjudicators or reference points.}
+
+\include{_information-game/includes/no-barber-principle.md}
+
+\section{Foundations: Information Loss and Entropy}
+
+\subsection{The Three Axioms}
+
+\include{_information-game/includes/baez-information-loss-axioms.md}
+
+\subsection{Information Isolation: Selected by No-Barber}
+
+\include{_information-game/includes/information-isolation-selected.md}
 
 \section{The Inaccessible Game}
 
-\subsection{Foundations: The Four Axioms}
+\notes{With these foundations, we can now introduce the game itself.}
 
-\include{_information-game/includes/baez-information-loss-axioms.md}
-\include{_information-game/includes/information-conservation-axiom.md}
 \include{_information-game/includes/inaccessible-game-introduction.md}
 
 \section{Information Dynamics}
@@ -44,24 +55,24 @@ transition: None
 \include{_physics/includes/information-relaxation-mep.md}
 \include{_physics/includes/constrained-maximum-entropy-production.md}
 
-\section{Emergence of Physical Structure}
+\section{Emergent Structure: GENERIC}
 
-\subsection{GENERIC: Reversible and Irreversible Dynamics}
+\subsection{What is GENERIC?}
+
+\notes{One of the most remarkable consequences of constrained maximum entropy production is the emergence of GENERIC structure—a framework from non-equilibrium thermodynamics that combines reversible and irreversible dynamics.}
 
 \include{_physics/includes/generic-framework-intro.md}
 \include{_physics/includes/generic-equation-structure.md}
 
-\newslide{Automatic Degeneracy}
+\subsection{Automatic Degeneracy}
+
+\notes{In standard GENERIC applications, ensuring thermodynamic consistency requires careful hand-crafting of operators. In our framework, the consistency conditions emerge automatically.}
 
 \include{_physics/includes/degeneracy-conditions-automatic.md}
 
-\include{_physics/includes/harmonic-oscillator-generic-example.md}
-
-\include{_information-game/includes/n3-ising-simulation-validation.md}
-
 \section{Information Topography}
 
-\notes{The Fisher information matrix provides mathematical teeth to the intuitive notion of an "information topography" from *The Atomic Human*.}
+\notes{The Fisher information matrix provides mathematical precision to the intuitive notion of an "information topography"—the landscape that shapes how information can flow.}
 
 \include{_information-game/includes/fisher-as-conductance-tensor.md}
 \include{_information/includes/information-topography-definition.md}
@@ -71,9 +82,9 @@ transition: None
 
 \subsection{The Thermodynamic Limit}
 
-\include{_physics/includes/thermodynamic-limit-equivalence.md}
+\notes{Perhaps the most surprising result is that our information-theoretic constraint becomes equivalent to energy conservation in appropriate limits.}
 
-\include{_information-game/includes/curie-weiss-phase-transition-validation.md}
+\include{_physics/includes/thermodynamic-limit-equivalence.md}
 
 \subsection{GENERIC and Thermodynamics}
 
@@ -81,97 +92,90 @@ transition: None
 
 \section{Landauer's Principle}
 
-\notes{One of the most fundamental results connecting information and energy is Landauer's principle. The inaccessible game allows us to derive it from first principles.}
+\notes{With the energy-entropy equivalence established, we can derive Landauer's principle—the fundamental limit on information erasure—from our information-theoretic framework.}
 
 \include{_information-game/includes/landauer-from-inaccessible-game.md}
 \include{_information-game/includes/landauer-shannon-connection.md}
 
-\section{Implications for Intelligence}
+\section{Implications}
 
-\subsection{Why Superintelligence is Like Perpetual Motion}
+\subsection{Information-Theoretic Limits}
 
+\notes{The framework reveals fundamental constraints on information processing systems, including intelligent systems.}
+
+\include{_information/includes/information-limits-on-intelligence.md}
+
+\subsection{A Thought on Intelligence}
+
+\notes{The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.}
+
+\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
 \include{_ai/includes/superintelligence-as-perpetual-motion.md}
-
-\subsection{The Limits of Enhancement}
-
-\include{_ai/includes/transhumanism.md}
 
 \section{Conclusions}
 
-\notes{The inaccessible game provides an information-theoretic foundation for understanding physical systems and, by extension, intelligent systems. Starting from four axioms—three from Baez characterizing information loss, and a fourth imposing information isolation—we derive:}
+\notes{We have explored what emerges when we demand internal adjudicability in an information-theoretic dynamical system. Starting from consistency requirements rather than physical assumptions, we derived:}
 
 \slides{
-**From Four Axioms:**
+**From Internal Adjudicability:**
 
-1. Functoriality (Baez)
-2. Convex linearity (Baez)  
-3. Continuity (Baez)
-4. Information isolation (new)
-
-**We Derive:**
-* GENERIC structure
+No-barber principle
+$\Downarrow$
+Information isolation: $\sum h_i = C$
+$\Downarrow$
+* GENERIC structure emerges
 * Energy-entropy equivalence
 * Landauer's principle
-* Limits on intelligence
+* Information bounds
 }
 
-\notes{This reverses the usual logic where information bounds follow from thermodynamics. Here, thermodynamic structure emerges from information-theoretic principles. This suggests Wheeler's "it from bit" vision may be realizable: physical laws emerging from information-theoretic constraints.}
+\notes{This reverses the usual logic. Rather than starting with thermodynamics and deriving information bounds, we start with information-theoretic consistency and derive thermodynamic structure. This suggests Wheeler's "it from bit" vision may be realizable: physical laws emerging from information-theoretic constraints.}
 
-\notes{For intelligence, the message is clear: just as no clever arrangement of gears can create a perpetual motion machine, no clever arrangement of algorithms can create unbounded superintelligence. The constraints are fundamental, built into the structure of information itself.}
+\subsection{Broader Relevance?}
 
-\slides{
-**Key Messages:**
-
-* Information theory → Thermodynamics (not reverse!)
-* GENERIC emerges automatically from axioms
-* Superintelligence violates information bounds
-* Embodiment is necessity, not limitation
-
-**"It from bit" realized**
-}
+\include{_information/includes/theory-construction-hint.md}
 
 \subsection{David MacKay's Legacy}
 
-\notes{David taught us to ask: "What are the fundamental constraints? What do the numbers actually say?" This work aspires to follow in that tradition. By starting with information-theoretic axioms and deriving physical structure, we can rigorously understand why certain promises, whether perpetual motion or superintelligence, are impossible.}
+\notes{David MacKay taught us to ask: "What are the fundamental constraints? What do the numbers actually say?" This work follows that tradition—making assumptions explicit, exploring consequences rigorously, and letting the mathematics reveal structure.}
 
-\notes{I hope that David would have appreciated both the mathematical structure and its application to deflating hype. His legacy continues in work that uses careful reasoning to illuminate real constraints, helping us distinguish transformative but bounded progress from impossible dreams.}
+\notes{David would have appreciated the attempt to build foundations carefully, to derive rather than assume, and to use mathematical structure to illuminate real constraints. His legacy continues in work that combines technical rigor with conceptual clarity.}
 
 \slides{
-**David MacKay's Approach:**
+**MacKay's Approach:**
 
-* Start with fundamentals
-* Build rigorous framework
-* Let mathematics reveal truth
-* Use reason to cut through hype
+* Make assumptions explicit
+* Explore consequences rigorously  
+* Let mathematics reveal structure
+* Use reasoning to illuminate constraints
 
 **This work continues that tradition**
 }
 
 \subsection{Open Questions}
 
-\notes{Many questions remain open:
+\notes{Many questions remain:
 
-1. Can we prove that exponential families are necessary, not just convenient?
-2. What is the initial state of the inaccessible game (the origin where $H=0$)?
-3. Under what conditions does the Jacobi identity hold globally?
-4. Can this framework extend to quantum systems?
-5. What are the implications for understanding biological intelligence?
+1. Can we formalize "axiomatic distinguishability" more rigorously?
+2. Does the Jacobi identity hold globally, or only for symmetric configurations?
+3. Can this framework extend to quantum systems beyond the origin?
+4. What other structures emerge from internal adjudicability?
+5. Does this constraint illuminate other areas of theory construction?
 
-These questions point toward future work connecting information theory, physics, and the nature of intelligence.}
+These point toward future work at the intersection of information theory, geometry, and foundations.}
 
 \slides{
 **Open Questions:**
 
-* Exponential families.
-* Initial state of the game
-* Global Poisson structure  
+* Formalize axiomatic distinguishability?
+* Global Poisson structure?
+* Quantum extension?
+* Other emergent structures?
+* Broader applicability?
 
-*Much to explore!*
+*Much to explore*
 }
-
-\include{_information-game/includes/intelligence-thermodynamics-connection.md}
 
 \thanks
 
 \references
-

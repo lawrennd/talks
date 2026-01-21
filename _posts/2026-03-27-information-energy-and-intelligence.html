@@ -2,21 +2,27 @@
 title: "Information, Energy and Intelligence"
 venue: "Cambridge Philosophical Society - David MacKay Memorial Meeting,
 Cambridge University Engineering Department"
-abstract: "<p>Our fascination with AI and promises of superintelligence
-mirror the excitement around perpetual motion machines a century ago.
-Just as thermodynamics places fundamental limits on engines, information
-theory places fundamental limits on intelligence. This talk introduces
-the “inaccessible game,” an information-theoretic dynamical system built
-from four axioms. The game reveals how GENERIC structure—combining
-reversible and irreversible dynamics—emerges from information
-conservation, how energy and entropy become equivalent in the
-thermodynamic limit, and why Landauer’s principle follows naturally.
-These results suggest that superintelligence claims violate fundamental
-information-theoretic constraints, much as perpetual motion violates
-thermodynamics.</p>
-<p>This work is dedicated to the memory of David MacKay, whose approach
-to cutting through hype with rigorous reasoning inspired this
-investigation.</p>"
+abstract: "<p>David MacKay’s work emphasized explicit assumptions and
+operational clarity in modeling information and inference. In games like
+Conway’s Life, rules are explicit and self-contained. In analytic
+frameworks, we often take implicit adjudicators for granted—external
+observers, pre-specified outcome spaces, privileged decompositions. What
+if we forbid such external adjudication and seek only rules that can be
+applied from within the system?</p>
+<p>This talk explores the “inaccessible game,” an information-theoretic
+dynamical system where all rules must be internally adjudicable.
+Starting from three axioms characterizing information loss
+(Baez-Fritz-Leinster), we show how a “no-barber principle” selects
+marginal entropy conservation, maximum entropy dynamics, and specific
+substrate properties—not by assumption but by consistency requirements.
+These constraints generate GENERIC structure (combining reversible and
+irreversible dynamics), imply energy-entropy equivalence in the
+thermodynamic limit, and yield Landauer’s principle as a derived
+consequence. The framework suggests that certain thermodynamic
+structures may emerge from information-theoretic consistency rather than
+being independently imposed, and hints at broader relevance for theory
+construction.</p>
+<p>This work is dedicated to the memory of David MacKay.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -45,43 +51,6 @@ categories:
 <!--
 
 -->
-<h2 id="perpetual-motion-and-superintelligence">Perpetual Motion and
-Superintelligence</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Imagine in 1925 a world where the automobile is already transforming
-society, but big promises are being made for things to come. The stock
-market is soaring, the 1918 pandemic is forgotten. And every major
-automobile manufacturer is investing heavily on the promise they will
-each be the first to produce a car that needs no fuel. A perpetual
-motion machine.</p>
-<p>Well, of course that didn’t happen. But I sometimes wonder if what
-we’re seeing today 100 years later is the modern equivalent of that. In
-2025 billions are being invested in promises of superintelligence and
-artificial general intelligence that will transform everything.</p>
-<p>We know why perpetual motion is impossible: the second law of
-thermodynamics tells us that entropy always increases. So we can’t have
-motion without entropy production. No matter how clever the design, you
-cannot extract energy from nothing, and you cannot create a closed
-system that does useful work indefinitely without an external energy
-source.</p>
-<p>How might we make an equivalent statement for the bizarre claims
-around superintelligence? Some inspiration comes from Maxwell’s demon,
-an “intelligent” entity which operates against the laws of
-thermodynamics. The inspiration comes because the demon suggests that
-for the second law to hold there must be a relationship between the
-demon’s decisions and thermodynamic entropy.</p>
-<p>One of the resolutions comes from Landauer’s principle, the notion
-that erasure of information requires heat dissipation. This suggests
-there are fundamental information-theoretic constraints on intelligent
-systems, just as there are thermodynamic constraints on engines.</p>
-<p>I’ve no doubt that AI technologies will transform our world just as
-much as the automobile has. But I also have no doubt that the promise of
-superintelligence is just as silly as the promise of perpetual motion.
-The inaccessible game provides one way of understanding why.</p>
 <h2 id="in-memory-of-david-mackay">In Memory of David MacKay</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -115,227 +84,127 @@ say?” In that spirit, this work asks: What fundamental
 information-theoretic constraints govern intelligent systems? Can we
 understand these constraints as rigorously as we understand
 thermodynamic constraints on engines?</p>
-<h1 id="information-energy-and-fundamental-limits">Information, Energy
-and Fundamental Limits</h1>
-<h1 id="information-theory-and-thermodynamics">Information Theory and
-Thermodynamics</h1>
+<h2 id="mackays-legacy-explicit-assumptions">MacKay’s Legacy: Explicit
+Assumptions</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-theory-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/mackay-explicit-assumptions.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/mackay-explicit-assumptions.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Information theory provides a mathematical framework for quantifying
-information. Many of information theory’s core concepts parallel those
-found in thermodynamics. The theory was developed by Claude Shannon who
-spoke extensively to MIT’s Norbert Wiener at while it was in development
-<span class="citation" data-cites="Conway-dark05">(Conway and Siegelman,
-2005)</span>. Wiener’s own ideas about information were inspired by
-Willard Gibbs, one of the pioneers of the mathematical understanding of
-free energy and entropy. Deep connections between physical systems and
-information processing have connected information and energy from the
-start.</p>
-<h2 id="entropy">Entropy</h2>
-<p>Shannon’s entropy measures the uncertainty or unpredictability of
-information content. This mathematical formulation is inspired by
-thermodynamic entropy, which describes the dispersal of energy in
-physical systems. Both concepts quantify the number of possible states
-and their probabilities.</p>
-<div class="figure">
-<div id="maxwell-demon-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information/maxwell-demon.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="maxwell-demon-magnify" class="magnify"
-onclick="magnifyFigure(&#39;maxwell-demon&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="maxwell-demon-caption" class="caption-frame">
-<p>Figure: Maxwell’s demon thought experiment illustrates the
-relationship between information and thermodynamics.</p>
-</div>
-</div>
-<p>In thermodynamics, free energy represents the energy available to do
-work. A system naturally evolves to minimize its free energy, finding
-equilibrium between total energy and entropy. Free energy principles are
-also pervasive in variational methods in machine learning. They emerge
-from Bayesian approaches to learning and have been heavily promoted by
-e.g. Karl Friston as a model for the brain.</p>
-<p>The relationship between entropy and Free Energy can be explored
-through the Legendre transform. This is most easily reviewed if we
-restrict ourselves to distributions in the exponential family.</p>
-<h2 id="exponential-family">Exponential Family</h2>
-<p>The exponential family has the form <span class="math display">\[
-  \rho(Z) = h(Z) \exp\left(\boldsymbol{\theta}^\top T(Z) +
-A(\boldsymbol{\theta})\right)
-\]</span> where <span class="math inline">\(h(Z)\)</span> is the base
-measure, <span class="math inline">\(\boldsymbol{\theta}\)</span> is the
-natural parameters, <span class="math inline">\(T(Z)\)</span> is the
-sufficient statistics and <span
-class="math inline">\(A(\boldsymbol{\theta})\)</span> is the log
-partition function. Its entropy can be computed as <span
-class="math display">\[
-  S(Z) = A(\boldsymbol{\theta}) - \boldsymbol{\theta}^\top
-\nabla_\boldsymbol{\theta}A(\boldsymbol{\theta}) - E_{\rho(Z)}\left[\log
-h(Z)\right],
-\]</span> where <span class="math inline">\(E_{\rho(Z)}[\cdot]\)</span>
-is the expectation under the distribution <span
-class="math inline">\(\rho(Z)\)</span>.</p>
-<h2 id="available-energy">Available Energy</h2>
-<h2 id="work-through-measurement">Work through Measurement</h2>
-<p>In machine learning and Bayesian inference, the Markov blanket is the
-set of variables that are conditionally independent of the variable of
-interest given the other variables. To introduce this idea into our
-information system, we first split the system into two parts, the
-variables, <span class="math inline">\(X\)</span>, and the memory <span
-class="math inline">\(M\)</span>.</p>
-<p>The variables are the portion of the system that is stochastically
-evolving over time. The memory is a low entropy partition of the system
-that will give us knowledge about this evolution.</p>
-<p>We can now write the joint entropy of the system in terms of the
-mutual information between the variables and the memory. <span
-class="math display">\[
-S(Z) = S(X,M) = S(X|M) + S(M) = S(X) - I(X;M) + S(M).
-\]</span> This gives us the first hint at the connection between
-information and energy.</p>
-<p>If <span class="math inline">\(M\)</span> is viewed as a measurement
-then the change in entropy of the system before and after measurement is
-given by <span class="math inline">\(S(X|M) - S(X)\)</span> wehich is
-given by <span class="math inline">\(-I(X;M)\)</span>. This is implies
-that measurement increases the amount of available energy we obtain from
-the system <span class="citation"
-data-cites="Parrondo-thermodynamics15">(Parrondo et al.,
-2015)</span>.</p>
-<p>The difference in available energy is given by <span
-class="math display">\[
-\Delta A = A(X) - A(Z|M) = I(X;M),
-\]</span> where we note that the resulting system is no longer in
-thermodynamic equilibrium due to the low entropy of the memory.</p>
-<h2
-id="information-theoretic-limits-on-intelligence">Information-Theoretic
-Limits on Intelligence</h2>
+<p>David MacKay’s work was characterized by insistence on
+<strong>explicit assumptions</strong> and <strong>operational
+clarity</strong>. Whether in information theory, Bayesian inference, or
+sustainable energy, David demanded that we state clearly: - What are we
+assuming? - What can we actually measure? - What follows rigorously from
+those assumptions?</p>
+<p>In his work on information theory and inference <span
+class="citation" data-cites="MacKay-information03">(MacKay,
+2003)</span>, David showed how making assumptions explicit—about prior
+knowledge, about noise models, about what information is
+available—clarifies both what we can conclude and what remains
+uncertain.</p>
+<p>In his work on sustainable energy <span class="citation"
+data-cites="MacKay-sustainable08">(<strong>MacKay-sustainable08?</strong>)</span>,
+he showed how explicit accounting of physical constraints—energy
+densities, land areas, material flows—cuts through wishful thinking and
+reveals hard limits.</p>
+<p>In games like Conway’s Life or Wolfram’s cellular automata, the rules
+are explicit and self-contained. But in many analytic frameworks, we
+often take <strong>implicit adjudicators</strong> for granted: - Who
+decides which configurations are distinguishable? - What defines the
+outcome space? - Who measures time? - What determines the decomposition
+into subsystems?</p>
+<h2 id="towards-internally-adjudicable-rules">Towards Internally
+Adjudicable Rules</h2>
+<p>What if we follow MacKay’s principle to its logical conclusion and
+forbid such external adjudication? What if we seek only rules that can
+be applied from within the system itself?</p>
+<p>This leads to a natural question: <strong>What structures and
+constraints emerge when we demand internal adjudicability?</strong></p>
+<p>The inaccessible game is an exploration of this question. By
+demanding that all rules, constraints, and selection criteria be
+expressible without external reference, we discover that specific
+mathematical structures emerge—not by assumption, but by necessity.</p>
+<h1 id="the-no-barber-principle">The No-Barber Principle</h1>
+<p>We begin with a conceptual constraint inspired by Russell’s paradox:
+demanding that the rules of our system not appeal to external
+adjudicators or reference points.</p>
+<h2 id="the-no-barber-principle-1">The No-Barber Principle</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Just as the second law of thermodynamics places fundamental limits on
-mechanical engines, no matter how cleverly designed, information theory
-places fundamental limits on information engines, no matter how cleverly
-implemented.</p>
-<h3 id="what-intelligent-systems-must-do">What Intelligent Systems Must
-Do</h3>
-<p>Any intelligent system, whether biological or artificial, must
-perform certain fundamental operations:</p>
+<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves
+everyone in the village who does not shave themselves, does the barber
+shave themselves? The paradox arises when a definition quantifies over a
+totality that includes the defining rule itself.</p>
+<p>We propose a similar constraint for the inaccessible game: <em>the
+foundational rules must not refer to anything outside themselves for
+adjudication or reference</em>. We call this the “no-barber
+principle.”</p>
+<p>Without such consistency, we would require what we might call a
+“Munchkin provision.” In the Munchkin card game <span class="citation"
+data-cites="Jackson-munchkin01">(<strong>Jackson-munchkin01?</strong>)</span>,
+it is acknowledged that the cards and rules may be inconsistent. Their
+resolution? “Any other disputes should be settled by loud arguments,
+with the owner of the game having the last word.”</p>
+<p>While this works for card games, it’s unsatisfying for foundational
+mathematics. We want our game to be <strong>internally
+consistent</strong>, not requiring an external referee to resolve
+paradoxes.</p>
+<p>The no-barber principle says that admissible rules must be
+<strong>internally adjudicable</strong>: they depend only on quantities
+definable from within the system’s internal language, without requiring:
+- An external observer to define what’s distinguishable - A
+pre-specified outcome space or <span
+class="math inline">\(\sigma\)</span>-algebra - A privileged
+decomposition into subsystems - An externally defined time parameter</p>
+<h2 id="entropic-exchangeability">Entropic Exchangeability</h2>
+<p>The no-barber principle implies a constraint called <strong>entropic
+exchangeability</strong>: any admissible constraint or selection
+criterion must: 1. Depend only on reduced subsystem descriptions 2. Be
+invariant under relabeling of subsystems 3. Not presuppose access to
+globally distinguishable joint configurations</p>
+<p>This is not an aesthetic symmetry assumption—it’s a
+<strong>consistency requirement</strong>. It prevents the rules from
+appealing to distinctions the game itself cannot represent.</p>
+<h2 id="what-this-excludes">What This Excludes</h2>
+<p>Many seemingly natural constraints violate the no-barber
+principle:</p>
+<ul>
+<li><strong>Partial conservation</strong> (only some variables isolated)
+→ privileges those variables</li>
+<li><strong>Time-varying <span class="math inline">\(C\)</span></strong>
+→ requires external time parameter</li>
+<li><strong>Observer-relative isolation</strong> → requires external
+observer</li>
+<li><strong>Probabilistic isolation</strong> (holds in expectation) →
+requires external probability space</li>
+</ul>
+<h2 id="what-this-selects">What This Selects</h2>
+<p>The no-barber principle, combined with information-theoretic
+considerations, <strong>selects</strong> rather than assumes:</p>
 <ol type="1">
-<li><strong>Acquire information</strong> from its environment (sensing,
-observation)</li>
-<li><strong>Store information</strong> about the world (memory)</li>
-<li><strong>Process information</strong> to make decisions
-(computation)</li>
-<li><strong>Erase information</strong> to make room for new data (memory
-management)</li>
-<li><strong>Act on the world</strong> using the processed
-information</li>
+<li><strong>Marginal entropy conservation</strong> <span
+class="math inline">\(\sum_i h_i = C\)</span> (strongest constraint
+without external structure)</li>
+<li><strong>Von Neumann entropy</strong> (invariant, doesn’t require
+external outcome labeling)</li>
+<li><strong>Maximum entropy production</strong> (internal ordering
+principle)</li>
+<li><strong>Qutrit substrate</strong> (<span class="math inline">\(d_i =
+3\)</span> optimizes <span class="math inline">\(\log d_i /
+d_i\)</span>)</li>
+<li><strong>Countably infinite system</strong> (avoids arbitrary finite
+<span class="math inline">\(N\)</span>)</li>
 </ol>
-<p>Each of these operations has information-theoretic costs that cannot
-be eliminated by clever engineering.</p>
-<h2 id="the-landauer-bound-on-computation">The Landauer Bound on
-Computation</h2>
-<p>Landauer’s principle <span class="citation"
-data-cites="Landauer-irreversibility61">(Landauer, 1961)</span>
-establishes that erasing one bit of information requires dissipating at
-least <span class="math inline">\(k_BT\log 2\)</span> of energy as heat,
-where <span class="math inline">\(k_B\)</span> is Boltzmann’s constant
-and <span class="math inline">\(T\)</span> is temperature.</p>
-<p>This isn’t an engineering limitation, it’s a fundamental consequence
-of the second law. To reset a bit to a standard state (say, always 0)
-requires reducing its entropy from 1 bit to 0 bits. That entropy must go
-somewhere, and it ends up as heat in the environment.</p>
-<p>Modern computers operate billions of times above the Landauer limit
-due to engineering constraints. But even if we could build computers at
-the thermodynamic limit, consider a brain-scale computation. <span
-class="citation" data-cites="Lawrence-embodiment17">Lawrence
-(2017)</span> reviews estimates suggesting it would require over an
-exaflop (<span class="math inline">\(10^{18}\)</span> floating point
-operations per second) to perform a full simulation of the human brain,
-based on <span class="citation"
-data-cites="Ananthanarayanan-cat09">Ananthanarayanan et al.
-(2009)</span>. Other authors have suggested the operations could be as
-low as <span class="math inline">\(10^{15}\)</span> <span
-class="citation" data-cites="Sandberg-whole08 Moravec-mind98">(Moravec,
-1999; Sandberg and Bostrom, 2008)</span></p>
-<p>Taking the most conservative estimate of <span
-class="math inline">\(10^{15}\)</span> operations/sec for functionally
-relevant computation: - <span class="math inline">\(\sim
-10^{15}\)</span> operations/sec - Running for one year (<span
-class="math inline">\(\sim 3\times 10^7\)</span> seconds) - At room
-temperature (300K)</p>
-<p>This would require at minimum (assuming one bit erasure per
-operation): <span class="math display">\[
-E \sim 10^{15} \times 3\times10^{7} \times 3\times10^{-21} \approx 10^2
-\text{ Joules}
-\]</span></p>
-<p>That seems small, but this is just for <em>erasing bits</em>. It
-doesn’t include the entropy production that occurs in: - Acquiring the
-data - Moving data around - The actual computation - Dissipation in real
-(non-ideal) systems</p>
-<p>The actual human brain consumes about 20W continuously, or <span
-class="math inline">\(\sim 6 \times 10^8\)</span> Joules per
-year—roughly <span class="math inline">\(10^6\)</span> times the
-Landauer limit.</p>
-<h2 id="fisher-information-bounds-on-learning">Fisher Information Bounds
-on Learning</h2>
-<p>The Fisher information matrix <span
-class="math inline">\(G(\boldsymbol{\theta})\)</span> sets fundamental
-bounds on how quickly a system can learn. The Cramér-Rao bound tells us
-that the variance of any unbiased estimator of parameters <span
-class="math inline">\(\boldsymbol{\theta}\)</span> is bounded by: <span
-class="math display">\[
-\text{Var}(\hat{\boldsymbol{\theta}}) \geq G^{-1}(\boldsymbol{\theta}).
-\]</span></p>
-<p>This means: - You cannot extract information from data faster than
-the Fisher information allows - Small eigenvalues of <span
-class="math inline">\(G\)</span> correspond to directions that are hard
-to learn - The information topography determined by <span
-class="math inline">\(G\)</span> constrains learning dynamics</p>
-<h2 id="embodiment-as-necessity-not-limitation">Embodiment as Necessity,
-Not Limitation</h2>
-<p>These constraints mean that <em>embodiment</em>, i.e. physical
-instantiation with specific constraints, is not a limitation to overcome
-but a feature of any information-processing system.</p>
-<p>The Fisher information <span
-class="math inline">\(G(\boldsymbol{\theta})\)</span> defines the
-information topography, which is determined by: - The physical substrate
-(silicon, neurons, quantum systems) - The available energy budget - The
-communication bandwidth - The thermal environment</p>
-<p>Different substrates have different topographies, each with its own
-bottlenecks and channels. You cannot have intelligence without a
-substrate, and every substrate brings constraints.</p>
-<h2 id="why-superintelligence-claims-fail">Why Superintelligence Claims
-Fail</h2>
-<p>Claims about unbounded superintelligence typically ignore these
-constraints. They imagine intelligence as something that can be “scaled
-up” indefinitely, like adding more processors. But:</p>
-<ol type="1">
-<li><strong>Information acquisition</strong> is bounded by Fisher
-information—you can’t extract more information from data than the data
-contains</li>
-<li><strong>Information storage</strong> requires physical space and
-energy</li>
-<li><strong>Information processing</strong> has Landauer costs that
-scale with computation</li>
-<li><strong>Information erasure</strong> is necessarily dissipative</li>
-</ol>
-<p>Trying to build unbounded intelligence is like trying to build a
-perpetual motion machine, it violates fundamental physical
-principles.</p>
-<p>This doesn’t mean AI can’t be powerful or transformative — internal
-combustion engines transformed the world despite thermodynamic limits.
-But it does mean there are hard bounds on what’s possible, and claims
-that ignore these bounds are as unrealistic as promises of perpetual
-motion.</p>
-<h1 id="the-inaccessible-game">The Inaccessible Game</h1>
-<h2 id="foundations-the-four-axioms">Foundations: The Four Axioms</h2>
+<p>These are not ad hoc choices—they emerge from requiring internal
+consistency. The game’s structure is determined by what can be
+formulated without external reference.</p>
+<h1 id="foundations-information-loss-and-entropy">Foundations:
+Information Loss and Entropy</h1>
+<h2 id="the-three-axioms">The Three Axioms</h2>
 <h2
 id="baez-fritz-leinster-characterization-of-information-loss">Baez-Fritz-Leinster
 Characterization of Information Loss</h2>
@@ -351,7 +220,7 @@ that entropy emerges naturally from category theory as a way of
 measuring information loss in measure-preserving functions. They derived
 Shannon entropy from three axioms, without invoking probability
 directly.</p>
-<h3 id="the-three-axioms">The Three Axioms</h3>
+<h3 id="the-three-axioms-1">The Three Axioms</h3>
 <p>Let <span class="math inline">\(F(f)\)</span> denote the information
 lost by a process <span class="math inline">\(f\)</span> that transforms
 one probability distribution to another. The three axioms constrain the
@@ -392,136 +261,72 @@ system.</p>
 measure of information. It’s not just a convenient choice, it’s the
 unique measure that satisfies natural requirements for measuring
 information loss.</p>
-<h2 id="the-fourth-axiom-information-conservation">The Fourth Axiom:
-Information Conservation</h2>
+<h2 id="information-isolation-selected-by-no-barber">Information
+Isolation: Selected by No-Barber</h2>
+<h2 id="information-isolation-selected-not-assumed">Information
+Isolation: Selected, Not Assumed</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
 class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-conservation-axiom.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-conservation-axiom.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation-selected.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation-selected.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Baez et al.’s three axioms tell us how to measure information loss.
-Now we add a new constraint: what if information is <em>conserved</em>
-in an isolated system?</p>
-<p>In physics, isolated chambers conserve mass and energy. In The
-Inaccessible Game, we consider what it would mean for information to be
-conserved. This gives us the fourth axiom.</p>
-<h3 id="statement-of-the-axiom">Statement of the Axiom</h3>
-<p><strong>Axiom 4: Information Conservation</strong></p>
-<p>For any finite sub-group of <span class="math inline">\(N\)</span>
-variables, the sum of marginal entropies <span
-class="math inline">\(\{h_i\}_{i=1}^{N}\)</span> equals a constant <span
-class="math inline">\(C\)</span>: <span class="math display">\[
-\sum_{i=1}^N h_i = C
-\]</span></p>
-<p>This says the total amount of information in the system is conserved.
-Information can flow between variables, but the total remains
-constant.</p>
-<p>A crucial choice: we conserve the <em>sum of marginal entropies</em>,
-not the joint entropy <span
-class="math inline">\(H(\mathbf{x})\)</span>.</p>
-<p>Recall the relationship: <span class="math display">\[
-H(\mathbf{x}) = \sum_{i=1}^N h_i - I(\mathbf{x})
-\]</span> where <span class="math inline">\(I(\mathbf{x})\)</span> is
-the multi-information (total correlation): <span class="math display">\[
-I(\mathbf{x}) = \sum_{i=1}^N h_i - H(\mathbf{x}) \geq 0
-\]</span></p>
-<p>If we conserve <span class="math inline">\(\sum h_i = C\)</span>,
-then: - The multi-information <span class="math inline">\(I\)</span> can
-change - The joint entropy <span class="math inline">\(H\)</span> can
-change - Variables can become correlated or decorrelated - But the
-“total information capacity” <span class="math inline">\(\sum
-h_i\)</span> stays fixed</p>
-<p>Why marginal? The exchangeability principle: we want a constraint
-that applies to any finite subset of variables. Marginal entropies allow
-this flexibility. Also, conserving <span class="math inline">\(\sum
-h_i\)</span> (rather than joint <span class="math inline">\(H\)</span>)
-allows the correlation structure <span class="math inline">\(I\)</span>
-to vary, giving the system freedom to organise.</p>
-<p>The conservation constraint is imposed in an <em>exchangeable</em>
-form across the marginal entropies. This means we can consider any
-finite partition of variables from a total that could be countably
-infinite.</p>
-<p>The exchangeability ensures: 1. We can focus on any finite subset of
-variables 2. The constraint applies equally to all variables 3. No
-variable has a “special” role 4. The system can have infinitely many
-degrees of freedom</p>
-<p>This is inspired by, but differs from, the usual notion of
-exchangeability in Bayesian non-parametric probability (de Finetti,
-Aldous, Bernardo &amp; Smith). Here, exchangeability refers to the
-<em>constraint structure</em>, not the probability distribution
-itself.</p>
-<h2 id="physical-interpretation">Physical Interpretation</h2>
-<p>Think of the system as an isolated information chamber:</p>
-<p><strong>Marginal entropy <span
-class="math inline">\(h_i\)</span></strong>: The “information content”
-or “information capacity” of variable <span
-class="math inline">\(i\)</span>. High marginal entropy means the
-variable can take on many states.</p>
-<p><strong>Conservation <span class="math inline">\(\sum h_i =
-C\)</span></strong>: Total capacity is fixed. Like a fixed amount of
-“space” to store information.</p>
-<p><strong>Multi-information <span
-class="math inline">\(I\)</span></strong>: The “structure” or
-“correlation” between variables. This can grow or shrink.</p>
-<p>As the system evolves: - Information can flow between variables
-(changing individual <span class="math inline">\(h_i\)</span>) -
-Correlations can form or break (changing <span
-class="math inline">\(I\)</span>) - But the total capacity <span
-class="math inline">\(\sum h_i = C\)</span> remains constant</p>
-<p>Since <span class="math inline">\(H + I = C\)</span>, increasing
-joint entropy <span class="math inline">\(H\)</span> (second law) means
-decreasing multi-information <span class="math inline">\(I\)</span>. The
-system breaks down correlations to increase entropy. It’s like having a
-fixed amount of “information capacity” <span
-class="math inline">\(C\)</span> that gets redistributed between joint
-entropy (disorder) and correlation structure.</p>
-<p>Now we see why the game is “inaccessible”: an external observer
-cannot learn anything about the system.</p>
-<p>Recall Baez’s result: information gained from observing a process
-<span class="math inline">\(f: p \rightarrow q\)</span> is measured by
-the entropy change: <span class="math display">\[
-F(f) = H(p) - H(q)
-\]</span></p>
-<p>But if marginal entropies are conserved (<span
-class="math inline">\(\sum h_i = C\)</span>), then an external observer
-sees: - Before observation: <span class="math inline">\(\sum h_i =
-C\)</span> - After observation: <span class="math inline">\(\sum h_i =
-C\)</span> - Information gained: <span class="math inline">\(\Delta(\sum
-h_i) = 0\)</span></p>
-<p>The observer learns nothing! The system is informationally isolated.
-Internal variables can correlate and decorrelate (changing <span
-class="math inline">\(I\)</span> and <span
-class="math inline">\(H\)</span>), but the total marginal entropy, what
-an external observer can access through Baez’s measurement framework,
-remains constant.</p>
-<p>This is “inaccessibility”: the system’s internal dynamics are hidden
-from external observation because there’s no net information flow to the
-outside. The conservation constraint creates an information barrier.</p>
-<p>Mathematically, this leads to dynamics constrained to a manifold
-<span class="math inline">\(\sum h_i = C\)</span>, which we’ll formalize
-with Lagrange multipliers in Lecture 3.</p>
-<h2 id="the-four-axioms-together">The Four Axioms Together</h2>
-<p>We now have four axioms for The Inaccessible Game:</p>
+<p>In our earlier presentation <span class="citation"
+data-cites="Lawrence-inaccessible25">(<strong>Lawrence-inaccessible25?</strong>)</span>,
+we introduced information isolation <span class="math inline">\(\sum_i
+h_i = C\)</span> as a fourth independent axiom. But more recent work
+suggests this is better understood as <strong>selected by the no-barber
+principle</strong> rather than assumed.</p>
+<h2 id="why-this-selection">Why This Selection?</h2>
+<p>Among all possible entropy-related constraints, marginal entropy
+conservation <span class="math inline">\(\sum_i h_i = C\)</span> is the
+<strong>strongest nontrivial constraint</strong> that can be formulated
+without external structure.</p>
+<p>Consider the alternatives:</p>
+<p><strong>Partial conservation</strong> (only some <span
+class="math inline">\(h_i\)</span> constrained): - Requires specifying
+<em>which</em> variables are isolated - Privileges those variables over
+others - Needs external criterion to select them</p>
+<p><strong>Time-varying</strong> <span
+class="math inline">\(C(t)\)</span>: - Requires an external time
+parameter <span class="math inline">\(t\)</span> - Who defines this
+time? - Violates no-barber principle</p>
+<p><strong>Observer-relative</strong> isolation: - Isolated <em>from
+what observer</em>? - Requires external reference point - Smuggles in
+external structure</p>
+<p><strong>Probabilistic</strong> isolation (holds in expectation): -
+Requires external probability space - Who defines the measure? - Again
+violates no-barber</p>
+<p>The constraint <span class="math inline">\(\sum_i h_i = C\)</span>
+(constant) has special properties:</p>
 <ol type="1">
-<li><strong>Functoriality</strong> (Baez): Information loss is additive
-across compositions</li>
-<li><strong>Convex Linearity</strong> (Baez): Probabilistic mixing is
-linear<br />
-</li>
-<li><strong>Continuity</strong> (Baez): Small changes have small
-effects</li>
-<li><strong>Information Conservation</strong> (New): <span
-class="math inline">\(\sum_{i=1}^N h_i = C\)</span></li>
+<li><strong>Exchangeable:</strong> Treats all subsystems identically
+(depends only on marginal entropies)</li>
+<li><strong>Extensive:</strong> Scales linearly with system size</li>
+<li><strong>Internal:</strong> Definable from reduced descriptions
+alone</li>
+<li><strong>No external time:</strong> <span
+class="math inline">\(C\)</span> is a constant, not time-dependent</li>
+<li><strong>No external observer:</strong> Isolation is absolute, not
+relative</li>
 </ol>
-<p>The first three axioms (Baez) justify measuring information by
-entropy differences. The fourth axiom constrains the total information.
-Together, they define an information-theoretic “chamber” where: -
-Information content is measured by entropy (axioms 1-3) - Total
-information is conserved (axiom 4) - Dynamics must respect this
-conservation</p>
-<p>From these four axioms, we will derive (in Lecture 3) a constrained
-dynamical system that evolves to maximize entropy production subject to
+<p>These properties make it the unique choice that satisfies both: -
+Strong enough to constrain dynamics - Weak enough to avoid external
+reference</p>
+<h2 id="implication-not-just-another-axiom">Implication: Not “Just
+Another Axiom”</h2>
+<p>This reframing changes how we understand the game’s foundation. We’re
+not arbitrarily adding a fourth axiom—we’re <strong>discovering</strong>
+that internal adjudicability forces this specific constraint.</p>
+<p>The three Baez-Fritz-Leinster axioms tell us information loss is
+measured by entropy. The no-barber principle then tells us that the only
+admissible global constraint on a collection of subsystems is marginal
+entropy conservation.</p>
+<p>This is a stronger foundation. We’re not asking “what happens if we
+add this constraint?” but rather “what must be true if we forbid
+external reference?” The answer turns out to be marginal entropy
 conservation.</p>
+<h1 id="the-inaccessible-game">The Inaccessible Game</h1>
+<p>With these foundations, we can now introduce the game itself.</p>
 <h2 id="the-inaccessible-game-1">The Inaccessible Game</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1077,7 +882,7 @@ class="math display">\[
 \frac{\mathbf{a}\mathbf{a}^\top}{\|\mathbf{a}\|^2}
 \]</span> is the projection matrix onto the constraint tangent
 space.</p>
-<h2 id="physical-interpretation-1">Physical Interpretation</h2>
+<h2 id="physical-interpretation">Physical Interpretation</h2>
 <p>This has a nice physical interpretation.</p>
 <ul>
 <li><strong><span
@@ -1099,10 +904,12 @@ to keep it on track.</p>
 <p>As we’ll see next, this tension between the information geometry and
 the constraint structure is what generates the GENERIC-like
 decomposition into dissipative and conservative parts.</p>
-<h1 id="emergence-of-physical-structure">Emergence of Physical
-Structure</h1>
-<h2 id="generic-reversible-and-irreversible-dynamics">GENERIC:
-Reversible and Irreversible Dynamics</h2>
+<h1 id="emergent-structure-generic">Emergent Structure: GENERIC</h1>
+<h2 id="what-is-generic">What is GENERIC?</h2>
+<p>One of the most remarkable consequences of constrained maximum
+entropy production is the emergence of GENERIC structure—a framework
+from non-equilibrium thermodynamics that combines reversible and
+irreversible dynamics.</p>
 <h2 id="the-generic-framework">The GENERIC Framework</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span
@@ -1476,6 +1283,10 @@ class="math inline">\(M\)</span> to ensure thermodynamic laws -
 thermodynamics to complex systems</p>
 <p>Next, we’ll see how our information dynamics fit this framework
 perfectly.</p>
+<h2 id="automatic-degeneracy">Automatic Degeneracy</h2>
+<p>In standard GENERIC applications, ensuring thermodynamic consistency
+requires careful hand-crafting of operators. In our framework, the
+consistency conditions emerge automatically.</p>
 <h2 id="automatic-degeneracy-conditions">Automatic Degeneracy
 Conditions</h2>
 <div style="text-align:right">
@@ -1573,216 +1384,10 @@ class="citation" data-cites="Ottinger-beyond05">Öttinger (2005)</span>).
 The fact that they emerge automatically in our framework suggests that
 marginal entropy conservation has special geometric significance for
 non-equilibrium dynamics.</p>
-<h2 id="example-harmonic-oscillator-generic-dynamics">Example: Harmonic
-Oscillator GENERIC Dynamics</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/harmonic-oscillator-generic-example.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/harmonic-oscillator-generic-example.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>To see the GENERIC decomposition <span class="math inline">\(M = S +
-A\)</span> in action, let’s analyze a simple physical system: the
-harmonic oscillator with thermalisation. This demonstrates how
-reversible (Hamiltonian) and irreversible (dissipative) dynamics emerge
-from the constraint geometry.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> inv</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span></code></pre></div>
-<p>Starting from an out-of-equilibrium state (cold <span
-class="math inline">\(x\)</span>, hot <span
-class="math inline">\(p\)</span>), the system evolves toward thermal
-equilibrium while maintaining the entropy constraint.</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Physical parameters</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Spring constant</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Mass</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="fl">1.0</span>      <span class="co"># Temperature</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>beta <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> T</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Equilibrium values</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>theta_xx_eq <span class="op">=</span> beta <span class="op">*</span> k</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>theta_pp_eq <span class="op">=</span> beta <span class="op">/</span> m</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>theta_xp_eq <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Equilibrium: θ_xx = </span><span class="sc">{</span>theta_xx_eq<span class="sc">:.3f}</span><span class="ss">, θ_pp = </span><span class="sc">{</span>theta_pp_eq<span class="sc">:.3f}</span><span class="ss">, θ_xp = 0&quot;</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition: OUT of equilibrium (cold x, hot p)</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([<span class="fl">2.0</span> <span class="op">*</span> theta_xx_eq,  <span class="co"># Cold x (small variance)</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                       <span class="fl">0.5</span> <span class="op">*</span> theta_pp_eq,  <span class="co"># Hot p (large variance)  </span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                       <span class="fl">0.0</span>])               <span class="co"># No correlation</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Initial:     θ_xx = </span><span class="sc">{</span>theta_init[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, θ_pp = </span><span class="sc">{</span>theta_init[<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">, θ_xp = 0&quot;</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>t_span <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">200</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>theta_trajectory <span class="op">=</span> odeint(harmonic_dynamics, theta_init, t_span)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy conservation</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>h_x <span class="op">=</span> np.array([marginal_entropy_gaussian(th) <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory[:, <span class="dv">0</span>]])</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>h_p <span class="op">=</span> np.array([marginal_entropy_gaussian(th) <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory[:, <span class="dv">1</span>]])</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>h_total <span class="op">=</span> h_x <span class="op">+</span> h_p</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Entropy conservation check:&quot;</span>)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Initial h(X) + h(P) = </span><span class="sc">{</span>h_total[<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Final   h(X) + h(P) = </span><span class="sc">{</span>h_total[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Variation: </span><span class="sc">{</span>np<span class="sc">.</span>std(h_total)<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span></code></pre></div>
-<div class="figure">
-<div id="harmonic-oscillator-generic-dynamics-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/harmonic-oscillator-generic-dynamics.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="harmonic-oscillator-generic-dynamics-magnify" class="magnify"
-onclick="magnifyFigure(&#39;harmonic-oscillator-generic-dynamics&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="harmonic-oscillator-generic-dynamics-caption"
-class="caption-frame">
-<p>Figure: Harmonic oscillator GENERIC dynamics. Top left: Trajectory in
-parameter space from out-of-equilibrium initial state toward thermal
-equilibrium. Top right: Total entropy <span class="math inline">\(h(X) +
-h(P)\)</span> conserved throughout evolution. Bottom left: Individual
-marginal entropies exchange while maintaining sum. Bottom right:
-Variances approach equipartition theorem values (both equal to 1.0 at
-equilibrium).</p>
-</div>
-</div>
-<p>This demonstrates the GENERIC structure.</p>
-<ul>
-<li><strong>Symmetric part <span
-class="math inline">\(S\)</span></strong>: Drives system toward
-equilibrium (equipartition)</li>
-<li><strong>Antisymmetric part <span
-class="math inline">\(A\)</span></strong>: Would create oscillations
-(suppressed here by strong damping)</li>
-<li><strong>Constraint</strong>: Maintained exactly throughout evolution
-via Lagrange multiplier <span class="math inline">\(\nu\)</span></li>
-</ul>
-<p>The system exhibits thermalisation—energy flows from the “hot”
-momentum degree of freedom to the “cold” position degree of freedom
-until equipartition is reached.</p>
-<h2 id="computational-validation-three-binary-variables">Computational
-Validation: Three Binary Variables</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/n3-ising-simulation-validation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/n3-ising-simulation-validation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>To validate our theoretical predictions, we simulate the constrained
-information dynamics for a system of three binary variables with
-pairwise interactions—a minimal Ising model or Boltzmann machine. This
-system is complex enough to exhibit non-trivial correlation structure
-while remaining computationally tractable for exact analysis.</p>
-<p>We verify three predictions.</p>
-<ol type="1">
-<li>The constraint <span class="math inline">\(\sum_i h_i = C\)</span>
-is maintained during evolution</li>
-<li>The linearisation <span class="math inline">\(M = \partial
-F/\partial \boldsymbol{\theta}\)</span> decomposes as <span
-class="math inline">\(M = S + A\)</span><br />
-</li>
-<li>The ratio <span class="math inline">\(\|A\|/\|S\|\)</span> varies
-with local geometry</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> odeint</span></code></pre></div>
-<p>We start from a “frustrated” configuration where the interaction
-parameters have competing signs, creating interesting dynamics.</p>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial condition: Frustrated Ising model</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Competing interactions: theta12 &gt; 0 (ferromagnetic)</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                        theta13 &lt; 0 (antiferromagnetic)</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                        theta23 &gt; 0 (ferromagnetic)</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># No external field</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([h, h, h, <span class="fl">1.0</span>, <span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> theta_init <span class="op">/</span> np.linalg.norm(theta_init)  <span class="co"># Normalize</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Initial parameters (normalized):&quot;</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Marginals: θ₁=</span><span class="sc">{</span>theta_init[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, θ₂=</span><span class="sc">{</span>theta_init[<span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">, θ₃=</span><span class="sc">{</span>theta_init[<span class="dv">2</span>]<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Interactions: θ₁₂=</span><span class="sc">{</span>theta_init[<span class="dv">3</span>]<span class="sc">:.3f}</span><span class="ss">, θ₁₃=</span><span class="sc">{</span>theta_init[<span class="dv">4</span>]<span class="sc">:.3f}</span><span class="ss">, θ₂₃=</span><span class="sc">{</span>theta_init[<span class="dv">5</span>]<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute initial constraint value</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>h_marginals_init <span class="op">=</span> marginal_entropy_n3(theta_init)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>C_init <span class="op">=</span> h_marginals_init.<span class="bu">sum</span>()</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Initial constraint: Σᵢ hᵢ = </span><span class="sc">{</span>C_init<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate dynamics</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>t_span <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>theta_trajectory <span class="op">=</span> odeint(dynamics_n3, theta_init, t_span)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify constraint maintenance</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>h_trajectory <span class="op">=</span> np.array([marginal_entropy_n3(th).<span class="bu">sum</span>() <span class="cf">for</span> th <span class="kw">in</span> theta_trajectory])</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>constraint_error <span class="op">=</span> np.<span class="bu">abs</span>(h_trajectory <span class="op">-</span> C_init)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Constraint maintenance:&quot;</span>)</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Maximum deviation: </span><span class="sc">{</span>constraint_error<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  RMS deviation: </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(np.mean(constraint_error<span class="op">**</span><span class="dv">2</span>))<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Analyze GENERIC decomposition at several points</span></span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>analysis_indices <span class="op">=</span> [<span class="dv">0</span>, <span class="bu">len</span>(t_span)<span class="op">//</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">*</span><span class="bu">len</span>(t_span)<span class="op">//</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>regime_ratios <span class="op">=</span> []</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">GENERIC decomposition analysis:&quot;</span>)</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx <span class="kw">in</span> analysis_indices:</span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    M, S, A <span class="op">=</span> compute_generic_decomposition(theta_trajectory[idx])</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    norm_S <span class="op">=</span> np.linalg.norm(S, <span class="st">&#39;fro&#39;</span>)</span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    norm_A <span class="op">=</span> np.linalg.norm(A, <span class="st">&#39;fro&#39;</span>)</span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    ratio <span class="op">=</span> norm_A <span class="op">/</span> norm_S <span class="cf">if</span> norm_S <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="dv">0</span></span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    regime_ratios.append(ratio)</span>
-<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  t=</span><span class="sc">{</span>t_span[idx]<span class="sc">:.2f}</span><span class="ss">: ‖A‖/‖S‖ = </span><span class="sc">{</span>ratio<span class="sc">:.3f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
-<div class="figure">
-<div id="n3-ising-simulation-validation-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/n3-ising-simulation-validation.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="n3-ising-simulation-validation-magnify" class="magnify"
-onclick="magnifyFigure(&#39;n3-ising-simulation-validation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="n3-ising-simulation-validation-caption" class="caption-frame">
-<p>Figure: Computational validation for 3 binary variables. Top left:
-Constraint <span class="math inline">\(\sum_i h_i = C\)</span>
-maintained to machine precision. Top right: Individual marginal
-entropies exchange while sum is conserved. Bottom left: Interaction
-parameters evolve from frustrated initial state. Bottom right: Ratio
-<span class="math inline">\(\|A\|/\|S\|\)</span> varies with local
-geometry—no single “regime” throughout parameter space.</p>
-</div>
-</div>
-<p><strong>Key findings:</strong></p>
-<ol type="1">
-<li><p><strong>Constraint maintenance</strong>: The sum of marginal
-entropies is preserved to machine precision (<span
-class="math inline">\(\sim 10^{-12}\)</span>), validating the
-constrained dynamics implementation.</p></li>
-<li><p><strong>GENERIC structure</strong>: At every point, the
-linearisation <span class="math inline">\(M\)</span> decomposes cleanly
-into symmetric and antisymmetric parts that satisfy the degeneracy
-conditions.</p></li>
-<li><p><strong>Regime variation</strong>: The ratio <span
-class="math inline">\(\|A\|/\|S\|\)</span> changes significantly during
-evolution, confirming there is no single “regime” that characterizes all
-of parameter space. The relative importance of reversible vs
-irreversible dynamics depends on local geometry.</p></li>
-<li><p><strong>Physical interpretation</strong>: Starting from a
-frustrated configuration (competing interactions), the system evolves
-by:</p>
-<ul>
-<li>Weakening the antiferromagnetic interaction <span
-class="math inline">\(\theta_{13}\)</span></li>
-<li>Maintaining ferromagnetic interactions <span
-class="math inline">\(\theta_{12}\)</span>, <span
-class="math inline">\(\theta_{23}\)</span></li>
-<li>Redistributing entropy among marginals while conserving total</li>
-</ul></li>
-</ol>
 <h1 id="information-topography">Information Topography</h1>
-<p>The Fisher information matrix provides mathematical teeth to the
-intuitive notion of an “information topography” from <em>The Atomic
-Human</em>.</p>
+<p>The Fisher information matrix provides mathematical precision to the
+intuitive notion of an “information topography”—the landscape that
+shapes how information can flow.</p>
 <h2 id="fisher-information-as-conductance-tensor">Fisher Information as
 Conductance Tensor</h2>
 <div style="text-align:right">
@@ -1958,1275 +1563,18 @@ notion from <em>The Atomic Human</em> that information movement is
 constrained by structure. The Fisher information matrix <em>is</em> that
 structure, and the inaccessible game describes how systems evolve within
 it.</p>
-<h2 id="fisher-information-as-geometry">Fisher Information as
-Geometry</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the previous section, we saw that for exponential families, the
-Fisher information matrix appears as the second derivative of the log
-partition function <span class="math display">\[
-G(\boldsymbol{\theta}) = \nabla^2 \mathcal{A}(\boldsymbol{\theta}) =
-\mathrm{Cov}_{\boldsymbol{\theta}}[T(\mathbf{x})].
-\]</span> We now develop the geometric interpretation: the Fisher
-information matrix defines a <em>metric</em> on the space of probability
-distributions.</p>
-<h3 id="the-statistical-manifold">The Statistical Manifold</h3>
-<p>Consider the space of all probability distributions in an exponential
-family, parametrized by <span
-class="math inline">\(\boldsymbol{\theta}\)</span>. This space forms a
-<em>manifold</em> — a smooth, curved space where each point represents a
-different distribution.</p>
-<p>The Fisher information matrix <span
-class="math inline">\(G(\boldsymbol{\theta})\)</span> acts as a
-<em>Riemannian metric</em> on this manifold. Think of measuring
-distances on a curved surface like a sphere: you need a metric to tell
-you how far apart two nearby points are. The Fisher information provides
-exactly this for the space of probability distributions, telling us how
-to measure “statistical distance” between distributions.</p>
-<p>The Fisher information defines the <em>information distance</em>
-between nearby distributions. If we move from parameters <span
-class="math inline">\(\boldsymbol{\theta}\)</span> to <span
-class="math inline">\(\boldsymbol{\theta} +
-\text{d}\boldsymbol{\theta}\)</span>, the infinitesimal distance in
-information space is <span class="math display">\[
-\text{d}s^2 = \text{d}\boldsymbol{\theta}^\top G(\boldsymbol{\theta})
-\text{d}\boldsymbol{\theta}
-\]</span> where the Fisher information playing the role of the metric.
-Larger Fisher information means a given parameter change corresponds to
-a larger “information distance”, the distributions are more
-distinguishable.</p>
-<h3 id="connection-to-statistical-estimation">Connection to Statistical
-Estimation</h3>
-<p>This geometric picture connects directly to Fisher’s original
-motivation. The <em>Cramér-Rao bound</em> states that for any unbiased
-estimator <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span>
-of parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>,
-<span class="math display">\[
-\text{cov}(\hat{\boldsymbol{\theta}}) \succeq
-G^{-1}(\boldsymbol{\theta}),
-\]</span> where <span class="math inline">\(\succeq\)</span> denotes
-that the left side minus the right side is positive semidefinite.</p>
-<p>Geometrically, this means: higher Fisher information (stronger
-metric) implies tighter bounds on estimation. The inverse <span
-class="math inline">\(G^{-1}\)</span> gives the <em>minimum
-possible</em> covariance of any unbiased estimator, it’s the fundamental
-limit on how well we can estimate parameters from data.</p>
-<p>The Fisher information plays two distinct but related roles:</p>
-<ol type="1">
-<li><p><strong>As a metric</strong>: It defines information distance,
-telling us how “far apart” distributions are.</p></li>
-<li><p><strong>In gradient flow</strong>: Recall from the exponential
-family definitions that that <span class="math inline">\(\nabla H =
--G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span>. This means entropy
-gradient ascent in exponential families involves the Fisher information,
-<span class="math display">\[
-\dot{\boldsymbol{\theta}} = \nabla H =
--G(\boldsymbol{\theta})\boldsymbol{\theta}.
-\]</span></p></li>
-</ol>
-<p>The appearance in the gradient comes from the specific structure of
-exponential families (where <span class="math inline">\(G = \nabla^2
-\mathcal{A}\)</span>). Together, they determine how the system flows
-through information space, with the geometry guiding the dynamics.</p>
-<h2 id="examples-revisited">Examples Revisited</h2>
-<p>For the Gaussian distribution, we saw that <span
-class="math inline">\(G(\boldsymbol{\theta}) = \Sigma\)</span>. This
-means: - The information metric <em>is</em> the covariance matrix - The
-inverse <span class="math inline">\(G^{-1} = \Sigma^{-1}\)</span> is the
-precision matrix</p>
-<p>Geometrically, the information ellipsoid has the same shape as the
-probability ellipsoid. This direct connection between the Fisher
-information and covariance is special to Gaussians (and arises because
-we’re working in natural parameters <span
-class="math inline">\(\boldsymbol{\theta} =
-\Sigma^{-1}\boldsymbol{\mu}\)</span>).</p>
-<p>For a categorical distribution with <span
-class="math inline">\(K\)</span> outcomes, the Fisher information has a
-special structure. Using the natural parameters <span
-class="math inline">\(\theta_k = \log \pi_k\)</span>, the Fisher
-information is <span class="math display">\[
-G_{ij}(\boldsymbol{\theta}) = \delta_{ij}\pi_i - \pi_i\pi_j =
-\begin{cases}
-\pi_i(1 - \pi_i) &amp; i = j \\
--\pi_i\pi_j &amp; i \neq j
-\end{cases}
-\]</span></p>
-<p>This metric defines the <strong>probability simplex
-geometry</strong>. Distributions near the center of the simplex (all
-<span class="math inline">\(\pi_k \approx 1/K\)</span>) have different
-local geometry than those near the corners (one <span
-class="math inline">\(\pi_k \approx 1\)</span>). The Fisher metric
-captures this intrinsic curvature.</p>
-<h2 id="information-geometry-the-big-picture">Information Geometry: The
-Big Picture</h2>
-<p>The Fisher information matrix is a foundational element of
-<em>information geometry</em>, a field that studies probability
-distributions using differential geometric tools. Key insights:</p>
-<ol type="1">
-<li><p>**mari’s Dually Flat Structure*: Exponential families have a
-special property. They are “dually flat” under two different coordinate
-systems (natural parameters <span
-class="math inline">\(\boldsymbol{\theta}\)</span> and expectation
-parameters <span class="math inline">\(\boldsymbol{\mu}\)</span>). The
-Fisher metric connects these.</p></li>
-<li><p><em>Geodesics</em>: The shortest path between two distributions
-(in the information geometry sense) is a geodesic. For exponential
-families, geodesics have elegant forms that will connect to our least
-action principles.</p></li>
-<li><p><em>Curvature</em>: The curvature of the statistical manifold
-(measured by the Riemann curvature tensor derived from <span
-class="math inline">\(G\)</span>) tells us about the intrinsic structure
-of the family. Exponential families have <em>zero curvature</em> in a
-certain sense—they are “flat” manifolds.</p></li>
-</ol>
-<p>These geometric properties will be essential when we study
-constrained information dynamics and emergence.</p>
-<h2 id="why-this-matters-for-the-inaccessible-game">Why This Matters for
-The Inaccessible Game</h2>
-<p>The Fisher information matrix plays three roles in our framework:</p>
-<ol type="1">
-<li><p><strong>Gradient Flow Metric</strong>: It appears in the entropy
-gradient, determining how the system evolves through information space
-via <span class="math inline">\(\dot{\boldsymbol{\theta}} =
--G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span>.</p></li>
-<li><p><strong>Information Distance</strong>: It defines the metric for
-measuring statistical distinguishability between distributions.</p></li>
-<li><p><strong>Emergence Indicator</strong>: Changes in the structure of
-<span class="math inline">\(G\)</span> signal the emergence of new
-regimes and effective descriptions.</p></li>
-</ol>
-<p>Understanding Fisher information as <em>geometry</em>, not just as a
-statistical tool, is key for everything that follows.</p>
-<h1 id="connecting-information-to-energy">Connecting Information to
-Energy</h1>
-<h2 id="the-thermodynamic-limit">The Thermodynamic Limit</h2>
-<h2
-id="energy-entropy-equivalence-in-the-thermodynamic-limit">Energy-Entropy
-Equivalence in the Thermodynamic Limit</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We’ve seen that marginal entropy conservation <span
-class="math inline">\(\sum_i h_i = C\)</span> leads to GENERIC-like
-structure. But how does this connect to traditional thermodynamics with
-energy conservation? The answer lies in the thermodynamic limit.</p>
-<h3 id="the-energy-entropy-question">The Energy-Entropy Question</h3>
-<p>In real GENERIC systems, it’s not marginal entropy that’s conserved
-but extensive thermodynamic energy <span
-class="math inline">\(E\)</span>. Can we show that, under specific
-conditions, the marginal entropy constraint asymptotically singles out
-the same degeneracy direction as energy conservation?</p>
-<p>In other words, does the constraint gradient <span
-class="math inline">\(\nabla(\sum_i h_i)\)</span> become parallel to
-<span class="math inline">\(\nabla E\)</span> in appropriate limits?</p>
-<h2 id="conditions-for-equivalence">Conditions for Equivalence</h2>
-<p>The equivalence requires specific scaling properties. Using
-multi-information <span class="math inline">\(I = \sum_i h_i -
-H\)</span>, we can write: <span class="math display">\[
-\nabla\left(\sum_i h_i\right) = \nabla I + \nabla H.
-\]</span></p>
-<p><em>Our requirement:</em> Along certain directions (order
-parameters), the multi-information gradient must scale
-<em>intensively</em> while entropy gradients scale
-<em>extensively</em>.</p>
-<p>Specifically, consider a macroscopic order parameter <span
-class="math inline">\(m\)</span> (like magnetization in a spin system).
-The requirement is: - <span class="math inline">\(\nabla_m I =
-\mathscr{O}(1)\)</span> (intensive) - <span
-class="math inline">\(\nabla_m H = \mathscr{O}(n)\)</span> (extensive) -
-<span class="math inline">\(\nabla_m(\sum_i h_i) =
-\mathscr{O}(n)\)</span> (extensive)</p>
-<p>where <span class="math inline">\(n\)</span> is the number of
-variables.</p>
-<p>When this scaling holds: <span class="math display">\[
-\nabla_m\left(\sum_i h_i\right) = \nabla_m H + \nabla_m I =
-\mathscr{O}(n) + \mathscr{O}(1).
-\]</span></p>
-<p>In the thermodynamic limit <span class="math inline">\(n \to
-\infty\)</span>, the <span class="math inline">\(\mathscr{O}(1)\)</span>
-correction from multi-information becomes negligible: <span
-class="math display">\[
-\nabla_m\left(\sum_i h_i\right) \parallel \nabla_m H.
-\]</span></p>
-<h2 id="connecting-to-energy">Connecting to Energy</h2>
-<p>For exponential families, the entropy gradient in expectation
-parameters <span class="math inline">\(\boldsymbol{\mu} = \langle
-T(\mathbf{x})\rangle\)</span> is: <span class="math display">\[
-\nabla_{\boldsymbol{\mu}} H = \boldsymbol{\theta}
-\]</span> where <span class="math inline">\(\boldsymbol{\theta}\)</span>
-are the natural parameters.</p>
-<p>Now define an energy functional as: <span class="math display">\[
-E(\mathbf{x}) = -\boldsymbol{\alpha}^\top T(\mathbf{x})
-\]</span> where <span class="math inline">\(\boldsymbol{\alpha}\)</span>
-is chosen such that <span class="math inline">\(\boldsymbol{\theta} =
--\beta\boldsymbol{\alpha}\)</span>. This gives: <span
-class="math display">\[
-\nabla_{\boldsymbol{\mu}} E = -\boldsymbol{\alpha} =
-\frac{\boldsymbol{\theta}}{\beta} = \frac{\nabla_{\boldsymbol{\mu}}
-H}{\beta}.
-\]</span></p>
-<p>Therefore <span class="math display">\[
-\nabla E \parallel \nabla H \parallel \nabla\left(\sum_i h_i\right)
-\]</span> along the macroscopic direction in the thermodynamic
-limit.</p>
-<h2 id="when-does-this-hold">When Does This Hold?</h2>
-<p>The equivalence requires:</p>
-<ol type="1">
-<li><p><strong>Macroscopic order parameter:</strong> There exists a
-low-dimensional direction (like total magnetisation <span
-class="math inline">\(m = \sum_i x_i\)</span>) that captures system-wide
-behavior</p></li>
-<li><p><strong>Bounded correlations:</strong> The correlation length
-<span class="math inline">\(\xi\)</span> remains finite (away from
-criticality), ensuring <span class="math inline">\(\nabla_m I\)</span>
-stays intensive</p></li>
-<li><p><strong>Translation invariance:</strong> Symmetry ensures
-marginal entropies are identical conditioned on the order
-parameter</p></li>
-<li><p><strong>Thermodynamic limit:</strong> Number of variables <span
-class="math inline">\(n \to \infty\)</span></p></li>
-</ol>
-<p>Not all systems satisfy these conditions. Near critical points,
-correlations diverge and the intensive scaling breaks down. In small
-systems, <span class="math inline">\(\mathscr{O}(1)\)</span> corrections
-matter. But for many physically relevant systems—bulk matter far from
-phase transitions—the equivalence holds and provides a bridge between
-information theory and thermodynamics.</p>
-<h2 id="implications">Implications</h2>
-<p>This equivalence has several implications:</p>
-<ol type="1">
-<li><p><strong>Information <span
-class="math inline">\(\leftrightarrow\)</span> Thermodynamics:</strong>
-Energy conservation and marginal entropy conservation become equivalent
-statements in appropriate limits</p></li>
-<li><p><strong>Temperature emergence:</strong> The parameter <span
-class="math inline">\(\beta\)</span> emerges as inverse temperature from
-the information geometry, not imposed from thermodynamics</p></li>
-<li><p><strong>Landauer’s principle:</strong> Can be derived from
-information conservation via this equivalence</p></li>
-<li><p><strong>Wheeler’s “it from bit”:</strong> Suggests thermodynamics
-might emerge from information-theoretic principles</p></li>
-</ol>
-<h2 id="analytical-validation-curie-weiss-model">Analytical Validation:
-Curie-Weiss Model</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/curie-weiss-phase-transition-validation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/curie-weiss-phase-transition-validation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The energy-entropy equivalence theorem from the inaccessible game
-predicts that in the thermodynamic limit, accessible information <span
-class="math inline">\(I\)</span> should vanish, making energy and
-entropy equivalent. To test this rigorously, we use the Curie-Weiss
-model (a mean-field system where everything can be computed exactly)
-including across phase transitions.</p>
-<p>The model exhibits a ferromagnetic phase transition: -
-<strong>Disordered phase</strong> (<span class="math inline">\(T &gt;
-T_c\)</span>): Magnetization <span class="math inline">\(m = 0\)</span>,
-spins independent - <strong>Ordered phase</strong> (<span
-class="math inline">\(T &lt; T_c\)</span>): Magnetization <span
-class="math inline">\(m \neq 0\)</span>, spins correlated</p>
-<p>The theorem predicts <span class="math inline">\(\nabla_m I \approx
-0\)</span> in the disordered phase (equivalence holds) but <span
-class="math inline">\(\nabla_m I \gg 0\)</span> in the ordered phase
-(equivalence fails).</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span></code></pre></div>
-<p>We scan across temperatures from high (disordered) to low (ordered),
-computing the magnetization and testing whether the equivalence <span
-class="math inline">\(\nabla_m I \approx 0\)</span> holds.</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>J <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Coupling strength</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>T_c <span class="op">=</span> J  <span class="co"># Critical temperature</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="fl">0.0</span>  <span class="co"># No external field</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Scan temperatures</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> np.linspace(<span class="fl">0.3</span>, <span class="fl">2.0</span>, <span class="dv">50</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>betas <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> temperatures</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute magnetizations and gradients</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>magnetizations <span class="op">=</span> []</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>gradients <span class="op">=</span> []</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> beta <span class="kw">in</span> betas:</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> magnetization_selfconsistent(beta, J, h)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    magnetizations.append(m)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute gradient of accessible information</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    dI_dm <span class="op">=</span> accessible_information_gradient(beta, J, m)</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    gradients.append(<span class="bu">abs</span>(dI_dm))</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>magnetizations <span class="op">=</span> np.array(magnetizations)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>gradients <span class="op">=</span> np.array(gradients)</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify phase transition</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>T_transition_idx <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(temperatures <span class="op">-</span> T_c))</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Critical temperature: T_c = </span><span class="sc">{</span>T_c<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Disordered phase (T &gt; T_c):&quot;</span>)</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Temperature T = </span><span class="sc">{</span>temperatures[<span class="dv">0</span>]<span class="sc">:.2f}</span><span class="ss">: m = </span><span class="sc">{</span>magnetizations[<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">, |∇_m I| = </span><span class="sc">{</span>gradients[<span class="dv">0</span>]<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Ordered phase (T &lt; T_c):&quot;</span>)</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Temperature T = </span><span class="sc">{</span>temperatures[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">: m = </span><span class="sc">{</span>magnetizations[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">, |∇_m I| = </span><span class="sc">{</span>gradients[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2e}</span><span class="ss">&quot;</span>)</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify theorem prediction</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>disordered_mask <span class="op">=</span> temperatures <span class="op">&gt;</span> T_c</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>ordered_mask <span class="op">=</span> temperatures <span class="op">&lt;</span> T_c</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>mean_gradient_disordered <span class="op">=</span> gradients[disordered_mask].mean()</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>mean_gradient_ordered <span class="op">=</span> gradients[ordered_mask].mean()</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Theorem verification:&quot;</span>)</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Disordered phase: &lt;|∇_m I|&gt; = </span><span class="sc">{</span>mean_gradient_disordered<span class="sc">:.2e}</span><span class="ss"> ≈ 0 ✓&quot;</span>)</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;  Ordered phase:    &lt;|∇_m I|&gt; = </span><span class="sc">{</span>mean_gradient_ordered<span class="sc">:.2e}</span><span class="ss"> ≫ 0 ✓&quot;</span>)</span></code></pre></div>
-<div class="figure">
-<div id="curie-weiss-phase-transition-validation-figure"
-class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/curie-weiss-phase-transition-validation.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="curie-weiss-phase-transition-validation-magnify"
-class="magnify"
-onclick="magnifyFigure(&#39;curie-weiss-phase-transition-validation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="curie-weiss-phase-transition-validation-caption"
-class="caption-frame">
-<p>Figure: Testing energy-entropy equivalence across the Curie-Weiss
-phase transition. Left: Magnetization <span
-class="math inline">\(m\)</span> as a function of temperature, showing
-ferromagnetic transition at <span class="math inline">\(T_c =
-J\)</span>. Right: Gradient of accessible information <span
-class="math inline">\(|\nabla_m I|\)</span> is small in the disordered
-phase (equivalence holds) but large in the ordered phase (equivalence
-fails), confirming the theorem’s predictions.</p>
-</div>
-</div>
-<p><strong>Results:</strong></p>
-<p>The numerical experiment confirms the theorem’s predictions:</p>
-<ol type="1">
-<li><strong>Disordered phase</strong> (<span class="math inline">\(T
-&gt; T_c\)</span>):
-<ul>
-<li>Magnetization <span class="math inline">\(m \approx 0\)</span> (no
-long-range order)</li>
-<li>Gradient <span class="math inline">\(|\nabla_m I| \approx 0\)</span>
-(energy-entropy equivalence holds)</li>
-<li>System is in the “thermodynamic regime” where correlations are
-weak</li>
-</ul></li>
-<li><strong>Ordered phase</strong> (<span class="math inline">\(T &lt;
-T_c\)</span>):
-<ul>
-<li>Magnetization <span class="math inline">\(m \neq 0\)</span>
-(spontaneous symmetry breaking)</li>
-<li>Gradient <span class="math inline">\(|\nabla_m I| \gg 0\)</span>
-(equivalence fails)</li>
-<li>Strong correlations violate the assumptions for equivalence</li>
-</ul></li>
-<li><strong>Phase transition</strong>:
-<ul>
-<li>Sharp crossover at critical temperature <span
-class="math inline">\(T_c = J\)</span></li>
-<li>Both magnetization and equivalence breakdown occur
-simultaneously</li>
-<li>Validates that correlations determine when equivalence applies</li>
-</ul></li>
-</ol>
-<p>This provides rigorous analytical support for the energy-entropy
-equivalence theorem derived from the inaccessible game axioms.</p>
-<h2 id="generic-and-thermodynamics">GENERIC and Thermodynamics</h2>
-<h2 id="generic-as-generalized-thermodynamics">GENERIC as Generalized
-Thermodynamics</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>GENERIC provides a framework that <em>generalizes</em> classical
-thermodynamics to arbitrary non-equilibrium systems. Where classical
-thermodynamics describes systems near equilibrium with linear response,
-GENERIC handles systems arbitrarily far from equilibrium with full
-nonlinear dynamics.</p>
-<p><strong>Classical thermodynamics</strong> (Clausius, Kelvin, Carnot):
-- Equilibrium states - Quasi-static processes - Entropy maximization at
-equilibrium - No dynamics, only relations between states</p>
-<p><strong>Linear irreversible thermodynamics</strong> (Onsager,
-Prigogine): - Near-equilibrium dynamics - Linear force-flux relations -
-Onsager reciprocity - Valid only for small deviations</p>
-<p><strong>GENERIC</strong> (Grmela, Öttinger): - Arbitrary
-far-from-equilibrium states - Nonlinear dynamics - Combines reversible +
-irreversible - Reduces to classical thermo at equilibrium</p>
-<p>GENERIC is the completion of thermodynamics—it describes the full
-dynamical evolution, not just equilibrium endpoints.</p>
-<h2 id="the-laws-of-thermodynamics-in-generic">The Laws of
-Thermodynamics in GENERIC</h2>
-<p>GENERIC automatically encodes the fundamental laws of thermodynamics.
-Let’s see how:</p>
-<p><strong>Zeroth Law</strong> (Transitivity of equilibrium): At
-equilibrium, <span class="math inline">\(\dot{x} = L \nabla E + M \nabla
-S = 0\)</span>. If systems A and B are each in equilibrium with C, and
-equilibrium is defined by the same functionals <span
-class="math inline">\(E\)</span> and <span
-class="math inline">\(S\)</span>, then A and B are in equilibrium with
-each other. This follows from the uniqueness of critical points.</p>
-<p><strong>First Law</strong> (Energy conservation): <span
-class="math display">\[
-\frac{\text{d}E}{\text{d}t} = \langle \nabla E, \dot{x} \rangle =
-\langle \nabla E, L \nabla E + M \nabla S \rangle
-\]</span> Using antisymmetry of <span class="math inline">\(L\)</span>:
-<span class="math inline">\(\langle \nabla E, L \nabla E \rangle =
-0\)</span></p>
-<p>Using degeneracy condition 1: <span class="math inline">\(\langle
-\nabla E, M \nabla S \rangle = 0\)</span></p>
-<p>Therefore: <span class="math inline">\(\frac{\text{d}E}{\text{d}t} =
-0\)</span> (energy is conserved!)</p>
-<p>The first law is built into GENERIC structure through antisymmetry
-and degeneracy.</p>
-<p><strong>Second Law</strong> (Entropy increase): <span
-class="math display">\[
-\frac{\text{d}S}{\text{d}t} = \langle \nabla S, \dot{x} \rangle =
-\langle \nabla S, L \nabla E + M \nabla S \rangle
-\]</span> Using degeneracy condition 2: <span
-class="math inline">\(\langle \nabla S, L \nabla E \rangle =
-0\)</span></p>
-<p>Using positive semi-definiteness of <span
-class="math inline">\(M\)</span>: <span class="math inline">\(\langle
-\nabla S, M \nabla S \rangle \geq 0\)</span></p>
-<p>Therefore: <span class="math inline">\(\frac{\text{d}S}{\text{d}t}
-\geq 0\)</span> (entropy increases!)</p>
-<p>The second law is built into GENERIC through degeneracy and positive
-semi-definiteness.</p>
-<p><strong>Third Law</strong> (Entropy vanishes at zero temperature):
-This is more subtle and depends on the specific form of <span
-class="math inline">\(S\)</span> and <span
-class="math inline">\(M\)</span>, but GENERIC is compatible with quantum
-mechanical formulations where the third law emerges naturally.</p>
-<h2 id="onsager-reciprocity-relations">Onsager Reciprocity
-Relations</h2>
-<p>One of the crowning achievements of linear irreversible
-thermodynamics was Onsager’s reciprocity relations <span
-class="citation" data-cites="Onsager-reciprocal31">(Onsager,
-1931)</span>. These state that near equilibrium, the response matrix
-relating thermodynamic forces to fluxes is symmetric.</p>
-<p>GENERIC provides a non-linear generalization of Onsager reciprocity
-through the <strong>symmetry of the friction operator</strong> <span
-class="math inline">\(M\)</span>.</p>
-<p>Near equilibrium, expand <span class="math inline">\(M(\nabla
-S)\)</span> to leading order: <span class="math display">\[
-M(x) \nabla S(x) \approx M(x_{\text{eq}}) \nabla^2 S(x_{\text{eq}}) (x -
-x_{\text{eq}}) = M_0 H_S (x - x_{\text{eq}})
-\]</span> where <span class="math inline">\(H_S\)</span> is the Hessian
-of entropy at equilibrium.</p>
-<p>The flux is <span class="math inline">\(J = M_0 H_S \delta x\)</span>
-and the thermodynamic force is <span class="math inline">\(X = H_S
-\delta x\)</span>. The response matrix is: <span class="math display">\[
-J = L X \quad \text{where} \quad L = M_0
-\]</span></p>
-<p>Since <span class="math inline">\(M_0\)</span> is symmetric (GENERIC
-requirement), we have <span class="math inline">\(L_{ij} =
-L_{ji}\)</span>, which is exactly Onsager reciprocity!</p>
-<p><strong>Key insight:</strong> Onsager reciprocity isn’t a separate
-postulate—it’s a consequence of the symmetric structure of the friction
-operator, which in turn follows from thermodynamic consistency (entropy
-increase).</p>
-<h2 id="entropy-production">Entropy Production</h2>
-<p>A central concept in non-equilibrium thermodynamics is
-<strong>entropy production</strong>—the rate at which entropy is
-generated by irreversible processes. In GENERIC, this has a beautiful
-formulation.</p>
-<p>The total entropy rate is: <span class="math display">\[
-\frac{\text{d}S}{\text{d}t} = \langle \nabla S, L \nabla E + M \nabla S
-\rangle = \langle \nabla S, M \nabla S \rangle
-\]</span> (using degeneracy 2: <span class="math inline">\(L \nabla S =
-0\)</span>)</p>
-<p>We can decompose this as: <span class="math display">\[
-\dot{S} = \sigma_S \geq 0
-\]</span> where <span class="math inline">\(\sigma_S = \langle \nabla S,
-M \nabla S \rangle\)</span> is the <strong>entropy production
-rate</strong>.</p>
-<p>Key properties: 1. <strong>Non-negative:</strong> <span
-class="math inline">\(\sigma_S \geq 0\)</span> (from positive
-semi-definiteness of <span class="math inline">\(M\)</span>) 2.
-<strong>Vanishes at equilibrium:</strong> When <span
-class="math inline">\(\nabla S = 0\)</span>, we have <span
-class="math inline">\(\sigma_S = 0\)</span> 3. <strong>Measures
-irreversibility:</strong> <span class="math inline">\(\sigma_S\)</span>
-quantifies how far the system is from reversible dynamics</p>
-<p>For our information dynamics: <span class="math display">\[
-\sigma_S = \langle -G\boldsymbol{\theta}, G(-G\boldsymbol{\theta})
-\rangle = \boldsymbol{\theta}^\top G^2 \boldsymbol{\theta}
-\]</span></p>
-<p>This is exactly the entropy production from maximum entropy dynamics
-(Lecture 3)! The Fisher information matrix <span
-class="math inline">\(G\)</span> governs the rate of entropy
-increase.</p>
-<h2 id="free-energy-and-dissipation">Free Energy and Dissipation</h2>
-<p>In equilibrium thermodynamics, the <strong>free energy</strong> <span
-class="math inline">\(F = E - TS\)</span> (where <span
-class="math inline">\(T\)</span> is temperature) determines equilibrium
-states: systems minimize <span class="math inline">\(F\)</span> at fixed
-temperature.</p>
-<p>In GENERIC, we can define a generalized free energy functional and
-show that it decreases along trajectories (for isothermal
-processes).</p>
-<p>For a system at temperature <span class="math inline">\(T\)</span>,
-define: <span class="math display">\[
-\mathcal{F} = E - T S
-\]</span></p>
-<p>The rate of change is: <span class="math display">\[
-\frac{\text{d}\mathcal{F}}{\text{d}t} = \frac{\text{d}E}{\text{d}t} -
-T\frac{\text{d}S}{\text{d}t} = 0 - T \sigma_S = -T \langle \nabla S, M
-\nabla S \rangle \leq 0
-\]</span></p>
-<p>So free energy decreases! The system dissipates toward minimum free
-energy at equilibrium.</p>
-<p>For information dynamics, this connects to the free energy in
-exponential families: <span class="math display">\[
-\mathcal{F}(\boldsymbol{\theta}) = -A(\boldsymbol{\theta}) +
-\boldsymbol{\theta}^\top \mathbb{E}[T(\mathbf{x})]
-\]</span> where <span
-class="math inline">\(A(\boldsymbol{\theta})\)</span> is the log
-partition function. The dynamics <span
-class="math inline">\(\dot{\boldsymbol{\theta}} =
--G\boldsymbol{\theta}\)</span> perform gradient descent on free energy
-(under constraints).</p>
-<h2 id="fluctuation-dissipation-relations">Fluctuation-Dissipation
-Relations</h2>
-<p>Another deep result from statistical mechanics is the
-<strong>fluctuation-dissipation theorem</strong>, which relates the
-response of a system to perturbations to its spontaneous fluctuations at
-equilibrium.</p>
-<p>Near equilibrium, fluctuations in a variable <span
-class="math inline">\(x_i\)</span> have variance: <span
-class="math display">\[
-\langle (\delta x_i)^2 \rangle \propto k_B T
-\]</span></p>
-<p>The response to a small force <span
-class="math inline">\(f_j\)</span> is: <span class="math display">\[
-\langle \delta x_i \rangle = \chi_{ij} f_j
-\]</span></p>
-<p>The fluctuation-dissipation theorem states: <span
-class="math display">\[
-\chi_{ij} \propto \frac{\langle \delta x_i \delta x_j \rangle}{k_B T}
-\]</span></p>
-<p>In GENERIC, this emerges naturally from the structure. The friction
-operator <span class="math inline">\(M\)</span> governs both: -
-<strong>Dissipation:</strong> How perturbations relax -
-<strong>Fluctuations:</strong> Equilibrium variance (through Gibbs
-distribution)</p>
-<p>For our information dynamics, <span class="math inline">\(M =
-G\)</span> (Fisher information), which is exactly the inverse covariance
-matrix for Gaussian distributions! So: <span class="math display">\[
-G_{ij}^{-1} = \text{Cov}(T_i, T_j) = \langle (\delta T_i)(\delta T_j)
-\rangle
-\]</span></p>
-<p>The Fisher information (dissipation) and the covariance
-(fluctuations) are inverses—a direct manifestation of
-fluctuation-dissipation!</p>
-<h2 id="maximum-entropy-production-principle-1">Maximum Entropy
-Production Principle</h2>
-<p>The <strong>maximum entropy production principle</strong> (MEPP)
-states that non-equilibrium steady states are characterized by maximum
-entropy production rate subject to constraints. This principle is
-debated in thermodynamics, but GENERIC provides a framework for
-understanding when it applies.</p>
-<p>From Lecture 3, we derived that unconstrained information dynamics
-maximize entropy production: <span class="math display">\[
-\dot{S} = \max_{\dot{\boldsymbol{\theta}}}
-\{\dot{S}(\dot{\boldsymbol{\theta}}) : \text{Fisher-constrained}\}
-\]</span></p>
-<p>With constraints, the dynamics become: <span class="math display">\[
-\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a
-\]</span></p>
-<p>This still maximizes entropy production <em>on the constraint
-manifold</em>: <span class="math display">\[
-\dot{S} = \max_{\dot{\boldsymbol{\theta}} :
-a^\top\dot{\boldsymbol{\theta}}=0} \{-\boldsymbol{\theta}^\top G
-\dot{\boldsymbol{\theta}}\}
-\]</span></p>
-<p>So MEPP holds for information dynamics as a consequence of GENERIC
-structure + Fisher information as friction.</p>
-<p>The general lesson: MEPP emerges when: 1. The friction operator is
-related to the entropy Hessian (Fisher information) 2. Constraints are
-properly accounted for via Lagrange multipliers 3. The system is not
-externally driven</p>
-<p>GENERIC provides the mathematical framework for understanding when
-MEPP applies and when it doesn’t.</p>
-<h2 id="connection-to-non-equilibrium-statistical-mechanics">Connection
-to Non-Equilibrium Statistical Mechanics</h2>
-<p>GENERIC bridges macroscopic thermodynamics and microscopic
-statistical mechanics. While we’ve been working at the level of
-distributions and information, GENERIC can be derived from:</p>
-<p><strong>Microscopic foundations:</strong> - <strong>Liouville
-equation</strong> for phase space density - <strong>BBGKY
-hierarchy</strong> for reduced distributions<br />
-- <strong>Projection operator methods</strong> (Zwanzig-Mori)</p>
-<p>These microscopic theories show how reversible microscopic dynamics
-(Hamiltonian) give rise to irreversible macroscopic dynamics
-(dissipation) through <strong>coarse-graining</strong> and <strong>loss
-of information</strong>.</p>
-<p>The antisymmetric part <span class="math inline">\(L\)</span>
-preserves the fine-grained microscopic reversibility. The symmetric part
-<span class="math inline">\(M\)</span> captures the effective
-irreversibility from ignored microscopic degrees of freedom.</p>
-<p>For information dynamics: - Fine-grained: Full joint distribution
-<span class="math inline">\(p(\mathbf{x})\)</span> - Coarse-grained:
-Natural parameters <span
-class="math inline">\(\boldsymbol{\theta}\)</span> (exponential family)
-- <span class="math inline">\(L\)</span>: Preserves structure within
-parameter space - <span class="math inline">\(M = G\)</span>:
-Dissipation from unobserved correlations</p>
-<p>This connects our information-theoretic approach to fundamental
-stat-mech!</p>
-<p><strong>Summary:</strong> GENERIC generalizes classical
-thermodynamics to arbitrary non-equilibrium dynamics. The laws of
-thermodynamics, Onsager reciprocity, entropy production,
-fluctuation-dissipation, and maximum entropy production all emerge as
-consequences of GENERIC structure. For information dynamics, Fisher
-information plays the role of thermodynamic friction, connecting
-information theory to the foundations of statistical mechanics and
-thermodynamics. The framework we built from axioms (Lectures 1-7) is not
-just mathematically consistent—it’s thermodynamically fundamental.</p>
-<h1 id="landauers-principle">Landauer’s Principle</h1>
-<p>One of the most fundamental results connecting information and energy
-is Landauer’s principle. The inaccessible game allows us to derive it
-from first principles.</p>
-<h2 id="landauers-principle-from-the-inaccessible-game">Landauer’s
-Principle from the Inaccessible Game</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The GENERIC-like structure and energy-entropy equivalence provide a
-natural framework for deriving Landauer’s principle <span
-class="citation" data-cites="Landauer-irreversibility61">(Landauer,
-1961)</span>, which states that erasing information requires dissipating
-at least <span class="math inline">\(k_BT\log 2\)</span> of energy per
-bit.</p>
-<h3 id="information-erasure-as-a-process">Information Erasure as a
-Process</h3>
-<p>Consider erasing one bit: a memory variable <span
-class="math inline">\(x_i \in \{0,1\}\)</span> is reset to a standard
-state (say <span class="math inline">\(x_i = 0\)</span>), destroying the
-stored information. From an ensemble perspective—considering many such
-erasure operations where the initial value is random—the marginal
-entropy of this variable decreases: <span class="math display">\[
-\Delta h(X_i) = -\log 2.
-\]</span></p>
-<h2 id="conservation-requires-redistribution">Conservation Requires
-Redistribution</h2>
-<p>For a system obeying <span class="math inline">\(\sum_i h_i =
-C\)</span>, this decrease must be compensated by increases elsewhere:
-<span class="math display">\[
-\sum_{j \neq i} \Delta h(X_j) = +\log 2.
-\]</span></p>
-<p>The antisymmetric (conservative) part <span
-class="math inline">\(A\)</span> of our GENERIC dynamics preserves both
-<span class="math inline">\(H\)</span> and <span
-class="math inline">\(\sum_i h_i\)</span>. It can only shuffle entropy
-reversibly between variables. But such reversible redistribution doesn’t
-truly erase the information—it merely moves it to other variables, from
-which it could in principle be recovered.</p>
-<p>True irreversible erasure requires increasing the total joint entropy
-<span class="math inline">\(H\)</span> (second law) while maintaining
-<span class="math inline">\(\sum_i h_i = C\)</span>. Since <span
-class="math inline">\(I = \sum_i h_i - H\)</span>, this means decreasing
-multi-information: <span class="math display">\[
-\Delta I &lt; 0.
-\]</span></p>
-<p>This reduction of correlations is precisely what the dissipative part
-<span class="math inline">\(S\)</span> achieves. It increases <span
-class="math inline">\(H\)</span> through entropy production while the
-constraint forces redistribution of marginal entropies. <strong>The
-erasure process thus necessarily involves the dissipative
-dynamics</strong>, not just conservative reshuffling.</p>
-<h2 id="energy-cost-from-energy-entropy-equivalence">Energy Cost from
-Energy-Entropy Equivalence</h2>
-<p>In the thermodynamic limit with energy-entropy equivalence (Section 5
-of the paper), the gradients <span class="math inline">\(\nabla(\sum_i
-h_i)\)</span> and <span class="math inline">\(\nabla E\)</span> become
-parallel along the order-parameter direction. Near thermal equilibrium
-at inverse temperature <span class="math inline">\(\beta =
-\tfrac{1}{k_BT}\)</span>, this implies: <span class="math display">\[
-\beta \langle E \rangle \approx \sum_i h_i + \text{const}.
-\]</span></p>
-<p>Therefore, erasing one bit requires: <span class="math display">\[
-\Delta(\beta \langle E \rangle) \approx \Delta h(X_i) = -\log 2,
-\]</span> giving an energy change: <span class="math display">\[
-\Delta \langle E \rangle \approx -\frac{\log 2}{\beta} = -k_BT \log 2.
-\]</span></p>
-<h2 id="dissipation-bound">Dissipation Bound</h2>
-<p>Since the system must dissipate this energy via the symmetric part
-<span class="math inline">\(S\)</span>, and entropy production is
-non-negative, we obtain Landauer’s bound <span class="math display">\[
-Q_{\text{dissipated}} \geq k_BT\log 2.
-\]</span></p>
-<p>This derivation shows that Landauer’s principle emerges from: 1.
-<strong>Marginal entropy conservation</strong> <span
-class="math inline">\(\sum_i h_i = C\)</span> 2. <strong>GENERIC-like
-structure</strong> distinguishing conservative redistribution (<span
-class="math inline">\(A\)</span>) from dissipative entropy production
-(<span class="math inline">\(S\)</span>)<br />
-3. <strong>Energy-entropy equivalence</strong> in the thermodynamic
-limit</p>
-<p>The insight is that erasure requires both redistributing marginal
-entropy (to maintain the constraint) and increasing total entropy <span
-class="math inline">\(H\)</span> (second law), which necessarily reduces
-multi-information <span class="math inline">\(I\)</span> and invokes
-dissipation.</p>
-<p>The information-theoretic constraint provides the foundation, with
-thermodynamic energy appearing as its dual in the large-system limit.
-This reverses the usual derivation where information bounds follow from
-thermodynamics — here thermodynamic bounds follow from information
-theory.</p>
-<h2
-id="is-landauers-limit-related-to-shannons-gaussian-channel-capacity">Is
-Landauer’s Limit Related to Shannon’s Gaussian Channel Capacity?</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Digital memory can be viewed as a communication channel through time
-- storing a bit is equivalent to transmitting information to a future
-moment. This perspective immediately suggests that we look for a
-connection between Landauer’s erasure principle and Shannon’s channel
-capacity. The connection might arise because both these systems are
-about maintaining reliable information against thermal noise.</p>
-<p>The Landauer limit <span class="citation"
-data-cites="Landauer-irreversibility61">(Landauer, 1961)</span> is the
-minimum amount of heat energy that is dissapated when a bit of
-information is erased. Conceptually it’s the potential energy associated
-with holding a bit to an identifiable single value that is
-differentiable from the background thermal noise (representated by
-temperature).</p>
-<p>The Gaussian channel capacity <span class="citation"
-data-cites="Shannon-info48">(Shannon, 1948)</span> represents how
-identifiable a signal <span class="math inline">\(S\)</span>, is
-relative to the background noise, <span
-class="math inline">\(N\)</span>. Here we trigger a small exploration of
-potential relationship between these two values.</p>
-<p>When we store a bit in memory, we maintain a signal that can be
-reliably distinguished from thermal noise, just as in a communication
-channel. This suggests that Landauer’s limit for erasure of one bit of
-information, <span class="math inline">\(E_{min} = k_BT\)</span>, and
-Shannon’s Gaussian channel capacity, <span class="math display">\[
-C = \frac{1}{2}\log_2\left(1 + \frac{S}{N}\right),
-\]</span> might be different views of the same limit.</p>
-<p>Landauer’s limit states that erasing one bit of information requires
-a minimum energy of <span class="math inline">\(E_{\text{min}} =
-k_BT\)</span>. For a communication channel operating over time <span
-class="math inline">\(1/B\)</span>, the signal power <span
-class="math inline">\(S = EB\)</span> and noise power <span
-class="math inline">\(N = k_BTB\)</span>. This gives us: <span
-class="math display">\[
-C = \frac{1}{2}\log_2\left(1 + \frac{S}{N}\right) =
-\frac{1}{2}\log_2\left(1 + \frac{E}{k_BT}\right)
-\]</span> where the bandwidth B cancels out in the ratio.</p>
-<p>When we operate at Landauer’s limit, setting <span
-class="math inline">\(E = k_BT\)</span>, we get a signal-to-noise ratio
-of exactly 1: <span class="math display">\[
-\frac{S}{N} = \frac{E}{k_BT} = 1
-\]</span> This yields a channel capacity of exactly half a bit per
-second, <span class="math display">\[
-C = \frac{1}{2}\log_2(2) = \frac{1}{2} \text{ bit/s}
-\]</span></p>
-<p>The factor of 1/2 appears in Shannon’s formula because of Nyquist’s
-theorem - we need two samples per cycle at bandwidth B to represent a
-signal. The bandwidth <span class="math inline">\(B\)</span> appears in
-both signal and noise power but cancels in their ratio, showing how
-Landauer’s energy-per-bit limit connects to Shannon’s bits-per-second
-capacity.</p>
-<p>This connection suggests that Landauer’s limit may correspond to the
-energy needed to establish a signal-to-noise ratio sufficient to
-transmit one bit of information per second. The temperature <span
-class="math inline">\(T\)</span> may set both the minimum energy scale
-for information erasure and the noise floor for information
-transmission.</p>
-<h2 id="implications-for-information-engines">Implications for
-Information Engines</h2>
-<p>This connection suggests that the fundamental limits on information
-processing may arise from the need to maintain signals above the thermal
-noise floor. Whether we’re erasing information (Landauer) or
-transmitting it (Shannon), we need to overcome the same fundamental
-noise threshold set by temperature.</p>
-<p>This perspective suggests that both memory operations (erasure) and
-communication operations (transmission) are limited by the same physical
-principles. The temperature <span class="math inline">\(T\)</span>
-emerges as a fundamental parameter that sets the scale for both energy
-requirements and information capacity.</p>
-<p>The connection between Landauer’s limit and Shannon’s channel
-capacity is intriguing but still remains speculative. For Landauer’s
-original work see <span class="citation"
-data-cites="Landauer-irreversibility61">Landauer (1961)</span>,
-Bennett’s review and developments see <span class="citation"
-data-cites="Bennet-thermodynamics82">Bennet (1982)</span>, and for a
-more recent overview and connection to developments in non-equilibrium
-thermodynamics <span class="citation"
-data-cites="Parrondo-thermodynamics15">Parrondo et al.
-(2015)</span>.</p>
-<h1 id="implications-for-intelligence">Implications for
-Intelligence</h1>
-<h2 id="why-superintelligence-is-like-perpetual-motion">Why
-Superintelligence is Like Perpetual Motion</h2>
-<h2 id="superintelligence-as-perpetual-motion">Superintelligence as
-Perpetual Motion</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/superintelligence-as-perpetual-motion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/superintelligence-as-perpetual-motion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Claims about imminent superintelligence or artificial general
-intelligence that will recursively self-improve to unbounded capability
-bear a striking resemblance to promises of perpetual motion machines.
-Both violate fundamental physical constraints.</p>
-<h3 id="the-thermodynamic-constraint">The Thermodynamic Constraint</h3>
-<p>Perpetual motion machines fail because they violate the second law of
-thermodynamics. You cannot extract unlimited work from a finite system
-without an external energy source. Entropy must increase, energy must be
-conserved, and there are fundamental limits on efficiency set by
-temperature.</p>
-<p>These aren’t engineering challenges to overcome with better designs,
-they’re fundamental constraints built into the structure of physical
-law.</p>
-<p>Similarly, unbounded intelligence fails because it would require
-unbounded information processing. The inaccessible game shows that
-information processing has thermodynamic costs through:</p>
-<ol type="1">
-<li><strong>Landauer’s principle:</strong> Information erasure costs
-<span class="math inline">\(k_BT\log 2\)</span> per bit</li>
-<li><strong>Marginal entropy conservation:</strong> Information cannot
-be created from nothing</li>
-<li><strong>Fisher information bounds:</strong> Information channel
-capacity is finite</li>
-<li><strong>GENERIC structure:</strong> Any real process has dissipative
-components</li>
-</ol>
-<h2 id="the-recursive-self-improvement-fallacy">The Recursive
-Self-Improvement Fallacy</h2>
-<p>The superintelligence narrative often invokes “recursive
-self-improvement”: an AI that makes itself smarter, which makes it
-better at making itself smarter, leading to explosive growth. This is
-supposed to lead to capabilities that far exceed human intelligence.</p>
-<p>But this violates conservation of information. To “improve” requires:
-- <strong>Learning:</strong> Extracting information from environment
-(limited by Fisher information) - <strong>Memory:</strong> Storing that
-information (limited by physical substrate) -
-<strong>Computation:</strong> Processing information (limited by
-Landauer and thermodynamics) - <strong>Erasure:</strong> Clearing memory
-for new information (dissipates energy)</p>
-<p>Each step has information-theoretic costs. You cannot recursively
-self-improve without limit any more than you can build a perpetual
-motion machine by clever arrangement of gears.</p>
-<h2 id="embodiment-as-thermodynamic-necessity">Embodiment as
-Thermodynamic Necessity</h2>
-<p>The inaccessible game reveals why embodiment—physical constraints—is
-not a limitation to be overcome but a necessary feature of any
-information-processing system.</p>
-<p>The Fisher information matrix <span
-class="math inline">\(G(\boldsymbol{\theta})\)</span> defines the
-information topography. It determines: - How fast information can flow -
-What channels are available<br />
-- What bottlenecks exist - How much energy is needed</p>
-<p>This topography is shaped by the physical implementation. A
-biological brain has different <span class="math inline">\(G\)</span>
-than a silicon chip, which has different <span
-class="math inline">\(G\)</span> than a quantum computer. <em>Each
-physical substrate creates its own information landscape with its own
-constraints.</em></p>
-<p>Promises of “uploading” consciousness or achieving superintelligence
-by removing physical constraints misunderstand the relationship between
-information and physics. Information processing <em>is</em> physical.
-The constraints aren’t bugs, they’re features that make information
-processing possible at all.</p>
-<h2 id="why-the-hype-persists">Why the Hype Persists</h2>
-<p>If the constraints are so fundamental, why do smart people keep
-claiming superintelligence is just around the corner? Several
-reasons.</p>
-<ol type="1">
-<li><em>Confusing capability with intelligence:</em> Current AI systems
-can do impressive things, but that doesn’t mean they’re on a path to
-unbounded capability</li>
-<li><em>Ignoring thermodynamic costs:</em> Information processing seems
-“free” compared to mechanical work, but Landauer’s principle shows it
-has real energy costs</li>
-<li><em>Mistaking scaling for fundamental progress:</em> Making systems
-bigger isn’t the same as removing fundamental constraints</li>
-<li><em>Economic incentives:</em> Billions of dollars flow toward
-exciting promises</li>
-</ol>
-<p>Just as perpetual motion machines attracted investors in the 19th and
-early 20th centuries, superintelligence claims attract billions today.
-But the fundamental constraints haven’t changed. The idea of this work
-is that information theory provides as firm a bound on intelligence as
-thermodynamics provides on engines.</p>
-<h2 id="the-limits-of-enhancement">The Limits of Enhancement</h2>
-<h2 id="transhumanism">Transhumanism</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/transhumanism.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/transhumanism.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Some researchers talk about transhumanism, releasing us from our own
-limitations, gaining the bandwidth of the computer. Who wouldn’t want
-the equivalent of billions of dollars of communication that a computer
-has?</p>
-<p>But what if that would destroy the very nature of what it is to be
-human. What if we are defined by our limitations. What if our
-consciousness is born out of a need to understand and be understood by
-others? What if that thing that we value the most is a side effect of
-our limitations?</p>
-<p>AI is a technology, it is not a human being. It doesn’t worry it is
-being misunderstood, it doesn’t hate us, it doesn’t love us, it doesn’t
-even have an opinion about us.</p>
-<p>Any sense that it does is in that little internal model we have as we
-anthropomorphize it. AI doesn’t stand for anthropomorphic intelligence,
-it stands for artificial intelligence. Artificial in the way a plastic
-plant is artificial.</p>
-<p>Of course, like any technology, that doesn’t mean it’s without its
-dangers. Technological advance has always brought social challenges and
-likely always will, but if we are to face those challenges head on, we
-need to acknowledge the difference between our intelligence and that
-which we create in our computers.</p>
-<p>Your cat understands you better than your computer does, your cat
-understands me better than your computer does, and it hasn’t even met
-me!</p>
-<p>Our lives are defined by our desperate need to be understood: art,
-music, literature, dance, sport. So many creative ways to try and
-communicate who we are or what we feel. The computer has no need for
-this.</p>
-<p>When you hear the term Artificial Intelligence, remember that’s
-precisely what it is. Artificial, like that plastic plant. A plastic
-plant is convenient, it doesn’t need watering, it doesn’t need to be put
-in the light, it won’t wilt if you don’t attend to it, and it won’t
-outgrow the place you put it.</p>
-<p>A plastic plant will do some of the jobs that a real plant does, but
-it isn’t a proper replacement, and never will be. So, it is with our
-artificial intelligences.</p>
-<p>I believe that our fascination with AI is actually a projected
-fascination with ourselves. A sort of technological narcissism. One of
-the reasons that the next generation of artificial intelligence
-solutions excites me is because I think it will lead to a much better
-understanding of our own intelligence.</p>
-<p>But with our self-idolization comes a Icarian fear of what it might
-mean to emulate those characteristics that we perceive of as uniquely
-human.</p>
-<p>Our fears of AI singularities and superintelligences come from a
-confused mixing of what we create and what we are.</p>
-<p>Do not fool yourselves into thinking these computers are the same
-thing as us, they never will be. We are a consequence of our
-limitations, just as Bauby was defined by his. Or maybe limitations is
-the wrong word, as Bauby described there are always moments when we can
-explore our inner self and escape into our own imagination:</p>
-<blockquote>
-<p>My cocoon becomes less oppressive, and my mind takes flight like a
-butterfly. There is so much to do. You can wander off in space or in
-time, set out for Tierra del Fuego or King Midas’s court. You can visit
-the woman you love, slide down beside her and stroke her still-sleeping
-face. You can build castles in Spain, steal the golden fleece, discover
-Atlantis, realize your childhood dreams and adult ambitions.<br />
-Enough rambling. My main task now is to compose the first of those
-bedridden travel notes so that I shall be ready when my publisher’s
-emissary arrives to take my dictation, letter by letter. In my head I
-churn over every sentence ten times, delete a word, add an adjective,
-and learn my text by heart, paragraph by paragraph.</p>
-</blockquote>
-<p>The flower that is this book, that is this fight, can never bud from
-an artificial plant.</p>
-<h1 id="conclusions">Conclusions</h1>
-<p>The inaccessible game provides an information-theoretic foundation
-for understanding physical systems and, by extension, intelligent
-systems. Starting from four axioms—three from Baez characterizing
-information loss, and a fourth imposing information isolation—we
-derive:</p>
-<p>This reverses the usual logic where information bounds follow from
-thermodynamics. Here, thermodynamic structure emerges from
-information-theoretic principles. This suggests Wheeler’s “it from bit”
-vision may be realizable: physical laws emerging from
-information-theoretic constraints.</p>
-<p>For intelligence, the message is clear: just as no clever arrangement
-of gears can create a perpetual motion machine, no clever arrangement of
-algorithms can create unbounded superintelligence. The constraints are
-fundamental, built into the structure of information itself.</p>
-<h2 id="david-mackays-legacy">David MacKay’s Legacy</h2>
-<p>David taught us to ask: “What are the fundamental constraints? What
-do the numbers actually say?” This work aspires to follow in that
-tradition. By starting with information-theoretic axioms and deriving
-physical structure, we can rigorously understand why certain promises,
-whether perpetual motion or superintelligence, are impossible.</p>
-<p>I hope that David would have appreciated both the mathematical
-structure and its application to deflating hype. His legacy continues in
-work that uses careful reasoning to illuminate real constraints, helping
-us distinguish transformative but bounded progress from impossible
-dreams.</p>
-<h2 id="open-questions">Open Questions</h2>
-<p>Many questions remain open:</p>
-<ol type="1">
-<li>Can we prove that exponential families are necessary, not just
-convenient?</li>
-<li>What is the initial state of the inaccessible game (the origin where
-<span class="math inline">\(H=0\)</span>)?</li>
-<li>Under what conditions does the Jacobi identity hold globally?</li>
-<li>Can this framework extend to quantum systems?</li>
-<li>What are the implications for understanding biological
-intelligence?</li>
-</ol>
-<p>These questions point toward future work connecting information
-theory, physics, and the nature of intelligence.</p>
-<h1
-id="information-engines-intelligence-as-an-energy-efficiency">Information
-Engines: Intelligence as an Energy-Efficiency</h1>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/intelligence-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The entropy game shows some parallels between thermodynamics and
-measurement. This allows us to imagine <em>information engines</em>,
-simple systems that convert information to energy. This is our first
-simple model of intelligence.</p>
-<h2
-id="measurement-as-a-thermodynamic-process-information-modified-second-law">Measurement
-as a Thermodynamic Process: Information-Modified Second Law</h2>
-<p>The second law of thermodynamics was generalised to include the
-effect of measurement by Sagawa and Ueda <span class="citation"
-data-cites="Sagawa-second08">(Sagawa and Ueda, 2008)</span>. They showed
-that the maximum extractable work from a system can be increased by
-<span class="math inline">\(k_BTI(X;M)\)</span> where <span
-class="math inline">\(k_B\)</span> is Boltzmann’s constant, <span
-class="math inline">\(T\)</span> is temperature and <span
-class="math inline">\(I(X;M)\)</span> is the information gained by
-making a measurement, <span class="math inline">\(M\)</span>, <span
-class="math display">\[
-I(X;M) = \sum_{x,m} \rho(x,m) \log \frac{\rho(x,m)}{\rho(x)\rho(m)},
-\]</span> where <span class="math inline">\(\rho(x,m)\)</span> is the
-joint probability of the system and measurement (see e.g. eq 14 in <span
-class="citation" data-cites="Sagawa-second08">Sagawa and Ueda
-(2008)</span>). This can be written as <span class="math display">\[
-W_\text{ext} \leq  - \Delta\mathcal{F} + k_BTI(X;M),
-\]</span> where <span class="math inline">\(W_\text{ext}\)</span> is the
-extractable work and it is upper bounded by the negative change in free
-energy, <span class="math inline">\(\Delta \mathcal{F}\)</span>, plus
-the energy gained from measurement, <span
-class="math inline">\(k_BTI(X;M)\)</span>. This is the
-information-modified second law.</p>
-<p>The measurements can be seen as a thermodynamic process. In theory
-measurement, like computation is reversible. But in practice the process
-of measurement is likely to erode the free energy somewhat, but as long
-as the energy gained from information, <span
-class="math inline">\(kTI(X;M)\)</span> is greater than that spent in
-measurement the pricess can be thermodynamically efficient.</p>
-<p>The modified second law shows that the maximum additional extractable
-work is proportional to the information gained. So information
-acquisition creates extractable work potential. Thermodynamic
-consistency is maintained by properly accounting for information-entropy
-relationships.</p>
-<h2 id="efficacy-of-feedback-control">Efficacy of Feedback Control</h2>
-<p>Sagawa and Ueda extended this relationship to provide a
-<em>generalised Jarzynski equality</em> for feedback processes <span
-class="citation" data-cites="Sagawa-generalized10">(Sagawa and Ueda,
-2010)</span>. The Jarzynski equality is an imporant result from
-nonequilibrium thermodynamics that relates the average work done across
-an ensemble to the free energy difference between initial and final
-states <span class="citation"
-data-cites="Jarzynski-nonequilibrium97">(Jarzynski, 1997)</span>, <span
-class="math display">\[
-\left\langle \exp\left(-\frac{W}{k_B T}\right) \right\rangle =
-\exp\left(-\frac{\Delta\mathcal{F}}{k_BT}\right),
-\]</span> where <span class="math inline">\(\langle W \rangle\)</span>
-is the average work done across an ensemble of trajectories, <span
-class="math inline">\(\Delta\mathcal{F}\)</span> is the change in free
-energy, <span class="math inline">\(k_B\)</span> is Boltzmann’s
-constant, and <span class="math inline">\(\Delta S\)</span> is the
-change in entropy. Sagawa and Ueda extended this equality to to include
-information gain from measurement <span class="citation"
-data-cites="Sagawa-generalized10">(Sagawa and Ueda, 2010)</span>, <span
-class="math display">\[
-\left\langle \exp\left(-\frac{W}{k_B T}\right)
-\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)
-\exp\left(-\mathcal{I}(X;M)\right)\right\rangle = 1,
-\]</span> where <span class="math inline">\(\mathcal{I}(X;M) = \log
-\frac{\rho(X|M)}{\rho(X)}\)</span> is the information gain from
-measurement, and the mutual information is recovered <span
-class="math inline">\(I(X;M) = \left\langle \mathcal{I}(X;M)
-\right\rangle\)</span> as the average information gain.</p>
-<p>Sagawa and Ueda introduce an <em>efficacy</em> term that captures the
-effect of feedback on the system they note in the presence of feedback,
-<span class="math display">\[
-\left\langle \exp\left(-\frac{W}{k_B T}\right)
-\exp\left(\frac{\Delta\mathcal{F}}{k_BT}\right)\right\rangle = \gamma,
-\]</span> where <span class="math inline">\(\gamma\)</span> is the
-efficacy.</p>
-<h2 id="channel-coding-perspective-on-memory">Channel Coding Perspective
-on Memory</h2>
-<p>When viewing <span class="math inline">\(M\)</span> as an information
-channel between past and future states, Shannon’s channel coding
-theorems apply <span class="citation"
-data-cites="Shannon-info48">(Shannon, 1948)</span>. The channel capacity
-<span class="math inline">\(C\)</span> represents the maximum rate of
-reliable information transmission [ C = _{(M)} I(X_1;M) ] and for a
-memory of <span class="math inline">\(n\)</span> bits we have [ C n, ]
-as the mutual information is upper bounded by the entropy of <span
-class="math inline">\(\rho(M)\)</span> which is at most <span
-class="math inline">\(n\)</span> bits.</p>
-<p>This relationship seems to align with Ashby’s Law of Requisite
-Variety (pg 229 <span class="citation" data-cites="Ashby-design52">Ashby
-(1952)</span>), which states that a control system must have at least as
-much ‘variety’ as the system it aims to control. In the context of
-memory systems, this means that to maintain temporal correlations
-effectively, the memory’s state space must be at least as large as the
-information content it needs to preserve. This provides a lower bound on
-the necessary memory capacity that complements the bound we get from
-Shannon for channel capacity.</p>
-<p>This helps determine the required memory size for maintaining
-temporal correlations, optimal coding strategies, and fundamental limits
-on temporal correlation preservation.</p>
-<h1 id="decomposition-into-past-and-future">Decomposition into Past and
-Future</h1>
-<h2 id="model-approximations-and-thermodynamic-efficiency">Model
-Approximations and Thermodynamic Efficiency</h2>
-<p>Intelligent systems must balance measurement against energy
-efficiency and time requirements. A perfect model of the world would
-require infinite computational resources and speed, so approximations
-are necessary. This leads to uncertainties. Thermodynamics might be
-thought of as the physics of uncertainty: at equilibrium thermodynamic
-systems find thermodynamic states that minimize free energy, equivalent
-to maximising entropy.</p>
-<h2 id="markov-blanket">Markov Blanket</h2>
-<p>To introduce some structure to the model assumption. We split <span
-class="math inline">\(X\)</span> into <span
-class="math inline">\(X_0\)</span> and <span
-class="math inline">\(X_1\)</span>. <span
-class="math inline">\(X_0\)</span> is past and present of the system,
-<span class="math inline">\(X_1\)</span> is future The conditional
-mutual information <span class="math inline">\(I(X_0;X_1|M)\)</span>
-which is zero if <span class="math inline">\(X_1\)</span> and <span
-class="math inline">\(X_0\)</span> are independent conditioned on <span
-class="math inline">\(M\)</span>.</p>
-<h2 id="at-what-scales-does-this-apply">At What Scales Does this
-Apply?</h2>
-<p>The equipartition theorem tells us that at equilibrium the average
-energy is <span class="math inline">\(kT/2\)</span> per degree of
-freedom. This means that for systems that operate at “human scale” the
-energy involved is many orders of magnitude larger than the amount of
-information we can store in memory. For a car engine producing 70 kW of
-power at 370 Kelvin, this implies <span class="math display">\[
-\frac{2 \times 70,000}{370 \times k_B} = \frac{2 \times
-70,000}{370\times 1.380649×10^{−23}} = 2.74 × 10^{25}
-\]</span> degrees of freedom per second. If we make a conservative
-assumption of one bit per degree of freedom, then the mutual information
-we would require in one second for comparative energy production would
-be around 3400 zettabytes, implying a memory bandwidth of around 3,400
-zettabytes per second. In 2025 the estimate of all the data in the world
-stands at 149 zettabytes.</p>
-<h2
-id="small-scale-biochemical-systems-and-information-processing">Small-Scale
-Biochemical Systems and Information Processing</h2>
-<p>While macroscopic systems operate in regimes where traditional
-thermodynamics dominates, microscopic biological systems operate at
-scales where information and thermal fluctuations become critically
-important. Here we examine how the framework applies to molecular
-machines and processes that have evolved to operate efficiently at these
-scales.</p>
-<p>Molecular machines like ATP synthase, kinesin motors, and the
-photosynthetic apparatus can be viewed as sophisticated information
-engines that convert energy while processing information about their
-environment. These systems have evolved to exploit thermal fluctuations
-rather than fight against them, using information processing to extract
-useful work.</p>
-<h2 id="atp-synthase-natures-rotary-engine">ATP Synthase: Nature’s
-Rotary Engine</h2>
-<p>ATP synthase functions as a rotary molecular motor that synthesizes
-ATP from ADP and inorganic phosphate using a proton gradient. The system
-uses the proton gradient as both an energy source and an information
-source about the cell’s energetic state and exploits Brownian motion
-through a ratchet mechanism. It converts information about proton
-locations into mechanical rotation and ultimately chemical energy with
-approximately 3-4 protons required per ATP.</p>
-<iframe width="800" height="600" src="https://www.youtube.com/embed/kXpzp4RDGJI?start=130" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-</iframe>
-<p>Estimates suggest that one synapse firing may require <span
-class="math inline">\(10^4\)</span> ATP molecules, so around <span
-class="math inline">\(4 \times 10^4\)</span> protons. If we take the
-human brain as containing around <span
-class="math inline">\(10^{14}\)</span> synapses, and if we suggest each
-synapse only fires about once every five seconds, we would require
-approximately <span class="math inline">\(10^{18}\)</span> protons per
-second to power the synapses in our brain. With each proton having six
-degrees of freedom. Under these rough calculations the memory capacity
-distributed across the ATP Synthase in our brain must be of order <span
-class="math inline">\(6 \times 10^{18}\)</span> bits per second or 750
-petabytes of information per second. Of course this memory capacity
-would be devolved across the billions of neurons within hundreds or
-thousands of mitochondria that each can contain thousands of ATP
-synthase molecules. By composition of extremely small systems we can see
-it’s possible to improve efficiencies in ways that seem very impractical
-for a car engine.</p>
-<p>Quick note to clarify, here we’re referring to the information
-requirements to make our brain more energy efficient in its information
-processing rather than the information processing capabilities of the
-neurons themselves!</p>
-<h2 id="thanks">Thanks!</h2>
-<p>For more information on these subjects and more you might want to
-check the following resources.</p>
-<ul>
-<li>company: <a href="https://trent.ai">Trent AI</a></li>
-<li>book: <a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
-Atomic Human</a></li>
-<li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking
-Machines</a></li>
-<li>newspaper: <a
-href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile
-Page</a></li>
-<li>blog: <a
-href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
-</ul>
-<h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent"
 role="list">
-<div id="ref-Ananthanarayanan-cat09" class="csl-entry" role="listitem">
-Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The
-cat is out of the bag: Cortical simulations with <span
-class="math inline">\(10^9\)</span> neurons, <span
-class="math inline">\(10^{13}\)</span> synapses, in: Proceedings of the
-Conference on High Performance Computing Networking, Storage and
-Analysis - SC ’09. <a
-href="https://doi.org/10.1145/1654059.1654124">https://doi.org/10.1145/1654059.1654124</a>
-</div>
-<div id="ref-Ashby-design52" class="csl-entry" role="listitem">
-Ashby, W.R., 1952. Design for a brain: The origin of adaptive behaviour.
-Chapman &amp; Hall, London.
-</div>
 <div id="ref-Baez-characterisation11" class="csl-entry" role="listitem">
 Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy
 in terms of information loss. Entropy 13, 1945–1957. <a
 href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
-</div>
-<div id="ref-Bennet-thermodynamics82" class="csl-entry" role="listitem">
-Bennet, C.H., 1982. The thermodynamics of computation—a review.
-International Journal of Theoretical Physics 21, 906–940.
 </div>
 <div id="ref-Beretta-fourth20" class="csl-entry" role="listitem">
 Beretta, G.P., 2020. The fourth law of thermodynamics: Steepest entropy
 ascent. Philosophical Transactions of the Royal Society A 378, 20190168.
 <a
 href="https://doi.org/10.1098/rsta.2019.0168">https://doi.org/10.1098/rsta.2019.0168</a>
-</div>
-<div id="ref-Conway-dark05" class="csl-entry" role="listitem">
-Conway, F., Siegelman, J., 2005. Dark hero of the information age: In
-search of norbert wiener the father of cybernetics. Basic Books, New
-York.
 </div>
 <div id="ref-Gardner-life70" class="csl-entry" role="listitem">
 Gardner, M., 1970. <a
@@ -3241,26 +1589,10 @@ fluids. <span>I</span>. <span>D</span>evelopment of a general formalism.
 Physical Review E 56, 6620–6632. <a
 href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
 </div>
-<div id="ref-Jarzynski-nonequilibrium97" class="csl-entry"
-role="listitem">
-Jarzynski, C., 1997. Nonequilibrium equality for free energy
-differences. Physical Review Letters 78, 2690–2693. <a
-href="https://doi.org/10.1103/PhysRevLett.78.2690">https://doi.org/10.1103/PhysRevLett.78.2690</a>
-</div>
-<div id="ref-Landauer-irreversibility61" class="csl-entry"
-role="listitem">
-Landauer, R., 1961. Irreversibility and heat generation in the computing
-process. IBM Journal of Research and Development 5, 183–191. <a
-href="https://doi.org/10.1147/rd.53.0183">https://doi.org/10.1147/rd.53.0183</a>
-</div>
 <div id="ref-Lawrence-atomic24" class="csl-entry" role="listitem">
 Lawrence, N.D., 2024. <a
 href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
 atomic human: Understanding ourselves in the age of AI</a>. Allen Lane.
-</div>
-<div id="ref-Lawrence-embodiment17" class="csl-entry" role="listitem">
-Lawrence, N.D., 2017. <a href="https://arxiv.org/abs/1705.07996">Living
-together: Mind and machine intelligence</a>. arXiv.
 </div>
 <div id="ref-MacKay-energy08" class="csl-entry" role="listitem">
 MacKay, D.J.C., 2008. <a
@@ -3270,15 +1602,6 @@ hot air</a>. UIT Cambridge, Cambridge, UK.
 <div id="ref-MacKay-information03" class="csl-entry" role="listitem">
 MacKay, D.J.C., 2003. Information theory, inference and learning
 algorithms. Cambridge University Press, Cambridge, U.K.
-</div>
-<div id="ref-Moravec-mind98" class="csl-entry" role="listitem">
-Moravec, H., 1999. Robot: Mere machine to transcendent mind. Oxford
-University Press, New York.
-</div>
-<div id="ref-Onsager-reciprocal31" class="csl-entry" role="listitem">
-Onsager, L., 1931. Reciprocal relations in irreversible processes.
-<span>I</span>. Physical Review 37, 405–426. <a
-href="https://doi.org/10.1103/PhysRev.37.405">https://doi.org/10.1103/PhysRev.37.405</a>
 </div>
 <div id="ref-Ottinger-beyond05" class="csl-entry" role="listitem">
 Öttinger, H.C., 2005. Beyond equilibrium thermodynamics.
@@ -3290,34 +1613,6 @@ href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>
 fluids. <span>II</span>. <span>I</span>llustrations of a general
 formalism. Physical Review E 56, 6633–6655. <a
 href="https://doi.org/10.1103/PhysRevE.56.6633">https://doi.org/10.1103/PhysRevE.56.6633</a>
-</div>
-<div id="ref-Parrondo-thermodynamics15" class="csl-entry"
-role="listitem">
-Parrondo, J.M.R., Horowitz, J.M., Sagawa, T., 2015. Thermodynamics of
-information. Nature Physics 11, 131–139. <a
-href="https://doi.org/10.1038/nphys3230">https://doi.org/10.1038/nphys3230</a>
-</div>
-<div id="ref-Sagawa-generalized10" class="csl-entry" role="listitem">
-Sagawa, T., Ueda, M., 2010. Generalized <span>Jarzynski</span> equality
-under nonequilibrium feedback control. Physical Review Letters 104,
-090602. <a
-href="https://doi.org/10.1103/PhysRevLett.104.090602">https://doi.org/10.1103/PhysRevLett.104.090602</a>
-</div>
-<div id="ref-Sagawa-second08" class="csl-entry" role="listitem">
-Sagawa, T., Ueda, M., 2008. Second law of thermodynamics with discrete
-quantum feedback control. Physical Review Letters 100, 080403. <a
-href="https://doi.org/10.1103/PhysRevLett.100.080403">https://doi.org/10.1103/PhysRevLett.100.080403</a>
-</div>
-<div id="ref-Sandberg-whole08" class="csl-entry" role="listitem">
-Sandberg, A., Bostrom, N., 2008. <a
-href="https://www.fhi.ox.ac.uk/brain-emulation-roadmap-report.pdf">Whole
-brain emulation: A roadmap</a> (Technical Report No. 2008-3). Future of
-Humanity Institute, Oxford University.
-</div>
-<div id="ref-Shannon-info48" class="csl-entry" role="listitem">
-Shannon, C.E., 1948. A mathematical theory of communication. The Bell
-System Technical Journal 27, 379–423, 623–656. <a
-href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>
 </div>
 <div id="ref-Watanabe-multiinformation60" class="csl-entry"
 role="listitem">

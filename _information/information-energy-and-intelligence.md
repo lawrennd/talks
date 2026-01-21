@@ -1,8 +1,8 @@
 ---
 title: "Information, Energy and Intelligence"
-subtitle: "Understanding Limits Through the Inaccessible Game"
+subtitle: "Towards internally adjudicable rules of inference"
 abstract: |
-  Our fascination with AI and promises of superintelligence mirror the excitement around perpetual motion machines a century ago. Just as thermodynamics places fundamental limits on engines, information theory places fundamental limits on intelligence. This talk introduces the "inaccessible game," an information-theoretic dynamical system built from four axioms. The game reveals how GENERIC structure—combining reversible and irreversible dynamics—emerges from information conservation, how energy and entropy become equivalent in the thermodynamic limit, and why Landauer's principle follows naturally. These results suggest that superintelligence claims violate fundamental information-theoretic constraints, much as perpetual motion violates thermodynamics.
+  Our fascination with AI and promises of superintelligence mirror the excitement around perpetual motion machines a century ago. Just as thermodynamics places fundamental limits on engines, information theory places fundamental limits on intelligence. This talk introduces the no barber principle and a derived game called the "inaccessible game," an information-theoretic dynamical system built from four axioms. The game reveals how GENERIC structure—combining reversible and irreversible dynamics—emerges from information conservation, how energy and entropy become equivalent in the thermodynamic limit, and why Landauer's principle follows naturally. These results suggest that superintelligence claims violate fundamental information-theoretic constraints, much as perpetual motion violates thermodynamics.
   
   This work is dedicated to the memory of David MacKay, whose approach to cutting through hype with rigorous reasoning inspired this investigation.
 author:

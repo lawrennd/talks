@@ -9,7 +9,8 @@ author:
   twitter: lawrennd
   url: http://inverseprobability.com
 date: 2026-02-04
-pptx: True
+pptx: False
+reveal: True
 abstract: |
   Despite its transformative potential, artificial intelligence risks following a well-worn path where technological innovation fails to address society's most pressing problems. As we transition from language models to agentic systems, the challenge isn't just technical sophistication—it's ensuring these advances serve real industrial and societal needs.
   

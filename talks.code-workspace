@@ -18,11 +18,14 @@
 		{
 			"path": "../information-engines"
 		},
-	        {
-		        "path": "../../atomichuman/atomichuman.github.io"
+		{
+			"path": "../../atomichuman/atomichuman.github.io"
 		},
 		{
 			"path": "../../ai-cam/ai-cam.github.io"
+		},
+		{
+			"path": "../the-inaccessible-game-no-barber"
 		}
 	],
 	"settings": {}

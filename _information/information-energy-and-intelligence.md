@@ -38,6 +38,30 @@ transition: None
 
 \include{_information-game/includes/information-isolation-selected.md}
 
+\subsection{Constraints vs Selections}
+
+\notes{One useful clarification from the latest "no-barber" framing is to separate (i) \emph{constraints} that are needed just to avoid impredicative circularity / external structure, from (ii) \emph{selections} that look internally motivated but may not yet be uniquely forced. This keeps the story honest: we can say what seems necessary now, and where the remaining design degrees of freedom live.}
+
+\slides{
+**Two Kinds of Claims:**
+
+* **Constraints**: required to avoid external structure
+* **Selections**: internally motivated choices (not yet unique)
+* **Open**: which selections are actually forced?
+}
+
+\subsection{Smuggled Outcomes: Shannon vs von Neumann}
+
+\notes{Baez-Fritz-Leinster show Shannon entropy is uniquely characterised by natural axioms \emph{given the classical setting}. The no-barber question is subtler: does the \emph{classical setting itself} already assume external structure (a labelled outcome space / $\sigma$-algebra) that the game cannot represent internally? This is one motivation for preferring an algebraic entropy (von Neumann) when we want the rule language to be outcome-independent.}
+
+\slides{
+**Smuggled Outcomes:**
+
+* Shannon needs labelled outcomes / measure structure (FinProb in category theory)
+* That labelling is not in the game's internal language
+* von Neumann entropy is basis-free / algebraic (C* algebra in category theory)
+}
+
 \section{The Inaccessible Game}
 
 \notes{With these foundations, we can now introduce the game itself.}
@@ -54,6 +78,18 @@ transition: None
 
 \include{_physics/includes/information-relaxation-mep.md}
 \include{_physics/includes/constrained-maximum-entropy-production.md}
+
+\subsection{Entropy Time (Internal Clock)}
+
+\notes{A small but important design point: if we allow an \emph{external} time parameter, we've already violated the no-barber spirit. One candidate is to parameterise trajectories by entropy production itself (an affine freedom remains: choosing units and an origin for the clock). This keeps the ordering internal and avoids appealing to an externally supplied clock.}
+
+\slides{
+**Entropy Time:**
+
+* Avoid an externally supplied clock
+* Use entropy production to parameterise flow
+* Scale/offset are just unit conventions
+}
 
 \section{Emergent Structure: GENERIC}
 
@@ -129,7 +165,7 @@ $\Downarrow$
 * Information bounds
 }
 
-\notes{This reverses the usual logic. Rather than starting with thermodynamics and deriving information bounds, we start with information-theoretic consistency and derive thermodynamic structure. This suggests Wheeler's "it from bit" vision may be realizable: physical laws emerging from information-theoretic constraints.}
+\notes{This reverses the usual logic. Rather than starting with thermodynamics and deriving information bounds, we start with information-theoretic consistency and derive thermodynamic structure. This suggests Wheeler's "it from bit" vision may be realisable: physical laws emerging from information-theoretic constraints.}
 
 \subsection{Broader Relevance?}
 
@@ -139,7 +175,7 @@ $\Downarrow$
 
 \notes{David MacKay taught us to ask: "What are the fundamental constraints? What do the numbers actually say?" This work follows that tradition—making assumptions explicit, exploring consequences rigorously, and letting the mathematics reveal structure.}
 
-\notes{David would have appreciated the attempt to build foundations carefully, to derive rather than assume, and to use mathematical structure to illuminate real constraints. His legacy continues in work that combines technical rigor with conceptual clarity.}
+\notes{I hope that David would have appreciated the attempt to build foundations carefully, to derive rather than assume, and to use mathematical structure to illuminate real constraints. His legacy continues in work that combines technical rigour with conceptual clarity.}
 
 \slides{
 **MacKay's Approach:**
@@ -164,14 +200,13 @@ $\Downarrow$
 
 These point toward future work at the intersection of information theory, geometry, and foundations.}
 
+\notes{A common worry is Gödel-style: can any sufficiently expressive system be fully self-adjudicating? The no-barber principle is not a claim of completeness. It is a \emph{consistency condition}: don't quantify over distinctions the system cannot internally represent. If more external structure is needed, the demand is simply that it be made explicit.}
+
 \slides{
 **Open Questions:**
 
-* Formalize axiomatic distinguishability?
-* Global Poisson structure?
-* Quantum extension?
-* Other emergent structures?
-* Broader applicability?
+* Formalise no barber principle
+* What is the stage/game board/space
 
 *Much to explore*
 }

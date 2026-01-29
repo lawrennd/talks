@@ -1,0 +1,52 @@
+---
+title: "The Atomic Human"
+subtitle: "From Marconi to AI: security and creativity"
+abstract: |
+  In a space dedicated to Marconi’s legacy of communication, we find ourselves at a time where machines don’t only transmit messages: they summarise, recommend, predict, and *decide*.
+  
+  In this talk we frame AI as *information infrastructure*. We connect today's digital world with the deeper question from *The Atomic Human*: what remains uniquely human when machines can mimic so much of what we do?
+  
+  To make good decisions we need to clarify the real opportunities and challenges that sit between security and creativity: trust, autonomy, accountability, and the role of cultural institutions and art, in how we adopt and deploy these powerful tools.
+author:
+- family: Lawrence
+  given: Neil D.
+date: 2026-02-02
+geometry: ["a4paper", "margin=2cm"]
+papersize: a4paper
+venue: Former church of St. Matthias, Via Sant'Isaia 14, Bologna (Marconi Foundation / National Marconi Committee)
+transition: None
+---
+\define{noSlideTitle}
+
+\include{_atomic-human/includes/from-marconi-to-ai.md}
+
+\include{_ai/includes/henry-ford-intro.md}
+
+\include{_ai/includes/the-atomic-eye.md}
+\include{_atomic-human/includes/their-data-comes-from-us.md}
+\include{_ai/includes/embodiment-factors-short.md}
+
+\include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
+
+\include{_art/includes/blake-newton.md}
+\include{_ai/includes/baby-shoes.md}
+\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
+
+\newslide{Questions}
+
+\slides{
+* Where do we place *trust* when decisions happen at machine speed?
+* What do we want to keep *human* in art, institutions, and public life?
+}
+
+\notes{These questions are deliberately practical: they surface what "security" and "creativity" mean in lived contexts. Digital twins can be extraordinary tools for preservation and exploration, but they also shift authority into models and platforms.}
+
+\notes{For security, the aim isn't "trust AI" or "ban AI", but creating systems where autonomy is conditional, auditable, and reversible—where responsibility remains legible.}
+
+\notes{For creativity, the point isn’t whether machines can produce an image, but how we preserve authorship, meaning, and cultural value when imitation is cheap and ubiquitous.}
+
+\thanks
+
+\references

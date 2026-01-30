@@ -4,7 +4,7 @@ subtitle: "What Emerges from Internal Adjudicability?"
 abstract: |
   David MacKay's work emphasized explicit assumptions and operational clarity in modeling information and inference. In games like Conway's Life, rules are explicit and self-contained. In analytic frameworks, we often take implicit adjudicators for granted—external observers, pre-specified outcome spaces, privileged decompositions. What if we forbid such external adjudication and seek only rules that can be applied from within the system?
   
-  This talk explores the "inaccessible game," an information-theoretic dynamical system where all rules must be internally adjudicable. Starting from three axioms characterizing information loss (Baez-Fritz-Leinster), we show how a "no-barber principle" selects marginal entropy conservation, maximum entropy dynamics, and specific substrate properties—not by assumption but by consistency requirements. These constraints generate GENERIC structure (combining reversible and irreversible dynamics), imply energy-entropy equivalence in the thermodynamic limit, and yield Landauer's principle as a derived consequence. The framework suggests that certain thermodynamic structures may emerge from information-theoretic consistency rather than being independently imposed, and hints at broader relevance for theory construction.
+  This talk explores the "inaccessible game," an information-theoretic dynamical system where all rules must be internally adjudicable. Starting from three axioms characterizing information loss (Baez-Fritz-Leinster), we show how a "no-barber principle" selects marginal entropy conservation, maximum entropy dynamics, and specific substrate properties, not by assumption but by consistency requirements. We explore when the constraints imply energy-entropy equivalence in the thermodynamic limit and how entropy time becomes a distinguished clock withn the framework.
   
   This work is dedicated to the memory of David MacKay.
 author:
@@ -20,11 +20,7 @@ transition: None
 ---
 
 \include{_information/includes/david-mackay-memorial.md}
-\include{_information/includes/mackay-explicit-assumptions.md}
 
-\section{The No-Barber Principle}
-
-\notes{We begin with a conceptual constraint inspired by Russell's paradox: demanding that the rules of our system not appeal to external adjudicators or reference points.}
 
 \include{_information-game/includes/no-barber-principle.md}
 
@@ -187,6 +183,8 @@ $\Downarrow$
 
 **This work continues that tradition**
 }
+
+\include{_information-game/includes/no-barber-selections.md}
 
 \subsection{Open Questions}
 

@@ -27,11 +27,11 @@ transition: None
 
 \undef{noSlideTitle}
 \include{_atomic-human/includes/from-marconi-to-ai.md}
+\define{noSlideTitle}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
 
-\define{noSlideTitle}
 \include{_ai/includes/the-sorcerers-apprentice.md}
 
 \include{_ai/includes/sorcerers-apprentice-system-zero.md}
@@ -48,7 +48,7 @@ transition: None
 \include{_ai/includes/baby-shoes.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 
-\newslide{Questions}
+\subsection{Questions}
 
 \slides{
 * Where do we place *trust* when decisions happen at machine speed?

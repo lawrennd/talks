@@ -59,7 +59,7 @@ transition: None
 
 \subsection{Questions}
 
-\slides{
+\slidesincremental{
 * Where do we place *trust* when decisions happen at machine speed?
 * What do we want to keep *human* in art, institutions, and public life?
 * What can cultural institutions *do* about AI without blocking innovation?

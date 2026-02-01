@@ -44,6 +44,7 @@ transition: None
 \slides{
 * Where do we place *trust* when decisions happen at machine speed?
 * What do we want to keep *human* in art, institutions, and public life?
+* What can cultural institutions *do* about AI without blocking innovation?
 }
 
 \notes{These questions are deliberately practical: they surface what "security" and "creativity" mean in lived contexts. Digital twins can be extraordinary tools for preservation and exploration, but they also shift authority into models and platforms.}
@@ -51,6 +52,16 @@ transition: None
 \notes{For security, the aim isn't "trust AI" or "ban AI", but creating systems where autonomy is conditional, auditable, and reversible—where responsibility remains legible.}
 
 \notes{For creativity, the point isn’t whether machines can produce an image, but how we preserve authorship, meaning, and cultural value when imitation is cheap and ubiquitous.}
+
+\notes{We should not treat AI not as a creative agent. It is an *infrastructure*, like archives or broadcasting. We need to:
+
+1. keep humans institutionally on the hook: whenever AI is used (restoration, recommendation, translation, even creation), a named person or institution remains accountable. 
+
+2. make delegation conditional: decide what can be automated, where supervision is required, and how decisions can be reversed. Preserve autonomy without banning tools. 
+
+3. protect meaning, not just output: focus policy on transparency, provenance, and fair compensation rather than trying to adjudicate what is “real art”. 
+
+The aim is not to slow innovation, but to anchor it. Ensure creativity and trust remain legible to the public. Artists worry about loss of creative control. Institutions can help by ensuring attribution, consent, and economic participation.}
 
 \thanks
 

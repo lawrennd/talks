@@ -16,7 +16,6 @@ papersize: a4paper
 venue: Former church of St. Matthias, Via Sant'Isaia 14, Bologna (Marconi Foundation / National Marconi Committee)
 transition: None
 ---
-\define{noSlideTitle}
 
 \include{_atomic-human/includes/from-marconi-to-ai.md}
 
@@ -31,6 +30,8 @@ transition: None
 \include{_ai/includes/the-sorcerers-apprentice.md}
 
 \include{_art/includes/blake-newton.md}
+\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
+\include{_ai/includes/human-culture-interacting.md}
 \include{_ai/includes/baby-shoes.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 

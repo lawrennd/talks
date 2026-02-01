@@ -17,23 +17,24 @@ venue: Former church of St. Matthias, Via Sant'Isaia 14, Bologna (Marconi Founda
 transition: None
 ---
 
-\include{_atomic-human/includes/from-marconi-to-ai.md}
 
 \include{_ai/includes/henry-ford-intro.md}
-
 \include{_ai/includes/the-atomic-eye.md}
-\include{_atomic-human/includes/their-data-comes-from-us.md}
 \include{_ai/includes/embodiment-factors-short.md}
-
+\include{_atomic-human/includes/from-marconi-to-ai.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\include{_atomic-human/includes/their-data-comes-from-us.md}
+
 \include{_ai/includes/the-sorcerers-apprentice.md}
+
+\include{_ai/includes/sorcerers-apprentice-system-zero.md}
 
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
 \include{_art/includes/michelangelo-the-creation-of-man.md}
 \include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
 \include{_art/includes/blake-elohim-creating-adam.md}
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
 \include{_atomic-human/includes/communication-through-artefacts-art.md}
 \include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
 \include{_ai/includes/baby-shoes.md}

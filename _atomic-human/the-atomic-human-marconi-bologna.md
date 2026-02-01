@@ -29,12 +29,21 @@ transition: None
 \include{_atomic-human/includes/from-marconi-to-ai.md}
 \define{noSlideTitle}
 \include{_data-science/includes/new-flow-of-information.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \include{_ai/includes/the-sorcerers-apprentice.md}
 
 \include{_ai/includes/sorcerers-apprentice-system-zero.md}
+
+\subsection{Culture}
+
+\slides{
+> cultura animi 
+}
+
+\notes{Cicero suggested that philosophy cultivates the mind. This notion of \emph{cultura animi} is vital for how we communicate. Because we have so little bandwidth we rely on shared conceptions of the world to communicate complex subjects.}
+
 
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}

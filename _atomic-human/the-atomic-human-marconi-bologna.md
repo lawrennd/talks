@@ -17,14 +17,17 @@ venue: Former church of St. Matthias, Via Sant'Isaia 14, Bologna (Marconi Founda
 transition: None
 ---
 
-
+\define{noSlideTitle}
 \include{_ai/includes/henry-ford-intro.md}
 \include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/embodiment-factors-short.md}
+
+\undef{noSlideTitle}
 \include{_atomic-human/includes/from-marconi-to-ai.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
 
+\define{noSlideTitle}
 \include{_ai/includes/the-sorcerers-apprentice.md}
 
 \include{_ai/includes/sorcerers-apprentice-system-zero.md}
@@ -37,6 +40,7 @@ transition: None
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 \include{_atomic-human/includes/communication-through-artefacts-art.md}
 \include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
+\undef{noSlideTitle}
 \include{_ai/includes/baby-shoes.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 

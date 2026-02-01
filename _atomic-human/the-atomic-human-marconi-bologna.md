@@ -20,10 +20,12 @@ transition: None
 \define{noSlideTitle}
 \include{_ai/includes/henry-ford-intro.md}
 \include{_ai/includes/the-atomic-eye.md}
-\include{_ai/includes/embodiment-factors-short.md}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\include{_ai/includes/conversation-tedx.md}
 
 \undef{noSlideTitle}
 \include{_atomic-human/includes/from-marconi-to-ai.md}
+\include{_data-science/includes/new-flow-of-information.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
 

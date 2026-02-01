@@ -20,7 +20,9 @@ transition: None
 \define{noSlideTitle}
 \include{_ai/includes/henry-ford-intro.md}
 \include{_ai/includes/the-atomic-eye.md}
+\undef{noSlideTitle}
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\define{noSlideTitle}
 \include{_ai/includes/conversation-tedx.md}
 
 \undef{noSlideTitle}

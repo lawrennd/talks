@@ -31,7 +31,11 @@ transition: None
 
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
-\include{_ai/includes/human-culture-interacting.md}
+\include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
+\include{_atomic-human/includes/communication-through-artefacts-art.md}
+\include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
 \include{_ai/includes/baby-shoes.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 

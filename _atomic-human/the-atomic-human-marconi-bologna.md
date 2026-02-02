@@ -39,7 +39,7 @@ transition: None
 \subsection{Culture}
 
 \slides{
-\aligncenter{\Large{*Cultura animi*}}
+\aligncenter{*Cultura animi*}
 }
 
 \notes{Cicero suggested that philosophy cultivates the mind. This notion of \emph{cultura animi} is vital for how we communicate. Because we have so little bandwidth we rely on shared conceptions of the world to communicate complex subjects.}

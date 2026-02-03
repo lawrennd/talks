@@ -13,7 +13,7 @@ author:
   twitter: lawrennd
   orcid: 0000-0001-9258-1030
   url: https://inverseprobability.com
-date: 2024-03-12
+date: 2025-03-12
 venue: University of Edinburgh
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper

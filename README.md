@@ -11,7 +11,21 @@ apt-get install gpp
 pip install lamd
 ```
 
-The talks folder is organized as follows.
+## Keeping LaMD tooling (and local Cursor rules) up to date
+
+If you’re working on this repo regularly, it’s often simplest to rerun LaMD’s minimal installer to refresh the **local LaMD editor/agent guidance** (Cursor rules, optional `.cursor/rules`, etc.).
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/lawrennd/lamd/main/scripts/install-minimal.sh)"
+```
+
+Note: this does **not** (yet) install/update system dependencies like `gpp` or `pandoc`. It also only installs the Python tooling if you opt in (creates a local venv and installs `lamd`):
+
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/lawrennd/lamd/main/scripts/install-minimal.sh)" -- --with-venv
+```
+
+The talks folder is organised as follows.
 
 Each general subject or lecture series comes under a sub-directory 
 

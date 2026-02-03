@@ -46,6 +46,15 @@ _amazon/
 paolo-peppercorn.mp4
 paolo-save.mp4
 
+# Local environments / tooling
+.venv/
+
+# AI assistant rule files (keep local; avoid repo drift)
+.cursor/
+.cursorrules
+AGENTS.md
+CLAUDE.md
+
 # VibeSafe System Files (Auto-added during installation)
 # These are VibeSafe infrastructure - not your project content
 

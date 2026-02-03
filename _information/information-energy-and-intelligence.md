@@ -26,9 +26,7 @@ transition: None
 
 \section{Foundations: Information Loss and Entropy}
 
-\subsection{The Three Axioms}
-
-\include{_information-game/includes/baez-information-loss-axioms.md}
+\include{_information-game/includes/inaccessible-game-set-up.md}
 
 \subsection{Information Isolation: Selected by No-Barber}
 

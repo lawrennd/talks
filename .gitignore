@@ -41,7 +41,11 @@ _*/*.slides.html
 _*/*.notes.html
 _*/*.posts.html
 _*/*.notes.tex
+_*/*.slides.pptx.markdown
+_*/*.pptx
+_*/*.docx
 _*/*.notes.pdf
+_*/makefile
 *-checkpoint.ipynb
 _amazon/
 paolo-peppercorn.mp4

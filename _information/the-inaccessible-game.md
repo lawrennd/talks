@@ -13,6 +13,7 @@ author:
 date: 2026-05-20
 venue: Information Theory Seminar, Centre for Mathematical Sciences (MR5), University of Cambridge
 transition: None
+talkscam:
 ---
 
 \include{_information-game/includes/no-barber-principle.md}

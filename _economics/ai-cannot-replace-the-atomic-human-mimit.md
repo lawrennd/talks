@@ -37,6 +37,12 @@ Audience: Ministry officials, academics, digital transformation experts -->
 \include{_atomic-human/includes/us-that-adapt-to-the-machine.md}
 
 \include{_economics/includes/human-capital-index.md}
+\newslide{Problem for Italy}
+
+\slides{* Structural human capital deficit ...}
+
+\notes{For italy there is a deficit in human capital, more exported than imported. For US and UK there is a surplus.}
+
 \include{_business/includes/the-productivity-flywheel.md}
 \include{_economics/includes/human-capital-inflation.md}
 \include{_economics/includes/inflation-proof-human-capital.md}

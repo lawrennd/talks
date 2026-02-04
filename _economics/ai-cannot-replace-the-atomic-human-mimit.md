@@ -24,6 +24,10 @@ Context: AI agents, small models, technology transfer to businesses
 Audience: Ministry officials, academics, digital transformation experts -->
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
+\define{noSlideTitle}
+\include{_ai/includes/the-atomic-eye.md}
+\undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
 
 \include{_economics/includes/philosophers-stone.md}
 
@@ -46,7 +50,7 @@ Audience: Ministry officials, academics, digital transformation experts -->
 \slides{* LLMs → Agentic Systems
 * Challenge: Not just technical sophistication
 * Question: Whose problems do AI agents solve?
-* Risk: Optimizing for measurable metrics, missing real needs}
+* Risk: Optimising for measurable metrics, missing real needs}
 
 \subsection{Il Made in Italy e l'Intelligenza Artificiale}
 
@@ -66,23 +70,20 @@ Audience: Ministry officials, academics, digital transformation experts -->
 \notes{The Competence Centers you're building, like CIM 4.0 in Turin, understand something crucial: technology transfer isn't about deploying models, it's about building capability. It's about ensuring that AI serves the micro-level needs of Italian businesses—the SMEs, the artisans, the manufacturing networks—not just the macro-level metrics of productivity.}
 
 \slides{* Competence Centers: Bridge Builders
-* Not Just Deployment: Capability Building  
+* Not Just Deployment: Capability Building
 * SME Needs ≠ Big Tech Solutions
 * Local Knowledge + Global Technology}
 
-\include{_supply-chain/includes/burbage-bridge.md}
-\include{_supply-chain/includes/cromford.md}
-
 \subsection{Distretti Industriali e Reti di Innovazione}
 
-\slides{* 18th Century Emilia Romagna: Silk, Paper
+\slidesincremental{* 18th Century Emilia Romagna: Silk, Paper
 * 21st Century Challenge: AI + Human Networks
-* Strength in Community
-* Strength in Diversity
-* Strength in Europe
+  * Strength in Community
+  * Strength in Diversity
+  * Strength in Europe
 * AI as Infrastructure, Not Replacement}
 
-\notes{The historical industrial districts of Italy—from the silk producers of Emilia Romagna to the metallurgical clusters of Brescia—succeeded through interconnected dependencies, local communities, and talent development. A craft culture being shared across generations. Today's AI infrastructure should support these networks, not replace them.}
+\notes{The historical industrial districts of Italy, from the silk producers of Emilia Romagna to the metallurgical clusters of Brescia, succeeded through interconnected dependencies, local communities, and talent development. A craft culture being shared across generations. Today's AI infrastructure should support these networks, not replace them.}
 
 \include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
@@ -90,13 +91,23 @@ Audience: Ministry officials, academics, digital transformation experts -->
 
 \notes{As we look toward the next triennium, the question isn't whether we can build more sophisticated AI agents or more efficient small models. The question is whether we can build the institutional frameworks, i.e. the competence centers, the digital infrastructure, the innovation networks that ensure these technologies serve Italian businesses and citizens, not just global platform economics.}
 
-\slides{* Next 3 Years: Not Just Better Models
+\slidesincremental{* Next 3 Years: Not Just Better Models
 * Build: Institutional Frameworks
 * Connect: AI to Real Business Needs
 * Preserve: What Makes Made in Italy Unique
 * Remember: AI Cannot Replace the Atomic Human}
 
+\subsection{Micro not Macro Economic}
+
+\notes{While macro economic conditions can help (or hinder), fundamentally this is not a macro economic problem. Regulation can set guardrails, but it cannot solve the *adoption problem*, i.e.\ helping businesses understand where AI adds value and where it undermines trust. The challenge is micro economic: it involves supporting businesses, small and medium enterprises, to adopt a technology that can increase their reach and their efficiency without undermining what differentiates them, their atomic core. This is about firm-level capabilities, business model fit, and market incentives, not top-down policy alone.}
+
+\slides{* Macro (regulation, central coordination) can hinder/help
+* But core problem is micro: firm adoption, capability gaps, market incentives
+* Top-down policy alone cannot solve the adoption challenge
+}
+
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
+
 \include{_policy/includes/innovation-economy-conclusion.md}
 
 \thanks

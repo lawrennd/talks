@@ -39,15 +39,11 @@ Audience: Ministry officials, academics, digital transformation experts -->
 \include{_economics/includes/human-capital-index.md}
 \newslide{Problem for Italy}
 
-\slides{* Structural human capital deficit ...}
+\slides{* Structural human capital deficit
+* More exported than imported
+* Contrast: US and UK have surplus}
 
-\notes{For italy there is a deficit in human capital, more exported than imported. For US and UK there is a surplus.}
-
-\include{_business/includes/the-productivity-flywheel.md}
-\include{_economics/includes/human-capital-inflation.md}
-\include{_economics/includes/inflation-proof-human-capital.md}
-\include{_economics/includes/homo-atomicus.md}
-\include{_policy/includes/new-productivity-paradox.md}
+\notes{For Italy there is a deficit in human capital, more exported than imported. For US and UK there is a surplus.}
 
 \subsection{From Language Models to Agents}
 
@@ -66,10 +62,6 @@ Audience: Ministry officials, academics, digital transformation experts -->
 * Design Excellence: Tacit Knowledge
 * Made in Italy: Cannot Be Automated
 * The Challenge: AI as Tool, Not Replacement}
-
-\include{_business/includes/supply-chain-of-ideas.md}
-\include{_business/includes/ft-op-ed.md}
-\include{_business/includes/attention-flywheel.md}
 
 \subsection{Technology Transfer: The Real Challenge}
 
@@ -91,8 +83,6 @@ Audience: Ministry officials, academics, digital transformation experts -->
 
 \notes{The historical industrial districts of Italy, from the silk producers of Emilia Romagna to the metallurgical clusters of Brescia, succeeded through interconnected dependencies, local communities, and talent development. A craft culture being shared across generations. Today's AI infrastructure should support these networks, not replace them.}
 
-\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
-
 \subsection{The Next Three Years}
 
 \notes{As we look toward the next triennium, the question isn't whether we can build more sophisticated AI agents or more efficient small models. The question is whether we can build the institutional frameworks, i.e. the competence centers, the digital infrastructure, the innovation networks that ensure these technologies serve Italian businesses and citizens, not just global platform economics.}
@@ -111,10 +101,6 @@ Audience: Ministry officials, academics, digital transformation experts -->
 * But core problem is micro: firm adoption, capability gaps, market incentives
 * Top-down policy alone cannot solve the adoption challenge
 }
-
-\include{_business/includes/attention-flywheel-example-ai-at-cam.md}
-
-\include{_policy/includes/innovation-economy-conclusion.md}
 
 \thanks
 

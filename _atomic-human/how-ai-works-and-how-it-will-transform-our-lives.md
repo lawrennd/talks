@@ -2,7 +2,6 @@
 title: "How AI Works and How it will Transform our Lives"
 subtitle: "The 25th Norfolk Cambridge Society Public Lecture"
 abstract: |
-
   Professor Lawrence will explore what artificial intelligence means
   for human society, drawing from over 25 years of research and
   real-world deployment experience at Amazon. He will explain current
@@ -24,7 +23,7 @@ author:
 date: 2026-02-05
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: Norwich Cathedral
+venue: Norwich Cathedral, Norfolk Cambridge Society
 transition: None
 ---
 

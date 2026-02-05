@@ -59,6 +59,7 @@ undoubted strengths of the machine.}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_ai/includes/cuneiform.md}
 \include{_policy/includes/digital-autocracy.md}
+
 \include{_atomic-human/includes/trust-autonomy-embodiment-diagram.md}
 
 \notes{The printing press left a legacy for Europe in an educational
@@ -90,9 +91,10 @@ rapidly. How should we invest to preserve our precious human
 resources?}
 
 \include{_policy/includes/productivity-paradox.md}
-
 \include{_policy/includes/innovation-flywheel.md}
 
+\include{_ai/includes/the-sorcerers-apprentice.md}
+\include{_software/includes/horizon-scandal.md}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
 
@@ -117,6 +119,7 @@ experiencing the challenges.}
 * ai@cam <https://ai.cam.ac.uk>
 }
 
+\notes{AI innovation needs to reconnect our digital technologies to societal needs. To do this, it needs to reengage with Popper's "piecemeal social engineers", teachers, nurses, administrators. This will enable it to move from grand narratives to pratical deployment. Briding the technical and social domains.}
 
 \notes{In Cambridge,
 [we are putting these ideas into practice](https://ai.cam.ac.uk)

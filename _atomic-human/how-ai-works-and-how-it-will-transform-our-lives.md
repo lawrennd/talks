@@ -9,7 +9,7 @@ author:
 date: 2026-02-05
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: Blake Studio, Norwich School
+venue: Norwich Cathedral
 transition: None
 ---
 

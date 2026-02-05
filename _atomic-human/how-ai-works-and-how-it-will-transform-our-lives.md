@@ -29,8 +29,6 @@ transition: None
 
 \include{_policy/includes/ai-policy-challenges.md}
 
-\subsection{Society's Wicked Problems}
-
 \include{_atomic-human/includes/societys-wicked-problems-diagram.md}
 
 \notes{The question we face is how to bridge the gap between the

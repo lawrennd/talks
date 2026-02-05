@@ -41,9 +41,6 @@ which they operate.}
 
 \include{_policy/includes/philosophers-stone-to-agi.md}
 
-\subsection{Artificial General Vehicle}
-
-\include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 
 \notes{From a societal perspective, when understanding our new AI
 capabilities, one challenge we face is that notions of intelligence

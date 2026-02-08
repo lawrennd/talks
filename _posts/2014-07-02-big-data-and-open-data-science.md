@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-uclid14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/opendata_uclid14.pdf
+linkpdf: /publications/files/opendata_uclid14.pdf
 month: 7
 published: 2014-07-02
 section: pre

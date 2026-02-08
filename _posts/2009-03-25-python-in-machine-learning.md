@@ -20,7 +20,7 @@ errata: []
 extras: []
 key: Lawrence-python09
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/mlolunch.pdf
+linkpdf: /publications/files/mlolunch.pdf
 month: 3
 published: 2009-03-25
 section: pre

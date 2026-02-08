@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-manizales14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_health_manizales14.pdf
+linkpdf: /publications/files/personalized_health_manizales14.pdf
 month: 2
 published: 2014-02-19
 section: pre

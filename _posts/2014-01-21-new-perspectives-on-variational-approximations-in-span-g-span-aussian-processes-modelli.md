@@ -27,7 +27,7 @@ errata: []
 extras: []
 key: Lawrence-cued14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/modeling_things.pdf
+linkpdf: /publications/files/modeling_things.pdf
 month: 1
 published: 2014-01-21
 section: pre

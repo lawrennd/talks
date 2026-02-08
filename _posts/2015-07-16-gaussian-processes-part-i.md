@@ -13,7 +13,7 @@ errata: []
 extras: []
 key: Lawrence-mlss15bI
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
+linkpdf: /publications/files/gp_mlss15b.pdf
 month: 7
 published: 2015-07-16
 section: pre

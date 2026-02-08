@@ -24,7 +24,7 @@ errata: []
 extras: []
 key: Lawrence-ucl14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/parametric_ucl14.pdf
+linkpdf: /publications/files/parametric_ucl14.pdf
 month: 2
 published: 2014-02-26
 section: pre

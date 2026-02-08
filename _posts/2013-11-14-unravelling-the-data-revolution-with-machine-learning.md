@@ -17,7 +17,7 @@ errata: []
 extras: []
 key: Lawrence-necs13
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/unravelling_necs13.pdf
+linkpdf: /publications/files/unravelling_necs13.pdf
 month: 11
 published: 2013-11-14
 section: pre

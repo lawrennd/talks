@@ -23,7 +23,7 @@ errata: []
 extras: []
 key: Lawrence-mascotnum15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_mascotnum15.pdf
+linkpdf: /publications/files/deepgp_mascotnum15.pdf
 month: 4
 published: 2015-04-08
 venue: Mascot Num 2015, St Etienne, France

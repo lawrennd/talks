@@ -30,7 +30,7 @@ errata: []
 extras: []
 key: Lawrence-warwick14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datascience_warwick14.pdf
+linkpdf: /publications/files/datascience_warwick14.pdf
 month: 11
 published: 2014-11-26
 section: pre

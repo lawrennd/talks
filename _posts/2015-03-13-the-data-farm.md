@@ -20,7 +20,7 @@ errata: []
 extras: []
 key: Lawrence-datafarm15a
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datafarm_schools15.pdf
+linkpdf: /publications/files/datafarm_schools15.pdf
 month: 3
 published: 2015-03-13
 section: pre

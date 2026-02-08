@@ -22,7 +22,7 @@ errata: []
 extras: []
 key: Lawrence-deepicml15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_icmldeep15.pdf
+linkpdf: /publications/files/deepgp_icmldeep15.pdf
 month: 7
 published: 2015-07-11
 venue: Deep Learning Workshop @ICML2015

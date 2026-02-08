@@ -32,7 +32,7 @@ errata: []
 extras: []
 key: Lawrence-facebook14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/missing_facebook14.pdf
+linkpdf: /publications/files/missing_facebook14.pdf
 month: 3
 published: 2014-03-20
 section: pre

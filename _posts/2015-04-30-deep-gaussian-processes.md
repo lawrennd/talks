@@ -21,7 +21,7 @@ errata: []
 extras: []
 key: Lawrence-kth15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_kth15.pdf
+linkpdf: /publications/files/deepgp_kth15.pdf
 month: 4
 published: 2015-04-30
 section: pre

@@ -13,7 +13,7 @@ errata: []
 extras: []
 key: Lawrence-harvard15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_harvard15.pdf
+linkpdf: /publications/files/deepgp_harvard15.pdf
 month: 8
 published: 2015-08-20
 section: pre

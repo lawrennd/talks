@@ -27,6 +27,6 @@ errata: []
 extras: []
 key: Lawrence-iit15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_iit15.pdf
+linkpdf: /publications/files/deepgp_iit15.pdf
 month: 1
 ---

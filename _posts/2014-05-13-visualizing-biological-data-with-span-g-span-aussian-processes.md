@@ -15,7 +15,7 @@ extras: []
 key: Lawrence-ebi14b
 layout: talk
 linkipynb: github/SheffieldML/notebook/blob/master/compbio/SingleCellDataWithGPy.ipynb
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gplvm_ebi14.pdf
+linkpdf: /publications/files/gplvm_ebi14.pdf
 month: 5
 published: 2014-05-13
 section: pre

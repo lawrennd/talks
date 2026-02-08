@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-mlss14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/what_mlss14.pdf
+linkpdf: /publications/files/what_mlss14.pdf
 month: 4
 published: 2014-04-26
 section: pre

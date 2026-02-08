@@ -22,7 +22,7 @@ extras: []
 key: Lawrence-nyu15
 layout: talk
 linkipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_nyu15.pdf
+linkpdf: /publications/files/deepgp_nyu15.pdf
 month: 5
 published: 2015-05-11
 section: pre

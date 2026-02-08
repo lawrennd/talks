@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-curie14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_curie14.pdf
+linkpdf: /publications/files/gp_curie14.pdf
 month: 4
 published: 2014-04-03
 section: pre

@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-ucl14c
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14b.pdf
+linkpdf: /publications/files/deepgp_ucl14b.pdf
 month: 10
 section: pre
 ---

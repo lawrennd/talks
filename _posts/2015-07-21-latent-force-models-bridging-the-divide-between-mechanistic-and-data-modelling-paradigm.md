@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-mlss15bc
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/lfm_stuttgart15.pdf
+linkpdf: /publications/files/lfm_stuttgart15.pdf
 month: 7
 published: 2015-07-21
 section: pre

@@ -30,7 +30,7 @@ errata: []
 extras: []
 key: Lawrence-nottingham15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datascience_nottingham15.pdf
+linkpdf: /publications/files/datascience_nottingham15.pdf
 month: 3
 published: 2015-03-12
 section: pre

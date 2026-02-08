@@ -20,7 +20,7 @@ extras: []
 key: Lawrence-fest15
 layout: talk
 linkipynb: github/SheffieldML/notebook/blob/master/science_week/The%20Data%20Farm.ipynb
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/datafarm_science15.pdf
+linkpdf: /publications/files/datafarm_science15.pdf
 month: 3
 published: 2015-03-05
 section: pre

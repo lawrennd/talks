@@ -21,7 +21,7 @@ errata: []
 extras: []
 key: Lawrence-linkoping15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_linkoping15.pdf
+linkpdf: /publications/files/deepgp_linkoping15.pdf
 month: 4
 published: 2015-04-29
 section: pre

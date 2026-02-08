@@ -24,7 +24,7 @@ errata: []
 extras: []
 key: Lawrence-smile14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/flexible_smile14.pdf
+linkpdf: /publications/files/flexible_smile14.pdf
 month: 4
 published: 2014-04-03
 section: pre

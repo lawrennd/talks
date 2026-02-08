@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-msrne15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_msne15.pdf
+linkpdf: /publications/files/personalized_msne15.pdf
 month: 8
 published: 2015-08-19
 section: pre

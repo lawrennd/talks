@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-leahurst13
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_health_leahurst13.pdf
+linkpdf: /publications/files/personalized_health_leahurst13.pdf
 month: 11
 published: 2013-11-04
 section: pre

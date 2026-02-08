@@ -25,7 +25,7 @@ categories:
 errata: []
 extras: []
 key: Lawrence-ucl14b
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_ucl14.pdf
+linkpdf: /publications/files/deepgp_ucl14.pdf
 publish: 2014-09-04
 venue: UCL-Duke University Workshop on Sensing and Analysis of High-Dimensional Data
 videolectures: sahd2014_lawrence_gaussian_processes

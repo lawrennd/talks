@@ -24,7 +24,7 @@ errata: []
 extras: []
 key: Lawrence-edinburgh14
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/flexible_edinburgh14.pdf
+linkpdf: /publications/files/flexible_edinburgh14.pdf
 month: 5
 published: 2014-05-19
 section: pre

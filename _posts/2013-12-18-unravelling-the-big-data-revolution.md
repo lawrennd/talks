@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-leeds13
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/unravelling_leeds13.pdf
+linkpdf: /publications/files/unravelling_leeds13.pdf
 month: 12
 published: 2013-12-18
 section: pre

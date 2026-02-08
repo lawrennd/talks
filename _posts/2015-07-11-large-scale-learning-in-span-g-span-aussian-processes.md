@@ -21,7 +21,7 @@ errata: []
 extras: []
 key: Lawrence-largeicml15
 layout: talk
-linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/parametric_icmllskw15.pdf
+linkpdf: /publications/files/parametric_icmllskw15.pdf
 month: 7
 published: 2015-07-11
 section: pre

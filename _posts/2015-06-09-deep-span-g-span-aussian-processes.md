@@ -21,7 +21,7 @@ errata: []
 extras: []
 key: Lawrence-edinburgh15
 layout: talk
-linkipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
+linkipynb: https://github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
 linkpdf: /publications/files/deepgp_edinburgh15.pdf
 month: 6
 published: 2015-06-09

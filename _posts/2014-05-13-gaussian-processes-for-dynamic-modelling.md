@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-ebi14a
 layout: talk
-linkipynb: github/SheffieldML/notebook/blob/master/compbio/TomancakDataWithGPy.ipynb
+linkipynb: https://github.com/SheffieldML/notebook/blob/master/compbio/TomancakDataWithGPy.ipynb
 linkpdf: /publications/files/gp_ebi.pdf
 month: 5
 published: 2014-05-13

@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-ebi14b
 layout: talk
-linkipynb: github/SheffieldML/notebook/blob/master/compbio/SingleCellDataWithGPy.ipynb
+linkipynb: https://github.com/SheffieldML/notebook/blob/master/compbio/SingleCellDataWithGPy.ipynb
 linkpdf: /publications/files/gplvm_ebi14.pdf
 month: 5
 published: 2014-05-13

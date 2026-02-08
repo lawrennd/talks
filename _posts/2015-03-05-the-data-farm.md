@@ -19,7 +19,7 @@ errata: []
 extras: []
 key: Lawrence-fest15
 layout: talk
-linkipynb: github/SheffieldML/notebook/blob/master/science_week/The%20Data%20Farm.ipynb
+linkipynb: https://github.com/SheffieldML/notebook/blob/master/science_week/The%20Data%20Farm.ipynb
 linkpdf: /publications/files/datafarm_science15.pdf
 month: 3
 published: 2015-03-05

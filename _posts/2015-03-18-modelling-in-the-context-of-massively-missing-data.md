@@ -24,7 +24,7 @@ errata: []
 extras: []
 key: Lawrence-mpi15
 layout: talk
-linkipynb: github/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
+linkipynb: https://github.com/SheffieldML/notebook/blob/master/lab_classes/gprs/Low%20Rank%20Gaussian%20Processes.ipynb
 linkpdf: /publications/files/missingdata_tuebingen15.pdf
 month: 3
 published: 2015-03-18

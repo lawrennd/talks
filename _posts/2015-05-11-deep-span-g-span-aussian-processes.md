@@ -21,7 +21,7 @@ errata: []
 extras: []
 key: Lawrence-nyu15
 layout: talk
-linkipynb: github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
+linkipynb: https://github.com/SheffieldML/deepGPy/blob/master/Nested%20Deep%20GPs.ipynb
 linkpdf: /publications/files/deepgp_nyu15.pdf
 month: 5
 published: 2015-05-11

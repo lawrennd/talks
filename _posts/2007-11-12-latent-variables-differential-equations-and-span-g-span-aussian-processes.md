@@ -33,11 +33,11 @@ extras:
 group: gp,puma,gpsim
 key: Lawrence-msr07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lvDeGp.pdf
+linkpdf: /publications/files/lvDeGp.pdf
 month: 11
 published: 2007-11-12
 section: pre
-title: Latent Variables, Differential Equations and <span>G</span>aussian Processes
+title: Latent Variables, Differential Equations and Gaussian Processes
 venue: Microsoft Research, Cambridge, U.K.
 year: '2007'
 ---

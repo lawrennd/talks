@@ -19,11 +19,11 @@ extras:
 group: gplvm
 key: Lawrence-manchesterGuest06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpGuestLecture.pdf
+linkpdf: /publications/files/gpGuestLecture.pdf
 month: 11
 published: 2006-11-03
 section: pre
-title: 'Learning and Inference with <span>G</span>aussian Processes: An Overview of
+title: 'Learning and Inference with Gaussian Processes: An Overview of
   <span>G</span>aussian Processes and the <span>GP-LVM</span>'
 venue: University of Manchester, Machine Learning Course Guest Lecture
 year: '2006'

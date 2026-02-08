@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-validation10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/reproducible_berlin10.pdf
+linkpdf: /publications/files/reproducible_berlin10.pdf
 month: 10
 published: 2010-10-06
 section: pre

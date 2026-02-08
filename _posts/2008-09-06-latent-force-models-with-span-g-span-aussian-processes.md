@@ -26,12 +26,12 @@ extras: []
 group: ''
 key: Lawrence-bark08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_bark08.pdf
+linkpdf: /publications/files/lfm_bark08.pdf
 linkvideo: http://videolectures.net/bark08_lawrence_lfmwgp/
 month: 9
 published: 2008-09-06
 section: pre
-title: Latent Force Models with <span>G</span>aussian Processes
+title: Latent Force Models with Gaussian Processes
 venue: Bayesian Research Kitchen, Grasmere, Lake District, U.K.
 videolectures: bark08_lawrence_lfmwgp
 year: '2008'

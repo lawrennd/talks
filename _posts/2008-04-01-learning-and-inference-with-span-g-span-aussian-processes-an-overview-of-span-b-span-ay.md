@@ -15,11 +15,11 @@ extras: []
 group: ''
 key: Lawrence-gpbayes08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpAndBayes.pdf
+linkpdf: /publications/files/gpAndBayes.pdf
 month: 4
 published: 2008-04-01
 section: pre
-title: 'Learning and Inference with <span>G</span>aussian Processes: An Overview of
+title: 'Learning and Inference with Gaussian Processes: An Overview of
   <span>B</span>ayesian Inference and <span>G</span>aussian Processes'
 venue: Data Modelling Series, University of Sheffield, U.K.
 year: '2008'

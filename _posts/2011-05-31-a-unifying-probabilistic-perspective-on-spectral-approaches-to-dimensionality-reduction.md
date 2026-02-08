@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-bonn11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_bonn11.pdf
+linkpdf: /publications/files/spectral_bonn11.pdf
 month: 5
 published: 2011-05-31
 section: pre

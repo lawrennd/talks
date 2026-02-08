@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-gpwsOne14
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpws14_session3.pdf
+linkpdf: /publications/files/gp_gpws14_session3.pdf
 month: 1
 published: 2014-01-13
 section: pre
-title: Introduction to <span>G</span>aussian Processes
+title: Introduction to Gaussian Processes
 venue: Gaussian Process Winter School, Sheffield
 year: '2014'
 youtube: ewJ3AxKclOg

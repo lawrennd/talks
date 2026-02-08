@@ -22,7 +22,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_hea
 month: 11
 published: 2013-11-04
 section: pre
-title: Personalized Health with <span>G</span>aussian Processes
+title: Personalized Health with Gaussian Processes
 venue: Disease Mapping Workshop, Leahurst
 year: '2013'
 ---

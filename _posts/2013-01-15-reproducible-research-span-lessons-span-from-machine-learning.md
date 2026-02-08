@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-reproducible13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/reproducible_manchester13.pdf
+linkpdf: /publications/files/reproducible_manchester13.pdf
 month: 1
 published: 2013-01-15
 section: pre
-title: 'Reproducible Research: <span>Lessons</span> from Machine Learning'
+title: 'Reproducible Research: Lessons from Machine Learning'
 venue: RADIANT Kick-off Meeting, Manchester, UK
 year: '2013'
 ---

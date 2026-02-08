@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-tut09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tut.pdf
+linkpdf: /publications/files/tut.pdf
 month: 6
 published: 2009-06-22
 section: pre

@@ -35,7 +35,7 @@ errata: []
 extras: []
 key: Lawrence-eurogene10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_bologna10.pdf
+linkpdf: /publications/files/gp_bologna10.pdf
 month: 10
 published: 2010-10-10
 section: pre

@@ -17,7 +17,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_harvard15
 month: 8
 published: 2015-08-20
 section: pre
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 venue: HIPS Group, SEAS, Harvard University
 year: '2015'
 ---

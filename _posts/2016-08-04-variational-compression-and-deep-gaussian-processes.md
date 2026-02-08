@@ -26,7 +26,7 @@ month: 8
 pdf: gp_mlss16b.pdf
 published: 2016-08-04
 section: pre
-title: Variational Compression and Deep <span>G</span>aussian Processes
+title: Variational Compression and Deep Gaussian Processes
 venue: MLSS, Arequipa
 year: '2016'
 ---

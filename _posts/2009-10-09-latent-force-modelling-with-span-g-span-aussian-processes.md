@@ -26,11 +26,11 @@ errata: []
 extras: []
 key: Lawrence-newcastle09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_newcastle09.pdf
+linkpdf: /publications/files/lfm_newcastle09.pdf
 month: 10
 published: 2009-10-09
 section: pre
-title: Latent Force Modelling with <span>G</span>aussian Processes
+title: Latent Force Modelling with Gaussian Processes
 venue: School of Mathematics and Statistics, University of Newcastle, U.K.
 year: '2009'
 ---

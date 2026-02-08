@@ -25,11 +25,11 @@ errata: []
 extras: []
 key: Lawrence-tutorialPRIB10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_prib10.pdf
+linkpdf: /publications/files/gp_prib10.pdf
 month: 9
 published: 2010-09-22
 section: pre
-title: '<span>PRIB</span> Tutorial: <span>G</span>aussian Processes and Gene Regulation'
+title: 'PRIB Tutorial: Gaussian Processes and Gene Regulation'
 venue: PRIB2010, Radboud University, Nijmegen, Netherlands
 year: '2010'
 ---

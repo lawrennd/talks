@@ -17,7 +17,7 @@ layout: talk
 month: 4
 published: 2009-04-01
 section: pre
-title: Estimation of Multiple Transcription Factor Activities using ODEs and <span>G</span>aussian
+title: Estimation of Multiple Transcription Factor Activities using ODEs and Gaussian
   Processes
 venue: Workshop on Learning and Inference in Computational and Systems Biology (LICSB)
 videolectures: licsb09_lawrence_emtf

@@ -15,11 +15,11 @@ extras: []
 group: pascal
 key: Lawrence-newton08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_newton.pdf
+linkpdf: /publications/files/gplvm_newton.pdf
 month: 2
 published: 2008-02-07
 section: pre
-title: Human Motion Modelling with <span>G</span>aussian Processes
+title: Human Motion Modelling with Gaussian Processes
 venue: Netwon Institute, Cambridge, U.K.
 year: '2008'
 ---

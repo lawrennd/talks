@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-tigem09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tigem09.pdf
+linkpdf: /publications/files/tigem09.pdf
 month: 10
 published: 2009-10-29
 section: pre
-title: Nonlinear Response in <span>G</span>aussian Process Models of Transcription
+title: Nonlinear Response in Gaussian Process Models of Transcription
 venue: Telethon Institute of Genetics and Medicine, Naples, Italy
 year: '2009'
 ---

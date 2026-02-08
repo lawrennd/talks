@@ -23,12 +23,12 @@ extras:
   link: http://inverseprobability.com/gpsim/
 key: Lawrence-intel06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpintroTalk_06_08.pdf
+linkpdf: /publications/files/gpintroTalk_06_08.pdf
 linksoftware: http://inverseprobability.com/oxford/
 month: 8
 published: 2006-08-21
 section: pre
-title: Learning and Inference with <span>G</span>aussian Processes
+title: Learning and Inference with Gaussian Processes
 venue: Intel Research, Seattle, U.S.A.
 year: '2006'
 ---

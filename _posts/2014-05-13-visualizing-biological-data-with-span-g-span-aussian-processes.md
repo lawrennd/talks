@@ -19,7 +19,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gplvm_ebi14.pdf
 month: 5
 published: 2014-05-13
 section: pre
-title: Visualizing Biological Data with <span>G</span>aussian Processes
+title: Visualizing Biological Data with Gaussian Processes
 venue: The Systems Biology Modelling Cycle, EBI, Hinxton, UK
 year: '2014'
 ---

@@ -22,7 +22,7 @@ extras:
   link: http://deeplearning.net/2012/12/13/deep-learning-algorithms-made-front-page-on-new-york-times/
 key: Lawrence-sheffield13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_sheffield13.pdf
+linkpdf: /publications/files/gplvm_sheffield13.pdf
 month: 3
 published: 2013-03-20
 section: pre

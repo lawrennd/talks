@@ -24,7 +24,7 @@ errata: []
 extras: []
 key: Lawrence-cambridge11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_cambridge11.pdf
+linkpdf: /publications/files/spectral_cambridge11.pdf
 month: 11
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/111116_ode_cambridge11.mp3
 published: 2011-11-16

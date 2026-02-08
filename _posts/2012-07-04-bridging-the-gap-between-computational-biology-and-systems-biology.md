@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-pathSoc12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_pathSoc12.pdf
+linkpdf: /publications/files/ode_pathSoc12.pdf
 month: 7
 published: 2012-07-04
 section: pre

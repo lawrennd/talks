@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-lfmSheffield10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_sheffield10.pdf
+linkpdf: /publications/files/lfm_sheffield10.pdf
 month: 11
 published: 2010-11-04
 section: pre

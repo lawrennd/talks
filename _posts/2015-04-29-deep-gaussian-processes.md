@@ -25,7 +25,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_linkoping
 month: 4
 published: 2015-04-29
 section: pre
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 venue: IDA Machine Learning Seminars, Linkoping, Sweden
 year: '2015'
 ---

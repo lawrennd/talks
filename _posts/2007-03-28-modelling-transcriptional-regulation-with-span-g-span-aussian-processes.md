@@ -24,13 +24,13 @@ errata: []
 extras: []
 key: Lawrence-pesb07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_03.pdf
+linkpdf: /publications/files/gpsim_07_03.pdf
 linksoftware: http://inverseprobability.com/gpsim/
 linkvideo: http://videolectures.net/pesb07_lawrence_mtr/
 month: 3
 published: 2007-03-28
 section: pre
-title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
+title: Modelling Transcriptional Regulation with Gaussian Processes
 venue: Parameter Estimation in Systems Biology, School of Computer Science, University
   of Manchester, U.K.
 videolectures: pesb07_lawrence_mtr

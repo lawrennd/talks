@@ -25,11 +25,11 @@ extras:
 group: gplvm
 key: Lawrence-icml07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/hgplvm_07_06.pdf
+linkpdf: /publications/files/hgplvm_07_06.pdf
 month: 6
 published: 2007-06-22
 section: pre
-title: Hierarchical <span>G</span>aussian Process Latent Variable Models
+title: Hierarchical Gaussian Process Latent Variable Models
 venue: ICML, Corvallis, Oregon
 year: '2007'
 ---

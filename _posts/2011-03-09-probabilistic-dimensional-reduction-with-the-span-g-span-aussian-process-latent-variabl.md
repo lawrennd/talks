@@ -30,11 +30,11 @@ extras:
 group: gplvm
 key: Lawrence-loughborough11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/loughborough_gplvm.pdf
+linkpdf: /publications/files/loughborough_gplvm.pdf
 month: 3
 published: 2011-03-09
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Department of Computer Science, University of Loughgborough, U.K.
 year: '2011'

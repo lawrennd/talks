@@ -19,7 +19,7 @@ extras: []
 group: sysbio
 key: Lawrence-sysbioIntroA08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mpi.pdf
+linkpdf: /publications/files/mpi.pdf
 month: 5
 published: 2008-05-05
 section: pre

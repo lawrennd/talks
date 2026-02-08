@@ -27,11 +27,11 @@ errata: []
 extras: []
 key: Lawrence-msr13a
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_msr13.pdf
+linkpdf: /publications/files/deep_msr13.pdf
 month: 9
 published: 2013-09-03
 section: pre
-title: Deep <span>Gaussian</span> Processes
+title: Deep Gaussian Processes
 venue: Microsoft Research, Cambridge
 year: '2013'
 ---

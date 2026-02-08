@@ -18,7 +18,7 @@ extras: []
 group: gplvm,lfm
 key: Lawrence-dagstuhl11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/probDimRed_dagstuhl11.pdf
+linkpdf: /publications/files/probDimRed_dagstuhl11.pdf
 month: 8
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/110825_probDimRed_dagstuhl11.mp3
 published: 2011-08-25

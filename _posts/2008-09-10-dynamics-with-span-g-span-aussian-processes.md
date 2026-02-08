@@ -26,11 +26,11 @@ extras: []
 group: ''
 key: Lawrence-ncaf08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/dynamics_ncaf08.pdf
+linkpdf: /publications/files/dynamics_ncaf08.pdf
 month: 9
 published: 2008-09-10
 section: pre
-title: Dynamics with <span>G</span>aussian Processes
+title: Dynamics with Gaussian Processes
 venue: Natural Computing Applications Forum, University of Sheffield, U.K.
 year: '2008'
 ---

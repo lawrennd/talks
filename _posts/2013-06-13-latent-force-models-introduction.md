@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-lfmIntro13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpss13_session_lfm.pdf
+linkpdf: /publications/files/gp_gpss13_session_lfm.pdf
 month: 6
 published: 2013-06-13
 section: pre

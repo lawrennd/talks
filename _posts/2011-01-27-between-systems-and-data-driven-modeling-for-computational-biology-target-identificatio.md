@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-smpgd11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_smpgd11.pdf
+linkpdf: /publications/files/ode_smpgd11.pdf
 month: 1
 published: 2011-01-27
 section: pre

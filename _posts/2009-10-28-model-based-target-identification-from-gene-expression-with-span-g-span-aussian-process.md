@@ -26,11 +26,11 @@ errata: []
 extras: []
 key: Lawrence-napoli09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_napoli09.pdf
+linkpdf: /publications/files/ode_napoli09.pdf
 month: 10
 published: 2009-10-28
 section: pre
-title: Model Based Target Identification from Gene Expression with <span>G</span>aussian
+title: Model Based Target Identification from Gene Expression with Gaussian
   Processes
 venue: BioDN@work '09, Computational Biology \& Bioinformatics, University of Naples
   ``Federico II''

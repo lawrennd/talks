@@ -15,7 +15,7 @@ extras: []
 group: gplvm
 key: Lawrence-icml06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/backConstraintsBeamer.pdf
+linkpdf: /publications/files/backConstraintsBeamer.pdf
 linksoftware: https://github.com/SheffieldML/GPmat/
 month: 6
 published: 2006-06-27

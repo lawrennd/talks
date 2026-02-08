@@ -25,7 +25,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_kth15.pdf
 month: 4
 published: 2015-04-30
 section: pre
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 venue: KTH Royal Institute of Technology, Sweden
 year: '2015'
 ---

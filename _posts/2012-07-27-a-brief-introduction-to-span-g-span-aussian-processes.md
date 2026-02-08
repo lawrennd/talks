@@ -20,11 +20,11 @@ errata: []
 extras: []
 key: Lawrence-ucla12a
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_introduction.pdf
+linkpdf: /publications/files/gp_ucla12_introduction.pdf
 month: 7
 published: 2012-07-27
 section: pre
-title: A Brief Introduction to <span>G</span>aussian Processes
+title: A Brief Introduction to Gaussian Processes
 venue: UCLA
 year: '2012'
 ---

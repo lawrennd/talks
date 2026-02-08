@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-phylogenetics10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_oxford10.pdf
+linkpdf: /publications/files/lfm_oxford10.pdf
 month: 9
 published: 2010-09-27
 section: pre

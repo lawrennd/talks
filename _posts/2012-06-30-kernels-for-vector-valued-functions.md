@@ -20,7 +20,7 @@ errata: []
 extras: []
 key: Lawrence-icmlVector12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mok_icmlWorkshop12.pdf
+linkpdf: /publications/files/mok_icmlWorkshop12.pdf
 month: 6
 published: 2012-06-30
 section: pre

@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-inspire09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_inspire09.pdf
+linkpdf: /publications/files/lfm_inspire09.pdf
 month: 9
 published: 2009-09-24
 section: pre
-title: Latent Force Models with <span>G</span>aussian Processes
+title: Latent Force Models with Gaussian Processes
 venue: Inspire Workshop, Imperial College, U.K.
 year: '2009'
 ---

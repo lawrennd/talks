@@ -17,11 +17,11 @@ errata: []
 extras: []
 key: Lawrence-tuebingen_var13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpvar_tuebingen13.pdf
+linkpdf: /publications/files/gpvar_tuebingen13.pdf
 month: 3
 published: 2013-03-11
 section: pre
-title: Variational <span>Gaussian</span> Processes
+title: Variational Gaussian Processes
 venue: "Max Planck Institute, T\xFCbingen, Germany"
 year: '2013'
 ---

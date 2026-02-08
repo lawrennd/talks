@@ -20,11 +20,11 @@ errata: []
 extras: []
 key: Lawrence-emmds09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/emmds09.pdf
+linkpdf: /publications/files/emmds09.pdf
 month: 7
 published: 2009-07-03
 section: pre
-title: Non-linear Matrix Facorization with <span>G</span>aussian Proceses
+title: Non-linear Matrix Facorization with Gaussian Proceses
 venue: European Modern Massive Datasets Workshop, Denmark Techinical University, Copenhagen
 year: '2009'
 ---

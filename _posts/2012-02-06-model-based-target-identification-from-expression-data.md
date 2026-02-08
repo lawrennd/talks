@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-cruk12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_cruk12.pdf
+linkpdf: /publications/files/ode_cruk12.pdf
 month: 2
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120206_ode_cruk12.mp3
 published: 2012-02-06

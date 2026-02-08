@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-scienceweek_birley13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/planets_friends13_birley.pdf
+linkpdf: /publications/files/planets_friends13_birley.pdf
 month: 3
 published: 2013-03-18
 section: pre

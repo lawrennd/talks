@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-edinburgh11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_edinburgh11.pdf
+linkpdf: /publications/files/spectral_edinburgh11.pdf
 month: 3
 published: 2011-03-01
 section: pre

@@ -29,11 +29,11 @@ extras:
   link: http://inverseprobability.com/hsvargplvm/
 key: Lawrence-aalto13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_aalto13.pdf
+linkpdf: /publications/files/gplvm_aalto13.pdf
 month: 1
 published: 2013-01-24
 section: pre
-title: Deep <span>Gaussian</span> Processes
+title: Deep Gaussian Processes
 venue: Aalto University, Finland
 year: '2013'
 ---

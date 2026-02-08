@@ -23,7 +23,7 @@ extras:
   link: https://github.com/SheffieldML/GPc/
 key: Lawrence-uc3mivm07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpivm_07_07.pdf
+linkpdf: /publications/files/gpivm_07_07.pdf
 month: 7
 published: 2007-07-03
 section: pre

@@ -31,7 +31,7 @@ linkpptgz: ftp://ftp.dcs.shef.ac.uk/home/neil/long_gplvm.ppt.gz
 month: 3
 published: 2005-03-15
 section: pre
-title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
+title: Probabilistic Non-linear Component Analysis through Gaussian Process
   Latent Variable Models
 venue: Microsoft Research, Cambridge, U.K.
 year: '2005'

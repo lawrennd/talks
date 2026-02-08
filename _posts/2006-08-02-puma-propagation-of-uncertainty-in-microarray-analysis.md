@@ -25,7 +25,7 @@ extras:
   link: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 key: Lawrence-tuebingen06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_06_08.pdf
+linkpdf: /publications/files/puma_06_08.pdf
 month: 8
 published: 2006-08-02
 section: pre

@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-biopredyn12_2
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_biopredyn12_session2.pdf
+linkpdf: /publications/files/gp_biopredyn12_session2.pdf
 month: 6
 published: 2012-06-12
 section: pre
-title: '<span>G</span>aussian Processes in Computational Biology Tutorial: Session
+title: 'Gaussian Processes in Computational Biology Tutorial: Session
   2'
 venue: BioPreDyn Workshop, CRG, Barcelona, Spain
 year: '2012'

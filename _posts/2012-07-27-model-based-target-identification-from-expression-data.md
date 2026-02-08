@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-ucla12b
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_ucla12_modelBased.pdf
+linkpdf: /publications/files/gp_ucla12_modelBased.pdf
 month: 7
 published: 2012-07-27
 section: pre

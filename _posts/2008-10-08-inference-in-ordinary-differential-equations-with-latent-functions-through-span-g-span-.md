@@ -24,7 +24,7 @@ extras: []
 group: ode, gp
 key: Lawrence-rss08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/manchesterRss.pdf
+linkpdf: /publications/files/manchesterRss.pdf
 month: 10
 published: 2008-10-08
 section: pre

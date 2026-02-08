@@ -19,12 +19,12 @@ errata: []
 extras: []
 key: Lawrence-mathbio07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpsim_07_04.pdf
+linkpdf: /publications/files/gpsim_07_04.pdf
 linksoftware: http://inverseprobability.com/gpsim/
 month: 4
 published: 2007-04-04
 section: pre
-title: <span>G</span>aussian Processes for Inference in Biological Interaction Networks
+title: Gaussian Processes for Inference in Biological Interaction Networks
 venue: Exploring the Interface Between Mathematics and Bioscience, Manchester Interdisciplinary
   Biocentre, University of Manchester, U.K.
 year: '2007'

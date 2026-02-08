@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-tutII09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tut2.pdf
+linkpdf: /publications/files/tut2.pdf
 month: 6
 published: 2009-06-23
 section: pre
-title: An Introduction to Systems Biology from a Machine Learning Perspective <span>II</span>
+title: An Introduction to Systems Biology from a Machine Learning Perspective II
 venue: TISE Summer School, Tampere, Finland
 year: '2009'
 ---

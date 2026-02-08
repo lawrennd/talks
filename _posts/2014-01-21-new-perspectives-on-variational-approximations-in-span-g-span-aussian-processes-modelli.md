@@ -31,7 +31,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/modeling_things.
 month: 1
 published: 2014-01-21
 section: pre
-title: 'New Perspectives on Variational Approximations in <span>G</span>aussian Processes:
+title: 'New Perspectives on Variational Approximations in Gaussian Processes:
   Modelling Data'
 venue: University of Cambridge, Engineering Department
 year: '2014'

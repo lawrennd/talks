@@ -16,7 +16,7 @@ layout: talk
 month: 10
 published: 2015-10-14
 section: pre
-title: Personalised Health and <span>Gaussian</span> Processes
+title: Personalised Health and Gaussian Processes
 venue: Stratified Medical, 40 Churchway, London, NW1
 year: '2015'
 ---

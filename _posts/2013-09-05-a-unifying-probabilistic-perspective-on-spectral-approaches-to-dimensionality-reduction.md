@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-msr13b
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_msr13.pdf
+linkpdf: /publications/files/spectral_msr13.pdf
 month: 9
 published: 2013-09-05
 section: pre

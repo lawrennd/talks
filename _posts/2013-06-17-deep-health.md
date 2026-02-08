@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-manchester13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_manchester13.pdf
+linkpdf: /publications/files/deep_health_manchester13.pdf
 month: 6
 published: 2013-06-17
 section: pre

@@ -19,7 +19,7 @@ extras: []
 group: spectral
 key: Lawrence-data08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/dataModellingWinter.pdf
+linkpdf: /publications/files/dataModellingWinter.pdf
 linksoftware: http://inverseprobability.com/dimred/
 linkvideo: http://videolectures.net/epsrcws08_lawrence_dr/
 month: 1

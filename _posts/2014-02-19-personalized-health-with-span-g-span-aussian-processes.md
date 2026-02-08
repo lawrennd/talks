@@ -22,7 +22,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_hea
 month: 2
 published: 2014-02-19
 section: pre
-title: Personalized Health with <span>G</span>aussian Processes
+title: Personalized Health with Gaussian Processes
 venue: Universidad Nacional de Colombia, Sede Manizales, Colombia
 year: '2014'
 ---

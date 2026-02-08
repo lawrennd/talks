@@ -28,7 +28,7 @@ errata: []
 extras: []
 key: Lawrence-tlsd09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/tlsd09.pdf
+linkpdf: /publications/files/tlsd09.pdf
 month: 12
 published: 2009-12-12
 section: pre

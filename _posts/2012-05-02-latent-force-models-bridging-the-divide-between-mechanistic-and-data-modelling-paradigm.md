@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-liverpool12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_liverpool12.pdf
+linkpdf: /publications/files/lfm_liverpool12.pdf
 month: 5
 published: 2012-05-02
 section: pre

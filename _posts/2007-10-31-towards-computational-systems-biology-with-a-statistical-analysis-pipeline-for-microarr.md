@@ -37,7 +37,7 @@ extras:
 group: puma,gpsim
 key: Lawrence-mbb07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_mbb.pdf
+linkpdf: /publications/files/puma_mbb.pdf
 month: 10
 published: 2007-10-31
 section: pre

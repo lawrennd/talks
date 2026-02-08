@@ -28,7 +28,7 @@ layout: talk
 month: 6
 published: 2003-06-20
 section: pre
-title: Bayesian Processing of <span>cDNA</span> Microarray Images
+title: Bayesian Processing of cDNA Microarray Images
 venue: The University of Sussex, Department of Cognitive Science, Bioinformatics and
   Vision Seminars
 year: '2003'

@@ -27,11 +27,11 @@ errata: []
 extras: []
 key: Lawrence-tuebingen13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_tuebingen13.pdf
+linkpdf: /publications/files/gplvm_tuebingen13.pdf
 month: 3
 published: 2013-03-11
 section: pre
-title: Deep <span>Gaussian</span> Processes
+title: Deep Gaussian Processes
 venue: "Max Planck Institute, T\xFCbingen, Germany"
 year: '2013'
 ---

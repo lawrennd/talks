@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-inference10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_inference10.pdf
+linkpdf: /publications/files/lfm_inference10.pdf
 month: 3
 published: 2010-03-01
 section: pre

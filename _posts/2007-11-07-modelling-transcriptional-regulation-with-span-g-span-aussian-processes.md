@@ -23,11 +23,11 @@ extras:
 group: puma,gpsim
 key: Lawrence-param07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/parameterEstimationTalk.pdf
+linkpdf: /publications/files/parameterEstimationTalk.pdf
 month: 11
 published: 2007-11-07
 section: pre
-title: Modelling Transcriptional Regulation with <span>G</span>aussian Processes
+title: Modelling Transcriptional Regulation with Gaussian Processes
 venue: Parameter Estimation Workshop, Manchester Interdisciplinary Biocentre, University
   of Manchester, U.K.
 year: '2007'

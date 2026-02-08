@@ -37,7 +37,7 @@ errata: []
 extras: []
 key: Lawrence-oxfordLatent12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_oxford12.pdf
+linkpdf: /publications/files/lfm_oxford12.pdf
 month: 2
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120213_lfm_oxford12.mp3
 published: 2012-02-13

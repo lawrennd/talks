@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-nyu09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_nyu09.pdf
+linkpdf: /publications/files/lfm_nyu09.pdf
 month: 10
 published: 2009-10-23
 section: pre

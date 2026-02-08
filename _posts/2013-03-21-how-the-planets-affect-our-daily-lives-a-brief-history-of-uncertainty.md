@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-scienceweek_edwards13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/planets_friends_edwards13.pdf
+linkpdf: /publications/files/planets_friends_edwards13.pdf
 month: 3
 published: 2013-03-21
 section: pre

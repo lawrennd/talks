@@ -29,11 +29,11 @@ extras:
 group: gplvm
 key: Lawrence-erice06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_06_07.pdf
+linkpdf: /publications/files/gplvm_06_07.pdf
 month: 7
 published: 2006-07-11
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Erice Workshop on Mathematics and Medical Diagnosis, Sicily, Italy
 year: '2006'

@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-aalto10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aalto10.pdf
+linkpdf: /publications/files/spectral_aalto10.pdf
 month: 10
 published: 2010-10-20
 section: pre

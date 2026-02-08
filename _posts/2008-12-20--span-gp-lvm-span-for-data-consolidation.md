@@ -17,7 +17,7 @@ layout: talk
 month: 12
 published: 2008-12-20
 section: pre
-title: <span>GP-LVM</span> for Data Consolidation
+title: GP-LVM for Data Consolidation
 venue: NIPS Workshop on Learning from Multiple Sources
 videolectures: lms08_lawrence_gpdc
 year: '2008'

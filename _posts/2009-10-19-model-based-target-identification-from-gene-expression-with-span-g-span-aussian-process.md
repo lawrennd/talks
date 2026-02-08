@@ -26,11 +26,11 @@ errata: []
 extras: []
 key: Lawrence-jhu09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_jhu09.pdf
+linkpdf: /publications/files/ode_jhu09.pdf
 month: 10
 published: 2009-10-19
 section: pre
-title: Model Based Target Identification from Gene Expression with <span>G</span>aussian
+title: Model Based Target Identification from Gene Expression with Gaussian
   Processes
 venue: School of Public Health, Johns Hopkins University, U.S.A.
 year: '2009'

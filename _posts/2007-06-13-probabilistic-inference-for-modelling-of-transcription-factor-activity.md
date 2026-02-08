@@ -38,7 +38,7 @@ extras:
   link: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 key: Lawrence-gatsby07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_06.pdf
+linkpdf: /publications/files/puma_07_06.pdf
 month: 6
 published: 2007-06-13
 section: pre

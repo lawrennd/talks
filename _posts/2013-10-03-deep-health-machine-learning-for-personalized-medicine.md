@@ -17,7 +17,7 @@ errata: []
 extras: []
 key: Lawrence-e4l13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/deep_health_e4l.pdf
+linkpdf: /publications/files/deep_health_e4l.pdf
 month: 10
 published: 2013-10-03
 section: pre

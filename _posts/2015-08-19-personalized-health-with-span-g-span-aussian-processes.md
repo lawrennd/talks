@@ -22,7 +22,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/personalized_msn
 month: 8
 published: 2015-08-19
 section: pre
-title: Personalized Health with <span>G</span>aussian Processes
+title: Personalized Health with Gaussian Processes
 venue: Microsoft Research, New England
 year: '2015'
 ---

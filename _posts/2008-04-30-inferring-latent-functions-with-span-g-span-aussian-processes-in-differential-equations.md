@@ -23,11 +23,11 @@ extras:
 group: gp
 key: Lawrence-latentFunc08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpSysBio.pdf
+linkpdf: /publications/files/gpSysBio.pdf
 month: 4
 published: 2008-04-30
 section: pre
-title: Inferring Latent Functions with <span>G</span>aussian Processes in Differential
+title: Inferring Latent Functions with Gaussian Processes in Differential
   Equations
 venue: Department of Electronics and Computer Science, University of Southampton,
   U.K.

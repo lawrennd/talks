@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-kcl09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_kcl09.pdf
+linkpdf: /publications/files/lfm_kcl09.pdf
 month: 11
 published: 2009-11-25
 section: pre

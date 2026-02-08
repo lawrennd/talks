@@ -29,7 +29,7 @@ layout: talk
 month: 12
 published: 2003-12-04
 section: pre
-title: Bayesian Processing of <span>cDNA</span> Microarray Images through the Variational
+title: Bayesian Processing of cDNA Microarray Images through the Variational
   Importance Sampler
 venue: Microsoft Research, Redmond, U.S.A.
 year: '2003'

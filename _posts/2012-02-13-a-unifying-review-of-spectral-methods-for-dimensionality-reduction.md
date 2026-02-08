@@ -23,7 +23,7 @@ extras: []
 key: Lawrence-oxfordUnify12
 layout: talk
 linkmp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120213_spectral_oxford12.pdf
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_oxford12.pdf
+linkpdf: /publications/files/spectral_oxford12.pdf
 month: 2
 published: 2012-02-13
 section: pre

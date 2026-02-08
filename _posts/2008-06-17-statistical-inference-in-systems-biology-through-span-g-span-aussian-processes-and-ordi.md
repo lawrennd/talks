@@ -23,7 +23,7 @@ extras: []
 group: ''
 key: Lawrence-warwick08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/warwick.pdf
+linkpdf: /publications/files/warwick.pdf
 month: 6
 published: 2008-06-17
 section: pre

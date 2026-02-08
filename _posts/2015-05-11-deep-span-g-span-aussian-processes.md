@@ -26,7 +26,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_nyu15.pdf
 month: 5
 published: 2015-05-11
 section: pre
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 venue: Computer Science Colloquium, NYU
 year: '2015'
 ---

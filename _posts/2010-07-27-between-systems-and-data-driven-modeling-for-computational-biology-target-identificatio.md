@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-ibsb10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_kyoto10.pdf
+linkpdf: /publications/files/ode_kyoto10.pdf
 month: 7
 published: 2010-07-27
 section: pre

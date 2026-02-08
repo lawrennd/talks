@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-aaai10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_aaai10.pdf
+linkpdf: /publications/files/spectral_aaai10.pdf
 month: 11
 published: 2010-11-11
 section: pre

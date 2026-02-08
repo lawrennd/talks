@@ -18,7 +18,7 @@ errata: []
 extras: []
 key: Lawrence-mlpm13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/probabilistic_mlpm13.pdf
+linkpdf: /publications/files/probabilistic_mlpm13.pdf
 month: 9
 published: 2013-09-25
 section: pre

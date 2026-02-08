@@ -25,7 +25,7 @@ errata: []
 extras: []
 key: Lawrence-nipsw10
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/spectral_nipsw10.pdf
+linkpdf: /publications/files/spectral_nipsw10.pdf
 month: 12
 published: 2010-12-11
 section: pre

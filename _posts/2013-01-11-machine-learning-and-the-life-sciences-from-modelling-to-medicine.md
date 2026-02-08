@@ -13,7 +13,7 @@ errata: []
 extras: []
 key: Lawrence-infection13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ml_infectionResearch13.pdf
+linkpdf: /publications/files/ml_infectionResearch13.pdf
 month: 1
 published: 2013-01-11
 section: pre

@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-mlssTwo12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mlss12_session2.pdf
+linkpdf: /publications/files/mlss12_session2.pdf
 month: 4
 published: 2012-04-12
 section: pre

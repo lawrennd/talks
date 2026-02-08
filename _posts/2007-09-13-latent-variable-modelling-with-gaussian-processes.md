@@ -23,11 +23,11 @@ extras:
 group: gplvm
 key: Lawrence-inverse07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_inverse_09_07.pdf
+linkpdf: /publications/files/gplvm_inverse_09_07.pdf
 month: 9
 published: 2007-09-13
 section: pre
-title: Latent Variable Modelling with <span>G</span>aussian Processes
+title: Latent Variable Modelling with Gaussian Processes
 venue: Workshop on Probabilistic formulation of the inverse problem and application
   to image reconstruction, Neuroscience Research Institute, University of Manchester,
   U.K.

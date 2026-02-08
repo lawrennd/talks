@@ -17,7 +17,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15b.pdf
 month: 7
 published: 2015-07-16
 section: pre
-title: <span>G</span>aussian Processes (Part I)
+title: Gaussian Processes (Part I)
 venue: "MLSS, T\xFCbingen"
 year: '2015'
 youtube: S9RbSCpy_pg

@@ -27,11 +27,11 @@ errata: []
 extras: []
 key: Lawrence-ucl13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_ucl13.pdf
+linkpdf: /publications/files/gplvm_ucl13.pdf
 month: 1
 published: 2013-01-30
 section: pre
-title: Deep <span>Gaussian</span> Processes
+title: Deep Gaussian Processes
 venue: University College, London
 year: '2013'
 ---

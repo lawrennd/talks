@@ -27,7 +27,7 @@ extras: []
 group: gplvm
 key: Lawrence-exeter11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_exeter.pdf
+linkpdf: /publications/files/lfm_exeter.pdf
 month: 3
 published: 2011-03-16
 section: pre

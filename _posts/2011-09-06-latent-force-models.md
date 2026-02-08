@@ -31,7 +31,7 @@ extras: []
 group: ''
 key: Lawrence-bayes11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_bayes250.pdf
+linkpdf: /publications/files/lfm_bayes250.pdf
 month: 9
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/110906_lfm_bayes250.mp3
 published: 2011-09-06

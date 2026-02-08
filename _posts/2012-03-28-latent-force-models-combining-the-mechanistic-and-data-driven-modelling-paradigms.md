@@ -37,7 +37,7 @@ errata: []
 extras: []
 key: Lawrence-rank12
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_rank12.pdf
+linkpdf: /publications/files/lfm_rank12.pdf
 month: 3
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/120328_lfm_rank12.mp3
 published: 2012-03-28

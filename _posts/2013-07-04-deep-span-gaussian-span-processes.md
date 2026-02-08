@@ -27,11 +27,11 @@ errata: []
 extras: []
 key: Lawrence-ncaf13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_ncaf13.pdf
+linkpdf: /publications/files/gplvm_ncaf13.pdf
 month: 7
 published: 2013-07-04
 section: pre
-title: Deep <span>Gaussian</span> Processes
+title: Deep Gaussian Processes
 venue: Natural Computing Applications Forum, University of Oxford
 year: '2013'
 ---

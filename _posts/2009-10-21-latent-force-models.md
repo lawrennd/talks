@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-google09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_google09.pdf
+linkpdf: /publications/files/lfm_google09.pdf
 month: 10
 published: 2009-10-21
 section: pre

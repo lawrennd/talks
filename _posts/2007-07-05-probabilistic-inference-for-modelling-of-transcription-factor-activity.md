@@ -34,7 +34,7 @@ extras:
   link: http://www.bioconductor.org/packages/2.0/bioc/html/puma.html
 key: Lawrence-uc3tfa07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/puma_07_07.pdf
+linkpdf: /publications/files/puma_07_07.pdf
 month: 7
 published: 2007-07-05
 section: pre

@@ -18,7 +18,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_mlss15.pdf
 month: 2
 published: 2015-02-21
 section: pre
-title: Introduction to <span>G</span>aussian Processes
+title: Introduction to Gaussian Processes
 venue: MLSS, Sydney
 year: '2015'
 youtube: pmeAgona_to

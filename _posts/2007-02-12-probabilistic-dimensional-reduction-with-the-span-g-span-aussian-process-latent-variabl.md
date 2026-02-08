@@ -29,12 +29,12 @@ extras:
 group: gplvm
 key: Lawrence-google07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
+linkpdf: /publications/files/gplvm_07_02.pdf
 linkvideo: http://video.google.com/videoplay?docid=-5127068978792458641
 month: 2
 published: 2007-02-12
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Google Research, New York, N.Y., U.S.A.
 year: '2007'

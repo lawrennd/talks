@@ -29,7 +29,7 @@ extras: []
 group: ''
 key: Lawrence-mlmi08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ncca_mlmi08.pdf
+linkpdf: /publications/files/ncca_mlmi08.pdf
 linkvideo: http://mmm.idiap.ch/pres-mlmi2008/results?query=//kleweldata/mlmi2008/2008-09-08_09h14
 month: 9
 published: 2008-09-08

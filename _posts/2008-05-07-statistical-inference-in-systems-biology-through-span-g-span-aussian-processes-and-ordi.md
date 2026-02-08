@@ -21,11 +21,11 @@ extras: []
 group: gp,sysbio
 key: Lawrence-sysbioIntroB08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/mpi2.pdf
+linkpdf: /publications/files/mpi2.pdf
 month: 5
 published: 2008-05-07
 section: pre
-title: Statistical Inference in Systems Biology through <span>G</span>aussian Processes
+title: Statistical Inference in Systems Biology through Gaussian Processes
   and Ordinary Differential Equations
 venue: Max Planck Society, Ringberg Castle, Germany
 year: '2008'

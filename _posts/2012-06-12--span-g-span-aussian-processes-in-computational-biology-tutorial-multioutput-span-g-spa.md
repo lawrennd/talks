@@ -16,12 +16,12 @@ extras:
   link: https://github.com/SheffieldML/multigp/
 key: Lawrence-biopredyn12_1
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_biopredyn12_session1.pdf
+linkpdf: /publications/files/gp_biopredyn12_session1.pdf
 month: 6
 published: 2012-06-12
 section: pre
-title: '<span>G</span>aussian Processes in Computational Biology Tutorial: Multioutput
-  <span>G</span>aussian Processes and Mechanistic Models'
+title: 'Gaussian Processes in Computational Biology Tutorial: Multioutput
+  Gaussian Processes and Mechanistic Models'
 venue: BioPreDyn Workshop, CRG, Barcelona, Spain
 year: '2012'
 ---

@@ -25,7 +25,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/parametric_icmll
 month: 7
 published: 2015-07-11
 section: pre
-title: Large Scale Learning in <span>G</span>aussian Processes
+title: Large Scale Learning in Gaussian Processes
 venue: Large-Scale Kernel Learning Workshop @ICML2015
 year: '2015'
 ---

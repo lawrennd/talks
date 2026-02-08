@@ -31,11 +31,11 @@ extras:
 group: gplvm
 key: Lawrence-csail07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
+linkpdf: /publications/files/gplvm_07_02.pdf
 month: 2
 published: 2007-02-09
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Computer Science and Artificial Intelligence Laboratory, Massachusetts Institute
   of Technology, Boston, MA, U.S.A.

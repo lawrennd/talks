@@ -15,11 +15,11 @@ extras: []
 group: pascal
 key: Lawrence-human08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/human.pdf
+linkpdf: /publications/files/human.pdf
 month: 1
 published: 2008-01-29
 section: pre
-title: Human Motion Modelling through Dimensional Reduction with <span>G</span>aussian
+title: Human Motion Modelling through Dimensional Reduction with Gaussian
   Processes
 venue: Hotel Golf, Bled, Slovenia
 year: '2008'

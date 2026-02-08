@@ -22,7 +22,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/gp_curie14.pdf
 month: 4
 published: 2014-04-03
 section: pre
-title: Applications of <span>G</span>aussian Processes in Computational Biology
+title: Applications of Gaussian Processes in Computational Biology
 venue: Institute Curie, Paris, France
 year: '2014'
 ---

@@ -15,11 +15,11 @@ extras: []
 group: gp
 key: Lawrence-siena11a
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpReview.pdf
+linkpdf: /publications/files/gpReview.pdf
 month: 4
 published: 2011-04-06
 section: pre
-title: Introduction to <span>G</span>aussian Processes
+title: Introduction to Gaussian Processes
 venue: Mathematics and Computer Science, University of Siena, Italy
 year: '2011'
 ---

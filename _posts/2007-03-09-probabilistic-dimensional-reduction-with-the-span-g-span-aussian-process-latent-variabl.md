@@ -29,11 +29,11 @@ extras:
 group: gplvm
 key: Lawrence-ncrg07
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gplvm_07_02.pdf
+linkpdf: /publications/files/gplvm_07_02.pdf
 month: 3
 published: 2007-03-09
 section: pre
-title: Probabilistic Dimensional Reduction with the <span>G</span>aussian Process
+title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model
 venue: Neural Computing Research Group, Aston University, U.K.
 year: '2007'

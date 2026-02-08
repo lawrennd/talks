@@ -24,11 +24,11 @@ errata: []
 extras: []
 key: Lawrence-lfm_cagliary09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_cagliari09.pdf
+linkpdf: /publications/files/lfm_cagliari09.pdf
 month: 7
 published: 2009-07-13
 section: pre
-title: Latent Force Models with <span>G</span>aussian Processes
+title: Latent Force Models with Gaussian Processes
 venue: Pattern Recognition Applications Group, Department of Electrical and Electronic
   Engineering, University of Cagliari, Italy
 year: '2009'

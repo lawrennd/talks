@@ -22,7 +22,7 @@ month: 10
 pdf: probdimII_imperial15.pdf
 published: 2015-10-21
 section: pre
-title: 'Machine Learning Tutorial: Probabilistic Dimensionality Reduction <span>II</span>'
+title: 'Machine Learning Tutorial: Probabilistic Dimensionality Reduction II'
 venue: Imperial College, U.K.
 year: '2015'
 ---

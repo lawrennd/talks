@@ -14,7 +14,7 @@ errata: []
 extras: []
 key: Lawrence-warwick09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_warwick09.pdf
+linkpdf: /publications/files/lfm_warwick09.pdf
 month: 9
 published: 2009-09-16
 section: pre

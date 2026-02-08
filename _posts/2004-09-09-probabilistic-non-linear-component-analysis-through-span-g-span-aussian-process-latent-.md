@@ -29,7 +29,7 @@ linkvideo: mms://velblod2.ijs.si/pascal/2004/sheffield_04/lawrence_neil/lawrence
 month: 9
 published: 2004-09-09
 section: pre
-title: Probabilistic Non-linear Component Analysis through <span>G</span>aussian Process
+title: Probabilistic Non-linear Component Analysis through Gaussian Process
   Latent Variable Models
 venue: Sheffield Machine Learning Workshop, Sheffield, U.K.
 year: '2004'

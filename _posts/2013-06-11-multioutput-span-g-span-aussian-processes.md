@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-gpssTwo13
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gp_gpss13_session2.pdf
+linkpdf: /publications/files/gp_gpss13_session2.pdf
 month: 6
 published: 2013-06-11
 section: pre
-title: Multioutput <span>G</span>aussian Processes
+title: Multioutput Gaussian Processes
 venue: Gaussian Process Summer School, Sheffield
 year: '2013'
 ---

@@ -26,11 +26,11 @@ extras: []
 group: ode, gp
 key: Lawrence-bristol08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_bristol08.pdf
+linkpdf: /publications/files/lfm_bristol08.pdf
 month: 10
 published: 2008-10-16
 section: pre
-title: Latent Force Models with <span>G</span>aussian Processes
+title: Latent Force Models with Gaussian Processes
 venue: Intelligent Systems Seminars, University of Bristol, U.K.
 year: '2008'
 ---

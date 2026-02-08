@@ -14,11 +14,11 @@ errata: []
 extras: []
 key: Lawrence-learning09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/snowbird09.pdf
+linkpdf: /publications/files/snowbird09.pdf
 month: 4
 published: 2009-04-14
 section: pre
-title: Non-linear Matrix Factorization with <span>G</span>aussian Processes
+title: Non-linear Matrix Factorization with Gaussian Processes
 venue: Learning Workshop, Clearwater, Florida
 year: '2009'
 ---

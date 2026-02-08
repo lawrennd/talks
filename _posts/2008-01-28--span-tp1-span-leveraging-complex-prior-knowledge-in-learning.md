@@ -15,11 +15,11 @@ extras: []
 group: pascal
 key: Lawrence-thematic08
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/thematic.pdf
+linkpdf: /publications/files/thematic.pdf
 month: 1
 published: 2008-01-28
 section: pre
-title: '<span>TP1</span>: Leveraging Complex Prior Knowledge in Learning'
+title: 'TP1: Leveraging Complex Prior Knowledge in Learning'
 venue: Hotel Golf, Bled, Slovenia
 year: '2008'
 ---

@@ -26,7 +26,7 @@ linkpdf: http://staffwww.dcs.shef.ac.uk/people/N.Lawrence/talks/deepgp_edinburgh
 month: 6
 published: 2015-06-09
 section: pre
-title: Deep <span>G</span>aussian Processes
+title: Deep Gaussian Processes
 venue: 2nd Deep Learning Workshop, Edinburgh
 year: '2015'
 ---

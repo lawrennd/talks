@@ -23,12 +23,12 @@ extras:
   link: http://inverseprobability.com/gpsim/
 key: Lawrence-manchester06
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/gpintroTalk_06_06.pdf
+linkpdf: /publications/files/gpintroTalk_06_06.pdf
 linksoftware: http://inverseprobability.com/oxford/
 month: 6
 published: 2006-06-22
 section: pre
-title: Learning and Inference with <span>G</span>aussian Processes
+title: Learning and Inference with Gaussian Processes
 venue: School of Computer Science, University of Manchester, U.K.
 year: '2006'
 ---

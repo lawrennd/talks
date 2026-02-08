@@ -26,7 +26,7 @@ errata: []
 extras: []
 key: Lawrence-liverpool11
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/ode_liverpool11.pdf
+linkpdf: /publications/files/ode_liverpool11.pdf
 month: 10
 mp3: ftp://ftp.dcs.shef.ac.uk/home/neil/111012_ode_liverpool11.mp3
 published: 2011-10-12

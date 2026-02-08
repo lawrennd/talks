@@ -23,11 +23,11 @@ errata: []
 extras: []
 key: Lawrence-lfm_slim09
 layout: talk
-linkpdf: ftp://ftp.dcs.shef.ac.uk/home/neil/lfm_slim09.pdf
+linkpdf: /publications/files/lfm_slim09.pdf
 month: 7
 published: 2009-07-23
 section: pre
-title: Latent Force Models and Multiple Output <span>G</span>aussian Processes
+title: Latent Force Models and Multiple Output Gaussian Processes
 venue: Statistics and Learning Interface Meeting, University of Manchester, U.K.
 year: '2009'
 ---

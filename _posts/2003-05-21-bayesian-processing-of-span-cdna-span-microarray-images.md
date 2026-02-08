@@ -28,7 +28,7 @@ layout: talk
 month: 5
 published: 2003-05-21
 section: pre
-title: Bayesian Processing of <span>cDNA</span> Microarray Images
+title: Bayesian Processing of cDNA Microarray Images
 venue: The University of Manchester, Department of Computer Science, Bio-health sciences
   Seminars
 year: '2003'

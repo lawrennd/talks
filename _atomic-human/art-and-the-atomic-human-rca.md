@@ -1,12 +1,12 @@
 ---
 title: "Art and the Atomic Human"
-subtitle: "Creativity, Vulnerability, and Intelligence in the Age of AI"
+subtitle: "Vulnerability and Intelligence in the Age of AI"
 abstract: |
-  Our fascination with AI is a reflection of a fascination we have for our own intelligence. Fears of AI concern not just how it invades our digital lives, but the implied threat of an intelligence that might displace us from our position as creators.
-  
-  This talk examines an idea about what truly makes us human. I'll argue that our intelligence is not defined by our capabilities, but by our fundamental limitations. I'll suggest those limitations lead to need to communicate, to collaborate, and to create. 
-  
-  For artists and designers working with AI, the perspective hopes to offer a framework. Rather than viewing AI systems as competitors for human creativity, we should see them as  but tools that might amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human in this age of technology change?"
+  Our fascination with AI is a reflection of a fascination we have for our own intelligence. Fears of AI concern not just how it invades our digital lives, but the implied threat of an intelligence that might displace us from our position as creators and innovators.
+  
+  This talk examines an idea about what truly makes us human. I'll argue that our intelligence is not defined by our capabilities, but by our fundamental limitations. I'll suggest those limitations lead to need to communicate, to collaborate, and to create. 
+  
+  For artists and designers working with AI, the perspective hopes to offer a framework. Rather than viewing AI systems as competitors for human creativity, we should see them as tools that might amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human in this age of technology change?"
 author:
 - family: Lawrence
   given: Neil D.

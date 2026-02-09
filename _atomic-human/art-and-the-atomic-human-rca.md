@@ -2,11 +2,11 @@
 title: "Art and the Atomic Human"
 subtitle: "Creativity, Vulnerability, and Intelligence in the Age of AI"
 abstract: |
-  Our fascination with AI stems from the perceived uniqueness of human intelligence and creativity. We believe it's what differentiates us – whether in scientific discovery, artistic expression, or design innovation. Yet our fears of AI concern not just how it invades our digital lives, but the implied threat of an intelligence that might displace us from our position as creators.
+  Our fascination with AI is a reflection of a fascination we have for our own intelligence. Fears of AI concern not just how it invades our digital lives, but the implied threat of an intelligence that might displace us from our position as creators.
   
-  This talk explores why these fears may be misplaced by examining what truly makes us human. Rather than focusing on our processing speed or computational power, I'll argue that our intelligence is defined by our fundamental limitations – our need to communicate, to collaborate, and to create meaning in an uncertain world. These constraints, which I call "the atomic human," are what drive both artistic and scientific creativity.
+  This talk examines an idea about what truly makes us human. I'll argue that our intelligence is not defined by our capabilities, but by our fundamental limitations. I'll suggest those limitations lead to need to communicate, to collaborate, and to create. 
   
-  For artists and designers working with AI, this perspective offers a framework: AI systems are not competitors for human creativity but tools that can amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human as we integrate these powerful technologies into creative practice?"
+  For artists and designers working with AI, the perspective hopes to offer a framework. Rather than viewing AI systems as competitors for human creativity, we should see them as  but tools that might amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human in this age of technology change?"
 author:
 - family: Lawrence
   given: Neil D.

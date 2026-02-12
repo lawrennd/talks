@@ -182,7 +182,7 @@ Be prepared to share one insight from your mapping exercise with the full group.
 * Generative AI provides us with an "analogue human"
 * An information amplifier with a multiplier of 300,000,000
 * Radically changes information infrastructure
-* From Conway's Law: All existing organizational models become redundant
+* From Conway's Law: existing organisational models are redundant
 }
 
 \include{_simulation/includes/the-moniac.md}

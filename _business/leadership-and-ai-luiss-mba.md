@@ -13,21 +13,31 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: LUISS Business School, Full-Time MBA Programme, Rome
 transition: None
+ipynb: True
 ---
 
-<!-- MASTERCLASS STRUCTURE: 
-Morning Session: 10:00-13:00 (3 hours)
-- Part 1: Understanding Human vs Machine Intelligence (60 min)
-- Exercise 1: Mapping Your Organization's Information Flows (30 min)
-- Break (15 min)
-- Part 2: Information Topography and Decision Making (75 min)
+<!-- MASTERCLASS TIMING STRUCTURE:
 
-Afternoon Session: 14:30-17:30 (3 hours)  
-- Part 3: Maintaining Human Judgment and Building Trust (60 min)
-- Exercise 2: Case Study Analysis - The Horizon Scandal (30 min)
-- Break (15 min)
-- Part 4: Strategic Implementation and the Attention Economy (60 min)
-- Exercise 3: Developing Your Organization's AI Strategy (45 min)
+MORNING SESSION: 10:00-13:00 (3 hours)
+==================================================
+10:00-11:00 (60 min) - Part 1: Understanding Human vs Machine Intelligence
+11:00-11:30 (30 min) - Exercise 1: Mapping Your Organization's Information Flows
+11:30-11:45 (15 min) - BREAK
+11:45-13:00 (75 min) - Part 2: Information Topography and Decision Making
+
+LUNCH BREAK: 13:00-14:30 (90 min)
+==================================================
+NOTE: Can be shortened to restart at 14:00 if needed
+
+AFTERNOON SESSION: 14:30-17:00 (2.5 hours = 150 min)
+==================================================
+14:30-15:20 (50 min) - Part 3: Maintaining Human Judgment and Building Trust
+15:20-15:50 (30 min) - Exercise 2: Case Study Analysis - The Horizon Scandal
+15:50-16:05 (15 min) - BREAK
+16:05-16:35 (30 min) - Part 4: Strategic Implementation and the Attention Economy
+16:35-17:00 (25 min) - Exercise 3: Developing Your Organisation's AI Strategy (group work + brief presentations)
+
+TOTAL: 5.5 hours instruction + 1.5 hours lunch = 7 hours
 -->
 
 \notes{**Welcome and Masterclass Overview**
@@ -36,11 +46,35 @@ This masterclass is designed for MBA students preparing to lead organizations th
 
 Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organizational decision-making, to practical frameworks for strategic AI implementation. Along the way, we'll engage in exercises that apply these concepts to real organizational challenges you'll face as business leaders.}
 
+\newslide{Today's Schedule}
+
+\slides{
+**Morning Session: 10:00-13:00**
+* 10:00-11:00: Human vs Machine Intelligence
+* 11:00-11:30: Exercise 1 - Information Flows
+* 11:30-11:45: Break
+* 11:45-13:00: Information Topography
+
+**Lunch: 13:00-14:30** (can shorten if needed)
+
+**Afternoon Session: 14:30-17:00**
+* 14:30-15:20: Human Judgment & Trust
+* 15:20-15:50: Exercise 2 - Horizon Scandal
+* 15:50-16:05: Break
+* 16:05-16:35: Strategic Implementation
+* 16:35-17:00: Exercise 3 - AI Strategy
+}
+
+\include{_notebooks/includes/notebook-setup.md}
+
 <!-- ============================================================ -->
 <!-- MORNING SESSION: 10:00-13:00 -->
 <!-- ============================================================ -->
 
+<!-- TIMING: 10:00 START -->
 \section{Part 1: Understanding Human vs Machine Intelligence (60 minutes)}
+
+\notes{**Time: 10:00-11:00** - We'll spend the first hour understanding what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
 
 \subsection{The Age of Human-Analogue Machines}
 
@@ -85,7 +119,10 @@ Our journey today will take us from understanding what makes human intelligence 
 <!-- EXERCISE 1: MAPPING ORGANIZATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 
+<!-- TIMING: 11:00 -->
 \section{Exercise 1: Mapping Your Organisation's Information Flows (30 minutes)}
+
+\notes{**Time: 11:00-11:30** - This hands-on exercise allows you to apply the concepts we've just discussed to real organisational contexts.}
 
 \notes{**Exercise Instructions:**
 
@@ -130,13 +167,21 @@ Be prepared to share one insight from your mapping exercise with the full group.
 * How might AI change these flows - for better or worse?
 }
 
+<!-- ============================================================ -->
 <!-- BREAK: 15 minutes -->
+<!-- ============================================================ -->
+
+<!-- TIMING: 11:30-11:45 BREAK -->
+\notes{**11:30-11:45: Break** - 15 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 2: INFORMATION TOPOGRAPHY AND DECISION MAKING -->
 <!-- ============================================================ -->
 
+<!-- TIMING: 11:45 -->
 \section{Part 2: Information Topography and Decision Making (75 minutes)}
+
+\notes{**Time: 11:45-13:00** - In this extended section, we'll explore how AI fundamentally changes organizational information landscapes and decision-making structures.}
 
 \subsection{The Information Revolution in Organizations}
 
@@ -203,14 +248,19 @@ The challenge for business leaders is that we know our current approaches to AI 
 }
 
 <!-- ============================================================ -->
-<!-- LUNCH BREAK -->
+<!-- LUNCH BREAK: 13:00-14:30 (can shorten to 14:00 if needed) -->
 <!-- ============================================================ -->
 
+\notes{**13:00-14:30: Lunch Break** - 90 minutes. Can be shortened to restart at 14:00 if we need more time in the afternoon.}
+
 <!-- ============================================================ -->
-<!-- AFTERNOON SESSION: 14:30-17:30 -->
+<!-- AFTERNOON SESSION: 14:30-17:00 (2.5 hours) -->
 <!-- ============================================================ -->
 
-\section{Part 3: Maintaining Human Judgment and Building Trust (60 minutes)}
+<!-- TIMING: 14:30 START AFTERNOON -->
+\section{Part 3: Maintaining Human Judgment and Building Trust (50 minutes)}
+
+\notes{**Time: 14:30-15:20** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
 
 \subsection{When Algorithms Override Human Judgment: The Horizon Scandal}
 
@@ -234,6 +284,8 @@ Business is fundamentally built on trust - trust between customers and the compa
 
 In this process of technological fascination, they miss the metaphorical gorilla walking through their business - the fundamental human and organizational dynamics that actually determine success. The gorilla represents organizational culture, employee development, customer relationships, and ethical considerations - elements that technical systems can never fully replace.}
 
+\include{_business/includes/gorilla-conclusion.md}
+
 \subsection{The Danger of Superficial Automation}
 
 \include{_business/includes/superficial-automation.md}
@@ -254,7 +306,10 @@ In this process of technological fascination, they miss the metaphorical gorilla
 <!-- EXERCISE 2: CASE STUDY ANALYSIS - THE HORIZON SCANDAL -->
 <!-- ============================================================ -->
 
+<!-- TIMING: 15:20 -->
 \section{Exercise 2: Case Study Analysis - The Horizon Scandal (30 minutes)}
+
+\notes{**Time: 15:20-15:50** - A critical case study exercise examining one of the most significant algorithmic governance failures in modern business.}
 
 \notes{**Exercise Instructions:**
 
@@ -302,13 +357,21 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 * Create intelligent accountability frameworks
 }
 
+<!-- ============================================================ -->
 <!-- BREAK: 15 minutes -->
+<!-- ============================================================ -->
+
+<!-- TIMING: 15:50-16:05 BREAK -->
+\notes{**15:50-16:05: Break** - 15 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 4: STRATEGIC IMPLEMENTATION AND THE ATTENTION ECONOMY -->
 <!-- ============================================================ -->
 
-\section{Part 4: Strategic Implementation and the Attention Economy (60 minutes)}
+<!-- TIMING: 16:05 -->
+\section{Part 4: Strategic Implementation and the Attention Economy (30 minutes)}
+
+\notes{**Time: 16:05-16:35** - In this condensed section, we'll cover the strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
 
 \subsection{Human Attention as Strategic Resource}
 
@@ -379,53 +442,54 @@ This means reversing the power dynamics and ensuring the organization remains in
 <!-- EXERCISE 3: DEVELOPING YOUR ORGANIZATION'S AI STRATEGY -->
 <!-- ============================================================ -->
 
-\section{Exercise 3: Developing Your Organisation's AI Strategy (45 minutes)}
+<!-- TIMING: 16:35 -->
+\section{Exercise 3: Developing Your Organisation's AI Strategy (25 minutes)}
+
+\notes{**Time: 16:35-17:00** - Final synthesis exercise with brief group presentations}
 
 \notes{**Final Exercise Instructions:**
 
 This exercise brings together everything we've discussed today to develop a strategic framework for AI implementation in your organization (or an organization you know well).
 
+**TIME ALLOCATION:**
+- 15 minutes: Group work on framework
+- 10 minutes: Quick 2-minute presentations from 4-5 groups (not all groups - volunteers/called upon)
+
 Working in groups, create a strategic AI implementation plan that addresses:
 
-**1. Information Topography Analysis (10 minutes)**
+**Focus on 2-3 of these key areas (you don't need to cover all):**
+
+**1. Information Topography Analysis**
    - Map current information flows and decision points
    - Identify where AI could augment (not replace) human intelligence
    - Highlight critical human judgment points that must be preserved
 
-**2. Human-Machine Collaboration Design (10 minutes)**
-   - For 2-3 key business processes:
+**2. Human-Machine Collaboration Design**
+   - For 1-2 key business processes:
      * What should AI do?
      * What should humans do?
      * How do they interact?
-   - Define clear accountability for AI-assisted decisions
 
-**3. Attention Reallocation Strategy (10 minutes)**
+**3. Attention Reallocation Strategy**
    - What routine tasks will AI automate?
    - Where will you redirect freed human attention?
-   - How will you prevent attention dissipation?
    - What new high-value activities will humans focus on?
 
-**4. Trust and Governance Framework (10 minutes)**
-   - How will you maintain stakeholder trust?
+**4. Trust and Governance Framework**
    - What governance mechanisms prevent Horizon-type failures?
    - How do you ensure diverse voices can raise concerns?
-   - What metrics indicate healthy human-AI collaboration?
 
-**5. Implementation Roadmap (5 minutes)**
-   - What are the first three concrete steps?
-   - What organizational structures need to change?
-   - How will you measure success?
-   - What are the biggest risks and how will you mitigate them?
+**5. First Three Implementation Steps**
+   - What are your concrete next steps?
+   - What are the biggest risks?
 
-**Deliverable**: 
-Create a one-page strategic framework diagram showing:
-- Key AI augmentation points
-- Human judgment preservation zones  
-- Attention reallocation plan
-- Governance mechanisms
-- First three implementation steps
+**Deliverable** (keep it simple - 15 minutes is short!): 
+Create a simple one-page framework (can be bullet points, diagram, or table) showing:
+- Your chosen focus area(s)
+- Key insights from today's discussions
+- 2-3 concrete next steps
 
-Be prepared for 3-minute group presentations sharing your most important insight.}
+Be prepared for quick 2-minute presentations from selected groups sharing your most important insight.}
 
 \newslide{Group Presentations: Key Questions}
 
@@ -503,7 +567,12 @@ The AI revolution is not a technological challenge - it's a leadership challenge
 \notes{**Additional Resources:**
 
 - ai@cam: University of Cambridge initiative on AI (www.ai.cam.ac.uk)
+- The Alan Turing Institute: UK's national institute for data science and AI
+- Partnership on AI: Multi-stakeholder organization working on AI best practices
 }
+
+<!-- TIMING: 17:00 END -->
+\notes{**End Time: 17:00** - Thank you for your engagement throughout the day!}
 
 \thanks
 

@@ -25,19 +25,20 @@ MORNING SESSION: 10:00-13:00 (3 hours)
 11:30-11:45 (15 min) - BREAK
 11:45-13:00 (75 min) - Part 2: Information Topography and Decision Making
 
-LUNCH BREAK: 13:00-14:30 (90 min)
+LUNCH BREAK: 13:00-14:00 (60 min)
 ==================================================
-NOTE: Can be shortened to restart at 14:00 if needed
+NOTE: Can extend to 14:30 if students need more time
 
-AFTERNOON SESSION: 14:30-17:00 (2.5 hours = 150 min)
+AFTERNOON SESSION: 14:00-17:00 (3 hours = 180 min)
 ==================================================
-14:30-15:20 (50 min) - Part 3: Maintaining Human Judgment and Building Trust
-15:20-15:50 (30 min) - Exercise 2: Case Study Analysis - The Horizon Scandal
-15:50-16:05 (15 min) - BREAK
-16:05-16:35 (30 min) - Part 4: Strategic Implementation and the Attention Economy
-16:35-17:00 (25 min) - Exercise 3: Developing Your Organisation's AI Strategy (group work + brief presentations)
+14:00-14:50 (50 min) - Part 3: Maintaining Human Judgment and Building Trust
+14:50-15:20 (30 min) - Exercise 2: Case Study Analysis - The Horizon Scandal
+15:20-15:35 (15 min) - BREAK
+15:35-16:10 (35 min) - Part 4: Strategic Implementation and the Attention Economy
+16:10-17:00 (50 min) - Exercise 3: Developing Your Organisation's AI Strategy
+                       (35 min group work + 15 min presentations)
 
-TOTAL: 5.5 hours instruction + 1.5 hours lunch = 7 hours
+TOTAL: 6 hours instruction + 1 hour lunch = 7 hours
 -->
 
 \notes{**Welcome and Masterclass Overview**
@@ -55,14 +56,14 @@ Our journey today will take us from understanding what makes human intelligence 
 * 11:30-11:45: Break
 * 11:45-13:00: Information Topography
 
-**Lunch: 13:00-14:30** (can shorten if needed)
+**Lunch: 13:00-14:00** (can extend if needed)
 
-**Afternoon Session: 14:30-17:00**
-* 14:30-15:20: Human Judgment & Trust
-* 15:20-15:50: Exercise 2 - Horizon Scandal
-* 15:50-16:05: Break
-* 16:05-16:35: Strategic Implementation
-* 16:35-17:00: Exercise 3 - AI Strategy
+**Afternoon Session: 14:00-17:00**
+* 14:00-14:50: Human Judgment & Trust
+* 14:50-15:20: Exercise 2 - Horizon Scandal
+* 15:20-15:35: Break
+* 15:35-16:10: Strategic Implementation
+* 16:10-17:00: Exercise 3 - AI Strategy
 }
 
 \include{_notebooks/includes/notebook-setup.md}
@@ -248,19 +249,19 @@ The challenge for business leaders is that we know our current approaches to AI 
 }
 
 <!-- ============================================================ -->
-<!-- LUNCH BREAK: 13:00-14:30 (can shorten to 14:00 if needed) -->
+<!-- LUNCH BREAK: 13:00-14:00 (can extend to 14:30 if needed) -->
 <!-- ============================================================ -->
 
-\notes{**13:00-14:30: Lunch Break** - 90 minutes. Can be shortened to restart at 14:00 if we need more time in the afternoon.}
+\notes{**13:00-14:00: Lunch Break** - 60 minutes. Can be extended to 14:30 if students need more time, but shorter lunch gives us a full 3 hours in the afternoon.}
 
 <!-- ============================================================ -->
-<!-- AFTERNOON SESSION: 14:30-17:00 (2.5 hours) -->
+<!-- AFTERNOON SESSION: 14:00-17:00 (3 hours) -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 14:30 START AFTERNOON -->
+<!-- TIMING: 14:00 START AFTERNOON -->
 \section{Part 3: Maintaining Human Judgment and Building Trust (50 minutes)}
 
-\notes{**Time: 14:30-15:20** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
+\notes{**Time: 14:00-14:50** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
 
 \subsection{When Algorithms Override Human Judgment: The Horizon Scandal}
 
@@ -306,10 +307,10 @@ In this process of technological fascination, they miss the metaphorical gorilla
 <!-- EXERCISE 2: CASE STUDY ANALYSIS - THE HORIZON SCANDAL -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 15:20 -->
+<!-- TIMING: 14:50 -->
 \section{Exercise 2: Case Study Analysis - The Horizon Scandal (30 minutes)}
 
-\notes{**Time: 15:20-15:50** - A critical case study exercise examining one of the most significant algorithmic governance failures in modern business.}
+\notes{**Time: 14:50-15:20** - A critical case study exercise examining one of the most significant algorithmic governance failures in modern business.}
 
 \notes{**Exercise Instructions:**
 
@@ -361,17 +362,17 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 <!-- BREAK: 15 minutes -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 15:50-16:05 BREAK -->
-\notes{**15:50-16:05: Break** - 15 minute refreshment break}
+<!-- TIMING: 15:20-15:35 BREAK -->
+\notes{**15:20-15:35: Break** - 15 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 4: STRATEGIC IMPLEMENTATION AND THE ATTENTION ECONOMY -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 16:05 -->
-\section{Part 4: Strategic Implementation and the Attention Economy (30 minutes)}
+<!-- TIMING: 15:35 -->
+\section{Part 4: Strategic Implementation and the Attention Economy (35 minutes)}
 
-\notes{**Time: 16:05-16:35** - In this condensed section, we'll cover the strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
+\notes{**Time: 15:35-16:10** - We'll cover the strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
 
 \subsection{Human Attention as Strategic Resource}
 
@@ -442,22 +443,22 @@ This means reversing the power dynamics and ensuring the organization remains in
 <!-- EXERCISE 3: DEVELOPING YOUR ORGANIZATION'S AI STRATEGY -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 16:35 -->
-\section{Exercise 3: Developing Your Organisation's AI Strategy (25 minutes)}
+<!-- TIMING: 16:10 -->
+\section{Exercise 3: Developing Your Organisation's AI Strategy (50 minutes)}
 
-\notes{**Time: 16:35-17:00** - Final synthesis exercise with brief group presentations}
+\notes{**Time: 16:10-17:00** - Final comprehensive synthesis exercise with group presentations}
 
 \notes{**Final Exercise Instructions:**
 
 This exercise brings together everything we've discussed today to develop a strategic framework for AI implementation in your organization (or an organization you know well).
 
 **TIME ALLOCATION:**
-- 15 minutes: Group work on framework
-- 10 minutes: Quick 2-minute presentations from 4-5 groups (not all groups - volunteers/called upon)
+- 35 minutes: Group work on strategic framework
+- 15 minutes: 3-minute presentations from 5 groups (selected/volunteers)
 
 Working in groups, create a strategic AI implementation plan that addresses:
 
-**Focus on 2-3 of these key areas (you don't need to cover all):**
+**Address 3-4 of these key areas:**
 
 **1. Information Topography Analysis**
    - Map current information flows and decision points
@@ -465,31 +466,39 @@ Working in groups, create a strategic AI implementation plan that addresses:
    - Highlight critical human judgment points that must be preserved
 
 **2. Human-Machine Collaboration Design**
-   - For 1-2 key business processes:
+   - For 2-3 key business processes:
      * What should AI do?
      * What should humans do?
      * How do they interact?
+   - Define clear accountability for AI-assisted decisions
 
 **3. Attention Reallocation Strategy**
    - What routine tasks will AI automate?
    - Where will you redirect freed human attention?
+   - How will you prevent attention dissipation?
    - What new high-value activities will humans focus on?
 
 **4. Trust and Governance Framework**
+   - How will you maintain stakeholder trust?
    - What governance mechanisms prevent Horizon-type failures?
    - How do you ensure diverse voices can raise concerns?
+   - What metrics indicate healthy human-AI collaboration?
 
-**5. First Three Implementation Steps**
-   - What are your concrete next steps?
-   - What are the biggest risks?
+**5. Implementation Roadmap**
+   - What are the first three concrete steps?
+   - What organizational structures need to change?
+   - How will you measure success?
+   - What are the biggest risks and how will you mitigate them?
 
-**Deliverable** (keep it simple - 15 minutes is short!): 
-Create a simple one-page framework (can be bullet points, diagram, or table) showing:
-- Your chosen focus area(s)
-- Key insights from today's discussions
-- 2-3 concrete next steps
+**Deliverable**: 
+Create a one-page strategic framework (diagram, table, or structured bullets) showing:
+- Key AI augmentation points and human judgment preservation zones
+- Attention reallocation plan
+- Governance mechanisms
+- First three implementation steps
+- One key risk and mitigation strategy
 
-Be prepared for quick 2-minute presentations from selected groups sharing your most important insight.}
+Be prepared for 3-minute group presentations sharing your framework and most important insight.}
 
 \newslide{Group Presentations: Key Questions}
 

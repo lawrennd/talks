@@ -1,18 +1,21 @@
 ---
 title: "Art and the Atomic Human"
 subtitle: "Vulnerability and Intelligence in the Age of AI"
-abstract: |
+abstract: >
   Our fascination with AI is a reflection of a fascination we have for our own intelligence. Fears of AI concern not just how it invades our digital lives, but the implied threat of an intelligence that might displace us from our position as creators and innovators.
-  
-  This talk examines an idea about what truly makes us human. I'll argue that our intelligence is not defined by our capabilities, but by our fundamental limitations. I'll suggest those limitations lead to need to communicate, to collaborate, and to create. 
-  
-  For artists and designers working with AI, the perspective hopes to offer a framework. Rather than viewing AI systems as competitors for human creativity, we should see them as tools that might amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human in this age of technology change?"
+
+  This talk examines an idea about what truly makes us human. I'll argue that our intelligence is not defined by our capabilities, but by our fundamental limitations. I'll suggest those limitations lead to need to communicate, to collaborate, and to create.
+
+  For artists and designers working with AI, the perspective hopes to offer a framework. Rather than viewing AI systems as competitors for human creativity, we should see them as tools that might amplify our atomic humanity. The question is not "what can AI do?" but "how do we preserve and enhance what makes us irreplaceably human in this age of technology change?"
 author:
 - family: Lawrence
   given: Neil D.
 date: 2026-02-16
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
+length:
+  talk: 45
+  questions: 15
 venue: Royal College of Art AI Festival, Battersea Campus, London
 transition: None
 ---
@@ -29,10 +32,14 @@ transition: None
 
 \subsection{The Bandwidth of Human Expression}
 
-\notes{We are creatures of limited bandwidth. The speed at which we can communicate – through speech, through gesture, through art – is infinitesimally slow compared to the machine's capacity. Yet this limitation is not a bug; it is the very foundation of human culture and creativity.}
+\notes{We are creatures of limited bandwidth. The speed at which we can communicate is infinitesimally slow compared to the machine's capacity. Yet this limitation is not a bug; it is the foundation of human culture and creativity.}
 
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
+
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \subsection{Culture and Communication}
 

@@ -21,6 +21,8 @@ transition: None
 ---
 
 \define{noSlideTitle}
+\include{_ai/includes/henry-ford-intro.md}
+\include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 \include{_ai/includes/the-atomic-eye.md}
 \undef{noSlideTitle}
 
@@ -35,11 +37,6 @@ transition: None
 \notes{We are creatures of limited bandwidth. The speed at which we can communicate is infinitesimally slow compared to the machine's capacity. Yet this limitation is not a bug; it is the foundation of human culture and creativity.}
 
 \include{_data-science/includes/new-flow-of-information.md}
-\include{_atomic-human/includes/their-data-comes-from-us.md}
-
-\include{_simulation/includes/the-moniac.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \subsection{Culture and Communication}
 
@@ -65,6 +62,13 @@ transition: None
 \include{_ai/includes/baby-shoes.md}
 
 \notes{Hemingway's six-word story works because of the vast cultural context we bring to those words. The tragedy is not stated but implied through our shared understanding of life, death, hope, and loss. This is the atomic human at work – our intelligence is not in the computation but in the context, the culture, the collective experience we've built over millennia.}
+
+
+\include{_atomic-human/includes/their-data-comes-from-us.md}
+
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
 
 \subsection{What AI Changes (and What It Doesn't)}
 

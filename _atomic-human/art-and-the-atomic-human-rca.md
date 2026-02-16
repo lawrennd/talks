@@ -33,6 +33,7 @@ transition: None
 
 \define{noSlideTitle}
 \include{_ai/includes/conversation-tedx.md}
+\include{_atomic-human/includes/gods-and-robots-scribeysense.md}
 \undef{noSlideTitle}
 
 
@@ -154,6 +155,8 @@ intelligence, ethical reasoning.}
 * Teach critical engagement: understand how the tools what and their limitations
 }
 
+\include{_atomic-human/includes/river-gods-decide.md}
+
 \notes{We should not treat AI as a creative agent. It is an
 *infrastructure*, like the printing press or the camera before it. We
 need to:
@@ -180,7 +183,7 @@ need to:
 
 \slidesincremental{* Our vulnerability is our strength.
 * It leads to our shared context.
-* Only a human can feel another humans art.}
+* Only a human can feel another human's art.}
 
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 

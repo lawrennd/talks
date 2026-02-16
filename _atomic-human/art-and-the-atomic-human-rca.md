@@ -204,15 +204,15 @@ irreplaceably human and doubling down on that.}
 \subsection{Conclusion}
 
 \slidesincremental{* AI is a moment of:
-1. Tremendous possiblity
-2. Genuine challenge
+* Tremendous possiblity
+* Genuine challenge
 }
 
 \newslide{Conclusion}
 
 \slidesincremental{* AI will change ...
 * ... how art is made.
-* ... how design is practiced.
+* ... how design is practiced.}
 
 \newslide{Conclusion}
 
@@ -222,7 +222,7 @@ irreplaceably human and doubling down on that.}
 
 \newslide{Question}
 
-\slides{What will you create that matters?}
+\slides{\aligncenter{What will you create that matters?}}
 
 \notes{We stand at a moment of tremendous possibility and genuine
 challenge. AI will change how art is made, how design is practiced,

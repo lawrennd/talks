@@ -149,6 +149,11 @@ intelligence, ethical reasoning.}
 
 \subsection{Practical Approaches}
 
+\slidesincremental{* Keep humans on the hook: attribution and authorship.
+* Make delegation conditional: be conscious about what is automated
+* Teach critical engagement: understand how the tools what and their limitations
+}
+
 \notes{We should not treat AI as a creative agent. It is an
 *infrastructure*, like the printing press or the camera before it. We
 need to:
@@ -173,6 +178,10 @@ need to:
 
 \subsection{The Atomic Human in Creative Practice}
 
+\slidesincremental{* Our vulnerability is our strength.
+* It leads to our shared context.
+* Only a human can feel another humans art.}
+
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
 \notes{Our vulnerability is our strength. The fact that we cannot
@@ -193,6 +202,27 @@ rejecting the tools, but by understanding what makes their work
 irreplaceably human and doubling down on that.}
 
 \subsection{Conclusion}
+
+\slidesincremental{* AI is a moment of:
+1. Tremendous possiblity
+2. Genuine challenge
+}
+
+\newslide{Conclusion}
+
+\slidesincremental{* AI will change ...
+* ... how art is made.
+* ... how design is practiced.
+
+\newslide{Conclusion}
+
+\slidesincremental{* But it won't change ...
+* ... what art means.
+* ... why it matters.}
+
+\newslide{Question}
+
+\slides{What will you create that matters?}
 
 \notes{We stand at a moment of tremendous possibility and genuine
 challenge. AI will change how art is made, how design is practiced,

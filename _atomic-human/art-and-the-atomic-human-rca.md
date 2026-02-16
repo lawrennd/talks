@@ -24,7 +24,10 @@ transition: None
 \include{_ai/includes/henry-ford-intro.md}
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 \include{_ai/includes/the-atomic-eye.md}
+\include{_economics/includes/philosophers-stone.md}
 \undef{noSlideTitle}
+
+\subsection{The Bandwidth of Human Expression}
 
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
 
@@ -32,9 +35,11 @@ transition: None
 \include{_ai/includes/conversation-tedx.md}
 \undef{noSlideTitle}
 
-\subsection{The Bandwidth of Human Expression}
 
-\notes{We are creatures of limited bandwidth. The speed at which we can communicate is infinitesimally slow compared to the machine's capacity. Yet this limitation is not a bug; it is the foundation of human culture and creativity.}
+\notes{We are creatures of limited bandwidth. The speed at which we
+can communicate is infinitesimally slow compared to the machine's
+capacity. Yet this limitation is not a bug; it is the foundation of
+human culture and creativity.}
 
 \include{_data-science/includes/new-flow-of-information.md}
 
@@ -44,14 +49,29 @@ transition: None
 \aligncenter{*Cultura animi*}
 }
 
-\notes{Cicero suggested that philosophy cultivates the mind. This notion of \emph{cultura animi} is vital for how we communicate. Because we have so little bandwidth we rely on shared conceptions of the world to communicate complex subjects.}
+\notes{Cicero suggested that philosophy cultivates the mind. This
+notion of \emph{cultura animi} is vital for how we
+communicate. Because we have so little bandwidth we rely on shared
+conceptions of the world to communicate complex subjects.}
 
-\notes{Art is perhaps the most sophisticated form of this communication. Through a single image, a sculpture, a piece of music, we convey layers of meaning that would be impossible to transmit through explicit instruction. This is not a limitation but a superpower – the ability to compress vast experience and emotion into a shared cultural artefact.}
+\notes{Art is perhaps the most sophisticated form of this
+communication. Through a single image, a sculpture, a piece of music,
+we convey layers of meaning that would be impossible to transmit
+through explicit instruction. This is not a limitation but a
+superpower: the ability to compress vast experience and emotion into
+a shared cultural artefact.}
 
+\define{noSlideTitle}
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
 \include{_art/includes/michelangelo-the-creation-of-man.md}
+\newslide
+
+\notes{The detail of Adam is one of the most famous representations of a human in Western art.}
+
+\figure{\includejpg{\diagramsDir/art/michelangelo-the-creation-of-man-adam-detail}{80%}}{Photo detail of Adam.}{michelangelo-the-creation-of-man-adam-detail}
 \include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_art/includes/michelangelo-fall-and-expulsion-from-garden-of-eden.md}
 \include{_art/includes/blake-elohim-creating-adam.md}
 
 \subsection{Communication Through Art}
@@ -65,6 +85,7 @@ transition: None
 
 
 \include{_atomic-human/includes/their-data-comes-from-us.md}
+\undef{noSlideTitle}
 
 \include{_simulation/includes/the-moniac.md}
 \include{_ai/includes/processor-ham.md}
@@ -75,46 +96,78 @@ transition: None
 \include{_ai/includes/the-sorcerers-apprentice.md}
 \include{_ai/includes/sorcerers-apprentice-system-zero.md}
 
-\notes{AI can generate images, write stories, compose music. But what it cannot do is *mean* anything. The meaning comes from us – from the artist who guides it, from the viewer who interprets it, from the cultural context that gives it significance.}
+\notes{AI can generate images, write stories, compose music. But what
+it cannot do is *mean* anything. The meaning comes from us, from the
+artist who guides it, from the viewer who interprets it, from the
+cultural context that gives it significance.}
 
-\notes{When an artist uses AI as a tool, they are not diminished. They are doing what artists have always done – taking the materials of their age and shaping them to communicate something deeply human. The brush, the chisel, the camera, the algorithm – these are all tools. What matters is the intention, the vision, the context.}
+\notes{When an artist uses AI as a tool, they are not diminished. They
+are doing what artists have always done, taking the materials of their
+age and shaping them to communicate something deeply human. The brush,
+the chisel, the camera, the algorithm. These are all tools. What
+matters is the intention, the vision, the context.}
 
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 
-\subsection{The Artist's Role in an AI World}
+\subsection{Art and Design in an AI World}
 
 \slides{
 \aligncenter{What remains uniquely human?}
 }
 
-\notes{Artists and designers are not just decorators of the world – they are sense-makers. They help us understand who we are, what we value, what we fear, what we hope for. This role becomes more, not less, important in an age of AI.}
+\notes{Artists and designers are not just decorators of the world,
+they are sense-makers. They help us understand who we are, what we
+value, what we fear, what we hope for. This role becomes more, not
+less, important in an age of AI.}
 
-\notes{As machines become better at generating content, the human ability to curate, to contextualize, to critique, to give meaning becomes more valuable. The artist's eye, the designer's judgment, the curator's sensibility – these are irreplaceable because they are rooted in our atomic humanity.}
+\notes{As machines become better at generating content, the human
+ability to curate, to contextualize, to critique, to give meaning
+becomes more valuable. The artist's eye, the designer's judgment, the
+curator's sensibility. These are irreplaceable because they are rooted
+in our atomic humanity.}
 
-\subsection{Questions for Artists and Institutions}
+\subsection{Questions for Artists, Designers and their Institutions}
 
 \slidesincremental{
 * What do we want to keep *human* in art and design?
 * How do we preserve *authorship* and *meaning* when imitation is cheap?
-* What can cultural institutions *do* to protect creativity without blocking innovation?
+* What can cultural institutions *do* to protect creativity without
+  blocking innovation?
 * Where should *accountability* lie when AI is used in creative work?
 }
 
-\notes{These questions are deliberately practical. For artists, the concern is not whether machines can create but how to maintain creative control, economic participation, and cultural significance in a world where generative AI is ubiquitous.}
+\notes{These questions are deliberately practical. For artists, the
+concern is not whether machines can create but how to maintain
+creative control, economic participation, and cultural significance in
+a world where generative AI is ubiquitous.}
 
-\notes{For institutions like the RCA, the challenge is to prepare students for a world where AI is a tool they must master while ensuring they develop the uniquely human capacities that make their work matter – judgment, taste, cultural literacy, emotional intelligence, ethical reasoning.}
+\notes{For institutions like the RCA, the challenge is to prepare
+students for a world where AI is a tool they must master while
+ensuring they develop the uniquely human capacities that make their
+work matter: judgment, taste, cultural literacy, emotional
+intelligence, ethical reasoning.}
 
 \subsection{Practical Approaches}
 
-\notes{We should not treat AI as a creative agent. It is an *infrastructure*, like the printing press or the camera before it. We need to:
+\notes{We should not treat AI as a creative agent. It is an
+*infrastructure*, like the printing press or the camera before it. We
+need to:
 
-1. **Keep humans on the hook**: Whenever AI is used in creative work, a named person or institution remains accountable. Attribution matters. Provenance matters.
+1. **Keep humans on the hook**: Whenever AI is used in creative work,
+   a named person or institution remains accountable. Attribution
+   matters. Provenance matters.
 
-2. **Make delegation conditional**: Decide what can be automated, where supervision is required, and how decisions can be reversed. Preserve autonomy without banning tools.
+2. **Make delegation conditional**: Decide what can be automated,
+   where supervision is required, and how decisions can be
+   reversed. Preserve autonomy without banning tools.
 
-3. **Protect meaning, not just output**: Focus on transparency, consent, and fair compensation rather than trying to adjudicate what is "real art".
+3. **Protect meaning, not just output**: Focus on transparency,
+   consent, and fair compensation rather than trying to adjudicate
+   what is "real art".
 
-4. **Teach critical engagement**: Students need to understand how these tools work, what their limitations are, and how to use them purposefully rather than being used by them.}
+4. **Teach critical engagement**: Students need to understand how
+   these tools work, what their limitations are, and how to use them
+   purposefully rather than being used by them.}
 
 \notes{The aim is not to slow innovation but to anchor it. To ensure that creativity and meaning remain legible, valuable, and human.}
 
@@ -122,21 +175,46 @@ transition: None
 
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
-\notes{Our vulnerability is our strength. The fact that we cannot compute like machines, that we must struggle to communicate, that we need collaboration and culture – these are not weaknesses to overcome. They are the source of everything that makes art meaningful.}
+\notes{Our vulnerability is our strength. The fact that we cannot
+compute like machines, that we must struggle to communicate, that we
+need collaboration and culture. These are not only weaknesses to be
+overcome. They are the source of everything that makes art
+meaningful.}
 
-\notes{The atomic human is not the fastest processor or the most capable generator. The atomic human is the one who asks "what does this mean?" and "what should we do?" The atomic human is the one who can look at a piece of work and feel something, understand something, connect with others through it.}
+\notes{The atomic human is not the fastest processor or the most
+capable generator. The atomic human is the one who asks "what does
+this mean?" and "what should we do?" The atomic human is the one who
+can look at a piece of work and feel something, understand something,
+connect with others through it.}
 
-\notes{This is what AI cannot replace. And this is what artists and designers must hold onto as they navigate this new landscape. Not by rejecting the tools, but by understanding what makes their work irreplaceably human and doubling down on that.}
+\notes{This is what AI cannot replace. And this is what artists and
+designers must hold onto as they navigate this new landscape. Not by
+rejecting the tools, but by understanding what makes their work
+irreplaceably human and doubling down on that.}
 
 \subsection{Conclusion}
 
-\notes{We stand at a moment of tremendous possibility and genuine challenge. AI will change how art is made, how design is practiced, how creativity is expressed. But it will not change why these things matter.}
+\notes{We stand at a moment of tremendous possibility and genuine
+challenge. AI will change how art is made, how design is practiced,
+how creativity is expressed. But it will not change why these things
+matter.}
 
-\notes{Art matters because humans matter. Because we need to make sense of our experience, to communicate across the bandwidth limitations of our existence, to build shared culture and meaning in an uncertain world.}
+\notes{Art matters because humans matter. Because we need to make
+sense of our experience, to communicate across the bandwidth
+limitations of our existence, to build shared culture and meaning in
+an uncertain world.}
 
-\notes{The atomic human – vulnerable, limited, dependent on others – is not threatened by AI. The atomic human is what gives AI its only possible value. When we use these tools well, we amplify our humanity. When we use them poorly, we diminish it. The choice is ours.}
+\notes{The atomic human is vulnerable, limited, dependent on
+others. The atomic human is not threatened by AI. Through the atomic
+human gives AI us its only possible value. When we use these tools
+well, we amplify our humanity. When we use them poorly, we diminish
+it. The choice is ours.}
 
-\notes{For the artists and designers of the RCA, this is both a responsibility and an opportunity. You are training to be the sense-makers of the future. Not in spite of AI, but with it, through it, beyond it. The question is not whether AI can create. The question is: what will you create that matters?}
+\notes{For the artists and designers of the RCA, this is both a
+responsibility and an opportunity. You are training to be the
+sense-makers of the future. Not in spite of AI, but with it, through
+it, beyond it. The question is not whether AI can create. The question
+is: what will you create that matters?}
 
 \thanks
 

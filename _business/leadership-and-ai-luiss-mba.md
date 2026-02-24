@@ -20,25 +20,40 @@ ipynb: True
 
 MORNING SESSION: 10:00-13:00 (3 hours)
 ==================================================
-10:00-11:00 (60 min) - Part 1: Understanding Human vs Machine Intelligence
-11:00-11:30 (30 min) - Exercise 1: Mapping Your Organization's Information Flows
-11:30-11:45 (15 min) - BREAK
-11:45-13:00 (75 min) - Part 2: Information Topography and Decision Making
+10:00 - Part 1: Understanding Human vs Machine Intelligence (75 min total)
+  10:00-10:45 (45 min) - Lecture
+  10:45-11:05 (20 min) - Group Discussion: Mapping Your Organisation's Information Flows
+  11:05-11:15 (10 min) - Plenary Report Back
 
-LUNCH BREAK: 13:00-14:00 (60 min)
+11:15-11:45 (30 min) - BREAK
+
+11:45 - Part 2: Information Topography and Decision Making (75 min total)
+  11:45-12:30 (45 min) - Lecture  
+  12:30-12:50 (20 min) - Group Discussion: SWOT Analysis for Your Institution
+  12:50-13:00 (10 min) - Plenary Report Back
+
+LUNCH BREAK: 13:00-14:30 (90 min)
 ==================================================
-NOTE: Can extend to 14:30 if students need more time
+HOMEWORK: Read about Horizon scandal:
+- https://en.wikipedia.org/wiki/British_Post_Office_scandal
+- https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office
+- https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know
 
-AFTERNOON SESSION: 14:00-17:00 (3 hours = 180 min)
+AFTERNOON SESSION: 14:30-17:15 (2 hours 45 min)
 ==================================================
-14:00-14:50 (50 min) - Part 3: Maintaining Human Judgment and Building Trust
-14:50-15:20 (30 min) - Exercise 2: Case Study Analysis - The Horizon Scandal
-15:20-15:35 (15 min) - BREAK
-15:35-16:10 (35 min) - Part 4: Strategic Implementation and the Attention Economy
-16:10-17:00 (50 min) - Exercise 3: Developing Your Organisation's AI Strategy
-                       (35 min group work + 15 min presentations)
+14:30 - Part 3: Maintaining Human Judgment and Building Trust (75 min total)
+  14:30-15:15 (45 min) - Lecture
+  15:15-15:35 (20 min) - Group Discussion: Horizon scandal - judgment failures and power asymmetries
+  15:35-15:45 (10 min) - Plenary Report Back
 
-TOTAL: 6 hours instruction + 1 hour lunch = 7 hours
+15:45-16:15 (30 min) - BREAK
+
+16:15 - Part 4: Strategic Implementation and the Attention Economy (75 min total)
+  16:15-17:00 (45 min) - Lecture
+  17:00-17:20 (20 min) - Group Discussion: Developing Institutional AI Strategies
+  17:20-17:30 (10 min) - Plenary Report Back
+
+TOTAL: 6 hours instruction + 1.5 hours lunch = 7.5 hours (10:00-17:30)
 -->
 
 \notes{**Welcome and Masterclass Overview**
@@ -51,19 +66,21 @@ Our journey today will take us from understanding what makes human intelligence 
 
 \slides{
 **Morning Session: 10:00-13:00**
-* 10:00-11:00: Human vs Machine Intelligence
-* 11:00-11:30: Exercise 1 - Information Flows
-* 11:30-11:45: Break
-* 11:45-13:00: Information Topography
+* 10:00-10:45: Part 1 Lecture
+* 10:45-11:15: Exercise 1 + Plenary
+* 11:15-11:45: **Break**
+* 11:45-12:30: Part 2 Lecture
+* 12:30-13:00: Exercise 2 + Plenary
 
-**Lunch: 13:00-14:00** (can extend if needed)
+**Lunch: 13:00-14:30** 
+* *Homework: Read Horizon scandal materials*
 
-**Afternoon Session: 14:00-17:00**
-* 14:00-14:50: Human Judgment & Trust
-* 14:50-15:20: Exercise 2 - Horizon Scandal
-* 15:20-15:35: Break
-* 15:35-16:10: Strategic Implementation
-* 16:10-17:00: Exercise 3 - AI Strategy
+**Afternoon Session: 14:30-17:30**
+* 14:30-15:15: Part 3 Lecture
+* 15:15-15:45: Exercise 3 + Plenary
+* 15:45-16:15: **Break**
+* 16:15-17:00: Part 4 Lecture
+* 17:00-17:30: Exercise 4 + Plenary
 }
 
 \include{_notebooks/includes/notebook-setup.md}
@@ -73,9 +90,9 @@ Our journey today will take us from understanding what makes human intelligence 
 <!-- ============================================================ -->
 
 <!-- TIMING: 10:00 START -->
-\section{Part 1: Understanding Human vs Machine Intelligence (60 minutes)}
+\section{Part 1: Understanding Human vs Machine Intelligence}
 
-\notes{**Time: 10:00-11:00** - We'll spend the first hour understanding what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
+\notes{**Time: 10:00-10:45 (45 min lecture)** - We'll explore what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
 
 \subsection{The Age of Human-Analogue Machines}
 
@@ -120,69 +137,50 @@ Our journey today will take us from understanding what makes human intelligence 
 <!-- EXERCISE 1: MAPPING ORGANIZATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 11:00 -->
-\section{Exercise 1: Mapping Your Organisation's Information Flows (30 minutes)}
+<!-- TIMING: 10:45 -->
+\section{Exercise 1: Mapping Your Organisation's Information Flows}
 
-\notes{**Time: 11:00-11:30** - This hands-on exercise allows you to apply the concepts we've just discussed to real organisational contexts.}
+\notes{**Time: 10:45-11:15 (20 min group work + 10 min plenary)** - Apply the concepts to real organisational contexts.}
 
 \notes{**Exercise Instructions:**
 
-Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization). Consider:
+Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization). 
 
-1. **Information Sources**: Where does critical information originate?
-   - Customer data
-   - Market intelligence
-   - Operational metrics
-   - Employee knowledge
+1. **Information Sources**: Where does critical information originate in your organisation?
 
-2. **Decision Points**: Where are key decisions made?
-   - Strategic decisions (board level)
-   - Tactical decisions (management)
-   - Operational decisions (front-line)
+2. **Key Decision Points**: Where are the most important decisions made? How are they informed?
 
-3. **Human Bottlenecks**: Where does information require human processing?
-   - What types of judgment are needed?
-   - What context is essential?
-   - Where does social/political understanding matter?
+3. **Human Bottlenecks**: Where does information require human judgment that machines can't easily replicate?
 
-4. **Potential AI Augmentation**: Where could AI enhance (not replace) human decision-making?
-   - Information aggregation
-   - Pattern recognition
-   - Scenario modeling
-   - Routine processing
+4. **AI Opportunities**: Identify 1-2 places where AI could enhance (not replace) human decision-making
 
-**Deliverable**: Create a simple diagram showing:
-- Information flows (arrows)
-- Decision points (boxes)
-- Human judgment requirements (highlighted)
-- Potential AI augmentation opportunities (marked)
+**Deliverable**: Simple sketch showing information flows, decision points, and where humans vs machines should work.
 
-Be prepared to share one insight from your mapping exercise with the full group.}
+**Plenary (10 minutes)**: Each group shares one key insight.}
 
-\newslide{Exercise Debrief Questions}
+\newslide{Plenary Discussion}
 
 \slides{
 * What surprised you about your organisation's information flows?
 * Where are the critical human judgment points?
-* Where does information get bottlenecked?
-* How might AI change these flows - for better or worse?
+* How might AI change these flows?
 }
 
 <!-- ============================================================ -->
-<!-- BREAK: 15 minutes -->
+<!-- BREAK: 30 minutes -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 11:30-11:45 BREAK -->
-\notes{**11:30-11:45: Break** - 15 minute refreshment break}
+<!-- TIMING: 11:15-11:45 BREAK -->
+\notes{**11:15-11:45: Break** - 30 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 2: INFORMATION TOPOGRAPHY AND DECISION MAKING -->
 <!-- ============================================================ -->
 
 <!-- TIMING: 11:45 -->
-\section{Part 2: Information Topography and Decision Making (75 minutes)}
+\section{Part 2: Information Topography and Decision Making}
 
-\notes{**Time: 11:45-13:00** - In this extended section, we'll explore how AI fundamentally changes organizational information landscapes and decision-making structures.}
+\notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI fundamentally changes organizational information landscapes and decision-making structures.}
 
 \subsection{The Information Revolution in Organizations}
 
@@ -249,19 +247,81 @@ The challenge for business leaders is that we know our current approaches to AI 
 }
 
 <!-- ============================================================ -->
-<!-- LUNCH BREAK: 13:00-14:00 (can extend to 14:30 if needed) -->
+<!-- EXERCISE 2: SWOT ANALYSIS FOR AI TRANSFORMATION -->
 <!-- ============================================================ -->
 
-\notes{**13:00-14:00: Lunch Break** - 60 minutes. Can be extended to 14:30 if students need more time, but shorter lunch gives us a full 3 hours in the afternoon.}
+<!-- TIMING: 12:30 -->
+\section{Exercise 2: SWOT Analysis for AI Transformation}
+
+\notes{**Time: 12:30-13:00 (20 min group work + 10 min plenary)** - Analyze your institution's position for AI adoption.}
+
+\notes{**Exercise Instructions:**
+
+Each group should select ONE type of institution to analyze. Choose from:
+
+1. **A Start-up** - Recently founded, agile, limited resources
+2. **A Government Institution** - Public sector, accountability requirements, stable
+3. **An Established Player** - Large corporation, existing systems, market leader
+4. **An SME** - Small/medium enterprise, specialized, resource-constrained
+
+**For your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:**
+
+**Strengths:**
+- What advantages does this type of institution have for AI adoption?
+- What existing capabilities can they leverage?
+
+**Weaknesses:**
+- What disadvantages or constraints do they face?
+- What capabilities are they missing?
+
+**Opportunities:**
+- Where could AI create the most value for this type?
+- What new markets or capabilities could AI unlock?
+
+**Threats:**
+- What are the risks of AI adoption?
+- What are the risks of NOT adopting AI?
+- Who are the competitors and what are they doing?
+
+**Deliverable**: Create a simple SWOT matrix on one page. Be specific to your institution type - a startup's SWOT will look very different from a government institution's!
+
+**Note**: Keep this analysis - you'll build on it in Exercise 4 this afternoon.}
+
+\newslide{Plenary: SWOT Insights}
+
+\slides{
+* What's surprising about your institution type's position?
+* Biggest strength for AI adoption?
+* Most concerning threat?
+* Most exciting opportunity?
+}
 
 <!-- ============================================================ -->
-<!-- AFTERNOON SESSION: 14:00-17:00 (3 hours) -->
+<!-- LUNCH BREAK: 13:00-14:30 (90 min with homework) -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 14:00 START AFTERNOON -->
-\section{Part 3: Maintaining Human Judgment and Building Trust (50 minutes)}
+\notes{**13:00-14:30: Lunch Break** - 90 minutes with homework assignment.}
 
-\notes{**Time: 14:00-14:50** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
+\newslide{Lunch Homework: The Horizon Scandal}
+
+\slides{
+**Please read about the Horizon scandal over lunch:**
+
+* Wikipedia overview: https://en.wikipedia.org/wiki/British_Post_Office_scandal
+* Economic analysis: https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office  
+* Technical details: https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know
+
+This background will be essential for Exercise 3 this afternoon.
+}
+
+<!-- ============================================================ -->
+<!-- AFTERNOON SESSION: 14:30-17:30 (3 hours) -->
+<!-- ============================================================ -->
+
+<!-- TIMING: 14:30 START AFTERNOON -->
+\section{Part 3: Maintaining Human Judgment and Building Trust}
+
+\notes{**Time: 14:30-15:15 (45 min lecture)** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
 
 \subsection{When Algorithms Override Human Judgment: The Horizon Scandal}
 
@@ -304,75 +364,66 @@ In this process of technological fascination, they miss the metaphorical gorilla
 }
 
 <!-- ============================================================ -->
-<!-- EXERCISE 2: CASE STUDY ANALYSIS - THE HORIZON SCANDAL -->
+<!-- EXERCISE 3: HORIZON SCANDAL - FAILURES OF JUDGMENT -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 14:50 -->
-\section{Exercise 2: Case Study Analysis - The Horizon Scandal (30 minutes)}
+<!-- TIMING: 15:15 -->
+\section{Exercise 3: The Horizon Scandal - Judgment Failures and Power Asymmetries}
 
-\notes{**Time: 14:50-15:20** - A critical case study exercise examining one of the most significant algorithmic governance failures in modern business.}
+\notes{**Time: 15:15-15:45 (20 min group discussion + 10 min plenary)** - Analyze the Horizon scandal you read about at lunch.}
 
 \notes{**Exercise Instructions:**
 
-The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyze this case through the lens of organizational decision-making:
+Based on the Horizon scandal materials you read over lunch, discuss in your groups:
 
-**The Situation:**
-- Horizon accounting system had bugs that created phantom shortfalls
-- Post Office prosecuted hundreds of sub-postmasters for theft/fraud
-- Human testimony (from sub-postmasters) was systematically discounted
-- Computer evidence was treated as infallible
-- Lives were destroyed, some sub-postmasters imprisoned
-- Took nearly 20 years for truth to emerge
+**Key Discussion Questions:**
 
-**Analysis Questions:**
+1. **Failures of Judgment**:
+   - What were the critical moments when human judgment should have overridden the system?
+   - Why didn't it happen?
+   - What organizational culture enabled this failure?
 
-1. **Organizational Structure**: 
-   - How did the organization's structure enable this failure?
-   - What checks and balances were missing?
-
-2. **Decision-Making Architecture**:
-   - At what points should human judgment have overridden algorithmic outputs?
-   - What prevented that from happening?
-
-3. **Information Flows**:
-   - How was information about system problems suppressed or ignored?
-   - Who had access to what information?
-
-4. **Trust and Power Dynamics**:
+2. **Power Asymmetries**:
+   - How did power imbalances between the Post Office and sub-postmasters contribute?
    - Why was computer evidence trusted over human testimony?
-   - How did power dynamics affect information flows?
+   - Who had voice and who didn't?
 
-5. **Prevention Framework**:
-   - What organizational structures could have prevented this?
-   - What governance mechanisms are needed for AI systems?
+3. **Information Suppression**:
+   - How was information about system problems suppressed?
+   - What were the organizational incentives to ignore warnings?
 
-**Deliverable**: Identify 3 specific organizational safeguards that could prevent similar failures in your industry/organization.}
+4. **Lessons for Your Institution**:
+   - Could this happen in your organization (from Exercise 2)?
+   - What specific safeguards would prevent it?
+   - How would you ensure diverse voices can raise concerns?
 
-\newslide{Debrief: Lessons for AI Governance}
+**Deliverable**: Identify 2-3 specific governance mechanisms that could have prevented this failure.}
+
+\newslide{Plenary: Preventing Horizon-Type Failures}
 
 \slides{
 * Never treat algorithmic outputs as infallible
 * Maintain accessible human override mechanisms
-* Build systems for questioning AI conclusions
+* Build power balance into AI governance
 * Ensure diverse voices can raise concerns
 * Create intelligent accountability frameworks
 }
 
 <!-- ============================================================ -->
-<!-- BREAK: 15 minutes -->
+<!-- BREAK: 30 minutes -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 15:20-15:35 BREAK -->
-\notes{**15:20-15:35: Break** - 15 minute refreshment break}
+<!-- TIMING: 15:45-16:15 BREAK -->
+\notes{**15:45-16:15: Break** - 30 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 4: STRATEGIC IMPLEMENTATION AND THE ATTENTION ECONOMY -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 15:35 -->
-\section{Part 4: Strategic Implementation and the Attention Economy (35 minutes)}
+<!-- TIMING: 16:15 -->
+\section{Part 4: Strategic Implementation and the Attention Economy}
 
-\notes{**Time: 15:35-16:10** - We'll cover the strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
+\notes{**Time: 16:15-17:00 (45 min lecture)** - Strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
 
 \subsection{Human Attention as Strategic Resource}
 
@@ -440,73 +491,60 @@ This means reversing the power dynamics and ensuring the organization remains in
 }
 
 <!-- ============================================================ -->
-<!-- EXERCISE 3: DEVELOPING YOUR ORGANIZATION'S AI STRATEGY -->
+<!-- EXERCISE 4: DEVELOPING INSTITUTIONAL AI STRATEGIES -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 16:10 -->
-\section{Exercise 3: Developing Your Organisation's AI Strategy (50 minutes)}
+<!-- TIMING: 17:00 -->
+\section{Exercise 4: Developing Institutional AI Strategies}
 
-\notes{**Time: 16:10-17:00** - Final comprehensive synthesis exercise with group presentations}
+\notes{**Time: 17:00-17:30 (20 min group work + 10 min plenary)** - Build your institution's AI strategy using your SWOT analysis from Exercise 2.}
 
-\notes{**Final Exercise Instructions:**
+\notes{**Final Synthesis Exercise:**
 
-This exercise brings together everything we've discussed today to develop a strategic framework for AI implementation in your organization (or an organization you know well).
+Return to the institution type you analyzed in Exercise 2 (startup, government, established player, or SME). Using your SWOT analysis as the foundation, develop a concrete AI strategy for that institution.
 
-**TIME ALLOCATION:**
-- 35 minutes: Group work on strategic framework
-- 15 minutes: 3-minute presentations from 5 groups (selected/volunteers)
+**For your institution type, address:**
 
-Working in groups, create a strategic AI implementation plan that addresses:
+**1. What does your institution actually do?**
+   - What is its core business or mission?
+   - What are its key activities and processes?
+   - Who are its stakeholders?
 
-**Address 3-4 of these key areas:**
+**2. AI Strategy Based on Your SWOT:**
+   - **Leverage Strengths**: How do your identified strengths enable specific AI applications?
+   - **Address Weaknesses**: What capabilities must you build first?
+   - **Seize Opportunities**: Pick 1-2 high-impact AI opportunities from your SWOT
+   - **Mitigate Threats**: What governance prevents the risks you identified?
 
-**1. Information Topography Analysis**
-   - Map current information flows and decision points
-   - Identify where AI could augment (not replace) human intelligence
-   - Highlight critical human judgment points that must be preserved
-
-**2. Human-Machine Collaboration Design**
-   - For 2-3 key business processes:
+**3. Human-Machine Collaboration Design:**
+   - For your chosen AI opportunity:
      * What should AI do?
-     * What should humans do?
+     * What must humans continue to do?
      * How do they interact?
-   - Define clear accountability for AI-assisted decisions
 
-**3. Attention Reallocation Strategy**
-   - What routine tasks will AI automate?
-   - Where will you redirect freed human attention?
-   - How will you prevent attention dissipation?
-   - What new high-value activities will humans focus on?
-
-**4. Trust and Governance Framework**
-   - How will you maintain stakeholder trust?
-   - What governance mechanisms prevent Horizon-type failures?
-   - How do you ensure diverse voices can raise concerns?
-   - What metrics indicate healthy human-AI collaboration?
-
-**5. Implementation Roadmap**
-   - What are the first three concrete steps?
-   - What organizational structures need to change?
-   - How will you measure success?
-   - What are the biggest risks and how will you mitigate them?
+**4. Implementation Priorities:**
+   - First step in next 3 months
+   - Second step in next 6 months
+   - Third step in next year
+   - One key risk and mitigation
 
 **Deliverable**: 
-Create a one-page strategic framework (diagram, table, or structured bullets) showing:
-- Key AI augmentation points and human judgment preservation zones
-- Attention reallocation plan
-- Governance mechanisms
-- First three implementation steps
-- One key risk and mitigation strategy
+One-page strategy document showing:
+- Institution type and core business
+- Chosen AI opportunity (from SWOT)
+- Human-machine collaboration model
+- Three-step implementation roadmap
+- Key governance mechanism
 
-Be prepared for 3-minute group presentations sharing your framework and most important insight.}
+**Plenary (10 min)**: Each institution type presents (2 min each) - one startup, one government, one established player, one SME if we have all four represented.}
 
-\newslide{Group Presentations: Key Questions}
+\newslide{Plenary: Contrasting Strategies by Institution Type}
 
 \slides{
-* What is your most counterintuitive insight?
-* Where will you NOT use AI (and why)?
-* What is your biggest implementation challenge?
-* How will you measure success beyond productivity metrics?
+* How do strategies differ by institution type?
+* What's common across all types?
+* What surprised you in building a concrete strategy?
+* What's your biggest open question?
 }
 
 <!-- ============================================================ -->
@@ -580,8 +618,8 @@ The AI revolution is not a technological challenge - it's a leadership challenge
 - Partnership on AI: Multi-stakeholder organization working on AI best practices
 }
 
-<!-- TIMING: 17:00 END -->
-\notes{**End Time: 17:00** - Thank you for your engagement throughout the day!}
+<!-- TIMING: 17:30 END -->
+\notes{**End Time: 17:30** - Thank you for your engagement throughout the day!}
 
 \thanks
 

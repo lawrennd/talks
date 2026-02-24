@@ -329,23 +329,21 @@ This background will be essential for Exercise 3 this afternoon.
 
 \include{_software/includes/horizon-scandal.md}
 
-\notes{The Horizon scandal dramatically demonstrates what happens when human judgment is subordinated to algorithmic outputs. In business, where decisions can have profound consequences for employees, customers, and stakeholders, maintaining human judgment is not optional - it's essential.
+\section{Judgement in the AI and Data Era}
 
-Business is fundamentally built on trust - trust between customers and the company, trust in markets, trust in the accuracy of information and decisions. AI systems fundamentally challenge how trust functions in organizations.}
-
-\subsection{Techno-Inattention Bias in Organisations}
-
+\include{_data-science/includes/big-data-paradox.md}
+\include{_data-science/includes/big-model-paradox.md}
 \include{_psychology/includes/selective-attention-bias.md}
+\include{_data-science/includes/data-inattention-bias.md}
+\include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
 
-\slides{
-* Organizations develop "techno-inattention bias" - focusing on AI details while missing human dynamics
-* The "gorilla" of culture, relationships, and ethics goes unnoticed
-* Institutional inattentional blindness develops when leadership fixates on technical aspects
-}
+\newslide{Case Study}
 
-\notes{The selective attention phenomenon has a direct parallel in how organizations approach AI and digital transformation. Senior executives are increasingly asked to focus on complex technical details of AI systems and digital technology.
+\include{_policy/includes/face-masks-case-study.md}
 
-In this process of technological fascination, they miss the metaphorical gorilla walking through their business - the fundamental human and organizational dynamics that actually determine success. The gorilla represents organizational culture, employee development, customer relationships, and ethical considerations - elements that technical systems can never fully replace.}
+\section{Bringing it Back}
+
+\include{_business/includes/dealing-with-intellectual-debt.md}
 
 \include{_business/includes/gorilla-conclusion.md}
 
@@ -353,7 +351,7 @@ In this process of technological fascination, they miss the metaphorical gorilla
 
 \include{_business/includes/superficial-automation.md}
 
-\notes{Superficial automation that doesn't address underlying human needs can be particularly dangerous. We need systems that enhance human capabilities rather than simply replacing human tasks. This requires deep understanding of the work being automated and its human context.}
+\notes{Superficial automation that makes things quicker for the individual but undermines the organisation is a particular problem. If everyone has a team of agents they manage to do their work, but the team of agents doesn't interact with the wider ecosystem, then knowledge becomes more siloed.}
 
 \newslide{Maintaining Human Judgment: Key Principles}
 
@@ -436,18 +434,16 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 \subsection{Human Attention as Strategic Resource}
 
 \include{_economics/includes/the-attention-economy.md}
+\include{_ai/includes/cuneiform.md}
+\include{_books/includes/the-future-of-professions.md}
+
+\include{_economics/includes/human-capital-index.md}
+\include{_business/includes/the-productivity-flywheel.md}
 
 \notes{In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.}
 
-\subsection{The Uncertainty Principle of Human Capital Quantification}
 
 \include{_economics/includes/human-capital-inflation.md}
-
-\notes{The more we try to precisely quantify human contribution in organizations, the more we risk changing the nature of that contribution. This creates fundamental challenges for performance management and strategy in AI-augmented organizations.
-
-In an age where algorithms become commoditized, organizational culture becomes the primary competitive advantage. This is particularly true where trust, relationships, and ethical behavior are central to success.}
-
-\subsection{The Business Imperative: People First, Not AI First}
 
 \include{_business/includes/ft-op-ed.md}
 
@@ -484,6 +480,10 @@ The key is ensuring freed attention doesn't just dissipate or get consumed by lo
 
 This means reversing the power dynamics and ensuring the organization remains in touch with its business differentiators, because in the long run those differentiators are unlikely to include AI - they'll include the human elements that AI cannot replicate.}
 
+\include{_business/includes/attention-flywheel-example-dsa.md}
+\include{_business/includes/attention-flywheel-example-ai-at-cam.md}
+\includes{_policy/includes/innovation-economy-conclusion.md}
+
 \subsection{Developing Board-Level Digital Literacy}
 
 \notes{Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn't mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organizational impacts.}
@@ -495,7 +495,7 @@ This means reversing the power dynamics and ensuring the organization remains in
 * Where does human judgment remain essential?
 * How do we know when AI systems are failing?
 * Who is accountable for AI-assisted decisions?
-* How do we maintain organizational culture with AI?
+* How do we maintain organisational culture with AI?
 }
 
 <!-- ============================================================ -->
@@ -605,7 +605,7 @@ As MBA graduates and future business leaders, your role is not to maximise autom
 4. **Adaptive learning** as we discover what works and what doesn't
 5. **Courage** to prioritize long-term human capital over short-term efficiency
 
-The AI revolution is not a technological challenge - it's a leadership challenge. And leadership is uniquely human.}
+The AI revolution is not just a technological challenge - it's a leadership challenge. And leadership is uniquely human.}
 
 \subsection{Further Reading and Resources}
 

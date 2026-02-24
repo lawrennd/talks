@@ -15,6 +15,7 @@ edit_url: https://github.com/lawrennd/talks/edit/gh-pages/_business/leadership-a
 date: 2026-02-25
 reveal: 2026-02-25-leadership-and-ai-luiss-mba.slides.html
 transition: None
+ipynb: 2026-02-25-leadership-and-ai-luiss-mba.ipynb
 layout: talk
 categories:
 - notes
@@ -30,27 +31,96 @@ categories:
 <!--
 
 -->
-<!-- MASTERCLASS STRUCTURE: 
-Morning Session: 10:00-13:00 (3 hours)
-- Part 1: Understanding Human vs Machine Intelligence (60 min)
-- Exercise 1: Mapping Your Organization's Information Flows (30 min)
-- Break (15 min)
-- Part 2: Information Topography and Decision Making (75 min)
+<!-- MASTERCLASS TIMING STRUCTURE:
 
-Afternoon Session: 14:30-17:30 (3 hours)  
-- Part 3: Maintaining Human Judgment and Building Trust (60 min)
-- Exercise 2: Case Study Analysis - The Horizon Scandal (30 min)
-- Break (15 min)
-- Part 4: Strategic Implementation and the Attention Economy (60 min)
-- Exercise 3: Developing Your Organization's AI Strategy (45 min)
+MORNING SESSION: 10:00-13:00 (3 hours)
+==================================================
+10:00 - Part 1: Understanding Human vs Machine Intelligence (75 min total)
+  10:00-10:45 (45 min) - Lecture
+  10:45-11:05 (20 min) - Group Discussion: Mapping Your Organisation's Information Flows
+  11:05-11:15 (10 min) - Plenary Report Back
+
+11:15-11:45 (30 min) - BREAK
+
+11:45 - Part 2: Information Topography and Decision Making (75 min total)
+  11:45-12:30 (45 min) - Lecture  
+  12:30-12:50 (20 min) - Group Discussion: SWOT Analysis for Your Institution
+  12:50-13:00 (10 min) - Plenary Report Back
+
+LUNCH BREAK: 13:00-14:30 (90 min)
+==================================================
+HOMEWORK: Read about Horizon scandal:
+- https://en.wikipedia.org/wiki/British_Post_Office_scandal
+- https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office
+- https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know
+
+AFTERNOON SESSION: 14:30-17:15 (2 hours 45 min)
+==================================================
+14:30 - Part 3: Maintaining Human Judgment and Building Trust (75 min total)
+  14:30-15:15 (45 min) - Lecture
+  15:15-15:35 (20 min) - Group Discussion: Horizon scandal - judgment failures and power asymmetries
+  15:35-15:45 (10 min) - Plenary Report Back
+
+15:45-16:15 (30 min) - BREAK
+
+16:15 - Part 4: Strategic Implementation and the Attention Economy (75 min total)
+  16:15-17:00 (45 min) - Lecture
+  17:00-17:20 (20 min) - Group Discussion: Developing Institutional AI Strategies
+  17:20-17:30 (10 min) - Plenary Report Back
+
+TOTAL: 6 hours instruction + 1.5 hours lunch = 7.5 hours (10:00-17:30)
 -->
 <p><strong>Welcome and Masterclass Overview</strong></p>
 <p>This masterclass is designed for MBA students preparing to lead organizations through the AI transformation. Unlike traditional technology training, we’ll focus on the strategic and organizational challenges that AI creates - challenges that require business leadership rather than technical expertise.</p>
 <p>Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organizational decision-making, to practical frameworks for strategic AI implementation. Along the way, we’ll engage in exercises that apply these concepts to real organizational challenges you’ll face as business leaders.</p>
+<h2 id="setup">Setup</h2>
+<!--setupplotcode{import seaborn as sns
+sns.set_style('darkgrid')
+sns.set_context('paper')
+sns.set_palette('colorblind')}-->
+<h2 id="notutils">notutils</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>This small package is a helper package for various notebook utilities used below.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib.util</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/notutils" class="uri">https://github.com/lawrennd/notutils</a></p>
+<p>Once <code>notutils</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> notutils</span></code></pre></div>
+<h2 id="pods">pods</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In Sheffield we created a suite of software tools for ‘Open Data Science.’ Open data science is an approach to sharing code, models and data that should make it easier for companies, health professionals and scientists to gain access to data science techniques.</p>
+<p>You can also check this blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">Open Data Science</a>.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;pods&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/ods" class="uri">https://github.com/lawrennd/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<h2 id="mlai">mlai</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The <code>mlai</code> software is a suite of helper functions for teaching and demonstrating machine learning algorithms. It was first used in the Machine Learning and Adaptive Intelligence course in Sheffield in 2013.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;mlai&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/mlai" class="uri">https://github.com/lawrennd/mlai</a></p>
+<p>Once <code>mlai</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai <span class="im">import</span> plot</span></code></pre></div>
 <!-- ============================================================ -->
 <!-- MORNING SESSION: 10:00-13:00 -->
 <!-- ============================================================ -->
-<h1 id="part-1-understanding-human-vs-machine-intelligence-60-minutes">Part 1: Understanding Human vs Machine Intelligence (60 minutes)</h1>
+<!-- TIMING: 10:00 START -->
+<h1 id="part-1-understanding-human-vs-machine-intelligence">Part 1: Understanding Human vs Machine Intelligence</h1>
+<p><strong>Time: 10:00-10:45 (45 min lecture)</strong> - We’ll explore what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.</p>
 <h2 id="the-age-of-human-analogue-machines">The Age of Human-Analogue Machines</h2>
 <h2 id="henry-fords-faster-horse">Henry Ford’s Faster Horse</h2>
 <div style="text-align:right">
@@ -367,44 +437,30 @@ embodiment
 <!-- ============================================================ -->
 <!-- EXERCISE 1: MAPPING ORGANIZATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
-<h1 id="exercise-1-mapping-your-organisations-information-flows-30-minutes">Exercise 1: Mapping Your Organisation’s Information Flows (30 minutes)</h1>
+<!-- TIMING: 10:45 -->
+<h1 id="exercise-1-mapping-your-organisations-information-flows">Exercise 1: Mapping Your Organisation’s Information Flows</h1>
+<p><strong>Time: 10:45-11:15 (20 min group work + 10 min plenary)</strong> - Apply the concepts to real organisational contexts.</p>
 <p><strong>Exercise Instructions:</strong></p>
-<p>Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization). Consider:</p>
+<p>Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization).</p>
 <ol type="1">
-<li><strong>Information Sources</strong>: Where does critical information originate?
-<ul>
-<li>Customer data</li>
-<li>Market intelligence</li>
-<li>Operational metrics</li>
-<li>Employee knowledge</li>
-</ul></li>
-<li><strong>Decision Points</strong>: Where are key decisions made?
-<ul>
-<li>Strategic decisions (board level)</li>
-<li>Tactical decisions (management)</li>
-<li>Operational decisions (front-line)</li>
-</ul></li>
-<li><strong>Human Bottlenecks</strong>: Where does information require human processing?
-<ul>
-<li>What types of judgment are needed?</li>
-<li>What context is essential?</li>
-<li>Where does social/political understanding matter?</li>
-</ul></li>
-<li><strong>Potential AI Augmentation</strong>: Where could AI enhance (not replace) human decision-making?
-<ul>
-<li>Information aggregation</li>
-<li>Pattern recognition</li>
-<li>Scenario modeling</li>
-<li>Routine processing</li>
-</ul></li>
+<li><p><strong>Information Sources</strong>: Where does critical information originate in your organisation?</p></li>
+<li><p><strong>Key Decision Points</strong>: Where are the most important decisions made? How are they informed?</p></li>
+<li><p><strong>Human Bottlenecks</strong>: Where does information require human judgment that machines can’t easily replicate?</p></li>
+<li><p><strong>AI Opportunities</strong>: Identify 1-2 places where AI could enhance (not replace) human decision-making</p></li>
 </ol>
-<p><strong>Deliverable</strong>: Create a simple diagram showing: - Information flows (arrows) - Decision points (boxes) - Human judgment requirements (highlighted) - Potential AI augmentation opportunities (marked)</p>
-<p>Be prepared to share one insight from your mapping exercise with the full group.</p>
-<!-- BREAK: 15 minutes -->
+<p><strong>Deliverable</strong>: Simple sketch showing information flows, decision points, and where humans vs machines should work.</p>
+<p><strong>Plenary (10 minutes)</strong>: Each group shares one key insight.</p>
+<!-- ============================================================ -->
+<!-- BREAK: 30 minutes -->
+<!-- ============================================================ -->
+<!-- TIMING: 11:15-11:45 BREAK -->
+<p><strong>11:15-11:45: Break</strong> - 30 minute refreshment break</p>
 <!-- ============================================================ -->
 <!-- PART 2: INFORMATION TOPOGRAPHY AND DECISION MAKING -->
 <!-- ============================================================ -->
-<h1 id="part-2-information-topography-and-decision-making-75-minutes">Part 2: Information Topography and Decision Making (75 minutes)</h1>
+<!-- TIMING: 11:45 -->
+<h1 id="part-2-information-topography-and-decision-making">Part 2: Information Topography and Decision Making</h1>
+<p><strong>Time: 11:45-12:30 (45 min lecture)</strong> - We’ll explore how AI changes organisational information landscapes and decision-making structures.</p>
 <h2 id="the-information-revolution-in-organizations">The Information Revolution in Organizations</h2>
 <h2 id="new-flow-of-information">New Flow of Information</h2>
 <div style="text-align:right">
@@ -615,12 +671,37 @@ embodiment
 <p>Generative AI provides organizations with what I call “Human-Analogue Machines” (HAMs) - systems that can process and generate information at scales far beyond human capacity, but that still require human oversight and judgment for critical decisions.</p>
 <p>The challenge for business leaders is that we know our current approaches to AI implementation are likely insufficient, but we don’t yet know exactly how they’re insufficient. This requires experimentation and adaptive strategy rather than rigid planning.</p>
 <!-- ============================================================ -->
-<!-- LUNCH BREAK -->
+<!-- EXERCISE 2: SWOT ANALYSIS FOR AI TRANSFORMATION -->
 <!-- ============================================================ -->
+<!-- TIMING: 12:30 -->
+<h1 id="exercise-2-swot-analysis-for-ai-transformation">Exercise 2: SWOT Analysis for AI Transformation</h1>
+<p><strong>Time: 12:30-13:00 (20 min group work + 10 min plenary)</strong> - Analyse your institution’s position for AI adoption.</p>
+<p><strong>Exercise Instructions:</strong></p>
+<p>Each group should select ONE type of institution to analyze. Choose from:</p>
+<ol type="1">
+<li><strong>A Start-up</strong> - Recently founded, agile, limited resources</li>
+<li><strong>A Government Institution</strong> - Public sector, accountability requirements, stable</li>
+<li><strong>An Established Player</strong> - Large corporation, existing systems, market leader</li>
+<li><strong>An SME</strong> - Small/medium enterprise, specialised, resource-constrained</li>
+</ol>
+<p>Characterise what your institution does. If it’s a compnay, what is their market? If it is public sector what service are they providing?</p>
+<p>*or your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:</p>
+<p><strong>Strengths:</strong> - What advantages does this type of institution have for AI adoption? - What existing capabilities can they leverage?</p>
+<p><strong>Weaknesses:</strong> - What disadvantages or constraints do they face? - What capabilities are they missing?</p>
+<p><strong>Opportunities:</strong> - Where could AI create the most value for this type? - What new markets, efficiencies or capabilities could AI unlock?</p>
+<p><strong>Threats:</strong> - What are the risks of AI adoption? - What are the risks of NOT adopting AI? - Who are the competitors and what are they doing?</p>
+<p><strong>Deliverable</strong>: Create a simple SWOT matrix on one page. Be specific to your institution type - a startup’s SWOT will look very different from a government institution’s!</p>
+<p><strong>Note</strong>: Keep this analysis - you’ll build on it in Exercise 4 this afternoon.</p>
 <!-- ============================================================ -->
-<!-- AFTERNOON SESSION: 14:30-17:30 -->
+<!-- LUNCH BREAK: 13:00-14:30 (90 min with homework) -->
 <!-- ============================================================ -->
-<h1 id="part-3-maintaining-human-judgment-and-building-trust-60-minutes">Part 3: Maintaining Human Judgment and Building Trust (60 minutes)</h1>
+<p><strong>13:00-14:30: Lunch Break</strong> - 90 minutes with homework assignment.</p>
+<!-- ============================================================ -->
+<!-- AFTERNOON SESSION: 14:30-17:30 (3 hours) -->
+<!-- ============================================================ -->
+<!-- TIMING: 14:30 START AFTERNOON -->
+<h1 id="part-3-maintaining-human-judgment-and-building-trust">Part 3: Maintaining Human Judgment and Building Trust</h1>
+<p><strong>Time: 14:30-15:15 (45 min lecture)</strong> - We’ll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.</p>
 <h2 id="when-algorithms-override-human-judgment-the-horizon-scandal">When Algorithms Override Human Judgment: The Horizon Scandal</h2>
 <h2 id="the-horizon-scandal">The Horizon Scandal</h2>
 <div style="text-align:right">
@@ -701,6 +782,25 @@ embodiment
 </div>
 <p>The selective attention phenomenon has a direct parallel in how organizations approach AI and digital transformation. Senior executives are increasingly asked to focus on complex technical details of AI systems and digital technology.</p>
 <p>In this process of technological fascination, they miss the metaphorical gorilla walking through their business - the fundamental human and organizational dynamics that actually determine success. The gorilla represents organizational culture, employee development, customer relationships, and ethical considerations - elements that technical systems can never fully replace.</p>
+<h2 id="conclusion">Conclusion</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/gorilla-conclusion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/gorilla-conclusion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+See the Gorilla <em>don’t</em> be the Gorilla.
+<div class="figure">
+<div id="gorilla-punch-mouth-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//business/gorilla-punch-mouth.jpg" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="gorilla-punch-mouth-magnify" class="magnify" onclick="magnifyFigure(&#39;gorilla-punch-mouth&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gorilla-punch-mouth-caption" class="caption-frame">
+<p>Figure: A famous quote from Mike Tyson before his fight with Evander Holyfield: “Everyone has a plan until they get punched in the mouth.” Don’t let the gorilla punch you in the mouth. See the gorilla, but don’t be the gorilla. Photo credit: <a href="https://www.catersnews.com/stories/animals/go-ape-unlucky-photographer-gets-punched-by-lairy-gorilla-drunk-from-eating-bamboo-shoots/" class="uri">https://www.catersnews.com/stories/animals/go-ape-unlucky-photographer-gets-punched-by-lairy-gorilla-drunk-from-eating-bamboo-shoots/</a></p>
+</div>
+</div>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Tyson, Mike p. 92–93, 130, 193, 217, 225, 328, 348.</p>
 <h2 id="the-danger-of-superficial-automation">The Danger of Superficial Automation</h2>
 <h1 id="superficial-automation">Superficial Automation</h1>
 <div style="text-align:right">
@@ -735,46 +835,51 @@ embodiment
 <p>In our public dialogues we saw the same theme: good process can drive purpose. Discussion is as important as the conclusions reached. Attendees urged us to develop technology where AI operates as a tool for human augmentation, not replacement.</p>
 <p>Superficial automation that doesn’t address underlying human needs can be particularly dangerous. We need systems that enhance human capabilities rather than simply replacing human tasks. This requires deep understanding of the work being automated and its human context.</p>
 <!-- ============================================================ -->
-<!-- EXERCISE 2: CASE STUDY ANALYSIS - THE HORIZON SCANDAL -->
+<!-- EXERCISE 3: HORIZON SCANDAL - FAILURES OF JUDGMENT -->
 <!-- ============================================================ -->
-<h1 id="exercise-2-case-study-analysis---the-horizon-scandal-30-minutes">Exercise 2: Case Study Analysis - The Horizon Scandal (30 minutes)</h1>
+<!-- TIMING: 15:15 -->
+<h1 id="exercise-3-the-horizon-scandal---judgment-failures-and-power-asymmetries">Exercise 3: The Horizon Scandal - Judgment Failures and Power Asymmetries</h1>
+<p><strong>Time: 15:15-15:45 (20 min group discussion + 10 min plenary)</strong> - Analyse the Horizon scandal you read about at lunch.</p>
 <p><strong>Exercise Instructions:</strong></p>
-<p>The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyze this case through the lens of organizational decision-making:</p>
+<p>The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organizational decision-making:</p>
 <p><strong>The Situation:</strong> - Horizon accounting system had bugs that created phantom shortfalls - Post Office prosecuted hundreds of sub-postmasters for theft/fraud - Human testimony (from sub-postmasters) was systematically discounted - Computer evidence was treated as infallible - Lives were destroyed, some sub-postmasters imprisoned - Took nearly 20 years for truth to emerge</p>
-<p><strong>Analysis Questions:</strong></p>
 <ol type="1">
-<li><strong>Organizational Structure</strong>:
+<li><strong>Failures of Judgment</strong>:
 <ul>
-<li>How did the organization’s structure enable this failure?</li>
-<li>What checks and balances were missing?</li>
+<li>What were the critical moments when human judgment should have overridden the system?</li>
+<li>Why didn’t it happen?</li>
+<li>What organisational culture enabled this failure?</li>
 </ul></li>
-<li><strong>Decision-Making Architecture</strong>:
+<li><strong>Power Asymmetries</strong>:
 <ul>
-<li>At what points should human judgment have overridden algorithmic outputs?</li>
-<li>What prevented that from happening?</li>
-</ul></li>
-<li><strong>Information Flows</strong>:
-<ul>
-<li>How was information about system problems suppressed or ignored?</li>
-<li>Who had access to what information?</li>
-</ul></li>
-<li><strong>Trust and Power Dynamics</strong>:
-<ul>
+<li>How did power imbalances between the Post Office, the digital systems, accountants, lawyers, politicians and sub-postmasters contribute?</li>
 <li>Why was computer evidence trusted over human testimony?</li>
-<li>How did power dynamics affect information flows?</li>
+<li>Who had voice and who didn’t?</li>
 </ul></li>
-<li><strong>Prevention Framework</strong>:
+<li><strong>Information Suppression</strong>:
 <ul>
-<li>What organizational structures could have prevented this?</li>
-<li>What governance mechanisms are needed for AI systems?</li>
+<li>How was information about system problems suppressed?</li>
+<li>What were the organizational incentives to ignore warnings?</li>
+</ul></li>
+<li><strong>Lessons for Your Institution</strong>:
+<ul>
+<li>Could this happen in your organisation (from Exercise 2)?</li>
+<li>What specific safeguards would prevent it?</li>
+<li>How would you ensure diverse voices can raise concerns?</li>
 </ul></li>
 </ol>
-<p><strong>Deliverable</strong>: Identify 3 specific organizational safeguards that could prevent similar failures in your industry/organization.</p>
-<!-- BREAK: 15 minutes -->
+<p><strong>Deliverable</strong>: Identify 2-3 specific governance mechanisms that could have prevented this failure.</p>
+<!-- ============================================================ -->
+<!-- BREAK: 30 minutes -->
+<!-- ============================================================ -->
+<!-- TIMING: 15:45-16:15 BREAK -->
+<p><strong>15:45-16:15: Break</strong> - 30 minute refreshment break</p>
 <!-- ============================================================ -->
 <!-- PART 4: STRATEGIC IMPLEMENTATION AND THE ATTENTION ECONOMY -->
 <!-- ============================================================ -->
-<h1 id="part-4-strategic-implementation-and-the-attention-economy-60-minutes">Part 4: Strategic Implementation and the Attention Economy (60 minutes)</h1>
+<!-- TIMING: 16:15 -->
+<h1 id="part-4-strategic-implementation-and-the-attention-economy">Part 4: Strategic Implementation and the Attention Economy</h1>
+<p><strong>Time: 16:15-17:00 (45 min lecture)</strong> - Strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.</p>
 <h2 id="human-attention-as-strategic-resource">Human Attention as Strategic Resource</h2>
 <h2 id="the-attention-economy">The Attention Economy</h2>
 <div style="text-align:right">
@@ -852,20 +957,20 @@ embodiment
 <h2 id="developing-board-level-digital-literacy">Developing Board-Level Digital Literacy</h2>
 <p>Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn’t mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organizational impacts.</p>
 <!-- ============================================================ -->
-<!-- EXERCISE 3: DEVELOPING YOUR ORGANIZATION'S AI STRATEGY -->
+<!-- EXERCISE 4: DEVELOPING INSTITUTIONAL AI STRATEGIES -->
 <!-- ============================================================ -->
-<h1 id="exercise-3-developing-your-organisations-ai-strategy-45-minutes">Exercise 3: Developing Your Organisation’s AI Strategy (45 minutes)</h1>
-<p><strong>Final Exercise Instructions:</strong></p>
-<p>This exercise brings together everything we’ve discussed today to develop a strategic framework for AI implementation in your organization (or an organization you know well).</p>
-<p>Working in groups, create a strategic AI implementation plan that addresses:</p>
-<p><strong>1. Information Topography Analysis (10 minutes)</strong> - Map current information flows and decision points - Identify where AI could augment (not replace) human intelligence - Highlight critical human judgment points that must be preserved</p>
-<p><strong>2. Human-Machine Collaboration Design (10 minutes)</strong> - For 2-3 key business processes: * What should AI do? * What should humans do? * How do they interact? - Define clear accountability for AI-assisted decisions</p>
-<p><strong>3. Attention Reallocation Strategy (10 minutes)</strong> - What routine tasks will AI automate? - Where will you redirect freed human attention? - How will you prevent attention dissipation? - What new high-value activities will humans focus on?</p>
-<p><strong>4. Trust and Governance Framework (10 minutes)</strong> - How will you maintain stakeholder trust? - What governance mechanisms prevent Horizon-type failures? - How do you ensure diverse voices can raise concerns? - What metrics indicate healthy human-AI collaboration?</p>
-<p><strong>5. Implementation Roadmap (5 minutes)</strong> - What are the first three concrete steps? - What organizational structures need to change? - How will you measure success? - What are the biggest risks and how will you mitigate them?</p>
-<p><strong>Deliverable</strong>: Create a one-page strategic framework diagram showing: - Key AI augmentation points - Human judgment preservation zones<br />
-- Attention reallocation plan - Governance mechanisms - First three implementation steps</p>
-<p>Be prepared for 3-minute group presentations sharing your most important insight.</p>
+<!-- TIMING: 17:00 -->
+<h1 id="exercise-4-developing-institutional-ai-strategies">Exercise 4: Developing Institutional AI Strategies</h1>
+<p><strong>Time: 17:00-17:30 (20 min group work + 10 min plenary)</strong> - Build your institution’s AI strategy using your SWOT analysis from Exercise 2.</p>
+<p><strong>Final Synthesis Exercise:</strong></p>
+<p>Return to the institution type you analyzed in Exercise 2 (startup, government, established player, or SME). Using your SWOT analysis as the foundation, develop a concrete AI strategy for that institution.</p>
+<p><strong>For your institution type, address:</strong></p>
+<p><strong>1. What does your institution actually do?</strong> - What is its core business or mission? - What are its key activities and processes? - Who are its stakeholders?</p>
+<p><strong>2. AI Strategy Based on Your SWOT:</strong> - <strong>Leverage Strengths</strong>: How do your identified strengths enable specific AI applications? - <strong>Address Weaknesses</strong>: What capabilities must you build first? - <strong>Seize Opportunities</strong>: Pick 1-2 high-impact AI opportunities from your SWOT - <strong>Mitigate Threats</strong>: What governance prevents the risks you identified?</p>
+<p><strong>3. Human-Machine Collaboration Design:</strong> - For your chosen AI opportunity: * What should AI do? * What must humans continue to do? * How do they interact?</p>
+<p><strong>4. Implementation Priorities:</strong> - First step in next 3 months - Second step in next 6 months - Third step in next year - One key risk and mitigation</p>
+<p><strong>Deliverable</strong>: One-page strategy document showing: - Institution type and core business - Chosen AI opportunity (from SWOT) - Human-machine collaboration model - Three-step implementation roadmap - Key governance mechanism</p>
+<p><strong>Plenary (10 min)</strong>: Each institution type presents (2 min each) - one startup, one government, one established player, one SME if we have all four represented.</p>
 <!-- ============================================================ -->
 <!-- CONCLUSION AND SYNTHESIS -->
 <!-- ============================================================ -->
@@ -920,7 +1025,11 @@ embodiment
 <p><strong>Additional Resources:</strong></p>
 <ul>
 <li>ai@cam: University of Cambridge initiative on AI (www.ai.cam.ac.uk)</li>
+<li>The Alan Turing Institute: UK’s national institute for data science and AI</li>
+<li>Partnership on AI: Multi-stakeholder organization working on AI best practices</li>
 </ul>
+<!-- TIMING: 17:30 END -->
+<p><strong>End Time: 17:30</strong> - Thank you for your engagement throughout the day!</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>

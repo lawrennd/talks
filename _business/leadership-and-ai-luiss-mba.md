@@ -180,7 +180,7 @@ Working in small groups (3-4 people), map the information flows in an organisati
 <!-- TIMING: 11:45 -->
 \section{Part 2: Information Topography and Decision Making}
 
-\notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI fundamentally changes organizational information landscapes and decision-making structures.}
+\notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI changes organisational information landscapes and decision-making structures.}
 
 \subsection{The Information Revolution in Organizations}
 
@@ -253,7 +253,7 @@ The challenge for business leaders is that we know our current approaches to AI 
 <!-- TIMING: 12:30 -->
 \section{Exercise 2: SWOT Analysis for AI Transformation}
 
-\notes{**Time: 12:30-13:00 (20 min group work + 10 min plenary)** - Analyze your institution's position for AI adoption.}
+\notes{**Time: 12:30-13:00 (20 min group work + 10 min plenary)** - Analyse your institution's position for AI adoption.}
 
 \notes{**Exercise Instructions:**
 
@@ -262,9 +262,11 @@ Each group should select ONE type of institution to analyze. Choose from:
 1. **A Start-up** - Recently founded, agile, limited resources
 2. **A Government Institution** - Public sector, accountability requirements, stable
 3. **An Established Player** - Large corporation, existing systems, market leader
-4. **An SME** - Small/medium enterprise, specialized, resource-constrained
+4. **An SME** - Small/medium enterprise, specialised, resource-constrained
 
-**For your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:**
+Characterise what your institution does. If it's a compnay, what is their market? If it is public sector what service are they providing?
+
+*or your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:
 
 **Strengths:**
 - What advantages does this type of institution have for AI adoption?
@@ -276,7 +278,7 @@ Each group should select ONE type of institution to analyze. Choose from:
 
 **Opportunities:**
 - Where could AI create the most value for this type?
-- What new markets or capabilities could AI unlock?
+- What new markets, efficiencies or capabilities could AI unlock?
 
 **Threats:**
 - What are the risks of AI adoption?
@@ -370,21 +372,27 @@ In this process of technological fascination, they miss the metaphorical gorilla
 <!-- TIMING: 15:15 -->
 \section{Exercise 3: The Horizon Scandal - Judgment Failures and Power Asymmetries}
 
-\notes{**Time: 15:15-15:45 (20 min group discussion + 10 min plenary)** - Analyze the Horizon scandal you read about at lunch.}
+\notes{**Time: 15:15-15:45 (20 min group discussion + 10 min plenary)** - Analyse the Horizon scandal you read about at lunch.}
 
 \notes{**Exercise Instructions:**
 
-Based on the Horizon scandal materials you read over lunch, discuss in your groups:
+The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organizational decision-making:
 
-**Key Discussion Questions:**
+**The Situation:**
+- Horizon accounting system had bugs that created phantom shortfalls
+- Post Office prosecuted hundreds of sub-postmasters for theft/fraud
+- Human testimony (from sub-postmasters) was systematically discounted
+- Computer evidence was treated as infallible
+- Lives were destroyed, some sub-postmasters imprisoned
+- Took nearly 20 years for truth to emerge
 
 1. **Failures of Judgment**:
    - What were the critical moments when human judgment should have overridden the system?
    - Why didn't it happen?
-   - What organizational culture enabled this failure?
+   - What organisational culture enabled this failure?
 
 2. **Power Asymmetries**:
-   - How did power imbalances between the Post Office and sub-postmasters contribute?
+   - How did power imbalances between the Post Office, the digital systems, accountants, lawyers, politicians and sub-postmasters contribute?
    - Why was computer evidence trusted over human testimony?
    - Who had voice and who didn't?
 
@@ -393,7 +401,7 @@ Based on the Horizon scandal materials you read over lunch, discuss in your grou
    - What were the organizational incentives to ignore warnings?
 
 4. **Lessons for Your Institution**:
-   - Could this happen in your organization (from Exercise 2)?
+   - Could this happen in your organisation (from Exercise 2)?
    - What specific safeguards would prevent it?
    - How would you ensure diverse voices can raise concerns?
 

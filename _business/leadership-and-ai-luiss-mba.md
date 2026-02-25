@@ -274,9 +274,7 @@ assessment, and customer service.}
 \subsection{Understanding Information Topography}
 
 \include{_business/includes/an-attention-economy.md}
-\define{noSlideTitle}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
-\undef{noSlideTitle}
 
 \notes{AI changes the information topography of organisations and
 society - the information topography is the landscape of who knows

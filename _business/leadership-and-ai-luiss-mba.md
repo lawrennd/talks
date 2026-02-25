@@ -78,11 +78,13 @@ Our journey today will take us from understanding what makes human intelligence 
 
 \slides{
 **Lunch: 13:00-14:30** 
+
 * *Homework: Read Horizon scandal materials*
 }
 
 \newslide{Today's Schedule}
 
+\slides{
 **Afternoon Session: 14:30-17:30**
 
 * 14:30-15:15: Part 3 Lecture
@@ -198,7 +200,20 @@ conceptions of the world to communicate complex subjects.}
 
 \notes{**Exercise Instructions:**
 
-Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organisation). 
+Working in small groups (3-4 people), map the information flows in an organisation type you (as a group) know well (current employer, previous employer, or case study organisation). 
+
+Each group should select ONE type of institution to analyze. Choose from:
+
+1. **A Start-up** - Recently founded, agile, limited resources
+2. **A Government Institution** - Public sector, accountability requirements, stable
+3. **An Established Player** - Large corporation, existing systems, market leader
+4. **An SME** - Small/medium enterprise, specialised, resource-constrained
+
+Characterise what your institution does. If it's a company, what is their market? If it is public sector what service are they providing?
+
+- What is its core business or mission?
+- What are its key activities and processes?
+- Who are its stakeholders?
 
 1. **Information Sources**: Where does critical information originate in your organisation?
 
@@ -332,16 +347,7 @@ experimentation and adaptive strategy rather than rigid planning.}
 
 \notes{**Exercise Instructions:**
 
-Each group should select ONE type of institution to analyze. Choose from:
-
-1. **A Start-up** - Recently founded, agile, limited resources
-2. **A Government Institution** - Public sector, accountability requirements, stable
-3. **An Established Player** - Large corporation, existing systems, market leader
-4. **An SME** - Small/medium enterprise, specialised, resource-constrained
-
-Characterise what your institution does. If it's a compnay, what is their market? If it is public sector what service are they providing?
-
-*or your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:
+For your chosen institution type from Exercise 1, conduct a SWOT analysis specifically focused on AI adoption:
 
 **Strengths:**
 - What advantages does this type of institution have for AI adoption?
@@ -591,24 +597,22 @@ Return to the institution type you analyzed in Exercise 2 (startup, government, 
 
 **For your institution type, address:**
 
-**1. What does your institution actually do?**
-   - What is its core business or mission?
-   - What are its key activities and processes?
-   - Who are its stakeholders?
+**1. AI Strategy Based on Your SWOT:**
 
-**2. AI Strategy Based on Your SWOT:**
    - **Leverage Strengths**: How do your identified strengths enable specific AI applications?
    - **Address Weaknesses**: What capabilities must you build first?
    - **Seize Opportunities**: Pick 1-2 high-impact AI opportunities from your SWOT
    - **Mitigate Threats**: What governance prevents the risks you identified?
 
-**3. Human-Machine Collaboration Design:**
+**2. Human-Machine Collaboration Design:**
+
    - For your chosen AI opportunity:
      * What should AI do?
      * What must humans continue to do?
      * How do they interact?
 
-**4. Implementation Priorities:**
+**3. Implementation Priorities:**
+
    - First step in next 3 months
    - Second step in next 6 months
    - Third step in next year

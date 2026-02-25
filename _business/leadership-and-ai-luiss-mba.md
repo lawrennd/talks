@@ -18,6 +18,28 @@ ipynb: True
 
 <!-- MASTERCLASS TIMING STRUCTURE:
 
+DELIVERY NOTES (Feb 2026, LUISS MBA):
+===========================================
+** TIMING ISSUES AT NEIL'S ACTUAL DELIVERY PACE **
+- Part 1: TOO LONG for 45 min lecture slot (need to cut material)
+- Part 2: TOO LONG for 45 min lecture slot (need to cut material)
+- Part 3: TOO LONG for 45 min lecture slot (need to cut material)
+- Part 4: TIMING OK
+
+** ORDERING ISSUE **
+- Mythical Man Month material needs to come BEFORE Bezos/two pizza teams
+  (See Part 2 - these are currently in wrong order)
+
+** TWO-DAY EXPANSION POTENTIAL **
+This material could work very well as a two-day masterclass:
+- Significantly expand exercise portions (currently 20 min → 45-60 min)
+- Add more discussion and debate time
+- Allow deeper dive into case studies
+- Include additional exercises on specific topics
+- More time for group presentations and peer feedback
+
+CURRENT ONE-DAY SCHEDULE:
+===========================================
 MORNING SESSION: 10:00-13:00 (3 hours)
 ==================================================
 10:00 - Part 1: Understanding Human vs Machine Intelligence (75 min total)
@@ -99,6 +121,7 @@ Our journey today will take us from understanding what makes human intelligence 
 <!-- ============================================================ -->
 
 <!-- TIMING: 10:00 START -->
+<!-- DELIVERY NOTE: Part 1 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 1: Understanding Human vs Machine Intelligence}
 
 \notes{**Time: 10:00-10:45 (45 min lecture)** - We'll explore what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
@@ -251,6 +274,7 @@ Characterise what your institution does. If it's a company, what is their market
 <!-- ============================================================ -->
 
 <!-- TIMING: 11:45 -->
+<!-- DELIVERY NOTE: Part 2 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 2: Information Topography and Decision Making}
 
 \notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI changes organisational information landscapes and decision-making structures.}
@@ -264,6 +288,11 @@ most precious resource. The strategic allocation of this attention
 will determine organisational success. This is particularly critical
 in business where complex decisions require both algorithmic precision
 and human judgment.}
+
+<!-- ORDERING NOTE: The "Generative AI as HAM" section (lines ~330-351) with 
+     Conway's Law discussion should come BEFORE this "Evolution of Organisational 
+     Decision Making" section with Bezos material. Brooks/Mythical Man Month 
+     concepts provide foundation for understanding why Bezos needed API mandate -->
 
 \subsection{The Evolution of Organisational Decision Making}
 
@@ -349,7 +378,14 @@ experimentation and adaptive strategy rather than rigid planning.}
 
 \notes{**Exercise Instructions:**
 
-For your chosen institution type from Exercise 1, conduct a SWOT analysis specifically focused on AI adoption:
+Each group should select ONE type of institution to analyze (you'll return to this in Exercise 4). Choose from:
+
+1. **A Start-up** - Recently founded, agile, limited resources
+2. **A Government Institution** - Public sector, accountability requirements, stable
+3. **An Established Player** - Large corporation, existing systems, market leader
+4. **An SME** - Small/medium enterprise, specialized, resource-constrained
+
+For your chosen institution type, conduct a SWOT analysis specifically focused on AI adoption:
 
 **Strengths:**
 - What advantages does this type of institution have for AI adoption?
@@ -404,6 +440,7 @@ This background will be essential for Exercise 3 this afternoon.
 <!-- ============================================================ -->
 
 <!-- TIMING: 14:30 START AFTERNOON -->
+<!-- DELIVERY NOTE: Part 3 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 3: Maintaining Human Judgment and Building Trust}
 
 \notes{**Time: 14:30-15:15 (45 min lecture)** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
@@ -532,6 +569,7 @@ organisational decision-making:
 <!-- ============================================================ -->
 
 <!-- TIMING: 16:15 -->
+<!-- DELIVERY NOTE: Part 4 timing is GOOD - no changes needed -->
 \section{Part 4: Strategic Implementation and the Attention Economy}
 
 \notes{**Time: 16:15-17:00 (45 min lecture)** - Strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
@@ -621,8 +659,12 @@ Return to the institution type you analyzed in Exercise 2 (startup, government, 
 
 **For your institution type, address:**
 
-**1. AI Strategy Based on Your SWOT:**
+**1. Define Your Institution:**
+   - What does this institution actually do? (core business/mission)
+   - What are its main activities and processes?
+   - Who are its key stakeholders?
 
+**2. AI Strategy Based on Your SWOT:**
    - **Leverage Strengths**: How do your identified strengths enable specific AI applications?
    - **Address Weaknesses**: What capabilities must you build first?
    - **Seize Opportunities**: Pick 1-2 high-impact AI opportunities from your SWOT

@@ -1,7 +1,7 @@
 ---
 title: "Leadership and AI: Strategic Decision Making in the Age of Human-Analogue Machines"
 venue: "LUISS Business School, Full-Time MBA Programme, Rome"
-abstract: "<p>As AI technologies reshape business landscapes across industries, leaders face fundamental questions about balancing automation with human judgment, managing information flows, and designing organizational decision-making structures. This masterclass builds on the ideas in <em>The Atomic Human</em> to provide MBA students with practical frameworks for understanding AI’s strategic implications through the lens of information topography, decision-making architectures, and human-AI collaboration.</p>
+abstract: "<p>As AI technologies reshape business landscapes across industries, leaders face fundamental questions about balancing automation with human judgment, managing information flows, and designing organisational decision-making structures. This masterclass builds on the ideas in <em>The Atomic Human</em> to provide MBA students with practical frameworks for understanding AI’s strategic implications through the lens of information topography, decision-making architectures, and human-AI collaboration.</p>
 <p>Through a combination of conceptual frameworks, real-world case studies, and interactive exercises, participants will develop the critical thinking tools needed to lead organisations in the age of human-analogue machines. We’ll explore how to strategically implement AI while maintaining human agency, building intelligent accountability, and creating organisational effectiveness in a world where machines increasingly mimic human capabilities.</p>"
 author:
 - given: Neil D.
@@ -71,50 +71,16 @@ AFTERNOON SESSION: 14:30-17:15 (2 hours 45 min)
 TOTAL: 6 hours instruction + 1.5 hours lunch = 7.5 hours (10:00-17:30)
 -->
 <p><strong>Welcome and Masterclass Overview</strong></p>
-<p>This masterclass is designed for MBA students preparing to lead organizations through the AI transformation. Unlike traditional technology training, we’ll focus on the strategic and organizational challenges that AI creates - challenges that require business leadership rather than technical expertise.</p>
-<p>Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organizational decision-making, to practical frameworks for strategic AI implementation. Along the way, we’ll engage in exercises that apply these concepts to real organizational challenges you’ll face as business leaders.</p>
-<h2 id="setup">Setup</h2>
-<!--setupplotcode{import seaborn as sns
-sns.set_style('darkgrid')
-sns.set_context('paper')
-sns.set_palette('colorblind')}-->
-<h2 id="notutils">notutils</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>This small package is a helper package for various notebook utilities used below.</p>
-<p>The software can be installed using</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib.util</span></code></pre></div>
-<p>from the command prompt where you can access your python installation.</p>
-<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/notutils" class="uri">https://github.com/lawrennd/notutils</a></p>
-<p>Once <code>notutils</code> is installed, it can be imported in the usual manner.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> notutils</span></code></pre></div>
-<h2 id="pods">pods</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In Sheffield we created a suite of software tools for ‘Open Data Science.’ Open data science is an approach to sharing code, models and data that should make it easier for companies, health professionals and scientists to gain access to data science techniques.</p>
-<p>You can also check this blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">Open Data Science</a>.</p>
-<p>The software can be installed using</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;pods&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
-<p>from the command prompt where you can access your python installation.</p>
-<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/ods" class="uri">https://github.com/lawrennd/ods</a></p>
-<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
-<h2 id="mlai">mlai</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The <code>mlai</code> software is a suite of helper functions for teaching and demonstrating machine learning algorithms. It was first used in the Machine Learning and Adaptive Intelligence course in Sheffield in 2013.</p>
-<p>The software can be installed using</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;mlai&#39;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
-<p>from the command prompt where you can access your python installation.</p>
-<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/mlai" class="uri">https://github.com/lawrennd/mlai</a></p>
-<p>Once <code>mlai</code> is installed, it can be imported in the usual manner.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai <span class="im">import</span> plot</span></code></pre></div>
+<p>This masterclass is designed for MBA students preparing to lead organisations through the AI transformation. Unlike traditional technology training, we’ll focus on the strategic and organizational challenges that AI creates - challenges that require business leadership rather than technical expertise.</p>
+<p>Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organisational decision-making, to practical frameworks for strategic AI implementation. Along the way, we’ll engage in exercises that apply these concepts to real organisational challenges you’ll face as business leaders.</p>
+<p><strong>Afternoon Session: 14:30-17:30</strong></p>
+<ul>
+<li>14:30-15:15: Part 3 Lecture</li>
+<li>15:15-15:45: Exercise 3 + Plenary</li>
+<li>15:45-16:15: <strong>Break</strong></li>
+<li>16:15-17:00: Part 4 Lecture</li>
+<li>17:00-17:30: Exercise 4 + Plenary }</li>
+</ul>
 <!-- ============================================================ -->
 <!-- MORNING SESSION: 10:00-13:00 -->
 <!-- ============================================================ -->
@@ -143,7 +109,25 @@ sns.set_palette('colorblind')}-->
 <p>Car engines produce prodigious power from petrol. Machine intelligences deliver decisions derived from data. In both cases the scale of consumption enables a speed of operation that is far beyond the capabilities of their natural counterparts. Unfettered energy consumption has consequences in the form of climate change. Does unbridled data consumption also have consequences for us?</p>
 <p>If we devolve decision making to machines, we depend on those machines to accommodate our needs. If we don’t understand how those machines operate, we lose control over our destiny. Our mistake has been to see machine intelligence as a reflection of our intelligence. We cannot understand the smarter human without understanding the human. To understand the machine, we need to better understand ourselves.</p>
 <p></p>
-<p>As we enter an era where machines increasingly mimic tasks traditionally undertaken by humans, business leaders face fundamental transformations in how their organizations function. The challenges aren’t merely operational - they require us to reimagine the very nature of work, human capital, and organizational culture.</p>
+<h2 id="artificial-general-vehicle">Artificial General Vehicle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_atomic-human/includes/artificial-general-vehicle-diagram.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_atomic-human/includes/artificial-general-vehicle-diagram.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="artificial-general-vehicle-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//atomic-human/Artificial_General_Vehicle_211224_Final.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="artificial-general-vehicle-magnify" class="magnify" onclick="magnifyFigure(&#39;artificial-general-vehicle&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="artificial-general-vehicle-caption" class="caption-frame">
+<p>Figure: The notion of artificial general intelligence is as absurd as the notion of an artificial general vehicle - no single vehicle is optimal for every journey. (Illustration by Dan Andrews inspired by a conversation about “The Atomic Human” <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>)</p>
+</div>
+</div>
+<p>This illustration was created by Dan Andrews inspired by a conversation about “The Atomic Human” book. The drawing emerged from discussions with Dan about the flawed concept of artificial general intelligence and how it parallels the absurd idea of a single vehicle optimal for all journeys. The vehicle itself is inspired by shared memories of Professor Pat Pending in Hanna Barbera’s <em>Wacky Races</em>.</p>
+<p>As we enter an era where machines increasingly mimic tasks traditionally undertaken by humans, leaders face fundamental transformations in how their organisations function. The challenges aren’t merely operational - they require us to reimagine the very nature of work, human capital, and organisational culture.</p>
 <h2 id="the-atomic-human">The Atomic Human</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/the-atomic-eye.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/the-atomic-eye.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -249,7 +233,6 @@ E S A R I N T U L <br> O M D P C F B V <br> H G J Q Z Y X K W
 </div>
 </div>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Shannon, Claude p. 10, 30, 61, 74, 98, 126, 134, 140, 143, 149, 260, 264, 269, 277, 315, 358, 363.</p>
-<p>The story of Jean-Dominique Bauby illustrates a fundamental truth about human intelligence: it’s not just about processing information, but about the embodied experience of being human. This has profound implications for how we think about AI in business.</p>
 <h2 id="embodiment-factors">Embodiment Factors</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-tedx.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/embodiment-factors-tedx.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -350,7 +333,15 @@ embodiment
 <p>I call this ratio between the time it takes to compute something, and the time it takes to say it, the embodiment factor <span class="citation" data-cites="Lawrence-embodiment17">(Lawrence, 2017)</span>. Because it reflects how embodied our cognition is.</p>
 <p>If it takes you two minutes to say the thing you have thought in a second, then you are a computer. If it takes you 15 billion years, then you are a human.</p>
 <p>These bandwidth differences - what I call “embodiment factors” - explain why AI struggles with context and social understanding, the very domains where human leaders excel. The strategic challenge is designing systems that leverage the strengths of both.</p>
+<h2 id="embodiment-factors-walking-vs-light-speed">Embodiment Factors: Walking vs Light Speed</h2>
+<p>Imagine human communication as moving at walking pace. The average person speaks about 160 words per minute, which is roughly 2000 bits per minute. If we compare this to walking speed, roughly 1 m/s we can think of this as the speed at which our thoughts can be shared with others.</p>
+<p>Compare this to machines. When computers communicate, their bandwidth is 600 billion bits per minute. Three hundred million times faster than humans or the equiavalent of <span class="math inline">\(3 \times 10 ^{8}\)</span>. In twenty minutes we could be a kilometer down the road, where as the computer can go to the Sun and back again..</p>
+<p>This difference is not just only about speed of communication, but about embodiment. Our intelligence is locked in by our biology: our brains may process information rapidly, but our ability to share those thoughts is limited to the slow pace of speech or writing. Machines, in comparison, seem able to communicate their computations almost instantaneously, anywhere.</p>
+<p>So, the embodiment factor is the ratio between the time it takes to think a thought and the time it takes to communicate it. For us, it’s like walking; for machines, it’s like moving at light speed. This difference means that most direct comparisons between human and machine need to be carefully made. Because for humans not the size of our communication bandwidth that counts, but it’s how we overcome that limitation..</p>
 <h2 id="the-conversation-where-humans-excel">The Conversation: Where Humans Excel</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <div class="figure">
 <div id="anne-bob-conversation-civil-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//anne-bob-conversation006.svg" width="70%" style=" ">
@@ -433,15 +424,238 @@ embodiment
 <p>In reality, the challenge is that our computers cannot be human enough. They cannot understand us with the depth we understand one another. They drop below our cognitive radar and operate outside our mental models.</p>
 <p>The real danger is that computers don’t anthropomorphize. They’ll make decisions in isolation from us without our supervision because they can’t communicate truly and deeply with us.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> telepathy p. 248-50. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> anthropomorphization (‘anthrox’) p. 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342.</p>
-<p>The true potential of AI in business isn’t in replacing humans but in creating complementary systems that enhance human capabilities. Moving beyond the ‘faster horse’ mindset requires understanding what makes human intelligence uniquely valuable in organizational contexts.</p>
+<p>The true potential of AI in business isn’t in replacing humans but in creating complementary systems that enhance human capabilities. Moving beyond the ‘faster horse’ mindset requires understanding what makes human intelligence uniquely valuable in organisational contexts.</p>
+<h2 id="culture">Culture</h2>
+<p>Cicero suggested that philosophy cultivates the mind. This notion of  is vital for how we communicate. Because we have so little bandwidth we rely on shared conceptions of the world to communicate complex subjects.</p>
+<h2 id="blakes-newton">Blake’s Newton</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-newton.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>William Blake’s rendering of Newton captures humans in a particular state. He is trance-like absorbed in simple geometric shapes. The feel of dreams is enhanced by the underwater location, and the nature of the focus is enhanced because he ignores the complexity of the sea life around him.</p>
+<div class="figure">
+<div id="blake-newton-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-newton.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="blake-newton-magnify" class="magnify" onclick="magnifyFigure(&#39;blake-newton&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="blake-newton-caption" class="caption-frame">
+<p>Figure: William Blake’s <em>Newton</em>. 1795c-1805</p>
+</div>
+</div>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Blake, William <em>Newton</em> p. 121–123.</p>
+<p>The caption in the Tate Britain reads:</p>
+<blockquote>
+<p>Here, Blake satirises the 17th-century mathematician Isaac Newton. Portrayed as a muscular youth, Newton seems to be underwater, sitting on a rock covered with colourful coral and lichen. He crouches over a diagram, measuring it with a compass. Blake believed that Newton’s scientific approach to the world was too reductive. Here he implies Newton is so fixated on his calculations that he is blind to the world around him. This is one of only 12 large colour prints Blake made. He seems to have used an experimental hybrid of printing, drawing, and painting.</p>
+<p>From the <a href="https://www.tate.org.uk/art/artworks/blake-newton-n05058">Tate Britain</a></p>
+</blockquote>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Blake, William <em>Newton</em> p. 121–123, 258, 260, 283, 284, 301, 306.</p>
+<h2 id="sistine-chapel-ceiling">Sistine Chapel Ceiling</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-sistine-chapel-ceiling.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-sistine-chapel-ceiling.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Shortly before I first moved to Cambridge, my girlfriend (now my wife) took me to the Sistine Chapel to show me the recently restored ceiling.</p>
+<div class="figure">
+<div id="cappella-sistina-ceiling-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-sistine-chapel-ceiling.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="cappella-sistina-ceiling-magnify" class="magnify" onclick="magnifyFigure(&#39;cappella-sistina-ceiling&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="cappella-sistina-ceiling-caption" class="caption-frame">
+<p>Figure: The ceiling of the Sistine Chapel.</p>
+</div>
+</div>
+<p>When we got to Cambridge, we both attended <a href="https://www.mmll.cam.ac.uk/pb127">Patrick Boyde</a>’s talks on chapel. He focussed on both the structure of the chapel ceiling, describing the impression of height it was intended to give, as well as the significance and positioning of each of the panels and the meaning of the individual figures.</p>
+<h2 id="the-creation-of-adam">The Creation of Adam</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-the-creation-of-man.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-the-creation-of-man.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="the-creation-of-man-michelangelo-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-the-creation-of-man.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="the-creation-of-man-michelangelo-magnify" class="magnify" onclick="magnifyFigure(&#39;the-creation-of-man-michelangelo&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="the-creation-of-man-michelangelo-caption" class="caption-frame">
+<p>Figure: Photo of Detail of Creation of Man from the Sistine chapel ceiling.</p>
+</div>
+</div>
+<p>One of the most famous panels is central in the ceiling, it’s the creation of man. Here, God in the guise of a pink-robed bearded man reaches out to a languid Adam.</p>
+<p>The representation of God in this form seems typical of the time, because elsewhere in the Vatican Museums there are similar representations.</p>
+<div class="figure">
+<div id="michelangelo-the-creation-of-man-detail-god-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-the-creation-of-man-detail-god.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="michelangelo-the-creation-of-man-detail-god-magnify" class="magnify" onclick="magnifyFigure(&#39;michelangelo-the-creation-of-man-detail-god&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="michelangelo-the-creation-of-man-detail-god-caption" class="caption-frame">
+<p>Figure: Photo detail of God.</p>
+</div>
+</div>
+<p>Photo from <a href="https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_04.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Michelangelo,_Creation_of_Adam_04.jpg</a>.</p>
+<p>My colleague Beth Singler has written about how often this image of creation appears when we talk about AI <span class="citation" data-cites="Singler-aicreation20">(Singler, 2020)</span>.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Michelangelo, <em>The Creation of Adam</em> p. 7-9, 31, 91, 105–106, 121, 153, 206, 216, 350.</p>
+<p>The way we represent this “other intelligence” in the figure of a Zeus-like bearded mind demonstrates our tendency to embody intelligences in forms that are familiar to us.</p>
+<h2 id="lunette-rehoboam-abijah">Lunette Rehoboam Abijah</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-lunette-rehoboam-abijah.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/michelangelo-lunette-rehoboam-abijah.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Many of Blake’s works are inspired by engravings he saw of the Sistine chapel ceiling. The pose of <em>Newton</em> is taken from the Lunette depiction of Abijah, one of the Michelangeo’s ancestors of Christ.</p>
+<div class="figure">
+<div id="lunette-rehoboam-abijah-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-lunette-rehoboam-abijah.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="lunette-rehoboam-abijah-magnify" class="magnify" onclick="magnifyFigure(&#39;lunette-rehoboam-abijah&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="lunette-rehoboam-abijah-caption" class="caption-frame">
+<p>Figure: Lunette containing Rehoboam and Abijah.</p>
+</div>
+</div>
+<h2 id="elohim-creating-adam">Elohim Creating Adam</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-elohim-creating-adam.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_art/includes/blake-elohim-creating-adam.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Blake’s vision of the creation of man, known as Elohim Creating Adam, is a strong contrast to Michelangelo’s. The faces of both God and Adam show deep anguish. The image is closer to representations of Prometheus receiving his punishment for sharing his knowledge of fire than to the languid ecstasy we see in Michelangelo’s representation.</p>
+<div class="figure">
+<div id="elohim-creating-adam-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-elohim-creating-adam.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="elohim-creating-adam-magnify" class="magnify" onclick="magnifyFigure(&#39;elohim-creating-adam&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="elohim-creating-adam-caption" class="caption-frame">
+<p>Figure: William Blake’s <em>Elohim Creating Adam</em>.</p>
+</div>
+</div>
+<p>The caption in the Tate reads:</p>
+<blockquote>
+<p>Elohim is a Hebrew name for God. This picture illustrates the Book of Genesis: ‘And the Lord God formed man of the dust of the ground.’ Adam is shown growing out of the earth, a piece of which Elohim holds in his left hand.</p>
+<p>For Blake the God of the Old Testament was a false god. He believed the Fall of Man took place not in the Garden of Eden, but at the time of creation shown here, when man was dragged from the spiritual realm and made material.</p>
+<p>From the <a href="https://www.tate.org.uk/art/artworks/blake-elohim-creating-adam-n05055">Tate Britain</a></p>
+</blockquote>
+<p>Blake’s vision is demonstrating the frustrations we experience when the (complex) real world doesn’t manifest in the way we’d hoped.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Blake, William <em>Elohim Creating Adam</em> p. 121, 217–18.</p>
+<p>We communicate with each other through shared cultural reference points: stories, rituals, and artefacts. Great artworks are not just decoration: they are <em>compressed</em> cultural objects that can carry meaning across centuries.</p>
+<p>The Sistine Chapel becomes a kind of public interface: a shared “model” that people can point at, interpret, dispute, and transmit. In that sense, the artwork itself is part of the communication system.</p>
+<div class="figure">
+<div id="blake-michelangelo-figure" class="figure-frame">
+<center>
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-the-creation-of-man-adam-detail.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/michelangelo-lunette-rehoboam-abijah-detail.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+<div class="lamd-columns" style="display:flex; width:100%; justify-content:center; align-items:center; column-gap:1em;">
+<div style="flex:0 0 30%; max-width:30%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-newton.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div style="flex:0 0 30%; max-width:30%;">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//art/blake-elohim-creating-adam-detail.jpg" width="100%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+</div>
+</center>
+</div>
+<div id="blake-michelangelo-magnify" class="magnify" onclick="magnifyFigure(&#39;blake-michelangelo&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="blake-michelangelo-caption" class="caption-frame">
+<p>Figure: The creation of Adam and the Lunette of Abijah come to gether to influence Blake’s version of Newton, yet his view of creation is very different from Michelangelo’s.</p>
+</div>
+</div>
+<p>What’s striking here is how influence works: a pose moves from a Michelangelo lunette into Blake’s <em>Newton</em>; a creation narrative is reinterpreted as anguish in <em>Elohim Creating Adam</em>. These are “links” in a human communication network.</p>
+<p>Human communication is not only words passed between individuals. We also communicate through <em>shared artefacts</em> — images, stories, rituals, institutions — that act as a common reference frame. These artefacts stabilise meaning because they persist, they can be revisited, and they can be interpreted together.</p>
+<p>This version of the “human culture interacting” diagram grounds the idea in a concrete chain: the Sistine Chapel as a shared cultural object; Michelangelo’s figures as a visual vocabulary; Blake’s <em>Newton</em> borrowing a pose from a lunette; and Blake’s <em>Elohim Creating Adam</em> reinterpreting the creation narrative. In other words: a human communication network made of artefacts.</p>
+<div class="figure">
+<div id="human-culture-interacting-blake-michelangelo-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//ai/human-culture-interacting-blake-michelangelo.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="human-culture-interacting-blake-michelangelo-magnify" class="magnify" onclick="magnifyFigure(&#39;human-culture-interacting-blake-michelangelo&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="human-culture-interacting-blake-michelangelo-caption" class="caption-frame">
+<p>Figure: Humans use culture, facts and artefacts to communicate.</p>
+</div>
+</div>
+<h3 id="a-six-word-novel">A Six Word Novel</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/baby-shoes.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/baby-shoes.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="classic-baby-shoes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//Classic_baby_shoes.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="classic-baby-shoes-magnify" class="magnify" onclick="magnifyFigure(&#39;classic-baby-shoes&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="classic-baby-shoes-caption" class="caption-frame">
+<p>Figure: Consider the six-word novel, apocryphally credited to Ernest Hemingway, “For sale: baby shoes, never worn.” To understand what that means to a human, you need a great deal of additional context. Context that is not directly accessible to a machine that has not got both the evolved and contextual understanding of our own condition to realize both the implication of the advert and what that implication means emotionally to the previous owner.</p>
+</div>
+</div>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> baby shoes p. 368.</p>
+<p>But this is a very different kind of intelligence than ours. A computer cannot understand the depth of the Ernest Hemingway’s apocryphal six-word novel: “For Sale, Baby Shoes, Never worn,” because it isn’t equipped with that ability to model the complexity of humanity that underlies that statement.</p>
+<div class="figure">
+<div id="trick-doesnt-replace-truth-scribeysense-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//atomic-human/Atomic_H_4_Persistence.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="trick-doesnt-replace-truth-scribeysense-magnify" class="magnify" onclick="magnifyFigure(&#39;trick-doesnt-replace-truth-scribeysense&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="trick-doesnt-replace-truth-scribeysense-caption" class="caption-frame">
+<p>Figure: This is the drawing Dan was inspired to create for Chapter 4. It highlights how even if these machines can generate creative works the lack of origin in humans menas it is not the same as works of art that come to us through history.</p>
+</div>
+</div>
+<p>See blog post on <a href="http://the-atomic-human.ai//reflections/art-is-human/">Art is Human</a>..</p>
+<p>For the Working Group for the <a href="https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-report.pdf">Royal Society report on Machine Learning</a>, back in 2016, the group <a href="https://royalsociety.org/~/media/policy/projects/machine-learning/publications/public-views-of-machine-learning-ipsos-mori.pdf">worked with Ipsos MORI to engage in public dialogue around the technology</a>. Ever since I’ve been struck about how much more sensible the conversations that emerge from public dialogue are than the breathless drivel that seems to emerge from supposedly more informed individuals.</p>
+<p>There were a number of messages that emerged from those dialogues, and many of those messages were reinforced in <a href="https://ai.cam.ac.uk/blog/using-ai-for-public-benefit-insights-from-our-public-dialogues-on-ai-and-the-missions-for-government">two further public dialogues we organised in September</a>.</p>
+<p>However, there was one area we asked about in 2017, but we didn’t ask about in 2024. That was an area where the public unequivocal that they didn’t want the research community to pursue progress. Quoting from the report (my emphasis).</p>
+<blockquote>
+<p><strong>Art</strong>: Participants failed to see the purpose of machine learning-written poetry. For all the other case studies, participants recognised that a machine might be able to do a better job than a human. However, they did not think this would be the case when creating art, as doing so was considered to be a fundamentally human activity <em>that machines could only mimic at best</em>.</p>
+<p>Public Views of Machine Learning, April, 2017</p>
+</blockquote>
+<p>How right they were.</p>
 <!-- ============================================================ -->
-<!-- EXERCISE 1: MAPPING ORGANIZATIONAL INFORMATION FLOWS -->
+<!-- EXERCISE 1: MAPPING ORGANISATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 <!-- TIMING: 10:45 -->
 <h1 id="exercise-1-mapping-your-organisations-information-flows">Exercise 1: Mapping Your Organisation’s Information Flows</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p><strong>Time: 10:45-11:15 (20 min group work + 10 min plenary)</strong> - Apply the concepts to real organisational contexts.</p>
 <p><strong>Exercise Instructions:</strong></p>
-<p>Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization).</p>
+<p>Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organisation).</p>
 <ol type="1">
 <li><p><strong>Information Sources</strong>: Where does critical information originate in your organisation?</p></li>
 <li><p><strong>Key Decision Points</strong>: Where are the most important decisions made? How are they informed?</p></li>
@@ -461,7 +675,7 @@ embodiment
 <!-- TIMING: 11:45 -->
 <h1 id="part-2-information-topography-and-decision-making">Part 2: Information Topography and Decision Making</h1>
 <p><strong>Time: 11:45-12:30 (45 min lecture)</strong> - We’ll explore how AI changes organisational information landscapes and decision-making structures.</p>
-<h2 id="the-information-revolution-in-organizations">The Information Revolution in Organizations</h2>
+<h2 id="the-information-revolution-in-organisations">The Information Revolution in Organisations</h2>
 <h2 id="new-flow-of-information">New Flow of Information</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -481,8 +695,8 @@ embodiment
 </div>
 <p>Data science brings new challenges. In particular, there is a very large bandwidth connection between the machine and data. This means that our relationship with data is now commonly being mediated by the machine. Whether this is in the acquisition of new data, which now happens by happenstance rather than with purpose, or the interpretation of that data where we are increasingly relying on machines to summarize what the data contains. This is leading to the emerging field of data science, which must not only deal with the same challenges that mathematical statistics faced in tempering our tendency to over interpret data but must also deal with the possibility that the machine has either inadvertently or maliciously misrepresented the underlying data.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> topography, information p. 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> anthropomorphization (‘anthrox’) p. 30-31, 90-91, 93-4, 100, 132, 148, 153, 163, 216-17, 239, 276, 326, 342.</p>
-<p>In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organizational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.</p>
-<h2 id="the-evolution-of-organizational-decision-making">The Evolution of Organizational Decision Making</h2>
+<p>In an AI-augmented organisation, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.</p>
+<h2 id="the-evolution-of-organisational-decision-making">The Evolution of Organisational Decision Making</h2>
 <h2 id="networked-interactions">Networked Interactions</h2>
 <p>Our modern society intertwines the machine with human interactions. The key question is who has control over these interfaces between humans and machines.</p>
 <div class="figure">
@@ -523,7 +737,7 @@ embodiment
 </blockquote>
 <p>Amazon is set up around the notion of the “two pizza team.” Teams of 6-10 people that can be theoretically fed by two (American) pizzas. This structure is tightly interconnected with the software. Each of these teams owns one of these “services.” Amazon is strict about the team that develops the service <em>owning</em> the service in production. This approach is the secret to their scale as a company, and the approach has been adopted by many other large tech companies. The software-as-a-service approach changed the <em>information infrastructure</em> of the company. The routes through which information is shared. This had a knock-on effect on the corporate culture.</p>
 <p>Amazon works through an approach I think of as “devolved autonomy.” The culture of the company is widely taught (e.g. Customer Obsession, Ownership, Frugality), a team’s inputs and outputs are strictly defined, but within those parameters, teams have a great of autonomy in how they operate. The information infrastructure was devolved, so the autonomy was devolved. The different parts of Amazon are then bound together through shared corporate culture.</p>
-<p>The way decisions are made in organizations is fundamentally changing. This means rethinking how we balance centralized control with devolved authority, especially in areas like strategy, risk assessment, and customer service.</p>
+<p>The way decisions are made in organisations is fundamentally changing. This means rethinking how we balance centralised control with devolved authority, especially in areas like strategy, risk assessment, and customer service.</p>
 <h2 id="understanding-information-topography">Understanding Information Topography</h2>
 <h2 id="an-attention-economy">An Attention Economy</h2>
 <div style="text-align:right">
@@ -563,7 +777,7 @@ embodiment
 <p>Trust is not a slogan; it is the infrastructure that allows autonomy to be devolved without losing control. Autonomy is always conditional: it depends on what information is available, what incentives shape behaviour, and whether escalation and accountability are real. In executive settings, the practical question is: where do we allow delegation (to people or machines), and where do we insist on human judgement and responsibility?</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> trust p. 43, 79, 100. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> embodiment factor p. 13, 29, 35, 79, 87, 105, 197, 216-217, 249, 269, 327, 353, 363, 369. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> topography, information p. 34-9, 43-8, 57, 62, 104, 115-16, 127, 140, 192, 196, 199, 291, 334, 354-5.</p>
 <p>See blog post on <a href="http://the-atomic-human.ai//images/dan-andrews-chapter-3/">Dan Andrews image from Chapter 3</a>..</p>
-<p>AI fundamentally changes the information topography of organizations - the landscape of who knows what, when, and how. Understanding this new landscape is crucial for strategic decision-making.</p>
+<p>AI changes the information topography of organisations and society - the information topography is the landscape of who knows what, when, and how. Understanding this new landscape is crucial for strategic decision-making.</p>
 <h2 id="balancing-centralised-control-with-devolved-authority">Balancing Centralised Control with Devolved Authority</h2>
 <h2 id="question-mark-emails">Question Mark Emails</h2>
 <div style="text-align:right">
@@ -593,8 +807,8 @@ embodiment
 <h2 id="pathfinder-projects">Pathfinder Projects</h2>
 <p>I do exec education courses for the Judge Business School. One of my main recommendations there is that a project is developed that directly involves the CEO, the CFO and the CIO (or CDO, CTO … whichever the appropriate role is) and operates on some aspect of critical importance for the business.</p>
 <p>The inclusion of the CFO is critical for two purposes. Firstly, financial data is one of the few sources of data that tends to be of high quality and availability in any organisation. This is because it is one of the few forms of data that is regularly audited. This means that such a project will have a good chance of success. Secondly, if the CFO is bought in to these technologies, and capable of understanding their strengths and weaknesses, then that will facilitate the funding of future projects.</p>
-<p>In the DELVE data report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span>, we translated this recommendation into that of “pathfinder projects.” Projects that cut across departments, and involve treasury. Although I appreciate the nuances of the relationship between Treasury and No 10 do not map precisely onto that of CEO and CFO in a normal business. However, the importance of cross cutting exemplar projects that have the close attention of the executive remains.</p>
-<p>This balance is particularly critical for modern organizations. You need centralized oversight for strategic alignment and risk management, but you also need devolved decision-making for agility and innovation. AI can help achieve both, but only if properly designed.</p>
+<p>In the DELVE data report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020)</span>, we translated this recommendation into that of “pathfinder projects.” Projects that cut across departments, and involve treasury. Although I appreciate the nuances of the relationship between Treasury and No 10 do not map precisely onto that of CEO and CFO in a normal business. However, the importance of cross cutting exemplar projects that have the close attention of the executive remains.</p>
+<p>This balance is particularly critical for modern organisations. You need centralised oversight for strategic alignment and risk management, but you also need devolved decision-making for agility and innovation. AI can help achieve both, but only if properly designed.</p>
 <h2 id="generative-ai-as-human-analogue-machines">Generative AI as Human-Analogue Machines</h2>
 <h2 id="the-moniac">The MONIAC</h2>
 <div style="text-align:right">
@@ -615,27 +829,207 @@ embodiment
 </div>
 </div>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> MONIAC p. 232-233, 266, 343.</p>
-<h2 id="human-analogue-machine">Human Analogue Machine</h2>
+<h2 id="donald-mackay">Donald MacKay</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/processor-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/donald-mackay-brain.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Recent breakthroughs in generative models, particularly large language models, have enabled machines that, for the first time, can converse plausibly with other humans.</p>
-<p>The Apollo guidance computer provided Armstrong with an analogy when he landed it on the Moon. He controlled it through a stick which provided him with an analogy. The analogy is based in the experience that Amelia Earhart had when she flew her plane. Armstrong’s control exploited his experience as a test pilot flying planes that had control columns which were directly connected to their control surfaces.</p>
 <div class="figure">
-<div id="human-analogue-machine-2-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.svg" width="40%" style=" ">
-</object>
+<div id="donald-maccrimmon-mackay-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//people/DonaldMacKay1952.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
-<div id="human-analogue-machine-2-magnify" class="magnify" onclick="magnifyFigure(&#39;human-analogue-machine-2&#39;)">
+</div>
+<div id="donald-maccrimmon-mackay-magnify" class="magnify" onclick="magnifyFigure(&#39;donald-maccrimmon-mackay&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="human-analogue-machine-2-caption" class="caption-frame">
-<p>Figure: The human analogue machine is the new interface that large language models have enabled the human to present. It has the capabilities of the computer in terms of communication, but it appears to present a “human face” to the user in terms of its ability to communicate on our terms. (Image quite obviously <em>not</em> drawn by generative AI!)</p>
+<div id="donald-maccrimmon-mackay-caption" class="caption-frame">
+<p>Figure: Donald M. MacKay (1922-1987), a physicist who was an early member of the cybernetics community and member of the Ratio Club.</p>
 </div>
 </div>
-<p>The generative systems we have produced do not provide us with the “AI” of science fiction. Because their intelligence is based on emulating human knowledge. Through being forced to reproduce our literature and our art they have developed aspects which are analogous to the cultural proxy truths we use to describe our world.</p>
-<p>These machines are to humans what the MONIAC was the British economy. Not a replacement, but an analogue computer that captures some aspects of humanity while providing advantages of high bandwidth of the machine.</p>
-<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> ignorance: HAMs p. 347. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> test pilot p. 163-8, 189, 190, 192-3, 196, 197, 200, 211, 245.</p>
+<p>Donald MacKay was a physicist who worked on naval gun targeting during the Second World War. The challenge with gun targeting for ships is that both the target and the gun platform are moving. This was tackled using analogue computers - for example, in the US the <a href="https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer">Mark I fire control computer</a>, which was a mechanical computer. MacKay worked on radar systems for gun laying, where the velocity and distance of the target could be assessed through radar and a mechanical-electrical analogue computer.</p>
+<h2 id="fire-control-systems">Fire Control Systems</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/fire-control-systems.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Naval gunnery systems deal with targeting guns while taking into account movement of ships. The Royal Navy’s Gunnery Pocket Book <span class="citation" data-cites="Admiralty-gunnery45">(The Admiralty, 1945)</span> gives details of one system for gun laying.</p>
+<p>Like many challenges we face today, in the second world war, fire control was handled by a hybrid system of humans and computers. This means deploying human beings for the tasks that they can manage, and machines for the tasks that are better performed by a machine. This leads to a division of labour between the machine and the human that can still be found in our modern digital ecosystems.</p>
+<div class="figure">
+<div id="low-angle-fire-control-team-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/low-angle-fire-control-team.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="low-angle-fire-control-team-magnify" class="magnify" onclick="magnifyFigure(&#39;low-angle-fire-control-team&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="low-angle-fire-control-team-caption" class="caption-frame">
+<p>Figure: The fire control computer set at the centre of a system of observation and tracking <span class="citation" data-cites="Admiralty-gunnery45">(The Admiralty, 1945)</span>.</p>
+</div>
+</div>
+<p>As analogue computers, fire control computers from the second world war would contain components that directly represented the different variables that were important in the problem to be solved, such as the inclination between two ships.</p>
+<div class="figure">
+<div id="the-measurement-of-inclination-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/the-measurement-of-inclination.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="the-measurement-of-inclination-magnify" class="magnify" onclick="magnifyFigure(&#39;the-measurement-of-inclination&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="the-measurement-of-inclination-caption" class="caption-frame">
+<p>Figure: Measuring inclination between two ships <span class="citation" data-cites="Admiralty-gunnery45">(The Admiralty, 1945)</span>. Sophisticated fire control computers allowed the ship to continue to fire while under maneuvers.</p>
+</div>
+</div>
+<p>The fire control systems were electro-mechanical analogue computers that represented the “state variables” of interest, such as inclination and ship speed with gears and cams within the machine.</p>
+<div class="figure">
+<div id="typical-modern-fire-control-table-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/typical-modern-fire-control-table.jpg" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="typical-modern-fire-control-table-magnify" class="magnify" onclick="magnifyFigure(&#39;typical-modern-fire-control-table&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="typical-modern-fire-control-table-caption" class="caption-frame">
+<p>Figure: A second world war gun computer’s control table <span class="citation" data-cites="Admiralty-gunnery45">(The Admiralty, 1945)</span>.</p>
+</div>
+</div>
+<p>For more details on fire control computers, you can watch a 1953 film on the the US the <a href="https://en.wikipedia.org/wiki/Mark_I_Fire_Control_Computer">Mark IA fire control computer</a> from Periscope Film.</p>
+<div class="figure">
+<div id="us-navy-training-film-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/gwf5mAlI7Ug?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="us-navy-training-film-magnify" class="magnify" onclick="magnifyFigure(&#39;us-navy-training-film&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="us-navy-training-film-caption" class="caption-frame">
+<p>Figure: U.S. Navy training film MN-6783a. Basic Mechanisms of Fire Control Computers. Mechanical Computer Instructional Film 27794 (1953) for the Mk 1A Fire Control Computer.</p>
+</div>
+</div>
+<h2 id="behind-the-eye">Behind the Eye</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/behind-the-eye.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="behind-the-eye-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//books/behind-the-eye.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="behind-the-eye-magnify" class="magnify" onclick="magnifyFigure(&#39;behind-the-eye&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="behind-the-eye-caption" class="caption-frame">
+<p>Figure: <a href="https://www.amazon.co.uk/Behind-Eye-Gifford-Lectures-MACKAY/dp/0631173323">Behind the Eye</a> <span class="citation" data-cites="Mackay-behind91">(MacKay, 1991)</span> summarises MacKay’s Gifford Lectures, where MacKay uses the operation of the eye as a window on the operation of the brain.</p>
+</div>
+</div>
+<p>Donald MacKay completed his PhD at King’s College, just down the road from Bill Phillips who was building the MONIAC at LSE. He was part of the Ratio Club - a group of early career scientists interested in communication and control in animals and humans, or more specifically in computers and brains. They were part of an international movement known as cybernetics .</p>
+<p>Donald MacKay wrote of the influence that his own work on radar had on his interest in the brain.</p>
+<blockquote>
+<p>… during the war I had worked on the theory of automated and electronic computing and on the theory of information, all of which are highly relevant to such things as automatic pilots and automatic gun direction. I found myself grappling with problems in the design of artificial sense organs for naval gun-directors and with the principles on which electronic circuits could be used to simulate situations in the external world so as to provide goal-directed guidance for ships, aircraft, missiles and the like.</p>
+</blockquote>
+<blockquote>
+<p>Later in the 1940’s, when I was doing my Ph.D. work, there was much talk of the brain as a computer and of the early digital computers that were just making the headlines as “electronic brains.” As an analogue computer man I felt strongly convinced that the brain, whatever it was, was not a digital computer. I didn’t think it was an analogue computer either in the conventional sense.</p>
+</blockquote>
+<blockquote>
+<p>But this naturally rubbed under my skin the question: well, if it is not either of these, what kind of system is it? Is there any way of following through the kind of analysis that is appropriate to their artificial automata so as to understand better the kind of system the human brain is? That was the beginning of my slippery slope into brain research.</p>
+<p><em>Behind the Eye</em> pg 40. Edited version of the 1986 Gifford Lectures given by Donald M. MacKay and edited by Valerie MacKay</p>
+</blockquote>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> MacKay, Donald, <em>Behind the Eye</em> p. 268-270, 316.</p>
+<p>MacKay’s distinction between <em>analogue</em> and <em>digital</em> computers is key. As an expert in analogue machines, he understood that an analogue computer is <em>literally</em> an analogue - its components (resistors, capacitors, inductors, or mechanical parts like cams and gears) have states that are physically analogous to the states in system being modeled. Engineers designed these computers by exploiting mathematical dualities between the computer and the real world. For example a mechanical system (mass-spring-damper) and electrical circuit (inductor-resistor-capacitor) could be described by the same second-order differential equations, allowing designers to map real-world problems through mathematics into virtual representations.</p>
+<p>MacKay’s insights remain relevant when considering modern AI systems. His questioning of whether the brain was truly digital or analogue might parallel current debates about large language models like Claude and ChatGPT, which seem to operate in ways that don’t neatly fit either paradigm. His work reminds us that understanding the fundamental nature of intelligent systems - whether biological or artificial - requires looking beyond simple categorizations.</p>
+<h2 id="human-analogue-machine">Human Analogue Machine</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/human-analogue-machines-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The machine learning systems we have built today that can reconstruct human text, or human classification of images, necessarily must have some aspects to them that are analagous to our understanding. As MacKay suggests the brain is neither a digital or an analogue computer, and the same can be said of the modern neural network systems that are being tagged as “artificial intelligence.”</p>
+<p>I believe a better term for them is “human-analogue machines,” because what we have built is not a system that can make intelligent decisions from first principles (a rational approach) but one that observes how humans have made decisions through our data and reconstructs that process. Machine learning is more empiricist than rational, but now we have an empirical approach that distils our evolved intelligence.</p>
+<p>HAMs are not representing states of the outside world with analogous states inside the machine, they are also not (directly) processing digital states through logic gates to draw their conclusions (although they are implemented on digital computers that do this to enable them to update).</p>
+<div class="figure">
+<div id="human-analogue-machine-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="human-analogue-machine-magnify" class="magnify" onclick="magnifyFigure(&#39;human-analogue-machine&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="human-analogue-machine-caption" class="caption-frame">
+<p>Figure: The human analogue machine creates a feature space which is analagous to that we use to reason, one way of doing this is to have a machine attempt to compress all human generated text in an auto-regressive manner.</p>
+</div>
+</div>
+<h3 id="heider-and-simmel-1944">Heider and Simmel (1944)</h3>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/heider-simmel.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="heider-simmel-shapes-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/8FIEZXMUM2I?start=7" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="heider-simmel-shapes-magnify" class="magnify" onclick="magnifyFigure(&#39;heider-simmel-shapes&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="heider-simmel-shapes-caption" class="caption-frame">
+<p>Figure: Fritz Heider and Marianne Simmel’s video of shapes from <span class="citation" data-cites="Heider-experimental44">Heider and Simmel (1944)</span>.</p>
+</div>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a> and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne Simmel</a>’s experiments with animated shapes from 1944 <span class="citation" data-cites="Heider-experimental44">(Heider and Simmel, 1944)</span>. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathize. At one level, these are crudely drawn objects, but in another way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes to interpret their actions [Heider-interpersonal58].</p>
+<p>See also a recent review paper on Human Cooperation by <span class="citation" data-cites="Joseph-origins21">Henrich and Muthukrishna (2021)</span>. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> psychological representation p. 326–329, 344–345, 353, 361, 367.</p>
+<p>The perils of developing this capability include counterfeit people, a notion that the philosopher <a href="https://www.theatlantic.com/technology/archive/2023/05/problem-counterfeit-people/674075/">Daniel Dennett has described in <em>The Atlantic</em></a>. This is where computers can represent themselves as human and fool people into doing things on that basis.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> human-analogue machine p. 343–5, 346–7, 358–9, 365–8.</p>
+<h2 id="llm-conversations">LLM Conversations</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/conversation-llm.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="anne-llm-conversation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/anne-llm-conversation.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="anne-llm-conversation-magnify" class="magnify" onclick="magnifyFigure(&#39;anne-llm-conversation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anne-llm-conversation-caption" class="caption-frame">
+<p>Figure: The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor’s fallacy.</p>
+</div>
+</div>
+<div class="figure">
+<div id="ai-for-data-analytics-figure" class="figure-frame">
+<iframe width="600" height="450" src="https://www.youtube.com/embed/0sJjdxn5kcI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+</div>
+<div id="ai-for-data-analytics-magnify" class="magnify" onclick="magnifyFigure(&#39;ai-for-data-analytics&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="ai-for-data-analytics-caption" class="caption-frame">
+<p>Figure: The Inner Monologue paper suggests using LLMs for robotic planning <span class="citation" data-cites="Huang-inner22">(Huang et al., 2023)</span>.</p>
+</div>
+</div>
+<p>By interacting directly with machines that have an understanding of human cultural context, it should be possible to share the nature of uncertainty in the same way humans do. See for example the paper <a href="https://innermonologue.github.io/">Inner Monologue: Embodied Reasoning through Planning</a> <span class="citation" data-cites="Huang-inner22">Huang et al. (2023)</span>.</p>
+<h2 id="intellectual-debt">Intellectual Debt</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-blog-post.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-blog-post.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/2020-02-12-intellectual-debt.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="intellectual-debt-magnify" class="magnify" onclick="magnifyFigure(&#39;intellectual-debt&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="intellectual-debt-caption" class="caption-frame">
+<p>Figure: Jonathan Zittrain’s term to describe the challenges of explanation that come with AI is Intellectual Debt.</p>
+</div>
+</div>
+<p>In the context of machine learning and complex systems, Jonathan Zittrain has coined the term <a href="https://medium.com/berkman-klein-center/from-technical-debt-to-intellectual-debt-in-ai-e05ac56a502c">“Intellectual Debt”</a> to describe the challenge of understanding what you’ve created. In <a href="https://mlatcl.github.io/projects/data-oriented-architectures-for-ai-based-systems.html">the ML@CL group we’ve been foucssing on developing the notion of a <em>data-oriented architecture</em></a> to deal with intellectual debt <span class="citation" data-cites="Cabrera-realworld23">(Cabrera et al., 2023)</span>.</p>
+<p>Zittrain points out the challenge around the lack of interpretability of individual ML models as the origin of intellectual debt. In machine learning I refer to work in this area as fairness, interpretability and transparency or FIT models. To an extent I agree with Zittrain, but if we understand the context and purpose of the decision making, I believe this is readily put right by the correct monitoring and retraining regime around the model. A concept I refer to as “progression testing.” Indeed, the best teams do this at the moment, and their failure to do it feels more of a matter of technical debt rather than intellectual, because arguably it is a maintenance task rather than an explanation task. After all, we have good statistical tools for interpreting individual models and decisions when we have the context. We can linearise around the operating point, we can perform counterfactual tests on the model. We can build empirical validation sets that explore fairness or accuracy of the model.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> intellectual debt p. 84, 85, 349, 365.</p>
+<p>But if we can avoid the pitfalls of counterfeit people, this also offers us an opportunity to <em>psychologically represent</em> <span class="citation" data-cites="Heider-interpersonal58">(Heider, 1958)</span> the machine in a manner where humans can communicate without special training. This in turn offers the opportunity to overcome the challenge of <em>intellectual debt</em>.</p>
+<p>Despite the lack of interpretability of machine learning models, they allow us access to what the machine is doing in a way that bypasses many of the traditional techniques developed in statistics. But understanding this new route for access is a major new challenge.</p>
 <h2 id="ham">HAM</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/new-flow-of-information-ham.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -668,13 +1062,91 @@ embodiment
 </div>
 <p>Of course this route provides new routes for manipulation, new ways in which the machine can undermine our autonomy or exploit our cognitive foibles. The major challenge we face is steering between these worlds where we gain the advantage of the computer’s bandwidth without undermining our culture and individual autonomy.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> human-analogue machine (HAMs) p. 343-347, 359-359, 365-368.</p>
-<p>Generative AI provides organizations with what I call “Human-Analogue Machines” (HAMs) - systems that can process and generate information at scales far beyond human capacity, but that still require human oversight and judgment for critical decisions.</p>
-<p>The challenge for business leaders is that we know our current approaches to AI implementation are likely insufficient, but we don’t yet know exactly how they’re insufficient. This requires experimentation and adaptive strategy rather than rigid planning.</p>
+<p>The new challenge for business leaders is that we know our current approaches to digital systems are totally inappropriate, but we don’t yet know exactly how they’re insufficient. This requires experimentation and adaptive strategy rather than rigid planning.</p>
+<h2 id="bandwidth-vs-complexity">Bandwidth vs Complexity</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/bandwidth-vs-complexity.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/bandwidth-vs-complexity.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The computer communicates in Gigabits per second, One way of imagining just how much slower we are than the machine is to look for something that communicates in nanobits per second.</p>
+<div class="figure">
+<div id="communication-rates-ecology-human-computer-figure" class="figure-frame">
+<table>
+<tr>
+<td>
+</td>
+<td align="center">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/the-earth-seen-from-apollo-17.jpg" width="30%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</td>
+<td align="center">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//human.svg" width="60%" style=" ">
+</object>
+</td>
+<td align="center">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor.svg" width="15%" style=" ">
+</object>
+</td>
+</tr>
+<tr>
+<td>
+bits/min
+</td>
+<td align="center">
+<span class="math inline">\(100 \times 10^{-9}\)</span>
+</td>
+<td align="center">
+<span class="math inline">\(2,000\)</span>
+</td>
+<td align="center">
+<span class="math inline">\(600 \times 10^9\)</span>
+</td>
+</tr>
+</table>
+</div>
+<div id="communication-rates-ecology-human-computer-magnify" class="magnify" onclick="magnifyFigure(&#39;communication-rates-ecology-human-computer&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="communication-rates-ecology-human-computer-caption" class="caption-frame">
+<p>Figure: When we look at communication rates based on the information passing from one human to another across generations through their genetics, we see that computers watching us communicate is roughly equivalent to us watching organisms evolve. Estimates of germline mutation rates taken from <span class="citation" data-cites="Scally-mutation16">Scally (2016)</span>.</p>
+</div>
+</div>
+<div class="figure">
+<div id="bandwidth-vs-complexity-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//ai/bandwidth-vs-complexity.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="bandwidth-vs-complexity-magnify" class="magnify" onclick="magnifyFigure(&#39;bandwidth-vs-complexity&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="bandwidth-vs-complexity-caption" class="caption-frame">
+<p>Figure: Bandwidth vs Complexity.</p>
+</div>
+</div>
+<p>The challenge we face is that while speed is on the side of the machine, complexity is on the side of our ecology. Many of the risks we face are associated with the way our speed undermines our ecology and the machines speed undermines our human culture.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Human evolution rates p. 98-99. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Psychological representation of Ecologies p. 323-327.</p>
+<div class="figure">
+<div id="nothing-to-worry-about-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//atomic-human/Atomic_H_12_Trust.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="nothing-to-worry-about-magnify" class="magnify" onclick="magnifyFigure(&#39;nothing-to-worry-about&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="nothing-to-worry-about-caption" class="caption-frame">
+<p>Figure: This is the drawing Dan was inspired to create for Chapter 12. It captures the challenge the analogy where the speed of information assimilation associated with machines is related to the speed assimilation associated with humans.</p>
+</div>
+</div>
+<p>See blog post on <a href="http://the-atomic-human.ai//reflections/facebook-ai-lab-launch/">the launch of Facebook’s AI lab</a>..</p>
 <!-- ============================================================ -->
 <!-- EXERCISE 2: SWOT ANALYSIS FOR AI TRANSFORMATION -->
 <!-- ============================================================ -->
 <!-- TIMING: 12:30 -->
 <h1 id="exercise-2-swot-analysis-for-ai-transformation">Exercise 2: SWOT Analysis for AI Transformation</h1>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
 <p><strong>Time: 12:30-13:00 (20 min group work + 10 min plenary)</strong> - Analyse your institution’s position for AI adoption.</p>
 <p><strong>Exercise Instructions:</strong></p>
 <p>Each group should select ONE type of institution to analyze. Choose from:</p>
@@ -807,6 +1279,48 @@ embodiment
 <p>Figure: For a longer talk on inattentional bias from Daniel Simons see this video.</p>
 </div>
 </div>
+<h2 id="setup">Setup</h2>
+<!--setupplotcode{import seaborn as sns
+sns.set_style('darkgrid')
+sns.set_context('paper')
+sns.set_palette('colorblind')}-->
+<h2 id="notutils">notutils</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/notutils-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>This small package is a helper package for various notebook utilities used below.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> importlib.util</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/notutils" class="uri">https://github.com/lawrennd/notutils</a></p>
+<p>Once <code>notutils</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> notutils</span></code></pre></div>
+<h2 id="pods">pods</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/pods-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In Sheffield we created a suite of software tools for ‘Open Data Science.’ Open data science is an approach to sharing code, models and data that should make it easier for companies, health professionals and scientists to gain access to data science techniques.</p>
+<p>You can also check this blog post on <a href="http://inverseprobability.com/2014/07/01/open-data-science">Open Data Science</a>.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;pods&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/ods" class="uri">https://github.com/lawrennd/ods</a></p>
+<p>Once <code>pods</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pods</span></code></pre></div>
+<h2 id="mlai">mlai</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/mlai-software.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The <code>mlai</code> software is a suite of helper functions for teaching and demonstrating machine learning algorithms. It was first used in the Machine Learning and Adaptive Intelligence course in Sheffield in 2013.</p>
+<p>The software can be installed using</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cmd <span class="op">=</span> install_command(<span class="st">&#39;mlai&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>system {cmd}</span></code></pre></div>
+<p>from the command prompt where you can access your python installation.</p>
+<p>The code is also available on GitHub: <a href="https://github.com/lawrennd/mlai" class="uri">https://github.com/lawrennd/mlai</a></p>
+<p>Once <code>mlai</code> is installed, it can be imported in the usual manner.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mlai <span class="im">import</span> plot</span></code></pre></div>
 <h2 id="data-selective-attention-bias">Data Selective Attention Bias</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_data-science/includes/data-selection-attention-bias.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_data-science/includes/data-selection-attention-bias.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1005,82 +1519,50 @@ Diane Coyle
 <p>The domain of human judgment is increasing.</p>
 <p>How these firms use knowledge. How do they generate ideas?</p>
 </blockquote>
-<h1 id="case-study-face-masks">Case Study: Face Masks</h1>
+<h2 id="technical-debt">Technical Debt</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/face-masks-case-study.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/face-masks-case-study.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-short.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-short.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<h2 id="delve-overview">DELVE Overview</h2>
+<p>In computer systems the concept of <em>technical debt</em> has been surfaced by authors including <span class="citation" data-cites="Sculley:debt15">Sculley et al. (2015)</span>. It is an important concept, that I think is somewhat hidden from the academic community, because it is a phenomenon that occurs when a computer software system is deployed.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> intellectual debt p. 84-85, 349, 365, 376.</p>
+<h2 id="lean-startup-methodology">Lean Startup Methodology</h2>
+<p>In technology, there is the notion of a “minimum viable product” (MVP). Sometimes called “minimum loveable product” (MLP). A minimum viable product is the smallest thing that you need to ship to test your commercial idea. There is a methodology known as the “lean start-up” methodology, where you use the least effort to create your machine learning model is deployed.</p>
+<p>The idea is that you should build the quickest thing possible to test your market and see if your idea works. Only when you know your idea is working should you invest more time and personnel in the software.</p>
+<p>Unfortunately, there is a tension between deploying quickly and deploying a maintainable system. To build an MVP you deploy quickly, but if the system is successful you take a ‘maintenance hit’ in the future because you’ve not invested early in the right maintainable design for your system.</p>
+<p>You save on engineer time at the beginning, but you pay it back with high interest when you need a much higher operations load once the system is deployed.</p>
+<p>The notion of the Sculley paper is that there are particular challenges for machine learning models around technical debt.</p>
+<h2 id="the-mythical-man-month">The Mythical Man-month</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-overview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-overview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/mythical-man-month.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/mythical-man-month.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The DELVE Initiative was convened by the Royal Society early in the pandemic in response for a perceived need to increase provide policy advice for the UK’s response to covide, with an initial focus on exit strategy from the first lock down.</p>
 <div class="figure">
-<div id="delve-announcement-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//delve/rs-delve-announcement.png" width="70%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="intellectual-debt-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/Mythical_man-month_(book_cover).jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="delve-announcement-magnify" class="magnify" onclick="magnifyFigure(&#39;delve-announcement&#39;)">
+<div id="intellectual-debt-magnify" class="magnify" onclick="magnifyFigure(&#39;intellectual-debt&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="delve-announcement-caption" class="caption-frame">
-<p>Figure: The Royal Society announces the DELVE group to tackle the COVID-19 crisis. <a href="https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/" class="uri">https://royalsociety.org/news/2020/04/royal-society-convenes-data-analytics-group-to-tackle-COVID-19/</a>.</p>
+<div id="intellectual-debt-caption" class="caption-frame">
+<p>Figure: The Mythical Man-month <span class="citation" data-cites="Brooks-mythical75">(Brooks, n.d.)</span> is a 1975 book focussed on the challenges of software project coordination.</p>
 </div>
 </div>
-<blockquote>
-<p>DELVE will contribute data driven analysis to complement the evidence base informing the UK’s strategic response, by:</p>
-<ul>
-<li>Analysing national and international data to determine the effect of different measures and strategies on a range of public health, social and economic outcomes</li>
-<li>Using emerging sources of data as new evidence from the unfolding pandemic comes to light</li>
-<li>Ensuring that the work of this group is coordinated with others and communicated as necessary both nationally and internationally</li>
-</ul>
-</blockquote>
-<h2 id="delve-timeline">Delve Timeline</h2>
+<p>However, when managing systems in production, you soon discover maintenance of a rapidly deployed system is not your only problem.</p>
+<p>To deploy large and complex software systems, an engineering approach known as “separation of concerns” is taken. Frederick Brooks’ book “The Mythical Man-month” <span class="citation" data-cites="Brooks:mythical75">(<strong>Brooks:mythical75?</strong>)</span>, has itself gained almost mythical status in the community. It focuses on what has become known as Brooks’ law “adding manpower to a late software project makes it later.”</p>
+<p>Adding people (men or women!) to a project delays it because of the communication overhead required to get people up to speed.</p>
+<h2 id="separation-of-concerns">Separation of Concerns</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_engineering/includes/separation-of-concerns.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_engineering/includes/separation-of-concerns.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>To construct such complex systems an approach known as “separation of concerns” has been developed. The idea is that you architect your system, which consists of a large-scale complex task, into a set of simpler tasks. Each of these tasks is separately implemented. This is known as the decomposition of the task.</p>
+<p>This is where Jonathan Zittrain’s beautifully named term “intellectual debt” rises to the fore. Separation of concerns enables the construction of a complex system. But who is concerned with the overall system?</p>
 <ul>
-<li>First contact <em>3rd April 2020</em></li>
-<li>First meeting <em>7th April</em></li>
-<li>First working group <em>16th April</em></li>
+<li><p>Technical debt is the inability to <em>maintain</em> your complex software system.</p></li>
+<li><p>Intellectual debt is the inability to <em>explain</em> your software system.</p></li>
 </ul>
-<p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
-<p>Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
-<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020a)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
-<p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
-<p>Sustained engagement between government and academia plays an important role in building mutual understanding about what each can deliver. Core to DELVE’s work was the intention that research questions be framed in ways that would resonate with the policy challenges being seen in government.</p>
-<p>I was involved in the convening of the group. Experience from previous projects suggested that data expertise that was independent of domain knowledge often leads to misdirected efforts. We therefore convened a group that consisted of domain experts (public health, epidemiology, immunology, economics, behavioral economics, statistics, machine learning, education).</p>
-<p>Early on in the pandemic, it was noticeable that countries with experience of respitory diseases were making extensive use of face coverings in combating the disease.</p>
-<div class="figure">
-<div id="longrich-sheppard-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//policy/longrich-sheppard-mask-adoption.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
-</div>
-<div id="longrich-sheppard-magnify" class="magnify" onclick="magnifyFigure(&#39;longrich-sheppard&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="longrich-sheppard-caption" class="caption-frame">
-<p>Figure: Western countries (US, Canada, Australia, UK, western Europe) with late mask adoption or no use of masks, versus countries and territories with early use of masks as part of official government or in practice policy (China, South Korea, Japan, Taiwan, Vietnam, Thailand, Kuwait, Slovakia, Czech Republic, in blues and greens). Countries with early mask usage tend to have flatter curves even without the use of lockdows. (Figure and caption taken from <span class="citation" data-cites="Longrich-masks20">Longrich and Sheppard (2020)</span>).</p>
-</div>
-</div>
-<p>The DELVE group produced a report that assimilated various forms of evidence <span class="citation" data-cites="Delve-facemasks20">(The DELVE Initiative, 2020b)</span>.</p>
-<h3 id="breakout">Breakout</h3>
-<ul>
-<li>As pre-read material, you were provided with a report summary and links to the full report and responses collated by the Science Media Centre.
-<ul>
-<li>In your groups, discuss the summary and these responses.</li>
-</ul></li>
-<li>For both the comments and the responses put yourself in the position of a government minister.
-<ul>
-<li>What would you do and why?</li>
-<li>Which comments and recommendations were helpful and which weren’t?</li>
-</ul></li>
-<li>Report: <a href="https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html" class="uri">https://rs-delve.github.io/reports/2020/05/04/face-masks-for-the-general-public.html</a></li>
-<li>Responses: <a href="https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/" class="uri">https://www.sciencemediacentre.org/expert-reaction-to-review-of-evidence-on-face-masks-and-face-coverings-by-the-royal-society-delve-initiative/</a></li>
-</ul>
-<p>For further reading on how some felt that decisions should be made, you can <span class="citation" data-cites="Diggle-decision20">(see Diggle et al., 2020)</span>(https://rss.onlinelibrary.wiley.com/doi/full/10.1111/1740-9713.01463).</p>
-<h1 id="bringing-it-back">Bringing it Back</h1>
+<p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
+<p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> separation of concerns p. 84-85, 103, 109, 199, 284, 371.</p>
 <h1 id="dealing-with-intellectual-debt">Dealing with Intellectual Debt</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/dealing-with-intellectual-debt.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/dealing-with-intellectual-debt.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1107,6 +1589,18 @@ Diane Coyle
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/dealing-with-intellectual-debt-delve.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/dealing-with-intellectual-debt-delve.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<h2 id="delve-timeline">Delve Timeline</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_delve/includes/delve-timeline.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<ul>
+<li>First contact <em>3rd April 2020</em></li>
+<li>First meeting <em>7th April</em></li>
+<li>First working group <em>16th April</em></li>
+</ul>
+<p>The Delve initiative is a group that was convened by the Royal Society to help provide data-driven insights about the pandemic, with an initial focus on exiting the first lockdown and particular interest in using the variation of strategies across different international governments to inform policy.</p>
+<p>Right from the start, data was at the heart of what DELVE does, but the reality is that little can be done without domain expertise and often the data we required wasn’t available.</p>
+<p>However, even when it is not present, the notion of what data might be needed can also have a convening effect, bringing together multiple disciplines around the policy questons at hand. The Delve Data Readiness report <span class="citation" data-cites="Delve-data20">(The DELVE Initiative, 2020)</span> makes recommendations for how we can improve our processes around data, but this talk also focuses on how data brings different disciplines together around data.</p>
 <p>Any policy question can be framed in a number of different ways - what are the health outcomes; what is the impact on NHS capacity; how are different groups affected; what is the economic impact – and each has different types of evidence associated with it. Complex and uncertain challenges require efforts to draw insights together from across disciplines.</p>
 <h2 id="data-as-a-convener">Data as a Convener</h2>
 <div style="text-align:right">
@@ -1194,7 +1688,7 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 </div>
 </div>
 <p>In our public dialogues we saw the same theme: good process can drive purpose. Discussion is as important as the conclusions reached. Attendees urged us to develop technology where AI operates as a tool for human augmentation, not replacement.</p>
-<p>Superficial automation that makes things quicker for the individual but undermines the organisation is a particular problem. If everyone has a team of agents they manage to do their work, but the team of agents doesn’t interact with the wider ecosystem, then knowledge becomes more siloed.</p>
+<p>Superficial automation that makes things quicker for the individual but undermines the organisation is a particular problem. If everyone has a team of agents they manage to do their work, but the team of agents doesn’t interact with the wider ecosystem, then knowledge becomes more siloed. This increases intellectual debt.</p>
 <!-- ============================================================ -->
 <!-- EXERCISE 3: HORIZON SCANDAL - FAILURES OF JUDGMENT -->
 <!-- ============================================================ -->
@@ -1202,8 +1696,16 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 <h1 id="exercise-3-the-horizon-scandal---judgment-failures-and-power-asymmetries">Exercise 3: The Horizon Scandal - Judgment Failures and Power Asymmetries</h1>
 <p><strong>Time: 15:15-15:45 (20 min group discussion + 10 min plenary)</strong> - Analyse the Horizon scandal you read about at lunch.</p>
 <p><strong>Exercise Instructions:</strong></p>
-<p>The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organizational decision-making:</p>
-<p><strong>The Situation:</strong> - Horizon accounting system had bugs that created phantom shortfalls - Post Office prosecuted hundreds of sub-postmasters for theft/fraud - Human testimony (from sub-postmasters) was systematically discounted - Computer evidence was treated as infallible - Lives were destroyed, some sub-postmasters imprisoned - Took nearly 20 years for truth to emerge</p>
+<p>The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organisational decision-making:</p>
+<p><strong>The Situation:</strong></p>
+<ul>
+<li>Horizon accounting system had bugs that created phantom shortfalls</li>
+<li>Post Office prosecuted hundreds of sub-postmasters for theft/fraud</li>
+<li>Human testimony (from sub-postmasters) was systematically discounted</li>
+<li>Computer evidence was treated as infallible</li>
+<li>Lives were destroyed, some sub-postmasters imprisoned</li>
+<li>Took nearly 20 years for truth to emerge</li>
+</ul>
 <ol type="1">
 <li><strong>Failures of Judgment</strong>:
 <ul>
@@ -1220,7 +1722,7 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 <li><strong>Information Suppression</strong>:
 <ul>
 <li>How was information about system problems suppressed?</li>
-<li>What were the organizational incentives to ignore warnings?</li>
+<li>What were the organisational incentives to ignore warnings?</li>
 </ul></li>
 <li><strong>Lessons for Your Institution</strong>:
 <ul>
@@ -1322,7 +1824,7 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 </div>
 </div>
 <p>The productivity flywheel should return the gains released by productivity through funding. This relies on the economic value mapping the underlying value.</p>
-<p>In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.</p>
+<p>In an AI-augmented organisation, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.</p>
 <h2 id="inflation-of-human-capital">Inflation of Human Capital</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_economics/includes/human-capital-inflation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_economics/includes/human-capital-inflation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1371,12 +1873,12 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 <li><strong>Freed attention directed to high-value human activities</strong> → Innovation, relationships, complex judgment</li>
 <li><strong>High-value human activities generate competitive advantage</strong> → Market differentiation</li>
 <li><strong>Competitive advantage generates resources</strong> → Investment in better AI and human development</li>
-<li><strong>Cycle accelerates</strong> → Compound growth in organizational capability</li>
+<li><strong>Cycle accelerates</strong> → Compound growth in organisational capability</li>
 </ol>
-<p>The key is ensuring freed attention doesn’t just dissipate or get consumed by low-value activities. It requires intentional organizational design.</p>
+<p>The key is ensuring freed attention doesn’t just dissipate or get consumed by low-value activities. It requires intentional organisational design.</p>
 <h2 id="emulsion-combining-human-and-machine-intelligence">Emulsion: Combining Human and Machine Intelligence</h2>
-<p>Organizations are like an emulsion mixing oil and water. The machine component could be replaced by better technology, but the human component - the vital, life-giving element - cannot be easily separated or substituted. Successful organizations need to develop structures that combine human and machine intelligence in stable, productive ways.</p>
-<p>This means reversing the power dynamics and ensuring the organization remains in touch with its business differentiators, because in the long run those differentiators are unlikely to include AI - they’ll include the human elements that AI cannot replicate.</p>
+<p>Organizations are like an emulsion mixing oil and water. The machine component could be replaced by better technology, but the human component - the vital, life-giving element - cannot be easily separated or substituted. Successful organisations need to develop structures that combine human and machine intelligence in stable, productive ways.</p>
+<p>This means reversing the power dynamics and ensuring the organisation remains in touch with its business differentiators, because in the long run those differentiators are unlikely to include AI - they’ll include the human elements that AI cannot replicate.</p>
 <h2 id="example-data-science-africa">Example: Data Science Africa</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/attention-flywheel-example-dsa.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/attention-flywheel-example-dsa.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1560,8 +2062,15 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 <h2 id="addressing-the-innovation-supply-chain">7. Addressing the Innovation Supply Chain</h2>
 <p><strong>Challenge</strong>: Academic innovations often struggle to connect with and address industry needs effectively.</p>
 <p>The Industry Engagement initiative develops meaningful industrial partnerships through collaboration with the Strategic Partnerships Office, helping translate research into real-world solutions. The planned sciencepreneurship initiative aims to create a structured pathway from academic research to entrepreneurial ventures, helping ensure that innovations can effectively reach and benefit society.</p>
+<h2 id="innovation-economy-conclusion">Innovation Economy Conclusion</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/innovation-economy-conclusion.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/innovation-economy-conclusion.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>ai@cam’s approach aims to address the macro-micro disconnects in AI innovation through several key strategies. We are building bridges between macro and micro levels, fostering interdisciplinary collaboration, engaging diverse stakeholders and voices, and providing crucial resources and training. Through these efforts, ai@cam is working to create a more integrated and effective AI innovation ecosystem.</p>
+<p>Our implementation approach emphasizes several critical elements learned from past IT implementation failures. We focus on flexibility to adapt to changing needs, phased rollout of initiatives to manage risk, establishing continuous feedback loops for improvement, and maintaining a learning mindset throughout the process.</p>
+<p>Looking to the future, we recognize that AI technologies and their applications will continue to evolve rapidly. This evolution requires strategic agility and a continued focus on effective implementation. We will need to remain adaptable, continuously assessing and adjusting our strategies while working to bridge capability gaps between high-level AI capabilities and on-the-ground implementation challenges.</p>
 <h2 id="developing-board-level-digital-literacy">Developing Board-Level Digital Literacy</h2>
-<p>Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn’t mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organizational impacts.</p>
+<p>Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn’t mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organisational impacts.</p>
 <!-- ============================================================ -->
 <!-- EXERCISE 4: DEVELOPING INSTITUTIONAL AI STRATEGIES -->
 <!-- ============================================================ -->
@@ -1596,6 +2105,26 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 </div>
 <p>See blog post on <a href="http://the-atomic-human.ai//reflections/playing-in-peoples-backyards/">Playing in People’s Backyards</a>..</p>
 <p>In the past when decisions became too difficult, we invoked higher powers in the forms of gods, and “trial by ordeal.” Today we face a similar challenge with AI. When a decision becomes difficult there is a danger that we hand it to the machine, but it is precisely these difficult decisions that need to contain a human element.</p>
+<h2 id="wicked-problems">Wicked Problems</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_atomic-human/includes/societys-wicked-problems-diagram.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_atomic-human/includes/societys-wicked-problems-diagram.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="societys-wicked-problems-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//atomic-human/Atomic_H_Epilogue.png" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="societys-wicked-problems-magnify" class="magnify" onclick="magnifyFigure(&#39;societys-wicked-problems&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="societys-wicked-problems-caption" class="caption-frame">
+<p>Figure: Society faces many wicked problems in health, education, security, and social care that require carefully deploying AI toward meaningful societal challenges rather than focusing on commercially appealing applications. (Illustration by Dan Andrews inspired by the Epilogue of “The Atomic Human” <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span>)</p>
+</div>
+</div>
+<p>This illustration was created by Dan Andrews after reading the Epilogue of “The Atomic Human” book. The Epilogue discusses how we might deploy AI to address society’s most pressing challenges, and Dan’s drawing captures the various wicked problems we face and some of the initiatives that are looking to address them.</p>
+<p>See blog post on <a href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who is Stepping Up?</a>.</p>
+<p>See blog post on <a href="http://the-atomic-human.ai//reflections/who-is-stepping-up/">Who is Stepping Up?</a>.</p>
 <p><strong>Final Reflection:</strong></p>
 <p>The future of business in the AI age is not about choosing between humans and machines - it’s about creating systems that leverage the best of both. The organisations that will thrive will be those that understand that human attention, judgment, creativity, and relationships remain the most valuable assets, even as AI becomes ubiquitous.</p>
 <p>As MBA graduates and future business leaders, your role is not to maximise automation but to architect organisations where human and machine intelligence combine to create value that neither could generate alone. This requires:</p>
@@ -1608,9 +2137,6 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 </ol>
 <p>The AI revolution is not just a technological challenge - it’s a leadership challenge. And leadership is uniquely human.</p>
 <h2 id="further-reading-and-resources">Further Reading and Resources</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/leadership-and-ai-luiss-mba.gpp.markdown', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
 <h1 id="the-atomic-human-1">The Atomic Human</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/the-atomic-human.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/the-atomic-human.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1651,20 +2177,29 @@ See the Gorilla <em>don’t</em> be the Gorilla.
 <div id="ref-Brooks-mythical75" class="csl-entry" role="doc-biblioentry">
 Brooks, F., n.d. The mythical man-month. Addison-Wesley.
 </div>
+<div id="ref-Cabrera-realworld23" class="csl-entry" role="doc-biblioentry">
+Cabrera, C., Paleyes, A., Thodoroff, P., Lawrence, N.D., 2023. Real-world machine learning systems: A survey from a data-oriented architecture perspective.
+</div>
 <div id="ref-Chater-mindisflat19" class="csl-entry" role="doc-biblioentry">
 Chater, N., 2019. The mind is flat. Penguin.
 </div>
 <div id="ref-Conway-committees68" class="csl-entry" role="doc-biblioentry">
 Conway, M.E., n.d. How do committees invent? Datamation 14, 28–31.
 </div>
-<div id="ref-Diggle-decision20" class="csl-entry" role="doc-biblioentry">
-Diggle, P.J., Gowers, T., Kelly, F., Lawrence, N., 2020. Decision-making with uncertainty. Significance 17, 12–12. <a href="https://doi.org/10.1111/1740-9713.01463">https://doi.org/10.1111/1740-9713.01463</a>
-</div>
 <div id="ref-Felin-data20" class="csl-entry" role="doc-biblioentry">
 Felin, T., Koenderink, J., Krueger, J.I., Noble, D., Ellis, G.F.R., 2021. The data-hypothesis relationship. Genome Biology 22. <a href="https://doi.org/10.1186/s13059-021-02276-4">https://doi.org/10.1186/s13059-021-02276-4</a>
 </div>
 <div id="ref-Heider-interpersonal58" class="csl-entry" role="doc-biblioentry">
 Heider, F., 1958. The psychology of interpersonal relations. John Wiley.
+</div>
+<div id="ref-Heider-experimental44" class="csl-entry" role="doc-biblioentry">
+Heider, F., Simmel, M., 1944. An experimental study of apparent behavior. The American Journal of Psychology 57, 243–259. <a href="https://doi.org/10.2307/1416950">https://doi.org/10.2307/1416950</a>
+</div>
+<div id="ref-Joseph-origins21" class="csl-entry" role="doc-biblioentry">
+Henrich, J., Muthukrishna, M., 2021. The origins and psychology of human cooperation. Annual Review of Psychology 72, 207–240. <a href="https://doi.org/10.1146/annurev-psych-081920-042106">https://doi.org/10.1146/annurev-psych-081920-042106</a>
+</div>
+<div id="ref-Huang-inner22" class="csl-entry" role="doc-biblioentry">
+Huang, W., Xia, F., Xiao, T., Chan, H., Liang, J., Florence, P., Zeng, A., Tompson, J., Mordatch, I., Chebotar, Y., Sermanet, P., Jackson, T., Brown, N., Luu, L., Levine, S., Hausman, K., ichter, brian, 2023. Inner monologue: Embodied reasoning through planning with language models, in: Liu, K., Kulic, D., Ichnowski, J. (Eds.), Proceedings of the 6th Conference on Robot Learning, Proceedings of Machine Learning Research. PMLR, pp. 1769–1782.
 </div>
 <div id="ref-Kahneman-fastslow11" class="csl-entry" role="doc-biblioentry">
 Kahneman, D., 2011. Thinking, fast and slow. Farrar, Straus; Giroux, New York.
@@ -1681,14 +2216,23 @@ Lawrence, N.D., 2015. How <span>A</span>frica can benefit from the data revoluti
 <div id="ref-Lawrence:licsbintro10" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2010. Introduction to learning and inference in computational systems biology.
 </div>
-<div id="ref-Longrich-masks20" class="csl-entry" role="doc-biblioentry">
-Longrich, N.R., Sheppard, S.K., 2020. Public use of masks to control the coronavirus pandemic, Preprints.
+<div id="ref-Mackay-behind91" class="csl-entry" role="doc-biblioentry">
+MacKay, D.M., 1991. Behind the eye. Basil Blackwell.
+</div>
+<div id="ref-Scally-mutation16" class="csl-entry" role="doc-biblioentry">
+Scally, A., 2016. Mutation rates and the evolution of germline structure. Philosophical Transactions of the Royal Society B 371. <a href="https://doi.org/10.1098/rstb.2015.0137">https://doi.org/10.1098/rstb.2015.0137</a>
+</div>
+<div id="ref-Sculley:debt15" class="csl-entry" role="doc-biblioentry">
+Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F., Dennison, D., 2015. Hidden technical debt in machine learning systems, in: Cortes, C., Lawrence, N.D., Lee, D.D., Sugiyama, M., Garnett, R. (Eds.), Advances in Neural Information Processing Systems 28. Curran Associates, Inc., pp. 2503–2511.
 </div>
 <div id="ref-Simon-information71" class="csl-entry" role="doc-biblioentry">
 Simon, H.A., 1971. Designing organizations for an information-rich world. Johns Hopkins University Press, Baltimore, MD.
 </div>
 <div id="ref-Simons-gorillas99" class="csl-entry" role="doc-biblioentry">
 Simons, D.J., Chabris, C.F., 1999. Gorillas in our midst: Sustained inattentional blindness for dynamic events. Perception 28, 1059–1074. <a href="https://doi.org/10.1068/p281059">https://doi.org/10.1068/p281059</a>
+</div>
+<div id="ref-Singler-aicreation20" class="csl-entry" role="doc-biblioentry">
+Singler, B., 2020. The AI creation meme: A case study of the new visibility of religion in artificial intelligence discourse. Religions 11. <a href="https://doi.org/10.3390/rel11050253">https://doi.org/10.3390/rel11050253</a>
 </div>
 <div id="ref-Spiegelhalter-art24" class="csl-entry" role="doc-biblioentry">
 Spiegelhalter, D.J., 2024. The art of uncertainty. Pelican.
@@ -1699,11 +2243,11 @@ Spiegelhalter, D.J., 2019. The art of statistics. Pelican.
 <div id="ref-Susskind-future15" class="csl-entry" role="doc-biblioentry">
 Susskind, R.E., Susskind, D., 2015. The future of the professions: How technology will transform the work of human experts. Oxford University Press.
 </div>
-<div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
-The DELVE Initiative, 2020a. Data readiness: Lessons from an emergency. The Royal Society.
+<div id="ref-Admiralty-gunnery45" class="csl-entry" role="doc-biblioentry">
+The Admiralty, 1945. The gunnery pocket book, b.r. 224/45.
 </div>
-<div id="ref-Delve-facemasks20" class="csl-entry" role="doc-biblioentry">
-The DELVE Initiative, 2020b. Face masks for the general public. The Royal Society.
+<div id="ref-Delve-data20" class="csl-entry" role="doc-biblioentry">
+The DELVE Initiative, 2020. Data readiness: Lessons from an emergency. The Royal Society.
 </div>
 <div id="ref-Vallor-mirror24" class="csl-entry" role="doc-biblioentry">
 Vallor, S., 2024. The AI mirror. Oxford University Press.

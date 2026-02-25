@@ -2,7 +2,7 @@
 title: "Leadership and AI: Strategic Decision Making in the Age of Human-Analogue Machines"
 subtitle: "An MBA Masterclass on Human-Machine Collaboration"
 abstract: |
-  As AI technologies reshape business landscapes across industries, leaders face fundamental questions about balancing automation with human judgment, managing information flows, and designing organizational decision-making structures. This masterclass builds on the ideas in *The Atomic Human* to provide MBA students with practical frameworks for understanding AI's strategic implications through the lens of information topography, decision-making architectures, and human-AI collaboration. 
+  As AI technologies reshape business landscapes across industries, leaders face fundamental questions about balancing automation with human judgment, managing information flows, and designing organisational decision-making structures. This masterclass builds on the ideas in *The Atomic Human* to provide MBA students with practical frameworks for understanding AI's strategic implications through the lens of information topography, decision-making architectures, and human-AI collaboration. 
   
   Through a combination of conceptual frameworks, real-world case studies, and interactive exercises, participants will develop the critical thinking tools needed to lead organisations in the age of human-analogue machines. We'll explore how to strategically implement AI while maintaining human agency, building intelligent accountability, and creating organisational effectiveness in a world where machines increasingly mimic human capabilities.
 author:
@@ -58,32 +58,39 @@ TOTAL: 6 hours instruction + 1.5 hours lunch = 7.5 hours (10:00-17:30)
 
 \notes{**Welcome and Masterclass Overview**
 
-This masterclass is designed for MBA students preparing to lead organizations through the AI transformation. Unlike traditional technology training, we'll focus on the strategic and organizational challenges that AI creates - challenges that require business leadership rather than technical expertise.
+This masterclass is designed for MBA students preparing to lead organisations through the AI transformation. Unlike traditional technology training, we'll focus on the strategic and organizational challenges that AI creates - challenges that require business leadership rather than technical expertise.
 
-Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organizational decision-making, to practical frameworks for strategic AI implementation. Along the way, we'll engage in exercises that apply these concepts to real organizational challenges you'll face as business leaders.}
+Our journey today will take us from understanding what makes human intelligence unique, through the ways AI is reshaping organisational decision-making, to practical frameworks for strategic AI implementation. Along the way, we'll engage in exercises that apply these concepts to real organisational challenges you'll face as business leaders.}
 
 \newslide{Today's Schedule}
 
 \slides{
 **Morning Session: 10:00-13:00**
+
 * 10:00-10:45: Part 1 Lecture
 * 10:45-11:15: Exercise 1 + Plenary
 * 11:15-11:45: **Break**
 * 11:45-12:30: Part 2 Lecture
 * 12:30-13:00: Exercise 2 + Plenary
+}
 
+\newslide{Today's Schedule}
+
+\slides{
 **Lunch: 13:00-14:30** 
 * *Homework: Read Horizon scandal materials*
+}
+
+\newslide{Today's Schedule}
 
 **Afternoon Session: 14:30-17:30**
+
 * 14:30-15:15: Part 3 Lecture
 * 15:15-15:45: Exercise 3 + Plenary
 * 15:45-16:15: **Break**
 * 16:15-17:00: Part 4 Lecture
 * 17:00-17:30: Exercise 4 + Plenary
 }
-
-\include{_notebooks/includes/notebook-setup.md}
 
 <!-- ============================================================ -->
 <!-- MORNING SESSION: 10:00-13:00 -->
@@ -96,13 +103,27 @@ Our journey today will take us from understanding what makes human intelligence 
 
 \subsection{The Age of Human-Analogue Machines}
 
-\include{_ai/includes/henry-ford-intro.md}
+\slides{* What makes humans unique?
+* This is the foundation of the day.}
 
-\notes{As we enter an era where machines increasingly mimic tasks traditionally undertaken by humans, business leaders face fundamental transformations in how their organizations function. The challenges aren't merely operational - they require us to reimagine the very nature of work, human capital, and organizational culture.}
+\define{noSlideTitle}
+\include{_ai/includes/henry-ford-intro.md}
+\include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
+
+\notes{As we enter an era where machines increasingly mimic tasks
+traditionally undertaken by humans, leaders face fundamental
+transformations in how their organisations function. The challenges
+aren't merely operational - they require us to reimagine the very
+nature of work, human capital, and organisational culture.}
 
 \include{_ai/includes/the-atomic-eye.md}
+\undef{noSlideTitle}
 
-\notes{Our fascination with AI stems from the perceived uniqueness of human intelligence. We believe it's what differentiates us. But to understand how AI will reshape business, we first need to understand what makes human intelligence unique and how it differs from machine intelligence.}
+\notes{Our fascination with AI stems from the perceived uniqueness of
+human intelligence. We believe it's what differentiates us. But to
+understand how AI will reshape business, we first need to understand
+what makes human intelligence unique and how it differs from machine
+intelligence.}
 
 \subsection{The Embodied Nature of Human Intelligence}
 
@@ -110,11 +131,17 @@ Our journey today will take us from understanding what makes human intelligence 
 \include{_ai/includes/jean-dominique-bauby.md}
 \include{_ai/includes/shannon-bauby.md}
 
-\notes{The story of Jean-Dominique Bauby illustrates a fundamental truth about human intelligence: it's not just about processing information, but about the embodied experience of being human. This has profound implications for how we think about AI in business.}
-
 \include{_ai/includes/embodiment-factors-tedx.md}
 
-\notes{These bandwidth differences - what I call "embodiment factors" - explain why AI struggles with context and social understanding, the very domains where human leaders excel. The strategic challenge is designing systems that leverage the strengths of both.}
+\notes{These bandwidth differences - what I call "embodiment
+factors" - explain why AI struggles with context and social
+understanding, the very domains where human leaders excel. The
+strategic challenge is designing systems that leverage the strengths
+of both.}
+
+\undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\define{noSlideTitle}
 
 \subsection{The Conversation: Where Humans Excel}
 
@@ -122,7 +149,34 @@ Our journey today will take us from understanding what makes human intelligence 
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_ai/includes/conversation-computer.md}
 
-\notes{The true potential of AI in business isn't in replacing humans but in creating complementary systems that enhance human capabilities. Moving beyond the 'faster horse' mindset requires understanding what makes human intelligence uniquely valuable in organizational contexts.}
+\notes{The true potential of AI in business isn't in replacing humans
+but in creating complementary systems that enhance human
+capabilities. Moving beyond the 'faster horse' mindset requires
+understanding what makes human intelligence uniquely valuable in
+organisational contexts.}
+
+\subsection{Culture}
+
+\slides{
+\aligncenter{*Cultura animi*}
+}
+
+\notes{Cicero suggested that philosophy cultivates the mind. This
+notion of \emph{cultura animi} is vital for how we
+communicate. Because we have so little bandwidth we rely on shared
+conceptions of the world to communicate complex subjects.}
+
+\define{noSlideTitle}
+\include{_art/includes/blake-newton.md}
+\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
+\include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
+\include{_atomic-human/includes/communication-through-artefacts-art.md}
+\include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
+\undef{noSlideTitle}
+\include{_ai/includes/baby-shoes.md}
+\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 
 \newslide{Key Takeaways: Human vs Machine Intelligence}
 
@@ -134,7 +188,7 @@ Our journey today will take us from understanding what makes human intelligence 
 }
 
 <!-- ============================================================ -->
-<!-- EXERCISE 1: MAPPING ORGANIZATIONAL INFORMATION FLOWS -->
+<!-- EXERCISE 1: MAPPING ORGANISATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 
 <!-- TIMING: 10:45 -->
@@ -144,7 +198,7 @@ Our journey today will take us from understanding what makes human intelligence 
 
 \notes{**Exercise Instructions:**
 
-Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organization). 
+Working in small groups (3-4 people), map the information flows in an organisation you know well (current employer, previous employer, or case study organisation). 
 
 1. **Information Sources**: Where does critical information originate in your organisation?
 
@@ -182,40 +236,56 @@ Working in small groups (3-4 people), map the information flows in an organisati
 
 \notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI changes organisational information landscapes and decision-making structures.}
 
-\subsection{The Information Revolution in Organizations}
+\subsection{The Information Revolution in Organisations}
 
 \include{_data-science/includes/new-flow-of-information.md}
 
-\notes{In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organizational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.}
+\notes{In an AI-augmented organisation, human attention becomes the
+most precious resource. The strategic allocation of this attention
+will determine organisational success. This is particularly critical
+in business where complex decisions require both algorithmic precision
+and human judgment.}
 
-\subsection{The Evolution of Organizational Decision Making}
+\subsection{The Evolution of Organisational Decision Making}
 
 \include{_ai/includes/human-computers-interacting.md}
 \include{_business/includes/the-api-mandate-bezos.md}
 
-\notes{The way decisions are made in organizations is fundamentally changing. This means rethinking how we balance centralized control with devolved authority, especially in areas like strategy, risk assessment, and customer service.}
+\notes{The way decisions are made in organisations is fundamentally
+changing. This means rethinking how we balance centralised control
+with devolved authority, especially in areas like strategy, risk
+assessment, and customer service.}
 
 \subsection{Understanding Information Topography}
 
 \include{_business/includes/an-attention-economy.md}
+\define{noSlideTitle}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\undef{noSlideTitle}
 
-\notes{AI fundamentally changes the information topography of organizations - the landscape of who knows what, when, and how. Understanding this new landscape is crucial for strategic decision-making.}
+\notes{AI changes the information topography of organisations and
+society - the information topography is the landscape of who knows
+what, when, and how. Understanding this new landscape is crucial for
+strategic decision-making.}
 
 \subsection{Balancing Centralised Control with Devolved Authority}
 
 \include{_business/includes/bezos-question-mark-email.md}
 \include{_business/includes/executive-sponsorship.md}
 
-\notes{This balance is particularly critical for modern organizations. You need centralized oversight for strategic alignment and risk management, but you also need devolved decision-making for agility and innovation. AI can help achieve both, but only if properly designed.}
+\notes{This balance is particularly critical for modern
+organisations. You need centralised oversight for strategic alignment
+and risk management, but you also need devolved decision-making for
+agility and innovation. AI can help achieve both, but only if properly
+designed.}
 
 \newslide{The Attention Economy Framework}
 
 \slides{
-* Human attention is the scarcest organizational resource
+* Human attention is the scarcest organisational resource
 * AI changes who pays attention to what
 * Strategic allocation of attention determines competitive advantage
-* Organizations must design for attention management, not just task automation
+* Organisations must design for attention management, not just task automation
 }
 
 \subsection{Generative AI as Human-Analogue Machines}
@@ -229,18 +299,23 @@ Working in small groups (3-4 people), map the information flows in an organisati
 * From Conway's Law: existing organisational models are redundant
 }
 
-\include{_simulation/includes/the-moniac.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
+\include{_ai/includes/human-analogue-machines.md}
 
-\notes{Generative AI provides organizations with what I call "Human-Analogue Machines" (HAMs) - systems that can process and generate information at scales far beyond human capacity, but that still require human oversight and judgment for critical decisions.
+\notes{The new challenge for business leaders is that we know our current
+approaches to digital systems are totally inappropriate, but we don't
+yet know exactly how they're insufficient. This requires
+experimentation and adaptive strategy rather than rigid planning.}
 
-The challenge for business leaders is that we know our current approaches to AI implementation are likely insufficient, but we don't yet know exactly how they're insufficient. This requires experimentation and adaptive strategy rather than rigid planning.}
+\include{_ai/includes/bandwidth-vs-complexity.md}
+\define{noSlideTitle}
+\include{_atomic-human/includes/nothing-to-worry-about.md}
+\undef{noSlideTitle}
+
 
 \newslide{The Strategic Challenge}
 
 \slides{
-* We know everything we're doing now is inadequate
+* We know everything we're doing now is inadequate/anachronistic
 * We don't know exactly how it's inadequate
 * Traditional "plan-then-execute" approaches won't work
 * Need adaptive, learning-oriented strategies
@@ -309,9 +384,9 @@ Characterise what your institution does. If it's a compnay, what is their market
 \slides{
 **Please read about the Horizon scandal over lunch:**
 
-* Wikipedia overview: https://en.wikipedia.org/wiki/British_Post_Office_scandal
-* Economic analysis: https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office  
-* Technical details: https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know
+* Wikipedia overview: <https://en.wikipedia.org/wiki/British_Post_Office_scandal>
+* Economic analysis: <https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office>
+* Technical details: <https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know>
 
 This background will be essential for Exercise 3 this afternoon.
 }
@@ -334,14 +409,11 @@ This background will be essential for Exercise 3 this afternoon.
 \include{_data-science/includes/big-data-paradox.md}
 \include{_data-science/includes/big-model-paradox.md}
 \include{_psychology/includes/selective-attention-bias.md}
+\include{_notebooks/includes/notebook-setup.md}
+
 \include{_data-science/includes/data-inattention-bias.md}
 \include{_policy/includes/diane-coyle-fitzwilliam-lecture.md}
-
-\newslide{Case Study}
-
-\include{_policy/includes/face-masks-case-study.md}
-
-\section{Bringing it Back}
+\include{_ai/includes/intellectual-debt.md}
 
 \include{_business/includes/dealing-with-intellectual-debt.md}
 
@@ -351,7 +423,11 @@ This background will be essential for Exercise 3 this afternoon.
 
 \include{_business/includes/superficial-automation.md}
 
-\notes{Superficial automation that makes things quicker for the individual but undermines the organisation is a particular problem. If everyone has a team of agents they manage to do their work, but the team of agents doesn't interact with the wider ecosystem, then knowledge becomes more siloed.}
+\notes{Superficial automation that makes things quicker for the
+individual but undermines the organisation is a particular problem. If
+everyone has a team of agents they manage to do their work, but the
+team of agents doesn't interact with the wider ecosystem, then
+knowledge becomes more siloed. This increases intellectual debt.}
 
 \newslide{Maintaining Human Judgment: Key Principles}
 
@@ -374,9 +450,10 @@ This background will be essential for Exercise 3 this afternoon.
 
 \notes{**Exercise Instructions:**
 
-The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organizational decision-making:
+The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organisational decision-making:
 
 **The Situation:**
+
 - Horizon accounting system had bugs that created phantom shortfalls
 - Post Office prosecuted hundreds of sub-postmasters for theft/fraud
 - Human testimony (from sub-postmasters) was systematically discounted
@@ -396,7 +473,7 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 
 3. **Information Suppression**:
    - How was information about system problems suppressed?
-   - What were the organizational incentives to ignore warnings?
+   - What were the organisational incentives to ignore warnings?
 
 4. **Lessons for Your Institution**:
    - Could this happen in your organisation (from Exercise 2)?
@@ -440,7 +517,7 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 \include{_economics/includes/human-capital-index.md}
 \include{_business/includes/the-productivity-flywheel.md}
 
-\notes{In an AI-augmented organization, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.}
+\notes{In an AI-augmented organisation, human attention becomes the most precious resource. The strategic allocation of this attention will determine organisational success. This is particularly critical in business where complex decisions require both algorithmic precision and human judgment.}
 
 
 \include{_economics/includes/human-capital-inflation.md}
@@ -470,23 +547,24 @@ The Horizon scandal at the UK Post Office represents one of the most significant
 2. **Freed attention directed to high-value human activities** → Innovation, relationships, complex judgment
 3. **High-value human activities generate competitive advantage** → Market differentiation
 4. **Competitive advantage generates resources** → Investment in better AI and human development
-5. **Cycle accelerates** → Compound growth in organizational capability
+5. **Cycle accelerates** → Compound growth in organisational capability
 
-The key is ensuring freed attention doesn't just dissipate or get consumed by low-value activities. It requires intentional organizational design.}
+The key is ensuring freed attention doesn't just dissipate or get consumed by low-value activities. It requires intentional organisational design.}
 
 \subsection{Emulsion: Combining Human and Machine Intelligence}
 
-\notes{Organizations are like an emulsion mixing oil and water. The machine component could be replaced by better technology, but the human component - the vital, life-giving element - cannot be easily separated or substituted. Successful organizations need to develop structures that combine human and machine intelligence in stable, productive ways.
+\notes{Organizations are like an emulsion mixing oil and water. The machine component could be replaced by better technology, but the human component - the vital, life-giving element - cannot be easily separated or substituted. Successful organisations need to develop structures that combine human and machine intelligence in stable, productive ways.
 
-This means reversing the power dynamics and ensuring the organization remains in touch with its business differentiators, because in the long run those differentiators are unlikely to include AI - they'll include the human elements that AI cannot replicate.}
+This means reversing the power dynamics and ensuring the organisation remains in touch with its business differentiators, because in the long run those differentiators are unlikely to include AI - they'll include the human elements that AI cannot replicate.}
 
 \include{_business/includes/attention-flywheel-example-dsa.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
-\includes{_policy/includes/innovation-economy-conclusion.md}
+\include{_policy/includes/innovation-economy-conclusion.md}
 
 \subsection{Developing Board-Level Digital Literacy}
 
-\notes{Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn't mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organizational impacts.}
+\notes{Business leaders must lead in developing digital literacy at the board level to ensure governance structures can effectively oversee AI implementation while maintaining appropriate human oversight. This doesn't mean boards need to become technical experts - it means they need frameworks for asking the right questions about AI systems and their organisational impacts.}
+
 
 \newslide{Board-Level AI Governance Questions}
 
@@ -561,22 +639,24 @@ One-page strategy document showing:
 
 \section{Conclusion: Architecting Human-Machine Collaboration}
 
+\define{noSlideTitle}
 \include{_atomic-human/includes/river-gods-decide.md}
+\undef{noSlideTitle}
 
 \newslide{Key Takeaways: Strategic Framework}
 
 \slides{
 * AI reshapes information flows - understand your information topography
 * Human attention is your scarcest and most valuable resource
-* Balance centralized oversight with devolved decision-making
-* Recognize LLMs as interfaces, not substitutes for judgment
+* Balance centralised oversight with devolved decision-making
+* Recognise LLMs as interfaces, not substitutes for judgment
 * Build intelligent accountability into all AI deployments
 }
 
 \newslide{Leadership Imperatives}
 
 \slides{
-* Lead with organizational culture, not technology
+* Lead with organisational culture, not technology
 * Invest in human capital development alongside AI
 * Maintain human judgment in critical decisions
 * Build governance for AI systems from day one
@@ -588,10 +668,12 @@ One-page strategy document showing:
 \slides{
 * Domain expertise must lead AI implementation
 * Develop institutional character around AI use
-* Create the attention flywheel for your organization
+* Create the attention flywheel for your organisation
 * Build trust through transparency and accountability
 * Remember: In the long run, your differentiators are human
 }
+
+\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
 \notes{**Final Reflection:**
 

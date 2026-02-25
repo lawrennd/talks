@@ -423,9 +423,7 @@ This background will be essential for Exercise 3 this afternoon.
 
 \include{_business/includes/dealing-with-intellectual-debt.md}
 
-\include{_business/includes/gorilla-conclusion.md}
-
-\subsection{The Danger of Superficial Automation}
+\section{Intellectual Debt and Superficial Automation}
 
 \include{_business/includes/superficial-automation.md}
 
@@ -445,6 +443,25 @@ knowledge becomes more siloed. This increases intellectual debt.}
 * Develop "intelligent accountability" for AI-assisted decisions
 }
 
+
+\newslide{Reverse Mentoring and Listening Culture}
+
+\notes{When the information topography is being disrupted we need to
+make sure we are taking in a broad spectrum of opinons.  The approach
+of "do as I say" can be effective when there's certainty and a need
+for an aligned resource. But in domains of uncertainty learning from
+the wider team becomes key. Leaders must supress their tendency to
+express their dominance, and create safe spaces to better understand
+how the business is reacting.}
+
+\slides{
+* In disruptive times, learn from below as well as above.
+* Exploration meetings that take into account all opinions.
+}
+
+
+\include{_business/includes/gorilla-conclusion.md}
+
 <!-- ============================================================ -->
 <!-- EXERCISE 3: HORIZON SCANDAL - FAILURES OF JUDGMENT -->
 <!-- ============================================================ -->
@@ -456,7 +473,10 @@ knowledge becomes more siloed. This increases intellectual debt.}
 
 \notes{**Exercise Instructions:**
 
-The Horizon scandal at the UK Post Office represents one of the most significant failures of algorithmic governance in modern business history. Working in your groups, analyse this case through the lens of organisational decision-making:
+The Horizon scandal at the UK Post Office represents one of the most
+significant failures of algorithmic governance in modern business
+history. Working in your groups, analyse this case through the lens of
+organisational decision-making:
 
 **The Situation:**
 

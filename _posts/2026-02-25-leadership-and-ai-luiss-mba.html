@@ -953,9 +953,8 @@ embodiment
 <p>HAMs are not representing states of the outside world with analogous states inside the machine, they are also not (directly) processing digital states through logic gates to draw their conclusions (although they are implemented on digital computers that do this to enable them to update).</p>
 <div class="figure">
 <div id="human-analogue-machine-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
-</div>
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ai/processor-ham.svg" width="60%" style=" ">
+</object>
 </div>
 <div id="human-analogue-machine-magnify" class="magnify" onclick="magnifyFigure(&#39;human-analogue-machine&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
@@ -980,7 +979,7 @@ embodiment
 <p>Figure: Fritz Heider and Marianne Simmel’s video of shapes from <span class="citation" data-cites="Heider-experimental44">Heider and Simmel (1944)</span>.</p>
 </div>
 </div>
-<p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a> and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne Simmel</a>’s experiments with animated shapes from 1944 <span class="citation" data-cites="Heider-experimental44">(Heider and Simmel, 1944)</span>. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathize. At one level, these are crudely drawn objects, but in another way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes to interpret their actions [Heider-interpersonal58].</p>
+<p><a href="https://en.wikipedia.org/wiki/Fritz_Heider">Fritz Heider</a> and <a href="https://en.wikipedia.org/wiki/Marianne_Simmel">Marianne Simmel</a>’s experiments with animated shapes from 1944 <span class="citation" data-cites="Heider-experimental44">(Heider and Simmel, 1944)</span>. Our interpretation of these objects as showing motives and even emotion is a combination of our desire for narrative, a need for understanding of each other, and our ability to empathize. At one level, these are crudely drawn objects, but in another way, the animator has communicated a story through simple facets such as their relative motions, their sizes and their actions. We apply our psychological representations to these faceless shapes to interpret their actions <span class="citation" data-cites="Heider-interpersonal58">(Heider, 1958)</span>.</p>
 <p>See also a recent review paper on Human Cooperation by <span class="citation" data-cites="Joseph-origins21">Henrich and Muthukrishna (2021)</span>. See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> psychological representation p. 326–329, 344–345, 353, 361, 367.</p>
 <p>The perils of developing this capability include counterfeit people, a notion that the philosopher <a href="https://www.theatlantic.com/technology/archive/2023/05/problem-counterfeit-people/674075/">Daniel Dennett has described in <em>The Atlantic</em></a>. This is where computers can represent themselves as human and fool people into doing things on that basis.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> human-analogue machine p. 343–5, 346–7, 358–9, 365–8.</p>
@@ -1000,6 +999,7 @@ embodiment
 <p>Figure: The focus so far has been on reducing uncertainty to a few representative values and sharing numbers with human beings. We forget that most people can be confused by basic probabilities for example the prosecutor’s fallacy.</p>
 </div>
 </div>
+<p>As far back as 2022 researchers in robotics have suggested inner monologues for LLMs. See for example the paper <a href="https://innermonologue.github.io/">Inner Monologue: Embodied Reasoning through Planning</a> <span class="citation" data-cites="Huang-inner22">Huang et al. (2023)</span>. That’s now widespread through chain of thought approaches.</p>
 <div class="figure">
 <div id="ai-for-data-analytics-figure" class="figure-frame">
 <iframe width="600" height="450" src="https://www.youtube.com/embed/0sJjdxn5kcI?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -1012,7 +1012,7 @@ embodiment
 <p>Figure: The Inner Monologue paper suggests using LLMs for robotic planning <span class="citation" data-cites="Huang-inner22">(Huang et al., 2023)</span>.</p>
 </div>
 </div>
-<p>By interacting directly with machines that have an understanding of human cultural context, it should be possible to share the nature of uncertainty in the same way humans do. See for example the paper <a href="https://innermonologue.github.io/">Inner Monologue: Embodied Reasoning through Planning</a> <span class="citation" data-cites="Huang-inner22">Huang et al. (2023)</span>.</p>
+<p>By interacting directly with machines that have an understanding of human cultural context, these machines share the nature of uncertainty in the same way humans do.</p>
 <h2 id="intellectual-debt">Intellectual Debt</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-blog-post.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/intellectual-debt-blog-post.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1546,7 +1546,7 @@ Diane Coyle
 </div>
 </div>
 <p>However, when managing systems in production, you soon discover maintenance of a rapidly deployed system is not your only problem.</p>
-<p>To deploy large and complex software systems, an engineering approach known as “separation of concerns” is taken. Frederick Brooks’ book “The Mythical Man-month” <span class="citation" data-cites="Brooks:mythical75">(<strong>Brooks:mythical75?</strong>)</span>, has itself gained almost mythical status in the community. It focuses on what has become known as Brooks’ law “adding manpower to a late software project makes it later.”</p>
+<p>To deploy large and complex software systems, an engineering approach known as “separation of concerns” is taken. Frederick Brooks’ book “The Mythical Man-month” <span class="citation" data-cites="Brooks-mythical75">(Brooks, n.d.)</span>, has itself gained almost mythical status in the community. It focuses on what has become known as Brooks’ law “adding manpower to a late software project makes it later.”</p>
 <p>Adding people (men or women!) to a project delays it because of the communication overhead required to get people up to speed.</p>
 <h2 id="separation-of-concerns">Separation of Concerns</h2>
 <div style="text-align:right">

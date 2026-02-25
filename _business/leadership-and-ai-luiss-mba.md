@@ -182,7 +182,7 @@ conceptions of the world to communicate complex subjects.}
 
 \newslide{Key Takeaways: Human vs Machine Intelligence}
 
-\slides{
+\slidesincremental{
 * Human intelligence is fundamentally embodied and context-dependent
 * Bandwidth differences create complementary strengths
 * Conversation and social understanding remain uniquely human
@@ -229,7 +229,7 @@ Characterise what your institution does. If it's a company, what is their market
 
 \newslide{Plenary Discussion}
 
-\slides{
+\slidesincremental{
 * What surprised you about your organisation's information flows?
 * Where are the critical human judgment points?
 * How might AI change these flows?
@@ -296,18 +296,18 @@ designed.}
 
 \newslide{The Attention Economy Framework}
 
-\slides{
+\slidesincremental{
 * Human attention is the scarcest organisational resource
 * AI changes who pays attention to what
 * Strategic allocation of attention determines competitive advantage
-* Organisations must design for attention management, not just task automation
+* Organisations must design for attention deployment, not just task automation
 }
 
 \subsection{Generative AI as Human-Analogue Machines}
 
 \newslide{Generative AI as HAM}
 
-\slides{
+\slidesincremental{
 * Generative AI provides us with an "analogue human"
 * An information amplifier with a multiplier of 300,000,000
 * Radically changes information infrastructure
@@ -329,7 +329,7 @@ experimentation and adaptive strategy rather than rigid planning.}
 
 \newslide{The Strategic Challenge}
 
-\slides{
+\slidesincremental{
 * We know everything we're doing now is inadequate/anachronistic
 * We don't know exactly how it's inadequate
 * Traditional "plan-then-execute" approaches won't work
@@ -372,7 +372,7 @@ For your chosen institution type from Exercise 1, conduct a SWOT analysis specif
 
 \newslide{Plenary: SWOT Insights}
 
-\slides{
+\slidesincremental{
 * What's surprising about your institution type's position?
 * Biggest strength for AI adoption?
 * Most concerning threat?
@@ -435,7 +435,7 @@ knowledge becomes more siloed. This increases intellectual debt.}
 
 \newslide{Maintaining Human Judgment: Key Principles}
 
-\slides{
+\slidesincremental{
 * Algorithms should inform, not dictate, critical decisions
 * Human judgment must remain accessible and exercisable
 * Build in mechanisms for questioning algorithmic outputs
@@ -454,7 +454,7 @@ the wider team becomes key. Leaders must supress their tendency to
 express their dominance, and create safe spaces to better understand
 how the business is reacting.}
 
-\slides{
+\slidesincremental{
 * In disruptive times, learn from below as well as above.
 * Exploration meetings that take into account all opinions.
 }
@@ -510,7 +510,7 @@ organisational decision-making:
 
 \newslide{Plenary: Preventing Horizon-Type Failures}
 
-\slides{
+\slidesincremental{
 * Never treat algorithmic outputs as infallible
 * Maintain accessible human override mechanisms
 * Build power balance into AI governance
@@ -540,6 +540,8 @@ organisational decision-making:
 \include{_ai/includes/cuneiform.md}
 \include{_books/includes/the-future-of-professions.md}
 
+\include{_policy/includes/philosophers-stone-to-agi.md}
+
 \include{_economics/includes/human-capital-index.md}
 \include{_business/includes/the-productivity-flywheel.md}
 
@@ -552,7 +554,7 @@ organisational decision-making:
 
 \newslide{The Atomic Human Approach for Business}
 
-\slides{
+\slidesincremental{
 * Human attention is the differentiator
 * Focus on how your human capital needs to adapt
 * People-first approach, not AI-first
@@ -594,7 +596,7 @@ This means reversing the power dynamics and ensuring the organisation remains in
 
 \newslide{Board-Level AI Governance Questions}
 
-\slides{
+\slidesincremental{
 * What decisions is AI making or influencing?
 * Where does human judgment remain essential?
 * How do we know when AI systems are failing?
@@ -650,7 +652,7 @@ One-page strategy document showing:
 
 \newslide{Plenary: Contrasting Strategies by Institution Type}
 
-\slides{
+\slidesincremental{
 * How do strategies differ by institution type?
 * What's common across all types?
 * What surprised you in building a concrete strategy?
@@ -669,7 +671,7 @@ One-page strategy document showing:
 
 \newslide{Key Takeaways: Strategic Framework}
 
-\slides{
+\slidesincremental{
 * AI reshapes information flows - understand your information topography
 * Human attention is your scarcest and most valuable resource
 * Balance centralised oversight with devolved decision-making
@@ -679,7 +681,7 @@ One-page strategy document showing:
 
 \newslide{Leadership Imperatives}
 
-\slides{
+\slidesincremental{
 * Lead with organisational culture, not technology
 * Invest in human capital development alongside AI
 * Maintain human judgment in critical decisions
@@ -689,7 +691,7 @@ One-page strategy document showing:
 
 \newslide{The People-First AI Strategy}
 
-\slides{
+\slidesincremental{
 * Domain expertise must lead AI implementation
 * Develop institutional character around AI use
 * Create the attention flywheel for your organisation
@@ -719,7 +721,7 @@ The AI revolution is not just a technological challenge - it's a leadership chal
 
 \newslide{Recommended Reading for MBA Students}
 
-\slides{
+\slidesincremental{
 * *The Atomic Human* by Neil D. Lawrence
 * *Weapons of Math Destruction* by Cathy O'Neil
 * *A Question of Trust* by Baroness O'Neill

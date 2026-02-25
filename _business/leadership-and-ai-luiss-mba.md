@@ -180,21 +180,25 @@ conceptions of the world to communicate complex subjects.}
 \include{_ai/includes/baby-shoes.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 
-\newslide{Key Takeaways: Human vs Machine Intelligence}
+\subsection{Key Takeaways: Human vs Machine Intelligence}
 
 \slidesincremental{
-* Human intelligence is fundamentally embodied and context-dependent
-* Bandwidth differences create complementary strengths
-* Conversation and social understanding remain uniquely human
-* AI augments rather than replaces human judgment
+* Atomic Human defined by limitations rather than capabilities
+* Human intelligence is fundamentally embodied
+* Human context is associated with limited lifespan
+* Conversation and social understanding are situated in our culture and context
 }
+
+\notes{In this first part we've outlined the idea of the atomic human, and suggested that our intelligence is defined more by the constraints on humanity rather than our capabilities. What we can't do. The bandwidth limitation means that that human intelligence is fundamentally embodied. To overcome communication limitations we referred to shared experience, some of which is specific to our context (e.g. limited life) and some of it is specific to the ideas others have shared either today or in the past. That forms our culture. Shared knowledge of this context and culture underpins our ability to communicate.}
+
+\notes{Businesses and other institutions are part of that culture. They are part of how we overcome individual limitations to operate together in concert. For the next exercise we're going to be thinking about how information flows through these organisations.}
 
 <!-- ============================================================ -->
 <!-- EXERCISE 1: MAPPING ORGANISATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 
 <!-- TIMING: 10:45 -->
-\section{Exercise 1: Mapping Your Organisation's Information Flows}
+\section{Exercise 1: Mapping An Organisation's Information Flows}
 
 \notes{**Time: 10:45-11:15 (20 min group work + 10 min plenary)** - Apply the concepts to real organisational contexts.}
 
@@ -221,7 +225,7 @@ Characterise what your institution does. If it's a company, what is their market
 
 3. **Human Bottlenecks**: Where does information require human judgment that machines can't easily replicate?
 
-4. **AI Opportunities**: Identify 1-2 places where AI could enhance (not replace) human decision-making
+4. **AI Opportunities**: Identify 1-2 places where AI could enhance human decision-making
 
 **Deliverable**: Simple sketch showing information flows, decision points, and where humans vs machines should work.
 

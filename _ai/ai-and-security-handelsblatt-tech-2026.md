@@ -1,15 +1,17 @@
 ---
-title: "AI and Security: From Bandwidth to Practical Implications"
-subtitle: "Agentic AI, HAMs, and the new attack surface"
+title: "Agentic AI and Security: Delegation at Machine Speed"
+subtitle: "From bandwidth limits to accountable tool-using systems"
 abstract: |
-  The evolution from classical security to AI-mediated security challenges represents a shift in how we think about protecting information systems. This talk explores the bandwidth limitations that create security vulnerabilities, introduces the Human Analogue Machine (HAM) from *The Atomic Human* as “humans scaled up,” and examines practical security implications through three phases: classical security enhanced with GenAI, GenAI-specific security challenges, and broader information systems implications.
+  Agentic AI changes security because it turns language into *actions*: tool calls, API requests, and workflow execution. That shift amplifies both productivity and risk—incidents can unfold at machine bandwidth while human sense-making remains slow, distributed, and approval-bound.
 
-  Through real-world examples including the Heathrow airport cyber-attack and Notion AI Agents research, we’ll examine how security thinking must evolve to address threats that exploit the very capabilities that make AI systems so powerful.
+  This talk offers a practical frame for leaders building and deploying AI in European organisations: how to capture the upside of delegation (faster operations, reduced coordination overhead, partial paydown of technical and intellectual debt) while avoiding a new liability—*agentic debt*—that accumulates when authority boundaries, evidence requirements, and recovery paths are left implicit.
+
+  We’ll move from first principles (bandwidth and interfaces) to concrete patterns: instruction hierarchy, least-privilege tooling, auditable action boundaries, reversible operations, and containment-by-default.
 author:
 - family: Lawrence
   given: Neil D.
-date: 2026-08-01
-venue: "Agentic AI Summit 2026, UC Berkeley"
+date: 2026-06-01
+venue: "Handelsblatt TECH 2026, Heilbronn"
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -31,6 +33,14 @@ ipynb: False
 }
 
 \notes{Open with the core mismatch: speed/scale/distance from context. For agentic AI, the key shift is that the model doesn't just generate text; it can act through tools and workflows. That turns prompt injection and instruction hijacking into operational security problems.}
+
+\newslides{Europe’s opportunity: trust as infrastructure}
+
+\slidesincremental{
+* Competitive advantage is not just model quality—it’s *deployability*: delegation that stays legible under audit, incident response, and regulation.
+* When authority boundaries are explicit, security becomes an accelerant (faster approvals, safer automation), not a brake.
+* Agentic systems need “delegation contracts”: what is allowed, on what evidence, with what recovery path.
+}
 
 \include{_policy/includes/shannon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}

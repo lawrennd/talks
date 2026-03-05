@@ -93,3 +93,6 @@ docs/yaml_frontmatter_examples.md
 
 # Private Trent.AI files
 _trent/
+
+# Local-only symlink (breaks CI if committed)
+slides

@@ -1,15 +1,16 @@
 ---
-title: "Agentic AI and Security: Delegation at Machine Speed"
+title: "Agentic AI and Security"
 subtitle: "From bandwidth limits to accountable tool-using systems"
 abstract: |
-  Agentic AI changes security because it turns language into *actions*: tool calls, API requests, and workflow execution. That shift amplifies both productivity and risk—incidents can unfold at machine bandwidth while human sense-making remains slow, distributed, and approval-bound.
+  Agentic AI changes security because it turns natural language into actions: tool calls, API requests, and workflow execution. That shift amplifies both productivity and risk—incidents can unfold at machine bandwidth while human sense-making remains slow, distributed, and approval-bound.
 
-  This talk offers a practical frame for leaders building and deploying AI in European organisations: how to capture the upside of delegation (faster operations, reduced coordination overhead, partial paydown of technical and intellectual debt) while avoiding a new liability—*agentic debt*—that accumulates when authority boundaries, evidence requirements, and recovery paths are left implicit.
+  This talk offers a practical frame for leaders building and deploying AI in European organisations: how to capture the upside of delegation (faster operations, reduced coordination overhead, partial paydown of technical and intellectual debt) while avoiding a new liability, *agentic debt*, that accumulates when authority boundaries, evidence requirements, and recovery paths are left implicit.
 
   We’ll move from first principles (bandwidth and interfaces) to concrete patterns: instruction hierarchy, least-privilege tooling, auditable action boundaries, reversible operations, and containment-by-default.
 author:
 - family: Lawrence
   given: Neil D.
+  institute: Trent.AI and University of Cambridge
 date: 2026-06-01
 venue: "Handelsblatt TECH 2026, Heilbronn"
 layout: talk
@@ -34,12 +35,24 @@ ipynb: False
 
 \notes{Open with the core mismatch: speed/scale/distance from context. For agentic AI, the key shift is that the model doesn't just generate text; it can act through tools and workflows. That turns prompt injection and instruction hijacking into operational security problems.}
 
+\newslides{The opportunity: a judgement layer}
+
+\slidesincremental{
+* Despite rapid change, one constant remains: the attack surface keeps expanding.
+* Teams ship faster than ever; threats scale faster than most review and governance cycles.
+* Many organisations lack a *judgement layer* that turns security noise into “what matters now”.
+}
+
+\notes{This is the wedge: security is becoming an interpretation and coordination problem under time pressure. For Trent, the product claim is “becoming the Security Agent”: a judgement layer that helps small and medium enterprises identify, prioritise, and close their real risks—without turning every decision into a heavyweight process.}
+
+\include{_ai/includes/institutional-tacit-knowledge-short.md}
+
 \newslides{Europe’s opportunity: trust as infrastructure}
 
 \slidesincremental{
-* Competitive advantage is not just model quality—it’s *deployability*: delegation that stays legible under audit, incident response, and regulation.
+* Competitive advantage is not just model quality, it’s *deployability*: delegation that stays legible under audit, incident response, and regulation.
 * When authority boundaries are explicit, security becomes an accelerant (faster approvals, safer automation), not a brake.
-* Agentic systems need “delegation contracts”: what is allowed, on what evidence, with what recovery path.
+* Agentic systems need "delegation poilcies": what is allowed, on what evidence, with what recovery path.
 }
 
 \include{_policy/includes/shannon-information.md}

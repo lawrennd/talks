@@ -1,14 +1,14 @@
 ---
-title: "Agentic AI and Security: Delegation at Machine Speed"
+title: "Agentic AI and Security"
 venue: "Handelsblatt TECH 2026, Heilbronn"
-abstract: "<p>Agentic AI changes security because it turns language into <em>actions</em>: tool calls, API requests, and workflow execution. That shift amplifies both productivity and risk—incidents can unfold at machine bandwidth while human sense-making remains slow, distributed, and approval-bound.</p>
-<p>This talk offers a practical frame for leaders building and deploying AI in European organisations: how to capture the upside of delegation (faster operations, reduced coordination overhead, partial paydown of technical and intellectual debt) while avoiding a new liability—<em>agentic debt</em>—that accumulates when authority boundaries, evidence requirements, and recovery paths are left implicit.</p>
+abstract: "<p>Agentic AI changes security because it turns natural language into actions: tool calls, API requests, and workflow execution. That shift amplifies both productivity and risk—incidents can unfold at machine bandwidth while human sense-making remains slow, distributed, and approval-bound.</p>
+<p>This talk offers a practical frame for leaders building and deploying AI in European organisations: how to capture the upside of delegation (faster operations, reduced coordination overhead, partial paydown of technical and intellectual debt) while avoiding a new liability, <em>agentic debt</em>, that accumulates when authority boundaries, evidence requirements, and recovery paths are left implicit.</p>
 <p>We’ll move from first principles (bandwidth and interfaces) to concrete patterns: instruction hierarchy, least-privilege tooling, auditable action boundaries, reversible operations, and containment-by-default.</p>"
 author:
 - given: Neil D.
   family: Lawrence
   url: 
-  institute: 
+  institute: Trent.AI and University of Cambridge
   twitter: 
   gscholar: 
   orcid: 
@@ -33,6 +33,8 @@ categories:
 -->
 <h1 id="frame-why-agentic-ai-shifts-security">Frame: why agentic AI shifts security</h1>
 <p>Open with the core mismatch: speed/scale/distance from context. For agentic AI, the key shift is that the model doesn’t just generate text; it can act through tools and workflows. That turns prompt injection and instruction hijacking into operational security problems.</p>
+<p>This is the wedge: security is becoming an interpretation and coordination problem under time pressure. For Trent, the product claim is “becoming the Security Agent”: a judgement layer that helps small and medium enterprises identify, prioritise, and close their real risks—without turning every decision into a heavyweight process.</p>
+<p>This motivates an emulsion metaphor: organisations are a stable mixture of automatable routines and irreducible human context. In current institutions, the interface between these routine decisions and the judgment is mixed, like an emulsion. When we replace these decisions with orchestrated agents without understanding the judgment interventions we accumulate agentic debt. Paying down agentic debt means extracting the tacit judgment layer into explicit policies, evidence requirements, and reversible action boundaries.</p>
 <h2 id="information-theory-and-ai">Information Theory and AI</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_policy/includes/shannon-information.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_policy/includes/shannon-information.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -255,7 +257,7 @@ bits/min
 <p>It is right there in our approach to software engineering. “Separation of concerns” means no one is concerned about the overall system itself.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> separation of concerns p. 84-85, 103, 109, 199, 284, 371.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> intellectual debt p. 84-85, 349, 365, 376.</p>
-<p>This is the “new debt” introduced by systems that can act: the accrued risk and cost of operating delegated workflows without crisp boundaries. Unlike technical debt (maintenance shortcuts) and intellectual debt (explanation/understanding), agentic debt is about unsafe or illegible delegation—who (or what) can cause what action, on what evidence, with what recovery path.</p>
+<p>Agentic debt is the “new debt” introduced by systems that can act: the accrued risk and cost of operating delegated workflows without crisp boundaries. Unlike technical debt, e.g. emerging from engineering shortcuts, and intellectual debt emerging from (well engineered) complex systems, agentic debt is about unsafe or illegible delegation. Who (or what) can cause what action, on what evidence, with what recovery path?</p>
 <h2 id="lancelot">Lancelot</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_software/includes/lancelot.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_software/includes/lancelot.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

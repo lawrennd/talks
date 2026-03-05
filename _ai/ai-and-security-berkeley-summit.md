@@ -8,6 +8,7 @@ abstract: |
 author:
 - family: Lawrence
   given: Neil D.
+  institute: Trent.AI and University of Cambridge
 date: 2026-08-01
 venue: "Agentic AI Summit 2026, UC Berkeley"
 layout: talk

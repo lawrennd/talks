@@ -1,13 +1,13 @@
 ---
 title: "AI for Science"
-venue: "Bellairs Workshop on AI for Science (Opening Lecture), Barbados"
+venue: "Bellairs Workshop on AI for Science"
 abstract: "<p>AI is changing how science is practiced: from data analysis and surrogate modelling to the use of large, general-purpose models as “scientific assistants” that can read, write, code, and coordinate work.</p>
 <p>This opening lecture frames the workshop’s core questions as questions about <em>where knowledge lives</em>, <em>what we mean by understanding</em>, and <em>how we preserve scientific agency</em> when useful models are not fully intelligible. We’ll build on Popper/Kuhn perspectives on scientific progress, and outline questions for an AI-for-science “playbook” with particular focus on the ideas of tacit knowledge and “agentic debt.”</p>"
 author:
 - given: Neil D.
   family: Lawrence
   url: 
-  institute: University of Cambridge
+  institute: University of Cambridge and Trent.AI
   twitter: 
   gscholar: 
   orcid: 
@@ -55,10 +55,12 @@ categories:
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Kuhn, Thomas: <em>The Structure of Scientific Revolutions</em> p. 295–299.</p>
 <p>Kuhn’s idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..</p>
 <p>This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.</p>
+<p>Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head. Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms. But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline.</p>
 <p>In the first wave of ML in science we’ve seen the increasing use of ML/statistical models for prediction. Here we fit a function <span class="math inline">\(\f_\theta\)</span> on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we’ve created and the predictions it makes.</p>
 <p>Examples include AlphaFold, GraphCast.</p>
 <p>Over the last decade we’ve seen the emergence of new “generalist” or foundation models. Starting with image recognition we found we could fine-tune models trained on one image data set and transfer their capabilities to other data sets.</p>
 <p>The same thing proved true of language once we’d developed transformer architectures and large language models.</p>
+<p>A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion. In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can. That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.</p>
 <p>At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as “vulcanisation”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <h2 id="the-unreasonable-effectiveness-of-orchestration">The Unreasonable Effectiveness of Orchestration</h2>
 <p>The most recent trend is orchestration of these different parts through chat interfaces. Unsurprisingly, since these models are emulating a form of human intelligence, like humans they are more effective when working in a team. But these teams also are given tool calling abilities which allows them rapid access to the information infrastructure. That is leading to the unreasonable effectiveness of agents.</p>
@@ -205,8 +207,9 @@ categories:
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> human-analogue machine (HAMs) p. 343-347, 359-359, 365-368.</p>
 <h2 id="in-mathematical-context">In Mathematical Context</h2>
 <p>Terrance Tao’s IMO 2024 talk on machine assitance in maths gives an excellent overview of how ML techniques can be deployed in maths. Well worth watching for additional insight</p>
-<iframe width height src="https://www.youtube.com/embed/?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/e049IoFBnLA?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
+<p>This is a useful cross-field lens. Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically. But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration. LLMs are attractive because they can encode and communicate that practice in natural language — but they don’t automatically create verifiable, accountable knowledge. So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?</p>
 <p>This is the need for a practical definition of “accountability” here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.</p>
 <h2 id="developing-science">Developing Science</h2>
 <p>One of the most important roles of science is developing the next generation of scientists. This is something that Universities do very well. What does this look like in a world where we can rapidly iterate scientific pipelines through llm/tool orchestration?</p>

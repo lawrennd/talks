@@ -4,13 +4,13 @@ subtitle: "Paradigms, tacit knowledge, and scientific agency in the age of large
 abstract: |
   AI is changing how science is practiced: from data analysis and surrogate modelling to the use of large, general-purpose models as “scientific assistants” that can read, write, code, and coordinate work.
 
-  This opening lecture frames the workshop’s core questions as questions about *where knowledge lives*, *what we mean by understanding*, and *how we preserve scientific agency* when useful models are not fully intelligible. We’ll sketch a minimal shared vocabulary for modern deep learning, contrast Popper/Kuhn perspectives on scientific progress, and outline a pragmatic AI-for-science “playbook” (simulators, surrogates, differentiable pipelines, uncertainty) alongside the missing tooling: provenance, interfaces, calibration, and trustworthy scientific claims.
+  This opening lecture frames the workshop’s core questions as questions about *where knowledge lives*, *what we mean by understanding*, and *how we preserve scientific agency* when useful models are not fully intelligible. We'll build on Popper/Kuhn perspectives on scientific progress, and outline questions for an AI-for-science "playbook" with particular focus on the ideas of tacit knowledge and "agentic debt".
 author:
 - family: Lawrence
   given: Neil D.
-  institute: University of Cambridge
+  institute: University of Cambridge and Trent.AI
 date: 2026-03-15
-venue: "Bellairs Workshop on AI for Science (Opening Lecture), Barbados"
+venue: "Bellairs Workshop on AI for Science"
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -21,7 +21,11 @@ docx: False
 ipynb: False
 ---
 
-\speakernotes{Suggested pacing (flexible): 10 mins shared AI vocabulary; 15 mins philosophy + “knowledge vs technology”; 15 mins AI-for-science playbook + failure modes; 10 mins agents/discovery + open questions. If co-lecturing, this naturally hands over to examples in specific sciences.}
+\speakernotes{Suggested pacing (flexible): 10 mins shared AI
+vocabulary; 15 mins philosophy + “knowledge vs technology”; 15 mins
+AI-for-science playbook + failure modes; 10 mins agents/discovery +
+open questions. If co-lecturing, this naturally hands over to examples
+in specific sciences.}
 
 \section{Opening questions}
 
@@ -33,49 +37,190 @@ ipynb: False
 * **What’s the emerging playbook for AI-for-science** (and what tools are still missing)?
 }
 
+\include{_books/includes/the-structure-of-scientific-revolutions.md}
+
+\notes{Kuhn's idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..}
+
 \speakernotes{This is an opening talk, not a survey. The aim is to offer a shared set of “handles” and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.}
 
-\newslides{Workshop prompts (compressed)}
+\newslides{Some prompts}
 
 \slidesincremental{
-* Paradigms: shift in *science* or in *storage medium*?
+* Paradigms: shift in *science* or in *underpinning information infrastructure*?
 * Understanding: what do we still demand (and from whom)?
-* Omni-models vs specialists: what’s gained/lost?
+* Omni-models vs specialists: what's gained/lost?
 }
+
+\notes{This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.}
+
+\newslides{Crossing fields: recovering the “totality” of science}
+
+\slidesincremental{
+* We already struggle to see the *whole* of science across fields and institutions.
+* LLM interfaces can lower the cost of moving across disciplines — but increase the risk of “plausible” error.
+* So the skill that matters is *scepticism*: what would convince us we’re wrong, and where is the verification boundary?
+}
+
+\notes{Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head.
+Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms.
+But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline.}
 
 \speakernotes{We’ll unroll each into a few concrete “design questions” that show up repeatedly in AI-for-science systems.}
 
-\section{A minimal shared vocabulary for modern AI}
 
-\newslides{A tiny deep learning primer (for scientists)}
+\newslides{First Wave of ML: Prediction}
 
 \slidesincremental{
-* **A model family** \(f_\theta\) that maps inputs to outputs.
-* **A learning objective** that scores how well \(f_\theta\) matches data (and priors/constraints).
-* **Optimisation + scale**: we fit \(\theta\) with large compute and large datasets.
+* *A model family* $f_\theta$ that maps inputs to outputs.
+* *A learning objective* that scores how well $f_\theta$ matches data (and priors/constraints).
+* *Optimisation + scale*: we fit $\theta$ with large compute and large datasets.
 }
 
-\speakernotes{Assume most people know the mathematics, but not the modern practice: large-scale optimisation, representations, pretraining/finetuning, and why “scale” changes what is feasible.}
+\notes{In the first wave of ML in science we've seen the increasing use of ML/statistical models for prediction. Here we fit a function $\f_\theta$ on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we've created and the predictions it makes.}
 
-\newslides{Foundation models and “pretraining”}
+\notes{Examples include AlphaFold, GraphCast.}
+
+\newslides{Prediction Examples}
 
 \slidesincremental{
-* **Pretraining**: learn representations from broad data with weak/self supervision.
-* **Adaptation**: finetune, prompt, or condition on domain data + tools.
-* **What changes**: models become *interfaces* (to text, code, images, scientific workflows).
+* AlphaFold
+* GraphCast/Aardvark
 }
 
-\speakernotes{Set up the idea that large models are an *information interface* more than a “solver” in the classical sense. That matters for how paradigms live and move.}
+\newslide{Generalist Models}
 
-\newslides{What’s new isn’t just prediction — it’s delegation}
+\notes{Over the last decade we've seen the emergence of new "generalist" or foundation models. Starting with image recognition we found we could fine-tune models trained on one image data set and transfer their capabilities to other data sets.}
+
+
+\newslide{Generalist Examples}
+
+\notes{The same thing proved true of language once we'd developed transformer architectures and large language models.}
+
+\slides{
+* ImageNet
+* BERT
+* Chat interfaces
+* Polymathic
+}
+
+\newslides{Physics foundation models}
 
 \slidesincremental{
-* LLMs compress reading/writing/coding into a single interface.
+* If the training data are *rigorous equations* (PDE/ODE solvers), we have a clearer sense of “ground truth”.
+* These models may not map onto human intuitions — but they can still be scientifically *useful*.
+* That makes physics a promising sandbox for a *science of AI*: what is learned, what generalises, and how do we verify?
+}
+
+\notes{A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion.
+In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can.
+That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.}
+
+\notes{At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as "vulcanisation"[^vulcanisation].
+
+[^vulcanisation]: not the sulphur and heat treatment of rubber, but the transformation into intelligences which are more like Dr Spock.}
+
+\subsection{The Unreasonable Effectiveness of Orchestration}
+
+\notes{The most recent trend is orchestration of these different parts through chat interfaces. Unsurprisingly, since these models are emulating a form of human intelligence, like humans they are more effective when working in a team. But these teams also are given tool calling abilities which allows them rapid access to the information infrastructure. That is leading to the unreasonable effectiveness of agents.}
+
+\slidesincremental{
+* LLMs emulate human behaviour
+* Unsurprising that the work better "in collaboration"
+* Also with rapid access to information infrastructure.
+}
+
+\newslide{Agent Examples}
+
+\slidesincremental{
+* Denario 
+* Claude Code
+* Codex
+}
+
+\notes{That means that an additional pattern is emerging, its no longer just prediction[^prediction] but \emph{delegation} and this raises new questions about our processes in Science.
+
+[^prediction]: Well arguably under the hood it's still just prediction ... but prediction over data set sizes that we find unimaginable by models with billions of parameters.}
+
+
+\include{_books/includes/conjectures-and-refutations.md}
+
+\subsection{What are we Delegating?}
+
+\notes{A distinction that I don't think was relevant for Popper when writing in 1963 was whether it matters that we understand where conjectures are coming from and we have an intuition about why they might work. At the time it might still have seemed fanciful for a machine to be so high powered that it could be used for (perhaps exhaustively) exploring and generating hypotheses. Whereas today that seems feasible, particularly for orchestrated sytems of agents.}
+
+\notes{This separation might be summarised as "science as technology" where we are using science to create new materials or drugs that we can empirically show are effective, even if we don't understand why. Or "science as understanding" where we are building our own understanding through our work.}
+
+\notes{I think the two will actually co-evolve, but I think the separation is useful when thinking about AI for science because different actions prioritise one versus the other.}
+
+\slidesincremental{* Science as technology
+* Science as understanding}
+
+\newslide{Judgement Examples}
+
+\notes{Even in the sciene as technology case, society will still require us to have accountability when there are judgment calls. That accountability assumes some understanding. Note that this has already been eroded to some extent. Think, for example, of a computational epidemiologist in the Covid19 pandemic being asked to explain what their model includes (such as hotel closures) and what it doesn't account for (such as facemasks!).
+
+> We might not have data, but we do have arithmetic
+}
+
+\slidesincremental{* Covid19 Epidemiological Modelling
+* Does your model account for Facemasks?
+* Does your model account for Hotel Closures?
+
+> We might not have data, but we can do some arithmetic
+}
+
+\notes{This leads to a phenomena I think of as "agentic debt". And the related phenomenon of "scientific or intellectual debt".}
+
+\include{_ai/includes/intellectual-debt-short.md}
+\include{_ai/includes/agentic-debt-short.md}
+
+\notes{The answers differ when our understanding of the underlying physics improves: think of Navier Stokes simulations, or quantum field theory for chemical bonding vs economic models or "social digital twins".}
+
+\newslide{Judgment Layer}
+
+\slidesincremental{
+* Agentic Orchestration compress reading/writing/coding into a single interface.
 * Tool use turns text into action: search, code execution, lab automation, simulation pipelines.
-* This shifts the bottleneck to **verification** and **scientific judgement**.
+* This shifts the bottleneck to *verification* and *scientific judgement*.
 }
 
-\section{A useful taxonomy (via Terence Tao, IMO 2024)}
+
+\notes{What is the judgment layer for AI in Science? How do we maintain accountability when we have delegated the process of discovery to agents?}
+
+\newslides{What do we mean by “understanding”?}
+
+\slidesincremental{
+* *Operational understanding*: can I use it safely and know when it fails?
+* *Mechanistic understanding*: do I have an interpretable causal/mechanistic story?
+* *Paradigm understanding*: can the community reproduce, contest, and extend it?
+* *Social understanding*: are the ideas understood in the wider public and other fields?
+}
+\notes{We can mean different things by understanding:
+
+* *Operational understanding*: can I use it safely and know when it fails?
+* *Mechanistic understanding*: do I have an interpretable causal/mechanistic story?
+* *Paradigm understanding*: can the community reproduce, contest, and extend it?
+* *Social understanding*: are the ideas understood in the wider public and other fields?}
+
+\notes{With increasing use of computation in science we could argue that there's a shift from mechanistic to operational understanding. But if AI tools are judiciously deployed we could argue that they could support a shift to better understanding of our own paradigms and broader social understanding.}
+
+\notes{These different forms of understanding enable different forms of individual, institutional and social *accountability*. The machines cannot participate in this social accountability in the same way we do because they are not socially vested.}
+
+
+\include{_ai/includes/institutional-tacit-knowledge-short.md}
+
+
+\section{The Information Infrastructure}
+
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+
+\subsection{In Mathematical Context}
+
+\notes{Terrance Tao's IMO 2024 talk on machine assitance in maths gives an excellent overview of how ML techniques can be deployed in maths. Well worth watching for additional insight}
+
+\includeyoutube{e049IoFBnLA}{800}{600}
 
 \newslides{Tao (IMO 2024): machine assistance in maths}
 
@@ -87,188 +232,43 @@ ipynb: False
 
 \speakernotes{Adapted from Terence Tao’s IMO 2024 talk “AI and Mathematics” (AIMO Prize). The appeal is the clean split: storage (databases), mechanised search (solvers), and a modern triad that changes research workflow (proof, pattern-finding, and language/interface).}
 
-\newslides{Same taxonomy, for science}
+\newslides{Repositories of knowledge: verifiable vs tacit}
 
 \slidesincremental{
-* **Databases**: literature, datasets, code, simulators (where paradigms live).
-* **Simulators/solvers**: expensive ground truth and constraint engines.
-* **Modern triad**: ML surrogates (speed), LLMs (interface), verification (trust boundary).
+* **Digitally verifiable**: proof assistants (e.g. Lean) and machine-checkable artefacts.
+* **Operationally reliable**: code, simulators, pipelines — repeatable, but not always interpretable.
+* **Tacit + contextual**: protocols, judgement, and field knowledge (bio/geo/social science).
+* LLMs can *compress and transmit* tacit knowledge — but they push the bottleneck to **verification boundaries**.
 }
 
-\speakernotes{In maths, verification can literally mean proof assistants (Lean/Coq). In most sciences, verification is protocols, calibration, provenance, and reproducible pipelines. The point is the same: useful AI shifts work toward the verification boundary.}
+\notes{This is a useful cross-field lens.
+Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically.
+But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration.
+LLMs are attractive because they can encode and communicate that practice in natural language — but they don’t automatically create verifiable, accountable knowledge.
+So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?}
 
-\section{Science as knowledge vs science as technology}
-
-\newslides{Two senses of “science”}
-
-\slidesincremental{
-* **Science as knowledge**: explanatory, communicable, builds intuition (textbooks, mechanisms).
-* **Science as technology**: reliable performance without shared intuition (black-box but validated).
-* AI accelerates *technology*; we need to decide what happens to *knowledge*.
-}
-
-\speakernotes{This is a deliberately provocative distinction. The question is not whether black boxes exist (they do), but what we choose to teach, certify, and rely on as scientists.}
-
-\newslides{What do we mean by “understanding”?}
+\newslides{Authorship and accountability}
 
 \slidesincremental{
-* **Operational understanding**: can I use it safely and know when it fails?
-* **Mechanistic understanding**: do I have an interpretable causal/mechanistic story?
-* **Social understanding**: can the community reproduce, contest, and extend it?
-}
-
-\speakernotes{In AI-for-science, we often have operational understanding (benchmarks; validation) without mechanistic understanding. Social understanding depends on shared artefacts and interfaces.}
-
-\section{Popper, Kuhn, and what “progress” looks like}
-
-\newslides{Popper vs Kuhn (cartoon version)}
-
-\slidesincremental{
-* **Popper**: bold conjectures + hard refutation; science advances by *falsifiable risk*.
-* **Kuhn**: “normal science” solves puzzles within a paradigm; revolutions shift the paradigm.
-* Both are partly about **institutions**: communities, incentives, and shared artefacts.
-}
-
-\speakernotes{Use this to reframe “AI paradigm shift” talk. Is AI changing the epistemic norms (Popper) or the infrastructure/paradigm carriers (Kuhn), or both?}
-
-\newslides{Where do paradigms live? (a practical inventory)}
-
-\slidesincremental{
-* **Text**: papers, books, review articles, pedagogy.
-* **Math**: equations, theorems, proofs, identifiability arguments.
-* **Code**: simulators, pipelines, datasets, benchmarks, notebooks.
-}
-
-\speakernotes{Add a fourth (often ignored) carrier: tacit judgement embedded in labs, collaborations, and review. That becomes visible when you try to automate parts of science.}
-
-\include{_ai/includes/institutional-tacit-knowledge-short.md}
-
-\section{Debt as a lens for AI-for-science}
-
-\newslides{Three “debts” (mapped to science)}
-
-\slidesincremental{
-* **Technical debt**: brittle pipelines, undocumented glue code, irreproducible workflows.
-* **Intellectual debt**: results we can *run* (or simulate) but can’t fully *grasp*.
-* **Scientific debt** (agentic debt): delegated workflows without crisp boundaries for evidence and action.
-}
-
-\speakernotes{This is borrowed from the framing in the ai and security talks. It maps well: technical debt is the engineering substrate; intellectual debt is the growing gap between what we can build/use and what we can explain; “scientific debt” (agentic debt, in this context) appears when we delegate steps (analysis, code, even lab actions) without explicit authority, provenance, and recovery paths.}
-
-\newslides{Weather vs Covid: where debt accumulates}
-
-\slidesincremental{
-* Weather: large simulations, but anchored in physics + measurement; debt is often *manageable* via calibration/ensembles.
-* Covid: “physics” includes behaviour, institutions, and interventions; debt is larger and more contestable.
-* Scientific debt: action-facing modelling needs explicit **evidence → decision → authorship/accountability**.
-}
-
-\speakernotes{The point isn’t that weather is easy or Covid is impossible; it’s that in Covid-like settings the tacit layer is thicker, the data is more biased/happenstance, and interventions feed back on the system. That’s where intellectual debt (opaque model reliance) and scientific/agentic debt (delegated recommendations/actions without provenance or sign-off) bite hardest.}
-
-\newslides{Authorship and accountability (who answers for the claim?)}
-
-\slidesincremental{
-* We can hold **humans** to account for judgement (even when it’s wrong).
-* We can’t hold **models** to account; they don’t bear responsibility or liability.
+* We can hold *humans* to account for judgement (even when it’s wrong).
+* We can’t hold *models* to account; they don’t bear responsibility or liability.
 * So we must design systems where a *named actor* signs off, with traceable evidence.
 }
 
-\speakernotes{This is the practical meaning of “accountability” here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.}
+\notes{This is the need for a practical definition of "accountability" here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.}
 
-\section{A pragmatic AI-for-science playbook}
+\subsection{Developing Science}
 
-\newslides{A common recipe (across fields)}
+\notes{One of the most important roles of science is developing the next generation of scientists. This is something that Universities do very well. What does this look like in a world where we can rapidly iterate scientific pipelines through llm/tool orchestration?}
 
-\slidesincremental{
-* Start with a **slow but trusted simulator/experiment** (ground truth with caveats).
-* Fit **surrogates** to accelerate inference, optimisation, and design loops.
-* Wrap with **uncertainty** + validation to know when the surrogate is lying.
-}
+\notes{How do we train the next generation of scientists to explain, verify and challenge. How do we develop their scepticism? How do we convert our tacit knowledge (institutional and individual) about judgement into verification boundaries for AI-for-science systems?}
 
-\speakernotes{This corresponds closely to the workshop prompt: accurate but slow simulators, amortised surrogates, differentiable pipelines. The key addition is: validation/certification loops.}
-
-\newslides{Three recurring failure modes}
-
-\slidesincremental{
-* **Distribution shift**: the interesting regime is off the training manifold.
-* **Confounding/causality**: correlations guide action poorly (interventions differ from prediction).
-* **Interface errors**: humans misread outputs; models misread instructions/data provenance.
-}
-
-\speakernotes{These are not just “ML problems”; they are socio-technical. They show up as bad scientific decisions, not just bad metrics.}
-
-\newslides{How do we know a surrogate generalises?}
-
-\slidesincremental{
-* **Stress tests**: deliberately probe extremes, counterfactuals, and “nasty” corners.
-* **Calibration**: uncertainty that tracks real error, not just confidence.
-* **Decision-aware validation**: validate the *decision pipeline*, not only pointwise error.
-}
-
-\speakernotes{This is a key workshop theme: what tools do we have vs what tools are missing? Much of the missing tooling is about evaluation under action, not prediction.}
-
-\section{Omni-models vs specialists}
-
-\newslides{One model to rule them all?}
-
-\slidesincremental{
-* **Generalists**: great interfaces; transfer across domains; help with “glue work”.
-* **Specialists**: better inductive bias; easier validation; clearer failure modes.
-* The frontier is **hybrids**: generalist interface + specialist cores + explicit tests.
-}
-
-\speakernotes{Make this a design choice rather than a religious war. A generalist model can still be part of a specialist scientific system if we control the interface and verification boundary.}
-
-\section{Agents and open-ended discovery}
-
-\newslides{Why “agents” are interesting for science}
-
-\slidesincremental{
-* They turn model capability into **workflow**: read → plan → compute → revise.
-* They externalise cognition into **teams** (multiple models/tools/roles).
-* They force us to specify **division of labour**: what humans do vs what machines do.
-}
-
-\speakernotes{This is where your point lands: LLMs look like “human analogue machines” and become more useful when we put them in human-like teams. That reveals what intelligence we’ve actually captured.}
-
-\newslides{Open-ended discovery: what we can and can’t do (yet)}
-
-\slidesincremental{
-* We can accelerate **search** (literature, designs, hypotheses) and **synthesis** (code, text).
-* We struggle with **grounded novelty**: new concepts that survive hard refutation.
-* The bottleneck becomes **experimental design + verification + instrumentation**.
-}
-
-\speakernotes{Lead into later talks: lab automation, closed-loop experimentation, mechanistic discovery, causal discovery, symbolic regression, theorem proving, etc.}
-
-\section{What tools do we have, and what tools are missing?}
-
-\newslides{What’s missing is often “scientific infrastructure”}
-
-\slidesincremental{
-* **Provenance**: what evidence supports this claim? which data/code produced it?
-* **Interfaces**: how do humans ask good questions and detect bad answers?
-* **Governance**: who is accountable for decisions made with model-mediated evidence?
-}
-
-\speakernotes{This connects back to paradigms: paradigms live in institutions and interfaces as much as in equations.}
-
-\newslides{A “Lean proof” thought experiment}
-
-\slidesincremental{
-* In maths, formal proof assistants are close to a gold standard for verifiable claims.
-* In many sciences, knowledge is entangled with **context** and **measurement**.
-* LLMs may encode that context — but verification must move to *interfaces + protocols*.
-}
-
-\speakernotes{This is your Lean / repository-of-knowledge riff, without overcommitting. The point is: the verification unit changes by domain, but science still needs verifiable claims.}
-
-\newslides{Discussion prompts for the week}
+\notes{What is the new repository for the paradigm store?}
 
 \slidesincremental{
 * What do we want trainees to be able to **explain**, **verify**, and **challenge**?
-* Where should we place the **verification boundary** in AI-for-science systems?
-* Which artefacts should become our new “textbooks”: datasets, simulators, model cards, tests?
+* Where is the *verification boundary* in AI-for-science systems?
+* Which artefacts are the new paradigm stores?
 }
 
 \thanks

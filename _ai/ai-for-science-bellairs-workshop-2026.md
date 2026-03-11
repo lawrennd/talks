@@ -9,6 +9,9 @@ author:
 - family: Lawrence
   given: Neil D.
   institute: University of Cambridge and Trent.AI
+- family: Lillicrap
+  given: Timothy
+  institute: Google DeepMind
 date: 2026-03-15
 venue: Bellairs Workshop on AI for Science
 layout: talk
@@ -30,13 +33,6 @@ ipynb: False
 * 95-110: Tim lead (agents, discovery, generalist vs specialist).
 * 110-120: joint synthesis and workshop questions.
 
-\subsection{Questions}
-
-\slidesincremental{
-* Where do scientific paradigms live? 
-* What role does human understanding and agency play?
-* What's an emerging playbook for AI-for-science?
-}
 
 \subsection{Notes}
 
@@ -45,12 +41,22 @@ ipynb: False
 * Common touchpoints: old-school ML + recent deep learning in science.
 * Open design question: generalist models calling specialist tools, or internalising specialist knowledge?
 
+\subsection{Questions}
 
-\notes{As a way of triggering reflection for this workshop I thought to start with three questions. They are:
+\slidesincremental{
+* Where do scientific paradigms live? 
+* What role does human understanding and agency play?
+* What's an emerging playbook for AI-for-science?
+}
+
+
+\notes{As a way of triggering reflection for this workshop we thought to start with three questions. They are:
 
 1. Where do scientific paradigms live as knowledge moves from books/equations into code, simulators, and large models?
 2. What role should human understanding and agency play when we can use models we don't fully understand?
 3. What’s an emerging playbook for AI-for-science* and what tools will we depend on?}
+
+
 
 \notes{To start exploring we'll look at some ideas from the philosophy of science, starting with Thomas Kuhn.}
 

@@ -2,15 +2,15 @@
 title: "AI for Science"
 subtitle: "Paradigms, tacit knowledge, and scientific agency in the age of large models"
 abstract: |
-  AI is changing how science is practiced: from data analysis and surrogate modelling to the use of large, general-purpose models as “scientific assistants” that can read, write, code, and coordinate work.
+  AI is changing how science is practiced: from data analysis and surrogate modelling to the use of large, general-purpose models as scientific assistants that can read, write, code, and coordinate work.
 
-  This opening lecture frames the workshop’s core questions as questions about *where knowledge lives*, *what we mean by understanding*, and *how we preserve scientific agency* when useful models are not fully intelligible. We'll build on Popper/Kuhn perspectives on scientific progress, and outline questions for an AI-for-science "playbook" with particular focus on the ideas of tacit knowledge and "agentic debt".
+  This opening lecture frames the workshop's core questions as questions about *where knowledge lives*, *what we mean by understanding*, and *how we preserve scientific agency* when useful models are not fully intelligible. We'll build on Popper/Kuhn perspectives on scientific progress, and outline questions for an AI-for-science "playbook" with particular focus on the ideas of tacit knowledge and "agentic debt".
 author:
 - family: Lawrence
   given: Neil D.
   institute: University of Cambridge and Trent.AI
 date: 2026-03-15
-venue: "Bellairs Workshop on AI for Science"
+venue: Bellairs Workshop on AI for Science
 layout: talk
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
@@ -21,27 +21,44 @@ docx: False
 ipynb: False
 ---
 
-\speakernotes{Suggested pacing (flexible): 10 mins shared AI
-vocabulary; 15 mins philosophy + “knowledge vs technology”; 15 mins
-AI-for-science playbook + failure modes; 10 mins agents/discovery +
-open questions. If co-lecturing, this naturally hands over to examples
-in specific sciences.}
+\subsection{Potential Timing/Framing}
 
-\section{Opening questions}
+* 0-25: Neil framing (questions, philosophy, paradigm store).
+* 25-55: Tim lead (what is science, model types, canonical AI examples).
+* 55-70: break.
+* 70-95: Neil lead (delegation, tacit knowledge, verification/accountability).
+* 95-110: Tim lead (agents, discovery, generalist vs specialist).
+* 110-120: joint synthesis and workshop questions.
 
-\newslides{Bellairs workshop: the questions we’ll keep returning to}
+\subsection{Questions}
 
 \slidesincremental{
-* **Where do scientific paradigms live** as knowledge moves from books/equations into code, simulators, and large models?
-* **What role should human understanding and agency play** when we can use models we don’t fully understand?
-* **What’s the emerging playbook for AI-for-science** (and what tools are still missing)?
+* Where do scientific paradigms live? 
+* What role does human understanding and agency play?
+* What's an emerging playbook for AI-for-science?
 }
+
+\subsection{Notes}
+
+* What is science for: prediction, explanation, control (light-touch framing.
+* Kinds of scientific models: mechanistic equations, statistical mechanics/effective models, ML surrogates.
+* Common touchpoints: old-school ML + recent deep learning in science.
+* Open design question: generalist models calling specialist tools, or internalising specialist knowledge?
+
+
+\notes{As a way of triggering reflection for this workshop I thought to start with three questions. They are:
+
+1. Where do scientific paradigms live as knowledge moves from books/equations into code, simulators, and large models?
+2. What role should human understanding and agency play when we can use models we don't fully understand?
+3. What’s an emerging playbook for AI-for-science* and what tools will we depend on?}
+
+\notes{To start exploring we'll look at some ideas from the philosophy of science, starting with Thomas Kuhn.}
 
 \include{_books/includes/the-structure-of-scientific-revolutions.md}
 
 \notes{Kuhn's idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..}
 
-\speakernotes{This is an opening talk, not a survey. The aim is to offer a shared set of “handles” and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.}
+\speakernotes{This is an opening talk, not a survey. The aim is to offer a shared set of "handles" and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.}
 
 \newslides{Some prompts}
 
@@ -53,7 +70,7 @@ in specific sciences.}
 
 \notes{This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.}
 
-\newslides{Crossing fields: recovering the “totality” of science}
+\newslides{Crossing fields: recovering the "totality" of science}
 
 \slidesincremental{
 * We already struggle to see the *whole* of science across fields and institutions.
@@ -67,6 +84,26 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 
 \speakernotes{We’ll unroll each into a few concrete “design questions” that show up repeatedly in AI-for-science systems.}
 
+
+\subsection{To Tim}
+
+* Perhaps: "what is science?" as prediction, explanation, and control.
+* Perhaps: where control/RL intuitions shift how we evaluate models.
+* Perhaps: how model classes connect (equations, effective statistical models, ML systems).
+
+\subsection{What is science for?}
+
+* **Prediction**: what will happen?
+* **Explanation**: why does it happen?
+* **Control/Design**: how do we intervene to get desired outcomes?
+* Different fields weight these differently; AI changes the balance.
+
+\subsection{Model types in science}
+
+* **Mechanistic** models: equations from domain theory.
+* **Effective/statistical** models: coarse-grained abstractions (e.g., stat mech style summaries).
+* **Learned** models: ML/DL surrogates and pattern extractors.
+* Practice is hybrid: compose all three with clear verification boundaries.
 
 \newslides{First Wave of ML: Prediction}
 
@@ -106,18 +143,25 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 \newslides{Physics foundation models}
 
 \slidesincremental{
-* If the training data are *rigorous equations* (PDE/ODE solvers), we have a clearer sense of “ground truth”.
+* If the training data are *rigorous equations* (PDE/ODE solvers), we have a clearer sense of "ground truth".
 * These models may not map onto human intuitions — but they can still be scientifically *useful*.
 * That makes physics a promising sandbox for a *science of AI*: what is learned, what generalises, and how do we verify?
 }
 
-\notes{A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion.
-In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can.
+\notes{A "Polymathic"-style model trained on differential equations is interesting because it shifts the discussion.
+In many domains we can’t even agree what the canonical "ground truth" representation is; in physics we often can.
 That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.}
 
 \notes{At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as "vulcanisation"[^vulcanisation].
 
 [^vulcanisation]: not the sulphur and heat treatment of rubber, but the transformation into intelligences which are more like Dr Spock.}
+
+\subsection{Break (15 mins)}
+
+* Return for delegation, tacit knowledge, and verification boundaries.
+
+
+\notes{Suggested break after Tim's first block. Re-start by recapping the prediction/explanation/control lens and move into accountability.}
 
 \subsection{The Unreasonable Effectiveness of Orchestration}
 
@@ -256,6 +300,12 @@ So the design question becomes: where do we draw the verification boundary, and 
 }
 
 \notes{This is the need for a practical definition of "accountability" here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.}
+
+\subsection{Over to Tim: agents, discovery, specialist tools}
+
+* Perhaps: why current LLMs are useful collaborators, but not autonomous scientists.
+* Perhaps: RL/diversity/curiosity as the missing ingredients for discovery.
+* Perhaps: generalist models orchestrating specialist tools vs internalising specialist corpora.
 
 \subsection{Developing Science}
 

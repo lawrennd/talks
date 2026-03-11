@@ -30,7 +30,23 @@ categories:
 <!--
 
 -->
+<h2 id="potential-timingframing">Potential Timing/Framing</h2>
+<ul>
+<li>0-25: Neil framing (questions, philosophy, paradigm store).</li>
+<li>25-55: Tim lead (what is science, model types, canonical AI examples).</li>
+<li>55-70: break.</li>
+<li>70-95: Neil lead (delegation, tacit knowledge, verification/accountability).</li>
+<li>95-110: Tim lead (agents, discovery, generalist vs specialist).</li>
+<li>110-120: joint synthesis and workshop questions.</li>
+</ul>
 <h2 id="questions">Questions</h2>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>What is science for: prediction, explanation, control (light-touch framing.</li>
+<li>Kinds of scientific models: mechanistic equations, statistical mechanics/effective models, ML surrogates.</li>
+<li>Common touchpoints: old-school ML + recent deep learning in science.</li>
+<li>Open design question: generalist models calling specialist tools, or internalising specialist knowledge?</li>
+</ul>
 <p>As a way of triggering reflection for this workshop I thought to start with three questions. They are:</p>
 <ol type="1">
 <li>Where do scientific paradigms live as knowledge moves from books/equations into code, simulators, and large models?</li>
@@ -62,12 +78,37 @@ categories:
 <p>Kuhn’s idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..</p>
 <p>This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.</p>
 <p>Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head. Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms. But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline.</p>
+<h2 id="to-tim">To Tim</h2>
+<ul>
+<li>Perhaps: “what is science?” as prediction, explanation, and control.</li>
+<li>Perhaps: where control/RL intuitions shift how we evaluate models.</li>
+<li>Perhaps: how model classes connect (equations, effective statistical models, ML systems).</li>
+</ul>
+<h2 id="what-is-science-for">What is science for?</h2>
+<ul>
+<li><strong>Prediction</strong>: what will happen?</li>
+<li><strong>Explanation</strong>: why does it happen?</li>
+<li><strong>Control/Design</strong>: how do we intervene to get desired outcomes?</li>
+<li>Different fields weight these differently; AI changes the balance.</li>
+</ul>
+<h2 id="model-types-in-science">Model types in science</h2>
+<ul>
+<li><strong>Mechanistic</strong> models: equations from domain theory.</li>
+<li><strong>Effective/statistical</strong> models: coarse-grained abstractions (e.g., stat mech style summaries).</li>
+<li><strong>Learned</strong> models: ML/DL surrogates and pattern extractors.</li>
+<li>Practice is hybrid: compose all three with clear verification boundaries.</li>
+</ul>
 <p>In the first wave of ML in science we’ve seen the increasing use of ML/statistical models for prediction. Here we fit a function <span class="math inline">\(\f_\theta\)</span> on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we’ve created and the predictions it makes.</p>
 <p>Examples include AlphaFold, GraphCast.</p>
 <p>Over the last decade we’ve seen the emergence of new “generalist” or foundation models. Starting with image recognition we found we could fine-tune models trained on one image data set and transfer their capabilities to other data sets.</p>
 <p>The same thing proved true of language once we’d developed transformer architectures and large language models.</p>
 <p>A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion. In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can. That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.</p>
 <p>At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as “vulcanisation”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<h2 id="break-15-mins">Break (15 mins)</h2>
+<ul>
+<li>Return for delegation, tacit knowledge, and verification boundaries.</li>
+</ul>
+<p>Suggested break after Tim’s first block. Re-start by recapping the prediction/explanation/control lens and move into accountability.</p>
 <h2 id="the-unreasonable-effectiveness-of-orchestration">The Unreasonable Effectiveness of Orchestration</h2>
 <p>The most recent trend is orchestration of these different parts through chat interfaces. Unsurprisingly, since these models are emulating a form of human intelligence, like humans they are more effective when working in a team. But these teams also are given tool calling abilities which allows them rapid access to the information infrastructure. That is leading to the unreasonable effectiveness of agents.</p>
 <p>That means that an additional pattern is emerging, its no longer just prediction<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but  and this raises new questions about our processes in Science.</p>
@@ -217,6 +258,12 @@ categories:
 </iframe>
 <p>This is a useful cross-field lens. Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically. But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration. LLMs are attractive because they can encode and communicate that practice in natural language — but they don’t automatically create verifiable, accountable knowledge. So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?</p>
 <p>This is the need for a practical definition of “accountability” here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.</p>
+<h2 id="over-to-tim-agents-discovery-specialist-tools">Over to Tim: agents, discovery, specialist tools</h2>
+<ul>
+<li>Perhaps: why current LLMs are useful collaborators, but not autonomous scientists.</li>
+<li>Perhaps: RL/diversity/curiosity as the missing ingredients for discovery.</li>
+<li>Perhaps: generalist models orchestrating specialist tools vs internalising specialist corpora.</li>
+</ul>
 <h2 id="developing-science">Developing Science</h2>
 <p>One of the most important roles of science is developing the next generation of scientists. This is something that Universities do very well. What does this look like in a world where we can rapidly iterate scientific pipelines through llm/tool orchestration?</p>
 <p>How do we train the next generation of scientists to explain, verify and challenge. How do we develop their scepticism? How do we convert our tacit knowledge (institutional and individual) about judgement into verification boundaries for AI-for-science systems?</p>

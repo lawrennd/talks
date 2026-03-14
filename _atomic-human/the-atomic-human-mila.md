@@ -51,19 +51,30 @@ dotx: custom-reference.dotx
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 
 \include{_ai/includes/the-atomic-eye.md}
-\include{_ai/includes/diving-bell-butterfly.md}
-\include{_ai/includes/jean-dominique-bauby.md}
-\include{_ai/includes/shannon-bauby.md}
-\include{_ai/includes/embodiment-factors-tedx.md}
+\undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\define{noSlideTitle}
 \include{_ai/includes/conversation-tedx.md}
+
 
 \include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_atomic-human/includes/narratives-vs-statistics.md}
 
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
+
+\include{_art/includes/blake-newton.md}
+\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
+\include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\include{_atomic-human/includes/communication-through-artefacts-art.md}
+\include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
+\undef{noSlideTitle}
 \include{_ai/includes/baby-shoes.md}
 
+\define{noSlideTitle}
 \include{_atomic-human/includes/enlightenment-scribeysense.md}
 \include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
 
@@ -74,9 +85,22 @@ dotx: custom-reference.dotx
 \include{_atomic-human/includes/nothing-to-worry-about.md}
 
 \include{_atomic-human/includes/reality-is-more-humdrum.md}
+\undef{noSlideTitle}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
-\include{_atomic-human/includes/river-gods-decide.md}
 
+\subsection{Technical and Intellectual Debt}
+
+\notes{Technical debt is famous in software engineering. It's where you deploy quickly and as a result you deploy a system that doesn't have the robustness of engineering it needs for ongoing use. You therefore struggle to maintain your deployment.}
+
+\notes{Intellectual debt is when you struggle to explain what your system is doing. It may be working from an engineering perspective, but as you combined more and more components in your software system you struggle to explain how they're interacting.}
+
+\slidesincremental{* Technical debt: maintain your system
+* Intellectual debt: explain your system
+}
+
+\include{_ai/includes/agentic-debt-short.md}
+\define{noSlideTitle}
+\include{_atomic-human/includes/river-gods-decide.md}
 \include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
 \thanks

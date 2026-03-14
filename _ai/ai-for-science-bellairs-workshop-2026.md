@@ -66,7 +66,7 @@ ipynb: False
 
 \speakernotes{This is an opening talk, not a survey. The aim is to offer a shared set of "handles" and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.}
 
-\newslides{Some prompts}
+\newslide{Some prompts}
 
 \slidesincremental{
 * Paradigms: shift in *science* or in *underpinning information infrastructure*?
@@ -76,7 +76,7 @@ ipynb: False
 
 \notes{This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.}
 
-\newslides{Crossing fields: recovering the "totality" of science}
+\newslide{Crossing fields: recovering the "totality" of science}
 
 \slidesincremental{
 * We already struggle to see the *whole* of science across fields and institutions.
@@ -111,7 +111,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 * **Learned** models: ML/DL surrogates and pattern extractors.
 * Practice is hybrid: compose all three with clear verification boundaries.
 
-\newslides{First Wave of ML: Prediction}
+\newslide{First Wave of ML: Prediction}
 
 \slidesincremental{
 * *A model family* $f_\theta$ that maps inputs to outputs.
@@ -123,7 +123,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 
 \notes{Examples include AlphaFold, GraphCast.}
 
-\newslides{Prediction Examples}
+\newslide{Prediction Examples}
 
 \slidesincremental{
 * AlphaFold
@@ -146,7 +146,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 * Polymathic
 }
 
-\newslides{Physics foundation models}
+\newslide{Physics foundation models}
 
 \slidesincremental{
 * If the training data are *rigorous equations* (PDE/ODE solvers), we have a clearer sense of "ground truth".
@@ -237,7 +237,7 @@ That creates a rare opportunity: we can evaluate generalisation against known st
 
 \notes{What is the judgment layer for AI in Science? How do we maintain accountability when we have delegated the process of discovery to agents?}
 
-\newslides{What do we mean by “understanding”?}
+\newslide{What do we mean by “understanding”?}
 
 \slidesincremental{
 * *Operational understanding*: can I use it safely and know when it fails?
@@ -272,37 +272,47 @@ That creates a rare opportunity: we can evaluate generalisation against known st
 
 \includeyoutube{e049IoFBnLA}{800}{600}
 
-\newslides{Tao (IMO 2024): machine assistance in maths}
+\newslide{Tao (IMO 2024): machine assistance in maths}
 
 \slidesincremental{
-* **Databases / tables** (OEIS): store patterns and prior results.
-* **Solvers** (CAS, SAT/SMT): mechanised search and case analysis.
-* **Modern triad**: proof assistants, machine learning, large language models.
+* *Databases / tables* (OEIS): store patterns and prior results.
+* *Solvers* (CAS, SAT/SMT): mechanised search and case analysis.
+* *Modern triad*: proof assistants, machine learning, large language models.
 }
 
-\speakernotes{Adapted from Terence Tao’s IMO 2024 talk “AI and Mathematics” (AIMO Prize). The appeal is the clean split: storage (databases), mechanised search (solvers), and a modern triad that changes research workflow (proof, pattern-finding, and language/interface).}
+\speakernotes{Adapted from Terence Tao’s IMO 2024 talk “AI and
+Mathematics” (AIMO Prize). The appeal is the clean split: storage
+(databases), mechanised search (solvers), and a modern triad that
+changes research workflow (proof, pattern-finding, and
+language/interface).}
 
-\newslides{Repositories of knowledge: verifiable vs tacit}
+\newslide{Repositories of knowledge: verifiable vs tacit}
 
 \slidesincremental{
-* **Digitally verifiable**: proof assistants (e.g. Lean) and machine-checkable artefacts.
-* **Operationally reliable**: code, simulators, pipelines — repeatable, but not always interpretable.
-* **Tacit + contextual**: protocols, judgement, and field knowledge (bio/geo/social science).
-* LLMs can *compress and transmit* tacit knowledge — but they push the bottleneck to **verification boundaries**.
+* *Digitally verifiable*: proof assistants (e.g. Lean) and machine-checkable artefacts.
+* *Operationally reliable*: code, simulators, pipelines — repeatable, but not always interpretable.
+* *Tacit + contextual*: protocols, judgement, and field knowledge (bio/geo/social science).
+* LLMs can *compress and transmit* tacit knowledge — but they push the bottleneck to *verification boundaries*.
 }
 
-\notes{This is a useful cross-field lens.
-Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically.
-But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration.
-LLMs are attractive because they can encode and communicate that practice in natural language — but they don’t automatically create verifiable, accountable knowledge.
-So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?}
+\notes{This is a useful cross-field lens.  Mathematics is close to a
+“gold standard” for verifiability: once formalised, we can check
+claims mechanically.  But much of science lives in tacit practice:
+what counts as a clean sample, a plausible stratigraphy, a credible
+causal story, a trustworthy instrument calibration.  LLMs are
+attractive because they can encode and communicate that practice in
+natural language, but they don’t automatically create verifiable,
+accountable knowledge.  So the design question becomes: where do we
+draw the verification boundary, and what artefacts do we insist on at
+that boundary?}
 
-\newslides{Authorship and accountability}
+\newslide{Authorship and accountability}
 
 \slidesincremental{
-* We can hold *humans* to account for judgement (even when it’s wrong).
-* We can’t hold *models* to account; they don’t bear responsibility or liability.
-* So we must design systems where a *named actor* signs off, with traceable evidence.
+* We can hold *humans* to account for judgement 
+* We can’t hold *models* (directly) to account
+  * they don’t bear responsibility or liability
+* Need a named *author* to sign off
 }
 
 \notes{This is the need for a practical definition of "accountability" here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.}

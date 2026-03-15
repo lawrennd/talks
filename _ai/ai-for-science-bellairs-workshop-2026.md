@@ -50,7 +50,6 @@ ipynb: False
 3. What’s an emerging playbook for AI-for-science* and what tools will we depend on?}
 
 
-
 \notes{To start exploring we'll look at some ideas from the philosophy of science, starting with Thomas Kuhn.}
 
 \include{_books/includes/the-structure-of-scientific-revolutions.md}
@@ -411,6 +410,32 @@ that boundary?}
 
 \section{Over to Tim: agents, discovery, specialist tools}
 
+
+\subsection{Workshop Questions}
+
+\slidesincremental{
+1. Is there an emerging playbook for AI-for-Science?
+2. Are we converging on a standard recipe, accurate but slow simulators, amortized surrogates, differentiable pipelines, and how do we know when these surrogates truly generalize?
+3. Can AI grapple with open-ended discovery?
+}
+\newslide{Workshop Questions}
+
+\slidesincremental{
+4. Beyond supervised prediction, to what extent can current or near-future systems generate meaningful hypotheses, concepts, and research directions?
+5. What tools do we have, and what tools are missing?
+6. Which existing AI/ML capabilities are already reshaping scientific practice, and what critical tools (for uncertainty, causality, interpretability, or interfaces) are still absent?
+}
+
+\notes{
+1. Is there an emerging playbook for AI-for-Science?
+2. Are we converging on a standard recipe, accurate but slow simulators, amortized surrogates, differentiable pipelines, and how do we know when these surrogates truly generalize?
+3. Can AI grapple with open-ended discovery?
+4. Beyond supervised prediction, to what extent can current or near-future systems generate meaningful hypotheses, concepts, and research directions?
+5. What tools do we have, and what tools are missing?
+6. Which existing AI/ML capabilities are already reshaping scientific practice, and what critical tools (for uncertainty, causality, interpretability, or interfaces) are still absent?
+}
+
+\notes{See also <https://docs.google.com/document/d/1SwgrKd5FTPv1d-9dJXxGck7DNg-92ZNxmoMN8seGD0I/edit?tab=t.8wcumofsvahv>}
 
 \thanks
 

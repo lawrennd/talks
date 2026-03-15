@@ -116,7 +116,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 * *Task capabilities*: what the model can do (predict, reason, generate, control) [@Krenn-scientific22; @Bommasani-foundation21].
 * *Workflow needs*: where value appears (hypothesis, design, analysis, writing, coding) [@Berman-use24; @Arranz-trends23; @ERC-use23].
 * *Context constraints*: data, compute, latency, validation culture, uncertainty tolerance [@Duarte-fast18].
-* A useful organising proposal appears in our under-review position paper [@Cranmer-science26].
+* See @Cranmer-science26 (in review).
 }
 
 \notes{This framing is meant to reduce the "AI for science" hype conflation by separating three different questions we often mix together. First, what can a model technically do (task capability)? Second, where in scientific practice does it add value (workflow need)? Third, what constraints make deployment viable in a given field (context constraints)? The same model can look transformative in one workflow and marginal in another; likewise, a method that works in one domain can fail in another because validation, latency, compute, or uncertainty tolerance differ. The practical aim is better matching: align capabilities to scientific questions and local constraints, rather than assuming a general model gives general scientific benefit.}
@@ -374,6 +374,9 @@ that boundary?}
 * *Governance gap*: policy exists, practice often lags [@Resnik-ethics25; @Montgomery-framework25].
 * *Research culture gap*: weak incentives/careers for interdisciplinary team science [@NAS-facilitating05].
 * *Infrastructure gap*: compute and models concentrated in few actors [@Bommasani-foundation21; @Lawrence-accelerating24].
+}
+\newslide{Institutional readiness: five gaps}
+\slidesincremental{}
 * *Narrative gap*: corporate visibility can eclipse public infrastructure contributions [@Royalsociety-portrayals18; @Moult-casp95].
 * *Coordination gap*: funding/governance/data/skills often evolve separately [@Montgomery-framework25].
 }

@@ -24,22 +24,16 @@ docx: False
 ipynb: False
 ---
 
-\subsection{Potential Timing/Framing}
 
-* 0-25: Neil framing (questions, philosophy, paradigm store).
-* 25-55: Tim lead (what is science, model types, canonical AI examples).
-* 55-70: break.
-* 70-95: Neil lead (delegation, tacit knowledge, verification/accountability).
-* 95-110: Tim lead (agents, discovery, generalist vs specialist).
-* 110-120: joint synthesis and workshop questions.
+\include{_ai/includes/rabbit-in-headlights.md}
 
+\subsection{A Provocation}
 
-\subsection{Notes}
+\notes{With that in mind perhaps it's worth delivering the following provocation.}
 
-* What is science for: prediction, explanation, control (light-touch framing.
-* Kinds of scientific models: mechanistic equations, statistical mechanics/effective models, ML surrogates.
-* Common touchpoints: old-school ML + recent deep learning in science.
-* Open design question: generalist models calling specialist tools, or internalising specialist knowledge?
+> Science is kind of like a rabbit in the headlights of the Deep Learning Machine waiting to be flattened.
+
+\notes{Or are we actually already in the middle of the flood. And if so, where is the high ground?}
 
 \subsection{Questions}
 
@@ -48,7 +42,6 @@ ipynb: False
 * What role does human understanding and agency play?
 * What's an emerging playbook for AI-for-science?
 }
-
 
 \notes{As a way of triggering reflection for this workshop we thought to start with three questions. They are:
 
@@ -64,32 +57,92 @@ ipynb: False
 
 \notes{Kuhn's idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..}
 
-\speakernotes{This is an opening talk, not a survey. The aim is to offer a shared set of "handles" and vocabulary that we can re-use all week: paradigms/mediums, understanding/agency, playbooks/tools.}
 
 \newslide{Some prompts}
 
 \slidesincremental{
 * Paradigms: shift in *science* or in *underpinning information infrastructure*?
 * Understanding: what do we still demand (and from whom)?
-* Omni-models vs specialists: what's gained/lost?
 }
 
 \notes{This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.}
 
+\include{_books/includes/conjectures-and-refutations.md}
+
+\subsection{Qualitative vs Quantitative}
+
+\newslide{Qualitative vs Quantitative}
+
+\slidesincremental{
+* Questions we care about are often *qualitative* (meaning, values, lived outcomes).
+* Questions we can  test are often *quantitative* (metrics, averages, effect sizes).
+* AI may help bridge this gap by turning language and practice into analysable data.
+}
+
+\notes{Historically questions can be split into two types. Qualitative questions and quantitative questions. Arguably most of the questions we truly care about are qualitiative, "How can I live a happier life?", "How can I do more good in the world?", "Will this drug make me healthier?". But in practice the questions we answer scientifically tend to be quantitative. "Which jobs have the highest income?", "What is the GDP/capita of Kenya?", "Does this drug give an average life extension of greater than 6 months?". }
+
+\notes{This new generation of AI seems in some ways to bridge the qualitative/quantitive gap. Firstly, language can now be used directly as data, perhaps allowing us to bring a more quantitative approach to what were formerly qualitative questions. But secondly traditional techniques in social science that are based on interviews or transcripts (e.g. grounded theory) could be made more scalable with the use of AI technologies. For example, automatic transcription and/or assisted coding.}
+
+\subsection{Coding and Creatives}
+
+\newslide{Coding and Creatives}
+
+\slidesincremental{
+* Go back go ICML 2015 Deep Learning Workshop
+* Try to imagine a technology with mass impact on *coding* and *creative work*.
+}
+
+\notes{Just to contextualise for a moment, imagine we have stepped back to that ICML workshop 11 years ago where I made that quote. I think one thing that would have suprised us is the effect of that Tsunami. Up until last year at least it feels like the main direct societal effect was on *coding* and *creatives*. Although I have some sense of why that is (you might have your own answers), I think I would have found that very difficult to predict, or indeed to have imagined any technology that has a major effect on those two areas.}
+
 \newslide{Crossing fields: recovering the "totality" of science}
 
 \slidesincremental{
-* We already struggle to see the *whole* of science across fields and institutions.
-* LLM interfaces can lower the cost of moving across disciplines — but increase the risk of “plausible” error.
-* So the skill that matters is *scepticism*: what would convince us we’re wrong, and where is the verification boundary?
+* Struggle *whole* of science across fields and institutions.
+* LLM interfaces lower cost of moving across disciplines
+* Increase the risk of "plausible" error.
+* Main skill: *skepticism*
 }
 
 \notes{Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head.
 Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms.
-But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline.}
+But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline [@Narayanan-ai25; @Kwon-scientists25; @Ogrady-lowquality25].}
 
 \speakernotes{We’ll unroll each into a few concrete “design questions” that show up repeatedly in AI-for-science systems.}
 
+
+\newslide{AI-for-science framework: three lenses}
+
+\slidesincremental{
+* *Task capabilities*: what the model can do (predict, reason, generate, control) [@Krenn-scientific22; @Bommasani-foundation21].
+* *Workflow needs*: where value appears (hypothesis, design, analysis, writing, coding) [@Berman-use24; @Arranz-trends23; @ERC-use23].
+* *Context constraints*: data, compute, latency, validation culture, uncertainty tolerance [@Duarte-fast18].
+* A useful organising proposal appears in our under-review position paper [@Cranmer-science26].
+}
+
+\notes{This framing is meant to reduce the "AI for science" hype conflation by separating three different questions we often mix together. First, what can a model technically do (task capability)? Second, where in scientific practice does it add value (workflow need)? Third, what constraints make deployment viable in a given field (context constraints)? The same model can look transformative in one workflow and marginal in another; likewise, a method that works in one domain can fail in another because validation, latency, compute, or uncertainty tolerance differ. The practical aim is better matching: align capabilities to scientific questions and local constraints, rather than assuming a general model gives general scientific benefit.}
+
+\newslide{The science gap: pattern matching vs mechanism}
+
+\slidesincremental{
+* ML is strong at *pattern extraction* and function approximation.
+* Science needs *mechanism*: why, when, and under what interventions.
+* So many deployments are still *guess-and-verify* pipelines.
+* Key question: when is prediction enough, and when do we require explanation? [@Bender-dangers21; @Pearl-causality18].
+}
+
+\notes{The "science gap" is the distance between statistical competence and scientific understanding. Pattern matching can produce accurate predictions, but scientific reasoning usually asks for mechanistic structure: what would happen under interventions, out-of-distribution conditions, or policy-relevant counterfactuals. In practice this leads to a guess-and-verify loop: models generate candidates, experiments filter them. That can still be useful science, but it shifts where understanding lives and where cost sits. The key point here is not that prediction is bad, but that prediction and explanation are different epistemic products, and we should be explicit about which one a workflow is optimising for.}
+
+\newslide{Technical priorities for scientific AI}
+
+\slidesincremental{
+* *Causality*: distinguish correlation from interventionally robust structure [@Pearl-causality18; @Scholkopf-causality22].
+* *Abstraction*: discover useful intermediate scales and effective theories [@Anderson-more72; @Jaynes-information57].
+* *Simulation*: hybrid mechanistic + learned systems with explicit validity regimes [@Cranmer-frontier20; @Oreskes-verification94].
+}
+
+\notes{These three priorities are an agenda for making AI more scientific. Causality asks whether models can support intervention and policy reasoning, not only retrospective fit. Abstraction asks whether AI can help discover the right intermediate representations across scales, where many scientific breakthroughs occur. Simulation asks how to combine mechanistic structure with learned components so we retain physical plausibility while gaining flexibility and efficiency. Together they move us from "high-performing predictor" toward "scientific instrument": a system that is useful, interrogable, and bounded by clear validity conditions.}
+
+\section{To Tim}
 
 \subsection{To Tim}
 
@@ -111,6 +164,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 * **Learned** models: ML/DL surrogates and pattern extractors.
 * Practice is hybrid: compose all three with clear verification boundaries.
 
+
 \newslide{First Wave of ML: Prediction}
 
 \slidesincremental{
@@ -121,7 +175,7 @@ But the failure mode is also cross-field: confident-sounding claims without the 
 
 \notes{In the first wave of ML in science we've seen the increasing use of ML/statistical models for prediction. Here we fit a function $\f_\theta$ on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we've created and the predictions it makes.}
 
-\notes{Examples include AlphaFold, GraphCast.}
+\notes{Examples include AlphaFold and data-driven weather forecasting systems [@Jumper-alphafold21; @Allen-weather25], as well as materials discovery [@Merchant-scaling23].}
 
 \newslide{Prediction Examples}
 
@@ -191,9 +245,6 @@ That creates a rare opportunity: we can evaluate generalisation against known st
 
 [^prediction]: Well arguably under the hood it's still just prediction ... but prediction over data set sizes that we find unimaginable by models with billions of parameters.}
 
-
-\include{_books/includes/conjectures-and-refutations.md}
-
 \subsection{What are we Delegating?}
 
 \notes{A distinction that I don't think was relevant for Popper when writing in 1963 was whether it matters that we understand where conjectures are coming from and we have an intuition about why they might work. At the time it might still have seemed fanciful for a machine to be so high powered that it could be used for (perhaps exhaustively) exploring and generating hypotheses. Whereas today that seems feasible, particularly for orchestrated sytems of agents.}
@@ -250,7 +301,7 @@ That creates a rare opportunity: we can evaluate generalisation against known st
 * *Operational understanding*: can I use it safely and know when it fails?
 * *Mechanistic understanding*: do I have an interpretable causal/mechanistic story?
 * *Paradigm understanding*: can the community reproduce, contest, and extend it?
-* *Social understanding*: are the ideas understood in the wider public and other fields?}
+* *Social understanding*: are the ideas understood in the wider public and other fields? [@Lawrence-atomic24]}
 
 \notes{With increasing use of computation in science we could argue that there's a shift from mechanistic to operational understanding. But if AI tools are judiciously deployed we could argue that they could support a shift to better understanding of our own paradigms and broader social understanding.}
 
@@ -317,11 +368,29 @@ that boundary?}
 
 \notes{This is the need for a practical definition of "accountability" here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.}
 
-\subsection{Over to Tim: agents, discovery, specialist tools}
+\newslide{Institutional readiness: five gaps}
 
-* Perhaps: why current LLMs are useful collaborators, but not autonomous scientists.
-* Perhaps: RL/diversity/curiosity as the missing ingredients for discovery.
-* Perhaps: generalist models orchestrating specialist tools vs internalising specialist corpora.
+\slidesincremental{
+* *Governance gap*: policy exists, practice often lags [@Resnik-ethics25; @Montgomery-framework25].
+* *Research culture gap*: weak incentives/careers for interdisciplinary team science [@NAS-facilitating05].
+* *Infrastructure gap*: compute and models concentrated in few actors [@Bommasani-foundation21; @Lawrence-accelerating24].
+* *Narrative gap*: corporate visibility can eclipse public infrastructure contributions [@Royalsociety-portrayals18; @Moult-casp95].
+* *Coordination gap*: funding/governance/data/skills often evolve separately [@Montgomery-framework25].
+}
+
+\notes{Technical progress is now moving faster than institutional adaptation. The governance gap is the distance between principles and implementation in day-to-day research practice, including transparency, attribution, and reproducibility. The culture gap reflects incentive systems that still reward disciplinary depth more than the interdisciplinary collaboration AI-for-science needs. The infrastructure gap captures concentration of compute, models, and engineering capacity, which can compromise openness and independence. The narrative gap is about visibility: high-profile corporate successes can obscure the long public investment base that made them possible. The coordination gap recognises that funding, governance, data, and skills policies are often designed in separate silos, even though deployment challenges are coupled.}
+
+\newslide{Policy playbook: what to build now}
+
+\slidesincremental{
+* *Funding* for domain-grounded, interdisciplinary AI-for-science work.
+* *Governance* for reproducibility, attribution, and safe use [@Ball-reproducibility23; @Wachter-legal24].
+* *Infrastructure*: open tooling + shared compute pathways.
+* *Data*: trusted access and stewardship.
+* *Talent/skills*: train scientists to explain, verify, and challenge [@Montgomery-framework25; @Cranmer-science26].
+}
+
+\notes{This playbook is designed as a policy and programme checklist rather than a manifesto. Funding should support both frontier methods and field-embedded deployment teams. Governance should make accountability operational: clear authorship, auditability, and validation norms. Infrastructure policy should widen access to compute and open tools so adoption does not default to a few proprietary stacks. Data policy should focus on trustworthy access, stewardship, and incentives for curation, not just volume. Talent and skills policy should treat explanation, verification, and challenge as core scientific competencies in an AI-mediated workflow. The practical aim is to accelerate adoption while preserving scientific integrity, openness, and public trust.}
 
 \subsection{Developing Science}
 
@@ -332,10 +401,13 @@ that boundary?}
 \notes{What is the new repository for the paradigm store?}
 
 \slidesincremental{
-* What do we want trainees to be able to **explain**, **verify**, and **challenge**?
+* What do we want trainees to be able to *explain*, *verify*, and *challenge*?
 * Where is the *verification boundary* in AI-for-science systems?
 * Which artefacts are the new paradigm stores?
 }
+
+\section{Over to Tim: agents, discovery, specialist tools}
+
 
 \thanks
 

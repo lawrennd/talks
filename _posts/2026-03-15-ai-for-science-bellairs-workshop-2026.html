@@ -37,22 +37,33 @@ categories:
 <!--
 
 -->
-<h2 id="potential-timingframing">Potential Timing/Framing</h2>
-<ul>
-<li>0-25: Neil framing (questions, philosophy, paradigm store).</li>
-<li>25-55: Tim lead (what is science, model types, canonical AI examples).</li>
-<li>55-70: break.</li>
-<li>70-95: Neil lead (delegation, tacit knowledge, verification/accountability).</li>
-<li>95-110: Tim lead (agents, discovery, generalist vs specialist).</li>
-<li>110-120: joint synthesis and workshop questions.</li>
-</ul>
-<h2 id="notes">Notes</h2>
-<ul>
-<li>What is science for: prediction, explanation, control (light-touch framing.</li>
-<li>Kinds of scientific models: mechanistic equations, statistical mechanics/effective models, ML surrogates.</li>
-<li>Common touchpoints: old-school ML + recent deep learning in science.</li>
-<li>Open design question: generalist models calling specialist tools, or internalising specialist knowledge?</li>
-</ul>
+<h2 id="rabbits-and-headlights">Rabbits and Headlights</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ai/includes/rabbit-in-headlights.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ai/includes/rabbit-in-headlights.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Sometimes it’s useful to look back and see what we were thinking at a particular time. <span class="citation" data-cites="Manning-deep15">Manning (2015)</span> covered the incoming deep learning tsunami.</p>
+<div class="figure">
+<div id="rabbit-in-headlights-manning-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ai/rabbit-in-headlights-manning.png" width="50%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="rabbit-in-headlights-manning-magnify" class="magnify" onclick="magnifyFigure(&#39;rabbit-in-headlights-manning&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="rabbit-in-headlights-manning-caption" class="caption-frame">
+<p>Figure: Chris Manning quoting me in 2015 on the coming wave in Natural Language Processing in <span class="citation" data-cites="Manning-deep15">Manning (2015)</span>.</p>
+</div>
+</div>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/EiStan9i8vA?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+</iframe>
+<p>The quote comes from the Deep Learning Workshop at 2015 ICML. For a transcript see this page: <a href="https://the-atomic-human.ai/archive/icml-deep-learning-workshop-panel/" class="uri">https://the-atomic-human.ai/archive/icml-deep-learning-workshop-panel/</a>.</p>
+<h2 id="a-provocation">A Provocation</h2>
+<p>With that in mind perhaps it’s worth delivering the following provocation.</p>
+<blockquote>
+<p>Science is kind of like a rabbit in the headlights of the Deep Learning Machine waiting to be flattened.</p>
+</blockquote>
+<p>Or are we actually already in the middle of the flood. And if so, where is the high ground?</p>
 <h2 id="questions">Questions</h2>
 <p>As a way of triggering reflection for this workshop we thought to start with three questions. They are:</p>
 <ol type="1">
@@ -84,41 +95,6 @@ categories:
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Kuhn, Thomas: <em>The Structure of Scientific Revolutions</em> p. 295–299.</p>
 <p>Kuhn’s idea that science iterates between normal science (or puzzle solving) and paradigm shifts which change the fundamental assumptions that underpin our scientific ideas. Kuhn was writing in 1962 and he argued that at that time our paradigm was stored in text books. Even before the advent of AI, our modern information infrastructure has shifted, to the extent that one can argue that today our paradigm is (also) stored in computers, through simulations, databases etc..</p>
 <p>This leads to a provocation as to whether we are experiencing a paradigm shift in science, or more structurally a paradigm shift in the way our scientific paradigms are stored and shared. A fundamental change in the underpinning information infrastructure.</p>
-<p>Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head. Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms. But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline.</p>
-<h2 id="to-tim">To Tim</h2>
-<ul>
-<li>Perhaps: “what is science?” as prediction, explanation, and control.</li>
-<li>Perhaps: where control/RL intuitions shift how we evaluate models.</li>
-<li>Perhaps: how model classes connect (equations, effective statistical models, ML systems).</li>
-</ul>
-<h2 id="what-is-science-for">What is science for?</h2>
-<ul>
-<li><strong>Prediction</strong>: what will happen?</li>
-<li><strong>Explanation</strong>: why does it happen?</li>
-<li><strong>Control/Design</strong>: how do we intervene to get desired outcomes?</li>
-<li>Different fields weight these differently; AI changes the balance.</li>
-</ul>
-<h2 id="model-types-in-science">Model types in science</h2>
-<ul>
-<li><strong>Mechanistic</strong> models: equations from domain theory.</li>
-<li><strong>Effective/statistical</strong> models: coarse-grained abstractions (e.g., stat mech style summaries).</li>
-<li><strong>Learned</strong> models: ML/DL surrogates and pattern extractors.</li>
-<li>Practice is hybrid: compose all three with clear verification boundaries.</li>
-</ul>
-<p>In the first wave of ML in science we’ve seen the increasing use of ML/statistical models for prediction. Here we fit a function <span class="math inline">\(\f_\theta\)</span> on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we’ve created and the predictions it makes.</p>
-<p>Examples include AlphaFold, GraphCast.</p>
-<p>Over the last decade we’ve seen the emergence of new “generalist” or foundation models. Starting with image recognition we found we could fine-tune models trained on one image data set and transfer their capabilities to other data sets.</p>
-<p>The same thing proved true of language once we’d developed transformer architectures and large language models.</p>
-<p>A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion. In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can. That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.</p>
-<p>At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as “vulcanisation”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<h2 id="break-15-mins">Break (15 mins)</h2>
-<ul>
-<li>Return for delegation, tacit knowledge, and verification boundaries.</li>
-</ul>
-<p>Suggested break after Tim’s first block. Re-start by recapping the prediction/explanation/control lens and move into accountability.</p>
-<h2 id="the-unreasonable-effectiveness-of-orchestration">The Unreasonable Effectiveness of Orchestration</h2>
-<p>The most recent trend is orchestration of these different parts through chat interfaces. Unsurprisingly, since these models are emulating a form of human intelligence, like humans they are more effective when working in a team. But these teams also are given tool calling abilities which allows them rapid access to the information infrastructure. That is leading to the unreasonable effectiveness of agents.</p>
-<p>That means that an additional pattern is emerging, its no longer just prediction<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but  and this raises new questions about our processes in Science.</p>
 <h1 id="conjectures-and-refutations">Conjectures and Refutations</h1>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_books/includes/conjectures-and-refutations.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_books/includes/conjectures-and-refutations.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -140,6 +116,50 @@ categories:
 <p>This philosophy of falsificationism suggests that scientists should actively try to disprove their theories rather than seek confirming evidence. For Popper, what makes a theory scientific is not its ability to be verified, but its ability to be falsified - it must make predictions that could potentially be proven wrong.</p>
 <p>These ideas have profound implications for how we understand scientific progress and the scientific method. It implies science isn’t an activity of individuals, it is necessarily a community effort.</p>
 <p>See <span class="citation" data-cites="Lawrence-atomic24">Lawrence (2024)</span> Popper, Karl: <em>Conjectures and Refutations</em> p. 327,328.</p>
+<h2 id="qualitative-vs-quantitative">Qualitative vs Quantitative</h2>
+<p>Historically questions can be split into two types. Qualitative questions and quantitative questions. Arguably most of the questions we truly care about are qualitiative, “How can I live a happier life?” “How can I do more good in the world?” “Will this drug make me healthier?” But in practice the questions we answer scientifically tend to be quantitative. “Which jobs have the highest income?” “What is the GDP/capita of Kenya?” “Does this drug give an average life extension of greater than 6 months?”</p>
+<p>This new generation of AI seems in some ways to bridge the qualitative/quantitive gap. Firstly, language can now be used directly as data, perhaps allowing us to bring a more quantitative approach to what were formerly qualitative questions. But secondly traditional techniques in social science that are based on interviews or transcripts (e.g. grounded theory) could be made more scalable with the use of AI technologies. For example, automatic transcription and/or assisted coding.</p>
+<h2 id="coding-and-creatives">Coding and Creatives</h2>
+<p>Just to contextualise for a moment, imagine we have stepped back to that ICML workshop 11 years ago where I made that quote. I think one thing that would have suprised us is the effect of that Tsunami. Up until last year at least it feels like the main direct societal effect was on <em>coding</em> and <em>creatives</em>. Although I have some sense of why that is (you might have your own answers), I think I would have found that very difficult to predict, or indeed to have imagined any technology that has a major effect on those two areas.</p>
+<p>Even before modern AI, specialisation plus scale meant no one could hold the whole map of science in their head. Today, tools can make cross-field exploration easier: you can ask a model to summarise, translate notation, find relevant papers, draft code, or suggest plausible mechanisms. But the failure mode is also cross-field: confident-sounding claims without the embodied judgement that comes from living inside a discipline <span class="citation" data-cites="Narayanan-ai25 Kwon-scientists25 Ogrady-lowquality25">(Kwon, 2025; Narayanan and Kapoor, 2025; O’Grady, 2025)</span>.</p>
+<p>This framing is meant to reduce the “AI for science” hype conflation by separating three different questions we often mix together. First, what can a model technically do (task capability)? Second, where in scientific practice does it add value (workflow need)? Third, what constraints make deployment viable in a given field (context constraints)? The same model can look transformative in one workflow and marginal in another; likewise, a method that works in one domain can fail in another because validation, latency, compute, or uncertainty tolerance differ. The practical aim is better matching: align capabilities to scientific questions and local constraints, rather than assuming a general model gives general scientific benefit.</p>
+<p>The “science gap” is the distance between statistical competence and scientific understanding. Pattern matching can produce accurate predictions, but scientific reasoning usually asks for mechanistic structure: what would happen under interventions, out-of-distribution conditions, or policy-relevant counterfactuals. In practice this leads to a guess-and-verify loop: models generate candidates, experiments filter them. That can still be useful science, but it shifts where understanding lives and where cost sits. The key point here is not that prediction is bad, but that prediction and explanation are different epistemic products, and we should be explicit about which one a workflow is optimising for.</p>
+<p>These three priorities are an agenda for making AI more scientific. Causality asks whether models can support intervention and policy reasoning, not only retrospective fit. Abstraction asks whether AI can help discover the right intermediate representations across scales, where many scientific breakthroughs occur. Simulation asks how to combine mechanistic structure with learned components so we retain physical plausibility while gaining flexibility and efficiency. Together they move us from “high-performing predictor” toward “scientific instrument”: a system that is useful, interrogable, and bounded by clear validity conditions.</p>
+<h1 id="to-tim">To Tim</h1>
+<h2 id="to-tim-1">To Tim</h2>
+<ul>
+<li>Perhaps: “what is science?” as prediction, explanation, and control.</li>
+<li>Perhaps: where control/RL intuitions shift how we evaluate models.</li>
+<li>Perhaps: how model classes connect (equations, effective statistical models, ML systems).</li>
+</ul>
+<h2 id="what-is-science-for">What is science for?</h2>
+<ul>
+<li><strong>Prediction</strong>: what will happen?</li>
+<li><strong>Explanation</strong>: why does it happen?</li>
+<li><strong>Control/Design</strong>: how do we intervene to get desired outcomes?</li>
+<li>Different fields weight these differently; AI changes the balance.</li>
+</ul>
+<h2 id="model-types-in-science">Model types in science</h2>
+<ul>
+<li><strong>Mechanistic</strong> models: equations from domain theory.</li>
+<li><strong>Effective/statistical</strong> models: coarse-grained abstractions (e.g., stat mech style summaries).</li>
+<li><strong>Learned</strong> models: ML/DL surrogates and pattern extractors.</li>
+<li>Practice is hybrid: compose all three with clear verification boundaries.</li>
+</ul>
+<p>In the first wave of ML in science we’ve seen the increasing use of ML/statistical models for prediction. Here we fit a function <span class="math inline">\(\f_\theta\)</span> on the basis of a large data set or a simulation (statistical emulation/surrogate modelling). This allows us to explore that simulation or data through the model we’ve created and the predictions it makes.</p>
+<p>Examples include AlphaFold and data-driven weather forecasting systems <span class="citation" data-cites="Jumper-alphafold21 Allen-weather25">(Allen et al., 2025; Jumper et al., 2021)</span>, as well as materials discovery <span class="citation" data-cites="Merchant-scaling23">(Merchant et al., 2023)</span>.</p>
+<p>Over the last decade we’ve seen the emergence of new “generalist” or foundation models. Starting with image recognition we found we could fine-tune models trained on one image data set and transfer their capabilities to other data sets.</p>
+<p>The same thing proved true of language once we’d developed transformer architectures and large language models.</p>
+<p>A “Polymathic”-style model trained on differential equations is interesting because it shifts the discussion. In many domains we can’t even agree what the canonical “ground truth” representation is; in physics we often can. That creates a rare opportunity: we can evaluate generalisation against known structure, probe failure modes, and ask whether the learned representations correspond to anything mechanistic or merely operationally effective.</p>
+<p>At the extreme end of fine tuning these large language models can now be directed by prompting, or setting a context. These models are built to emulate human intelligence by reconstructing what humans might have said. They are augmented by code and maths problems in a process I think of as “vulcanisation”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<h2 id="break-15-mins">Break (15 mins)</h2>
+<ul>
+<li>Return for delegation, tacit knowledge, and verification boundaries.</li>
+</ul>
+<p>Suggested break after Tim’s first block. Re-start by recapping the prediction/explanation/control lens and move into accountability.</p>
+<h2 id="the-unreasonable-effectiveness-of-orchestration">The Unreasonable Effectiveness of Orchestration</h2>
+<p>The most recent trend is orchestration of these different parts through chat interfaces. Unsurprisingly, since these models are emulating a form of human intelligence, like humans they are more effective when working in a team. But these teams also are given tool calling abilities which allows them rapid access to the information infrastructure. That is leading to the unreasonable effectiveness of agents.</p>
+<p>That means that an additional pattern is emerging, its no longer just prediction<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> but  and this raises new questions about our processes in Science.</p>
 <h2 id="what-are-we-delegating">What are we Delegating?</h2>
 <p>A distinction that I don’t think was relevant for Popper when writing in 1963 was whether it matters that we understand where conjectures are coming from and we have an intuition about why they might work. At the time it might still have seemed fanciful for a machine to be so high powered that it could be used for (perhaps exhaustively) exploring and generating hypotheses. Whereas today that seems feasible, particularly for orchestrated sytems of agents.</p>
 <p>This separation might be summarised as “science as technology” where we are using science to create new materials or drugs that we can empirically show are effective, even if we don’t understand why. Or “science as understanding” where we are building our own understanding through our work.</p>
@@ -194,7 +214,7 @@ categories:
 <li><em>Operational understanding</em>: can I use it safely and know when it fails?</li>
 <li><em>Mechanistic understanding</em>: do I have an interpretable causal/mechanistic story?</li>
 <li><em>Paradigm understanding</em>: can the community reproduce, contest, and extend it?</li>
-<li><em>Social understanding</em>: are the ideas understood in the wider public and other fields?</li>
+<li><em>Social understanding</em>: are the ideas understood in the wider public and other fields? <span class="citation" data-cites="Lawrence-atomic24">(Lawrence, 2024)</span></li>
 </ul>
 <p>With increasing use of computation in science we could argue that there’s a shift from mechanistic to operational understanding. But if AI tools are judiciously deployed we could argue that they could support a shift to better understanding of our own paradigms and broader social understanding.</p>
 <p>These different forms of understanding enable different forms of individual, institutional and social <em>accountability</em>. The machines cannot participate in this social accountability in the same way we do because they are not socially vested.</p>
@@ -263,18 +283,15 @@ categories:
 <p>Terrance Tao’s IMO 2024 talk on machine assitance in maths gives an excellent overview of how ML techniques can be deployed in maths. Well worth watching for additional insight</p>
 <iframe width="800" height="600" src="https://www.youtube.com/embed/e049IoFBnLA?start=" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
 </iframe>
-<p>This is a useful cross-field lens. Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically. But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration. LLMs are attractive because they can encode and communicate that practice in natural language — but they don’t automatically create verifiable, accountable knowledge. So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?</p>
+<p>This is a useful cross-field lens. Mathematics is close to a “gold standard” for verifiability: once formalised, we can check claims mechanically. But much of science lives in tacit practice: what counts as a clean sample, a plausible stratigraphy, a credible causal story, a trustworthy instrument calibration. LLMs are attractive because they can encode and communicate that practice in natural language, but they don’t automatically create verifiable, accountable knowledge. So the design question becomes: where do we draw the verification boundary, and what artefacts do we insist on at that boundary?</p>
 <p>This is the need for a practical definition of “accountability” here: not blaming the model, but making the chain legible. For science: who is the author of the claim, what evidence supports it, and what were the decision thresholds? That’s a systems/interface problem, not a model-quality problem.</p>
-<h2 id="over-to-tim-agents-discovery-specialist-tools">Over to Tim: agents, discovery, specialist tools</h2>
-<ul>
-<li>Perhaps: why current LLMs are useful collaborators, but not autonomous scientists.</li>
-<li>Perhaps: RL/diversity/curiosity as the missing ingredients for discovery.</li>
-<li>Perhaps: generalist models orchestrating specialist tools vs internalising specialist corpora.</li>
-</ul>
+<p>Technical progress is now moving faster than institutional adaptation. The governance gap is the distance between principles and implementation in day-to-day research practice, including transparency, attribution, and reproducibility. The culture gap reflects incentive systems that still reward disciplinary depth more than the interdisciplinary collaboration AI-for-science needs. The infrastructure gap captures concentration of compute, models, and engineering capacity, which can compromise openness and independence. The narrative gap is about visibility: high-profile corporate successes can obscure the long public investment base that made them possible. The coordination gap recognises that funding, governance, data, and skills policies are often designed in separate silos, even though deployment challenges are coupled.</p>
+<p>This playbook is designed as a policy and programme checklist rather than a manifesto. Funding should support both frontier methods and field-embedded deployment teams. Governance should make accountability operational: clear authorship, auditability, and validation norms. Infrastructure policy should widen access to compute and open tools so adoption does not default to a few proprietary stacks. Data policy should focus on trustworthy access, stewardship, and incentives for curation, not just volume. Talent and skills policy should treat explanation, verification, and challenge as core scientific competencies in an AI-mediated workflow. The practical aim is to accelerate adoption while preserving scientific integrity, openness, and public trust.</p>
 <h2 id="developing-science">Developing Science</h2>
 <p>One of the most important roles of science is developing the next generation of scientists. This is something that Universities do very well. What does this look like in a world where we can rapidly iterate scientific pipelines through llm/tool orchestration?</p>
 <p>How do we train the next generation of scientists to explain, verify and challenge. How do we develop their scepticism? How do we convert our tacit knowledge (institutional and individual) about judgement into verification boundaries for AI-for-science systems?</p>
 <p>What is the new repository for the paradigm store?</p>
+<h1 id="over-to-tim-agents-discovery-specialist-tools">Over to Tim: agents, discovery, specialist tools</h1>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
@@ -287,14 +304,35 @@ categories:
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Allen-weather25" class="csl-entry" role="doc-biblioentry">
+Allen, A., Markou, S., Tebbutt, W., others, 2025. End-to-end data-driven weather prediction. Nature 641, 1172–1179. <a href="https://doi.org/10.1038/s41586-025-08897-0">https://doi.org/10.1038/s41586-025-08897-0</a>
+</div>
 <div id="ref-Cabrera-realworld23" class="csl-entry" role="doc-biblioentry">
 Cabrera, C., Paleyes, A., Thodoroff, P., Lawrence, N.D., 2023. Real-world machine learning systems: A survey from a data-oriented architecture perspective.
+</div>
+<div id="ref-Jumper-alphafold21" class="csl-entry" role="doc-biblioentry">
+Jumper, J., Evans, R., Pritzel, A., others, 2021. Highly accurate protein structure prediction with <span>AlphaFold</span>. Nature 596, 583–589. <a href="https://doi.org/10.1038/s41586-021-03819-2">https://doi.org/10.1038/s41586-021-03819-2</a>
 </div>
 <div id="ref-Kuhn-structure62" class="csl-entry" role="doc-biblioentry">
 Kuhn, T.S., 1962. The structure of scientific revolutions. University of Chicago Press, Chicago, IL.
 </div>
+<div id="ref-Kwon-scientists25" class="csl-entry" role="doc-biblioentry">
+Kwon, D., 2025. Scientists split on ethics of AI use. Nature 641, 574–578. <a href="https://doi.org/10.1038/d41586-025-01463-8">https://doi.org/10.1038/d41586-025-01463-8</a>
+</div>
 <div id="ref-Lawrence-atomic24" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI. Allen Lane.
+</div>
+<div id="ref-Manning-deep15" class="csl-entry" role="doc-biblioentry">
+Manning, C.D., 2015. Last words: Computational linguistics and deep learning. Computational Linguistics 41, 701–707. <a href="https://doi.org/10.1162/COLI_a_00239">https://doi.org/10.1162/COLI_a_00239</a>
+</div>
+<div id="ref-Merchant-scaling23" class="csl-entry" role="doc-biblioentry">
+Merchant, A., Batzner, S., Schoenholz, S.S., others, 2023. Scaling deep learning for materials discovery. Nature 624, 80–85. <a href="https://doi.org/10.1038/s41586-023-06735-9">https://doi.org/10.1038/s41586-023-06735-9</a>
+</div>
+<div id="ref-Narayanan-ai25" class="csl-entry" role="doc-biblioentry">
+Narayanan, A., Kapoor, S., 2025. AI as normal technology: An alternative to the vision of AI as a potential superintelligence. Knight First Amendment Institute at Columbia University.
+</div>
+<div id="ref-Ogrady-lowquality25" class="csl-entry" role="doc-biblioentry">
+O’Grady, C., 2025. Low-quality papers are surging by exploiting public data sets and AI. Science 388. <a href="https://doi.org/10.1126/science.zgawnij">https://doi.org/10.1126/science.zgawnij</a>
 </div>
 <div id="ref-Popper-conjectures63" class="csl-entry" role="doc-biblioentry">
 Popper, K.R., 1963. Conjectures and refutations: The growth of scientific knowledge. Routledge, London.

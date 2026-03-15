@@ -376,7 +376,7 @@ that boundary?}
 * *Infrastructure gap*: compute and models concentrated in few actors [@Bommasani-foundation21; @Lawrence-accelerating24].
 }
 \newslide{Institutional readiness: five gaps}
-\slidesincremental{}
+\slidesincremental{
 * *Narrative gap*: corporate visibility can eclipse public infrastructure contributions [@Royalsociety-portrayals18; @Moult-casp95].
 * *Coordination gap*: funding/governance/data/skills often evolve separately [@Montgomery-framework25].
 }

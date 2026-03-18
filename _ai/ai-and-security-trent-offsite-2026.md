@@ -25,7 +25,7 @@ ipynb: False
 
 \section{Context and objective}
 
-\newslides{Building on our previous Trent session}
+\newslide{Building on our previous Trent session}
 
 \slidesincremental{
 * Last time: explicit intent and shared context reduce misimplementation.
@@ -33,7 +33,7 @@ ipynb: False
 * Core question: how do we keep institutional judgement while scaling delegation?
 }
 
-\newslides{Security at machine speed}
+\newslide{Security at machine speed}
 
 \slidesincremental{
 * Agentic systems turn language into *actions* (tools, APIs, workflows).
@@ -45,7 +45,7 @@ ipynb: False
 
 \section{Architecture: DOAgents}
 
-\newslides{DOAgents for agent networks}
+\newslide{DOAgents for agent networks}
 
 \slidesincremental{
 * Use a *data-oriented* interface between agents: shared state, explicit contracts, typed handoffs.
@@ -55,7 +55,7 @@ ipynb: False
 
 \notes{This section draws on Christian Cabrera and collaborators' data-oriented architecture perspective: in production, robustness comes from making data and boundaries first-class. Here we apply that principle to networks of agents, where each node has scoped authority and each edge carries explicit evidence and constraints.}
 
-\newslides{Why this helps Trent now}
+\newslide{Why this helps Trent now}
 
 \slidesincremental{
 * Makes the judgement layer inspectable: what each agent saw, decided, and handed off.
@@ -81,7 +81,7 @@ ipynb: False
 * This models an ideal thinker or reasoning AI.
 }
 
-\newslides{Consistent Reasoning Paradox (CRP)}
+\newslide{Consistent Reasoning Paradox (CRP)}
 
 \slidesincremental{* The paradox shows that an agent that is:
 
@@ -96,7 +96,7 @@ ipynb: False
 
 \notes{Following @Bastounis-crp24, the practical lesson is not philosophical pessimism; it is engineering discipline. If a system cannot reliably discriminate when it is out of depth, "always answer" becomes a liability.}
 
-\newslides{The missing primitive: "I don't know"}
+\newslide{The missing primitive: "I don't know"}
 
 \slidesincremental{
 * Agents need an explicit *I don't know* action, not just low-confidence prose.
@@ -108,7 +108,7 @@ ipynb: False
 
 \include{_ai/includes/agentic-debt-short.md}
 
-\newslides{Time-bounded delegation in DOAgent graphs}
+\newslide{Time-bounded delegation in DOAgent graphs}
 
 \slidesincremental{
 * Assign each node/subgraph a time budget $\tau_i$ and termination policy.
@@ -118,7 +118,7 @@ ipynb: False
 
 \notes{This is the key proposal: convert hidden judgement debt into explicit runtime policy. Every delegated decision has a clock, an evidence threshold, and a recovery route.}
 
-\newslides{Choosing time budgets ($\tau_i$)}
+\newslide{Choosing time budgets ($\tau_i$)}
 
 \slidesincremental{
 * Tune empirically from traces: success rate, escalation rate, and incident outcomes.
@@ -126,7 +126,7 @@ ipynb: False
 * Different tasks need different $\tau_i$: triage may be short; remediation planning longer.
 }
 
-\newslides{20-minute takeaway}
+\newslide{20-minute takeaway}
 
 \slidesincremental{
 * Institutional tacit knowledge is the judgement layer; don't silently cede it.

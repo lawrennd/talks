@@ -16,7 +16,6 @@ papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.tex}
 \include{_gp/includes/what-is-a-gp.md}
 
 \thanks

@@ -647,27 +647,18 @@ class Game {
 	this.pinCollision();
 	this.pitCollision();
     }
-    staticCollision(ob1, ob2, emergency=false) {
-	let overlap = ob1.radius + ob2.radius - distance(ob1, ob2);
-	let smallerObject = ob1.radius < ob2.radius ? ob1: ob2;
-	let biggerObject = ob1.radius > ob2.radius ? ob1 : ob2;
-
-	// When things go normally, this line does not execute.
-	// "Emergency" is when staticCollision has run, but the collision
-	// still hasn't been resolved. Which implies that one of the objects
-	// is likely being jammed against a corner, so we must now move the OTHER one instead.
-	// in other words: this line basically swaps the "little guy" role, because
-	// the actual little guy can't be moved away due to being blocked by the wall.
-	if (emergency) [smallerObject, biggerObject] = [biggerObject, smallerObject]
-	let theta = Math.atan2((biggerObject.y - smallerObject.y), (biggerObject.x - smallerObject.x));
-	smallerObject.x -= overlap * Math.cos(theta);
-	smallerObject.y -= overlap * Math.sin(theta); 
-	
-	if (overlap > 0) {
-            // we don't want to be stuck in an infinite emergency.
-            // so if we have already run one emergency round; just ignore the problem.
-            if (!emergency) this.staticCollision(ob1, ob2, true)
-	}
+    staticCollision(ob1, ob2) {
+	// Push the two balls apart symmetrically so they no longer overlap.
+	// Splitting the correction evenly is physically correct for equal-mass
+	// balls and avoids a bug where both internal pointers alias the same
+	// object when the radii are equal (as they always are in multiball).
+	const overlap = ob1.radius + ob2.radius - distance(ob1, ob2);
+	if (overlap <= 0) return;
+	const theta = Math.atan2(ob2.y - ob1.y, ob2.x - ob1.x);
+	ob1.x -= 0.5 * overlap * Math.cos(theta);
+	ob1.y -= 0.5 * overlap * Math.sin(theta);
+	ob2.x += 0.5 * overlap * Math.cos(theta);
+	ob2.y += 0.5 * overlap * Math.sin(theta);
     }
     ballCollision() {
 	for (let i=0; i<this.objects.balls.length-1; i++) {
@@ -675,7 +666,13 @@ class Game {
             for (let j=i+1; j<this.objects.balls.length; j++) {
 		let ob2 = this.objects.balls[j];
 		let dist = distance(ob1, ob2);
-		if(dist < ob1.radius + ob2.radius) {
+		// Only exchange velocities when the balls are overlapping AND
+		// approaching each other.  Without this guard the collision
+		// response fires on every frame while balls are still touching,
+		// reversing the velocities again and causing entanglement.
+		const approaching = (ob2.x - ob1.x) * (ob1.dx - ob2.dx)
+		                  + (ob2.y - ob1.y) * (ob1.dy - ob2.dy);
+		if(dist < ob1.radius + ob2.radius && approaching > 0) {
                     let theta1 = ob1.angle();
                     let theta2 = ob2.angle();
                     let phi = Math.atan2(ob2.y - ob1.y, ob2.x - ob1.x);

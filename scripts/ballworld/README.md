@@ -41,6 +41,22 @@ So this is a **coarse-grained information measure** for visual intuition. It is 
 
 This is why the UI text and captions in snippets now use **"Velocity-bin entropy"**.
 
+## Ball–ball collision implementation notes
+
+Two subtleties worth knowing:
+
+**Approaching guard** — `ballCollision` only exchanges velocities when the balls are
+both overlapping *and* approaching (positive dot-product of relative position and
+relative velocity). Without this guard the collision response fires on every frame
+that two balls remain in contact, reversing the velocities each time and locking
+them in a vibrating entangled cluster.
+
+**Symmetric position correction** — `staticCollision` pushes each ball half the
+overlap distance in opposite directions. An earlier version tried to move only the
+"smaller" ball, but this aliased to the same object for equal-radius balls (all
+balls in multiball have the same radius), leaving one ball unmoved and the overlap
+unresolved, which compounded the re-collision problem above.
+
 ## Notes for maintainers
 
 - Keep physics/runtime logic in `ballworld.js` where possible.

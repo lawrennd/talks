@@ -70,17 +70,32 @@ categories:
 <div id="entropy-billiards-js-figure" class="figure-frame">
 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
 <div style="flex:1 1 400px;min-width:0">
-<pre><code>&lt;canvas id=&quot;multiball-canvas&quot; width=&quot;700&quot; height=&quot;500&quot; style=&quot;border:1px solid black;display:block;width:100%&quot;&gt;&lt;/canvas&gt;</code></pre>
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
 </div>
 <div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<pre><code>&lt;div&gt;Velocity-bin entropy: &lt;output id=&quot;multiball-entropy&quot;&gt;&lt;/output&gt;&lt;/div&gt;
-&lt;div id=&quot;multiball-histogram-canvas&quot; style=&quot;width:100%;height:250px&quot;&gt;&lt;/div&gt;
-&lt;div style=&quot;display:flex;flex-wrap:wrap;gap:4px&quot;&gt;
-  &lt;button id=&quot;multiball-newball&quot;&gt;New Ball&lt;/button&gt;
-  &lt;button id=&quot;multiball-pause&quot;&gt;Pause&lt;/button&gt;
-  &lt;button id=&quot;multiball-skip&quot;&gt;Skip 1000s&lt;/button&gt;
-  &lt;button id=&quot;multiball-histogram&quot;&gt;Histogram&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<div>
+Velocity-bin entropy:
+<output id="multiball-entropy">
+</output>
+</div>
+<div id="multiball-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="multiball-newball">
+New Ball
+</button>
+<button id="multiball-pause">
+Pause
+</button>
+<button id="multiball-skip">
+Skip 1000s
+</button>
+<button id="multiball-histogram">
+Histogram
+</button>
+</div>
 </div>
 </div>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -99,11 +114,11 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <p>Figure: Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.random.randn(<span class="dv">10000</span>, <span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>xlim <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="dv">200</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.random.randn(<span class="dv">10000</span>, <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>xlim <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="dv">200</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x)</span></code></pre></div>
 <p>Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.</p>
 <div class="figure">
 <div id="gaussian-histogram-figure" class="figure-frame">
@@ -247,17 +262,32 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <div id="maxwells-demon-figure" class="figure-frame">
 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
 <div style="flex:1 1 400px;min-width:0">
-<pre><code>&lt;canvas id=&quot;maxwell-canvas&quot; width=&quot;700&quot; height=&quot;500&quot; style=&quot;border:1px solid black;display:block;width:100%&quot;&gt;&lt;/canvas&gt;</code></pre>
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
 </div>
 <div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<pre><code>&lt;div&gt;Velocity-bin entropy: &lt;output id=&quot;maxwell-entropy&quot;&gt;&lt;/output&gt;&lt;/div&gt;
-&lt;div id=&quot;maxwell-histogram-canvas&quot; style=&quot;width:100%;height:250px&quot;&gt;&lt;/div&gt;
-&lt;div style=&quot;display:flex;flex-wrap:wrap;gap:4px&quot;&gt;
-  &lt;button id=&quot;maxwell-newball&quot;&gt;New Ball&lt;/button&gt;
-  &lt;button id=&quot;maxwell-pause&quot;&gt;Pause&lt;/button&gt;
-  &lt;button id=&quot;maxwell-skip&quot;&gt;Skip 1000s&lt;/button&gt;
-  &lt;button id=&quot;maxwell-histogram&quot;&gt;Histogram&lt;/button&gt;
-&lt;/div&gt;</code></pre>
+<div>
+Velocity-bin entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="maxwell-newball">
+New Ball
+</button>
+<button id="maxwell-pause">
+Pause
+</button>
+<button id="maxwell-skip">
+Skip 1000s
+</button>
+<button id="maxwell-histogram">
+Histogram
+</button>
+</div>
 </div>
 </div>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
@@ -411,21 +441,21 @@ G(\boldsymbol{\theta}) = \nabla^2_{\boldsymbol{\theta}} A(\boldsymbol{\theta}) =
 <p>To illustrate the concept of the Jaynes’ world entropy game we’ll run a simple example using a four bin histogram. The entropy of a four bin histogram can be computed as, <span class="math display">\[
 S(p) = - \sum_{i=1}^4 p_i \log_2 p_i.
 \]</span></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>First we write some helper code to plot the histogram and compute its entropy.</p>
 <p>We can compute the entropy of any given histogram.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define probabilities</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.zeros(<span class="dv">4</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">4</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">2</span>] <span class="op">=</span> <span class="fl">3.7</span><span class="op">/</span><span class="dv">13</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>p[<span class="dv">3</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> p.<span class="bu">sum</span>()</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe entropy calculation</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>nonzero_p <span class="op">=</span> p[p <span class="op">&gt;</span> <span class="dv">0</span>]  <span class="co"># Filter out zeros</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span> (nonzero_p<span class="op">*</span>np.log2(nonzero_p)).<span class="bu">sum</span>()</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;The entropy of the histogram is </span><span class="sc">{</span>entropy<span class="sc">:.3f}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="four-bin-histogram-entropy-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/four-bin-histogram.svg" width="70%" style=" ">
@@ -441,34 +471,34 @@ S(p) = - \sum_{i=1}^4 p_i \log_2 p_i.
 <p>We can play the entropy game by starting with a histogram with all the probability mass in the first bin and then ascending the gradient of the entropy function.</p>
 <h2 id="four-bin-histogram-entropy-game">Four Bin Histogram Entropy Game</h2>
 <p>To do this we represent the histogram parameters as a vector of length 4, <span class="math inline">\(\mathbf{ w}{\lambda} = [\lambda_1, \lambda_2, \lambda_3, \lambda_4]\)</span> and define the histogram probabilities to be <span class="math inline">\(p_i = \lambda_i^2 / \sum_{j=1}^4 \lambda_j^2\)</span>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <p>We can then ascend the gradeint of the entropy function, starting at a parameter setting where the mass is placed in the first bin, we take <span class="math inline">\(\lambda_2 = \lambda_3 = \lambda_4 = 0.01\)</span> and <span class="math inline">\(\lambda_1 = 100\)</span>.</p>
 <p>First to check our code we compare our numerical and analytic gradients.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial parameters (lambda)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>])</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient check</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>numerical_grad <span class="op">=</span> numerical_gradient(entropy, initial_lambdas)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>analytical_grad <span class="op">=</span> entropy_gradient(initial_lambdas)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Numerical Gradient:&quot;</span>, numerical_grad)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Analytical Gradient:&quot;</span>, analytical_grad)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Gradient Difference:&quot;</span>, np.linalg.norm(numerical_grad <span class="op">-</span> analytical_grad))  <span class="co"># Check if close to zero</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial parameters (lambda)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>initial_lambdas <span class="op">=</span> np.array([<span class="dv">100</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>, <span class="fl">0.01</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient check</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>numerical_grad <span class="op">=</span> numerical_gradient(entropy, initial_lambdas)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>analytical_grad <span class="op">=</span> entropy_gradient(initial_lambdas)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Numerical Gradient:&quot;</span>, numerical_grad)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Analytical Gradient:&quot;</span>, analytical_grad)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Gradient Difference:&quot;</span>, np.linalg.norm(numerical_grad <span class="op">-</span> analytical_grad))  <span class="co"># Check if close to zero</span></span></code></pre></div>
 <p>Now we can run the steepest ascent algorithm.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Steepest ascent algorithm</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas.copy())</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Steepest ascent algorithm</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lambdas <span class="op">=</span> initial_lambdas.copy()</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>turns <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>entropy_values <span class="op">=</span> []</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>lambdas_history <span class="op">=</span> []</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(turns):</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(lambdas)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    lambdas <span class="op">+=</span> learning_rate <span class="op">*</span> grad <span class="co"># update lambda for steepest ascent</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    entropy_values.append(entropy(lambdas))</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    lambdas_history.append(lambdas.copy())</span></code></pre></div>
 <p>We can plot the histogram at a set of chosen turn numbers to see the progress of the algorithm.</p>
 <h3 id="section"></h3>
 <div class="figure">
@@ -517,13 +547,13 @@ G(\theta) = p(1-p)
 \]</span> This creates a dynamic where as <span class="math inline">\(p\)</span> approaches either 0 or 1 (minimal entropy states), the Fisher information approaches zero, creating a critical slowing" effect. This critical slowing is what leads to the formation of <em>information resevoirs</em>. Note also that in the <em>natural gradient</em> the updated is given by multiplying the gradient by the inverse Fisher information, which would lead to a more efficient update of the form, <span class="math display">\[
 \Delta \theta_{\text{natural}} =  \eta(\log(1-p) - \log p),
 \]</span> however, it is this efficiency that we want our game to avoid, because it is the inefficient behaviour in the reagion of saddle points that leads to critical slowing and the emergence of information resevoirs.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.000001</span>, <span class="fl">0.999999</span>, <span class="dv">10000</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code for gradients</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>p_values <span class="op">=</span> np.linspace(<span class="fl">0.000001</span>, <span class="fl">0.999999</span>, <span class="dv">10000</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>theta_values <span class="op">=</span> np.log(p_values<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>p_values))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>entropy <span class="op">=</span> <span class="op">-</span>p_values <span class="op">*</span> np.log(p_values) <span class="op">-</span> (<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">*</span> np.log(<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>fisher_info <span class="op">=</span> p_values <span class="op">*</span> (<span class="dv">1</span><span class="op">-</span>p_values)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>gradient <span class="op">=</span> fisher_info <span class="op">*</span> (np.log(<span class="dv">1</span><span class="op">-</span>p_values) <span class="op">-</span> np.log(p_values))</span></code></pre></div>
 <div class="figure">
 <div id="two-bin-histogram-entropy-gradients-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-entropy-gradients.svg" width="95%" style=" ">
@@ -539,32 +569,32 @@ G(\theta) = p(1-p)
 <p>This example reveals the entropy extrema at <span class="math inline">\(p = 0\)</span>, <span class="math inline">\(p = 0.5\)</span>, and <span class="math inline">\(p = 1\)</span>. At minimal entropy (<span class="math inline">\(p \approx 0\)</span> or <span class="math inline">\(p \approx 1\)</span>), the gradient approaches zero, creating natural information reservoirs. The dynamics slow dramatically near these points - these are the areas of critical slowing that create information reservoirs.</p>
 <h2 id="gradient-ascent-in-natural-parameter-space">Gradient Ascent in Natural Parameter Space</h2>
 <p>We can visualize the entropy maximization process by performing gradient ascent in the natural parameter space <span class="math inline">\(\theta\)</span>. Starting from a low-entropy state, we follow the gradient of entropy with respect to <span class="math inline">\(\theta\)</span> to reach the maximum entropy state.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for gradient ascent</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>theta_initial <span class="op">=</span> <span class="op">-</span><span class="fl">9.0</span>  <span class="co"># Start with low entropy </span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="dv">1500</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>theta_current <span class="op">=</span> theta_initial</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>theta_history <span class="op">=</span> [theta_current]</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>p_history <span class="op">=</span> [theta_to_p(theta_current)]</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>entropy_history <span class="op">=</span> [entropy(theta_current)]</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform gradient ascent in theta space</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> step <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute gradient</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(theta_current)</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update theta</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    theta_current <span class="op">=</span> theta_current <span class="op">+</span> learning_rate <span class="op">*</span> grad</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store history</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    theta_history.append(theta_current)</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    p_history.append(theta_to_p(theta_current))</span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    entropy_history.append(entropy(theta_current))</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Step </span><span class="sc">{</span>step<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: θ = </span><span class="sc">{</span>theta_current<span class="sc">:.4f}</span><span class="ss">, p = </span><span class="sc">{</span>p_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">, Entropy = </span><span class="sc">{</span>entropy_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for gradient ascent</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>theta_initial <span class="op">=</span> <span class="op">-</span><span class="fl">9.0</span>  <span class="co"># Start with low entropy </span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>learning_rate <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="dv">1500</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>theta_current <span class="op">=</span> theta_initial</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>theta_history <span class="op">=</span> [theta_current]</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>p_history <span class="op">=</span> [theta_to_p(theta_current)]</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>entropy_history <span class="op">=</span> [entropy(theta_current)]</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform gradient ascent in theta space</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> step <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute gradient</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> entropy_gradient(theta_current)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Update theta</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    theta_current <span class="op">=</span> theta_current <span class="op">+</span> learning_rate <span class="op">*</span> grad</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store history</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    theta_history.append(theta_current)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    p_history.append(theta_to_p(theta_current))</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    entropy_history.append(entropy(theta_current))</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> step <span class="op">%</span> <span class="dv">100</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Step </span><span class="sc">{</span>step<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: θ = </span><span class="sc">{</span>theta_current<span class="sc">:.4f}</span><span class="ss">, p = </span><span class="sc">{</span>p_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">, Entropy = </span><span class="sc">{</span>entropy_history[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="two-bin-histogram-evolution-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/two-bin-histogram-evolution.svg" width="95%" style=" ">
@@ -616,76 +646,76 @@ G(\theta) = p(1-p)
 <li>Critical modes: near-zero eigenvalues → information reservoirs</li>
 </ul>
 <p>The eigenvectors of <span class="math inline">\(G(\theta)\)</span> at the saddle point determine which parameter combinations form information reservoirs.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the gradient calculation</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> np.array([<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.1</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> test_theta <span class="op">-</span> np.mean(test_theta)  <span class="co"># Ensure constraint is satisfied</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Testing gradient calculation:&quot;</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>analytical_grad, numerical_grad <span class="op">=</span> check_gradient(test_theta)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify if we&#39;re ascending or descending</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>entropy_before <span class="op">=</span> exponential_family_entropy(test_theta)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>step_size <span class="op">=</span> <span class="fl">0.01</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>test_theta_after <span class="op">=</span> test_theta <span class="op">+</span> step_size <span class="op">*</span> analytical_grad</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>entropy_after <span class="op">=</span> exponential_family_entropy(test_theta_after)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy before step: </span><span class="sc">{</span>entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy after step: </span><span class="sc">{</span>entropy_after<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Change in entropy: </span><span class="sc">{</span>entropy_after <span class="op">-</span> entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> entropy_after <span class="op">&gt;</span> entropy_before:</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are ascending the entropy gradient&quot;</span>)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are descending the entropy gradient&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize with asymmetric distribution (away from saddle point)</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> theta_init <span class="op">-</span> np.mean(theta_init)  <span class="co"># Ensure constraint is satisfied</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run gradient ascent</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>theta_history, entropy_history <span class="op">=</span> gradient_ascent_four_bin(theta_init, steps<span class="op">=</span><span class="dv">100</span>, learning_rate<span class="op">=</span><span class="fl">1.0</span>)</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid for visualization</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy at each grid point (with constraint on theta3 and theta4)</span></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> np.zeros_like(X)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint that sum is zero</span></span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>        Z[i,j] <span class="op">=</span> exponential_family_entropy(theta)</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute gradient field</span></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>dX <span class="op">=</span> np.zeros_like(X)</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>dY <span class="op">=</span> np.zeros_like(Y)</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint</span></span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get full gradient and project</span></span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a>        grad <span class="op">=</span> entropy_gradient(theta)</span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>        proj_grad <span class="op">=</span> project_gradient(theta, grad)</span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store first two components</span></span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>        dX[i,j] <span class="op">=</span> proj_grad[<span class="dv">0</span>]</span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a>        dY[i,j] <span class="op">=</span> proj_grad[<span class="dv">1</span>]</span>
-<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
-<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
-<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
-<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
-<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
-<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Test the gradient calculation</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> np.array([<span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.1</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>test_theta <span class="op">=</span> test_theta <span class="op">-</span> np.mean(test_theta)  <span class="co"># Ensure constraint is satisfied</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Testing gradient calculation:&quot;</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>analytical_grad, numerical_grad <span class="op">=</span> check_gradient(test_theta)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify if we&#39;re ascending or descending</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>entropy_before <span class="op">=</span> exponential_family_entropy(test_theta)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>step_size <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>test_theta_after <span class="op">=</span> test_theta <span class="op">+</span> step_size <span class="op">*</span> analytical_grad</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>entropy_after <span class="op">=</span> exponential_family_entropy(test_theta_after)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy before step: </span><span class="sc">{</span>entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Entropy after step: </span><span class="sc">{</span>entropy_after<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Change in entropy: </span><span class="sc">{</span>entropy_after <span class="op">-</span> entropy_before<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> entropy_after <span class="op">&gt;</span> entropy_before:</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are ascending the entropy gradient&quot;</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;We are descending the entropy gradient&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize with asymmetric distribution (away from saddle point)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="op">-</span><span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.3</span>])</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>theta_init <span class="op">=</span> theta_init <span class="op">-</span> np.mean(theta_init)  <span class="co"># Ensure constraint is satisfied</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Run gradient ascent</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>theta_history, entropy_history <span class="op">=</span> gradient_ascent_four_bin(theta_init, steps<span class="op">=</span><span class="dv">100</span>, learning_rate<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid for visualization</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">100</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(x, y)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute entropy at each grid point (with constraint on theta3 and theta4)</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> np.zeros_like(X)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint that sum is zero</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        Z[i,j] <span class="op">=</span> exponential_family_entropy(theta)</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute gradient field</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>dX <span class="op">=</span> np.zeros_like(X)</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>dY <span class="op">=</span> np.zeros_like(Y)</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">0</span>]):</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(X.shape[<span class="dv">1</span>]):</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Create full theta vector with constraint</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>        theta1, theta2 <span class="op">=</span> X[i,j], Y[i,j]</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>        theta3 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        theta4 <span class="op">=</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> (theta1 <span class="op">+</span> theta2)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>        theta <span class="op">=</span> np.array([theta1, theta2, theta3, theta4])</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get full gradient and project</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        grad <span class="op">=</span> entropy_gradient(theta)</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>        proj_grad <span class="op">=</span> project_gradient(theta, grad)</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store first two components</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>        dX[i,j] <span class="op">=</span> proj_grad[<span class="dv">0</span>]</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>        dY[i,j] <span class="op">=</span> proj_grad[<span class="dv">1</span>]</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gradient vectors for better visualization</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.sqrt(dX<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> dY<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid division by zero</span></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>norm <span class="op">=</span> np.where(norm <span class="op">&lt;</span> <span class="fl">1e-10</span>, <span class="fl">1e-10</span>, norm)</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>dX_norm <span class="op">=</span> dX <span class="op">/</span> norm</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>dY_norm <span class="op">=</span> dY <span class="op">/</span> norm</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a><span class="co"># A few gradient vectors for visualization</span></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>stride <span class="op">=</span> <span class="dv">10</span></span></code></pre></div>
 <div class="figure">
 <div id="simplified-saddle-point-example-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/simplified-saddle-point-example.svg" width="70%" style=" ">
@@ -763,14 +793,14 @@ c(M) = \mathcal{F}[\boldsymbol{\theta}(M)]
 \dot{\boldsymbol{\theta}} = \nabla_{\boldsymbol{\theta}} S
 \]</span></p>
 <p>This is exactly what our steepest ascent dynamics implement: the system follows the entropy gradient, with the learning rate controlling the size of parameter updates. As the system evolves, it naturally creates information reservoirs in directions where the gradient is small but non-zero.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize system with 2 position-momentum pairs</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>n_pairs <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>G_init <span class="op">=</span> initialize_multidimensional_state(n_pairs, squeeze_factors<span class="op">=</span>[<span class="fl">0.1</span>, <span class="fl">0.2</span>])</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate path</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>path_history, entropy_production <span class="op">=</span> simulate_action_path(G_init)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize system with 2 position-momentum pairs</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>n_pairs <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>G_init <span class="op">=</span> initialize_multidimensional_state(n_pairs, squeeze_factors<span class="op">=</span>[<span class="fl">0.1</span>, <span class="fl">0.2</span>])</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate path</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>path_history, entropy_production <span class="op">=</span> simulate_action_path(G_init)</span></code></pre></div>
 <div class="figure">
 <div id="gradient-flow-least-action-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/gradient-flow-least-action.svg" width="80%" style=" ">
@@ -899,7 +929,7 @@ c(M) = \mathcal{F}[\boldsymbol{\theta}(M)],
 <li><p><strong>Classical regime</strong>: At high entropy, parameter uncertainty dominates, creating diffusion-like dynamics with minimal influence from uncertainty relations.</p></li>
 </ol>
 <p>The visualization shows probability distributions for these three regimes in both parameter space and capacity space.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div class="figure">
 <div id="uncertainty-ellipses-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/uncertainty-ellipses.svg" width="50%" style=" ">

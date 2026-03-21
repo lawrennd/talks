@@ -893,6 +893,8 @@ class Game {
 class HistogramGame extends Game {
     constructor(objects, params, simulation, boundaries, context, colors, histogram) {
 	super(objects, params, simulation, boundaries, context, colors);
+	// Histogram over velocity components (dx, dy) used by demo variants
+	// such as multiball and Maxwell's demon visualisations.
 	const step = (histogram.max-histogram.min)/histogram.nbins;
 	this.histogram = {
 	    nbins: histogram.nbins,
@@ -926,6 +928,12 @@ class HistogramGame extends Game {
 		}
 	    }
 	}
+	// Shannon entropy of the empirical velocity-bin distribution:
+	// H = -sum_i p_i log p_i where p_i is the normalized bin count.
+	//
+	// Important: this is a coarse-grained information measure used for
+	// visual intuition. It is not a full thermodynamic entropy of the
+	// underlying physical system.
 	this.entropy = 0;
 	for(let i = 0; i < this.histogram.nbins; i++) {
 	    if(this.histogram.y[i] > 0) {

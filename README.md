@@ -46,3 +46,11 @@ Different subjects have their own configuration files that are found in
 _subject/_lamd.yml
 ```
 
+## Ballworld interactive demos
+
+Some talks include interactive physics demos (for example entropy billiards and Maxwell's demon) powered by scripts in `scripts/ballworld/`.
+
+- Runtime and architecture documentation: `scripts/ballworld/README.md`
+- Script includes are wired through snippet loaders in the snippets repo (`_scripts/includes/*-js.md`).
+- The demo entropy readout is a velocity-histogram Shannon entropy proxy (coarse-grained), not full thermodynamic entropy.
+

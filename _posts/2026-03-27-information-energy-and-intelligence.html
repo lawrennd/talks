@@ -71,6 +71,180 @@ categories:
 </div>
 </div>
 <p>In honour of this idea, we consider a similar principle for “zero player games.” Games of the type of Conway’s game of life (<span class="citation" data-cites="Gardner-life70">Gardner (1970)</span>) or Wolfram’s cellular automata (<span class="citation" data-cites="Wolfram-cellular83">Wolfram (1983)</span>). The principle is a conceptual constraint inspired by Russell’s paradox: it demands that the rules of our system not appeal to external adjudicators or reference points just like ultimate.</p>
+<h2 id="a-tautology">A Tautology</h2>
+<blockquote>
+<p>Self-governing systems cannot refer to external arbitration.</p>
+</blockquote>
+<p>While this is a tautology, we’re going to try and suggest how to formalise this notion. Given that this is a memorial to David, we’re going to look to define it through information theory.</p>
+<p>When I arrived in Cambridge in February 1998, David was already working on coding and his meetings consisted of discussions of information theory, which was new to me. My background was as a Mechanical Engineer, and what I had learnt about Bayesian probability came from a terms preparation for my PhD at Aston University.</p>
+<p>David’s lectures consisted of discussions of Shannon limits and low density parity checking codes. It seemed a little familiar because the decoding was achieved through Bayesian updates.</p>
+<h2 id="entropy-billiards">Entropy Billiards</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="entropy-billiards-js-figure" class="figure-frame">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
+<output id="multiball-entropy">
+</output>
+</div>
+<div id="multiball-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="multiball-newball">
+New Ball
+</button>
+<button id="multiball-pause">
+Pause
+</button>
+<button id="multiball-skip">
+Skip 1000s
+</button>
+<button id="multiball-histogram">
+Histogram
+</button>
+</div>
+</div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
+</div>
+<div id="entropy-billiards-js-magnify" class="magnify" onclick="magnifyFigure(&#39;entropy-billiards-js&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="entropy-billiards-js-caption" class="caption-frame">
+<p>Figure: Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
+</div>
+</div>
+<h2 id="joint-and-marginal-entropy">Joint and Marginal Entropy</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/joint-marginal-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/joint-marginal-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Each particle in the billiard gas carries two velocity components, (v_x) and (v_y). We can describe the state of the gas at three levels of detail:</p>
+<ul>
+<li><strong>Marginal entropy (H(v_x))</strong> — how much uncertainty is there about a single particle’s horizontal velocity, ignoring its vertical velocity entirely?</li>
+<li><strong>Marginal entropy (H(v_y))</strong> — likewise for the vertical velocity.</li>
+<li><strong>Joint entropy (H(v_x, v_y))</strong> — how much uncertainty is there about a particle’s full velocity vector?</li>
+</ul>
+<p>The joint entropy is never smaller than either marginal, but it can be less than their sum. Precisely, Shannon’s <em>subadditivity</em> inequality states <span class="math display">\[
+H(v_x, v_y) \leq H(v_x) + H(v_y),
+\]</span> with equality if and only if (v_x) and (v_y) are statistically independent.</p>
+<p>The gap is the <strong>mutual information</strong> <span class="math display">\[
+I(v_x;\, v_y) = H(v_x) + H(v_y) - H(v_x,\, v_y) \geq 0,
+\]</span> which measures how much knowing one velocity component reduces uncertainty about the other.</p>
+<p>The billiard gas below starts with all particles moving in a circle — every particle has the same speed but a different direction. The velocity components (v_x = r) and (v_y = r) are therefore strongly correlated (they lie on a circle in velocity space), so (I(v_x; v_y)) is initially large.</p>
+<p>As elastic collisions randomise the velocities the distribution relaxes toward the Maxwell–Boltzmann equilibrium, where the joint distribution factorises as (p(v_x,v_y)=p(v_x),p(v_y)). Watch (I(v_x;v_y)) fall toward zero while (H(v_x,v_y)) climbs toward (H(v_x) + H(v_y)).</p>
+<div class="figure">
+<div id="joint-marginal-entropy-js-figure" class="figure-frame">
+<div style="width:100%;max-width:800px">
+<canvas id="jointentropy-canvas" width="800" height="450" style="border:1px solid black;display:block;width:100%">
+</canvas>
+<table style="width:100%;margin-top:8px;border-collapse:collapse;font-family:monospace;font-size:0.9em">
+<tr>
+<td style="padding:3px 8px">
+(H(v_x)) marginal (bits):
+</td>
+<td>
+<output id="jointentropy-hx">
+0.000
+</output>
+</td>
+</tr>
+<tr>
+<td style="padding:3px 8px">
+(H(v_y)) marginal (bits):
+</td>
+<td>
+<output id="jointentropy-hy">
+0.000
+</output>
+</td>
+</tr>
+<tr style="border-top:1px solid #ccc">
+<td style="padding:3px 8px">
+(H(v_x) + H(v_y)) (bits):
+</td>
+<td>
+<output id="jointentropy-hxphy">
+0.000
+</output>
+</td>
+</tr>
+<tr>
+<td style="padding:3px 8px">
+(H(v_x,,v_y)) joint (bits):
+</td>
+<td>
+<output id="jointentropy-hxy">
+0.000
+</output>
+</td>
+</tr>
+<tr style="border-top:1px solid #ccc;font-weight:bold">
+<td style="padding:3px 8px">
+(I(v_x;,v_y)) mutual info (bits):
+</td>
+<td>
+<output id="jointentropy-mi">
+0.000
+</output>
+</td>
+</tr>
+</table>
+<div style="margin-top:6px;display:flex;gap:4px">
+<button id="jointentropy-newball">
+Reset
+</button>
+<button id="jointentropy-pause">
+Pause / Resume
+</button>
+<button id="jointentropy-skip">
+Skip 1000s
+</button>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/jointentropy.js"></script>
+</div>
+<div id="joint-marginal-entropy-js-magnify" class="magnify" onclick="magnifyFigure(&#39;joint-marginal-entropy-js&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="joint-marginal-entropy-js-caption" class="caption-frame">
+<p>Figure: The billiard gas starts with circularly-distributed velocities so that (v_x) and (v_y) are correlated. As elastic collisions thermalise the gas the mutual information (I(v_x;v_y)) falls toward zero, demonstrating that at equilibrium the velocity components become statistically independent and the joint entropy equals the sum of the marginals.</p>
+</div>
+</div>
+<h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
+<h2 id="the-inaccessible-game-setup">The Inaccessible Game Setup</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
+<p>At this point there’s a challenge, how do we obtain a representation of information loss without including external structure? Our best suggestion is the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). Both these works characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but suggests that difference in von Neumann entropy is preferred.</p>
+<p><span class="citation" data-cites="Lawrence-origin26">(<strong>Lawrence-origin26?</strong>)</span> demonstrated …</p>
+<h2 id="information-isolation">Information Isolation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The first three axioms of the inaccessible game, due to , characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: <em>information isolation</em>. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.</p>
+<p>Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of <span class="math inline">\(N\)</span> variables the sum of marginal entropies <span class="math inline">\(\{h_i\}_{i=1}^{N}\)</span> sums to a constant <span class="math inline">\(C\)</span>, <span class="math display">\[
+\sum_{i=1}^N h_i = C.
+\]</span> The conservation law is imposed in an exchangeable form across the <em>marginal</em> entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.</p>
+<p>The specific form <span class="math inline">\(\sum_i h_i = C\)</span> is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form <span class="math inline">\(Q = \sum_i f(h_i)\)</span> with the same function <span class="math inline">\(f\)</span> for each variable. Extensivity (adding one variable increases <span class="math inline">\(Q\)</span> by a fixed amount) forces <span class="math inline">\(f(h) = c \cdot h + \text{const}\)</span>. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting <span class="math inline">\(c=1\)</span> gives the unique form <span class="math inline">\(\sum_i h_i = \text{const}\)</span>. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.</p>
+<p>Information isolation is stronger than frame invariance. It eliminates not only preferred reference frames but any appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition <span class="math inline">\(\{X_i\}\)</span> that enters the conservation constraint is a structural choice—part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.</p>
+<p>In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.</p>
 <h2 id="the-no-barber-principle">The No-Barber Principle</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -102,60 +276,31 @@ categories:
 <p>This is an attempt to introduce a consistency requirement that prevents the rules from appealing to distinctions the game itself cannot represent.</p>
 <h2 id="what-this-excludes">What This Excludes</h2>
 <p>Many seemingly natural constraints violate the no-barber principle. For example, partial conservation which assumes only some variables are isolated, privileges those variables. A time varying <span class="math inline">\(C\)</span> would require an external time parameter. The notion of observer relative isolation would require an observer that cannot be defined externally. Probabilistic isolation also requires an externally defined probabilistic space.</p>
-<h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
-<h2 id="the-three-axioms">The Three Axioms</h2>
-<h2 id="baez-fritz-leinster-characterization-of-information-loss">Baez-Fritz-Leinster Characterization of Information Loss</h2>
+<h2 id="lawvere-diagonalisation">Lawvere Diagonalisation</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/baez-information-loss-axioms.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/baez-information-loss-axioms.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_maths/includes/lawvere-diagonalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_maths/includes/lawvere-diagonalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Before introducing our fourth axiom, we need to understand how information loss is measured. <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span> showed that entropy emerges naturally from category theory as a way of measuring information loss in measure-preserving functions. They derived Shannon entropy from three axioms, without invoking probability directly.</p>
-<h3 id="the-three-axioms-1">The Three Axioms</h3>
-<p>Let <span class="math inline">\(F(f)\)</span> denote the information lost by a process <span class="math inline">\(f\)</span> that transforms one probability distribution to another. The three axioms constrain the functional form of <span class="math inline">\(F\)</span>.</p>
-<p><strong>Axiom 1: Functoriality</strong> suggests that given a process consisting of two stages, the amount of information lost in the whole process is the sum of the amounts lost at each stage: <span class="math display">\[
-F(f \circ g) = F(f) + F(g),
-\]</span> where <span class="math inline">\(\circ\)</span> represents composition.</p>
-<p><strong>Axiom 2: Convex Linearity</strong> suggests that if we flip a probability-<span class="math inline">\(\lambda\)</span> coin to decide whether to do one process or another, the information lost is <span class="math inline">\(\lambda\)</span> times the information lost by the first process plus <span class="math inline">\((1-\lambda)\)</span> times the information lost by the second: <span class="math display">\[
-F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g).
-\]</span></p>
-<p><strong>Axiom 3: Continuity</strong> suggests that if we change a process slightly, the information lost changes only slightly, i.e. <span class="math inline">\(F(f)\)</span> is a continuous function of <span class="math inline">\(f\)</span>.</p>
-<h2 id="the-main-result">The Main Result</h2>
-<p>The main result of <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span> is that these three axioms uniquely determine the form of information loss. There exists a constant <span class="math inline">\(c\geq 0\)</span> such that for any <span class="math inline">\(f: p \rightarrow q\)</span>: <span class="math display">\[
-F(f) = c(H(p) -H(q))
-\]</span> where <span class="math inline">\(F(f)\)</span> is the information loss in process <span class="math inline">\(f: p\rightarrow q\)</span> and <span class="math inline">\(H(\cdot)\)</span> is the Shannon entropy measured before and after the process is applied to the system.</p>
-<p>This provides a foundational justification for using entropy as our measure of information. It’s not just a convenient choice, it’s the unique measure that satisfies natural requirements for measuring information loss.</p>
-<h2 id="information-isolation-selected-by-no-barber">Information Isolation: Selected by No-Barber</h2>
-<h2 id="information-isolation-selected-not-assumed">Information Isolation: Selected, Not Assumed</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation-selected.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation-selected.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In our earlier presentation <span class="citation" data-cites="Lawrence-inaccessible25">(<strong>Lawrence-inaccessible25?</strong>)</span>, we introduced information isolation <span class="math inline">\(\sum_i h_i = C\)</span> as a fourth independent axiom. But more recent work suggests this is better understood as <strong>selected by the no-barber principle</strong> rather than assumed.</p>
-<h2 id="why-this-selection">Why This Selection?</h2>
-<p>Among all possible entropy-related constraints, marginal entropy conservation <span class="math inline">\(\sum_i h_i = C\)</span> is the <strong>strongest nontrivial constraint</strong> that can be formulated without external structure.</p>
-<p>Consider the alternatives:</p>
-<p><strong>Partial conservation</strong> (only some <span class="math inline">\(h_i\)</span> constrained): - Requires specifying <em>which</em> variables are isolated - Privileges those variables over others - Needs external criterion to select them</p>
-<p><strong>Time-varying</strong> <span class="math inline">\(C(t)\)</span>: - Requires an external time parameter <span class="math inline">\(t\)</span> - Who defines this time? - Violates no-barber principle</p>
-<p><strong>Observer-relative</strong> isolation: - Isolated <em>from what observer</em>? - Requires external reference point - Smuggles in external structure</p>
-<p><strong>Probabilistic</strong> isolation (holds in expectation): - Requires external probability space - Who defines the measure? - Again violates no-barber</p>
-<p>The constraint <span class="math inline">\(\sum_i h_i = C\)</span> (constant) has special properties:</p>
+<p>Russell’s barber paradox is one instance of a broader class of impossibility results that share a common category-theoretic structure.  showed that Russell’s paradox, Cantor’s theorem <span class="citation" data-cites="Cantor-elementare91">(<strong>Cantor-elementare91?</strong>)</span>, Gödel’s incompleteness theorem <span class="citation" data-cites="Godel-incompleteness31">(<strong>Godel-incompleteness31?</strong>)</span>, Turing’s halting problem <span class="citation" data-cites="Turing-computable36">(<strong>Turing-computable36?</strong>)</span>, and Tarski’s undefinability theorem <span class="citation" data-cites="Tarski-warhheitsbegriff36">(<strong>Tarski-warhheitsbegriff36?</strong>)</span> all arise through the same mechanism: a <em>five-move recipe</em> for constructing a self-referential contradiction.</p>
+<p>We treat rules as elements of an internal language whose evaluation is represented by morphisms in a chosen category; the structural properties of that category determine which constructions are available. Lawvere’s diagonalisation can be summarised as a five-move recipe.</p>
 <ol type="1">
-<li><strong>Exchangeable:</strong> Treats all subsystems identically (depends only on marginal entropies)</li>
-<li><strong>Extensive:</strong> Scales linearly with system size</li>
-<li><strong>Internal:</strong> Definable from reduced descriptions alone</li>
-<li><strong>No external time:</strong> <span class="math inline">\(C\)</span> is a constant, not time-dependent</li>
-<li><strong>No external observer:</strong> Isolation is absolute, not relative</li>
+<li><strong>Rules.</strong> The system consists of <em>rules</em> which are a collection of operations that take inputs to outputs.</li>
+<li><strong>Universal evaluator.</strong> There must be a universal evaluator operation that can execute a rule on any input.</li>
+<li><strong>Internalisation of syntax.</strong> For every rule it must be possible to <em>internalise the syntax</em>: the system should be able to identify all its operations internally.</li>
+<li><strong>Self-application.</strong> The rules should allow for <em>self-application</em>, so that any rule-code can be fed in as an input.</li>
+<li><strong>Twist.</strong> There should be a <em>twist</em> transformation that can negate or complement outputs.</li>
 </ol>
-<p>These properties make it the unique choice that satisfies both: - Strong enough to constrain dynamics - Weak enough to avoid external reference</p>
-<h2 id="implication-not-just-another-axiom">Implication: Not “Just Another Axiom”</h2>
-<p>This reframing changes how we understand the game’s foundation. We’re not arbitrarily adding a fourth axiom—we’re <strong>discovering</strong> that internal adjudicability forces this specific constraint.</p>
-<p>The three Baez-Fritz-Leinster axioms tell us information loss is measured by entropy. The no-barber principle then tells us that the only admissible global constraint on a collection of subsystems is marginal entropy conservation.</p>
-<p>This is a stronger foundation. We’re not asking “what happens if we add this constraint?” but rather “what must be true if we forbid external reference?” The answer turns out to be marginal entropy conservation.</p>
-<h2 id="constraints-vs-selections">Constraints vs Selections</h2>
-<p>One useful clarification from the latest “no-barber” framing is to separate (i)  that are needed just to avoid impredicative circularity / external structure, from (ii)  that look internally motivated but may not yet be uniquely forced. This keeps the story honest: we can say what seems necessary now, and where the remaining design degrees of freedom live.</p>
-<h2 id="smuggled-outcomes-shannon-vs-von-neumann">Smuggled Outcomes: Shannon vs von Neumann</h2>
-<p>Baez-Fritz-Leinster show Shannon entropy is uniquely characterised by natural axioms . The no-barber question is subtler: does the  already assume external structure (a labelled outcome space / <span class="math inline">\(\sigma\)</span>-algebra) that the game cannot represent internally? This is one motivation for preferring an algebraic entropy (von Neumann) when we want the rule language to be outcome-independent.</p>
-<h1 id="the-inaccessible-game">The Inaccessible Game</h1>
-<p>With these foundations, we can now introduce the game itself.</p>
-<h2 id="the-inaccessible-game-1">The Inaccessible Game</h2>
+<p>When all five moves are available, one can construct the diagonal rule: <span class="math inline">\(g(x) = \text{Twist}(\text{Apply}(x, x))\)</span>. Through internalisation of syntax, there must exist some internal code <span class="math inline">\(r_0\)</span> such that <span class="math inline">\(g(x) = \text{Apply}(r_0, x)\)</span> for all <span class="math inline">\(x\)</span>. Evaluating at <span class="math inline">\(x = r_0\)</span> gives the fixed point <span class="math inline">\(\text{Apply}(r_0, r_0) = \text{Twist}(\text{Apply}(r_0, r_0))\)</span>, a contradiction for appropriate choices of twist such as negation.</p>
+<p>The barber paradox maps cleanly onto these five moves. Let <span class="math inline">\(P\)</span> be the set of people in the village and <span class="math inline">\(R\)</span> the set of shaving rules, <span class="math inline">\(R : P \to \{\text{yes},\text{no}\}\)</span>. Combining a rule with a person produces a shaver object <span class="math inline">\(x = (R, p) \in R \times P\)</span>. The universal evaluator is <span class="math inline">\(\text{shaves}((R,q),p) = R(p)\)</span>.</p>
+<p>Each person <span class="math inline">\(p\)</span> carries a rule <span class="math inline">\(R_p\)</span> describing their shaving behaviour (internalisation of syntax). This enables self-application <span class="math inline">\(R_p(p)\)</span>. The twist rule is <span class="math inline">\(T(p) = \neg R_p(p)\)</span>, selecting exactly those people who do not shave themselves. Suppose a person <span class="math inline">\(b\)</span> whose shaving behaviour follows <span class="math inline">\(T\)</span>: this is the barber <span class="math inline">\(B = (T, b)\)</span>. Evaluating the barber on themselves gives <span class="math inline">\(\text{shaves}(B,b) = \neg\text{shaves}(B,b)\)</span>—the contradiction.</p>
+<p>The key observation is that self-application (step 4) requires feeding a rule-code in as its own input, which internally corresponds to <em>duplicating</em> that input: the same object must appear simultaneously as both the rule and its argument. This requires a diagonal map <span class="math display">\[
+\Delta : P \to P \times P, \qquad \Delta(p) = (p,p),
+\]</span> which duplicates the input. Without such a cloning operation, the twist rule <span class="math inline">\(T(p)\)</span> could not be defined, and the diagonal contradiction would not arise.</p>
+<p>In a <em>cartesian</em> category every object has a canonical diagonal map <span class="math inline">\(A \to A \times A\)</span> by the universal property of the product. In a <em>symmetric monoidal</em> category the product is replaced by a tensor <span class="math inline">\(\otimes\)</span> representing combination of independent resources; there is no universal property forcing a copying map <span class="math inline">\(A \to A \otimes A\)</span> to exist. Moving from a cartesian to a symmetric monoidal setting therefore removes free copying from the internal language.</p>
+<p><strong>Proposition (informal).</strong> In any internal language lacking a canonical copying map <span class="math inline">\(A \to A \otimes A\)</span>, the self-application step required for Lawvere diagonalisation cannot be formed without additional, non-standard structure. Consequently, the standard Lawvere-style fixed-point contradiction, including the barber paradox and related diagonal arguments, cannot be derived internally.</p>
+<p>This connection between copying and diagonalisation has two natural instantiations. Girard’s linear logic makes the hidden structural rules of classical reasoning explicit by removing them: in linear logic, assumptions behave like resources that cannot in general be duplicated or discarded <span class="citation" data-cites="Girard-linear87">(<strong>Girard-linear87?</strong>)</span>. Categorically this corresponds to moving from a Cartesian world to a merely symmetric monoidal world <span class="math inline">\((\otimes, I)\)</span>.</p>
+<p>Quantum probability fits naturally into this resource-sensitive picture. In a noncommutative setting there is no state-independent way to duplicate an arbitrary unknown state—the quantum no-cloning theorem. The shift from classical to noncommutative probability is analogous to replacing ordinary Boolean logic by a compositional, resource-sensitive logic.</p>
+<p>The no-barber principle therefore has a concrete categorical implementation: any internal language that admits canonical copying maps also admits Lawvere-style diagonalisation and is incompatible with self-adjudication. This motivates symmetric monoidal categories—and hence von Neumann entropy over Shannon entropy—as the appropriate setting for self-adjudicating dynamical systems.</p>
+<h2 id="the-inaccessible-game">The Inaccessible Game</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-introduction.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-introduction.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
@@ -392,12 +537,17 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <p>A small but important design point: if we allow an  time parameter, we’ve already violated the no-barber spirit. One candidate is to parameterise trajectories by entropy production itself (an affine freedom remains: choosing units and an origin for the clock). This keeps the ordering internal and avoids appealing to an externally supplied clock.</p>
 <h1 id="emergent-structure-generic">Emergent Structure: GENERIC</h1>
 <h2 id="what-is-generic">What is GENERIC?</h2>
-<p>One of the most remarkable consequences of constrained maximum entropy production is the emergence of GENERIC structure—a framework from non-equilibrium thermodynamics that combines reversible and irreversible dynamics.</p>
+<p>The constrained maximum entropy production leads to a GENERIC-like structure. A framework from non-equilibrium thermodynamics that combines reversible (energy conserving) and irreversible dynamics (entropy producing).</p>
 <h2 id="the-generic-framework">The GENERIC Framework</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>We’ve seen something emerge from lectures 5-7: - <strong>Lecture 5:</strong> Hamiltonian/Poisson structure describes energy-conserving dynamics (antisymmetric operators) - <strong>Lecture 6:</strong> Linearisation around equilibrium reveals structure of dynamics - <strong>Lecture 7:</strong> Any dynamics matrix decomposes uniquely as <span class="math inline">\(M = S + A\)</span> where <span class="math inline">\(S\)</span> is symmetric (dissipative) and <span class="math inline">\(A\)</span> is antisymmetric (conservative)</p>
+<p>We’ve seen something emerge from lectures 5-7:</p>
+<ul>
+<li><strong>Lecture 5:</strong> Hamiltonian/Poisson structure describes energy-conserving dynamics (antisymmetric operators)</li>
+<li><strong>Lecture 6:</strong> Linearisation around equilibrium reveals structure of dynamics</li>
+<li><strong>Lecture 7:</strong> Any dynamics matrix decomposes uniquely as <span class="math inline">\(M = S + A\)</span> where <span class="math inline">\(S\)</span> is symmetric (dissipative) and <span class="math inline">\(A\)</span> is antisymmetric (conservative)</li>
+</ul>
 <p>This emergence comes from the geometry of constrained information dynamics. The structure is <em>not unique to information theory</em>. It appears throughout physics whenever systems combine reversible and irreversible processes.</p>
 <h2 id="historical-context-non-equilibrium-thermodynamics">Historical Context: Non-Equilibrium Thermodynamics</h2>
 <p>In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are <em>simultaneously</em>: - <strong>Reversible</strong> (like mechanical systems, governed by Hamilton’s equations) - <strong>Irreversible</strong> (like thermodynamic systems, governed by entropy increase)</p>
@@ -1111,6 +1261,9 @@ Onsager, L., 1931. Reciprocal relations in irreversible processes. <span>I</span
 </div>
 <div id="ref-Parrondo-thermodynamics15" class="csl-entry" role="doc-biblioentry">
 Parrondo, J.M.R., Horowitz, J.M., Sagawa, T., 2015. Thermodynamics of information. Nature Physics 11, 131–139. <a href="https://doi.org/10.1038/nphys3230">https://doi.org/10.1038/nphys3230</a>
+</div>
+<div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
+Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
 </div>
 <div id="ref-Sandberg-whole08" class="csl-entry" role="doc-biblioentry">
 Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Report No. 2008-3). Future of Humanity Institute, Oxford University.

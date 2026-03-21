@@ -40,6 +40,8 @@ transition: None
 
 
 
+\include{_physics/includes/entropy-billiards.md}
+\include{_physics/includes/joint-marginal-entropy.md}
 
 \section{Foundations: Information Loss and Entropy}
 

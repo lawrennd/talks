@@ -157,6 +157,8 @@ I(v_x;\, v_y) = H(v_x) + H(v_y) - H(v_x,\, v_y) \geq 0,
 <div style="width:100%;max-width:800px">
 <canvas id="jointentropy-canvas" width="800" height="450" style="border:1px solid black;display:block;width:100%">
 </canvas>
+<canvas id="jointentropy-stats" width="440" height="440" style="display:block;width:100%;max-width:440px;height:auto;margin-top:6px;border:1px solid #bbb">
+</canvas>
 <table style="width:100%;margin-top:8px;border-collapse:collapse;font-family:monospace;font-size:0.9em">
 <tr>
 <td style="padding:3px 8px">
@@ -220,7 +222,7 @@ Mean KE per ball (conserved):
 </tr>
 <tr style="border-top:1px solid #ccc">
 <td style="padding:3px 8px">
-Order parameter <span class="math inline">\(r = |\langle e^{i\theta}\rangle|\)</span>:
+Order parameter (r):
 </td>
 <td>
 <output id="jointentropy-r">
@@ -229,7 +231,7 @@ Order parameter <span class="math inline">\(r = |\langle e^{i\theta}\rangle|\)</
 </td>
 </tr>
 </table>
-<div style="margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+<div style="margin-top:6px;display:flex;gap:4px;align-items:center;flex-wrap:wrap">
 <button id="jointentropy-newball">
 Reset
 </button>
@@ -239,11 +241,11 @@ Pause / Resume
 <button id="jointentropy-skip">
 Skip 1000s
 </button>
-<label style="font-family:monospace;font-size:0.9em">Coupling κ: <input type="range" id="jointentropy-kappa" min="0" max="0.5" step="0.01" value="0" style="width:120px">
-<output id="jointentropy-kappa-val">
+<span style="font-family:monospace;font-size:0.9em;margin-left:8px">Coupling κ: <input type="range" id="jointentropy-kappa" min="0" max="0.5" step="0.01" value="0" style="width:120px">
+<output id="jointentropy-kappa-val" style="font-family:monospace">
 0.00
 </output>
-<p></label></p>
+<p></span></p>
 </div>
 </div>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/jointentropy.js"></script>

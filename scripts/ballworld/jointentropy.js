@@ -7,6 +7,12 @@ class JointEntropy extends Game {
 	this.vmin = -20;
 	this.vmax = 20;
 	this.vstep = (this.vmax - this.vmin) / this.nbins;
+	// Exponential moving average state (alpha controls smoothing speed)
+	this.emaAlpha = 0.02;
+	this.emaHx   = null;
+	this.emaHy   = null;
+	this.emaHxy  = null;
+	this.emaMI   = null;
     }
 
     binIndex(v) {
@@ -16,7 +22,7 @@ class JointEntropy extends Game {
 
     birth() {
 	var radius = 10;
-	// Collect x positions first so we can distribute angles evenly
+	// Collect x positions first so we can distribute balls evenly
 	var positions = [];
 	for (var x = 3*radius; x < this.context.canvas.width; x += 2*radius + 1) {
 	    positions.push(x);
@@ -24,17 +30,19 @@ class JointEntropy extends Game {
 	var N = positions.length;
 	for (var k = 0; k < N; k++) {
 	    var temp = new Ball(this.context, positions[k], radius, radius);
-	    // Circular initial velocities: all balls have the same speed but
-	    // uniformly spread directions.  This creates strong correlation
-	    // between vx and vy (they lie on a circle), giving high I(vx;vy)
-	    // initially.  As collisions thermalise the gas the velocity
-	    // components become independent and I(vx;vy) → 0.
-	    var angle = k * 2 * Math.PI / N;
-	    temp.dx = this.params.initialSpeed * Math.sin(angle);
-	    temp.dy = this.params.initialSpeed * Math.cos(angle);
+	    // All balls start with identical velocity — maximally correlated,
+	    // so marginal and joint entropy both start near zero.
+	    // Collisions will thermalise the gas and entropy will rise.
+	    temp.dx = this.params.initialSpeed;
+	    temp.dy = 0;
 	    temp.color = this.colors.ball;
 	    this.objects.balls.push(temp);
 	}
+	// Reset EMA so it tracks from this fresh state
+	this.emaHx  = null;
+	this.emaHy  = null;
+	this.emaHxy = null;
+	this.emaMI  = null;
     }
 
     reset() {
@@ -84,11 +92,18 @@ class JointEntropy extends Game {
 	// Equals zero when vx and vy are statistically independent.
 	const MI = Hx + Hy - Hxy;
 
-	document.getElementById("jointentropy-hx").value    = Hx.toFixed(3);
-	document.getElementById("jointentropy-hy").value    = Hy.toFixed(3);
-	document.getElementById("jointentropy-hxphy").value = (Hx + Hy).toFixed(3);
-	document.getElementById("jointentropy-hxy").value   = Hxy.toFixed(3);
-	document.getElementById("jointentropy-mi").value    = MI.toFixed(3);
+	// Exponential moving average to smooth the displayed values
+	const a = this.emaAlpha;
+	this.emaHx  = (this.emaHx  === null) ? Hx  : (1 - a) * this.emaHx  + a * Hx;
+	this.emaHy  = (this.emaHy  === null) ? Hy  : (1 - a) * this.emaHy  + a * Hy;
+	this.emaHxy = (this.emaHxy === null) ? Hxy : (1 - a) * this.emaHxy + a * Hxy;
+	this.emaMI  = (this.emaMI  === null) ? MI  : (1 - a) * this.emaMI  + a * MI;
+
+	document.getElementById("jointentropy-hx").value    = this.emaHx.toFixed(3);
+	document.getElementById("jointentropy-hy").value    = this.emaHy.toFixed(3);
+	document.getElementById("jointentropy-hxphy").value = (this.emaHx + this.emaHy).toFixed(3);
+	document.getElementById("jointentropy-hxy").value   = this.emaHxy.toFixed(3);
+	document.getElementById("jointentropy-mi").value    = this.emaMI.toFixed(3);
 
 	if (this.simulation.time % 1000 == 0) {
 	    this.simulation.draw = true;

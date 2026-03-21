@@ -648,10 +648,18 @@ class Game {
 	this.pitCollision();
     }
     staticCollision(ob1, ob2) {
-	// Push the two balls apart symmetrically so they no longer overlap.
-	// Splitting the correction evenly is physically correct for equal-mass
-	// balls and avoids a bug where both internal pointers alias the same
-	// object when the radii are equal (as they always are in multiball).
+	// Overlap (penetration) correction — a standard discrete-time physics
+	// concern sometimes called "overlap jitter" or "penetration resolution".
+	//
+	// After the velocity exchange the two balls may still be geometrically
+	// overlapping (they haven't had enough time in one frame to fully
+	// separate), so we nudge their positions apart before the next frame.
+	//
+	// The correction is split symmetrically (each ball moves half the
+	// overlap distance).  This is the correct choice for equal-mass objects
+	// and sidesteps an aliasing bug that occurs when the two radii are equal:
+	// the earlier "move the smaller ball" logic assigned both internal
+	// pointers to the same object, leaving one ball unmoved.
 	const overlap = ob1.radius + ob2.radius - distance(ob1, ob2);
 	if (overlap <= 0) return;
 	const theta = Math.atan2(ob2.y - ob1.y, ob2.x - ob1.x);
@@ -666,10 +674,17 @@ class Game {
             for (let j=i+1; j<this.objects.balls.length; j++) {
 		let ob2 = this.objects.balls[j];
 		let dist = distance(ob1, ob2);
-		// Only exchange velocities when the balls are overlapping AND
-		// approaching each other.  Without this guard the collision
-		// response fires on every frame while balls are still touching,
-		// reversing the velocities again and causing entanglement.
+		// Separating-velocity guard — a standard fix for the "persistent
+		// contact" / "re-collision" artefact in discrete-time simulation.
+		//
+		// Because time advances in discrete steps, two balls that just
+		// bounced will almost always still overlap on the next frame.
+		// Without this guard the collision response would fire again,
+		// reversing the correctly-set velocities and locking the balls
+		// in a vibrating entangled cluster.
+		//
+		// The dot product is positive when ob1 has a velocity component
+		// pointing toward ob2, i.e. the balls are approaching.
 		const approaching = (ob2.x - ob1.x) * (ob1.dx - ob2.dx)
 		                  + (ob2.y - ob1.y) * (ob1.dy - ob2.dy);
 		if(dist < ob1.radius + ob2.radius && approaching > 0) {

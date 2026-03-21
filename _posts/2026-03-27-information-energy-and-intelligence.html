@@ -134,20 +134,20 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/joint-marginal-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/joint-marginal-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Each particle in the billiard gas carries two velocity components, (v_x) and (v_y). We can describe the state of the gas at three levels of detail:</p>
+<p>Each particle in the billiard gas carries two velocity components, <span class="math inline">\(v_x\)</span> and <span class="math inline">\(v_y\)</span>. We can describe the state of the gas at three levels of detail:</p>
 <ul>
-<li><strong>Marginal entropy (H(v_x))</strong> — how much uncertainty is there about a single particle’s horizontal velocity, ignoring its vertical velocity entirely?</li>
-<li><strong>Marginal entropy (H(v_y))</strong> — likewise for the vertical velocity.</li>
-<li><strong>Joint entropy (H(v_x, v_y))</strong> — how much uncertainty is there about a particle’s full velocity vector?</li>
+<li><strong>Marginal entropy <span class="math inline">\(H(v_x)\)</span></strong> — how much uncertainty is there about a single particle’s horizontal velocity, ignoring its vertical velocity entirely?</li>
+<li><strong>Marginal entropy <span class="math inline">\(H(v_y)\)</span></strong> — likewise for the vertical velocity.</li>
+<li><strong>Joint entropy <span class="math inline">\(H(v_x, v_y)\)</span></strong> — how much uncertainty is there about a particle’s full velocity vector?</li>
 </ul>
 <p>The joint entropy is never smaller than either marginal, but it can be less than their sum. Precisely, Shannon’s <em>subadditivity</em> inequality states <span class="math display">\[
 H(v_x, v_y) \leq H(v_x) + H(v_y),
-\]</span> with equality if and only if (v_x) and (v_y) are statistically independent.</p>
+\]</span> with equality if and only if <span class="math inline">\(v_x\)</span> and <span class="math inline">\(v_y\)</span> are statistically independent.</p>
 <p>The gap is the <strong>mutual information</strong> <span class="math display">\[
 I(v_x;\, v_y) = H(v_x) + H(v_y) - H(v_x,\, v_y) \geq 0,
 \]</span> which measures how much knowing one velocity component reduces uncertainty about the other.</p>
-<p>The billiard gas below starts with all particles moving in a circle — every particle has the same speed but a different direction. The velocity components (v_x = r) and (v_y = r) are therefore strongly correlated (they lie on a circle in velocity space), so (I(v_x; v_y)) is initially large.</p>
-<p>As elastic collisions randomise the velocities the distribution relaxes toward the Maxwell–Boltzmann equilibrium, where the joint distribution factorises as (p(v_x,v_y)=p(v_x),p(v_y)). Watch (I(v_x;v_y)) fall toward zero while (H(v_x,v_y)) climbs toward (H(v_x) + H(v_y)).</p>
+<p>The gas starts with all particles moving straight down at the same speed (identical to the entropy-billiards initialisation), so both marginal and joint entropy begin near zero. A tiny random horizontal perturbation breaks the symmetry so that collisions gradually thermalise the gas and entropy rises.</p>
+<p>Notice what is and is not conserved. The <em>mean kinetic energy</em> <span class="math inline">\(\langle v^2 \rangle = \langle v_x^2 + v_y^2 \rangle\)</span> is conserved by elastic collisions, while <span class="math inline">\(H(v_x) + H(v_y)\)</span> is <em>not</em> conserved, it climbs from zero to its equilibrium value. At equilibrium the joint distribution factorises as <span class="math inline">\(p(v_x,v_y)=p(v_x) p(v_y)\)</span>, so <span class="math inline">\(I(v_x;v_y) \to 0\)</span> and <span class="math inline">\(H(v_x,v_y) \to H(v_x)+H(v_y)\)</span>.</p>
 <div class="figure">
 <div id="joint-marginal-entropy-js-figure" class="figure-frame">
 <div style="width:100%;max-width:800px">
@@ -204,6 +204,16 @@ I(v_x;\, v_y) = H(v_x) + H(v_y) - H(v_x,\, v_y) \geq 0,
 </output>
 </td>
 </tr>
+<tr style="border-top:1px solid #ccc">
+<td style="padding:3px 8px">
+Mean KE per ball (conserved):
+</td>
+<td>
+<output id="jointentropy-ke">
+0.000
+</output>
+</td>
+</tr>
 </table>
 <div style="margin-top:6px;display:flex;gap:4px">
 <button id="jointentropy-newball">
@@ -223,7 +233,7 @@ Skip 1000s
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="joint-marginal-entropy-js-caption" class="caption-frame">
-<p>Figure: The billiard gas starts with circularly-distributed velocities so that (v_x) and (v_y) are correlated. As elastic collisions thermalise the gas the mutual information (I(v_x;v_y)) falls toward zero, demonstrating that at equilibrium the velocity components become statistically independent and the joint entropy equals the sum of the marginals.</p>
+<p>Figure: The billiard gas starts with all particles moving in the same direction (maximally correlated, near-zero entropy). Elastic collisions thermalise the gas: watch all entropies rise while the mean kinetic energy stays flat. At equilibrium the mutual information (I(v_x;v_y)) falls to zero and the joint entropy equals the sum of the marginals. Kinetic energy is conserved; marginal entropy sum is not — they only become equivalent in the thermodynamic limit.</p>
 </div>
 </div>
 <h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>

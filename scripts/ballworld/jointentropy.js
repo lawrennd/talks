@@ -17,6 +17,11 @@ class JointEntropy extends Game {
 	this.emaMI   = null;
 	this.emaKE   = null;
 	this.emaR    = null;  // Kuramoto order parameter
+	// EMA-smoothed joint probability array for the stats visualisation.
+	// Marginals px/py are computed from dispPxy inside drawStats, ensuring
+	// the histograms are exactly the marginals of the displayed heatmap.
+	this.dispAlpha = 0.05;
+	this.dispPxy   = null;
     }
 
     binIndex(v) {
@@ -49,6 +54,7 @@ class JointEntropy extends Game {
 	this.emaMI  = null;
 	this.emaKE  = null;
 	this.emaR   = null;
+	this.dispPxy = null;
     }
 
     reset() {
@@ -166,9 +172,139 @@ class JointEntropy extends Game {
 	const rEl = document.getElementById("jointentropy-r");
 	if (rEl) rEl.value = this.emaR.toFixed(3);
 
+	// Update EMA-smoothed joint probability array for the statistics visualisation.
+	// Marginals are computed from dispPxy inside drawStats.
+	const ad = this.dispAlpha;
+	if (this.dispPxy === null) {
+	    this.dispPxy = hxy.map(row => row.map(v => v / N));
+	} else {
+	    for (let i = 0; i < n; i++)
+		for (let j = 0; j < n; j++)
+		    this.dispPxy[i][j] = (1 - ad) * this.dispPxy[i][j] + ad * hxy[i][j] / N;
+	}
+	this.drawStats(this.dispPxy);
+
 	if (this.simulation.time % 1000 == 0) {
 	    this.simulation.draw = true;
 	}
+    }
+
+    // drawStats renders the joint velocity density p(vx,vy) as a heatmap with
+    // marginal histograms p(vx) below and p(vy) to the right.
+    // pxy is the EMA-smoothed joint probability array (values already divided by N).
+    // Marginals px and py are computed here as column/row sums of pxy so that
+    // the histograms are exactly consistent with the displayed heatmap.
+    drawStats(pxy) {
+	const statsCanvas = document.getElementById('jointentropy-stats');
+	if (!statsCanvas) return;
+	const ctx = statsCanvas.getContext('2d');
+	const W = statsCanvas.width;   // 440
+	const H = statsCanvas.height;  // 440
+	const n = this.nbins;          // 20
+
+	// ── Layout ──────────────────────────────────────────────────────────────
+	// Joint panel (square) + p(vx) strip below + p(vy) strip to the right.
+	const padL = 36, padB = 36, padR = 7, padT = 7;
+	const histH = 48, histW = 48, gap = 4;
+	const jx = padL, jy = padT;
+	const jw = W - padL - gap - histW - padR;   // ≈345
+	const jh = H - padT - gap - histH - padB;   // ≈345
+	const cw = jw / n;
+	const ch = jh / n;
+
+	ctx.clearRect(0, 0, W, H);
+	ctx.fillStyle = '#fff';
+	ctx.fillRect(0, 0, W, H);
+
+	// ── Marginals: sum rows/columns of the joint distribution ───────────────
+	const px = new Array(n).fill(0);
+	const py = new Array(n).fill(0);
+	for (let ix = 0; ix < n; ix++)
+	    for (let iy = 0; iy < n; iy++) {
+		px[ix] += pxy[ix][iy];
+		py[iy] += pxy[ix][iy];
+	    }
+
+	// ── Joint density heatmap ────────────────────────────────────────────────
+	let maxP = 1e-9;
+	for (let ix = 0; ix < n; ix++)
+	    for (let iy = 0; iy < n; iy++)
+		if (pxy[ix][iy] > maxP) maxP = pxy[ix][iy];
+
+	for (let ix = 0; ix < n; ix++) {
+	    for (let iy = 0; iy < n; iy++) {
+		// iy=0 is the lowest vy bin; canvas y increases downward, so flip.
+		const cx = jx + ix * cw;
+		const cy = jy + jh - (iy + 1) * ch;
+		const d  = pxy[ix][iy] / maxP;
+		ctx.fillStyle = d < 5e-4
+		    ? '#f0f0f6'
+		    : `rgba(20,50,170,${Math.min(1, 0.1 + 0.9 * d).toFixed(2)})`;
+		ctx.fillRect(cx, cy, cw + 0.5, ch + 0.5);
+	    }
+	}
+
+	// Joint panel border
+	ctx.strokeStyle = '#999';
+	ctx.lineWidth = 1;
+	ctx.strokeRect(jx, jy, jw, jh);
+
+	// Zero cross-hairs: vmin=-20, vmax=20, nbins=20 → vx=0 at bin boundary 10
+	const x0 = jx + (n / 2) * cw;
+	const y0 = jy + jh - (n / 2) * ch;
+	ctx.save();
+	ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+	ctx.setLineDash([3, 4]);
+	ctx.lineWidth = 1;
+	ctx.beginPath(); ctx.moveTo(x0, jy);  ctx.lineTo(x0, jy + jh); ctx.stroke();
+	ctx.beginPath(); ctx.moveTo(jx, y0);  ctx.lineTo(jx + jw, y0); ctx.stroke();
+	ctx.restore();
+
+	// ── p(vx) histogram (below joint panel) ───────────────────────────────
+	const maxPx  = Math.max(...px, 1e-9);
+	const hxTop  = jy + jh + gap;
+	const hxBase = hxTop + histH;
+	ctx.fillStyle = 'rgba(20,50,170,0.5)';
+	for (let ix = 0; ix < n; ix++) {
+	    const bh = (px[ix] / maxPx) * histH;
+	    ctx.fillRect(jx + ix * cw, hxBase - bh, cw - 1, bh);
+	}
+	ctx.strokeStyle = '#ccc';
+	ctx.lineWidth = 0.5;
+	ctx.strokeRect(jx, hxTop, jw, histH);
+
+	// ── p(vy) histogram (right of joint panel) ────────────────────────────
+	const maxPy  = Math.max(...py, 1e-9);
+	const hyLeft = jx + jw + gap;
+	ctx.fillStyle = 'rgba(20,50,170,0.5)';
+	for (let iy = 0; iy < n; iy++) {
+	    const bw = (py[iy] / maxPy) * histW;
+	    ctx.fillRect(hyLeft, jy + jh - (iy + 1) * ch, bw, ch - 1);
+	}
+	ctx.strokeStyle = '#ccc';
+	ctx.lineWidth = 0.5;
+	ctx.strokeRect(hyLeft, jy, histW, jh);
+
+	// ── Tick labels ────────────────────────────────────────────────────────
+	ctx.fillStyle = '#555';
+	ctx.font = `${Math.max(9, Math.round(W * 0.026))}px monospace`;
+	ctx.textAlign = 'center';
+	for (const [v, tx] of [[this.vmin, jx], [0, x0], [this.vmax, jx + jw]])
+	    ctx.fillText(v, tx, hxBase + 14);
+	ctx.textAlign = 'right';
+	for (const [v, ty] of [[this.vmax, jy], [0, y0], [this.vmin, jy + jh]])
+	    ctx.fillText(v, jx - 4, ty + 4);
+
+	// ── Axis labels ────────────────────────────────────────────────────────
+	ctx.fillStyle = '#222';
+	ctx.font = `italic ${Math.max(11, Math.round(W * 0.03))}px serif`;
+	ctx.textAlign = 'center';
+	ctx.fillText('vₓ', jx + jw / 2, H - 5);
+	ctx.save();
+	ctx.translate(12, jy + jh / 2);
+	ctx.rotate(-Math.PI / 2);
+	ctx.fillText('vᵧ', 0, 0);
+	ctx.restore();
     }
 }
 

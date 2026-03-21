@@ -147,7 +147,11 @@ H(v_x, v_y) \leq H(v_x) + H(v_y),
 I(v_x;\, v_y) = H(v_x) + H(v_y) - H(v_x,\, v_y) \geq 0,
 \]</span> which measures how much knowing one velocity component reduces uncertainty about the other.</p>
 <p>The gas starts with all particles moving straight down at the same speed (identical to the entropy-billiards initialisation), so both marginal and joint entropy begin near zero. A tiny random horizontal perturbation breaks the symmetry so that collisions gradually thermalise the gas and entropy rises.</p>
-<p>Notice what is and is not conserved. The <em>mean kinetic energy</em> <span class="math inline">\(\langle v^2 \rangle = \langle v_x^2 + v_y^2 \rangle\)</span> is conserved by elastic collisions, while <span class="math inline">\(H(v_x) + H(v_y)\)</span> is <em>not</em> conserved, it climbs from zero to its equilibrium value. At equilibrium the joint distribution factorises as <span class="math inline">\(p(v_x,v_y)=p(v_x) p(v_y)\)</span>, so <span class="math inline">\(I(v_x;v_y) \to 0\)</span> and <span class="math inline">\(H(v_x,v_y) \to H(v_x)+H(v_y)\)</span>.</p>
+<p>Notice what is and is not conserved. The <em>mean kinetic energy</em> <span class="math inline">\(\langle v^2 \rangle = \langle v_x^2 + v_y^2 \rangle\)</span> is conserved by elastic collisions, while <span class="math inline">\(H(v_x) + H(v_y)\)</span> is <em>not</em> conserved — it climbs from zero to its equilibrium value. At equilibrium the joint distribution factorises as <span class="math inline">\(p(v_x,v_y)=p(v_x) p(v_y)\)</span>, so <span class="math inline">\(I(v_x;v_y) \to 0\)</span> and <span class="math inline">\(H(v_x,v_y) \to H(v_x)+H(v_y)\)</span>.</p>
+<p><strong>Pairwise coupling (Kuramoto model).</strong> The slider adds a mean-field pairwise interaction: each ball’s velocity <em>direction</em> is nudged toward the mean direction by <span class="math display">\[
+\Delta\theta_i = \kappa \sin(\theta_{\text{mean}} - \theta_i).
+\]</span> This is the Kuramoto model — the canonical intensive pairwise interaction, because <span class="math inline">\(\theta_{\mathrm{mean}}\)</span> already averages over all <span class="math inline">\(N\)</span> balls, making the correction to each ball <span class="math inline">\(O(1)\)</span> regardless of <span class="math inline">\(N\)</span>. Individual ball speeds are preserved, so mean KE stays flat. With <span class="math inline">\(\kappa &gt; 0\)</span>, the coupling competes with elastic-collision thermalisation and maintains a nonzero steady-state <span class="math inline">\(I(v_x;v_y)\)</span> — the balls stay partially correlated. Above a critical coupling <span class="math inline">\(\kappa_c\)</span> (around 0.1–0.15 for this system) the system passes through a phase transition to synchronised motion, visible as the order parameter <span class="math inline">\(r = |\langle e^{i\theta}\rangle| \to 1\)</span>.</p>
+<p>This is the direct information-theoretic counterpart of the inaccessible-game isolation axiom: without coupling the system is information-isolated (<span class="math inline">\(\sum_i h_i\)</span> rises freely until equilibrium); adding the coupling injects pairwise correlations at an intensive rate, breaking that isolation and maintaining a nonzero multi-information at steady state.</p>
 <div class="figure">
 <div id="joint-marginal-entropy-js-figure" class="figure-frame">
 <div style="width:100%;max-width:800px">
@@ -214,8 +218,18 @@ Mean KE per ball (conserved):
 </output>
 </td>
 </tr>
+<tr style="border-top:1px solid #ccc">
+<td style="padding:3px 8px">
+Order parameter <span class="math inline">\(r = |\langle e^{i\theta}\rangle|\)</span>:
+</td>
+<td>
+<output id="jointentropy-r">
+0.000
+</output>
+</td>
+</tr>
 </table>
-<div style="margin-top:6px;display:flex;gap:4px">
+<div style="margin-top:6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
 <button id="jointentropy-newball">
 Reset
 </button>
@@ -225,6 +239,11 @@ Pause / Resume
 <button id="jointentropy-skip">
 Skip 1000s
 </button>
+<label style="font-family:monospace;font-size:0.9em">Coupling κ: <input type="range" id="jointentropy-kappa" min="0" max="0.5" step="0.01" value="0" style="width:120px">
+<output id="jointentropy-kappa-val">
+0.00
+</output>
+<p></label></p>
 </div>
 </div>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/jointentropy.js"></script>
@@ -233,7 +252,7 @@ Skip 1000s
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="joint-marginal-entropy-js-caption" class="caption-frame">
-<p>Figure: The billiard gas starts with all particles moving in the same direction (maximally correlated, near-zero entropy). Elastic collisions thermalise the gas: watch all entropies rise while the mean kinetic energy stays flat. At equilibrium the mutual information (I(v_x;v_y)) falls to zero and the joint entropy equals the sum of the marginals. Kinetic energy is conserved; marginal entropy sum is not — they only become equivalent in the thermodynamic limit.</p>
+<p>Figure: The billiard gas starts with all particles moving in the same direction (maximally correlated, near-zero entropy). Elastic collisions thermalise the gas: watch all entropies rise while the mean kinetic energy stays flat. At equilibrium the mutual information <span class="math inline">\(I(v_x;v_y)\)</span> falls to zero. Drag the coupling κ slider to add the Kuramoto mean-field interaction: each ball’s velocity direction is nudged toward the mean direction by <span class="math inline">\(\Delta\theta_i = \kappa\sin(\theta_\text{mean}-\theta_i)\)</span>, an intensive pairwise term (<span class="math inline">\(O(1)\)</span> per ball regardless of N). With <span class="math inline">\(\kappa &gt; 0\)</span> a nonzero <span class="math inline">\(I(v_x;v_y)\)</span> is maintained at steady state; above <span class="math inline">\(\kappa_c \approx 0.1\)</span> the order parameter <span class="math inline">\(r\to 1\)</span> as the gas synchronises.</p>
 </div>
 </div>
 <h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>

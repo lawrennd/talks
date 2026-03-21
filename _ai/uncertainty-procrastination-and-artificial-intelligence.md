@@ -10,11 +10,11 @@ author:
   url: http://inverseprobability.com
 date: 2021-03-01
 venue: Queens' College SCR Talk
+ipynb: True
 papersize: a4paper
 transition: None
 ---
 
-\include{talk-macros.gpp}
 
 \define{noSlideTitle}
 

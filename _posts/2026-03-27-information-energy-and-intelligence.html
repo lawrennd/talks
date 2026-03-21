@@ -60,7 +60,7 @@ categories:
 <div class="figure">
 <div id="david-ultimate-figure" class="figure-frame">
 <div class="centered centered" style="">
-<img class="" src="\slidesDiagrams/information/david-ultimate.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//information/david-ultimate.jpg" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
 <div id="david-ultimate-magnify" class="magnify" onclick="magnifyFigure(&#39;david-ultimate&#39;)">
@@ -233,7 +233,7 @@ Skip 1000s
 </div>
 <p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
 <p>At this point there’s a challenge, how do we obtain a representation of information loss without including external structure? Our best suggestion is the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). Both these works characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but suggests that difference in von Neumann entropy is preferred.</p>
-<p><span class="citation" data-cites="Lawrence-origin26">(<strong>Lawrence-origin26?</strong>)</span> demonstrated …</p>
+<p><span class="citation" data-cites="Lawrence-origin26">Lawrence (2026)</span> demonstrated …</p>
 <h2 id="information-isolation">Information Isolation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -251,10 +251,10 @@ Skip 1000s
 </div>
 <p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
 <p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
-<p>Without such consistency, we would require what we might call a “Munchkin provision.” In the Munchkin card game <span class="citation" data-cites="Jackson-munchkin01">(<strong>Jackson-munchkin01?</strong>)</span>, it is acknowledged that the cards and rules may be inconsistent. Their resolution?</p>
+<p>Without such consistency, we would require what we might call a “Munchkin provision.” In the Munchkin card game <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span>, it is acknowledged that the cards and rules may be inconsistent. Their resolution?</p>
 <blockquote>
 <p>Any other disputes should be settled by loud arguments, with the owner of the game having the last word.</p>
-<p>Munckin Rules <span class="citation" data-cites="Jackson-munchkin01">(<strong>Jackson-munchkin01?</strong>)</span></p>
+<p>Munckin Rules <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span></p>
 </blockquote>
 <p>While this works for card games, it’s unsatisfying for foundational mathematics. We want our game to be <em>internally consistent</em>, not requiring an external referee to resolve paradoxes.</p>
 <div class="figure">
@@ -280,7 +280,7 @@ Skip 1000s
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_maths/includes/lawvere-diagonalisation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_maths/includes/lawvere-diagonalisation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Russell’s barber paradox is one instance of a broader class of impossibility results that share a common category-theoretic structure.  showed that Russell’s paradox, Cantor’s theorem <span class="citation" data-cites="Cantor-elementare91">(<strong>Cantor-elementare91?</strong>)</span>, Gödel’s incompleteness theorem <span class="citation" data-cites="Godel-incompleteness31">(<strong>Godel-incompleteness31?</strong>)</span>, Turing’s halting problem <span class="citation" data-cites="Turing-computable36">(<strong>Turing-computable36?</strong>)</span>, and Tarski’s undefinability theorem <span class="citation" data-cites="Tarski-warhheitsbegriff36">(<strong>Tarski-warhheitsbegriff36?</strong>)</span> all arise through the same mechanism: a <em>five-move recipe</em> for constructing a self-referential contradiction.</p>
+<p>Russell’s barber paradox is one instance of a broader class of impossibility results that share a common category-theoretic structure.  showed that Russell’s paradox, Cantor’s theorem <span class="citation" data-cites="Cantor-elementare91">(Cantor, 1891)</span>, Gödel’s incompleteness theorem <span class="citation" data-cites="Godel-incompleteness31">(Gödel, 1931)</span>, Turing’s halting problem <span class="citation" data-cites="Turing-computable36">(Turing, 1936)</span>, and Tarski’s undefinability theorem <span class="citation" data-cites="Tarski-warhheitsbegriff36">(Tarski, 1936)</span> all arise through the same mechanism: a <em>five-move recipe</em> for constructing a self-referential contradiction.</p>
 <p>We treat rules as elements of an internal language whose evaluation is represented by morphisms in a chosen category; the structural properties of that category determine which constructions are available. Lawvere’s diagonalisation can be summarised as a five-move recipe.</p>
 <ol type="1">
 <li><strong>Rules.</strong> The system consists of <em>rules</em> which are a collection of operations that take inputs to outputs.</li>
@@ -297,7 +297,7 @@ Skip 1000s
 \]</span> which duplicates the input. Without such a cloning operation, the twist rule <span class="math inline">\(T(p)\)</span> could not be defined, and the diagonal contradiction would not arise.</p>
 <p>In a <em>cartesian</em> category every object has a canonical diagonal map <span class="math inline">\(A \to A \times A\)</span> by the universal property of the product. In a <em>symmetric monoidal</em> category the product is replaced by a tensor <span class="math inline">\(\otimes\)</span> representing combination of independent resources; there is no universal property forcing a copying map <span class="math inline">\(A \to A \otimes A\)</span> to exist. Moving from a cartesian to a symmetric monoidal setting therefore removes free copying from the internal language.</p>
 <p><strong>Proposition (informal).</strong> In any internal language lacking a canonical copying map <span class="math inline">\(A \to A \otimes A\)</span>, the self-application step required for Lawvere diagonalisation cannot be formed without additional, non-standard structure. Consequently, the standard Lawvere-style fixed-point contradiction, including the barber paradox and related diagonal arguments, cannot be derived internally.</p>
-<p>This connection between copying and diagonalisation has two natural instantiations. Girard’s linear logic makes the hidden structural rules of classical reasoning explicit by removing them: in linear logic, assumptions behave like resources that cannot in general be duplicated or discarded <span class="citation" data-cites="Girard-linear87">(<strong>Girard-linear87?</strong>)</span>. Categorically this corresponds to moving from a Cartesian world to a merely symmetric monoidal world <span class="math inline">\((\otimes, I)\)</span>.</p>
+<p>This connection between copying and diagonalisation has two natural instantiations. Girard’s linear logic makes the hidden structural rules of classical reasoning explicit by removing them: in linear logic, assumptions behave like resources that cannot in general be duplicated or discarded <span class="citation" data-cites="Girard-linear87">(Girard, 1987)</span>. Categorically this corresponds to moving from a Cartesian world to a merely symmetric monoidal world <span class="math inline">\((\otimes, I)\)</span>.</p>
 <p>Quantum probability fits naturally into this resource-sensitive picture. In a noncommutative setting there is no state-independent way to duplicate an arbitrary unknown state—the quantum no-cloning theorem. The shift from classical to noncommutative probability is analogous to replacing ordinary Boolean logic by a compositional, resource-sensitive logic.</p>
 <p>The no-barber principle therefore has a concrete categorical implementation: any internal language that admits canonical copying maps also admits Lawvere-style diagonalisation and is incompatible with self-adjudication. This motivates symmetric monoidal categories—and hence von Neumann entropy over Shannon entropy—as the appropriate setting for self-adjudicating dynamical systems.</p>
 <h2 id="the-inaccessible-game">The Inaccessible Game</h2>
@@ -542,13 +542,6 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>We’ve seen something emerge from lectures 5-7:</p>
-<ul>
-<li><strong>Lecture 5:</strong> Hamiltonian/Poisson structure describes energy-conserving dynamics (antisymmetric operators)</li>
-<li><strong>Lecture 6:</strong> Linearisation around equilibrium reveals structure of dynamics</li>
-<li><strong>Lecture 7:</strong> Any dynamics matrix decomposes uniquely as <span class="math inline">\(M = S + A\)</span> where <span class="math inline">\(S\)</span> is symmetric (dissipative) and <span class="math inline">\(A\)</span> is antisymmetric (conservative)</li>
-</ul>
-<p>This emergence comes from the geometry of constrained information dynamics. The structure is <em>not unique to information theory</em>. It appears throughout physics whenever systems combine reversible and irreversible processes.</p>
 <h2 id="historical-context-non-equilibrium-thermodynamics">Historical Context: Non-Equilibrium Thermodynamics</h2>
 <p>In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are <em>simultaneously</em>: - <strong>Reversible</strong> (like mechanical systems, governed by Hamilton’s equations) - <strong>Irreversible</strong> (like thermodynamic systems, governed by entropy increase)</p>
 <p>Examples of such systems: - <strong>Fluid dynamics:</strong> Conservation of momentum (reversible) + viscosity (irreversible) - <strong>Chemical reactions:</strong> Reaction kinetics (reversible) + diffusion (irreversible) - <strong>Complex materials:</strong> Elastic deformation (reversible) + plastic flow (irreversible)</p>
@@ -1226,14 +1219,29 @@ Bennet, C.H., 1982. The thermodynamics of computation—a review. International 
 <div id="ref-Beretta-fourth20" class="csl-entry" role="doc-biblioentry">
 Beretta, G.P., 2020. The fourth law of thermodynamics: Steepest entropy ascent. Philosophical Transactions of the Royal Society A 378, 20190168. <a href="https://doi.org/10.1098/rsta.2019.0168">https://doi.org/10.1098/rsta.2019.0168</a>
 </div>
+<div id="ref-Cantor-elementare91" class="csl-entry" role="doc-biblioentry">
+Cantor, G., 1891. <span>Ü</span>ber eine elementare frage der mannigfaltigkeitslehre. Jahresbericht der Deutschen Mathematiker-Vereinigung 1, 72–78.
+</div>
 <div id="ref-Gardner-life70" class="csl-entry" role="doc-biblioentry">
 Gardner, M., 1970. Mathematical games: The fantastic combinations of <span class="nocase">John Conway’s</span> new solitaire game <span>“life.”</span> Scientific American 223, 120–123.
+</div>
+<div id="ref-Girard-linear87" class="csl-entry" role="doc-biblioentry">
+Girard, J.-Y., 1987. Linear logic. Theoretical Computer Science 50, 1–101. <a href="https://doi.org/10.1016/0304-3975(87)90045-4">https://doi.org/10.1016/0304-3975(87)90045-4</a>
+</div>
+<div id="ref-Godel-incompleteness31" class="csl-entry" role="doc-biblioentry">
+Gödel, K., 1931. <span>Ü</span>ber formal unentscheidbare <span>S</span><span>ä</span>tze der <span>P</span>rincipia <span>M</span>athematica und verwandter <span>S</span>ysteme <span>I</span>. Monatshefte f<span>ü</span>r Mathematik und Physik 38, 173–198. <a href="https://doi.org/10.1007/BF01700692">https://doi.org/10.1007/BF01700692</a>
 </div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
 </div>
+<div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
+Jackson, S., 2001. Munchkin. Steve Jackson Games.
+</div>
 <div id="ref-Landauer-irreversibility61" class="csl-entry" role="doc-biblioentry">
 Landauer, R., 1961. Irreversibility and heat generation in the computing process. IBM Journal of Research and Development 5, 183–191. <a href="https://doi.org/10.1147/rd.53.0183">https://doi.org/10.1147/rd.53.0183</a>
+</div>
+<div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
 </div>
 <div id="ref-Lawrence-atomic24" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI. Allen Lane.
@@ -1270,6 +1278,12 @@ Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Rep
 </div>
 <div id="ref-Shannon-info48" class="csl-entry" role="doc-biblioentry">
 Shannon, C.E., 1948. A mathematical theory of communication. The Bell System Technical Journal 27, 379–423, 623–656. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>
+</div>
+<div id="ref-Tarski-warhheitsbegriff36" class="csl-entry" role="doc-biblioentry">
+Tarski, A., 1936. Der wahrheitsbegriff in den formalisierten sprachen. Studia Philosophica 1, 261–405. <a href="https://doi.org/10.1515/9783112645826-016">https://doi.org/10.1515/9783112645826-016</a>
+</div>
+<div id="ref-Turing-computable36" class="csl-entry" role="doc-biblioentry">
+Turing, A.M., 1936. On computable numbers, with an application to the <span>Entscheidungsproblem</span>. Proceedings of the London Mathematical Society 42, 230–265. <a href="https://doi.org/10.1112/plms/s2-42.1.230">https://doi.org/10.1112/plms/s2-42.1.230</a>
 </div>
 <div id="ref-Watanabe-multiinformation60" class="csl-entry" role="doc-biblioentry">
 Watanabe, S., 1960. Information theoretical analysis of multivariate correlation. IBM Journal of Research and Development 4, 66–82. <a href="https://doi.org/10.1147/rd.41.0066">https://doi.org/10.1147/rd.41.0066</a>

@@ -116,7 +116,7 @@ var params = {
     initialSpeed: 5,
     energy: 0.0,
     gravityAccel: 0.06,
-    arrowAccel: 0.4,
+    arrowAccel: 20.0,
     stochasticity: 0.0,
     stochasticityScale: 0.2,
     dragFactor: 0.97
@@ -148,9 +148,9 @@ function clickReporter(event, game) {
     game.draw();
     game.context.canvas.style.backgroundColor = backgroundColor;
     if(x > game.context.canvas.width/2) {
-	game.pushLeft(20.0)
+	game.pushLeft(game.params.arrowAccel)
     } else {
-	game.pushRight(20.0)
+	game.pushRight(game.params.arrowAccel)
     }
 }
 

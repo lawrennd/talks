@@ -30,11 +30,11 @@ class JointEntropy extends Game {
 	var N = positions.length;
 	for (var k = 0; k < N; k++) {
 	    var temp = new Ball(this.context, positions[k], radius, radius);
-	    // All balls start with identical velocity — maximally correlated,
-	    // so marginal and joint entropy both start near zero.
-	    // Collisions will thermalise the gas and entropy will rise.
-	    temp.dx = this.params.initialSpeed;
-	    temp.dy = 0;
+	    // All balls start moving in the same direction (down), matching
+	    // the entropy-billiards initialisation.  A tiny random dx breaks
+	    // symmetry so balls gradually collide and thermalise.
+	    temp.dx = Math.random() * 1e-1;
+	    temp.dy = this.params.initialSpeed;
 	    temp.color = this.colors.ball;
 	    this.objects.balls.push(temp);
 	}
@@ -43,6 +43,7 @@ class JointEntropy extends Game {
 	this.emaHy  = null;
 	this.emaHxy = null;
 	this.emaMI  = null;
+	this.emaKE  = null;
     }
 
     reset() {
@@ -92,18 +93,28 @@ class JointEntropy extends Game {
 	// Equals zero when vx and vy are statistically independent.
 	const MI = Hx + Hy - Hxy;
 
+	// Mean kinetic energy per ball (conserved in elastic collisions)
+	let KE = 0;
+	for (const ball of this.objects.balls) {
+	    KE += ball.dx * ball.dx + ball.dy * ball.dy;
+	}
+	KE /= N;
+
 	// Exponential moving average to smooth the displayed values
 	const a = this.emaAlpha;
 	this.emaHx  = (this.emaHx  === null) ? Hx  : (1 - a) * this.emaHx  + a * Hx;
 	this.emaHy  = (this.emaHy  === null) ? Hy  : (1 - a) * this.emaHy  + a * Hy;
 	this.emaHxy = (this.emaHxy === null) ? Hxy : (1 - a) * this.emaHxy + a * Hxy;
 	this.emaMI  = (this.emaMI  === null) ? MI  : (1 - a) * this.emaMI  + a * MI;
+	this.emaKE  = (this.emaKE  === null) ? KE  : (1 - a) * this.emaKE  + a * KE;
 
 	document.getElementById("jointentropy-hx").value    = this.emaHx.toFixed(3);
 	document.getElementById("jointentropy-hy").value    = this.emaHy.toFixed(3);
 	document.getElementById("jointentropy-hxphy").value = (this.emaHx + this.emaHy).toFixed(3);
 	document.getElementById("jointentropy-hxy").value   = this.emaHxy.toFixed(3);
 	document.getElementById("jointentropy-mi").value    = this.emaMI.toFixed(3);
+	const keEl = document.getElementById("jointentropy-ke");
+	if (keEl) keEl.value = this.emaKE.toFixed(3);
 
 	if (this.simulation.time % 1000 == 0) {
 	    this.simulation.draw = true;

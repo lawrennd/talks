@@ -464,10 +464,13 @@ function histogramSpeeds(game, canvas) {
     }
     let data = [trace];
     let layout = {
-	paper_bgcolor: "rgba(0,0,0,0)",		
-	plot_bgcolor: "rgba(0,0,0,0)",
+	// Near-white panel background so dark axis labels are readable on both
+	// dark reveal.js slide themes and light notes/handout backgrounds.
+	paper_bgcolor: "rgba(255,255,255,0.85)",
+	plot_bgcolor:  "rgba(255,255,255,0.85)",
 	xaxis: {range: [game.histogram.minSpeed, game.histogram.maxSpeed]},
-	yaxis: {range: [0, 0.13]}
+	yaxis: {range: [0, 0.13]},
+	margin: {l: 30, r: 10, t: 10, b: 30}
     };
     Plotly.newPlot(canvas, data, layout, {displayModeBar: false});
 }

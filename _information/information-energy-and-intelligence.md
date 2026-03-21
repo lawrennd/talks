@@ -21,44 +21,34 @@ transition: None
 
 \include{_information/includes/david-mackay-memorial.md}
 
+\subsection{A Tautology}
 
-\include{_information-game/includes/no-barber-principle.md}
+\notes{> Self-governing systems cannot refer to external arbitration.}
+
+\slides{> Self-governing systems cannot refer to external arbitration.}
+
+\notes{While this is a tautology, we're going to try and suggest how to formalise this notion. Given that this is a memorial to David, we're going to look to define it through information theory.}
+
+\notes{When I arrived in Cambridge in February 1998, David was already working on coding and his meetings consisted of discussions of information theory, which was new to me. My background was as a Mechanical Engineer, and what I had learnt about Bayesian probability came from a terms preparation for my PhD at Aston University.}
+
+\notes{David's lectures consisted of discussions of Shannon limits and low density parity checking codes. It seemed a little familiar because the decoding was achieved through Bayesian updates.}
+
+\newslide{Formalisation}
+
+\slides{* Use information theory.
+* Introduced to me in David's group meetings from February 1998.}
+
+
+
 
 \section{Foundations: Information Loss and Entropy}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}
+\include{_information-game/includes/information-isolation.md}
 
-\subsection{Information Isolation: Selected by No-Barber}
+\include{_information-game/includes/no-barber-principle.md}
 
-\include{_information-game/includes/information-isolation-selected.md}
-
-\subsection{Constraints vs Selections}
-
-\notes{One useful clarification from the latest "no-barber" framing is to separate (i) \emph{constraints} that are needed just to avoid impredicative circularity / external structure, from (ii) \emph{selections} that look internally motivated but may not yet be uniquely forced. This keeps the story honest: we can say what seems necessary now, and where the remaining design degrees of freedom live.}
-
-\slides{
-**Two Kinds of Claims:**
-
-* **Constraints**: required to avoid external structure
-* **Selections**: internally motivated choices (not yet unique)
-* **Open**: which selections are actually forced?
-}
-
-\subsection{Smuggled Outcomes: Shannon vs von Neumann}
-
-\notes{Baez-Fritz-Leinster show Shannon entropy is uniquely characterised by natural axioms \emph{given the classical setting}. The no-barber question is subtler: does the \emph{classical setting itself} already assume external structure (a labelled outcome space / $\sigma$-algebra) that the game cannot represent internally? This is one motivation for preferring an algebraic entropy (von Neumann) when we want the rule language to be outcome-independent.}
-
-\slides{
-**Smuggled Outcomes:**
-
-* Shannon needs labelled outcomes / measure structure (FinProb in category theory)
-* That labelling is not in the game's internal language
-* von Neumann entropy is basis-free / algebraic (C* algebra in category theory)
-}
-
-\section{The Inaccessible Game}
-
-\notes{With these foundations, we can now introduce the game itself.}
+\include{_maths/includes/lawvere-diagonalisation.md}
 
 \include{_information-game/includes/inaccessible-game-introduction.md}
 
@@ -89,7 +79,7 @@ transition: None
 
 \subsection{What is GENERIC?}
 
-\notes{One of the most remarkable consequences of constrained maximum entropy production is the emergence of GENERIC structure—a framework from non-equilibrium thermodynamics that combines reversible and irreversible dynamics.}
+\notes{The constrained maximum entropy production leads to a GENERIC-like structure. A framework from non-equilibrium thermodynamics that combines reversible (energy conserving) and irreversible dynamics (entropy producing).}
 
 \include{_physics/includes/generic-framework-intro.md}
 \include{_physics/includes/generic-equation-structure.md}

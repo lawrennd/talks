@@ -172,15 +172,30 @@ class JointEntropy extends Game {
 	const rEl = document.getElementById("jointentropy-r");
 	if (rEl) rEl.value = this.emaR.toFixed(3);
 
+	// Build the display histogram in the co-rotating frame of the mean velocity.
+	// Each velocity is decomposed into v_∥ (along mean direction) and v_⊥
+	// (perpendicular), so the heatmap is stable even as the mean direction wanders.
+	// rRe/rIm are the (unnormalised) mean unit-vector components computed above.
+	const meanAngle = Math.atan2(rIm, rRe);   // current mean velocity direction
+	const cosA =  Math.cos(meanAngle);
+	const sinA =  Math.sin(meanAngle);
+	const hxy_rot = Array.from({length: n}, () => new Array(n).fill(0));
+	for (const ball of this.objects.balls) {
+	    // Rotate velocity into co-rotating frame
+	    const vpar  =  ball.dx * cosA + ball.dy * sinA;   // along mean
+	    const vperp = -ball.dx * sinA + ball.dy * cosA;   // perpendicular
+	    hxy_rot[this.binIndex(vpar)][this.binIndex(vperp)]++;
+	}
+
 	// Update EMA-smoothed joint probability array for the statistics visualisation.
 	// Marginals are computed from dispPxy inside drawStats.
 	const ad = this.dispAlpha;
 	if (this.dispPxy === null) {
-	    this.dispPxy = hxy.map(row => row.map(v => v / N));
+	    this.dispPxy = hxy_rot.map(row => row.map(v => v / N));
 	} else {
 	    for (let i = 0; i < n; i++)
 		for (let j = 0; j < n; j++)
-		    this.dispPxy[i][j] = (1 - ad) * this.dispPxy[i][j] + ad * hxy[i][j] / N;
+		    this.dispPxy[i][j] = (1 - ad) * this.dispPxy[i][j] + ad * hxy_rot[i][j] / N;
 	}
 	this.drawStats(this.dispPxy);
 
@@ -189,8 +204,12 @@ class JointEntropy extends Game {
 	}
     }
 
-    // drawStats renders the joint velocity density p(vx,vy) as a heatmap with
-    // marginal histograms p(vx) below and p(vy) to the right.
+    // drawStats renders the joint velocity density in the co-rotating frame as a
+    // heatmap with marginal histograms below (p(v∥)) and to the right (p(v⊥)).
+    // The co-rotating frame removes directional drift: v∥ is the component along
+    // the current mean velocity direction, v⊥ is perpendicular.  Under Kuramoto
+    // coupling the distribution concentrates near (v̄, 0); without coupling it is
+    // a symmetric circular blob.
     // pxy is the EMA-smoothed joint probability array (values already divided by N).
     // Marginals px and py are computed here as column/row sums of pxy so that
     // the histograms are exactly consistent with the displayed heatmap.
@@ -299,11 +318,11 @@ class JointEntropy extends Game {
 	ctx.fillStyle = '#222';
 	ctx.font = `italic ${Math.max(11, Math.round(W * 0.03))}px serif`;
 	ctx.textAlign = 'center';
-	ctx.fillText('vₓ', jx + jw / 2, H - 5);
+	ctx.fillText('v\u2225', jx + jw / 2, H - 5);   // v∥ (along mean)
 	ctx.save();
 	ctx.translate(12, jy + jh / 2);
 	ctx.rotate(-Math.PI / 2);
-	ctx.fillText('vᵧ', 0, 0);
+	ctx.fillText('v\u22a5', 0, 0);                 // v⊥ (perpendicular)
 	ctx.restore();
     }
 }

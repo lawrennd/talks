@@ -69,6 +69,16 @@ pauseKappenballButton.addEventListener("click", function() {
 document.addEventListener("keydown", function() {
      keyDownHandler(event, kappenball);
 });
+document.addEventListener("keydown", function(event) {
+    // One-shot impulse on arrow keydown (overrides continuous held-key behaviour)
+    if (event.keyCode == 37) {
+        kappenball.pushLeft(kappenball.params.arrowAccel);
+        kappenball.context.leftHeld = false;
+    } else if (event.keyCode == 39) {
+        kappenball.pushRight(kappenball.params.arrowAccel);
+        kappenball.context.rightHeld = false;
+    }
+});
 document.addEventListener("keyup", function() {
     keyUpHandler(event, kappenball);
 });

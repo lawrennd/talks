@@ -138,8 +138,13 @@ class MultiGame extends Game {
 	    this.ballCount[k]++;
 	}
 
-	// Redraw grid every 5 steps — but skip during skip/fast-forward phase
-	// to avoid 200 expensive canvas renders blocking the main thread.
+	// End the fast-forward phase every 1000 steps (mirrors HistogramGame)
+	if (this.simulation.time % 1000 === 0) {
+	    this.simulation.draw = true;
+	}
+
+	// Redraw grid every 5 steps — but skip during fast-forward to avoid
+	// hundreds of expensive canvas renders blocking the main thread.
 	if (this.simulation.draw && this.simulation.time % 5 === 0) {
 	    this.drawGrid();
 	}

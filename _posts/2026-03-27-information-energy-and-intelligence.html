@@ -137,6 +137,7 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <p>This simulation places exactly nine billiard balls on a 3×3 grid, each coloured according to its position. The <strong>3×3 histogram grid</strong> tracks, for each ball, the cumulative 2-D velocity distribution <span class="math inline">\((v_x, v_y)\)</span> it has visited since the last reset.</p>
 <p>The <strong>entropy</strong> <span class="math inline">\(H(v_x, v_y)\)</span> for each ball is shown in the top-left of its panel. At the start, when all balls move identically, every panel shows a single bright dot near zero entropy. As elastic collisions redistribute energy the dots spread outward, tracing the Maxwell–Boltzmann circle, and entropy climbs toward its maximum.</p>
 <p>The coloured dot in the top-right corner of each panel matches the ball’s colour on the main canvas, making it easy to follow individual balls.</p>
+<p>Use the <strong>Display</strong> dropdown to switch between the 2D joint distribution <span class="math inline">\(p(v_x, v_y)\)</span> (heatmap) and the two 1D marginals <span class="math inline">\(p(v_x)\)</span> and <span class="math inline">\(p(v_y)\)</span> overlaid as bar charts. Both marginals are expected to converge to the same symmetric distribution; the coloured bars show <span class="math inline">\(p(v_x)\)</span> (ball colour) and the dark outline shows <span class="math inline">\(p(v_y)\)</span>. The entropy labels <span class="math inline">\(H_x\)</span> and <span class="math inline">\(H_y\)</span> confirm that the two components thermalise at the same rate.</p>
 <p>Use the <strong>Initialisation</strong> dropdown to choose how the balls start:</p>
 <table>
 <colgroup>
@@ -201,7 +202,7 @@ Pause / Resume
 <button id="multigame-skip">
 Skip 1000s
 </button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span></p>
+<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="2d">2D joint p(vₓ,vᵧ)</option> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> </select> </span></p>
 </div>
 </div>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>

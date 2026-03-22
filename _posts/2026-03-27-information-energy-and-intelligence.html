@@ -135,7 +135,7 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <p>This simulation places exactly nine billiard balls on a 3×3 grid, each coloured according to its position. The <strong>3×3 histogram grid</strong> tracks, for each ball, the cumulative 2-D velocity distribution <span class="math inline">\((v_x, v_y)\)</span> it has visited since the last reset.</p>
-<p>The <strong>entropy</strong> <span class="math inline">\(H(v_x, v_y)\)</span> for each ball is shown in the top-left of its panel. At the start, when all balls move identically, every panel shows a single bright dot near zero entropy. As elastic collisions redistribute energy the dots spread outward, tracing the Maxwell–Boltzmann circle, and entropy climbs toward its maximum.</p>
+<p>The <em>entropy</em> <span class="math inline">\(H(v_x, v_y)\)</span> for each ball is shown in the top-left of its panel. At the start, when all balls move identically, every panel shows a single bright dot near zero entropy. As elastic collisions redistribute energy the dots spread outward, tracing the Maxwell–Boltzmann circle, and entropy climbs toward its maximum.</p>
 <p>The coloured dot in the top-right corner of each panel matches the ball’s colour on the main canvas, making it easy to follow individual balls.</p>
 <p>Use the <strong>Display</strong> dropdown to switch between the 2D joint distribution <span class="math inline">\(p(v_x, v_y)\)</span> (heatmap) and the two 1D marginals <span class="math inline">\(p(v_x)\)</span> and <span class="math inline">\(p(v_y)\)</span> overlaid as bar charts. Both marginals are expected to converge to the same symmetric distribution; the coloured bars show <span class="math inline">\(p(v_x)\)</span> (ball colour) and the dark outline shows <span class="math inline">\(p(v_y)\)</span>. The entropy labels <span class="math inline">\(H_x\)</span> and <span class="math inline">\(H_y\)</span> confirm that the two components thermalise at the same rate.</p>
 <p>Use the <strong>Initialisation</strong> dropdown to choose how the balls start:</p>
@@ -178,7 +178,7 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 </tbody>
 </table>
 <p>For the four directional cases all nine histograms start at the same point, yet rapidly diverge and then converge to the same circular distribution. For the propellor cases adjacent balls start with very different velocity directions — the corner and edge balls even start at nearly opposite velocities — and yet all nine panels converge to the same equilibrium blob.</p>
-<p>This is a direct demonstration of <strong>ergodicity</strong>: the long-run distribution of each ball’s velocity is independent of the initial conditions and identical for all balls, even though the <em>path</em> to equilibrium differs.</p>
+<p>Notice that this system is ergodic: in the long-run distribution of each ball’s velocity is independent of the initial conditions and identical for all balls, even though the <em>path</em> to equilibrium differs.</p>
 <div class="figure">
 <div id="multigame-entropy-figure" class="figure-frame">
 <div style="width:100%;max-width:1020px">

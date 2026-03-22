@@ -401,6 +401,7 @@ if (mgInitSel) {
 if (mgDisplaySel) {
     mgDisplaySel.addEventListener('change', function () {
 	multigame.drawMode = this.value;
+	multigame.drawGrid();   // force immediate redraw (works even when paused)
     });
 }
 

@@ -138,10 +138,17 @@ class MultiGame extends Game {
 	    this.ballCount[k]++;
 	}
 
-	// Redraw grid every 5 steps (enough to appear smooth, not too heavy)
-	if (this.simulation.time % 5 === 0) {
+	// Redraw grid every 5 steps — but skip during skip/fast-forward phase
+	// to avoid 200 expensive canvas renders blocking the main thread.
+	if (this.simulation.draw && this.simulation.time % 5 === 0) {
 	    this.drawGrid();
 	}
+    }
+
+    draw() {
+	super.draw();
+	// Refresh the grid once per animation frame (catches post-skip updates)
+	this.drawGrid();
     }
 
     // drawGrid renders the 3×3 panel of per-ball cumulative (vx,vy) heatmaps.

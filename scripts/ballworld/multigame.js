@@ -142,17 +142,13 @@ class MultiGame extends Game {
 	if (this.simulation.time % 1000 === 0) {
 	    this.simulation.draw = true;
 	}
-
-	// Redraw grid every 5 steps — but skip during fast-forward to avoid
-	// hundreds of expensive canvas renders blocking the main thread.
-	if (this.simulation.draw && this.simulation.time % 5 === 0) {
-	    this.drawGrid();
-	}
     }
 
     draw() {
 	super.draw();
-	// Refresh the grid once per animation frame (catches post-skip updates)
+	// Grid is rendered here — once per animation frame — never inside demon().
+	// This keeps demon() as pure data accumulation with zero canvas work,
+	// and means the skip phase (which never calls draw()) doesn't freeze.
 	this.drawGrid();
     }
 

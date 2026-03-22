@@ -14,6 +14,7 @@ class MultiGame extends Game {
 	this.vmax     =  18;
 	this.vstep    = (this.vmax - this.vmin) / this.nbins;
 	this.initType = 'top';    // changed by the UI dropdown
+	this.drawMode = '2d';     // '2d' = joint heatmap, '1d' = combined marginal
 
 	// Per-ball cumulative velocity histograms: ballHist[k][ix][iy]
 	// ballCount[k] = total samples accumulated for ball k
@@ -152,41 +153,61 @@ class MultiGame extends Game {
 	this.drawGrid();
     }
 
-    // drawGrid renders the 3×3 panel of per-ball cumulative (vx,vy) heatmaps.
-    // Each panel shows where that ball has been in velocity space since the
-    // last reset.  The entropy H(vx,vy) for each ball is overlaid top-left;
-    // a coloured dot with the ball number sits top-right.
+    // Shared layout helpers used by both draw modes
+    _gridLayout(gc) {
+	const GW = gc.width, GH = gc.height;
+	const gridX0 = 20, gridY0 = 4;
+	const gridW  = GW - gridX0;
+	const gridH  = GH - gridY0 - 20;
+	return { GW, GH, gridX0, gridY0, gridW, gridH,
+		 cellW: gridW / 3, cellH: gridH / 3 };
+    }
+
+    // Shared: draw ball-number dot (top-right of a cell)
+    _drawBallDot(ctx, k, px0, py0, cw) {
+	const dotX = px0 + cw - 10, dotY = py0 + 9;
+	ctx.beginPath();
+	ctx.arc(dotX, dotY, 7, 0, 2 * Math.PI);
+	ctx.fillStyle = MultiGame.BALL_COLORS[k];
+	ctx.fill();
+	ctx.strokeStyle = 'rgba(0,0,0,0.35)';
+	ctx.lineWidth   = 0.8;
+	ctx.stroke();
+	ctx.fillStyle    = '#fff';
+	ctx.font         = 'bold 8px sans-serif';
+	ctx.textAlign    = 'center';
+	ctx.textBaseline = 'middle';
+	ctx.fillText(String(k + 1), dotX, dotY);
+    }
+
+    // drawGrid dispatches to the active display mode.
     drawGrid() {
 	const gc = document.getElementById('multigame-grid');
 	if (!gc) return;
+	if (this.drawMode === '1d') this._drawGrid1D(gc);
+	else                        this._drawGrid2D(gc);
+    }
+
+    // ── 2D joint heatmap ────────────────────────────────────────────────────────
+    // Shows p(vx, vy) for each ball as a colour-intensity heatmap.
+    // Reveals the 2D structure of thermalisation (e.g. hot spots, correlation).
+    _drawGrid2D(gc) {
 	const ctx = gc.getContext('2d');
-	const GW  = gc.width;
-	const GH  = gc.height;
+	const { GW, GH, gridX0, gridY0, gridW, gridH, cellW, cellH }
+	    = this._gridLayout(gc);
 	const n   = this.nbins;
+	const pad = 5;
 
 	ctx.clearRect(0, 0, GW, GH);
 	ctx.fillStyle = '#e8e8e8';
 	ctx.fillRect(0, 0, GW, GH);
 
-	// Reserve a 20px strip on the left for the vy axis label and a 20px
-	// strip at the bottom for the vx axis label.
-	const gridX0 = 20;
-	const gridY0 = 4;
-	const gridW  = GW - gridX0;
-	const gridH  = GH - gridY0 - 20;
-	const cellW  = gridW / 3;
-	const cellH  = gridH / 3;
-	const pad    = 5;
-
 	for (let k = 0; k < this.nballs; k++) {
-	    const row = Math.floor(k / 3);
-	    const col = k % 3;
+	    const row = Math.floor(k / 3), col = k % 3;
 	    const px0 = gridX0 + col * cellW + pad;
 	    const py0 = gridY0 + row * cellH + pad;
-	    const cw  = cellW - 2 * pad;
-	    const ch  = cellH - 2 * pad;
+	    const cw  = cellW - 2 * pad, ch = cellH - 2 * pad;
 
-	    // Cell background
 	    ctx.fillStyle = '#fff';
 	    ctx.fillRect(px0, py0, cw, ch);
 
@@ -194,7 +215,6 @@ class MultiGame extends Game {
 	    const total = this.ballCount[k];
 	    if (total === 0) continue;
 
-	    // Normalised peak probability for relative colour scaling
 	    let maxP = 1e-9;
 	    for (let ix = 0; ix < n; ix++)
 		for (let iy = 0; iy < n; iy++) {
@@ -202,15 +222,12 @@ class MultiGame extends Game {
 		    if (p > maxP) maxP = p;
 		}
 
-	    // Heatmap: ix = vx direction (left→right), iy = vy (bottom→top)
-	    const bw = cw / n;
-	    const bh = ch / n;
+	    const bw = cw / n, bh = ch / n;
 	    for (let ix = 0; ix < n; ix++) {
 		for (let iy = 0; iy < n; iy++) {
-		    const p  = hist[ix][iy] / total;
-		    const d  = p / maxP;
+		    const d  = hist[ix][iy] / total / maxP;
 		    const hx = px0 + ix * bw;
-		    const hy = py0 + ch - (iy + 1) * bh;   // flip: iy=0 → bottom
+		    const hy = py0 + ch - (iy + 1) * bh;
 		    ctx.fillStyle = d < 5e-4
 			? '#f0f0f6'
 			: `rgba(20,50,170,${Math.min(1, 0.08 + 0.92 * d).toFixed(2)})`;
@@ -218,23 +235,18 @@ class MultiGame extends Game {
 		}
 	    }
 
-	    // Grey crosshair at vx = 0, vy = 0
-	    const zeroFrac = (this.binIndex(0) + 0.5) / n;
+	    // Crosshair at v = 0
+	    const zf = (this.binIndex(0) + 0.5) / n;
 	    ctx.strokeStyle = 'rgba(140,140,140,0.5)';
-	    ctx.lineWidth = 0.8;
+	    ctx.lineWidth   = 0.8;
 	    ctx.beginPath();
-	    ctx.moveTo(px0 + zeroFrac * cw, py0);
-	    ctx.lineTo(px0 + zeroFrac * cw, py0 + ch);
-	    ctx.moveTo(px0,       py0 + ch - zeroFrac * ch);
-	    ctx.lineTo(px0 + cw,  py0 + ch - zeroFrac * ch);
+	    ctx.moveTo(px0 + zf * cw, py0); ctx.lineTo(px0 + zf * cw, py0 + ch);
+	    ctx.moveTo(px0, py0 + ch - zf * ch); ctx.lineTo(px0 + cw, py0 + ch - zf * ch);
 	    ctx.stroke();
 
-	    // Cell border
-	    ctx.strokeStyle = '#aaa';
-	    ctx.lineWidth = 1;
+	    ctx.strokeStyle = '#aaa'; ctx.lineWidth = 1;
 	    ctx.strokeRect(px0, py0, cw, ch);
 
-	    // Shannon entropy H(vx,vy) accumulated for this ball
 	    let H_k = 0;
 	    for (let ix = 0; ix < n; ix++)
 		for (let iy = 0; iy < n; iy++) {
@@ -242,57 +254,140 @@ class MultiGame extends Game {
 		    if (p > 0) H_k -= p * Math.log2(p);
 		}
 
-	    // Entropy label (top-left, semi-transparent pill)
 	    ctx.fillStyle = 'rgba(255,255,255,0.78)';
 	    ctx.fillRect(px0 + 2, py0 + 2, 62, 14);
-	    ctx.fillStyle = '#222';
-	    ctx.font = '10px monospace';
-	    ctx.textAlign    = 'left';
-	    ctx.textBaseline = 'top';
+	    ctx.fillStyle = '#222'; ctx.font = '10px monospace';
+	    ctx.textAlign = 'left'; ctx.textBaseline = 'top';
 	    ctx.fillText(`H=${H_k.toFixed(2)}b`, px0 + 4, py0 + 3);
 
-	    // Coloured ball-number dot (top-right)
-	    const dotX = px0 + cw - 10;
-	    const dotY = py0 + 9;
-	    ctx.beginPath();
-	    ctx.arc(dotX, dotY, 7, 0, 2 * Math.PI);
-	    ctx.fillStyle = MultiGame.BALL_COLORS[k];
-	    ctx.fill();
-	    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
-	    ctx.lineWidth   = 0.8;
-	    ctx.stroke();
-	    ctx.fillStyle    = '#fff';
-	    ctx.font         = 'bold 8px sans-serif';
-	    ctx.textAlign    = 'center';
-	    ctx.textBaseline = 'middle';
-	    ctx.fillText(String(k + 1), dotX, dotY);
+	    this._drawBallDot(ctx, k, px0, py0, cw);
 	}
 
-	// Global axis labels outside the grid
-	ctx.fillStyle = '#555';
-	ctx.font      = '11px sans-serif';
-	// vx label at the bottom
-	ctx.textAlign    = 'center';
-	ctx.textBaseline = 'bottom';
+	ctx.fillStyle = '#555'; ctx.font = '11px sans-serif';
+	ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
 	ctx.fillText('vₓ →', gridX0 + gridW / 2, GH - 2);
-	// vy label on the left, rotated
 	ctx.save();
 	ctx.translate(10, gridY0 + gridH / 2);
 	ctx.rotate(-Math.PI / 2);
-	ctx.textAlign    = 'center';
-	ctx.textBaseline = 'middle';
+	ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
 	ctx.fillText('vᵧ ↑', 0, 0);
 	ctx.restore();
+    }
+
+    // ── 1D combined marginal histogram ──────────────────────────────────────────
+    // For each ball, accumulates p(vx) and p(vy) as separate marginals from the
+    // 2D histogram, then overlays them on the same bar chart.  Both marginals
+    // should converge to the same symmetric distribution under thermalisation.
+    _drawGrid1D(gc) {
+	const ctx = gc.getContext('2d');
+	const { GW, GH, gridX0, gridY0, gridW, gridH, cellW, cellH }
+	    = this._gridLayout(gc);
+	const n   = this.nbins;
+	const pad = 5;
+
+	ctx.clearRect(0, 0, GW, GH);
+	ctx.fillStyle = '#e8e8e8';
+	ctx.fillRect(0, 0, GW, GH);
+
+	for (let k = 0; k < this.nballs; k++) {
+	    const row = Math.floor(k / 3), col = k % 3;
+	    const px0 = gridX0 + col * cellW + pad;
+	    const py0 = gridY0 + row * cellH + pad;
+	    const cw  = cellW - 2 * pad, ch = cellH - 2 * pad;
+
+	    ctx.fillStyle = '#fff';
+	    ctx.fillRect(px0, py0, cw, ch);
+
+	    const hist  = this.ballHist[k];
+	    const total = this.ballCount[k];
+	    if (total === 0) continue;
+
+	    // Compute marginals: px[i] = sum_j hist[i][j] / total  (vx marginal)
+	    //                    py[i] = sum_j hist[j][i] / total  (vy marginal)
+	    const px = new Float64Array(n);
+	    const py = new Float64Array(n);
+	    for (let i = 0; i < n; i++) {
+		for (let j = 0; j < n; j++) {
+		    px[i] += hist[i][j];
+		    py[i] += hist[j][i];
+		}
+		px[i] /= total;
+		py[i] /= total;
+	    }
+
+	    // Scale bars to fill cell height
+	    const maxP = Math.max(...px, ...py, 1e-9);
+	    const bw   = cw / n;
+	    const baseY = py0 + ch;   // bars grow upward from the bottom
+
+	    // Draw vx bars (ball colour, semi-transparent)
+	    const col6 = MultiGame.BALL_COLORS[k];
+	    ctx.fillStyle = col6 + 'aa';   // ~67% opacity hex suffix
+	    for (let i = 0; i < n; i++) {
+		const barH = (px[i] / maxP) * ch;
+		ctx.fillRect(px0 + i * bw, baseY - barH, bw - 0.5, barH);
+	    }
+
+	    // Draw vy bars (darker shade, slightly offset right for overlap legibility)
+	    ctx.fillStyle = 'rgba(30,30,30,0.35)';
+	    for (let i = 0; i < n; i++) {
+		const barH = (py[i] / maxP) * ch;
+		ctx.fillRect(px0 + i * bw + 0.5, baseY - barH, bw - 0.5, barH);
+	    }
+
+	    // Zero-velocity vertical line
+	    const zeroX = px0 + (this.binIndex(0) + 0.5) * bw;
+	    ctx.strokeStyle = 'rgba(140,140,140,0.6)';
+	    ctx.lineWidth   = 0.8;
+	    ctx.beginPath();
+	    ctx.moveTo(zeroX, py0); ctx.lineTo(zeroX, baseY);
+	    ctx.stroke();
+
+	    ctx.strokeStyle = '#aaa'; ctx.lineWidth = 1;
+	    ctx.strokeRect(px0, py0, cw, ch);
+
+	    // Marginal entropies H(vx) and H(vy)
+	    let Hx = 0, Hy = 0;
+	    for (let i = 0; i < n; i++) {
+		if (px[i] > 0) Hx -= px[i] * Math.log2(px[i]);
+		if (py[i] > 0) Hy -= py[i] * Math.log2(py[i]);
+	    }
+
+	    ctx.fillStyle = 'rgba(255,255,255,0.82)';
+	    ctx.fillRect(px0 + 2, py0 + 2, 76, 24);
+	    ctx.fillStyle = '#222'; ctx.font = '9px monospace';
+	    ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+	    ctx.fillText(`Hx=${Hx.toFixed(2)}b`, px0 + 4, py0 + 3);
+	    ctx.fillText(`Hy=${Hy.toFixed(2)}b`, px0 + 4, py0 + 13);
+
+	    this._drawBallDot(ctx, k, px0, py0, cw);
+	}
+
+	// Legend: coloured square = vx, dark square = vy
+	ctx.font = '10px sans-serif'; ctx.textBaseline = 'bottom';
+	ctx.fillStyle = '#555';
+	ctx.textAlign = 'center';
+	ctx.fillText('v →', gridX0 + gridW / 2, GH - 2);
+	ctx.textAlign = 'right';
+	ctx.fillStyle = 'rgba(80,80,200,0.8)';
+	ctx.fillRect(gridX0 + gridW - 44, GH - 15, 10, 10);
+	ctx.fillStyle = '#555';
+	ctx.fillText(' vₓ', gridX0 + gridW - 32, GH - 3);
+	ctx.fillStyle = 'rgba(30,30,30,0.5)';
+	ctx.fillRect(gridX0 + gridW - 18, GH - 15, 10, 10);
+	ctx.fillStyle = '#555';
+	ctx.fillText(' vᵧ', gridX0 + gridW - 6, GH - 3);
     }
 }
 
 
 // ── UI wiring ─────────────────────────────────────────────────────────────────
 
-const mgResetBtn = document.getElementById('multigame-reset');
-const mgPauseBtn = document.getElementById('multigame-pause');
-const mgSkipBtn  = document.getElementById('multigame-skip');
-const mgInitSel  = document.getElementById('multigame-init');
+const mgResetBtn   = document.getElementById('multigame-reset');
+const mgPauseBtn   = document.getElementById('multigame-pause');
+const mgSkipBtn    = document.getElementById('multigame-skip');
+const mgInitSel    = document.getElementById('multigame-init');
+const mgDisplaySel = document.getElementById('multigame-display');
 
 if (mgResetBtn) mgResetBtn.addEventListener('click', () => multigame.reset());
 if (mgPauseBtn) mgPauseBtn.addEventListener('click', () => multigame.togglePause());
@@ -301,6 +396,11 @@ if (mgInitSel) {
     mgInitSel.addEventListener('change', function () {
 	multigame.initType = this.value;
 	multigame.reset();
+    });
+}
+if (mgDisplaySel) {
+    mgDisplaySel.addEventListener('change', function () {
+	multigame.drawMode = this.value;
     });
 }
 

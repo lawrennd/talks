@@ -42,10 +42,24 @@ transition: None
 
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/multigame-entropy.md}
+
+\include{_ml/includes/two-d-gaussian-independent-sample.md}
+
+\newslide{Correlation}
+\slides{
+* Correlation is when two variables are dependent
+}
+
+\include{_ml/includes/two-d-gaussian-correlated-sample.md}
+
+\include{_physics/includes/observer-outside.md}
+\include{_physics/includes/observer-inside.md}
+
 \section{Foundations: Information Loss and Entropy}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}
 \include{_information-game/includes/information-isolation.md}
+
 
 \include{_information-game/includes/no-barber-principle.md}
 

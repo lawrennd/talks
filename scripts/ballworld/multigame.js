@@ -14,7 +14,7 @@ class MultiGame extends Game {
 	this.vmax     =  18;
 	this.vstep    = (this.vmax - this.vmin) / this.nbins;
 	this.initType = 'top';    // changed by the UI dropdown
-	this.drawMode = '2d';     // '2d' = joint heatmap, '1d' = combined marginal
+	this.drawMode = '1d';     // '2d' = joint heatmap, '1d' = combined marginal
 
 	// Per-ball cumulative velocity histograms: ballHist[k][ix][iy]
 	// ballCount[k] = total samples accumulated for ball k
@@ -41,23 +41,39 @@ class MultiGame extends Game {
 	const W   = this.context.canvas.width;
 	const H   = this.context.canvas.height;
 	const spd = this.params.initialSpeed;
+	const margin = radius + 4;
 
-	// 3×3 grid of ball positions
-	const cols = [W / 4, W / 2, (3 * W) / 4];
-	const rows = [H / 4, H / 2, (3 * H) / 4];
-	const cx   = W / 2, cy = H / 2;
+	// Build 9 (x, y) start positions based on initType:
+	//   directional → line at the edge the balls are coming from
+	//   propellor   → horizontal line across the middle
+	const positions = [];
+	const isHoriz = ['top', 'bottom', 'cw', 'ccw'].includes(this.initType);
+	if (isHoriz) {
+	    // 'top' → line near top; 'cw'/'ccw' → middle; 'bottom' → near bottom
+	    const fixedY = this.initType === 'top'    ? margin
+			 : this.initType === 'bottom' ? H - margin
+			 :                              H / 2;
+	    for (let k = 0; k < 9; k++) {
+		const x = margin + k * (W - 2 * margin) / 8;
+		positions.push([x, fixedY]);
+	    }
+	} else {
+	    // Vertical line — 'left' → left edge, 'right' → right edge
+	    const fixedX = this.initType === 'left' ? margin : W - margin;
+	    for (let k = 0; k < 9; k++) {
+		const y = margin + k * (H - 2 * margin) / 8;
+		positions.push([fixedX, y]);
+	    }
+	}
 
 	// Small symmetry-breaking perturbation for directional inits
 	const tiny = () => (Math.random() - 0.5) * 0.2;
 
-	for (let row = 0; row < 3; row++) {
-	    for (let col = 0; col < 3; col++) {
-		const k  = row * 3 + col;
-		const bx = cols[col];
-		const by = rows[row];
-		const rx = bx - cx;        // displacement from canvas centre
-		const ry = by - cy;
-		const r  = Math.hypot(rx, ry);
+	for (let k = 0; k < 9; k++) {
+	    const [bx, by] = positions[k];
+	    const rx = bx - W / 2;   // displacement from canvas centre (propellor)
+	    const ry = by - H / 2;
+	    const r  = Math.hypot(rx, ry);
 
 		const ball = new Ball(this.context, bx, by, radius);
 		ball.color = MultiGame.BALL_COLORS[k];
@@ -74,8 +90,6 @@ class MultiGame extends Game {
 		    case 'cw':
 			// Clockwise tangential velocity in screen coords (y-down):
 			//   tangent_CW = (-ry, rx) / |r|
-			// Verified: ball at top (ry<0) moves right (+dx) ✓
-			//           ball at right (rx>0) moves down (+dy) ✓
 			if (r < 1) { ball.dx = tiny(); ball.dy = tiny(); }
 			else { ball.dx = -ry / r * spd; ball.dy = rx / r * spd; }
 			break;
@@ -110,7 +124,6 @@ class MultiGame extends Game {
 		};
 
 		this.objects.balls.push(ball);
-	    }
 	}
 
 	// (Re)initialise per-ball cumulative histograms

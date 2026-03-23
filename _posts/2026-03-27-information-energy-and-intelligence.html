@@ -531,8 +531,17 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <h2 id="historical-context-non-equilibrium-thermodynamics">Historical Context: Non-Equilibrium Thermodynamics</h2>
-<p>In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are <em>simultaneously</em>: - <strong>Reversible</strong> (like mechanical systems, governed by Hamilton’s equations) - <strong>Irreversible</strong> (like thermodynamic systems, governed by entropy increase)</p>
-<p>Examples of such systems: - <strong>Fluid dynamics:</strong> Conservation of momentum (reversible) + viscosity (irreversible) - <strong>Chemical reactions:</strong> Reaction kinetics (reversible) + diffusion (irreversible) - <strong>Complex materials:</strong> Elastic deformation (reversible) + plastic flow (irreversible)</p>
+<p>In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are <em>simultaneously</em>:</p>
+<ul>
+<li><strong>Reversible</strong> (like mechanical systems, governed by Hamilton’s equations)</li>
+<li><strong>Irreversible</strong> (like thermodynamic systems, governed by entropy increase)</li>
+</ul>
+<p>Examples of such systems:</p>
+<ul>
+<li><strong>Fluid dynamics:</strong> Conservation of momentum (reversible) + viscosity (irreversible)</li>
+<li><strong>Chemical reactions:</strong> Reaction kinetics (reversible) + diffusion (irreversible)</li>
+<li><strong>Complex materials:</strong> Elastic deformation (reversible) + plastic flow (irreversible)</li>
+</ul>
 <p>Two researchers, Miroslav Grmela and Hans Christian Öttinger, independently developed a unified framework in the 1990s that they called <strong>GENERIC</strong>: <em>General Equation for Non-Equilibrium Reversible-Irreversible Coupling</em> <span class="citation" data-cites="Grmela-dynamics97 Ottinger-generic97 Ottinger-beyond05">(Grmela and Öttinger, 1997; Öttinger, 2005; Öttinger and Grmela, 1997)</span>.</p>
 <h2 id="what-problem-does-generic-solve">What Problem Does GENERIC Solve?</h2>
 <p>Classical mechanics and classical thermodynamics seemed to describe fundamentally different worlds:</p>
@@ -564,13 +573,29 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <h2 id="why-generic-matters-for-information-dynamics">Why “GENERIC” Matters for Information Dynamics</h2>
 <p>You might wonder: “Why do we care about a framework from non-equilibrium thermodynamics in a course on information dynamics?”</p>
 <p>The structure that emerged from pure information theory (lectures 1-7) is identical to the structure that physicists discovered was necessary for consistent non-equilibrium thermodynamics.</p>
-<p>This suggests something deep: - Information dynamics <em>is</em> thermodynamics (we’ve known this since Shannon and Jaynes) - But more: information dynamics <em>is also</em> a dynamical system with conserved quantities - The GENERIC structure is the inevitable consequence of combining these two aspects</p>
+<p>This echoes the relationship from Shannon and Jaynes:</p>
+<ul>
+<li>Information dynamics <em>is</em> thermodynamics</li>
+<li>But more: information dynamics <em>is also</em> a dynamical system with conserved quantities</li>
+<li>The GENERIC structure is the inevitable consequence of combining these two aspects</li>
+</ul>
 <p>When we derived <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a\)</span> from information-theoretic principles, we were actually deriving a GENERIC system! The Fisher information <span class="math inline">\(G\)</span> plays the role of the “friction” operator, and the constraint dynamics provide the “Poisson” structure.</p>
 <h2 id="preview-structure-of-the-generic-equation">Preview: Structure of the GENERIC Equation</h2>
 <p>In the next sections, we’ll see the full GENERIC equation: <span class="math display">\[
 \dot{x} = L(x) \nabla E(x) + M(x) \nabla S(x)
-\]</span> where: - <span class="math inline">\(L(x)\)</span>: Poisson operator (antisymmetric, describes reversible dynamics) - <span class="math inline">\(M(x)\)</span>: Friction operator (symmetric positive semi-definite, describes irreversible dynamics) - <span class="math inline">\(E(x)\)</span>: Energy functional (conserved by <span class="math inline">\(L\)</span> dynamics) - <span class="math inline">\(S(x)\)</span>: Entropy functional (increased by <span class="math inline">\(M\)</span> dynamics)</p>
-<p>And we’ll see how our information dynamics fit perfectly into this form, with: - Fisher information matrix <span class="math inline">\(G\)</span> playing the role of <span class="math inline">\(M\)</span> - Constraint structure providing the Poisson operator <span class="math inline">\(L\)</span> - Marginal entropy conservation giving us Casimir functions</p>
+\]</span> where:</p>
+<ul>
+<li><span class="math inline">\(L(x)\)</span>: Poisson operator (antisymmetric, describes reversible dynamics)</li>
+<li><span class="math inline">\(M(x)\)</span>: Friction operator (symmetric positive semi-definite, describes irreversible dynamics)</li>
+<li><span class="math inline">\(E(x)\)</span>: Energy functional (conserved by <span class="math inline">\(L\)</span> dynamics)</li>
+<li><span class="math inline">\(S(x)\)</span>: Entropy functional (increased by <span class="math inline">\(M\)</span> dynamics)</li>
+</ul>
+<p>And we’ll see how our information dynamics fit perfectly into this form, with:</p>
+<ul>
+<li>Fisher information matrix <span class="math inline">\(G\)</span> playing the role of <span class="math inline">\(M\)</span></li>
+<li>Constraint structure providing the Poisson operator <span class="math inline">\(L\)</span></li>
+<li>Marginal entropy conservation giving us Casimir functions</li>
+</ul>
 <p>The structure we built from axioms (lectures 1-4) is GENERIC. The decomposition we derived from linearization (lectures 6-7) reveals its form.</p>
 <p><strong>Historical note:</strong> The original GENERIC papers <span class="citation" data-cites="Grmela-dynamics97 Ottinger-generic97">(Grmela and Öttinger, 1997; Öttinger and Grmela, 1997)</span> emerged from studies of complex fluids and polymers. It has since been applied to</p>
 <ul>

@@ -52,6 +52,10 @@ transition: None
 
 \include{_ml/includes/two-d-gaussian-correlated-sample.md}
 
+\newslide{The Classical Observer}
+
+\figure{\includediagramslide{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{fig:observer-eye}
+
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}
 

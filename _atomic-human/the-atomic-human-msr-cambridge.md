@@ -39,6 +39,7 @@ potx: custom-reference.potx
 dotx: custom-reference.dotx
 ---
 
+<!-- 9:45 - 10:30 -->
 \define{noSlideTitle}
 
 \undef{noSlideTitle}

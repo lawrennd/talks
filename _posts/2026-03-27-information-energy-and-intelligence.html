@@ -523,556 +523,1408 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <p>As we’ll see next, this tension between the information geometry and the constraint structure is what generates the GENERIC-like decomposition into dissipative and conservative parts.</p>
 <h2 id="entropy-time-internal-clock">Entropy Time (Internal Clock)</h2>
 <p>A small but important design point: if we allow an  time parameter, we’ve already violated the no-barber spirit. One candidate is to parameterise trajectories by entropy production itself (an affine freedom remains: choosing units and an origin for the clock). This keeps the ordering internal and avoids appealing to an externally supplied clock.</p>
-<h1 id="emergent-structure-generic">Emergent Structure: GENERIC</h1>
-<h2 id="what-is-generic">What is GENERIC?</h2>
-<p>The constrained maximum entropy production leads to a GENERIC-like structure. A framework from non-equilibrium thermodynamics that combines reversible (energy conserving) and irreversible dynamics (entropy producing).</p>
-<h2 id="the-generic-framework">The GENERIC Framework</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<h2 id="historical-context-non-equilibrium-thermodynamics">Historical Context: Non-Equilibrium Thermodynamics</h2>
-<p>In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are <em>simultaneously</em>:</p>
-<ul>
-<li><strong>Reversible</strong> (like mechanical systems, governed by Hamilton’s equations)</li>
-<li><strong>Irreversible</strong> (like thermodynamic systems, governed by entropy increase)</li>
-</ul>
-<p>Examples of such systems:</p>
-<ul>
-<li><strong>Fluid dynamics:</strong> Conservation of momentum (reversible) + viscosity (irreversible)</li>
-<li><strong>Chemical reactions:</strong> Reaction kinetics (reversible) + diffusion (irreversible)</li>
-<li><strong>Complex materials:</strong> Elastic deformation (reversible) + plastic flow (irreversible)</li>
-</ul>
-<p>Two researchers, Miroslav Grmela and Hans Christian Öttinger, independently developed a unified framework in the 1990s that they called <strong>GENERIC</strong>: <em>General Equation for Non-Equilibrium Reversible-Irreversible Coupling</em> <span class="citation" data-cites="Grmela-dynamics97 Ottinger-generic97 Ottinger-beyond05">(Grmela and Öttinger, 1997; Öttinger, 2005; Öttinger and Grmela, 1997)</span>.</p>
-<h2 id="what-problem-does-generic-solve">What Problem Does GENERIC Solve?</h2>
-<p>Classical mechanics and classical thermodynamics seemed to describe fundamentally different worlds:</p>
-<p><strong>Classical Mechanics (Hamiltonian)</strong></p>
-<ul>
-<li>Time reversible: <span class="math inline">\(t \to -t\)</span> gives valid dynamics</li>
-<li>Energy conserved: <span class="math inline">\(\frac{\text{d}E}{\text{d}t} = 0\)</span></li>
-<li>Phase space volume conserved (Liouville’s theorem)</li>
-<li>Described by antisymmetric operators (Poisson brackets)</li>
-</ul>
-<p><strong>Classical Thermodynamics</strong></p>
-<ul>
-<li>Time irreversible: entropy always increases</li>
-<li>Energy dissipated: <span class="math inline">\(\frac{\text{d}S}{\text{d}t} \geq 0\)</span></li>
-<li>Systems evolve toward equilibrium</li>
-<li>Described by symmetric operators (friction, diffusion)</li>
-</ul>
-<p><strong>The Problem:</strong> Real systems do BOTH simultaneously! A pendulum with friction conserves angular momentum (reversible) while losing energy to heat (irreversible). How do you write down equations that respect both structures at once?</p>
-<h2 id="the-generic-answer-coexistence-requires-structure">The GENERIC Answer: Coexistence Requires Structure</h2>
-<p>GENERIC provides the answer: reversible and irreversible processes can coexist in the same system, but only if they satisfy certain <em>compatibility conditions</em>. These conditions ensure</p>
-<ol type="1">
-<li>Energy and entropy are consistently defined</li>
-<li>The second law of thermodynamics holds (<span class="math inline">\(\dot{S} \geq 0\)</span>)</li>
-<li>Conserved quantities (like energy, momentum) remain conserved</li>
-<li>Casimir functions (constraints) are respected</li>
-</ol>
-<p>Importantly you can’t just add reversible and irreversible parts arbitrarily, they must be <em>coupled through degeneracy conditions</em> that enforce thermodynamic consistency.</p>
-<p>In typical GENERIC applications, ensuring the degeneracy conditions are satisfied is challenging, you must carefully engineer both operators to be compatible. But in our case (Lectures 1-7), the degeneracy conditions emerge automatically from the constraint geometry. We didn’t impose them, they pop out as a consequence of starting from information-theoretic axioms. When we check in Lecture 8, they’re already satisfied. This strongly suggests our axioms capture something fundamental about thermodynamic consistency.</p>
-<h2 id="why-generic-matters-for-information-dynamics">Why “GENERIC” Matters for Information Dynamics</h2>
-<p>You might wonder: “Why do we care about a framework from non-equilibrium thermodynamics in a course on information dynamics?”</p>
-<p>The structure that emerged from pure information theory (lectures 1-7) is identical to the structure that physicists discovered was necessary for consistent non-equilibrium thermodynamics.</p>
-<p>This echoes the relationship from Shannon and Jaynes:</p>
-<ul>
-<li>Information dynamics <em>is</em> thermodynamics</li>
-<li>But more: information dynamics <em>is also</em> a dynamical system with conserved quantities</li>
-<li>The GENERIC structure is the inevitable consequence of combining these two aspects</li>
-</ul>
-<p>When we derived <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a\)</span> from information-theoretic principles, we were actually deriving a GENERIC system! The Fisher information <span class="math inline">\(G\)</span> plays the role of the “friction” operator, and the constraint dynamics provide the “Poisson” structure.</p>
-<h2 id="preview-structure-of-the-generic-equation">Preview: Structure of the GENERIC Equation</h2>
-<p>In the next sections, we’ll see the full GENERIC equation: <span class="math display">\[
+<!--# Emergent Structure: GENERIC
+
+
+
+
+
+## What is GENERIC?
+
+
+
+
+
+The constrained maximum entropy production leads to a GENERIC-like structure. A framework from non-equilibrium thermodynamics that combines reversible (energy conserving) and irreversible dynamics (entropy producing).
+
+
+
+
+
+
+## The GENERIC Framework
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-framework-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+
+
+
+
+## Historical Context: Non-Equilibrium Thermodynamics
+
+
+
+
+
+In the 1980s-90s, researchers in non-equilibrium thermodynamics faced a challenge: How do you describe systems that are *simultaneously*:
+
+- **Reversible** (like mechanical systems, governed by Hamilton's equations)
+- **Irreversible** (like thermodynamic systems, governed by entropy increase)
+
+Examples of such systems:
+
+- **Fluid dynamics:** Conservation of momentum (reversible) + viscosity (irreversible)
+- **Chemical reactions:** Reaction kinetics (reversible) + diffusion (irreversible)
+- **Complex materials:** Elastic deformation (reversible) + plastic flow (irreversible)
+
+Two researchers, Miroslav Grmela and Hans Christian Öttinger, independently developed a unified framework in the 1990s that they called **GENERIC**: *General Equation for Non-Equilibrium Reversible-Irreversible Coupling* [@Grmela-dynamics97;@Ottinger-generic97;@Ottinger-beyond05].
+
+
+
+
+
+## What Problem Does GENERIC Solve?
+
+
+
+
+
+Classical mechanics and classical thermodynamics seemed to describe fundamentally different worlds:
+
+**Classical Mechanics (Hamiltonian)**
+
+- Time reversible: $t \to -t$ gives valid dynamics
+- Energy conserved: $\frac{\text{d}E}{\text{d}t} = 0$
+- Phase space volume conserved (Liouville's theorem)
+- Described by antisymmetric operators (Poisson brackets)
+
+**Classical Thermodynamics**
+
+- Time irreversible: entropy always increases
+- Energy dissipated: $\frac{\text{d}S}{\text{d}t} \geq 0$
+- Systems evolve toward equilibrium
+- Described by symmetric operators (friction, diffusion)
+
+**The Problem:** Real systems do BOTH simultaneously! A pendulum with friction conserves angular momentum (reversible) while losing energy to heat (irreversible). How do you write down equations that respect both structures at once?
+
+
+
+## The GENERIC Answer: Coexistence Requires Structure
+
+
+
+
+
+GENERIC provides the answer: reversible and irreversible processes can coexist in the same system, but only if they satisfy certain *compatibility conditions*. These conditions ensure
+
+1. Energy and entropy are consistently defined
+2. The second law of thermodynamics holds ($\dot{S} \geq 0$)
+3. Conserved quantities (like energy, momentum) remain conserved
+4. Casimir functions (constraints) are respected
+
+Importantly you can't just add reversible and irreversible parts arbitrarily, they must be *coupled through degeneracy conditions* that enforce thermodynamic consistency.
+
+ In typical GENERIC applications, ensuring the degeneracy conditions are satisfied is challenging, you must carefully engineer both operators to be compatible. But in our case (Lectures 1-7), the degeneracy conditions emerge automatically from the constraint geometry. We didn't impose them, they pop out as a consequence of starting from information-theoretic axioms. When we check in Lecture 8, they're already satisfied. This strongly suggests our axioms capture something fundamental about thermodynamic consistency.
+
+
+
+## Why "GENERIC" Matters for Information Dynamics
+
+
+
+
+
+You might wonder: "Why do we care about a framework from non-equilibrium thermodynamics in a course on information dynamics?"
+
+The structure that emerged from pure information theory (lectures 1-7) is identical to the structure that physicists discovered was necessary for consistent non-equilibrium thermodynamics.
+
+This echoes the relationship from Shannon and Jaynes:
+
+- Information dynamics *is* thermodynamics 
+- But more: information dynamics *is also* a dynamical system with conserved quantities
+- The GENERIC structure is the inevitable consequence of combining these two aspects
+
+When we derived $\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a$ from information-theoretic principles, we were actually deriving a GENERIC system! The Fisher information $G$ plays the role of the "friction" operator, and the constraint dynamics provide the "Poisson" structure.
+
+
+
+## Preview: Structure of the GENERIC Equation
+
+
+
+
+
+In the next sections, we'll see the full GENERIC equation:
+$$
 \dot{x} = L(x) \nabla E(x) + M(x) \nabla S(x)
-\]</span> where:</p>
-<ul>
-<li><span class="math inline">\(L(x)\)</span>: Poisson operator (antisymmetric, describes reversible dynamics)</li>
-<li><span class="math inline">\(M(x)\)</span>: Friction operator (symmetric positive semi-definite, describes irreversible dynamics)</li>
-<li><span class="math inline">\(E(x)\)</span>: Energy functional (conserved by <span class="math inline">\(L\)</span> dynamics)</li>
-<li><span class="math inline">\(S(x)\)</span>: Entropy functional (increased by <span class="math inline">\(M\)</span> dynamics)</li>
-</ul>
-<p>And we’ll see how our information dynamics fit perfectly into this form, with:</p>
-<ul>
-<li>Fisher information matrix <span class="math inline">\(G\)</span> playing the role of <span class="math inline">\(M\)</span></li>
-<li>Constraint structure providing the Poisson operator <span class="math inline">\(L\)</span></li>
-<li>Marginal entropy conservation giving us Casimir functions</li>
-</ul>
-<p>The structure we built from axioms (lectures 1-4) is GENERIC. The decomposition we derived from linearization (lectures 6-7) reveals its form.</p>
-<p><strong>Historical note:</strong> The original GENERIC papers <span class="citation" data-cites="Grmela-dynamics97 Ottinger-generic97">(Grmela and Öttinger, 1997; Öttinger and Grmela, 1997)</span> emerged from studies of complex fluids and polymers. It has since been applied to</p>
-<ul>
-<li>Viscoelastic materials</li>
-<li>Multiphase flows</li>
-<li>Chemical reaction networks<br />
-</li>
-<li>Biological systems</li>
-<li>Plasma physics</li>
-</ul>
-<p>The framework is now recognized as a fundamental structure in non-equilibrium statistical mechanics. Our contribution is showing it emerges naturally from information-theoretic first principles.</p>
-<h2 id="the-generic-equation">The GENERIC Equation</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-equation-structure.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-equation-structure.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The GENERIC framework describes the evolution of a state <span class="math inline">\(x\)</span> (which could be a density matrix, a distribution, a field configuration, etc.) through the equation: <span class="math display">\[
+$$
+where:
+
+- $L(x)$: Poisson operator (antisymmetric, describes reversible dynamics)
+- $M(x)$: Friction operator (symmetric positive semi-definite, describes irreversible dynamics)
+- $E(x)$: Energy functional (conserved by $L$ dynamics)
+- $S(x)$: Entropy functional (increased by $M$ dynamics)
+
+And we'll see how our information dynamics fit perfectly into this form, with:
+
+- Fisher information matrix $G$ playing the role of $M$
+- Constraint structure providing the Poisson operator $L$
+- Marginal entropy conservation giving us Casimir functions
+
+The structure we built from axioms (lectures 1-4) is GENERIC. The decomposition we derived from linearization (lectures 6-7) reveals its form.
+
+
+
+**Historical note:** The original GENERIC papers [@Grmela-dynamics97;@Ottinger-generic97] emerged from studies of complex fluids and polymers. It has since been applied to
+
+- Viscoelastic materials
+- Multiphase flows
+- Chemical reaction networks  
+- Biological systems
+- Plasma physics
+
+The framework is now recognized as a fundamental structure in non-equilibrium statistical mechanics. Our contribution is showing it emerges naturally from information-theoretic first principles.
+
+
+
+
+
+
+
+
+## The GENERIC Equation
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-equation-structure.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-equation-structure.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The GENERIC framework describes the evolution of a state $x$ (which could be a density matrix, a distribution, a field configuration, etc.) through the equation:
+$$
 \dot{x} = L(x) \nabla E(x) + M(x) \nabla S(x),
-\]</span> where</p>
-<ul>
-<li><span class="math inline">\(x\)</span>: State of the system (lives in some state space)</li>
-<li><span class="math inline">\(E(x)\)</span>: Energy functional</li>
-<li><span class="math inline">\(S(x)\)</span>: Entropy functional<br />
-</li>
-<li><span class="math inline">\(\nabla E\)</span>, <span class="math inline">\(\nabla S\)</span>: Functional derivatives (gradients in function space)</li>
-<li><span class="math inline">\(L(x)\)</span>: Poisson operator (describes reversible dynamics)</li>
-<li><span class="math inline">\(M(x)\)</span>: Friction operator (describes irreversible dynamics)</li>
-</ul>
-<p>This equation encodes deep structure. Let’s unpack each component.</p>
-<h2 id="the-poisson-operator-lx">The Poisson Operator <span class="math inline">\(L(x)\)</span></h2>
-<p>The Poisson operator <span class="math inline">\(L(x)\)</span> describes the reversible (energy-conserving, time-reversible) part of the dynamics. It must</p>
-<p><strong>1. Be Antisymmetric:</strong> For any functionals <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span>, <span class="math display">\[
+$$
+where
+
+- $x$: State of the system (lives in some state space)
+- $E(x)$: Energy functional
+- $S(x)$: Entropy functional  
+- $\nabla E$, $\nabla S$: Functional derivatives (gradients in function space)
+- $L(x)$: Poisson operator (describes reversible dynamics)
+- $M(x)$: Friction operator (describes irreversible dynamics)
+
+This equation encodes deep structure. Let's unpack each component.
+
+
+
+## The Poisson Operator $L(x)$
+
+
+
+
+
+The Poisson operator $L(x)$ describes the reversible (energy-conserving, time-reversible) part of the dynamics. It must
+
+**1. Be Antisymmetric:** For any functionals $F$ and $G$,
+$$
 \langle \nabla F, L \nabla G \rangle = -\langle \nabla G, L \nabla F \rangle
-\]</span> where <span class="math inline">\(\langle \cdot, \cdot \rangle\)</span> denotes an appropriate inner product. This ensures time reversibility: if you reverse time (<span class="math inline">\(t \to -t\)</span>) and flip velocities, you get valid dynamics.</p>
-<p><strong>2. Satisfy Jacobi identity:</strong> The Poisson bracket defined by <span class="math inline">\(L\)</span> must satisfy <span class="math display">\[
+$$
+where $\langle \cdot, \cdot \rangle$ denotes an appropriate inner product. This ensures time reversibility: if you reverse time ($t \to -t$) and flip velocities, you get valid dynamics.
+
+**2. Satisfy Jacobi identity:** The Poisson bracket defined by $L$ must satisfy
+$$
 \{F, \{G, H\}\} + \{G, \{H, F\}\} + \{H, \{F, G\}\} = 0
-\]</span> where <span class="math inline">\(\{F,G\} := \langle \nabla F, L \nabla G \rangle\)</span>. This is the condition for <span class="math inline">\(L\)</span> to generate a Lie algebra structure (recall Lecture 5!).</p>
-<p><strong>3. Conserve energy:</strong> The energy must be a Casimir of <span class="math inline">\(L\)</span>: <span class="math display">\[
+$$
+where $\{F,G\} := \langle \nabla F, L \nabla G \rangle$. This is the condition for $L$ to generate a Lie algebra structure (recall Lecture 5!).
+
+**3. Conserve energy:** The energy must be a Casimir of $L$:
+$$
 L(x) \nabla E(x) = 0 \quad \Rightarrow \quad \frac{\text{d}E}{\text{d}t}\bigg|_{L \text{ only}} = 0
-\]</span> Actually, for GENERIC we require something weaker: <span class="math inline">\(\langle \nabla E, L \nabla E \rangle = 0\)</span>, which follows from antisymmetry.</p>
-<p>This connects directly to Lecture 5: <span class="math inline">\(L\)</span> defines a Poisson structure, and Hamiltonian flow with Hamiltonian <span class="math inline">\(E\)</span> is given by <span class="math inline">\(\dot{x} = L \nabla E\)</span>.</p>
-<h2 id="the-friction-operator-mx">The Friction Operator <span class="math inline">\(M(x)\)</span></h2>
-<p>The friction operator <span class="math inline">\(M(x)\)</span> describes the irreversible (entropy-increasing, dissipative) part of the dynamics. It must</p>
-<p><strong>1. Be Symmetric:</strong> For any functionals <span class="math inline">\(F\)</span> and <span class="math inline">\(G\)</span>, <span class="math display">\[
+$$
+Actually, for GENERIC we require something weaker: $\langle \nabla E, L \nabla E \rangle = 0$, which follows from antisymmetry.
+
+This connects directly to Lecture 5: $L$ defines a Poisson structure, and Hamiltonian flow with Hamiltonian $E$ is given by $\dot{x} = L \nabla E$.
+
+
+
+## The Friction Operator $M(x)$
+
+
+
+
+
+The friction operator $M(x)$ describes the irreversible (entropy-increasing, dissipative) part of the dynamics. It must
+
+**1. Be Symmetric:** For any functionals $F$ and $G$,
+$$
 \langle \nabla F, M \nabla G \rangle = \langle \nabla G, M \nabla F \rangle.
-\]</span> This is the Onsager reciprocity relation from irreversible thermodynamics.</p>
-<p><strong>2. Be Positive semi-definite:</strong> For any functional <span class="math inline">\(F\)</span>, <span class="math display">\[
+$$
+This is the Onsager reciprocity relation from irreversible thermodynamics.
+
+**2. Be Positive semi-definite:** For any functional $F$,
+$$
 \langle \nabla F, M \nabla F \rangle \geq 0.
-\]</span> This ensures dissipation: entropy can only increase (or stay constant), never decrease.</p>
-<p><strong>3. Conserve energy:</strong> The friction must not change the energy <span class="math display">\[
+$$
+This ensures dissipation: entropy can only increase (or stay constant), never decrease.
+
+**3. Conserve energy:** The friction must not change the energy
+$$
 \langle \nabla E, M \nabla S \rangle = 0.
-\]</span> This is the <em>first degeneracy condition</em>. Dissipation redistributes energy but doesn’t create or destroy it.</p>
-<p>The positive semi-definite property ensures the second law: <span class="math display">\[
+$$
+This is the *first degeneracy condition*. Dissipation redistributes energy but doesn't create or destroy it.
+
+The positive semi-definite property ensures the second law:
+$$
 \frac{\text{d}S}{\text{d}t}\bigg|_{M \text{ only}} = \langle \nabla S, M \nabla S \rangle \geq 0
-\]</span></p>
-<p>This connects to Lecture 7: The symmetric part <span class="math inline">\(S\)</span> of our decomposition <span class="math inline">\(M = S + A\)</span> had exactly these properties!</p>
-<h2 id="the-degeneracy-conditions">The Degeneracy Conditions</h2>
-<p>For the GENERIC equation to be thermodynamically consistent, <span class="math inline">\(L\)</span> and <span class="math inline">\(M\)</span> must satisfy two <strong>degeneracy conditions</strong> that couple the reversible and irreversible parts:</p>
-<p><strong>Degeneracy Condition 1</strong> (Energy conservation by friction): <span class="math display">\[
+$$
+
+This connects to Lecture 7: The symmetric part $S$ of our decomposition $M = S + A$ had exactly these properties!
+
+
+
+## The Degeneracy Conditions
+
+
+
+
+
+For the GENERIC equation to be thermodynamically consistent, $L$ and $M$ must satisfy two **degeneracy conditions** that couple the reversible and irreversible parts:
+
+**Degeneracy Condition 1** (Energy conservation by friction):
+$$
 M(x) \nabla E(x) = 0
-\]</span> Physically: Dissipative processes cannot change the total energy, only redistribute it. This is more general than what we stated above—the friction operator must annihilate the energy gradient entirely, not just be orthogonal to it.</p>
-<p><strong>Degeneracy Condition 2</strong> (Entropy conservation by Poisson dynamics): <span class="math display">\[
+$$
+Physically: Dissipative processes cannot change the total energy, only redistribute it. This is more general than what we stated above—the friction operator must annihilate the energy gradient entirely, not just be orthogonal to it.
+
+**Degeneracy Condition 2** (Entropy conservation by Poisson dynamics):
+$$
 L(x) \nabla S(x) = 0
-\]</span> Physically: Reversible (Hamiltonian) processes cannot change entropy. All entropy change must come from irreversible processes.</p>
-<p>These conditions are <strong>non-trivial constraints</strong> on the operators <span class="math inline">\(L\)</span> and <span class="math inline">\(M\)</span>. They ensure: - The first law (energy conservation): <span class="math inline">\(\frac{\text{d}E}{\text{d}t} = \langle \nabla E, L \nabla E + M \nabla S \rangle = 0\)</span> - The second law (entropy increase): <span class="math inline">\(\frac{\text{d}S}{\text{d}t} = \langle \nabla S, L \nabla E + M \nabla S \rangle = \langle \nabla S, M \nabla S \rangle \geq 0\)</span></p>
-<p>Without these conditions, you could have energy creation/destruction or entropy decrease, those would be violations of thermodynamics.</p>
-<h2 id="casimir-functions-and-constraints">Casimir Functions and Constraints</h2>
-<p>Beyond energy and entropy, GENERIC systems often have additional conserved quantities called <strong>Casimir functions</strong> <span class="math inline">\(C_i(x)\)</span>. These satisfy: <span class="math display">\[
+$$
+Physically: Reversible (Hamiltonian) processes cannot change entropy. All entropy change must come from irreversible processes.
+
+These conditions are **non-trivial constraints** on the operators $L$ and $M$. They ensure:
+- The first law (energy conservation): $\frac{\text{d}E}{\text{d}t} = \langle \nabla E, L \nabla E + M \nabla S \rangle = 0$
+- The second law (entropy increase): $\frac{\text{d}S}{\text{d}t} = \langle \nabla S, L \nabla E + M \nabla S \rangle = \langle \nabla S, M \nabla S \rangle \geq 0$
+
+Without these conditions, you could have energy creation/destruction or entropy decrease, those would be violations of thermodynamics.
+
+
+
+## Casimir Functions and Constraints
+
+
+
+
+
+Beyond energy and entropy, GENERIC systems often have additional conserved quantities called **Casimir functions** $C_i(x)$. These satisfy:
+$$
 L(x) \nabla C_i(x) = 0 \quad \text{and} \quad M(x) \nabla C_i(x) = 0
-\]</span></p>
-<p>Casimirs are “super-conserved,” they’re annihilated by both the reversible and irreversible parts of the dynamics. Physically, Casimirs represent fundamental constraints that cannot be changed by any process in the system.</p>
-<p><strong>Examples:</strong> - <strong>Mechanics:</strong> Total momentum (in absence of external forces) - <strong>Fluids:</strong> Circulation in ideal fluids - <strong>Electromagnetism:</strong> Total charge - <strong>Information dynamics:</strong> <span class="math inline">\(\sum h_i = C\)</span> (marginal entropy conservation!)</p>
-<p>Casimirs often arise from symmetries (Noether’s theorem, Lecture 5) or from fundamental conservation laws. They stratify the state space into <em>symplectic leaves</em>, invariant manifolds on which the dynamics are confined.</p>
-<p>For information dynamics, the conservation of marginal entropy sum <span class="math inline">\(\sum h_i = C\)</span> is our primary Casimir. The dynamics must respect this constraint at all times.</p>
-<h2 id="why-this-structure">Why This Structure?</h2>
-<p>You might wonder why GENERIC has exactly this form. Why two operators? Why these specific conditions?</p>
-<p>The answer is that this is the most general structure*that allows reversible and irreversible processes to coexist while respecting: 1. Time-reversal symmetry for the reversible part 2. Second law for the irreversible part 3. Energy conservation overall 4. Additional conservation laws (Casimirs)</p>
-<p>Grmela and Öttinger proved that any system satisfying these physical requirements must have GENERIC form. It’s not a choice, it’s a consequence of thermodynamic consistency.</p>
-<p>In TIG this structure emerged from our information dynamics (Lectures 1-7) without imposing it. The axioms (Lecture 2) + maximum entropy dynamics (Lecture 3) + constraints (Lecture 4) produce the GENERIC structure. This suggests GENERIC is not just a modeling framework, it’s a principle that information isolated systems must obey.</p>
-<h2 id="a-worked-example-damped-harmonic-oscillator">A Worked Example: Damped Harmonic Oscillator</h2>
-<p>Let’s see GENERIC in action with a simple example: a harmonic oscillator with friction.</p>
-<p><strong>State:</strong> <span class="math inline">\(x = (q, p)\)</span> (position and momentum)</p>
-<p><strong>Energy:</strong> <span class="math inline">\(E(q,p) = \frac{p^2}{2m} + \frac{1}{2}kq^2\)</span> (kinetic + potential)</p>
-<p><strong>Entropy:</strong> For this simple example, we’ll use <span class="math inline">\(S = -\beta E\)</span> where <span class="math inline">\(\beta = 1/(k_BT)\)</span> is inverse temperature (this connects to Gibbs distribution).</p>
-<p><strong>Poisson operator:</strong> Standard symplectic structure from Lecture 5, <span class="math display">\[
-L = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}, \quad \{f,g\} = \frac{\partial f}{\partial q}\frac{\partial g}{\partial p} - \frac{\partial f}{\partial p}\frac{\partial g}{\partial q}
-\]</span></p>
-<p><strong>Friction operator:</strong> Simple isotropic damping, <span class="math display">\[
-M = \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; \gamma \end{pmatrix}
-\]</span> where <span class="math inline">\(\gamma &gt; 0\)</span> is the friction coefficient (only momentum experiences friction, not position).</p>
-<p><strong>The dynamics:</strong> Compute the gradients, <span class="math display">\[
+$$
+
+Casimirs are "super-conserved", they're annihilated by both the reversible and irreversible parts of the dynamics. Physically, Casimirs represent fundamental constraints that cannot be changed by any process in the system.
+
+**Examples:**
+- **Mechanics:** Total momentum (in absence of external forces)
+- **Fluids:** Circulation in ideal fluids
+- **Electromagnetism:** Total charge
+- **Information dynamics:** $\sum h_i = C$ (marginal entropy conservation!)
+
+Casimirs often arise from symmetries (Noether's theorem, Lecture 5) or from fundamental conservation laws. They stratify the state space into *symplectic leaves*, invariant manifolds on which the dynamics are confined.
+
+For information dynamics, the conservation of marginal entropy sum $\sum h_i = C$ is our primary Casimir. The dynamics must respect this constraint at all times.
+
+
+
+## Why This Structure?
+
+
+
+
+
+You might wonder why GENERIC has exactly this form. Why two operators? Why these specific conditions?
+
+The answer is that this is the most general structure*that allows reversible and irreversible processes to coexist while respecting:
+1. Time-reversal symmetry for the reversible part
+2. Second law for the irreversible part
+3. Energy conservation overall
+4. Additional conservation laws (Casimirs)
+
+Grmela and Öttinger proved that any system satisfying these physical requirements must have GENERIC form. It's not a choice, it's a consequence of thermodynamic consistency.
+
+In TIG this structure emerged from our information dynamics (Lectures 1-7) without imposing it. The axioms (Lecture 2) + maximum entropy dynamics (Lecture 3) + constraints (Lecture 4) produce the GENERIC structure. This suggests GENERIC is not just a modeling framework, it's a principle that information isolated systems must obey.
+
+
+
+## A Worked Example: Damped Harmonic Oscillator
+
+
+
+
+
+Let's see GENERIC in action with a simple example: a harmonic oscillator with friction.
+
+**State:** $x = (q, p)$ (position and momentum)
+
+**Energy:** $E(q,p) = \frac{p^2}{2m} + \frac{1}{2}kq^2$ (kinetic + potential)
+
+**Entropy:** For this simple example, we'll use $S = -\beta E$ where $\beta = 1/(k_BT)$ is inverse temperature (this connects to Gibbs distribution).
+
+**Poisson operator:** Standard symplectic structure from Lecture 5,
+$$
+L = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \quad \{f,g\} = \frac{\partial f}{\partial q}\frac{\partial g}{\partial p} - \frac{\partial f}{\partial p}\frac{\partial g}{\partial q}
+$$
+
+**Friction operator:** Simple isotropic damping,
+$$
+M = \begin{pmatrix} 0 & 0 \\ 0 & \gamma \end{pmatrix}
+$$
+where $\gamma > 0$ is the friction coefficient (only momentum experiences friction, not position).
+
+**The dynamics:** Compute the gradients,
+$$
 \nabla E = \begin{pmatrix} kq \\ p/m \end{pmatrix}, \quad \nabla S = -\beta \nabla E
-\]</span></p>
-<p>Then GENERIC gives: <span class="math display">\[
-\begin{pmatrix} \dot{q} \\ \dot{p} \end{pmatrix} = L \nabla E + M \nabla S = \begin{pmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{pmatrix}\begin{pmatrix} kq \\ p/m \end{pmatrix} + \begin{pmatrix} 0 &amp; 0 \\ 0 &amp; \gamma \end{pmatrix}\begin{pmatrix} -\beta kq \\ -\beta p/m \end{pmatrix}
-\]</span></p>
-<p>This yields: <span class="math display">\[
+$$
+
+Then GENERIC gives:
+$$
+\begin{pmatrix} \dot{q} \\ \dot{p} \end{pmatrix} = L \nabla E + M \nabla S = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}\begin{pmatrix} kq \\ p/m \end{pmatrix} + \begin{pmatrix} 0 & 0 \\ 0 & \gamma \end{pmatrix}\begin{pmatrix} -\beta kq \\ -\beta p/m \end{pmatrix}
+$$
+
+This yields:
+$$
 \dot{q} = \frac{p}{m}, \quad \dot{p} = -kq - \gamma\beta\frac{p}{m}
-\]</span></p>
-<p>The first equation is just velocity = momentum/mass. The second is Newton’s law with friction: <span class="math inline">\(m\ddot{q} = -kq - \gamma\beta \dot{q}\)</span>, which is exactly the damped harmonic oscillator!</p>
-<p><strong>Check degeneracy:</strong> - <span class="math inline">\(M \nabla E = (0, \gamma p/m)\)</span> is NOT zero! - Wait, this violates degeneracy condition 1!</p>
-<p>Actually, for finite-dimensional systems with constant <span class="math inline">\(M\)</span> and <span class="math inline">\(L\)</span>, the degeneracy conditions are automatically satisfied if we choose entropy correctly as <span class="math inline">\(S \propto -E\)</span> (equilibrium condition). More generally, for complex systems we need to ensure degeneracy by construction. We’ll see how information dynamics naturally satisfies these conditions in the next section.</p>
-<p><strong>Summary:</strong> The GENERIC equation <span class="math inline">\(\dot{x} = L \nabla E + M \nabla S\)</span> encodes: - <strong>Structure:</strong> Antisymmetric <span class="math inline">\(L\)</span> + symmetric positive semi-definite <span class="math inline">\(M\)</span> - <strong>Physics:</strong> Reversible dynamics (conserves energy, preserves entropy) + irreversible dynamics (conserves energy, increases entropy) - <strong>Consistency:</strong> Degeneracy conditions couple <span class="math inline">\(L\)</span> and <span class="math inline">\(M\)</span> to ensure thermodynamic laws - <strong>Generality:</strong> Covers everything from mechanics to thermodynamics to complex systems</p>
-<p>Next, we’ll see how our information dynamics fit this framework perfectly.</p>
-<h2 id="automatic-degeneracy">Automatic Degeneracy</h2>
-<p>In standard GENERIC applications, ensuring thermodynamic consistency requires careful hand-crafting of operators. In our framework, the consistency conditions emerge automatically.</p>
-<h2 id="automatic-degeneracy-conditions">Automatic Degeneracy Conditions</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/degeneracy-conditions-automatic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/degeneracy-conditions-automatic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>A remarkable feature of the inaccessible game is that the GENERIC degeneracy conditions, which are typically difficult to impose and verify, emerge <em>automatically</em> from the constraint structure.</p>
-<h3 id="the-generic-degeneracy-requirements">The GENERIC Degeneracy Requirements</h3>
-<p>Recall that standard GENERIC requires two degeneracy conditions for thermodynamic consistency:</p>
-<p><strong>Degeneracy 1:</strong> The entropy should be conserved by the reversible dynamics: <span class="math display">\[
+$$
+
+The first equation is just velocity = momentum/mass. The second is Newton's law with friction: $m\ddot{q} = -kq - \gamma\beta \dot{q}$, which is exactly the damped harmonic oscillator!
+
+
+
+**Check degeneracy:**
+- $M \nabla E = (0, \gamma p/m)$ is NOT zero! 
+- Wait, this violates degeneracy condition 1!
+
+Actually, for finite-dimensional systems with constant $M$ and $L$, the degeneracy conditions are automatically satisfied if we choose entropy correctly as $S \propto -E$ (equilibrium condition). More generally, for complex systems we need to ensure degeneracy by construction. We'll see how information dynamics naturally satisfies these conditions in the next section.
+
+**Summary:** The GENERIC equation $\dot{x} = L \nabla E + M \nabla S$ encodes:
+- **Structure:** Antisymmetric $L$ + symmetric positive semi-definite $M$
+- **Physics:** Reversible dynamics (conserves energy, preserves entropy) + irreversible dynamics (conserves energy, increases entropy)
+- **Consistency:** Degeneracy conditions couple $L$ and $M$ to ensure thermodynamic laws
+- **Generality:** Covers everything from mechanics to thermodynamics to complex systems
+
+Next, we'll see how our information dynamics fit this framework perfectly.
+
+
+
+
+## Automatic Degeneracy
+
+
+
+
+
+In standard GENERIC applications, ensuring thermodynamic consistency requires careful hand-crafting of operators. In our framework, the consistency conditions emerge automatically.
+
+
+
+
+
+
+## Automatic Degeneracy Conditions
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/degeneracy-conditions-automatic.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/degeneracy-conditions-automatic.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+A remarkable feature of the inaccessible game is that the GENERIC degeneracy conditions, which are typically difficult to impose and verify, emerge *automatically* from the constraint structure.
+
+### The GENERIC Degeneracy Requirements
+
+
+
+
+
+Recall that standard GENERIC requires two degeneracy conditions for thermodynamic consistency:
+
+**Degeneracy 1:** The entropy should be conserved by the reversible dynamics:
+$$
 A(\boldsymbol{\theta})\nabla H(\boldsymbol{\theta}) = 0
-\]</span></p>
-<p><strong>Degeneracy 2:</strong> The energy should be conserved by the irreversible dynamics: <span class="math display">\[
+$$
+
+**Degeneracy 2:** The energy should be conserved by the irreversible dynamics:
+$$
 S(\boldsymbol{\theta})\nabla E(\boldsymbol{\theta}) = 0
-\]</span></p>
-<p>In most GENERIC applications, constructing operators <span class="math inline">\(A\)</span> and <span class="math inline">\(S\)</span> that satisfy both conditions requires significant effort. You must carefully design the operators to ensure the degeneracies hold at every point in state space.</p>
-<h2 id="first-degeneracy-automatic-from-tangency">First Degeneracy: Automatic from Tangency</h2>
-<p>In our framework, the first degeneracy <span class="math inline">\(A\nabla H = 0\)</span> holds automatically at every point on the constraint manifold. It comes from the constraint maintenance requirement: <span class="math display">\[
+$$
+
+In most GENERIC applications, constructing operators $A$ and $S$ that satisfy both conditions requires significant effort. You must carefully design the operators to ensure the degeneracies hold at every point in state space.
+
+
+
+## First Degeneracy: Automatic from Tangency
+
+
+
+
+
+In our framework, the first degeneracy $A\nabla H = 0$ holds automatically at every point on the constraint manifold. It comes from the constraint maintenance requirement:
+$$
 \mathbf{a}^\top \dot{\boldsymbol{\theta}} = 0
-\]</span> where <span class="math inline">\(\mathbf{a} = \nabla\left(\sum_i h_i\right)\)</span> is the constraint gradient.</p>
-<p>This ensures that the dynamics remain tangent to the constraint surface at all times. The antisymmetric part <span class="math inline">\(A\)</span> inherits this tangency because it generates rotations on the constraint manifold. Since rotations conserve everything (by definition <span class="math inline">\(\mathbf{z}^\top A\mathbf{z} = 0\)</span> for antisymmetric <span class="math inline">\(A\)</span>), and the rotations stay on the constraint surface, the first degeneracy is automatically satisfied.</p>
-<h2 id="second-degeneracy-from-constraint-gradient">Second Degeneracy: From Constraint Gradient</h2>
-<p>The second degeneracy is where our framework departs from standard GENERIC. In standard formulations, one requires <span class="math inline">\(S\nabla E = 0\)</span> where <span class="math inline">\(E\)</span> is thermodynamic energy. This must be verified case-by-case.</p>
-<p>In our framework, the marginal entropy constraint <span class="math inline">\(\sum_i h_i = C\)</span> plays the role that energy conservation plays in GENERIC. The constraint gradient <span class="math inline">\(\mathbf{a}\)</span> defines the degeneracy direction along which the dissipative operator vanishes: <span class="math display">\[
+$$
+where $\mathbf{a} = \nabla\left(\sum_i h_i\right)$ is the constraint gradient.
+
+This ensures that the dynamics remain tangent to the constraint surface at all times. The antisymmetric part $A$ inherits this tangency because it generates rotations on the constraint manifold. Since rotations conserve everything (by definition $\mathbf{z}^\top A\mathbf{z} = 0$ for antisymmetric $A$), and the rotations stay on the constraint surface, the first degeneracy is automatically satisfied.
+
+
+
+## Second Degeneracy: From Constraint Gradient
+
+
+
+
+
+The second degeneracy is where our framework departs from standard GENERIC. In standard formulations, one requires $S\nabla E = 0$ where $E$ is thermodynamic energy. This must be verified case-by-case.
+
+In our framework, the marginal entropy constraint $\sum_i h_i = C$ plays the role that energy conservation plays in GENERIC. The constraint gradient $\mathbf{a}$ defines the degeneracy direction along which the dissipative operator vanishes:
+$$
 S\mathbf{a} = 0 \equiv S\nabla\left(\sum_i h_i\right) = 0.
-\]</span></p>
-<p>This follows from the constraint tangency requirement: the symmetric part cannot have a component along the constraint gradient because that would violate conservation.</p>
-<p>In Section 4 of the paper, we show that under certain conditions in the thermodynamic limit, the constraint gradient becomes asymptotically parallel to an energy gradient: <span class="math display">\[
+$$
+
+This follows from the constraint tangency requirement: the symmetric part cannot have a component along the constraint gradient because that would violate conservation.
+
+
+
+
+
+In Section 4 of the paper, we show that under certain conditions in the thermodynamic limit, the constraint gradient becomes asymptotically parallel to an energy gradient:
+$$
 \nabla\left(\sum_i h_i\right) \parallel \nabla E.
-\]</span></p>
-<p>When this equivalence holds, our automatically-derived degeneracy condition <span class="math inline">\(S\nabla(\sum_i h_i) = 0\)</span> becomes equivalent to the standard GENERIC condition <span class="math inline">\(S\nabla E = 0\)</span>. This connects our information-theoretic framework to classical thermodynamics.</p>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>The automatic emergence of degeneracy conditions is profound because:</p>
-<ol type="1">
-<li><p><em>No hand-crafting required:</em> We don’t need to guess the form of <span class="math inline">\(A\)</span> and <span class="math inline">\(S\)</span> and verify they satisfy degeneracies. The structure emerges from the constrained dynamics.</p></li>
-<li><p><em>Global validity:</em> The degeneracies hold everywhere on the constraint manifold by construction, not just at specific points or in special cases.</p></li>
-<li><p><em>Information-first foundation:</em> Instead of starting with energy and thermodynamics and deriving information-theoretic properties, we start with information conservation and <em>derive</em> thermodynamic structure.</p></li>
-<li><p><em>Fundamental principle:</em> This suggests GENERIC is not just a modelling framework but a fundamental principle that information-isolated systems must obey.</p></li>
-</ol>
-<p>In Grmela and Öttinger’s original work, satisfying the degeneracy conditions requires careful construction (see e.g. Chapter 4 of <span class="citation" data-cites="Ottinger-beyond05">Öttinger (2005)</span>). The fact that they emerge automatically in our framework suggests that marginal entropy conservation has special geometric significance for non-equilibrium dynamics.</p>
-<h1 id="information-topography">Information Topography</h1>
-<p>The Fisher information matrix provides mathematical precision to the intuitive notion of an “information topography”—the landscape that shapes how information can flow.</p>
-<h2 id="fisher-information-as-conductance-tensor">Fisher Information as Conductance Tensor</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-as-conductance-tensor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-as-conductance-tensor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the inaccessible game, the Fisher information matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span> plays a role analogous to conductance in electrical circuits—but with differences that make the game richer than a Kirchhoff network.</p>
-<h3 id="the-electrical-circuit-analogy">The Electrical Circuit Analogy</h3>
-<p>In a Kirchhoff electrical network, charge conservation is local and linear: <span class="math inline">\(\sum_j I_{ij} = 0\)</span> at each node, where current flows according to Ohm’s law with fixed conductances: <span class="math display">\[
+$$
+
+When this equivalence holds, our automatically-derived degeneracy condition $S\nabla(\sum_i h_i) = 0$ becomes equivalent to the standard GENERIC condition $S\nabla E = 0$. This connects our information-theoretic framework to classical thermodynamics.
+
+
+
+## Why This Matters
+
+
+
+
+
+The automatic emergence of degeneracy conditions is profound because:
+
+1. *No hand-crafting required:* We don't need to guess the form of $A$ and $S$ and verify they satisfy degeneracies. The structure emerges from the constrained dynamics.
+
+2. *Global validity:* The degeneracies hold everywhere on the constraint manifold by construction, not just at specific points or in special cases.
+
+3. *Information-first foundation:* Instead of starting with energy and thermodynamics and deriving information-theoretic properties, we start with information conservation and *derive* thermodynamic structure.
+
+4. *Fundamental principle:* This suggests GENERIC is not just a modelling framework but a fundamental principle that information-isolated systems must obey.
+
+
+
+In Grmela and Öttinger's original work, satisfying the degeneracy conditions requires careful construction (see e.g. Chapter 4 of @Ottinger-beyond05). The fact that they emerge automatically in our framework suggests that marginal entropy conservation has special geometric significance for non-equilibrium dynamics.
+
+
+
+
+# Information Topography
+
+
+
+
+
+The Fisher information matrix provides mathematical precision to the intuitive notion of an "information topography"—the landscape that shapes how information can flow.
+
+
+
+
+
+
+## Fisher Information as Conductance Tensor
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-as-conductance-tensor.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-as-conductance-tensor.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+In the inaccessible game, the Fisher information matrix $G(\boldsymbol{\theta})$ plays a role analogous to conductance in electrical circuits—but with differences that make the game richer than a Kirchhoff network.
+
+### The Electrical Circuit Analogy
+
+
+
+
+
+In a Kirchhoff electrical network, charge conservation is local and linear: $\sum_j I_{ij} = 0$ at each node, where current flows according to Ohm's law with fixed conductances:
+$$
 I_{ij} = g_{ij}(V_i - V_j).
-\]</span> The conductances <span class="math inline">\(g_{ij}\)</span> are fixed parameters of the circuit. Given the conductances, the steady state can be found by solving linear equations derived from local charge conservation.</p>
-<p>In contrast, our information conservation constraint <span class="math inline">\(\sum_{i=1}^n h_i = C\)</span> is generally <em>nonlocal</em> and <em>nonlinear</em>. Each marginal entropy <span class="math inline">\(h_i\)</span> requires marginalization over all other variables, making it a global functional of the entire state <span class="math inline">\(\boldsymbol{\theta}\)</span>.</p>
-<p>Consider a multivariate Gaussian as an example. The marginal entropy is <span class="math display">\[
+$$
+The conductances $g_{ij}$ are fixed parameters of the circuit. Given the conductances, the steady state can be found by solving linear equations derived from local charge conservation.
+
+
+
+
+
+In contrast, our information conservation constraint $\sum_{i=1}^n h_i = C$ is generally *nonlocal* and *nonlinear*. Each marginal entropy $h_i$ requires marginalization over all other variables, making it a global functional of the entire state $\boldsymbol{\theta}$.
+
+Consider a multivariate Gaussian as an example. The marginal entropy is
+$$
 h_i = \frac{1}{2}\log(2\pi e \sigma_i^2)
-\]</span> where <span class="math inline">\(\sigma_i^2 = [G^{-1}]_{ii}\)</span> is the <span class="math inline">\(i\)</span>-th diagonal element of the inverse Fisher information. The conservation constraint becomes: <span class="math display">\[
+$$
+where $\sigma_i^2 = [G^{-1}]_{ii}$ is the $i$-th diagonal element of the inverse Fisher information. The conservation constraint becomes:
+$$
 \sum_{i=1}^n \log([G^{-1}]_{ii}) = \text{constant}.
-\]</span></p>
-<h3 id="dynamic-information-topography">Dynamic Information Topography</h3>
-<p>Moreover, the Fisher information <span class="math inline">\(G(\boldsymbol{\theta})\)</span> itself evolves with the state. This creates a <strong>dynamic information topography</strong>, more analogous to memristive networks than fixed resistors.</p>
-<p>The “conductance” for information flow is given by the Fisher information: <span class="math display">\[
-G(\boldsymbol{\theta}) = \nabla^2 A(\boldsymbol{\theta}),
-\]</span> which depends on the current state <span class="math inline">\(\boldsymbol{\theta}\)</span>. As the system evolves, both the “voltages” (parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>) and the “conductances” (Fisher information <span class="math inline">\(G\)</span>) change together.</p>
-<h2 id="information-channels-and-bottlenecks">Information Channels and Bottlenecks</h2>
-<p>Despite the differences, the analogy provides intuition. The eigenvalues of <span class="math inline">\(G(\boldsymbol{\theta})\)</span> indicate information channel capacities:</p>
-<ul>
-<li><strong>Large eigenvalues:</strong> Low-resistance channels for information flow</li>
-<li><strong>Small eigenvalues:</strong> Bottlenecks that constrain flow</li>
-<li><strong>Eigenvectors:</strong> Directions of easy/hard information movement</li>
-</ul>
-<p>The constrained maximum entropy production acts as a generalized Ohm’s law. Information flows “downhill” in the entropy landscape, but the rate of flow is governed by the Fisher information metric. The nonlocal conservation and emergent conductance structure create a system where information reorganizes itself through the interplay between local gradient flows and global constraints.</p>
-<h2 id="why-topography">Why “Topography?”</h2>
-<p>We think of <span class="math inline">\(G(\boldsymbol{\theta})\)</span> as defining the <strong>information topography</strong>. In geography, topography describes hills, valleys, and plains that constrain how water flows. In our framework, <span class="math inline">\(G(\boldsymbol{\theta})\)</span> describes the “shape” of the information landscape that constrains how information flows.</p>
-<p>This formalises the metaphor from <em>The Atomic Human</em> <span class="citation" data-cites="Lawrence-atomic24">(Lawrence, 2024)</span>: “In geography, the topography is the configuration of natural and man-made features in the landscape… An information topography is similar, but instead of the movement of goods, water and people, it dictates the movement of information.”</p>
-<h2 id="formalising-information-topography">Formalising Information Topography</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-topography-definition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-topography-definition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In <em>The Atomic Human</em> <span class="citation" data-cites="Lawrence-atomic24">(Lawrence, 2024)</span>, the concept of an information topography was introduced as a metaphor: “In geography, the topography is the configuration of natural and man-made features in the landscape… These questions are framed by the topography. An information topography is similar, but instead of the movement of goods, water and people, it dictates the movement of information.”</p>
-<p>However, no formal mathematical definition was given. The inaccessible game provides one.</p>
-<h2 id="mathematical-definition">Mathematical Definition</h2>
-<p>We define the <em>information topography</em> of a system to be the Fisher information matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span> viewed as a Riemannian metric on the space of probability distributions.</p>
-<p>Formally, for an exponential family parametrised by natural parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>:</p>
-<p><strong>Definition (Information Topography):</strong> The information topography is the pair <span class="math inline">\((G(\boldsymbol{\theta}), \mathcal{M})\)</span> where: - <span class="math inline">\(\mathcal{M}\)</span> is the statistical manifold of probability distributions - <span class="math inline">\(G(\boldsymbol{\theta}) = \nabla \nabla A(\boldsymbol{\theta})\)</span> is the Fisher information metric</p>
-<p>This metric determines: 1. Information distances between distributions 2. Directions of information flow (geodesics) 3. Information channel capacities (eigenvalues) 4. Bottlenecks and pathways (eigenvectors)</p>
-<h2 id="how-it-constrains-information-movement">How It Constrains Information Movement</h2>
-<p>The information topography constrains movement in three ways:</p>
-<p><strong>1. Metric Structure:</strong> The “distance” between two nearby distributions <span class="math inline">\(p(\boldsymbol{\theta})\)</span> and <span class="math inline">\(p(\boldsymbol{\theta} + d\boldsymbol{\theta})\)</span> is: <span class="math display">\[
+$$
+
+
+
+### Dynamic Information Topography
+
+
+
+
+
+Moreover, the Fisher information $G(\boldsymbol{\theta})$ itself evolves with the state. This creates a **dynamic information topography**, more analogous to memristive networks than fixed resistors.
+
+The "conductance" for information flow is given by the Fisher information:
+$$
+G(\boldsymbol{\theta}) = \nabla^2 \cumulantGeneratingFunction(\boldsymbol{\theta}),
+$$
+which depends on the current state $\boldsymbol{\theta}$. As the system evolves, both the "voltages" (parameters $\boldsymbol{\theta}$) and the "conductances" (Fisher information $G$) change together.
+
+
+
+## Information Channels and Bottlenecks
+
+
+
+
+
+Despite the differences, the analogy provides intuition. The eigenvalues of $G(\boldsymbol{\theta})$ indicate information channel capacities:
+
+- **Large eigenvalues:** Low-resistance channels for information flow
+- **Small eigenvalues:** Bottlenecks that constrain flow
+- **Eigenvectors:** Directions of easy/hard information movement
+
+The constrained maximum entropy production acts as a generalized Ohm's law. Information flows "downhill" in the entropy landscape, but the rate of flow is governed by the Fisher information metric. The nonlocal conservation and emergent conductance structure create a system where information reorganizes itself through the interplay between local gradient flows and global constraints.
+
+
+
+## Why "Topography"?
+
+
+
+
+
+We think of $G(\boldsymbol{\theta})$ as defining the **information topography**. In geography, topography describes hills, valleys, and plains that constrain how water flows. In our framework, $G(\boldsymbol{\theta})$ describes the "shape" of the information landscape that constrains how information flows.
+
+This formalises the metaphor from *The Atomic Human* [@Lawrence-atomic24]: "In geography, the topography is the configuration of natural and man-made features in the landscape... An information topography is similar, but instead of the movement of goods, water and people, it dictates the movement of information."
+
+
+
+
+
+
+
+
+
+
+## Formalising Information Topography
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-topography-definition.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-topography-definition.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+In *The Atomic Human* [@Lawrence-atomic24], the concept of an information topography was introduced as a metaphor: "In geography, the topography is the configuration of natural and man-made features in the landscape... These questions are framed by the topography. An information topography is similar, but instead of the movement of goods, water and people, it dictates the movement of information."
+
+However, no formal mathematical definition was given. The inaccessible game provides one.
+
+
+
+## Mathematical Definition
+
+
+
+
+
+We define the *information topography* of a system to be the Fisher information matrix $G(\boldsymbol{\theta})$ viewed as a Riemannian metric on the space of probability distributions.
+
+Formally, for an exponential family parametrised by natural parameters $\boldsymbol{\theta}$:
+
+**Definition (Information Topography):** The information topography is the pair $(G(\boldsymbol{\theta}), \mathcal{M})$ where:
+- $\mathcal{M}$ is the statistical manifold of probability distributions
+- $G(\boldsymbol{\theta}) = \nabla \nabla \cumulantGeneratingFunction(\boldsymbol{\theta})$ is the Fisher information metric
+
+This metric determines:
+1. Information distances between distributions
+2. Directions of information flow (geodesics)
+3. Information channel capacities (eigenvalues)
+4. Bottlenecks and pathways (eigenvectors)
+
+
+
+## How It Constrains Information Movement
+
+
+
+
+
+The information topography constrains movement in three ways:
+
+**1. Metric Structure:** The "distance" between two nearby distributions $p(\boldsymbol{\theta})$ and $p(\boldsymbol{\theta} + d\boldsymbol{\theta})$ is:
+$$
 ds^2 = d\boldsymbol{\theta}^\top G(\boldsymbol{\theta}) d\boldsymbol{\theta}
-\]</span> Moving in directions corresponding to small eigenvalues of <span class="math inline">\(G\)</span> requires large parameter changes for small distributional changes—these are “narrow passes” in the information landscape.</p>
-<p><strong>2. Gradient Flow:</strong> The entropy gradient is: <span class="math display">\[
+$$
+Moving in directions corresponding to small eigenvalues of $G$ requires large parameter changes for small distributional changes—these are "narrow passes" in the information landscape.
+
+**2. Gradient Flow:** The entropy gradient is:
+$$
 \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span> Information flows “downhill” in entropy space, but the Fisher information determines the effective slope. Regions with small eigenvalues have shallow gradients—information flows slowly.</p>
-<p><strong>3. Constraint Enforcement:</strong> Under conservation <span class="math inline">\(\sum h_i = C\)</span>, the constraint gradient <span class="math inline">\(\mathbf{a} = \nabla(\sum h_i)\)</span> interacts with <span class="math inline">\(G\)</span> to determine allowed flow directions. The dynamics become: <span class="math display">\[
+$$
+Information flows "downhill" in entropy space, but the Fisher information determines the effective slope. Regions with small eigenvalues have shallow gradients—information flows slowly.
+
+**3. Constraint Enforcement:** Under conservation $\sum h_i = C$, the constraint gradient $\mathbf{a} = \nabla(\sum h_i)$ interacts with $G$ to determine allowed flow directions. The dynamics become:
+$$
 \dot{\boldsymbol{\theta}} = -\Pi_\parallel G(\boldsymbol{\theta})\boldsymbol{\theta}
-\]</span> where <span class="math inline">\(\Pi_\parallel\)</span> projects onto the constraint tangent space.</p>
-<h2 id="dynamic-topography">Dynamic Topography</h2>
-<p>Unlike geographical topography which is static, information topography is <em>dynamic</em>, it changes as the system evolves. As <span class="math inline">\(\boldsymbol{\theta}\)</span> changes, so does <span class="math inline">\(G(\boldsymbol{\theta})\)</span>. This creates a feedback loop:</p>
-<ol type="1">
-<li>Current topography <span class="math inline">\(G(\boldsymbol{\theta})\)</span> determines information flow</li>
-<li>Flow changes parameters <span class="math inline">\(\boldsymbol{\theta}\)</span></li>
-<li>New parameters change topography <span class="math inline">\(G(\boldsymbol{\theta})\)</span></li>
-<li>Repeat</li>
-</ol>
-<p>This dynamic restructuring is what makes information systems so rich. The landscape itself evolves as you move through it.</p>
-<p>This formalisation gives mathematical precision to the intuitive notion from <em>The Atomic Human</em> that information movement is constrained by structure. The Fisher information matrix <em>is</em> that structure, and the inaccessible game describes how systems evolve within it.</p>
-<h2 id="fisher-information-as-geometry">Fisher Information as Geometry</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In the previous section, we saw that for exponential families, the Fisher information matrix appears as the second derivative of the log partition function <span class="math display">\[
+$$
+where $\Pi_\parallel$ projects onto the constraint tangent space.
+
+
+
+## Dynamic Topography
+
+
+
+
+
+Unlike geographical topography which is static, information topography is *dynamic*, it changes as the system evolves. As $\boldsymbol{\theta}$ changes, so does $G(\boldsymbol{\theta})$. This creates a feedback loop:
+
+1. Current topography $G(\boldsymbol{\theta})$ determines information flow
+2. Flow changes parameters $\boldsymbol{\theta}$
+3. New parameters change topography $G(\boldsymbol{\theta})$
+4. Repeat
+
+This dynamic restructuring is what makes information systems so rich. The landscape itself evolves as you move through it.
+
+
+
+This formalisation gives mathematical precision to the intuitive notion from *The Atomic Human* that information movement is constrained by structure. The Fisher information matrix *is* that structure, and the inaccessible game describes how systems evolve within it.
+
+
+
+
+
+
+
+## Fisher Information as Geometry
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/fisher-information-geometry.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+In the previous section, we saw that for exponential families, the Fisher information matrix appears as the second derivative of the log partition function
+$$
 G(\boldsymbol{\theta}) = \nabla^2 \mathcal{A}(\boldsymbol{\theta}) = \mathrm{Cov}_{\boldsymbol{\theta}}[T(\mathbf{x})].
-\]</span> We now develop the geometric interpretation: the Fisher information matrix defines a <em>metric</em> on the space of probability distributions.</p>
-<h3 id="the-statistical-manifold">The Statistical Manifold</h3>
-<p>Consider the space of all probability distributions in an exponential family, parametrized by <span class="math inline">\(\boldsymbol{\theta}\)</span>. This space forms a <em>manifold</em> — a smooth, curved space where each point represents a different distribution.</p>
-<p>The Fisher information matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span> acts as a <em>Riemannian metric</em> on this manifold. Think of measuring distances on a curved surface like a sphere: you need a metric to tell you how far apart two nearby points are. The Fisher information provides exactly this for the space of probability distributions, telling us how to measure “statistical distance” between distributions.</p>
-<p>The Fisher information defines the <em>information distance</em> between nearby distributions. If we move from parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> to <span class="math inline">\(\boldsymbol{\theta} + \text{d}\boldsymbol{\theta}\)</span>, the infinitesimal distance in information space is <span class="math display">\[
+$$
+We now develop the geometric interpretation: the Fisher information matrix defines a *metric* on the space of probability distributions.
+
+
+
+### The Statistical Manifold
+
+
+
+
+
+Consider the space of all probability distributions in an exponential family, parametrized by $\boldsymbol{\theta}$. This space forms a *manifold* --- a smooth, curved space where each point represents a different distribution.
+
+The Fisher information matrix $G(\boldsymbol{\theta})$ acts as a *Riemannian metric* on this manifold. Think of measuring distances on a curved surface like a sphere: you need a metric to tell you how far apart two nearby points are. The Fisher information provides exactly this for the space of probability distributions, telling us how to measure "statistical distance" between distributions.
+
+
+
+
+
+The Fisher information defines the *information distance* between nearby distributions. If we move from parameters $\boldsymbol{\theta}$ to $\boldsymbol{\theta} + \text{d}\boldsymbol{\theta}$, the infinitesimal distance in information space is
+$$
 \text{d}s^2 = \text{d}\boldsymbol{\theta}^\top G(\boldsymbol{\theta}) \text{d}\boldsymbol{\theta}
-\]</span> where the Fisher information playing the role of the metric. Larger Fisher information means a given parameter change corresponds to a larger “information distance,” the distributions are more distinguishable.</p>
-<h3 id="connection-to-statistical-estimation">Connection to Statistical Estimation</h3>
-<p>This geometric picture connects directly to Fisher’s original motivation. The <em>Cramér-Rao bound</em> states that for any unbiased estimator <span class="math inline">\(\hat{\boldsymbol{\theta}}\)</span> of parameters <span class="math inline">\(\boldsymbol{\theta}\)</span>, <span class="math display">\[
+$$
+where the Fisher information playing the role of the metric. Larger Fisher information means a given parameter change corresponds to a larger "information distance", the distributions are more distinguishable.
+
+
+
+### Connection to Statistical Estimation
+
+
+
+
+
+This geometric picture connects directly to Fisher's original motivation. The *Cramér-Rao bound* states that for any unbiased estimator $\hat{\boldsymbol{\theta}}$ of parameters $\boldsymbol{\theta}$,
+$$
 \text{cov}(\hat{\boldsymbol{\theta}}) \succeq G^{-1}(\boldsymbol{\theta}),
-\]</span> where <span class="math inline">\(\succeq\)</span> denotes that the left side minus the right side is positive semidefinite.</p>
-<p>Geometrically, this means: higher Fisher information (stronger metric) implies tighter bounds on estimation. The inverse <span class="math inline">\(G^{-1}\)</span> gives the <em>minimum possible</em> covariance of any unbiased estimator, it’s the fundamental limit on how well we can estimate parameters from data.</p>
-<p>The Fisher information plays two distinct but related roles:</p>
-<ol type="1">
-<li><p><strong>As a metric</strong>: It defines information distance, telling us how “far apart” distributions are.</p></li>
-<li><p><strong>In gradient flow</strong>: Recall from the exponential family definitions that that <span class="math inline">\(\nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span>. This means entropy gradient ascent in exponential families involves the Fisher information, <span class="math display">\[
+$$
+where $\succeq$ denotes that the left side minus the right side is positive semidefinite.
+
+Geometrically, this means: higher Fisher information (stronger metric) implies tighter bounds on estimation. The inverse $G^{-1}$ gives the *minimum possible* covariance of any unbiased estimator, it's the fundamental limit on how well we can estimate parameters from data.
+
+
+
+
+
+The Fisher information plays two distinct but related roles:
+
+1. **As a metric**: It defines information distance, telling us how "far apart" distributions are.
+
+2. **In gradient flow**: Recall from the exponential family definitions that that $\nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}$. This means entropy gradient ascent in exponential families involves the Fisher information,
+$$
 \dot{\boldsymbol{\theta}} = \nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}.
-\]</span></p></li>
-</ol>
-<p>The appearance in the gradient comes from the specific structure of exponential families (where <span class="math inline">\(G = \nabla^2 \mathcal{A}\)</span>). Together, they determine how the system flows through information space, with the geometry guiding the dynamics.</p>
-<h2 id="examples-revisited">Examples Revisited</h2>
-<p>For the Gaussian distribution, we saw that <span class="math inline">\(G(\boldsymbol{\theta}) = \Sigma\)</span>. This means: - The information metric <em>is</em> the covariance matrix - The inverse <span class="math inline">\(G^{-1} = \Sigma^{-1}\)</span> is the precision matrix</p>
-<p>Geometrically, the information ellipsoid has the same shape as the probability ellipsoid. This direct connection between the Fisher information and covariance is special to Gaussians (and arises because we’re working in natural parameters <span class="math inline">\(\boldsymbol{\theta} = \Sigma^{-1}\boldsymbol{\mu}\)</span>).</p>
-<p>For a categorical distribution with <span class="math inline">\(K\)</span> outcomes, the Fisher information has a special structure. Using the natural parameters <span class="math inline">\(\theta_k = \log \pi_k\)</span>, the Fisher information is <span class="math display">\[
+$$
+
+The appearance in the gradient comes from the specific structure of exponential families (where $G = \nabla^2 \mathcal{A}$). Together, they determine how the system flows through information space, with the geometry guiding the dynamics.
+
+
+
+## Examples Revisited
+
+
+
+
+
+
+
+For the Gaussian distribution, we saw that $G(\boldsymbol{\theta}) = \Sigma$. This means:
+- The information metric *is* the covariance matrix
+- The inverse $G^{-1} = \Sigma^{-1}$ is the precision matrix
+
+Geometrically, the information ellipsoid has the same shape as the probability ellipsoid. This direct connection between the Fisher information and covariance is special to Gaussians (and arises because we're working in natural parameters $\boldsymbol{\theta} = \Sigma^{-1}\boldsymbol{\mu}$).
+
+
+
+
+
+For a categorical distribution with $K$ outcomes, the Fisher information has a special structure. Using the natural parameters $\theta_k = \log \pi_k$, the Fisher information is
+$$
 G_{ij}(\boldsymbol{\theta}) = \delta_{ij}\pi_i - \pi_i\pi_j = \begin{cases}
-\pi_i(1 - \pi_i) &amp; i = j \\
--\pi_i\pi_j &amp; i \neq j
+\pi_i(1 - \pi_i) & i = j \\
+-\pi_i\pi_j & i \neq j
 \end{cases}
-\]</span></p>
-<p>This metric defines the <strong>probability simplex geometry</strong>. Distributions near the center of the simplex (all <span class="math inline">\(\pi_k \approx 1/K\)</span>) have different local geometry than those near the corners (one <span class="math inline">\(\pi_k \approx 1\)</span>). The Fisher metric captures this intrinsic curvature.</p>
-<h2 id="information-geometry-the-big-picture">Information Geometry: The Big Picture</h2>
-<p>The Fisher information matrix is a foundational element of <em>information geometry</em>, a field that studies probability distributions using differential geometric tools. Key insights:</p>
-<ol type="1">
-<li><p>**mari’s Dually Flat Structure*: Exponential families have a special property. They are “dually flat” under two different coordinate systems (natural parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> and expectation parameters <span class="math inline">\(\boldsymbol{\mu}\)</span>). The Fisher metric connects these.</p></li>
-<li><p><em>Geodesics</em>: The shortest path between two distributions (in the information geometry sense) is a geodesic. For exponential families, geodesics have elegant forms that will connect to our least action principles.</p></li>
-<li><p><em>Curvature</em>: The curvature of the statistical manifold (measured by the Riemann curvature tensor derived from <span class="math inline">\(G\)</span>) tells us about the intrinsic structure of the family. Exponential families have <em>zero curvature</em> in a certain sense—they are “flat” manifolds.</p></li>
-</ol>
-<p>These geometric properties will be essential when we study constrained information dynamics and emergence.</p>
-<h2 id="why-this-matters-for-the-inaccessible-game">Why This Matters for The Inaccessible Game</h2>
-<p>The Fisher information matrix plays three roles in our framework:</p>
-<ol type="1">
-<li><p><strong>Gradient Flow Metric</strong>: It appears in the entropy gradient, determining how the system evolves through information space via <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span>.</p></li>
-<li><p><strong>Information Distance</strong>: It defines the metric for measuring statistical distinguishability between distributions.</p></li>
-<li><p><strong>Emergence Indicator</strong>: Changes in the structure of <span class="math inline">\(G\)</span> signal the emergence of new regimes and effective descriptions.</p></li>
-</ol>
-<p>Understanding Fisher information as <em>geometry</em>, not just as a statistical tool, is key for everything that follows.</p>
-<h1 id="connecting-information-to-energy">Connecting Information to Energy</h1>
-<h2 id="the-thermodynamic-limit">The Thermodynamic Limit</h2>
-<p>Perhaps the most surprising result is that our information-theoretic constraint becomes equivalent to energy conservation in appropriate limits.</p>
-<h2 id="energy-entropy-equivalence-in-the-thermodynamic-limit">Energy-Entropy Equivalence in the Thermodynamic Limit</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We’ve seen that marginal entropy conservation <span class="math inline">\(\sum_i h_i = C\)</span> leads to GENERIC-like structure. But how does this connect to traditional thermodynamics with energy conservation? The answer lies in the thermodynamic limit.</p>
-<h3 id="the-energy-entropy-question">The Energy-Entropy Question</h3>
-<p>In real GENERIC systems, it’s not marginal entropy that’s conserved but extensive thermodynamic energy <span class="math inline">\(E\)</span>. Can we show that, under specific conditions, the marginal entropy constraint asymptotically singles out the same degeneracy direction as energy conservation?</p>
-<p>In other words, does the constraint gradient <span class="math inline">\(\nabla(\sum_i h_i)\)</span> become parallel to <span class="math inline">\(\nabla E\)</span> in appropriate limits?</p>
-<h2 id="conditions-for-equivalence">Conditions for Equivalence</h2>
-<p>The equivalence requires specific scaling properties. Using multi-information <span class="math inline">\(I = \sum_i h_i - H\)</span>, we can write: <span class="math display">\[
+$$
+
+This metric defines the **probability simplex geometry**. Distributions near the center of the simplex (all $\pi_k \approx 1/K$) have different local geometry than those near the corners (one $\pi_k \approx 1$). The Fisher metric captures this intrinsic curvature.
+
+
+
+## Information Geometry: The Big Picture
+
+
+
+
+
+The Fisher information matrix is a foundational element of *information geometry*, a field that studies probability distributions using differential geometric tools. Key insights:
+
+1. **mari's Dually Flat Structure*: Exponential families have a special property. They are "dually flat" under two different coordinate systems (natural parameters $\boldsymbol{\theta}$ and expectation parameters $\boldsymbol{\mu}$). The Fisher metric connects these.
+
+2. *Geodesics*: The shortest path between two distributions (in the information geometry sense) is a geodesic. For exponential families, geodesics have elegant forms that will connect to our least action principles.
+
+3. *Curvature*: The curvature of the statistical manifold (measured by the Riemann curvature tensor derived from $G$) tells us about the intrinsic structure of the family. Exponential families have *zero curvature* in a certain sense—they are "flat" manifolds.
+
+These geometric properties will be essential when we study constrained information dynamics and emergence.
+
+
+
+## Why This Matters for The Inaccessible Game
+
+
+
+
+
+The Fisher information matrix plays three roles in our framework:
+
+1. **Gradient Flow Metric**: It appears in the entropy gradient, determining how the system evolves through information space via $\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta}$.
+
+2. **Information Distance**: It defines the metric for measuring statistical distinguishability between distributions.
+
+3. **Emergence Indicator**: Changes in the structure of $G$  signal the emergence of new regimes and effective descriptions.
+
+Understanding Fisher information as *geometry*, not just as a statistical tool, is key  for everything that follows.
+
+
+
+
+
+# Connecting Information to Energy
+
+
+
+
+
+## The Thermodynamic Limit
+
+
+
+
+
+Perhaps the most surprising result is that our information-theoretic constraint becomes equivalent to energy conservation in appropriate limits.
+
+
+
+
+
+
+## Energy-Entropy Equivalence in the Thermodynamic Limit
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/thermodynamic-limit-equivalence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+We've seen that marginal entropy conservation $\sum_i h_i = C$ leads to GENERIC-like structure. But how does this connect to traditional thermodynamics with energy conservation? The answer lies in the thermodynamic limit.
+
+### The Energy-Entropy Question
+
+
+
+
+
+In real GENERIC systems, it's not marginal entropy that's conserved but extensive thermodynamic energy $E$. Can we show that, under specific conditions, the marginal entropy constraint asymptotically singles out the same degeneracy direction as energy conservation?
+
+In other words, does the constraint gradient $\nabla(\sum_i h_i)$ become parallel to $\nabla E$ in appropriate limits?
+
+
+
+## Conditions for Equivalence
+
+
+
+
+
+The equivalence requires specific scaling properties. Using multi-information $I = \sum_i h_i - H$, we can write:
+$$
 \nabla\left(\sum_i h_i\right) = \nabla I + \nabla H.
-\]</span></p>
-<p><em>Our requirement:</em> Along certain directions (order parameters), the multi-information gradient must scale <em>intensively</em> while entropy gradients scale <em>extensively</em>.</p>
-<p>Specifically, consider a macroscopic order parameter <span class="math inline">\(m\)</span> (like magnetization in a spin system). The requirement is: - <span class="math inline">\(\nabla_m I = \mathscr{O}(1)\)</span> (intensive) - <span class="math inline">\(\nabla_m H = \mathscr{O}(n)\)</span> (extensive) - <span class="math inline">\(\nabla_m(\sum_i h_i) = \mathscr{O}(n)\)</span> (extensive)</p>
-<p>where <span class="math inline">\(n\)</span> is the number of variables.</p>
-<p>When this scaling holds: <span class="math display">\[
+$$
+
+*Our requirement:* Along certain directions (order parameters), the multi-information gradient must scale *intensively* while entropy gradients scale *extensively*.
+
+Specifically, consider a macroscopic order parameter $m$ (like magnetization in a spin system). The requirement is:
+- $\nabla_m I = \mathscr{O}(1)$ (intensive)
+- $\nabla_m H = \mathscr{O}(n)$ (extensive)
+- $\nabla_m(\sum_i h_i) = \mathscr{O}(n)$ (extensive)
+
+where $n$ is the number of variables.
+
+
+
+
+
+When this scaling holds:
+$$
 \nabla_m\left(\sum_i h_i\right) = \nabla_m H + \nabla_m I = \mathscr{O}(n) + \mathscr{O}(1).
-\]</span></p>
-<p>In the thermodynamic limit <span class="math inline">\(n \to \infty\)</span>, the <span class="math inline">\(\mathscr{O}(1)\)</span> correction from multi-information becomes negligible: <span class="math display">\[
+$$
+
+In the thermodynamic limit $n \to \infty$, the $\mathscr{O}(1)$ correction from multi-information becomes negligible:
+$$
 \nabla_m\left(\sum_i h_i\right) \parallel \nabla_m H.
-\]</span></p>
-<h2 id="connecting-to-energy">Connecting to Energy</h2>
-<p>For exponential families, the entropy gradient in expectation parameters <span class="math inline">\(\boldsymbol{\mu} = \langle T(\mathbf{x})\rangle\)</span> is: <span class="math display">\[
+$$
+
+
+
+## Connecting to Energy
+
+
+
+
+
+For exponential families, the entropy gradient in expectation parameters $\boldsymbol{\mu} = \langle T(\mathbf{x})\rangle$ is:
+$$
 \nabla_{\boldsymbol{\mu}} H = \boldsymbol{\theta}
-\]</span> where <span class="math inline">\(\boldsymbol{\theta}\)</span> are the natural parameters.</p>
-<p>Now define an energy functional as: <span class="math display">\[
+$$
+where $\boldsymbol{\theta}$ are the natural parameters.
+
+Now define an energy functional as:
+$$
 E(\mathbf{x}) = -\boldsymbol{\alpha}^\top T(\mathbf{x})
-\]</span> where <span class="math inline">\(\boldsymbol{\alpha}\)</span> is chosen such that <span class="math inline">\(\boldsymbol{\theta} = -\beta\boldsymbol{\alpha}\)</span>. This gives: <span class="math display">\[
+$$
+where $\boldsymbol{\alpha}$ is chosen such that $\boldsymbol{\theta} = -\beta\boldsymbol{\alpha}$. This gives:
+$$
 \nabla_{\boldsymbol{\mu}} E = -\boldsymbol{\alpha} = \frac{\boldsymbol{\theta}}{\beta} = \frac{\nabla_{\boldsymbol{\mu}} H}{\beta}.
-\]</span></p>
-<p>Therefore <span class="math display">\[
+$$
+
+Therefore
+$$
 \nabla E \parallel \nabla H \parallel \nabla\left(\sum_i h_i\right)
-\]</span> along the macroscopic direction in the thermodynamic limit.</p>
-<h2 id="when-does-this-hold">When Does This Hold?</h2>
-<p>The equivalence requires:</p>
-<ol type="1">
-<li><p><strong>Macroscopic order parameter:</strong> There exists a low-dimensional direction (like total magnetisation <span class="math inline">\(m = \sum_i x_i\)</span>) that captures system-wide behavior</p></li>
-<li><p><strong>Bounded correlations:</strong> The correlation length <span class="math inline">\(\xi\)</span> remains finite (away from criticality), ensuring <span class="math inline">\(\nabla_m I\)</span> stays intensive</p></li>
-<li><p><strong>Translation invariance:</strong> Symmetry ensures marginal entropies are identical conditioned on the order parameter</p></li>
-<li><p><strong>Thermodynamic limit:</strong> Number of variables <span class="math inline">\(n \to \infty\)</span></p></li>
-</ol>
-<p>Not all systems satisfy these conditions. Near critical points, correlations diverge and the intensive scaling breaks down. In small systems, <span class="math inline">\(\mathscr{O}(1)\)</span> corrections matter. But for many physically relevant systems—bulk matter far from phase transitions—the equivalence holds and provides a bridge between information theory and thermodynamics.</p>
-<h2 id="implications">Implications</h2>
-<p>This equivalence has several implications:</p>
-<ol type="1">
-<li><p><strong>Information <span class="math inline">\(\leftrightarrow\)</span> Thermodynamics:</strong> Energy conservation and marginal entropy conservation become equivalent statements in appropriate limits</p></li>
-<li><p><strong>Temperature emergence:</strong> The parameter <span class="math inline">\(\beta\)</span> emerges as inverse temperature from the information geometry, not imposed from thermodynamics</p></li>
-<li><p><strong>Landauer’s principle:</strong> Can be derived from information conservation via this equivalence</p></li>
-<li><p><strong>Wheeler’s “it from bit”:</strong> Suggests thermodynamics might emerge from information-theoretic principles</p></li>
-</ol>
-<h2 id="generic-and-thermodynamics">GENERIC and Thermodynamics</h2>
-<h2 id="generic-as-generalized-thermodynamics">GENERIC as Generalized Thermodynamics</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>GENERIC provides a framework that <em>generalizes</em> classical thermodynamics to arbitrary non-equilibrium systems. Where classical thermodynamics describes systems near equilibrium with linear response, GENERIC handles systems arbitrarily far from equilibrium with full nonlinear dynamics.</p>
-<p><strong>Classical thermodynamics</strong> (Clausius, Kelvin, Carnot): - Equilibrium states - Quasi-static processes - Entropy maximization at equilibrium - No dynamics, only relations between states</p>
-<p><strong>Linear irreversible thermodynamics</strong> (Onsager, Prigogine): - Near-equilibrium dynamics - Linear force-flux relations - Onsager reciprocity - Valid only for small deviations</p>
-<p><strong>GENERIC</strong> (Grmela, Öttinger): - Arbitrary far-from-equilibrium states - Nonlinear dynamics - Combines reversible + irreversible - Reduces to classical thermo at equilibrium</p>
-<p>GENERIC is the completion of thermodynamics—it describes the full dynamical evolution, not just equilibrium endpoints.</p>
-<h2 id="the-laws-of-thermodynamics-in-generic">The Laws of Thermodynamics in GENERIC</h2>
-<p>GENERIC automatically encodes the fundamental laws of thermodynamics. Let’s see how:</p>
-<p><strong>Zeroth Law</strong> (Transitivity of equilibrium): At equilibrium, <span class="math inline">\(\dot{x} = L \nabla E + M \nabla S = 0\)</span>. If systems A and B are each in equilibrium with C, and equilibrium is defined by the same functionals <span class="math inline">\(E\)</span> and <span class="math inline">\(S\)</span>, then A and B are in equilibrium with each other. This follows from the uniqueness of critical points.</p>
-<p><strong>First Law</strong> (Energy conservation): <span class="math display">\[
+$$
+along the macroscopic direction in the thermodynamic limit.
+
+
+
+## When Does This Hold?
+
+
+
+
+
+The equivalence requires:
+
+1. **Macroscopic order parameter:** There exists a low-dimensional direction (like total magnetisation $m = \sum_i x_i$) that captures system-wide behavior
+
+2. **Bounded correlations:** The correlation length $\xi$ remains finite (away from criticality), ensuring $\nabla_m I$ stays intensive
+
+3. **Translation invariance:** Symmetry ensures marginal entropies are identical conditioned on the order parameter
+
+4. **Thermodynamic limit:** Number of variables $n \to \infty$
+
+
+
+Not all systems satisfy these conditions. Near critical points, correlations diverge and the intensive scaling breaks down. In small systems, $\mathscr{O}(1)$ corrections matter. But for many physically relevant systems—bulk matter far from phase transitions—the equivalence holds and provides a bridge between information theory and thermodynamics.
+
+## Implications
+
+
+
+
+
+This equivalence has several implications:
+
+1. **Information $\leftrightarrow$ Thermodynamics:** Energy conservation and marginal entropy conservation become equivalent statements in appropriate limits
+
+2. **Temperature emergence:** The parameter $\beta$ emerges as inverse temperature from the information geometry, not imposed from thermodynamics
+
+3. **Landauer's principle:** Can be derived from information conservation via this equivalence
+
+4. **Wheeler's "it from bit":** Suggests thermodynamics might emerge from information-theoretic principles
+
+
+
+
+
+
+## GENERIC and Thermodynamics
+
+
+
+
+
+
+
+
+
+
+## GENERIC as Generalized Thermodynamics
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/generic-thermodynamics-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+GENERIC provides a framework that *generalizes* classical thermodynamics to arbitrary non-equilibrium systems. Where classical thermodynamics describes systems near equilibrium with linear response, GENERIC handles systems arbitrarily far from equilibrium with full nonlinear dynamics.
+
+**Classical thermodynamics** (Clausius, Kelvin, Carnot):
+- Equilibrium states
+- Quasi-static processes
+- Entropy maximization at equilibrium
+- No dynamics, only relations between states
+
+**Linear irreversible thermodynamics** (Onsager, Prigogine):
+- Near-equilibrium dynamics
+- Linear force-flux relations
+- Onsager reciprocity
+- Valid only for small deviations
+
+**GENERIC** (Grmela, Öttinger):
+- Arbitrary far-from-equilibrium states
+- Nonlinear dynamics
+- Combines reversible + irreversible
+- Reduces to classical thermo at equilibrium
+
+GENERIC is the completion of thermodynamics—it describes the full dynamical evolution, not just equilibrium endpoints.
+
+
+
+## The Laws of Thermodynamics in GENERIC
+
+
+
+
+
+GENERIC automatically encodes the fundamental laws of thermodynamics. Let's see how:
+
+**Zeroth Law** (Transitivity of equilibrium):
+At equilibrium, $\dot{x} = L \nabla E + M \nabla S = 0$. If systems A and B are each in equilibrium with C, and equilibrium is defined by the same functionals $E$ and $S$, then A and B are in equilibrium with each other. This follows from the uniqueness of critical points.
+
+**First Law** (Energy conservation):
+$$
 \frac{\text{d}E}{\text{d}t} = \langle \nabla E, \dot{x} \rangle = \langle \nabla E, L \nabla E + M \nabla S \rangle
-\]</span> Using antisymmetry of <span class="math inline">\(L\)</span>: <span class="math inline">\(\langle \nabla E, L \nabla E \rangle = 0\)</span></p>
-<p>Using degeneracy condition 1: <span class="math inline">\(\langle \nabla E, M \nabla S \rangle = 0\)</span></p>
-<p>Therefore: <span class="math inline">\(\frac{\text{d}E}{\text{d}t} = 0\)</span> (energy is conserved!)</p>
-<p>The first law is built into GENERIC structure through antisymmetry and degeneracy.</p>
-<p><strong>Second Law</strong> (Entropy increase): <span class="math display">\[
+$$
+Using antisymmetry of $L$: $\langle \nabla E, L \nabla E \rangle = 0$
+
+Using degeneracy condition 1: $\langle \nabla E, M \nabla S \rangle = 0$
+
+Therefore: $\frac{\text{d}E}{\text{d}t} = 0$ (energy is conserved!)
+
+The first law is built into GENERIC structure through antisymmetry and degeneracy.
+
+**Second Law** (Entropy increase):
+$$
 \frac{\text{d}S}{\text{d}t} = \langle \nabla S, \dot{x} \rangle = \langle \nabla S, L \nabla E + M \nabla S \rangle
-\]</span> Using degeneracy condition 2: <span class="math inline">\(\langle \nabla S, L \nabla E \rangle = 0\)</span></p>
-<p>Using positive semi-definiteness of <span class="math inline">\(M\)</span>: <span class="math inline">\(\langle \nabla S, M \nabla S \rangle \geq 0\)</span></p>
-<p>Therefore: <span class="math inline">\(\frac{\text{d}S}{\text{d}t} \geq 0\)</span> (entropy increases!)</p>
-<p>The second law is built into GENERIC through degeneracy and positive semi-definiteness.</p>
-<p><strong>Third Law</strong> (Entropy vanishes at zero temperature): This is more subtle and depends on the specific form of <span class="math inline">\(S\)</span> and <span class="math inline">\(M\)</span>, but GENERIC is compatible with quantum mechanical formulations where the third law emerges naturally.</p>
-<h2 id="onsager-reciprocity-relations">Onsager Reciprocity Relations</h2>
-<p>One of the crowning achievements of linear irreversible thermodynamics was Onsager’s reciprocity relations <span class="citation" data-cites="Onsager-reciprocal31">(Onsager, 1931)</span>. These state that near equilibrium, the response matrix relating thermodynamic forces to fluxes is symmetric.</p>
-<p>GENERIC provides a non-linear generalization of Onsager reciprocity through the <strong>symmetry of the friction operator</strong> <span class="math inline">\(M\)</span>.</p>
-<p>Near equilibrium, expand <span class="math inline">\(M(\nabla S)\)</span> to leading order: <span class="math display">\[
+$$
+Using degeneracy condition 2: $\langle \nabla S, L \nabla E \rangle = 0$
+
+Using positive semi-definiteness of $M$: $\langle \nabla S, M \nabla S \rangle \geq 0$
+
+Therefore: $\frac{\text{d}S}{\text{d}t} \geq 0$ (entropy increases!)
+
+The second law is built into GENERIC through degeneracy and positive semi-definiteness.
+
+**Third Law** (Entropy vanishes at zero temperature):
+This is more subtle and depends on the specific form of $S$ and $M$, but GENERIC is compatible with quantum mechanical formulations where the third law emerges naturally.
+
+
+
+## Onsager Reciprocity Relations
+
+
+
+
+
+One of the crowning achievements of linear irreversible thermodynamics was Onsager's reciprocity relations [@Onsager-reciprocal31]. These state that near equilibrium, the response matrix relating thermodynamic forces to fluxes is symmetric.
+
+GENERIC provides a non-linear generalization of Onsager reciprocity through the **symmetry of the friction operator** $M$.
+
+Near equilibrium, expand $M(\nabla S)$ to leading order:
+$$
 M(x) \nabla S(x) \approx M(x_{\text{eq}}) \nabla^2 S(x_{\text{eq}}) (x - x_{\text{eq}}) = M_0 H_S (x - x_{\text{eq}})
-\]</span> where <span class="math inline">\(H_S\)</span> is the Hessian of entropy at equilibrium.</p>
-<p>The flux is <span class="math inline">\(J = M_0 H_S \delta x\)</span> and the thermodynamic force is <span class="math inline">\(X = H_S \delta x\)</span>. The response matrix is: <span class="math display">\[
+$$
+where $H_S$ is the Hessian of entropy at equilibrium.
+
+The flux is $J = M_0 H_S \delta x$ and the thermodynamic force is $X = H_S \delta x$. The response matrix is:
+$$
 J = L X \quad \text{where} \quad L = M_0
-\]</span></p>
-<p>Since <span class="math inline">\(M_0\)</span> is symmetric (GENERIC requirement), we have <span class="math inline">\(L_{ij} = L_{ji}\)</span>, which is exactly Onsager reciprocity!</p>
-<p><strong>Key insight:</strong> Onsager reciprocity isn’t a separate postulate—it’s a consequence of the symmetric structure of the friction operator, which in turn follows from thermodynamic consistency (entropy increase).</p>
-<h2 id="entropy-production">Entropy Production</h2>
-<p>A central concept in non-equilibrium thermodynamics is <strong>entropy production</strong>—the rate at which entropy is generated by irreversible processes. In GENERIC, this has a beautiful formulation.</p>
-<p>The total entropy rate is: <span class="math display">\[
+$$
+
+Since $M_0$ is symmetric (GENERIC requirement), we have $L_{ij} = L_{ji}$, which is exactly Onsager reciprocity!
+
+**Key insight:** Onsager reciprocity isn't a separate postulate—it's a consequence of the symmetric structure of the friction operator, which in turn follows from thermodynamic consistency (entropy increase).
+
+
+
+## Entropy Production
+
+
+
+
+
+A central concept in non-equilibrium thermodynamics is **entropy production**—the rate at which entropy is generated by irreversible processes. In GENERIC, this has a beautiful formulation.
+
+The total entropy rate is:
+$$
 \frac{\text{d}S}{\text{d}t} = \langle \nabla S, L \nabla E + M \nabla S \rangle = \langle \nabla S, M \nabla S \rangle
-\]</span> (using degeneracy 2: <span class="math inline">\(L \nabla S = 0\)</span>)</p>
-<p>We can decompose this as: <span class="math display">\[
+$$
+(using degeneracy 2: $L \nabla S = 0$)
+
+We can decompose this as:
+$$
 \dot{S} = \sigma_S \geq 0
-\]</span> where <span class="math inline">\(\sigma_S = \langle \nabla S, M \nabla S \rangle\)</span> is the <strong>entropy production rate</strong>.</p>
-<p>Key properties: 1. <strong>Non-negative:</strong> <span class="math inline">\(\sigma_S \geq 0\)</span> (from positive semi-definiteness of <span class="math inline">\(M\)</span>) 2. <strong>Vanishes at equilibrium:</strong> When <span class="math inline">\(\nabla S = 0\)</span>, we have <span class="math inline">\(\sigma_S = 0\)</span> 3. <strong>Measures irreversibility:</strong> <span class="math inline">\(\sigma_S\)</span> quantifies how far the system is from reversible dynamics</p>
-<p>For our information dynamics: <span class="math display">\[
+$$
+where $\sigma_S = \langle \nabla S, M \nabla S \rangle$ is the **entropy production rate**.
+
+Key properties:
+1. **Non-negative:** $\sigma_S \geq 0$ (from positive semi-definiteness of $M$)
+2. **Vanishes at equilibrium:** When $\nabla S = 0$, we have $\sigma_S = 0$
+3. **Measures irreversibility:** $\sigma_S$ quantifies how far the system is from reversible dynamics
+
+For our information dynamics:
+$$
 \sigma_S = \langle -G\boldsymbol{\theta}, G(-G\boldsymbol{\theta}) \rangle = \boldsymbol{\theta}^\top G^2 \boldsymbol{\theta}
-\]</span></p>
-<p>This is exactly the entropy production from maximum entropy dynamics (Lecture 3)! The Fisher information matrix <span class="math inline">\(G\)</span> governs the rate of entropy increase.</p>
-<h2 id="free-energy-and-dissipation">Free Energy and Dissipation</h2>
-<p>In equilibrium thermodynamics, the <strong>free energy</strong> <span class="math inline">\(F = E - TS\)</span> (where <span class="math inline">\(T\)</span> is temperature) determines equilibrium states: systems minimize <span class="math inline">\(F\)</span> at fixed temperature.</p>
-<p>In GENERIC, we can define a generalized free energy functional and show that it decreases along trajectories (for isothermal processes).</p>
-<p>For a system at temperature <span class="math inline">\(T\)</span>, define: <span class="math display">\[
+$$
+
+This is exactly the entropy production from maximum entropy dynamics (Lecture 3)! The Fisher information matrix $G$ governs the rate of entropy increase.
+
+
+
+## Free Energy and Dissipation
+
+
+
+
+
+In equilibrium thermodynamics, the **free energy** $F = E - TS$ (where $T$ is temperature) determines equilibrium states: systems minimize $F$ at fixed temperature.
+
+In GENERIC, we can define a generalized free energy functional and show that it decreases along trajectories (for isothermal processes).
+
+For a system at temperature $T$, define:
+$$
 \mathcal{F} = E - T S
-\]</span></p>
-<p>The rate of change is: <span class="math display">\[
+$$
+
+The rate of change is:
+$$
 \frac{\text{d}\mathcal{F}}{\text{d}t} = \frac{\text{d}E}{\text{d}t} - T\frac{\text{d}S}{\text{d}t} = 0 - T \sigma_S = -T \langle \nabla S, M \nabla S \rangle \leq 0
-\]</span></p>
-<p>So free energy decreases! The system dissipates toward minimum free energy at equilibrium.</p>
-<p>For information dynamics, this connects to the free energy in exponential families: <span class="math display">\[
+$$
+
+So free energy decreases! The system dissipates toward minimum free energy at equilibrium.
+
+For information dynamics, this connects to the free energy in exponential families:
+$$
 \mathcal{F}(\boldsymbol{\theta}) = -A(\boldsymbol{\theta}) + \boldsymbol{\theta}^\top \mathbb{E}[T(\mathbf{x})]
-\]</span> where <span class="math inline">\(A(\boldsymbol{\theta})\)</span> is the log partition function. The dynamics <span class="math inline">\(\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta}\)</span> perform gradient descent on free energy (under constraints).</p>
-<h2 id="fluctuation-dissipation-relations">Fluctuation-Dissipation Relations</h2>
-<p>Another deep result from statistical mechanics is the <strong>fluctuation-dissipation theorem</strong>, which relates the response of a system to perturbations to its spontaneous fluctuations at equilibrium.</p>
-<p>Near equilibrium, fluctuations in a variable <span class="math inline">\(x_i\)</span> have variance: <span class="math display">\[
+$$
+where $A(\boldsymbol{\theta})$ is the log partition function. The dynamics $\dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta}$ perform gradient descent on free energy (under constraints).
+
+
+
+## Fluctuation-Dissipation Relations
+
+
+
+
+
+Another deep result from statistical mechanics is the **fluctuation-dissipation theorem**, which relates the response of a system to perturbations to its spontaneous fluctuations at equilibrium.
+
+Near equilibrium, fluctuations in a variable $x_i$ have variance:
+$$
 \langle (\delta x_i)^2 \rangle \propto k_B T
-\]</span></p>
-<p>The response to a small force <span class="math inline">\(f_j\)</span> is: <span class="math display">\[
+$$
+
+The response to a small force $f_j$ is:
+$$
 \langle \delta x_i \rangle = \chi_{ij} f_j
-\]</span></p>
-<p>The fluctuation-dissipation theorem states: <span class="math display">\[
+$$
+
+The fluctuation-dissipation theorem states:
+$$
 \chi_{ij} \propto \frac{\langle \delta x_i \delta x_j \rangle}{k_B T}
-\]</span></p>
-<p>In GENERIC, this emerges naturally from the structure. The friction operator <span class="math inline">\(M\)</span> governs both: - <strong>Dissipation:</strong> How perturbations relax - <strong>Fluctuations:</strong> Equilibrium variance (through Gibbs distribution)</p>
-<p>For our information dynamics, <span class="math inline">\(M = G\)</span> (Fisher information), which is exactly the inverse covariance matrix for Gaussian distributions! So: <span class="math display">\[
+$$
+
+In GENERIC, this emerges naturally from the structure. The friction operator $M$ governs both:
+- **Dissipation:** How perturbations relax
+- **Fluctuations:** Equilibrium variance (through Gibbs distribution)
+
+For our information dynamics, $M = G$ (Fisher information), which is exactly the inverse covariance matrix for Gaussian distributions! So:
+$$
 G_{ij}^{-1} = \text{Cov}(T_i, T_j) = \langle (\delta T_i)(\delta T_j) \rangle
-\]</span></p>
-<p>The Fisher information (dissipation) and the covariance (fluctuations) are inverses—a direct manifestation of fluctuation-dissipation!</p>
-<h2 id="maximum-entropy-production-principle-1">Maximum Entropy Production Principle</h2>
-<p>The <strong>maximum entropy production principle</strong> (MEPP) states that non-equilibrium steady states are characterized by maximum entropy production rate subject to constraints. This principle is debated in thermodynamics, but GENERIC provides a framework for understanding when it applies.</p>
-<p>From Lecture 3, we derived that unconstrained information dynamics maximize entropy production: <span class="math display">\[
+$$
+
+The Fisher information (dissipation) and the covariance (fluctuations) are inverses—a direct manifestation of fluctuation-dissipation!
+
+
+
+## Maximum Entropy Production Principle
+
+
+
+
+
+The **maximum entropy production principle** (MEPP) states that non-equilibrium steady states are characterized by maximum entropy production rate subject to constraints. This principle is debated in thermodynamics, but GENERIC provides a framework for understanding when it applies.
+
+From Lecture 3, we derived that unconstrained information dynamics maximize entropy production:
+$$
 \dot{S} = \max_{\dot{\boldsymbol{\theta}}} \{\dot{S}(\dot{\boldsymbol{\theta}}) : \text{Fisher-constrained}\}
-\]</span></p>
-<p>With constraints, the dynamics become: <span class="math display">\[
+$$
+
+With constraints, the dynamics become:
+$$
 \dot{\boldsymbol{\theta}} = -G\boldsymbol{\theta} - \nu a
-\]</span></p>
-<p>This still maximizes entropy production <em>on the constraint manifold</em>: <span class="math display">\[
+$$
+
+This still maximizes entropy production *on the constraint manifold*:
+$$
 \dot{S} = \max_{\dot{\boldsymbol{\theta}} : a^\top\dot{\boldsymbol{\theta}}=0} \{-\boldsymbol{\theta}^\top G \dot{\boldsymbol{\theta}}\}
-\]</span></p>
-<p>So MEPP holds for information dynamics as a consequence of GENERIC structure + Fisher information as friction.</p>
-<p>The general lesson: MEPP emerges when: 1. The friction operator is related to the entropy Hessian (Fisher information) 2. Constraints are properly accounted for via Lagrange multipliers 3. The system is not externally driven</p>
-<p>GENERIC provides the mathematical framework for understanding when MEPP applies and when it doesn’t.</p>
-<h2 id="connection-to-non-equilibrium-statistical-mechanics">Connection to Non-Equilibrium Statistical Mechanics</h2>
-<p>GENERIC bridges macroscopic thermodynamics and microscopic statistical mechanics. While we’ve been working at the level of distributions and information, GENERIC can be derived from:</p>
-<p><strong>Microscopic foundations:</strong> - <strong>Liouville equation</strong> for phase space density - <strong>BBGKY hierarchy</strong> for reduced distributions<br />
-- <strong>Projection operator methods</strong> (Zwanzig-Mori)</p>
-<p>These microscopic theories show how reversible microscopic dynamics (Hamiltonian) give rise to irreversible macroscopic dynamics (dissipation) through <strong>coarse-graining</strong> and <strong>loss of information</strong>.</p>
-<p>The antisymmetric part <span class="math inline">\(L\)</span> preserves the fine-grained microscopic reversibility. The symmetric part <span class="math inline">\(M\)</span> captures the effective irreversibility from ignored microscopic degrees of freedom.</p>
-<p>For information dynamics: - Fine-grained: Full joint distribution <span class="math inline">\(p(\mathbf{x})\)</span> - Coarse-grained: Natural parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> (exponential family) - <span class="math inline">\(L\)</span>: Preserves structure within parameter space - <span class="math inline">\(M = G\)</span>: Dissipation from unobserved correlations</p>
-<p>This connects our information-theoretic approach to fundamental stat-mech!</p>
-<p><strong>Summary:</strong> GENERIC generalizes classical thermodynamics to arbitrary non-equilibrium dynamics. The laws of thermodynamics, Onsager reciprocity, entropy production, fluctuation-dissipation, and maximum entropy production all emerge as consequences of GENERIC structure. For information dynamics, Fisher information plays the role of thermodynamic friction, connecting information theory to the foundations of statistical mechanics and thermodynamics. The framework we built from axioms (Lectures 1-7) is not just mathematically consistent—it’s thermodynamically fundamental.</p>
-<h1 id="landauers-principle">Landauer’s Principle</h1>
-<p>With the energy-entropy equivalence established, we can derive Landauer’s principle—the fundamental limit on information erasure—from our information-theoretic framework.</p>
-<h2 id="landauers-principle-from-the-inaccessible-game">Landauer’s Principle from the Inaccessible Game</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The GENERIC-like structure and energy-entropy equivalence provide a natural framework for deriving Landauer’s principle <span class="citation" data-cites="Landauer-irreversibility61">(Landauer, 1961)</span>, which states that erasing information requires dissipating at least <span class="math inline">\(k_BT\log 2\)</span> of energy per bit.</p>
-<h3 id="information-erasure-as-a-process">Information Erasure as a Process</h3>
-<p>Consider erasing one bit: a memory variable <span class="math inline">\(x_i \in \{0,1\}\)</span> is reset to a standard state (say <span class="math inline">\(x_i = 0\)</span>), destroying the stored information. From an ensemble perspective—considering many such erasure operations where the initial value is random—the marginal entropy of this variable decreases: <span class="math display">\[
+$$
+
+So MEPP holds for information dynamics as a consequence of GENERIC structure + Fisher information as friction.
+
+The general lesson: MEPP emerges when:
+1. The friction operator is related to the entropy Hessian (Fisher information)
+2. Constraints are properly accounted for via Lagrange multipliers
+3. The system is not externally driven
+
+GENERIC provides the mathematical framework for understanding when MEPP applies and when it doesn't.
+
+
+
+## Connection to Non-Equilibrium Statistical Mechanics
+
+
+
+
+
+GENERIC bridges macroscopic thermodynamics and microscopic statistical mechanics. While we've been working at the level of distributions and information, GENERIC can be derived from:
+
+**Microscopic foundations:**
+- **Liouville equation** for phase space density
+- **BBGKY hierarchy** for reduced distributions  
+- **Projection operator methods** (Zwanzig-Mori)
+
+These microscopic theories show how reversible microscopic dynamics (Hamiltonian) give rise to irreversible macroscopic dynamics (dissipation) through **coarse-graining** and **loss of information**.
+
+The antisymmetric part $L$ preserves the fine-grained microscopic reversibility. The symmetric part $M$ captures the effective irreversibility from ignored microscopic degrees of freedom.
+
+For information dynamics:
+- Fine-grained: Full joint distribution $p(\mathbf{x})$
+- Coarse-grained: Natural parameters $\boldsymbol{\theta}$ (exponential family)
+- $L$: Preserves structure within parameter space
+- $M = G$: Dissipation from unobserved correlations
+
+This connects our information-theoretic approach to fundamental stat-mech!
+
+
+
+**Summary:** GENERIC generalizes classical thermodynamics to arbitrary non-equilibrium dynamics. The laws of thermodynamics, Onsager reciprocity, entropy production, fluctuation-dissipation, and maximum entropy production all emerge as consequences of GENERIC structure. For information dynamics, Fisher information plays the role of thermodynamic friction, connecting information theory to the foundations of statistical mechanics and thermodynamics. The framework we built from axioms (Lectures 1-7) is not just mathematically consistent—it's thermodynamically fundamental.
+
+
+
+# Landauer's Principle
+
+
+
+
+
+With the energy-entropy equivalence established, we can derive Landauer's principle—the fundamental limit on information erasure—from our information-theoretic framework.
+
+
+
+
+
+
+## Landauer's Principle from the Inaccessible Game
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-from-inaccessible-game.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The GENERIC-like structure and energy-entropy equivalence provide a natural framework for deriving Landauer's principle [@Landauer-irreversibility61], which states that erasing information requires dissipating at least $k_BT\log 2$ of energy per bit.
+
+### Information Erasure as a Process
+
+
+
+
+
+Consider erasing one bit: a memory variable $x_i \in \{0,1\}$ is reset to a standard state (say $x_i = 0$), destroying the stored information. From an ensemble perspective—considering many such erasure operations where the initial value is random—the marginal entropy of this variable decreases:
+$$
 \Delta h(X_i) = -\log 2.
-\]</span></p>
-<h2 id="conservation-requires-redistribution">Conservation Requires Redistribution</h2>
-<p>For a system obeying <span class="math inline">\(\sum_i h_i = C\)</span>, this decrease must be compensated by increases elsewhere: <span class="math display">\[
+$$
+
+
+
+## Conservation Requires Redistribution
+
+
+
+
+
+For a system obeying $\sum_i h_i = C$, this decrease must be compensated by increases elsewhere:
+$$
 \sum_{j \neq i} \Delta h(X_j) = +\log 2.
-\]</span></p>
-<p>The antisymmetric (conservative) part <span class="math inline">\(A\)</span> of our GENERIC dynamics preserves both <span class="math inline">\(H\)</span> and <span class="math inline">\(\sum_i h_i\)</span>. It can only shuffle entropy reversibly between variables. But such reversible redistribution doesn’t truly erase the information—it merely moves it to other variables, from which it could in principle be recovered.</p>
-<p>True irreversible erasure requires increasing the total joint entropy <span class="math inline">\(H\)</span> (second law) while maintaining <span class="math inline">\(\sum_i h_i = C\)</span>. Since <span class="math inline">\(I = \sum_i h_i - H\)</span>, this means decreasing multi-information: <span class="math display">\[
-\Delta I &lt; 0.
-\]</span></p>
-<p>This reduction of correlations is precisely what the dissipative part <span class="math inline">\(S\)</span> achieves. It increases <span class="math inline">\(H\)</span> through entropy production while the constraint forces redistribution of marginal entropies. <strong>The erasure process thus necessarily involves the dissipative dynamics</strong>, not just conservative reshuffling.</p>
-<h2 id="energy-cost-from-energy-entropy-equivalence">Energy Cost from Energy-Entropy Equivalence</h2>
-<p>In the thermodynamic limit with energy-entropy equivalence (Section 5 of the paper), the gradients <span class="math inline">\(\nabla(\sum_i h_i)\)</span> and <span class="math inline">\(\nabla E\)</span> become parallel along the order-parameter direction. Near thermal equilibrium at inverse temperature <span class="math inline">\(\beta = \tfrac{1}{k_BT}\)</span>, this implies: <span class="math display">\[
+$$
+
+The antisymmetric (conservative) part $A$ of our GENERIC dynamics preserves both $H$ and $\sum_i h_i$. It can only shuffle entropy reversibly between variables. But such reversible redistribution doesn't truly erase the information—it merely moves it to other variables, from which it could in principle be recovered.
+
+
+
+
+
+True irreversible erasure requires increasing the total joint entropy $H$ (second law) while maintaining $\sum_i h_i = C$. Since $I = \sum_i h_i - H$, this means decreasing multi-information:
+$$
+\Delta I < 0.
+$$
+
+This reduction of correlations is precisely what the dissipative part $S$ achieves. It increases $H$ through entropy production while the constraint forces redistribution of marginal entropies. **The erasure process thus necessarily involves the dissipative dynamics**, not just conservative reshuffling.
+
+
+
+## Energy Cost from Energy-Entropy Equivalence
+
+
+
+
+
+In the thermodynamic limit with energy-entropy equivalence (Section 5 of the paper), the gradients $\nabla(\sum_i h_i)$ and $\nabla E$ become parallel along the order-parameter direction. Near thermal equilibrium at inverse temperature $\beta = \tfrac{1}{k_BT}$, this implies:
+$$
 \beta \langle E \rangle \approx \sum_i h_i + \text{const}.
-\]</span></p>
-<p>Therefore, erasing one bit requires: <span class="math display">\[
+$$
+
+Therefore, erasing one bit requires:
+$$
 \Delta(\beta \langle E \rangle) \approx \Delta h(X_i) = -\log 2,
-\]</span> giving an energy change: <span class="math display">\[
+$$
+giving an energy change:
+$$
 \Delta \langle E \rangle \approx -\frac{\log 2}{\beta} = -k_BT \log 2.
-\]</span></p>
-<h2 id="dissipation-bound">Dissipation Bound</h2>
-<p>Since the system must dissipate this energy via the symmetric part <span class="math inline">\(S\)</span>, and entropy production is non-negative, we obtain Landauer’s bound <span class="math display">\[
+$$
+
+
+
+## Dissipation Bound
+
+
+
+
+
+Since the system must dissipate this energy via the symmetric part $S$, and entropy production is non-negative, we obtain Landauer's bound
+$$
 Q_{\text{dissipated}} \geq k_BT\log 2.
-\]</span></p>
-<p>This derivation shows that Landauer’s principle emerges from: 1. <strong>Marginal entropy conservation</strong> <span class="math inline">\(\sum_i h_i = C\)</span> 2. <strong>GENERIC-like structure</strong> distinguishing conservative redistribution (<span class="math inline">\(A\)</span>) from dissipative entropy production (<span class="math inline">\(S\)</span>)<br />
-3. <strong>Energy-entropy equivalence</strong> in the thermodynamic limit</p>
-<p>The insight is that erasure requires both redistributing marginal entropy (to maintain the constraint) and increasing total entropy <span class="math inline">\(H\)</span> (second law), which necessarily reduces multi-information <span class="math inline">\(I\)</span> and invokes dissipation.</p>
-<p>The information-theoretic constraint provides the foundation, with thermodynamic energy appearing as its dual in the large-system limit. This reverses the usual derivation where information bounds follow from thermodynamics — here thermodynamic bounds follow from information theory.</p>
-<h2 id="is-landauers-limit-related-to-shannons-gaussian-channel-capacity">Is Landauer’s Limit Related to Shannon’s Gaussian Channel Capacity?</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Digital memory can be viewed as a communication channel through time - storing a bit is equivalent to transmitting information to a future moment. This perspective immediately suggests that we look for a connection between Landauer’s erasure principle and Shannon’s channel capacity. The connection might arise because both these systems are about maintaining reliable information against thermal noise.</p>
-<p>The Landauer limit <span class="citation" data-cites="Landauer-irreversibility61">(Landauer, 1961)</span> is the minimum amount of heat energy that is dissapated when a bit of information is erased. Conceptually it’s the potential energy associated with holding a bit to an identifiable single value that is differentiable from the background thermal noise (representated by temperature).</p>
-<p>The Gaussian channel capacity <span class="citation" data-cites="Shannon-info48">(Shannon, 1948)</span> represents how identifiable a signal <span class="math inline">\(S\)</span>, is relative to the background noise, <span class="math inline">\(N\)</span>. Here we trigger a small exploration of potential relationship between these two values.</p>
-<p>When we store a bit in memory, we maintain a signal that can be reliably distinguished from thermal noise, just as in a communication channel. This suggests that Landauer’s limit for erasure of one bit of information, <span class="math inline">\(E_{min} = k_BT\)</span>, and Shannon’s Gaussian channel capacity, <span class="math display">\[
+$$
+
+This derivation shows that Landauer's principle emerges from:
+1. **Marginal entropy conservation** $\sum_i h_i = C$
+2. **GENERIC-like structure** distinguishing conservative redistribution ($A$) from dissipative entropy production ($S$)  
+3. **Energy-entropy equivalence** in the thermodynamic limit
+
+The insight is that erasure requires both redistributing marginal entropy (to maintain the constraint) and increasing total entropy $H$ (second law), which necessarily reduces multi-information $I$ and invokes dissipation.
+
+
+
+The information-theoretic constraint provides the foundation, with thermodynamic energy appearing as its dual in the large-system limit. This reverses the usual derivation where information bounds follow from thermodynamics --- here thermodynamic bounds follow from information theory.
+
+
+
+
+
+
+
+## Is Landauer's Limit Related to Shannon's Gaussian Channel Capacity?
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/landauer-shannon-connection.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+Digital memory can be viewed as a communication channel through time - storing a bit is equivalent to transmitting information to a future moment. This perspective immediately suggests that we look for a connection between Landauer's erasure principle and Shannon's channel capacity. The connection might arise because both these systems are about maintaining reliable information against thermal noise.
+
+The Landauer limit [@Landauer-irreversibility61] is the minimum amount of heat energy that is dissapated when a bit of information is erased. Conceptually it's the potential energy associated with holding a bit to an identifiable single value that is differentiable from the background thermal noise (representated by temperature).
+
+The Gaussian channel capacity [@Shannon-info48] represents how identifiable a signal $S$, is relative to the background noise, $N$. Here we trigger a small exploration of potential relationship between these two values.
+
+
+
+When we store a bit in memory, we maintain a signal that can be reliably distinguished from thermal noise, just as in a communication channel. This suggests that Landauer's limit for erasure of one bit of information, $E_{min} = k_BT$, and Shannon's Gaussian channel capacity,
+$$
 C = \frac{1}{2}\log_2\left(1 + \frac{S}{N}\right),
-\]</span> might be different views of the same limit.</p>
-<p>Landauer’s limit states that erasing one bit of information requires a minimum energy of <span class="math inline">\(E_{\text{min}} = k_BT\)</span>. For a communication channel operating over time <span class="math inline">\(1/B\)</span>, the signal power <span class="math inline">\(S = EB\)</span> and noise power <span class="math inline">\(N = k_BTB\)</span>. This gives us: <span class="math display">\[
+$$ 
+might be different views of the same limit.
+
+Landauer's limit states that erasing one bit of information requires a minimum energy of $E_{\text{min}} = k_BT$. For a communication channel operating over time $1/B$, the signal power $S = EB$ and noise power $N = k_BTB$. This gives us:
+$$
 C = \frac{1}{2}\log_2\left(1 + \frac{S}{N}\right) = \frac{1}{2}\log_2\left(1 + \frac{E}{k_BT}\right)
-\]</span> where the bandwidth B cancels out in the ratio.</p>
-<p>When we operate at Landauer’s limit, setting <span class="math inline">\(E = k_BT\)</span>, we get a signal-to-noise ratio of exactly 1: <span class="math display">\[
+$$
+where the bandwidth B cancels out in the ratio.
+
+When we operate at Landauer's limit, setting $E = k_BT$, we get a signal-to-noise ratio of exactly 1:
+$$
 \frac{S}{N} = \frac{E}{k_BT} = 1
-\]</span> This yields a channel capacity of exactly half a bit per second, <span class="math display">\[
+$$
+This yields a channel capacity of exactly half a bit per second,
+$$
 C = \frac{1}{2}\log_2(2) = \frac{1}{2} \text{ bit/s}
-\]</span></p>
-<p>The factor of 1/2 appears in Shannon’s formula because of Nyquist’s theorem - we need two samples per cycle at bandwidth B to represent a signal. The bandwidth <span class="math inline">\(B\)</span> appears in both signal and noise power but cancels in their ratio, showing how Landauer’s energy-per-bit limit connects to Shannon’s bits-per-second capacity.</p>
-<p>This connection suggests that Landauer’s limit may correspond to the energy needed to establish a signal-to-noise ratio sufficient to transmit one bit of information per second. The temperature <span class="math inline">\(T\)</span> may set both the minimum energy scale for information erasure and the noise floor for information transmission.</p>
-<h2 id="implications-for-information-engines">Implications for Information Engines</h2>
-<p>This connection suggests that the fundamental limits on information processing may arise from the need to maintain signals above the thermal noise floor. Whether we’re erasing information (Landauer) or transmitting it (Shannon), we need to overcome the same fundamental noise threshold set by temperature.</p>
-<p>This perspective suggests that both memory operations (erasure) and communication operations (transmission) are limited by the same physical principles. The temperature <span class="math inline">\(T\)</span> emerges as a fundamental parameter that sets the scale for both energy requirements and information capacity.</p>
-<p>The connection between Landauer’s limit and Shannon’s channel capacity is intriguing but still remains speculative. For Landauer’s original work see <span class="citation" data-cites="Landauer-irreversibility61">Landauer (1961)</span>, Bennett’s review and developments see <span class="citation" data-cites="Bennet-thermodynamics82">Bennet (1982)</span>, and for a more recent overview and connection to developments in non-equilibrium thermodynamics <span class="citation" data-cites="Parrondo-thermodynamics15">Parrondo et al. (2015)</span>.</p>
-<h1 id="implications-1">Implications</h1>
+$$
+
+The factor of 1/2 appears in Shannon's formula because of Nyquist's theorem - we need two samples per cycle at bandwidth B to represent a signal. The bandwidth $B$ appears in both signal and noise power but cancels in their ratio, showing how Landauer's energy-per-bit limit connects to Shannon's bits-per-second capacity.
+
+
+
+This connection suggests that Landauer's limit may correspond to the energy needed to establish a signal-to-noise ratio sufficient to transmit one bit of information per second. The temperature $T$ may set both the minimum energy scale for information erasure and the noise floor for information transmission.
+
+## Implications for Information Engines
+
+
+
+
+
+This connection suggests that the fundamental limits on information processing may arise from the need to maintain signals above the thermal noise floor. Whether we're erasing information (Landauer) or transmitting it (Shannon), we need to overcome the same fundamental noise threshold set by temperature.
+
+
+This perspective suggests that both memory operations (erasure) and communication operations (transmission) are limited by the same physical principles. The temperature $T$ emerges as a fundamental parameter that sets the scale for both energy requirements and information capacity.
+
+The connection between Landauer's limit and Shannon's channel capacity is intriguing but still remains speculative. For Landauer's original work see @Landauer-irreversibility61, Bennett's review and developments see @Bennet-thermodynamics82, and for a more recent overview and connection to developments in non-equilibrium thermodynamics @Parrondo-thermodynamics15.
+
+ 
+
+-->
+<h1 id="implications">Implications</h1>
 <h2 id="information-theoretic-limits">Information-Theoretic Limits</h2>
 <p>The framework reveals fundamental constraints on information processing systems, including intelligent systems.</p>
 <h2 id="information-theoretic-limits-on-intelligence">Information-Theoretic Limits on Intelligence</h2>
@@ -1226,9 +2078,6 @@ Ananthanarayanan, R., Esser, S.K., Simon, H.D., Modha, D.S., 2009. The cat is ou
 <div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
 Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
 </div>
-<div id="ref-Bennet-thermodynamics82" class="csl-entry" role="doc-biblioentry">
-Bennet, C.H., 1982. The thermodynamics of computation—a review. International Journal of Theoretical Physics 21, 906–940.
-</div>
 <div id="ref-Beretta-fourth20" class="csl-entry" role="doc-biblioentry">
 Beretta, G.P., 2020. The fourth law of thermodynamics: Steepest entropy ascent. Philosophical Transactions of the Royal Society A 378, 20190168. <a href="https://doi.org/10.1098/rsta.2019.0168">https://doi.org/10.1098/rsta.2019.0168</a>
 </div>
@@ -1244,9 +2093,6 @@ Girard, J.-Y., 1987. Linear logic. Theoretical Computer Science 50, 1–101. <a 
 <div id="ref-Godel-incompleteness31" class="csl-entry" role="doc-biblioentry">
 Gödel, K., 1931. <span>Ü</span>ber formal unentscheidbare <span>S</span><span>ä</span>tze der <span>P</span>rincipia <span>M</span>athematica und verwandter <span>S</span>ysteme <span>I</span>. Monatshefte f<span>ü</span>r Mathematik und Physik 38, 173–198. <a href="https://doi.org/10.1007/BF01700692">https://doi.org/10.1007/BF01700692</a>
 </div>
-<div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
-Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
-</div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
@@ -1255,9 +2101,6 @@ Landauer, R., 1961. Irreversibility and heat generation in the computing process
 </div>
 <div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
-</div>
-<div id="ref-Lawrence-atomic24" class="csl-entry" role="doc-biblioentry">
-Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI. Allen Lane.
 </div>
 <div id="ref-Lawrence-embodiment17" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2017. Living together: Mind and machine intelligence. arXiv.
@@ -1271,26 +2114,11 @@ MacKay, D.J.C., 2003. Information theory, inference and learning algorithms. Cam
 <div id="ref-Moravec-mind98" class="csl-entry" role="doc-biblioentry">
 Moravec, H., 1999. Robot: Mere machine to transcendent mind. Oxford University Press, New York.
 </div>
-<div id="ref-Onsager-reciprocal31" class="csl-entry" role="doc-biblioentry">
-Onsager, L., 1931. Reciprocal relations in irreversible processes. <span>I</span>. Physical Review 37, 405–426. <a href="https://doi.org/10.1103/PhysRev.37.405">https://doi.org/10.1103/PhysRev.37.405</a>
-</div>
-<div id="ref-Ottinger-beyond05" class="csl-entry" role="doc-biblioentry">
-Öttinger, H.C., 2005. Beyond equilibrium thermodynamics. Wiley-Interscience, Hoboken, NJ. <a href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>
-</div>
-<div id="ref-Ottinger-generic97" class="csl-entry" role="doc-biblioentry">
-Öttinger, H.C., Grmela, M., 1997. Dynamics and thermodynamics of complex fluids. <span>II</span>. <span>I</span>llustrations of a general formalism. Physical Review E 56, 6633–6655. <a href="https://doi.org/10.1103/PhysRevE.56.6633">https://doi.org/10.1103/PhysRevE.56.6633</a>
-</div>
-<div id="ref-Parrondo-thermodynamics15" class="csl-entry" role="doc-biblioentry">
-Parrondo, J.M.R., Horowitz, J.M., Sagawa, T., 2015. Thermodynamics of information. Nature Physics 11, 131–139. <a href="https://doi.org/10.1038/nphys3230">https://doi.org/10.1038/nphys3230</a>
-</div>
 <div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
 Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
 </div>
 <div id="ref-Sandberg-whole08" class="csl-entry" role="doc-biblioentry">
 Sandberg, A., Bostrom, N., 2008. Whole brain emulation: A roadmap (Technical Report No. 2008-3). Future of Humanity Institute, Oxford University.
-</div>
-<div id="ref-Shannon-info48" class="csl-entry" role="doc-biblioentry">
-Shannon, C.E., 1948. A mathematical theory of communication. The Bell System Technical Journal 27, 379–423, 623–656. <a href="https://doi.org/10.1002/j.1538-7305.1948.tb01338.x">https://doi.org/10.1002/j.1538-7305.1948.tb01338.x</a>
 </div>
 <div id="ref-Tarski-warhheitsbegriff36" class="csl-entry" role="doc-biblioentry">
 Tarski, A., 1936. Der wahrheitsbegriff in den formalisierten sprachen. Studia Philosophica 1, 261–405. <a href="https://doi.org/10.1515/9783112645826-016">https://doi.org/10.1515/9783112645826-016</a>

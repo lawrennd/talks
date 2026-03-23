@@ -76,7 +76,7 @@ transition: None
 * Scale/offset are just unit conventions
 }
 
-\section{Emergent Structure: GENERIC}
+<!--\section{Emergent Structure: GENERIC}
 
 \subsection{What is GENERIC?}
 
@@ -117,7 +117,7 @@ transition: None
 
 \include{_information-game/includes/landauer-from-inaccessible-game.md}
 \include{_information-game/includes/landauer-shannon-connection.md}
-
+-->
 \section{Implications}
 
 \subsection{Information-Theoretic Limits}
@@ -144,6 +144,7 @@ No-barber principle
 $\Downarrow$
 Information isolation: $\sum h_i = C$
 $\Downarrow$
+
 * GENERIC structure emerges
 * Energy-entropy equivalence
 * Landauer's principle

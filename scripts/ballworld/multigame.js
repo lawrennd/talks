@@ -91,13 +91,13 @@ class MultiGame extends Game {
 			// Clockwise tangential velocity in screen coords (y-down):
 			//   tangent_CW = (-ry, rx) / |r|
 			if (r < 1) { ball.dx = tiny(); ball.dy = tiny(); }
-			else { ball.dx = -ry / r * spd; ball.dy = rx / r * spd; }
+			else { ball.dx = -ry / r * spd + tiny(); ball.dy = rx / r * spd + tiny(); }
 			break;
 		    case 'ccw':
 			// Counter-clockwise tangential velocity:
 			//   tangent_CCW = (ry, -rx) / |r|
 			if (r < 1) { ball.dx = tiny(); ball.dy = tiny(); }
-			else { ball.dx = ry / r * spd; ball.dy = -rx / r * spd; }
+			else { ball.dx = ry / r * spd + tiny(); ball.dy = -rx / r * spd + tiny(); }
 			break;
 		}
 

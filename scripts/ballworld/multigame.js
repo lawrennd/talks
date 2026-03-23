@@ -80,13 +80,13 @@ class MultiGame extends Game {
 
 		switch (this.initType) {
 		    case 'top':
-			ball.dx = tiny(); ball.dy =  spd; break;
+			ball.dx = tiny(); ball.dy =  spd + tiny(); break;
 		    case 'bottom':
-			ball.dx = tiny(); ball.dy = -spd; break;
+			ball.dx = tiny(); ball.dy = -spd + tiny(); break;
 		    case 'left':
-			ball.dx =  spd; ball.dy = tiny(); break;
+			ball.dx =  spd + tiny(); ball.dy = tiny(); break;
 		    case 'right':
-			ball.dx = -spd; ball.dy = tiny(); break;
+			ball.dx = -spd + tiny(); ball.dy = tiny(); break;
 		    case 'cw':
 			// Clockwise tangential velocity in screen coords (y-down):
 			//   tangent_CW = (-ry, rx) / |r|

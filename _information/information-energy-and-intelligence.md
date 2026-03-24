@@ -135,21 +135,23 @@ from ipywidgets import IntSlider}
 
 \setupplotcode{import mlai.plot as plot
 import mlai
-import numpy as np}
+import numpy as np
+import os}
 
-\plotcode{diagrams="\diagramsDir/ml"
+\plotcode{diagrams="\writeDiagramsDir/ml"
 
 mu_x = 0
 var_x = 1
 mu_y = 0
 var_y = 1
 
+xlabel = "$v_x$"
+ylabel = "$v_y$"
+
 sd_x = np.sqrt(var_x)
 sd_y = np.sqrt(var_y)
 tau = 2*np.pi
 
-if not os.path.exists(diagrams):
-	os.mkdir(diagrams)
 x = np.linspace(mu_x-3*sd_x, mu_x+3*sd_x, 100)[:, np.newaxis]
 y = np.linspace(mu_y-3*sd_y, mu_y+3*sd_y, 100)[:, np.newaxis]
 
@@ -174,18 +176,20 @@ mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory=d
 
 }
 
-\plotcode{covMat = np.asarray([[1, 0.995], [0.995, 1]])
+\plotcode{correlation = 0.995
+
+covMat = np.asarray([[1, correlation], [correlation, 1]])
 fact = np.asarray([[sd_x, 0], [0, sd_y]])
 covMat = np.dot(np.dot(fact,covMat), fact)
-_, R = np.linalg.eig(covMat)
+v, R = np.linalg.eig(covMat)
 
 fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 
 
 ax.plot(mu_x, mu_y, 'x', color=[1., 0., 1.], markersize=5, linewidth=3)
 theta = np.linspace(0, tau, 100)
-xel = np.sin(theta)*sd_x
-yel = np.cos(theta)*sd_y
+xel = np.sin(theta)*np.sqrt(v[0])
+yel = np.cos(theta)*np.sqrt(v[1])
 vals = np.dot(R,np.vstack([xel, yel]))
 ax.plot(vals[0, :]+mu_x, vals[1, :]+mu_y, '-', color=[1., 0., 1.], linewidth=3)
 ax.set_xlim([np.min(x), np.max(x)])

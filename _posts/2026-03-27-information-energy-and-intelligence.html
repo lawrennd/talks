@@ -305,7 +305,22 @@ Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots -
 \end{align}\]</span> The maximum attainable entropy is <span class="math display">\[\begin{align}
 (S_I)_{max} = \log Z + \sum_{k=1}^m \lambda_k \langle f_k \rangle.
 \end{align}\]</span></p>
-<h2 id="waterhouse-and-mackay">Waterhouse and MacKay</h2>
+<h2 id="waterhouse-mackay-and-robinson">Waterhouse, MacKay and Robinson</h2>
+<p>For me, I first saw this form of variational optimisation through <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> work on Bayesian Mixtures of Experts.</p>
+<div class="figure">
+<div id="waterhouse-mackay-robinson-separable-posterior-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/waterhouse-mackay-robinson-separable-posterior.png" width="90%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="waterhouse-mackay-robinson-separable-posterior-magnify" class="magnify" onclick="magnifyFigure(&#39;waterhouse-mackay-robinson-separable-posterior&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="waterhouse-mackay-robinson-separable-posterior-caption" class="caption-frame">
+<p>Figure: Paragraph from <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.</p>
+</div>
+</div>
+<p>This approach became a mainstay of the variational Bayesian approach to machine learning.</p>
 <h2 id="the-classical-observer">The Classical Observer</h2>
 <div class="figure">
 <div id="fig:observer-eye-figure" class="figure-frame">
@@ -378,9 +393,6 @@ Reset
 </button>
 <button id="observer-inside-pause">
 Pause / Resume
-</button>
-<button id="observer-inside-skip">
-Skip 1000s
 </button>
 <p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="observer-inside-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span></p>
 </div>
@@ -2311,6 +2323,9 @@ Turing, A.M., 1936. On computable numbers, with an application to the <span>Ents
 </div>
 <div id="ref-Watanabe-multiinformation60" class="csl-entry" role="doc-biblioentry">
 Watanabe, S., 1960. Information theoretical analysis of multivariate correlation. IBM Journal of Research and Development 4, 66–82. <a href="https://doi.org/10.1147/rd.41.0066">https://doi.org/10.1147/rd.41.0066</a>
+</div>
+<div id="ref-Waterhouse-bayesian96" class="csl-entry" role="doc-biblioentry">
+Waterhouse, S., MacKay, D.J.C., Robinson, T., n.d. <span>B</span>ayesian methods for mixtures of experts. pp. 351–357.
 </div>
 <div id="ref-Wolfram-cellular83" class="csl-entry" role="doc-biblioentry">
 Wolfram, S., 1983. Statistical mechanics of cellular automata. Reviews of Modern Physics 55, 601–644. <a href="https://doi.org/10.1103/RevModPhys.55.601">https://doi.org/10.1103/RevModPhys.55.601</a>

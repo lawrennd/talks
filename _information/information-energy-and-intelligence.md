@@ -133,6 +133,71 @@ from ipywidgets import IntSlider}
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}
 
+\setupplotcode{import mlai.plot as plot
+import mlai
+import numpy as np}
+
+\plotcode{diagrams="\diagramsDir/ml"
+
+mu_x = 0
+var_x = 1
+mu_y = 0
+var_y = 1
+
+sd_x = np.sqrt(var_x)
+sd_y = np.sqrt(var_y)
+tau = 2*np.pi
+
+if not os.path.exists(diagrams):
+	os.mkdir(diagrams)
+x = np.linspace(mu_x-3*sd_x, mu_x+3*sd_x, 100)[:, np.newaxis]
+y = np.linspace(mu_y-3*sd_y, mu_y+3*sd_y, 100)[:, np.newaxis]
+
+p_x = 1/np.sqrt(tau*var_x)*np.exp(-1/(2*var_x)*(x - mu_x)**2)
+p_y = 1/np.sqrt(tau*var_y)*np.exp(-1/(2*var_y)*(y - mu_y)**2)
+
+fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
+
+ax.plot(mu_x, mu_y, 'x', color=[1., 0., 1.], markersize=5., linewidth=3)
+theta = np.linspace(0, tau, 100)
+xel = np.sin(theta)*np.sqrt(var_x) + mu_x
+yel = np.cos(theta)*np.sqrt(var_y) + mu_y
+ax.plot(xel, yel, '-', color=[1., 0., 1.], linewidth=3)
+ax.set_xlim([np.min(x), np.max(x)])
+ax.set_ylim([np.min(y), np.max(y)])
+ax.set_xticks([mu_x-3*sd_x, mu_x, mu_x+3*sd_x])
+ax.set_yticks([mu_y-3*sd_y, mu_y, mu_y+3*sd_y])
+ax.set_xlabel(xlabel, fontsize=20)
+ax.set_ylabel(ylabel, fontsize=20)
+
+mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory=diagrams, transparent=True)
+
+}
+
+\plotcode{covMat = np.asarray([[1, 0.995], [0.995, 1]])
+fact = np.asarray([[sd_x, 0], [0, sd_y]])
+covMat = np.dot(np.dot(fact,covMat), fact)
+_, R = np.linalg.eig(covMat)
+
+fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
+
+
+ax.plot(mu_x, mu_y, 'x', color=[1., 0., 1.], markersize=5, linewidth=3)
+theta = np.linspace(0, tau, 100)
+xel = np.sin(theta)*sd_x
+yel = np.cos(theta)*sd_y
+vals = np.dot(R,np.vstack([xel, yel]))
+ax.plot(vals[0, :]+mu_x, vals[1, :]+mu_y, '-', color=[1., 0., 1.], linewidth=3)
+ax.set_xlim([np.min(x), np.max(x)])
+ax.set_ylim([np.min(y), np.max(y)])
+ax.set_xticks([mu_x-3*sd_x, mu_x, mu_x+3*sd_x])
+ax.set_yticks([mu_y-3*sd_y, mu_y, mu_y+3*sd_y])
+ax.set_xlabel(xlabel, fontsize=20)
+ax.set_ylabel(ylabel, fontsize=20)
+
+mlai.write_figure(figure=fig, filename=f'correlated-gaussians.svg', directory=diagrams, transparent=True)
+}
+
 \section{Foundations: Information Loss and Entropy}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}

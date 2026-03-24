@@ -41,6 +41,7 @@ transition: None
 
 
 \include{_physics/includes/entropy-billiards.md}
+\include{_physics/includes/entropy-histogram.md}
 \include{_physics/includes/multigame-entropy.md}
 
 \newslide{Sampling Two Dimensional Variables}
@@ -73,7 +74,7 @@ from ipywidgets import IntSlider}
 \newframe{\includediagram{\diagramsDir/ml/independent_velocities007}{\width}}{independent_velocities}
 \endanimation
 }
-\notes{\figure{\includediagram{\diagramsDir/ml/independent_velocities007}{70%}}{Samples from independent Gaussian variables that might represent heights and weights.}{independent-height-weight-7}}
+\notes{\figure{\includediagram{\diagramsDir/ml/independent_velocities007}{70%}}{Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.}{independent-height-weight-7}}
 
 \newslide{Correlation}
 \slides{
@@ -113,9 +114,21 @@ from ipywidgets import IntSlider}
 
 \notes{\figure{\includediagram{\diagramsDir/ml/correlated_velocities007}{70%}}{Samples from *correlated* Gaussian variables that represent vertical and horizontal velocity.}{correlated-velocities-7}}
 
-\newslide{The Classical Observer}
 
-\figure{\includediagramslide{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{fig:observer-eye}
+\include{_physics/includes/jaynes-maximum-entropy.md}
+
+\subsection{Waterhouse, MacKay and Robinson}
+
+\notes{For me, I first saw this form of variational optimisation through @Waterhouse-bayesian96 work on Bayesian Mixtures of Experts.}
+
+\figure{\includepng{\diagramsDir/ml/waterhouse-mackay-robinson-separable-posterior}{90%}}{Paragraph from @Waterhouse-bayesian96 just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.}{waterhouse-mackay-robinson-separable-posterior}
+\slides{From @Waterhouse-bayesian96}
+
+\notes{This approach became a mainstay of the variational Bayesian approach to machine learning.}
+
+\subsection{The Classical Observer}
+
+\figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{fig:observer-eye}
 
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}

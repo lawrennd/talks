@@ -130,6 +130,24 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <p>Figure: Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
 </div>
 </div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.random.randn(<span class="dv">10000</span>, <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>xlim <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="dv">200</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x)</span></code></pre></div>
+<p>Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.</p>
+<div class="figure">
+<div id="gaussian-histogram-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="gaussian-histogram-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-histogram&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="gaussian-histogram-caption" class="caption-frame">
+<p>Figure: James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).</p>
+</div>
+</div>
 <h2 id="thermalisation-from-different-initial-conditions">Thermalisation from Different Initial Conditions</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -223,7 +241,7 @@ Skip 1000s
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="independent-height-weight-7-caption" class="caption-frame">
-<p>Figure: Samples from independent Gaussian variables that might represent heights and weights.</p>
+<p>Figure: Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.</p>
 </div>
 </div>
 <h2 id="sampling-two-dimensional-variables">Sampling Two Dimensional Variables</h2>
@@ -239,9 +257,60 @@ Skip 1000s
 <p>Figure: Samples from <em>correlated</em> Gaussian variables that represent vertical and horizontal velocity.</p>
 </div>
 </div>
+<h2 id="jaynes-and-maximum-entropy">Jaynes and Maximum Entropy</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="e-t-jaynes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="e-t-jaynes-magnify" class="magnify" onclick="magnifyFigure(&#39;e-t-jaynes&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="e-t-jaynes-caption" class="caption-frame">
+<p>Figure: Ed Jaynes who developed the maximum entropy principle</p>
+</div>
+</div>
+<h2 id="maximum-entropy-motivation">Maximum Entropy Motivation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Ed Jaynes <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>, proposed a foundation for statistical mechanics based on information theory. Jaynes recast that the problem of assigning probabilities in statistical mechanics as a problem of inference with incomplete information.</p>
+<p>A central problem in statistical mechanics is assigning initial probabilities when our knowledge is incomplete. The canonical example is if we know only the average energy of a system, what probability distribution should we use? Jaynes argued that we should use the distribution that maximises entropy subject to the constraints of our knowledge.</p>
+<p>Jaynes illustrated the approach with a simple example. If a die has been tossed many times, with an average result of 4.5 rather than the expected 3.5 for a fair die. What probability assignment <span class="math inline">\(P_n\)</span> (<span class="math inline">\(n=1,2,...,6\)</span>) should we make for the next toss?</p>
+<p>We need to satisfy two constraints <span class="math display">\[\begin{align}
+\sum_{n=1}^6 P_n &amp;= 1 \\
+\sum_{n=1}^6 n P_n &amp;= 4.5
+\end{align}\]</span></p>
+<p>Many distributions could satisfy these constraints, but which one makes the fewest unwarranted assumptions? Jaynes argued that we should choose the distribution that is maximally noncommittal with respect to missing information - the one that maximises the entropy, <span class="math display">\[\begin{align}
+S_I = -\sum_{i} p_i \log p_i
+\end{align}\]</span> This principle leads to the exponential family of distributions, which in statistical mechanics gives us the canonical ensemble and other familiar distributions.</p>
+<h2 id="the-general-maximum-entropy-formalism">The General Maximum-Entropy Formalism</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>For a more general case, suppose a quantity <span class="math inline">\(x\)</span> can take values <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span> and we know the average values of several functions <span class="math inline">\(f_k(x)\)</span>. The problem is to find the probability assignment <span class="math inline">\(p_i = p(x_i)\)</span> that satisfies <span class="math display">\[\begin{align}
+\sum_{i=1}^n p_i &amp;= 1 \\
+\sum_{i=1}^n p_i f_k(x_i) &amp;= \langle f_k(x) \rangle = F_k \quad k=1,2,\ldots,m
+\end{align}\]</span> and maximises the entropy <span class="math inline">\(S_I = -\sum_{i=1}^n p_i \log p_i\)</span>.</p>
+<p>Using Lagrange multipliers, the solution is the generalised canonical distribution, <span class="math display">\[\begin{align}
+p_i = \frac{1}{Z(\lambda_1,\ldots,\lambda_m)}\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\end{align}\]</span> where <span class="math inline">\(Z(\lambda_1,\ldots,\lambda_m)\)</span> is the partition function, <span class="math display">\[\begin{align}
+Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\end{align}\]</span> The Lagrange multipliers <span class="math inline">\(\lambda_k\)</span> are determined by the constraints, <span class="math display">\[\begin{align}
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\end{align}\]</span> The maximum attainable entropy is <span class="math display">\[\begin{align}
+(S_I)_{max} = \log Z + \sum_{k=1}^m \lambda_k \langle f_k \rangle.
+\end{align}\]</span></p>
+<h2 id="waterhouse-and-mackay">Waterhouse and MacKay</h2>
+<h2 id="the-classical-observer">The Classical Observer</h2>
 <div class="figure">
 <div id="fig:observer-eye-figure" class="figure-frame">
-<p>\includediagramslide{https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye}{60%}</p>
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" ">
+</object>
 </div>
 <div id="fig:observer-eye-magnify" class="magnify" onclick="magnifyFigure(&#39;fig:observer-eye&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
@@ -472,29 +541,29 @@ p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
 p(X_1, X_2) = 0.25 \text{ for all four combinations}
 \]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
 <p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualize this relaxation:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
 <div class="figure">
 <div id="i-plus-h-relaxation-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
@@ -601,7 +670,7 @@ H(\boldsymbol{\theta}) = \mathcal{A}(\boldsymbol{\theta}) - \boldsymbol{\theta}^
 <p>This is the natural gradient flow in the information geometry. The system would flow toward the maximum entropy state at <span class="math inline">\(\boldsymbol{\theta} = \mathbf{0}\)</span>.</p>
 <p>But we must respect <span class="math inline">\(\sum_i h_i = C\)</span> at all times. This constraint defines a manifold in parameter space. We need to project the MEP flow onto the tangent space of this constraint manifold.</p>
 <p>Using a Lagrangian formulation: <span class="math display">\[
-\mathscr{L}(\boldsymbol{\theta}, \nu) = -H(\boldsymbol{\theta}) + \nu\left(\sum_{i=1}^n h_i - C\right)
+\mathscr{L}(\boldsymbol{\theta}, \nu) = -H(\boldsymbol{\theta}) + \nu\left(\sum_{i=1}^n h_i - C\right),
 \]</span> where <span class="math inline">\(\nu\)</span> is a Lagrange multiplier (note we use <span class="math inline">\(-H\)</span> since Lagrangians are minimized by convention).</p>
 <h2 id="the-constrained-dynamics">The Constrained Dynamics</h2>
 <p>The constrained dynamics become: <span class="math display">\[
@@ -2206,6 +2275,9 @@ Gödel, K., 1931. <span>Ü</span>ber formal unentscheidbare <span>S</span><span>
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
+</div>
+<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
 <div id="ref-Landauer-irreversibility61" class="csl-entry" role="doc-biblioentry">
 Landauer, R., 1961. Irreversibility and heat generation in the computing process. IBM Journal of Research and Development 5, 183–191. <a href="https://doi.org/10.1147/rd.53.0183">https://doi.org/10.1147/rd.53.0183</a>

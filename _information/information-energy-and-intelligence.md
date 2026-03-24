@@ -43,14 +43,75 @@ transition: None
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/multigame-entropy.md}
 
-\include{_ml/includes/two-d-gaussian-independent-sample.md}
+\newslide{Sampling Two Dimensional Variables}
+
+\setupplotcode{import mlai.plot as plot}
+\plotcode{plot.independent_gaussians_sample(num_samps=8, 
+                               xlabel='$v_x$',
+                               ylabel='$v_y$',
+                               filestub="independent_velocities",
+                               diagrams='\writeDiagramsDir/ml')}
+							   
+							
+\setupdisplaycode{import notutils as nu
+from ipywidgets import IntSlider}
+
+\displaycode{nu.display_plots('independent_velocities{fig:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+							fig=IntSlider(0, 0, 7, 1))}
+
+\slides{
+\define{width}{70%}
+\startanimation{independent_velocities}{0}{7}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities000}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities001}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities002}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities003}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities004}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities005}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities006}{\width}}{independent_velocities}
+\newframe{\includediagram{\diagramsDir/ml/independent_velocities007}{\width}}{independent_velocities}
+\endanimation
+}
+\notes{\figure{\includediagram{\diagramsDir/ml/independent_velocities007}{70%}}{Samples from independent Gaussian variables that might represent heights and weights.}{independent-height-weight-7}}
 
 \newslide{Correlation}
 \slides{
 * Correlation is when two variables are dependent
 }
 
-\include{_ml/includes/two-d-gaussian-correlated-sample.md}
+\subsection{Sampling Two Dimensional Variables}
+
+\setupplotcode{import mlai.plot as plot}
+\plotcode{plot.correlated_gaussians_sample(num_samps=8, 
+                              xlabel='$v_x$',
+                              ylabel='$v_y$',
+                              filestub='correlated_velocities',
+                              diagrams='\writeDiagramsDir/ml')}
+
+\setupdisplaycode{import notutils as nu
+from ipywidgets import IntSlider}
+
+\displaycode{nu.display_plots('correlated_velocities{fig:0>3}.svg', 
+                            directory='\writeDiagramsDir/ml', 
+							fig=IntSlider(0, 0, 7, 1))}
+
+
+\slides{
+\define{weight}{70%}
+\startanimation{correlated_velocities}{0}{7}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities000}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities001}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities002}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities003}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities004}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities005}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities006}{\width}}{correlated_velocities}
+\newframe{\includediagram{\diagramsDir/ml/correlated_velocities007}{\width}}{correlated_velocities}
+\endanimation
+}
+
+\notes{\figure{\includediagram{\diagramsDir/ml/correlated_velocities007}{70%}}{Samples from *correlated* Gaussian variables that represent vertical and horizontal velocity.}{correlated-velocities-7}}
 
 \newslide{The Classical Observer}
 

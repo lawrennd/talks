@@ -139,8 +139,8 @@ import numpy as np
 import os}
 
 \helpercode{def plot_correlated_gaussian(mu_x = 0, 
-                                         var_x = 1, mu_y = 0, var_y = 1, 
-										 xlabel = "$v_x$", ylabel = "$v_y$", correlation = 0.5, ax=None, diagrams="\writeDiagramsDir/ml")
+                             var_x = 1, mu_y = 0, var_y = 1, 
+						     xlabel = "$v_x$", ylabel = "$v_y$", correlation = 0.5, ax=None, diagrams="\writeDiagramsDir/ml"):
 
     sd_x = np.sqrt(var_x)
     sd_y = np.sqrt(var_y)
@@ -156,7 +156,7 @@ import os}
     fact = np.asarray([[sd_x, 0], [0, sd_y]])
     covMat = np.dot(np.dot(fact,covMat), fact)
     v, R = np.linalg.eig(covMat)
-	if ax is None
+	if ax is None:
 	    fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 
     ax.plot(mu_x, mu_y, 'x', color=[1., 0., 1.], markersize=5, linewidth=3)
@@ -177,7 +177,7 @@ import os}
 \plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 plot_correlated_gaussian(correlation=0.0, ax=ax)
 
-mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory=diagrams, transparent=True)}
+mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)}
 
 \figure{\includediagram{\diagramsDir/ml/independent-gaussians}{60%}}{Two independent Gaussians for the $x$ and $y$ velocity of a ball.}{independent-gaussians}
 
@@ -186,24 +186,20 @@ mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory=d
 \plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 plot_correlated_gaussian(correlation=0.995, ax=ax)
 
-mlai.write_figure(figure=fig, filename=f'correlated-gaussians.svg', directory=diagrams, transparent=True)
+mlai.write_figure(figure=fig, filename=f'correlated-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)
 }
 
-\figure{\includediagram{\diagramsDir/ml/correlated-gaussians}{60%}}{A correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right.}{independent-gaussians}
+\figure{\includediagram{\diagramsDir/ml/correlated-gaussians}{60%}}{A correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right or bottom left.}{independent-gaussians}
 
 \newslide{Anticorrelated Gaussians}
 
 \plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 plot_correlated_gaussian(correlation=-0.995, ax=ax)
 
-mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directory=diagrams, transparent=True)
+mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)
 }
 
-\figure{\includediagram{\diagramsDir/ml/independent-gaussians}{60%}}{A correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right.}{independent-gaussians}
-
-\newslide{Independent Gaussians}
-
-\figure{\includediagram{\diagramsDir/ml/independent-gaussians}{60%}}{Two independent Gaussians for the $x$ and $y$ velocity of a ball.}{independent-gaussians}
+\figure{\includediagram{\diagramsDir/ml/anti-correlated-gaussians}{60%}}{An anti-correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.}{independent-gaussians}
 
 
 \section{Foundations: Information Loss and Entropy}

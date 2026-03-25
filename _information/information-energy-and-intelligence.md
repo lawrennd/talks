@@ -133,7 +133,7 @@ from ipywidgets import IntSlider}
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}
 
-\setupcode{import mlai.plot as plot
+\setuphelpercode{import mlai.plot as plot
 import mlai
 import numpy as np
 import os}
@@ -174,6 +174,9 @@ import os}
 }
 \newslide{Independent Gaussians}
 
+\setupplotcode{import matplotlib.pyplot as plt
+import mlai}
+
 \plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
 plot_correlated_gaussian(correlation=0.0, ax=ax)
 
@@ -204,7 +207,19 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \subsection{The Classical Observer}
 
-\figure{\includediagramclass{\diagramsDir/physics/observer-composite-independent}{90%}}{Here the observer is monitoring the movements of the particles. We've plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.}{observer-composite}
+\figure{\includediagramclass{\diagramsDir/physics/observer-composite-independent}{90%}}{Here the observer is monitoring the movements of the particles. We've plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.}{observer-composite-independent}
+
+\subsection{The Classical Observer - Correlated}
+
+\figure{\includediagramclass{\diagramsDir/physics/observer-composite-correlated}{90%}}{Again the observer is monitoring the movements of the particles, but here their motion is correlated ($\rho=0.95$).}{observer-composite-correlated}
+
+\subsection{The Classical Observer - Anti-correlated}
+
+\figure{\includediagramclass{\diagramsDir/physics/observer-composite-anti-correlated}{90%}}{Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated ($\rho=-0.95$).}{observer-composite-anti-correlated}
+
+\subsection{The Classical Observer - Inaccessible}
+
+\figure{\includediagramclass{\diagramsDir/physics/observer-composite-inaccessible}{90%}}{Here the observer is blocked from monitoring anything inside the sytem.}{observer-composite-inaccessible}
 
 \section{Foundations: Information Loss and Entropy}
 

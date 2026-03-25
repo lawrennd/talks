@@ -406,10 +406,6 @@ Pause / Resume
 <p>Figure: Nine billiard balls with the observer eye placed as an obstacle in the centre of the box. Balls bounce off the eye elastically. The pupil tracks the ball centroid — and flinches as they arrive. The observer is no longer passive: its presence changes the trajectories of everything it was trying to watch.</p>
 </div>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai.plot <span class="im">as</span> plot</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mlai</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span></code></pre></div>
 <div class="figure">
 <div id="independent-gaussians-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
@@ -448,15 +444,54 @@ Pause / Resume
 </div>
 <h2 id="the-classical-observer-1">The Classical Observer</h2>
 <div class="figure">
-<div id="observer-composite-figure" class="figure-frame">
+<div id="observer-composite-independent-figure" class="figure-frame">
 <object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
 </object>
 </div>
-<div id="observer-composite-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite&#39;)">
+<div id="observer-composite-independent-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-independent&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="observer-composite-caption" class="caption-frame">
+<div id="observer-composite-independent-caption" class="caption-frame">
 <p>Figure: Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.</p>
+</div>
+</div>
+<h2 id="the-classical-observer---correlated">The Classical Observer - Correlated</h2>
+<div class="figure">
+<div id="observer-composite-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-correlated-caption" class="caption-frame">
+<p>Figure: Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).</p>
+</div>
+</div>
+<h2 id="the-classical-observer---anti-correlated">The Classical Observer - Anti-correlated</h2>
+<div class="figure">
+<div id="observer-composite-anti-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-anti-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-anti-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-anti-correlated-caption" class="caption-frame">
+<p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
+</div>
+</div>
+<h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
+<div class="figure">
+<div id="observer-composite-inaccessible-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-inaccessible.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-inaccessible-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-inaccessible&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-inaccessible-caption" class="caption-frame">
+<p>Figure: Here the observer is blocked from monitoring anything inside the sytem.</p>
 </div>
 </div>
 <h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
@@ -611,29 +646,29 @@ p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
 p(X_1, X_2) = 0.25 \text{ for all four combinations}
 \]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
 <p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualize this relaxation:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
 <div class="figure">
 <div id="i-plus-h-relaxation-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">

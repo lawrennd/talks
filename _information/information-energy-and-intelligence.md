@@ -35,7 +35,7 @@ transition: None
 
 \newslide{Formalisation}
 
-\slides{* Use information theory.
+\slidesincremental{* Use information theory.
 * Introduced to me in David's group meetings from February 1998.}
 
 
@@ -77,7 +77,7 @@ from ipywidgets import IntSlider}
 \notes{\figure{\includediagram{\diagramsDir/ml/independent_velocities007}{70%}}{Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.}{independent-height-weight-7}}
 
 \newslide{Correlation}
-\slides{
+\slidesincremental{
 * Correlation is when two variables are dependent
 }
 
@@ -128,7 +128,7 @@ from ipywidgets import IntSlider}
 
 \subsection{The Classical Observer}
 
-\figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{fig:observer-eye}
+\figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{observer-eye}
 
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}
@@ -202,6 +202,10 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 \figure{\includediagram{\diagramsDir/ml/anti-correlated-gaussians}{60%}}{An anti-correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.}{independent-gaussians}
 
 
+\subsection{The Classical Observer}
+
+\figure{\includediagramclass{\diagramsDir/physics/observer-composite-independent}{90%}}{Here the observer is monitoring the movements of the particles. We've plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.}{observer-composite}
+
 \section{Foundations: Information Loss and Entropy}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}
@@ -229,7 +233,7 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \notes{A small but important design point: if we allow an \emph{external} time parameter, we've already violated the no-barber spirit. One candidate is to parameterise trajectories by entropy production itself (an affine freedom remains: choosing units and an origin for the clock). This keeps the ordering internal and avoids appealing to an externally supplied clock.}
 
-\slides{
+\slidesincremental{
 **Entropy Time:**
 
 * Avoid an externally supplied clock
@@ -298,7 +302,7 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \notes{We have explored what emerges when we demand internal adjudicability in an information-theoretic dynamical system. Starting from consistency requirements rather than physical assumptions, we derived:}
 
-\slides{
+\slidesincremental{
 **From Internal Adjudicability:**
 
 No-barber principle
@@ -324,7 +328,7 @@ $\Downarrow$
 
 \notes{I hope that David would have appreciated the attempt to build foundations carefully, to derive rather than assume, and to use mathematical structure to illuminate real constraints. His legacy continues in work that combines technical rigour with conceptual clarity.}
 
-\slides{
+\slidesincremental{
 **MacKay's Approach:**
 
 * Make assumptions explicit
@@ -351,7 +355,7 @@ These point toward future work at the intersection of information theory, geomet
 
 \notes{A common worry is Gödel-style: can any sufficiently expressive system be fully self-adjudicating? The no-barber principle is not a claim of completeness. It is a \emph{consistency condition}: don't quantify over distinctions the system cannot internally represent. If more external structure is needed, the demand is simply that it be made explicit.}
 
-\slides{
+\slidesincremental{
 **Open Questions:**
 
 * Formalise no barber principle

@@ -277,10 +277,14 @@ $$
 
 \subsection{Long Story Short}
 
+\notes{Building on these ideas, some interesting conclusions emerge. The marginal engropy constraint leads to GENERIC-like dynamics [@Grmela-dynamics97,@Ottinger-beyond05].}
+
 \slidesincremental{
 * Can derive GENERIC-like dynamics.
 * Origin suggests von Neumann entropy more natural than Shannon.
 }
+
+\notes{When characterising the origin of the game, a shift is forced from Shannon entropy to von Neumann entropy [@vonNeumann-book32]. In retrospect the shift feels natural if we take an algebraic view of quantum probability, where outcomes are no longer primitive. This is consistent with the inaccessible nature of the game.}
 
 \newslide{Connections}
 
@@ -289,12 +293,17 @@ $$
   * Thermodynamics and Inference (Jaynes).
   * Information Geometry and GENERIC.
   * Inaccessibility and noncommutative probability.
-  }
-  
+}
+
+\notes{The game is inspired by the nice connections between inference and thermodynamics explored by E. T. Jaynes, but the dynamics play out through the framework of information geometry [@Amari-information00] which makes much of the (normally complicated) calculations around Riemanian geometry relatively straightforward.}
+
 \subsection{Energy}
 
 \figure{\includepng{\diagramsDir/books/sustainable-energy-without-the-hot-air}{50%}}{David's book @MacKay-energy08 brought his clarity of thought to the challenge of sustainable energy.}{sustainable-energy-without-the-hot-air}
 \slides{@MacKay-energy08}
+
+\include{_physics/includes/pendulum-animation.md}
+\include{_physics/includes/maxwells-demon.md}
 
 \newslide{Energy}
 
@@ -307,21 +316,17 @@ See @Lawrence-inaccessible25
 
 \notes{One of the nice results of @Lawrence-inaccessible25 is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes' maximum entropy approach to determin the stationary distribution.}
 
-\section{Implications}
+\section{Intelligence}
+
+\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
 
 \subsection{Information-Theoretic Limits}
 
-\notes{The framework reveals fundamental constraints on information processing systems, including intelligent systems.}
+\notes{The framework reveals constraints on information processing systems, including intelligent systems.}
 
 \include{_information/includes/information-limits-on-intelligence.md}
 
-\subsection{Intelligence}
-
 \notes{The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.}
-
-\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
-\include{_ai/includes/superintelligence-as-perpetual-motion.md}
-
 
 \subsection{David's Approach}
 

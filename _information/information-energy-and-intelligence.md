@@ -138,14 +138,14 @@ from ipywidgets import IntSlider}
 
 \subsection{Exponential Family}
 
-\notes{This mirrors a braodly used representation in statistics known as the \emph{exponential family.}
+\notes{This mirrors a broadly used representation in statistics known as the *exponential family*.}
 
 \slides{
 $$
 p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
 $$
 where
-$\theta_i = \lambda_i$
+$\theta_i = -\lambda_i$
 }
 \notes{$$
 p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
@@ -290,15 +290,15 @@ Think of entropy as a scoring system: every probability distribution gets a numb
 * Marginal entropy of variable $i$: $h_i$
 * Joint entropy of system: $H$.
 }
-<!--
-\section{Foundations: Information Loss and Entropy}
 
-\include{_information-game/includes/inaccessible-game-set-up.md}
+<!-- \section{Foundations: Information Loss and Entropy} -->
 
-\notes{
-\include{_information-game/includes/information-isolation.md}
-}
--->
+<!-- \include{_information-game/includes/inaccessible-game-set-up.md} -->
+
+<!-- \notes{ -->
+<!-- \include{_information-game/includes/information-isolation.md} -->
+<!-- } -->
+
 \newslide{Marginal Entropy Conservation}
 
 \slides{

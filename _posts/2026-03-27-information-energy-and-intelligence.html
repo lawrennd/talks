@@ -711,7 +711,7 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> np.array([theta0, omega0])</span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>initial_energy <span class="op">=</span> pendulum_energy(theta0, omega0)</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate using simple Euler method (Hamiltonian structure preserves energy well)</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate using Störmer-Verlet method (symplectic integrator, preserves energy)</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.02</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>t_max <span class="op">=</span> <span class="fl">5.0</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="bu">int</span>(t_max <span class="op">/</span> dt)</span>
@@ -721,18 +721,19 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.zeros((num_steps, <span class="dv">2</span>))</span>
 <span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>energies <span class="op">=</span> np.zeros(num_steps)</span>
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate</span></span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>state <span class="op">=</span> initial_state.copy()</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    trajectory[i] <span class="op">=</span> state</span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    energies[i] <span class="op">=</span> pendulum_energy(state[<span class="dv">0</span>], state[<span class="dv">1</span>])</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simple symplectic Euler (preserves energy structure better)</span></span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    state[<span class="dv">1</span>] <span class="op">+=</span> pendulum_dynamics(state, times[i])[<span class="dv">1</span>] <span class="op">*</span> dt</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    state[<span class="dv">0</span>] <span class="op">+=</span> state[<span class="dv">1</span>] <span class="op">*</span> dt</span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify energy conservation</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>energy_drift <span class="op">=</span> np.<span class="bu">abs</span>(energies <span class="op">-</span> initial_energy).<span class="bu">max</span>()</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum energy drift: </span><span class="sc">{</span>energy_drift<span class="op">/</span>initial_energy<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%&quot;</span>)</span></code></pre></div>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate using Störmer-Verlet (symplectic, time-reversible)</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Half-step omega, full-step theta, half-step omega — preserves energy to machine precision</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>theta, omega <span class="op">=</span> initial_state</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    trajectory[i] <span class="op">=</span> [theta, omega]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    energies[i] <span class="op">=</span> pendulum_energy(theta, omega)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    omega_half <span class="op">=</span> omega <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> theta <span class="op">+</span> omega_half <span class="op">*</span> dt</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    omega <span class="op">=</span> omega_half <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify energy conservation</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>energy_drift <span class="op">=</span> np.<span class="bu">abs</span>(energies <span class="op">-</span> initial_energy).<span class="bu">max</span>()</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum energy drift: </span><span class="sc">{</span>energy_drift<span class="op">/</span>initial_energy<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
 <div class="centered" style="">
@@ -752,8 +753,9 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <li><p><strong>Dynamics from energy</strong>: The equation <span class="math inline">\(\frac{\text{d}\omega}{\text{d}t} = -\frac{g}{L}\sin\theta\)</span> comes from energy conservation structure</p></li>
 <li><p><strong>Trading energy</strong>: Watch kinetic (green) and potential (orange) trade off while total (red) stays constant</p></li>
 <li><p><strong>Geometric structure</strong>: The antisymmetric structure we’ll study ensures this conservation automatically</p></li>
+<li><p><strong>Störmer-Verlet integrator</strong>: The simulation uses a symplectic, time-reversible integrator — each step splits the velocity update into two half-steps either side of the position update, preserving the Hamiltonian structure and keeping energy drift at machine precision level.</p></li>
 </ol>
-<p>The animation shows the pendulum swinging with the energy plot demonstrating perfect conservation (or near-perfect with numerical drift).</p>
+<p>The animation shows the pendulum swinging with the energy plot demonstrating near-perfect conservation.</p>
 <h2 id="maxwells-demon">Maxwell’s Demon</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

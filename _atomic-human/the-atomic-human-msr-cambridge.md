@@ -42,19 +42,6 @@ dotx: custom-reference.dotx
 <!-- 9:45 - 10:30 -->
 \define{noSlideTitle}
 
-\undef{noSlideTitle}
-\newslides{People-Centric AI}
-
-\slidesincremental{
-* AI changes the *site* of decisions: speed, scale, and distance from context.
-* The question isn’t whether machines can imitate us, but what remains *irreducibly human*.
-* Trust, autonomy, and accountability are design constraints, not afterthoughts.
-}
-
-\notes{As opening keynote, aim to set a shared frame for the day. People-centric AI is about designing the delegation boundary—what we automate, what must remain human, and how responsibility stays legible—so we can build systems that scale capability without eroding trust or autonomy.}
-
-\define{noSlideTitle}
-
 \include{_ai/includes/henry-ford-intro.md}
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 
@@ -86,15 +73,6 @@ dotx: custom-reference.dotx
 \include{_atomic-human/includes/river-gods-decide.md}
 
 \include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
-
-\undef{noSlideTitle}
-\newslides{Discussion prompts}
-
-\slidesincremental{
-* What would a *good* human-in-the-loop look like when model latency is near zero?
-* Where should we draw the line between *assistance* and *delegation* in generative experiences?
-* What institutional “guardrails” preserve *trust* and *autonomy* without blocking innovation?
-}
 
 \thanks
 

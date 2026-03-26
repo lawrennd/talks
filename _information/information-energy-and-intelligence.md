@@ -49,7 +49,7 @@ transition: None
 
 \newslide{Dasher}
 
-\figure{\includegif{\diagramsDir/ml/dasher-hellow-world}{60%}}{Dasher is a single-mode text interface designed for use with a pointer. It also contains a language model and builds on arithmetic coding to suggest the next letter.}{dasher-hello-world}
+\figure{\includegif{\diagramsDir/ml/dasher-hello-world}{60%}}{Dasher is a single-mode text interface designed for use with a pointer. It also contains a language model and builds on arithmetic coding to suggest the next letter.}{dasher-hello-world}
 
 \newslide{Dasher}
 

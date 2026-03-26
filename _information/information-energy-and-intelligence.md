@@ -136,6 +136,24 @@ from ipywidgets import IntSlider}
 
 \include{_physics/includes/jaynes-maximum-entropy.md}
 
+\subsection{Exponential Family}
+
+\notes{This mirrors a braodly used representation in statistics known as the \emph{exponential family.}
+
+\slides{
+$$
+p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
+$$
+where
+$\theta_i = \lambda_i$
+}
+\notes{$$
+p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
+$$
+where
+$\theta_i = \lambda_i$
+}
+
 \subsection{Waterhouse, MacKay and Robinson}
 
 \notes{For me, I first saw this form of variational optimisation through @Waterhouse-bayesian96 work on Bayesian Mixtures of Experts.}
@@ -144,14 +162,14 @@ from ipywidgets import IntSlider}
 \slides{From @Waterhouse-bayesian96}
 
 \notes{This approach became a mainstay of the variational Bayesian approach to machine learning.}
-
+<!--
 \subsection{The Classical Observer}
 
 \figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{observer-eye}
 
 \include{_physics/includes/observer-outside.md}
 \include{_physics/includes/observer-inside.md}
-
+-->
 \setuphelpercode{import mlai.plot as plot
 import mlai
 import numpy as np

@@ -20,6 +20,7 @@ transition: None
 ---
 
 \include{_information/includes/david-mackay-memorial.md}
+\include{_information-game/includes/munchkin-provision.md}
 
 \subsection{A Tautology}
 
@@ -38,7 +39,25 @@ transition: None
 \slidesincremental{* Use information theory.
 * Introduced to me in David's group meetings from February 1998.}
 
+\newslide{Dasher}
 
+\notes{But perhaps the most memorable impression of the technology came through an interface software developed with David Ward and Alan Blackwell. The Dasher system allowed pointer based text entry.}
+
+\figure{\includepng{\diagramsDir/ml/dasher-paper-title}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
+
+\slides{@Ward-dasher00}
+
+\newslide{Dasher}
+
+\figure{\includegif{\diagramsDir/ml/dasher-hellow-world}{60%}}{Dasher is a single-mode text interface designed for use with a pointer. It also contains a language model and builds on arithmetic coding to suggest the next letter.}{dasher-hello-world}
+
+\newslide{Dasher}
+
+\notes{It had multiple extensions including a breath system which David later demonstrated in Sheffield in a workshop in 2004.}
+
+\notes{One aspect that left an impression was the use of entropy to demonstrate communication rates.}
+
+\figure{\includepng{\diagramsDir/ml/dasher-bits-per-second}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
 
 \include{_physics/includes/entropy-billiards.md}
 \include{_physics/includes/entropy-histogram.md}

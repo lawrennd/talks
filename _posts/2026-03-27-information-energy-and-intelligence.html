@@ -55,7 +55,7 @@ categories:
 <p>The work I present today on the inaccessible game is my best attempt to follow in this tradition. It tries to build on rigorous information-theoretic foundations for understanding the limitations of automotous information systems. The hope is to use this framework to underpin our understanding of information processing systems, what their limits are. I hope that David would have appreciated both the mathematical structure and the attempt to use it to deflate unrealistic promises about superintelligence which I see as problematic in the same way he felt conversations about phone chargers were problematic in distracting us from the real challenges of energy restructuring.</p>
 <p>As David told us ten years ago, he was highly inspired by John Bridle telling him (as an undergraduate student) “everything’s connected.” Across his workDavid taught us to ask: “What are the fundamental constraints? What do the numbers say?”</p>
 <p>In my best attempt to respect that spirit of inquiry, this work tries to ask: What fundamental information-theoretic constraints govern intelligent systems? Can we understand these constraints as rigorously as we understand thermodynamic constraints on engines?</p>
-<h2 id="playful">Playful</h2>
+<h2 id="ultimate">Ultimate</h2>
 <p>David was also a playful person, he enjoyed games, often rephrasing physics questions as puzzles, but also ultimate frisbee,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> or ultimate for short. One aspect of ultimate he seemed to particularly like was the “spirit of the game.” In ultimate there is no referee, no arbitration. Self arbitration is part of the spirit of the game.</p>
 <div class="figure">
 <div id="david-ultimate-figure" class="figure-frame">
@@ -71,6 +71,30 @@ categories:
 </div>
 </div>
 <p>In honour of this idea, we consider a similar principle for “zero player games.” Games of the type of Conway’s game of life (<span class="citation" data-cites="Gardner-life70">Gardner (1970)</span>) or Wolfram’s cellular automata (<span class="citation" data-cites="Wolfram-cellular83">Wolfram (1983)</span>). The principle is a conceptual constraint inspired by Russell’s paradox: it demands that the rules of our system not appeal to external adjudicators or reference points just like ultimate.</p>
+<h2 id="ultimate-1">Ultimate</h2>
+<h2 id="the-munchkin-provision">The Munchkin Provision</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/munchkin-provision.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/munchkin-provision.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Without such consistency, we would require what we might call a “Munchkin provision.” In the Munchkin card game <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span>, it is acknowledged that the cards and rules may be inconsistent. Their resolution?</p>
+<blockquote>
+<p>Any other disputes should be settled by loud arguments, with the owner of the game having the last word.</p>
+<p>Munckin Rules <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span></p>
+</blockquote>
+<p>While this works for card games, it’s unsatisfying for foundational mathematics. We want our game to be <em>internally consistent</em>, not requiring an external referee to resolve paradoxes.</p>
+<div class="figure">
+<div id="munchkin-game-cover-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//information-game/Munchkin_game_cover.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="munchkin-game-cover-magnify" class="magnify" onclick="magnifyFigure(&#39;munchkin-game-cover&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="munchkin-game-cover-caption" class="caption-frame">
+<p>Figure: The Munchkin card came has both cards and rules. The game explicitly acknowledges that this can lead to inconsistencies which should be resolved by the game owner.</p>
+</div>
+</div>
 <h2 id="a-tautology">A Tautology</h2>
 <blockquote>
 <p>Self-governing systems cannot refer to external arbitration.</p>
@@ -78,6 +102,48 @@ categories:
 <p>While this is a tautology, we’re going to try and suggest how to formalise this notion. Given that this is a memorial to David, we’re going to look to define it through information theory.</p>
 <p>When I arrived in Cambridge in February 1998, David was already working on coding and his meetings consisted of discussions of information theory, which was new to me. My background was as a Mechanical Engineer, and what I had learnt about Bayesian probability came from a terms preparation for my PhD at Aston University.</p>
 <p>David’s lectures consisted of discussions of Shannon limits and low density parity checking codes. It seemed a little familiar because the decoding was achieved through Bayesian updates.</p>
+<p>But perhaps the most memorable impression of the technology came through an interface software developed with David Ward and Alan Blackwell. The Dasher system allowed pointer based text entry.</p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-paper-title.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure: The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.</p>
+</div>
+</div>
+<div class="figure">
+<div id="dasher-hello-world-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-hellow-world.gif" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="dasher-hello-world-magnify" class="magnify" onclick="magnifyFigure(&#39;dasher-hello-world&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="dasher-hello-world-caption" class="caption-frame">
+<p>Figure: Dasher is a single-mode text interface designed for use with a pointer. It also contains a language model and builds on arithmetic coding to suggest the next letter.</p>
+</div>
+</div>
+<p>It had multiple extensions including a breath system which David later demonstrated in Sheffield in a workshop in 2004.</p>
+<p>One aspect that left an impression was the use of entropy to demonstrate communication rates.</p>
+<div class="figure">
+<div id="-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//ml/dasher-bits-per-second.png" width="60%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="-magnify" class="magnify" onclick="magnifyFigure(&#39;&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="-caption" class="caption-frame">
+<p>Figure: The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.</p>
+</div>
+</div>
 <h2 id="entropy-billiards">Entropy Billiards</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -2413,6 +2479,9 @@ Tarski, A., 1936. Der wahrheitsbegriff in den formalisierten sprachen. Studia Ph
 </div>
 <div id="ref-Turing-computable36" class="csl-entry" role="doc-biblioentry">
 Turing, A.M., 1936. On computable numbers, with an application to the <span>Entscheidungsproblem</span>. Proceedings of the London Mathematical Society 42, 230–265. <a href="https://doi.org/10.1112/plms/s2-42.1.230">https://doi.org/10.1112/plms/s2-42.1.230</a>
+</div>
+<div id="ref-Ward-dasher00" class="csl-entry" role="doc-biblioentry">
+Ward, D.J., Blackwell, A.F., MacKay, D.J.C., 2000. Dasher—a data entry interface using continuous gestures and language models, in: Proceedings of the 13th Annual ACM Symposium on User Interface Software and Technology, UIST ’00. Association for Computing Machinery, New York, NY, USA, pp. 129--137. <a href="https://doi.org/10.1145/354401.354427">https://doi.org/10.1145/354401.354427</a>
 </div>
 <div id="ref-Watanabe-multiinformation60" class="csl-entry" role="doc-biblioentry">
 Watanabe, S., 1960. Information theoretical analysis of multivariate correlation. IBM Journal of Research and Development 4, 66–82. <a href="https://doi.org/10.1147/rd.41.0066">https://doi.org/10.1147/rd.41.0066</a>

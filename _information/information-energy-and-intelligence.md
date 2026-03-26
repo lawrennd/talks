@@ -253,6 +253,7 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 \subsection{The Classical Observer - Anti-correlated}
 
 \figure{\includediagramclass{\diagramsDir/physics/observer-composite-anti-correlated}{90%}}{Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated ($\rho=-0.95$).}{observer-composite-anti-correlated}
+\include{_information-game/includes/no-barber-principle.md}
 
 \subsection{The Classical Observer - Inaccessible}
 
@@ -262,13 +263,34 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \subsection{Entropy and Impossibility}
 
-\slidesincremental{* `Forget' underlying probability.
-* Manipulate entropy directly.
-* Discover constraints on possibility.
+\notes{While we don't see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy. 
+
+Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.[^entropy-category]
+
+[^entropy-category]: More formally entropy defines a functor from the category of finite probability spaces to the poset category $(\Re, \leq)$, assigning to each object its Shannon entropy.
 }
 
-\include{_information-game/includes/no-barber-principle.md}
+\slidesincremental{* We don't see see the outcome space
+* But we summarise it using entropy
+* Entropy gives a single number measuring uncertainty
+}
 
+\newslide{Entropy and Impossibility}
+
+\slidesincremental{
+* Each distribution gets a score $\rightarrow$ compare them
+* Induces ordering from low to high uncertainty
+* Formally: a functor from FinProb to $(\Re, \leq)$
+}
+\notes{We denote marginal entropy of the $i$th variable by $h_i$. We denote the joint entropy of the entire system by $H$.}
+
+\newslide{Marginal and Joint}
+
+\slidesincremental{
+* Marginal entropy of variable $i$: $h_i$
+* Joint entropy of system: $H$.
+}
+<!--
 \section{Foundations: Information Loss and Entropy}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}
@@ -276,18 +298,15 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 \notes{
 \include{_information-game/includes/information-isolation.md}
 }
-
+-->
 \newslide{Marginal Entropy Conservation}
 
-\slidesincremental{
+\slides{
 $$
 \sum_{i=1}^N h_i = C
 $$
-
-* Exchangeable: holds for any finite subset of variables
-* Extensive: scales linearly with system size
-* Analogous to energy conservation — but for information
 }
+
 
 \subsection{The Conservation Law}
 

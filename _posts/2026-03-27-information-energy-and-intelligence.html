@@ -641,6 +641,13 @@ watch.
 <p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
 </div>
 </div>
+<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
+<p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
+<p>The no-barber principle says that admissible rules must be <em>internally adjudicable</em>: they depend only on quantities definable from within the system’s internal language, without requiring e.g. an external observer to define the co-ordinates or a privileged decomposition.</p>
 <h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
 <div class="figure">
 <div id="observer-composite-inaccessible-figure" class="figure-frame">
@@ -656,32 +663,87 @@ watch.
 </div>
 <p>When we don’t know what’s going on inside, we can’t express <em>outcomes</em> in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don’t express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what’s going on.</p>
 <h2 id="entropy-and-impossibility">Entropy and Impossibility</h2>
-<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
-<p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
-<p>The no-barber principle says that admissible rules must be <em>internally adjudicable</em>: they depend only on quantities definable from within the system’s internal language, without requiring e.g. an external observer to define the co-ordinates or a privileged decomposition.</p>
-<h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
-<h2 id="the-inaccessible-game-setup">The Inaccessible Game Setup</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
-<p>How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.</p>
-<p>In the game <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span> we introduce information conservation based on these measures of information loss.</p>
-<h2 id="information-isolation">Information Isolation</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>The first three axioms of the inaccessible game, due to , characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: <em>information isolation</em>. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.</p>
-<p>Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of <span class="math inline">\(N\)</span> variables the sum of marginal entropies <span class="math inline">\(\{h_i\}_{i=1}^{N}\)</span> sums to a constant <span class="math inline">\(C\)</span>, <span class="math display">\[
+<p>While we don’t see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy.</p>
+<p>Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>We denote marginal entropy of the <span class="math inline">\(i\)</span>th variable by <span class="math inline">\(h_i\)</span>. We denote the joint entropy of the entire system by <span class="math inline">\(H\)</span>.</p>
+<!--
+# Foundations: Information Loss and Entropy
+
+
+
+
+
+
+
+
+
+
+
+## The Inaccessible Game Setup
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+
+
+
+Inspired by the no-barber principle, we set up the game in a way that attempts to avoid "external structure". The first two things we need to do this are 
+1. A representation of information loss
+2. A prohibition of information exchange with the game
+
+How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (@Baez-characterisation11) and Parzygnat (@Parzygnat-functorial22). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.
+
+In the game [@Lawrence-inaccessible25] we introduce information conservation based on these measures of information loss.
+
+
+
+
+
+
+
+
+
+
+
+## Information Isolation
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+The first three axioms of the inaccessible game, due to \citet{Baez-characterisation11}, characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: *information isolation*. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.
+
+
+
+
+
+Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of $N$ variables the sum of marginal entropies $\{h_i\}_{i=1}^{N}$ sums to a constant $C$,
+$$
 \sum_{i=1}^N h_i = C.
-\]</span> The conservation law is imposed in an exchangeable form across the <em>marginal</em> entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.</p>
-<p>The specific form <span class="math inline">\(\sum_i h_i = C\)</span> is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form <span class="math inline">\(Q = \sum_i f(h_i)\)</span> with the same function <span class="math inline">\(f\)</span> for each variable. Extensivity (adding one variable increases <span class="math inline">\(Q\)</span> by a fixed amount) forces <span class="math inline">\(f(h) = c \cdot h + \text{const}\)</span>. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting <span class="math inline">\(c=1\)</span> gives the unique form <span class="math inline">\(\sum_i h_i = \text{const}\)</span>. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.</p>
-<p>Information isolation can be seen as stronger than frame invariance. It eliminates not only preferred reference frames but appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition <span class="math inline">\(\{X_i\}\)</span> that enters the conservation constraint is a structural choice. It is part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.</p>
-<p>In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.</p>
+$$
+The conservation law is imposed in an exchangeable form across the *marginal* entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.
+
+
+
+
+
+The specific form $\sum_i h_i = C$ is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form $Q = \sum_i f(h_i)$ with the same function $f$ for each variable. Extensivity (adding one variable increases $Q$ by a fixed amount) forces $f(h) = c \cdot h + \text{const}$. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting $c=1$ gives the unique form $\sum_i h_i = \text{const}$. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.
+
+
+
+
+
+Information isolation can be seen as stronger than frame invariance. It eliminates not only preferred reference frames but appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition $\{X_i\}$ that enters the conservation constraint is a structural choice. It is part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.
+
+In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.
+
+
+
+
+
+
+-->
 <h2 id="the-conservation-law">The Conservation Law</h2>
 <h2 id="the-i-h-c-structure">The <span class="math inline">\(I + H = C\)</span> Structure</h2>
 <div style="text-align:right">
@@ -974,9 +1036,6 @@ Alemi, A.A., Fischer, I., 2019. Ther<span>ML</span>: The thermodynamics of machi
 <div id="ref-Amari-information00" class="csl-entry" role="doc-biblioentry">
 Amari, S., Nagaoka, H., 2000. Information geometry and its applications. Springer.
 </div>
-<div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
-Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
-</div>
 <div id="ref-Brillouin-maxwell51" class="csl-entry" role="doc-biblioentry">
 Brillouin, L., 1951. Maxwell’s demon cannot operate: Information and entropy. i. Journal of Applied Physics 22, 334–337. <a href="https://doi.org/10.1063/1.1699951">https://doi.org/10.1063/1.1699951</a>
 </div>
@@ -1022,9 +1081,6 @@ Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, B
 <div id="ref-Ottinger-beyond05" class="csl-entry" role="doc-biblioentry">
 Öttinger, H.C., 2005. Beyond equilibrium thermodynamics. Wiley-Interscience, Hoboken, NJ. <a href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>
 </div>
-<div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
-Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
-</div>
 <div id="ref-Szilard-intelligenter29" class="csl-entry" role="doc-biblioentry">
 Szilard, L., 1929. <span>Ü</span>ber die <span>E</span>ntropieverminderung in einem thermodynamischen <span>S</span>ystem bei <span>E</span>ingriffen intelligenter <span>W</span>esen. Zeitschrift f<span>ü</span>r Physik 53, 840–856. <a href="https://doi.org/10.1007/BF01341281">https://doi.org/10.1007/BF01341281</a>
 </div>
@@ -1045,6 +1101,7 @@ Wolfram, S., 1983. Statistical mechanics of cellular automata. Reviews of Modern
 <hr />
 <ol>
 <li id="fn1" role="doc-endnote"><p>Have a look at the wonderful tributes to him on the <a href="https://ultimate.soc.srcf.net/davidmackay">Cambridge Ultimate website</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>More formally entropy defines a functor from the category of finite probability spaces to the poset category <span class="math inline">\((\Re, \leq)\)</span>, assigning to each object its Shannon entropy.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

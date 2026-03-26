@@ -386,92 +386,182 @@ Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots -
 <p>Figure: Paragraph from <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.</p>
 </div>
 </div>
-<p>This approach became a mainstay of the variational Bayesian approach to machine learning.</p>
-<h2 id="the-classical-observer">The Classical Observer</h2>
+<p>This approach became a mainstay of the variational Bayesian approach to machine learning. <!--
+## The Classical Observer
+
+
+
+
+
 <div class="figure">
-<div id="observer-eye-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" ">
-</object>
+<div class="figure-frame" id="observer-eye-figure">
+<object class="" data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" "></object>
 </div>
-<div id="observer-eye-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-eye&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="observer-eye-caption" class="caption-frame">
-<p>Figure: A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.</p>
+<div class="magnify" id="observer-eye-magnify" onclick="magnifyFigure('observer-eye')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="observer-eye-caption">
+Figure: A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.
 </div>
 </div>
-<h2 id="the-observer-outside-the-system">The Observer Outside the System</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In classical physics the observer stands <em>outside</em> the system and watches. The act of watching is passive: the observer gathers information without disturbing the gas. Here we make that observer explicit — a single eye that tracks the centroid of all nine balls. Its gaze follows the collective motion of the gas, but it changes nothing inside the box.</p>
-<p>Notice how the pupil drifts quietly from side to side as the balls thermalise. Early on, when all nine balls move together in the same direction, the eye makes a decisive sweep across the canvas. As collisions disperse the balls the centroid settles near the centre and the eye barely moves — the gas has become, in a sense, <em>uninteresting</em> to the observer. High entropy means the observer has nothing much to track.</p>
+
+
+
+
+
+
+## The Observer Outside the System
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+In classical physics the observer stands *outside* the system and watches.
+The act of watching is passive: the observer gathers information without
+disturbing the gas.  Here we make that observer explicit — a single eye that
+tracks the centroid of all nine balls.  Its gaze follows the collective motion
+of the gas, but it changes nothing inside the box.
+
+Notice how the pupil drifts quietly from side to side as the balls
+thermalise.  Early on, when all nine balls move together in the same direction,
+the eye makes a decisive sweep across the canvas.  As collisions disperse the
+balls the centroid settles near the centre and the eye barely moves — the gas
+has become, in a sense, *uninteresting* to the observer.  High entropy means
+the observer has nothing much to track.
+
+
+
+
 <div class="figure">
-<div id="observer-outside-figure" class="figure-frame">
+<div class="figure-frame" id="observer-outside-figure">
+
 <div style="width:100%;max-width:1020px">
 <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
 <div style="flex:1 1 260px">
-<canvas id="observer-outside-canvas" width="500" height="360" style="border:1px solid black;display:block;width:100%">
-</canvas>
+<canvas id="observer-outside-canvas" width="500" height="360"
+  style="border:1px solid black;display:block;width:100%"></canvas>
 </div>
 <div style="flex:1 1 260px">
-<canvas id="observer-outside-eye" width="480" height="480" style="border:1px solid #bbb;display:block;width:100%">
-</canvas>
+<canvas id="observer-outside-eye" width="480" height="480"
+  style="border:1px solid #bbb;display:block;width:100%"></canvas>
 </div>
 </div>
 <div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-outside-reset">
-Reset
-</button>
-<button id="observer-outside-pause">
-Pause / Resume
-</button>
-<button id="observer-outside-skip">
-Skip 1000s
-</button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="observer-outside-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span></p>
+<button id="observer-outside-reset">Reset</button>
+<button id="observer-outside-pause">Pause / Resume</button>
+<button id="observer-outside-skip">Skip 1000s</button>
+<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
+Initialisation:
+<select id="observer-outside-init">
+<option value="top">From top ↓</option>
+<option value="bottom">From bottom ↑</option>
+<option value="left">From left →</option>
+<option value="right">From right ←</option>
+<option value="cw">Clockwise ↻</option>
+<option value="ccw">Counter-CW ↺</option>
+</select>
+</span>
 </div>
 </div>
+
+
+
+
+
+
 <script src="https://inverseprobability.com/talks/scripts//ballworld/observer-outside.js"></script>
+
+
+
 </div>
-<div id="observer-outside-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-outside&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+<div class="magnify" id="observer-outside-magnify" onclick="magnifyFigure('observer-outside')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="observer-outside-caption">
+Figure: Nine billiard balls with a classical observer eye to the right.  The
+pupil tracks the ball centroid: ordered initial conditions give a decisive
+sweep of the gaze; thermalised equilibrium leaves it nearly motionless.  The
+observer watches without perturbing the gas.
 </div>
-<div id="observer-outside-caption" class="caption-frame">
-<p>Figure: Nine billiard balls with a classical observer eye to the right. The pupil tracks the ball centroid: ordered initial conditions give a decisive sweep of the gaze; thermalised equilibrium leaves it nearly motionless. The observer watches without perturbing the gas.</p>
 </div>
-</div>
-<h2 id="the-observer-inside-the-system">The Observer Inside the System</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>What happens if we put the observer <em>inside</em> the box? In classical mechanics the answer is simple: the observer becomes part of the system. The gas molecules no longer pass freely — they bounce off the observer just like they bounce off the walls. The observer is now a <em>physical object</em> that the system interacts with.</p>
-<p>The eye in the centre of the box is no longer passive. Balls collide with it, transfer momentum, and scatter in new directions. The observer’s presence reshapes the entire trajectory of the gas. Yet the eye still tries to track the ball centroid — watch the pupil dart nervously as balls come flying in from all directions.</p>
-<p>This is, of course, a joke — but a pointed one. The moment the observer enters the system, measurement and dynamics become inseparable. The observer cannot help but disturb what it is trying to observe. This is the origin of the <em>measurement problem</em> that troubles quantum mechanics: in quantum theory, unlike in classical mechanics, there is no principled way to draw a clean boundary between observer and observed.</p>
+
+
+
+
+
+
+
+
+## The Observer Inside the System
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
+What happens if we put the observer *inside* the box?  In classical
+mechanics the answer is simple: the observer becomes part of the system.  The
+gas molecules no longer pass freely — they bounce off the observer just like
+they bounce off the walls.  The observer is now a *physical object* that the
+system interacts with.
+
+The eye in the centre of the box is no longer passive.  Balls collide
+with it, transfer momentum, and scatter in new directions.  The observer's
+presence reshapes the entire trajectory of the gas.  Yet the eye still tries
+to track the ball centroid — watch the pupil dart nervously as balls come
+flying in from all directions.
+
+This is, of course, a joke — but a pointed one.  The moment the observer
+enters the system, measurement and dynamics become inseparable.  The observer
+cannot help but disturb what it is trying to observe.  This is the origin of
+the *measurement problem* that troubles quantum mechanics: in quantum theory,
+unlike in classical mechanics, there is no principled way to draw a clean
+boundary between observer and observed.
+
+
+
+
 <div class="figure">
-<div id="observer-inside-figure" class="figure-frame">
+<div class="figure-frame" id="observer-inside-figure">
+
 <div style="width:100%;max-width:700px">
-<canvas id="observer-inside-canvas" width="640" height="420" style="border:1px solid black;display:block;width:100%">
-</canvas>
+<canvas id="observer-inside-canvas" width="640" height="420"
+  style="border:1px solid black;display:block;width:100%"></canvas>
 <div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-inside-reset">
-Reset
-</button>
-<button id="observer-inside-pause">
-Pause / Resume
-</button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="observer-inside-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span></p>
+<button id="observer-inside-reset">Reset</button>
+<button id="observer-inside-pause">Pause / Resume</button>
+<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
+Initialisation:
+<select id="observer-inside-init">
+<option value="top">From top ↓</option>
+<option value="bottom">From bottom ↑</option>
+<option value="left">From left →</option>
+<option value="right">From right ←</option>
+<option value="cw">Clockwise ↻</option>
+<option value="ccw">Counter-CW ↺</option>
+</select>
+</span>
 </div>
 </div>
+
+
+
+
+
+
 <script src="https://inverseprobability.com/talks/scripts//ballworld/observer-inside.js"></script>
+
+
+
 </div>
-<div id="observer-inside-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-inside&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+<div class="magnify" id="observer-inside-magnify" onclick="magnifyFigure('observer-inside')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="observer-inside-caption">
+Figure: Nine billiard balls with the observer eye placed as an obstacle in the
+centre of the box.  Balls bounce off the eye elastically.  The pupil tracks
+the ball centroid — and flinches as they arrive.  The observer is no longer
+passive: its presence changes the trajectories of everything it was trying to
+watch.
 </div>
-<div id="observer-inside-caption" class="caption-frame">
-<p>Figure: Nine billiard balls with the observer eye placed as an obstacle in the centre of the box. Balls bounce off the eye elastically. The pupil tracks the ball centroid — and flinches as they arrive. The observer is no longer passive: its presence changes the trajectories of everything it was trying to watch.</p>
 </div>
-</div>
+
+
+
+--></p>
 <div class="figure">
 <div id="independent-gaussians-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
@@ -508,7 +598,7 @@ Pause / Resume
 <p>Figure: An anti-correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.</p>
 </div>
 </div>
-<h2 id="the-classical-observer-1">The Classical Observer</h2>
+<h2 id="the-classical-observer">The Classical Observer</h2>
 <div class="figure">
 <div id="observer-composite-independent-figure" class="figure-frame">
 <object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">

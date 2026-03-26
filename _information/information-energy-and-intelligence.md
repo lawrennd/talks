@@ -240,83 +240,73 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \figure{\includediagramclass{\diagramsDir/physics/observer-composite-inaccessible}{90%}}{Here the observer is blocked from monitoring anything inside the sytem.}{observer-composite-inaccessible}
 
-\section{Foundations: Information Loss and Entropy}
+\notes{When we don't know what's going on inside, we can't express *outcomes* in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don't express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what's going on.}
 
-\include{_information-game/includes/inaccessible-game-set-up.md}
-\include{_information-game/includes/information-isolation.md}
+\subsection{Entropy and Impossibility}
 
+\slidesincremental{* `Forget' underlying probability.
+* Manipulate entropy directly.
+* Discover constraints on possibility.
+}
 
 \include{_information-game/includes/no-barber-principle.md}
 
-\include{_maths/includes/lawvere-diagonalisation.md}
+\section{Foundations: Information Loss and Entropy}
 
-\include{_information-game/includes/inaccessible-game-introduction.md}
+\include{_information-game/includes/inaccessible-game-set-up.md}
 
-\section{Information Dynamics}
+\notes{
+\include{_information-game/includes/information-isolation.md}
+}
+
+\newslide{Marginal Entropy Conservation}
+
+\slidesincremental{
+$$
+\sum_{i=1}^N h_i = C
+$$
+
+* Exchangeable: holds for any finite subset of variables
+* Extensive: scales linearly with system size
+* Analogous to energy conservation — but for information
+}
 
 \subsection{The Conservation Law}
 
 \include{_physics/includes/i-plus-h-equals-c.md}
 
-\subsection{Information Relaxation}
-
-\include{_physics/includes/information-relaxation-mep.md}
-\include{_physics/includes/constrained-maximum-entropy-production.md}
-
-\subsection{Entropy Time (Internal Clock)}
-
-\notes{A small but important design point: if we allow an \emph{external} time parameter, we've already violated the no-barber spirit. One candidate is to parameterise trajectories by entropy production itself (an affine freedom remains: choosing units and an origin for the clock). This keeps the ordering internal and avoids appealing to an externally supplied clock.}
+\subsection{Long Story Short}
 
 \slidesincremental{
-**Entropy Time:**
-
-* Avoid an externally supplied clock
-* Use entropy production to parameterise flow
-* Scale/offset are just unit conventions
+* Can derive GENERIC-like dynamics.
+* Origin suggests von Neumann entropy more natural than Shannon.
 }
 
-<!--\section{Emergent Structure: GENERIC}
+\newslide{Connections}
 
-\subsection{What is GENERIC?}
+\slidesincremental{
+* Nice connections between.
+  * Thermodynamics and Inference (Jaynes).
+  * Information Geometry and GENERIC.
+  * Inaccessibility and noncommutative probability.
+  }
+  
+\subsection{Energy}
 
-\notes{The constrained maximum entropy production leads to a GENERIC-like structure. A framework from non-equilibrium thermodynamics that combines reversible (energy conserving) and irreversible dynamics (entropy producing).}
+\figure{\includepng{\diagramsDir/books/sustainable-energy-without-the-hot-air}{50%}}{David's book @MacKay-energy08 brought his clarity of thought to the challenge of sustainable energy.}{sustainable-energy-without-the-hot-air}
+\slides{@MacKay-energy08}
 
-\include{_physics/includes/generic-framework-intro.md}
-\include{_physics/includes/generic-equation-structure.md}
+\newslide{Energy}
 
-\subsection{Automatic Degeneracy}
+\slidesincremental{
+* In certain thermodynamic limits:
+  * Marginal entropy conservation $\equiv$ Energy conservation
 
-\notes{In standard GENERIC applications, ensuring thermodynamic consistency requires careful hand-crafting of operators. In our framework, the consistency conditions emerge automatically.}
+See @Lawrence-inaccessible25
+}
 
-\include{_physics/includes/degeneracy-conditions-automatic.md}
+\notes{One of the nice results of @Lawrence-inaccessible25 is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes' maximum entropy approach to determin the stationary distribution.}
 
-\section{Information Topography}
-
-\notes{The Fisher information matrix provides mathematical precision to the intuitive notion of an "information topography"—the landscape that shapes how information can flow.}
-
-\include{_information-game/includes/fisher-as-conductance-tensor.md}
-\include{_information/includes/information-topography-definition.md}
-\include{_information-game/includes/fisher-information-geometry.md}
-
-\section{Connecting Information to Energy}
-
-\subsection{The Thermodynamic Limit}
-
-\notes{Perhaps the most surprising result is that our information-theoretic constraint becomes equivalent to energy conservation in appropriate limits.}
-
-\include{_physics/includes/thermodynamic-limit-equivalence.md}
-
-\subsection{GENERIC and Thermodynamics}
-
-\include{_physics/includes/generic-thermodynamics-connection.md}
-
-\section{Landauer's Principle}
-
-\notes{With the energy-entropy equivalence established, we can derive Landauer's principle—the fundamental limit on information erasure—from our information-theoretic framework.}
-
-\include{_information-game/includes/landauer-from-inaccessible-game.md}
-\include{_information-game/includes/landauer-shannon-connection.md}
--->
 \section{Implications}
 
 \subsection{Information-Theoretic Limits}
@@ -325,78 +315,34 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \include{_information/includes/information-limits-on-intelligence.md}
 
-\subsection{A Thought on Intelligence}
+\subsection{Intelligence}
 
 \notes{The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.}
 
 \include{_information/includes/perpetual-motion-superintelligence-analogy.md}
 \include{_ai/includes/superintelligence-as-perpetual-motion.md}
 
+
+\subsection{David's Approach}
+
+\notes{David MacKay taught us to ask: "What are the fundamental constraints? What do the numbers actually say?". Today this way of thinking still inspires me, and the inaccessible game is the work I'm interested in that I think comes closest in spirit to that legacy.}
+
+\slidesincremental{
+* Make assumptions explicit
+* Explore consequences rigorously 
+* Let mathematics reveal structure
+* Use reasoning to illuminate constraints
+}
+
 \section{Conclusions}
+
+\slidesincremental{
+* I see that approach in others
+* I hope to find it in my own work
+}
 
 \notes{We have explored what emerges when we demand internal adjudicability in an information-theoretic dynamical system. Starting from consistency requirements rather than physical assumptions, we derived:}
 
-\slidesincremental{
-**From Internal Adjudicability:**
-
-No-barber principle
-$\Downarrow$
-Information isolation: $\sum h_i = C$
-$\Downarrow$
-
-* GENERIC structure emerges
-* Energy-entropy equivalence
-* Landauer's principle
-* Information bounds
-}
-
-\notes{This reverses the usual logic. Rather than starting with thermodynamics and deriving information bounds, we start with information-theoretic consistency and derive thermodynamic structure. This suggests Wheeler's "it from bit" vision may be realisable: physical laws emerging from information-theoretic constraints.}
-
-\subsection{Broader Relevance?}
-
-\include{_information/includes/theory-construction-hint.md}
-
-\subsection{David MacKay's Legacy}
-
-\notes{David MacKay taught us to ask: "What are the fundamental constraints? What do the numbers actually say?" This work follows that tradition—making assumptions explicit, exploring consequences rigorously, and letting the mathematics reveal structure.}
-
-\notes{I hope that David would have appreciated the attempt to build foundations carefully, to derive rather than assume, and to use mathematical structure to illuminate real constraints. His legacy continues in work that combines technical rigour with conceptual clarity.}
-
-\slidesincremental{
-**MacKay's Approach:**
-
-* Make assumptions explicit
-* Explore consequences rigorously  
-* Let mathematics reveal structure
-* Use reasoning to illuminate constraints
-
-**This work continues that tradition**
-}
-
-\include{_information-game/includes/no-barber-selections.md}
-
-\subsection{Open Questions}
-
-\notes{Many questions remain:
-
-1. Can we formalize "axiomatic distinguishability" more rigorously?
-2. Does the Jacobi identity hold globally, or only for symmetric configurations?
-3. Can this framework extend to quantum systems beyond the origin?
-4. What other structures emerge from internal adjudicability?
-5. Does this constraint illuminate other areas of theory construction?
-
-These point toward future work at the intersection of information theory, geometry, and foundations.}
-
-\notes{A common worry is Gödel-style: can any sufficiently expressive system be fully self-adjudicating? The no-barber principle is not a claim of completeness. It is a \emph{consistency condition}: don't quantify over distinctions the system cannot internally represent. If more external structure is needed, the demand is simply that it be made explicit.}
-
-\slidesincremental{
-**Open Questions:**
-
-* Formalise no barber principle
-* What is the stage/game board/space
-
-*Much to explore*
-}
 
 \thanks
 

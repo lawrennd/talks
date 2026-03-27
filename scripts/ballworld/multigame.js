@@ -136,6 +136,8 @@ class MultiGame extends Game {
 
     reset() {
 	this.objects.balls = [];
+	this.simulation.draw = true;
+	this.simulation.time = 0;
 	this.birth();
     }
 
@@ -404,7 +406,9 @@ const mgDisplaySel = document.getElementById('multigame-display');
 
 if (mgResetBtn) mgResetBtn.addEventListener('click', () => multigame.reset());
 if (mgPauseBtn) mgPauseBtn.addEventListener('click', () => multigame.togglePause());
-if (mgSkipBtn)  mgSkipBtn.addEventListener('click',  () => multigame.toggleDraw());
+if (mgSkipBtn)  mgSkipBtn.addEventListener('click',  () => {
+    if (!multigame.simulation.paused) multigame.toggleDraw();
+});
 if (mgInitSel) {
     mgInitSel.addEventListener('change', function () {
 	multigame.initType = this.value;

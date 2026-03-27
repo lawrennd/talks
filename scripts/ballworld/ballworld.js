@@ -248,42 +248,6 @@ function Membrane(context, x, y, w, h, color) {
     };
 }
 
-function Ball(context, x, y, radius) {
-    this.radius = radius;
-    this.dx = randomDx();
-    this.dy = randomDy();
-    // mass is that of a sphere as opposed to circle.
-    // it *does* make a difference.
-    this.mass = this.radius * this.radius * this.radius;
-    this.x = x;
-    this.y = y;
-    this.color = randomColor(this);
-    this.draw = function() {
-        context.ctx.beginPath();
-        context.ctx.arc(Math.round(this.x), Math.round(this.y), this.radius, 0, 2*Math.PI);
-        context.ctx.fillStyle = this.color;
-        context.ctx.fill();
-        context.ctx.strokeStyle = 'rgba(0, 0, 0, 0.6)';
-        context.ctx.stroke();
-        context.ctx.closePath();
-    };
-    this.speed = function() {
-        // magnitude of velocity vector
-        return Math.sqrt(this.dx * this.dx + this.dy * this.dy);
-    };
-    this.angle = function() {
-        //angle of ball with the x axis
-        return Math.atan2(this.dy, this.dx);
-    };
-    this.kineticEnergy = function () {
-    // only for masturbation purposes, not rly used for computation.
-        return (0.5 * this.mass * this.speed() * this.speed());
-    };
-    this.onGround = function() {
-        return (this.y + this.radius >= context.canvas.height)
-    }
-}
-
 function Post(context, x, y, radius, color) {
     this.radius = radius;
     this.dx = 0;
@@ -373,9 +337,9 @@ function distance(a, b) {
 
 
 function diffuseRandom(scale) {
-    sum = 0;
-    total = 10;
-    for (i=0; i<total; i++)
+    let sum = 0;
+    let total = 10;
+    for (let i=0; i<total; i++)
     {
 	sum+= Math.random()-0.5;
     }
@@ -443,7 +407,7 @@ function bounces (circle, rect)
         return { bounce: true, x:dx, y:dy };
     }
     // circle is near the corner
-    bounce = side.x*side.x + side.y*side.y  <= circle.radius*circle.radius;
+    let bounce = side.x*side.x + side.y*side.y  <= circle.radius*circle.radius;
     if (!bounce) return { bounce:false }
     let norm = Math.sqrt (side.x*side.x+side.y*side.y);
     let dx = center.x < 0 ? -1 : 1;
@@ -498,7 +462,7 @@ async function draw(game) {
 	game.clearCanvas();
     game.canvasBackground();
     do {
-	setTimeout(runPhysics(game), game.simulation.dt);
+	runPhysics(game);
     }
     while(!game.simulation.draw)
 
@@ -728,8 +692,8 @@ class Game {
 	{
 	    if (ball.x - ball.radius + ball.dx < 0 ||
 		ball.x + ball.radius + ball.dx > this.context.canvas.width) {
-		ball.dx *= -1;
-		this.applyInelasticity(ball, params);
+	    ball.dx *= -1;
+		this.applyInelasticity(ball);
 	    }
 	    if (ball.x + ball.radius > this.context.canvas.width) {
 		ball.x = this.context.canvas.width - ball.radius;

@@ -298,14 +298,6 @@ Think of entropy as a scoring system: every probability distribution gets a numb
 * Joint entropy of system: $H$.
 }
 
-<!-- \section{Foundations: Information Loss and Entropy} -->
-
-<!-- include{_information-game/includes/inaccessible-game-set-up.md} -->
-
-<!-- \notes{ -->
-<!-- include{_information-game/includes/information-isolation.md} -->
-<!-- } -->
-
 \section{Energy}
 
 \subsection{Energy Constraints}

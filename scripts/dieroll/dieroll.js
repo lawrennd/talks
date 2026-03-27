@@ -37,7 +37,7 @@ const FACE_COLORS = [
 ];
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let rawWeights  = [1, 1, 1, 1, 1, 1];
+let rawWeights  = [5, 5, 5, 5, 5, 5];  // start at slider mid-point
 let probs       = [1/6, 1/6, 1/6, 1/6, 1/6, 1/6];
 let counts      = [0, 0, 0, 0, 0, 0];
 let totalRolls  = 0;
@@ -336,12 +336,9 @@ function rebuildProbs() {
         ? [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
         : rawWeights.map(w => w / total);
 
-    // Show normalised weight (slider position / max = 0–1) so the label
-    // scale is stable regardless of which distribution is active.
-    // The actual probability for each face is visible in the histogram.
     for (let i = 0; i < 6; i++) {
         const el = document.getElementById(`dieroll-pval-${i}`);
-        if (el) el.textContent = (rawWeights[i] / 10).toFixed(3);
+        if (el) el.textContent = probs[i].toFixed(3);
     }
 
     let H = 0;
@@ -370,12 +367,14 @@ function maxEntropyDist(targetMean) {
 }
 
 function setWeights(ws) {
-    // Always normalise so the largest weight fills the slider (max=10).
-    // rawWeights must stay in sync with slider positions so that later
-    // manual drags produce the expected relative-weight behaviour.
     const maxW = Math.max(...ws, 1e-9);
+    const minW = Math.min(...ws);
+    // For equal-weight (uniform) distributions place sliders at the
+    // midpoint so the user can both increase and decrease any face.
+    // For non-uniform distributions normalise the maximum to 10.
+    const targetMax = (maxW - minW) / maxW < 0.01 ? 5 : 10;
     for (let i = 0; i < 6; i++) {
-        rawWeights[i] = ws[i] / maxW * 10;
+        rawWeights[i] = ws[i] / maxW * targetMax;
         const s = document.getElementById(`dieroll-pslider-${i}`);
         if (s) s.value = rawWeights[i].toString();
     }
@@ -400,7 +399,7 @@ function buildSliders() {
         slider.min     = '0';
         slider.max     = '10';
         slider.step    = '0.05';
-        slider.value   = '1';
+        slider.value   = '5';        // start at mid-point, matching rawWeights init
         slider.id      = `dieroll-pslider-${i}`;
         slider.style.cssText = 'flex:1;accent-color:#c0392b;cursor:pointer';
         slider.addEventListener('input', function () {
@@ -411,7 +410,7 @@ function buildSliders() {
         const val = document.createElement('span');
         val.style.cssText = 'width:42px;text-align:right;font-family:monospace;font-size:0.8em;color:#7ec8e3';
         val.id            = `dieroll-pval-${i}`;
-        val.textContent   = '1.000';
+        val.textContent   = (1/6).toFixed(3);
 
         row.appendChild(icon);
         row.appendChild(slider);

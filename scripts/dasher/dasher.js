@@ -22,6 +22,16 @@
 'use strict';
 
 // ── Language model ────────────────────────────────────────────────────────────
+//
+// Source: approximate English letter-frequency tables.
+//   UNI  – unigram probabilities (single-character frequencies)
+//          from standard published English text statistics (Norvig/Brown corpus
+//          approximations).  Space is treated as the 27th character.
+//   BI   – conditional bigram distributions for the 13 most common characters.
+//          These are hand-smoothed approximations; a production system would
+//          use trained n-gram or neural language model probabilities.
+//   BIGRAM_WEIGHT – when a bigram entry exists, blend bigram (82%) + unigram (18%)
+//          so rare contexts degrade gracefully to unigram statistics.
 
 const CHARS = ' abcdefghijklmnopqrstuvwxyz';
 
@@ -78,6 +88,18 @@ function buildDist(probs) {
 function entropy(probs) {
     return Object.values(probs).reduce((H, p) => p > 0 ? H - p * Math.log2(p) : H, 0);
 }
+
+// ── Sub-distribution cache ────────────────────────────────────────────────────
+// Keys are single characters; cache is invalidated whenever S.text changes.
+// getSubDist(c) returns buildDist(getProbs(S.text + c)).
+let subDistCache = {};
+function getSubDist(char) {
+    if (!subDistCache[char]) {
+        subDistCache[char] = buildDist(getProbs(S.text + char));
+    }
+    return subDistCache[char];
+}
+function clearSubCache() { subDistCache = {}; }
 
 // Band colours — bright HSL palette so bands are clearly visible on any background
 const BAND_COLORS = [
@@ -168,7 +190,13 @@ function render() {
     ctx.fillStyle = '#16213e';
     ctx.fillRect(bandLeft, 0, bandW, H);
 
-    // ── Probability bands ──────────────────────────────────────────────────
+    // ── Probability bands (two-level fractal) ────────────────────────────────
+    // Each band's LEFT portion shows the parent character label.
+    // Each band's RIGHT portion shows the next-level sub-distribution —
+    // i.e. P(next | context + this_char) — creating the recursive/fractal
+    // structure that is the core of arithmetic-coding navigation.
+    const LABEL_W_PX = 56; // fixed pixel width reserved for parent label
+
     if (S.dist && vRange > 0) {
         for (const item of S.dist) {
             if (item.cumHigh <= S.viewMin || item.cumLow >= S.viewMax) continue;
@@ -181,42 +209,102 @@ function render() {
             const bh    = Math.max(natH, 4);
             const midY  = sTop + natH / 2;
 
-            const col    = CHAR_COLOR[item.char] || '#888';
-            const aimed  = S.mouseY !== null && S.mouseY >= sTop && S.mouseY < sTop + bh;
+            const col   = CHAR_COLOR[item.char] || '#888';
+            const aimed = S.mouseY !== null && S.mouseY >= sTop && S.mouseY < sTop + bh;
+            const lz    = Math.min(LABEL_W_PX, bandW * 0.18); // label zone width
 
-            // Full-opacity colour fill — always clearly visible
-            ctx.globalAlpha = aimed ? 0.75 : 0.45;
+            // Subtle full-width background tint (gives the band a colour identity)
+            ctx.globalAlpha = aimed ? 0.18 : 0.10;
             ctx.fillStyle   = col;
             ctx.fillRect(bandLeft, sTop, bandW, bh);
             ctx.globalAlpha = 1;
 
-            // Bold left-edge stripe
-            ctx.fillStyle = col;
-            ctx.fillRect(bandLeft, sTop, aimed ? 8 : 4, bh);
+            // Solid label zone (left portion of band)
+            ctx.globalAlpha = aimed ? 0.90 : 0.65;
+            ctx.fillStyle   = col;
+            ctx.fillRect(bandLeft, sTop, lz, bh);
+            ctx.globalAlpha = 1;
 
-            // Separator line
+            // Left-edge accent stripe
+            ctx.fillStyle = col;
+            ctx.fillRect(bandLeft, sTop, aimed ? 5 : 3, bh);
+
+            // ── Sub-distribution (fractal interior) ─────────────────────────
+            // Shown when the parent band is tall enough to host children.
+            // The sub-bands are placed inside the right portion of the parent
+            // band, each sub-band height ∝ P(next_char | context + parent_char).
+            if (natH >= 28) {
+                const subX = bandLeft + lz + 2;
+                const subW = W - subX - 1;
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.rect(subX, sTop, subW, bh);
+                ctx.clip();
+
+                const subDist = getSubDist(item.char);
+                let   cumY    = sTop;
+                for (const sc of subDist) {
+                    const scH = sc.prob * bh;
+                    if (scH < 1.5) break; // sorted descending; rest are smaller
+
+                    const scCol = CHAR_COLOR[sc.char] || '#888';
+                    ctx.globalAlpha = aimed ? 0.80 : 0.62;
+                    ctx.fillStyle   = scCol;
+                    ctx.fillRect(subX, cumY, subW, scH);
+                    ctx.globalAlpha = 1;
+
+                    // Thin separator between sub-bands
+                    ctx.fillStyle = '#16213e';
+                    ctx.fillRect(subX, cumY + scH - 1, subW, 1);
+
+                    // Sub-character label (when sub-band is tall enough)
+                    if (scH >= 9) {
+                        const sfs = clamp(scH * 0.58, 7, 20);
+                        ctx.font         = `bold ${sfs}px "Courier New", monospace`;
+                        ctx.textBaseline = 'middle';
+                        ctx.textAlign    = 'left';
+                        ctx.fillStyle    = '#ffffffee';
+                        ctx.fillText(sc.char === ' ' ? '⎵' : sc.char,
+                            subX + 5, cumY + scH / 2);
+                        // Sub-band probability (right-aligned, if wide enough)
+                        if (scH >= 14 && subW > 80) {
+                            ctx.font      = `${clamp(scH * 0.30, 7, 12)}px "Courier New", monospace`;
+                            ctx.textAlign = 'right';
+                            ctx.fillStyle = '#ffffffaa';
+                            ctx.fillText((sc.prob * 100).toFixed(1) + '%',
+                                subX + subW - 6, cumY + scH / 2);
+                        }
+                    }
+                    cumY += scH;
+                }
+                ctx.restore();
+            }
+
+            // Band separator
             ctx.fillStyle = '#16213e';
             ctx.fillRect(bandLeft, sTop + bh - 1, bandW, 1);
 
-            // Character label — scales with band height
+            // Parent character label (drawn on top, centred in label zone)
             if (bh >= 10) {
                 const fs = clamp(natH * 0.65, 9, 48);
                 ctx.font         = `bold ${fs}px "Courier New", monospace`;
                 ctx.textBaseline = 'middle';
-                ctx.textAlign    = 'left';
-                ctx.fillStyle    = aimed ? '#ffffff' : '#ffffffdd';
+                ctx.textAlign    = 'center';
+                ctx.fillStyle    = '#ffffff';
                 ctx.fillText(item.char === ' ' ? '⎵' : item.char,
-                    bandLeft + 14, midY);
+                    bandLeft + lz / 2, midY);
             }
 
-            // Probability as percentage
-            if (bh >= 20) {
-                const fs = clamp(natH * 0.28, 8, 13);
-                ctx.font         = `${fs}px "Courier New", monospace`;
+            // Parent probability percentage (below label, if band is tall)
+            if (bh >= 22) {
+                const pfs = clamp(natH * 0.26, 7, 12);
+                ctx.font         = `${pfs}px "Courier New", monospace`;
                 ctx.textBaseline = 'middle';
-                ctx.textAlign    = 'right';
-                ctx.fillStyle    = '#ffffffbb';
-                ctx.fillText((item.prob * 100).toFixed(1) + '%', bandLeft + bandW - 10, midY);
+                ctx.textAlign    = 'center';
+                ctx.fillStyle    = '#ffffffcc';
+                ctx.fillText((item.prob * 100).toFixed(1) + '%',
+                    bandLeft + lz / 2, midY + clamp(natH * 0.38, 8, 28));
             }
         }
     }
@@ -409,6 +497,7 @@ function commitChar(item) {
     S.dist       = buildDist(S.probs);
     S.viewMin    = 0;
     S.viewMax    = 1;
+    clearSubCache();
     updateDisplay();
 }
 
@@ -421,6 +510,7 @@ function deleteChar() {
     S.dist      = buildDist(S.probs);
     S.viewMin   = 0;
     S.viewMax   = 1;
+    clearSubCache();
     updateDisplay();
 }
 
@@ -430,6 +520,7 @@ function resetAll() {
     S.flash = 0; S.lastChar = '';
     S.probs = getProbs('');
     S.dist  = buildDist(S.probs);
+    clearSubCache();
     updateDisplay();
     render();
 }

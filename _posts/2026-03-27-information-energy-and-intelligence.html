@@ -188,15 +188,6 @@ categories:
 <p>Figure: Dasher: continuous-zoom arithmetic coding interface. Move the mouse to the right to zoom toward the character at your vertical cursor position. Character height is proportional to P(char | context), so common letters present large targets. Try typing “th” — ‘e’ expands to fill nearly the whole display.</p>
 </div>
 </div>
-<p>The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to <span class="math inline">\(P(\text{char}|\text{context})\)</span> — the conditional probability given the characters already typed. Clicking a character “zooms in” on its probability slice, then reveals the next level of conditional probabilities.</p>
-<p>The key visual correspondences are:</p>
-<ul>
-<li><strong>Band height</strong> <span class="math inline">\(\propto P(\text{char}|\text{context})\)</span> — the wider the band, the more likely the character.</li>
-<li><strong>Bits column</strong> shows <span class="math inline">\(-\log_2 P(\text{char}|\text{context})\)</span> — the information content you communicate by choosing that character.</li>
-<li><strong>Entropy <span class="math inline">\(H\)</span></strong> (top-right) is the expected bits for the next character given context. After ‘q,’ <span class="math inline">\(H\)</span> collapses toward zero: ‘u’ is almost certain.</li>
-<li><strong>Total bits</strong> tracks the cumulative information content of your typed string — predictable text (like “the”) accrues bits slowly; surprising text accrues them quickly.</li>
-</ul>
-<p>Try typing “q” to see conditional entropy near zero, then “th” to see “e” dominate.</p>
 <!-- 
 
 

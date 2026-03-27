@@ -64,22 +64,6 @@ transition: None
 
 \include{_ml/includes/dasher.md}
 
-\newslide{Dasher — Information Content as Screen Space}
-
-\notes{The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to $P(\text{char}|\text{context})$ — the conditional probability given the characters already typed. Clicking a character "zooms in" on its probability slice, then reveals the next level of conditional probabilities.
-
-The key visual correspondences are:
-
-* **Band height** $\propto P(\text{char}|\text{context})$ — the wider the band, the more likely the character.
-* **Bits column** shows $-\log_2 P(\text{char}|\text{context})$ — the information content you communicate by choosing that character.
-* **Entropy $H$** (top-right) is the expected bits for the next character given context. After 'q', $H$ collapses toward zero: 'u' is almost certain.
-* **Total bits** tracks the cumulative information content of your typed string — predictable text (like "the") accrues bits slowly; surprising text accrues them quickly.
-
-Try typing "q" to see conditional entropy near zero, then "th" to see "e" dominate.}
-
-\slides{
-<iframe src="\diagramsDir/ml/dasher-demo.html" style="width:100%;height:520px;border:none;border-radius:4px;" allowfullscreen></iframe>
-}
 
 <!-- \include{_physics/includes/entropy-billiards.md} -->
 <!-- \include{_physics/includes/entropy-histogram.md} -->

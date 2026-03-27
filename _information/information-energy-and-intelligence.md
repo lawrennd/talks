@@ -262,6 +262,11 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 
 \include{_information-game/includes/no-barber-principle.md}
 
+\newslide{The Game}
+
+\slides{\figure{\includejpg{\diagramsDir/information/david-ultimate}{60%}}{David playing ultimate. Picture is taken from [one of his last blog posts](https://itila.blogspot.com/2016/04/perhaps-my-last-post-well-see.html).}{david-ultimate}}
+
+
 \subsection{The Classical Observer - Inaccessible}
 
 \figure{\includediagramclass{\diagramsDir/physics/observer-composite-inaccessible}{90%}}{Here the observer is blocked from monitoring anything inside the sytem.}{observer-composite-inaccessible}
@@ -295,7 +300,8 @@ Think of entropy as a scoring system: every probability distribution gets a numb
 
 \slidesincremental{
 * Marginal entropy of variable $i$: $h_i$
-* Joint entropy of system: $H$.
+* Joint entropy of system: $H$
+* Multiinformation $I = \sum_i h_i - H$
 }
 
 \section{Energy}

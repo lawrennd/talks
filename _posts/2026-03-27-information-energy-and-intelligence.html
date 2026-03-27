@@ -303,10 +303,10 @@ P_n = \frac{e^{\lambda n}}{Z(\lambda)}, \qquad Z(\lambda) = \sum_{n=1}^6 e^{\lam
 \end{align}\]</span> where <span class="math inline">\(\lambda &gt; 0\)</span> is chosen so the mean constraint is satisfied. This avoids any unwarranted assumption beyond the available data.</p>
 <div class="figure">
 <div id="dieroll-simulation-figure" class="figure-frame">
-<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.9em">
-<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;min-width:190px">
-<canvas id="dieroll-die" width="180" height="180" style="display:block;cursor:pointer">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
+<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
+<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
 </canvas>
 <div style="font-size:0.75em;color:#888;text-align:center">
 click die or button to roll
@@ -319,17 +319,17 @@ Roll
 Roll ×100
 </button>
 </div>
-<div style="text-align:center;line-height:2;font-size:0.85em">
+<div style="text-align:center;line-height:1.6;font-size:0.85em">
 <p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
 </div>
 <button id="dieroll-reset">
 Reset history
 </button>
 </div>
-<div style="flex:1;min-width:300px">
-<canvas id="dieroll-hist" width="500" height="260" style="display:block;width:100%;height:auto;border-radius:6px">
+<div style="flex:1;min-width:280px">
+<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
 </canvas>
-<div style="margin-top:10px">
+<div style="margin-top:6px">
 <div style="font-style:italic;margin-bottom:6px;color:#888">
 <p>Outcome weights (auto-normalised to probabilities)</p>
 </div>
@@ -700,74 +700,7 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <li><p><strong>Störmer-Verlet integrator</strong>: The simulation uses a symplectic, time-reversible integrator — each step splits the velocity update into two half-steps either side of the position update, preserving the Hamiltonian structure and keeping energy drift at machine precision level.</p></li>
 </ol>
 <p>The animation shows the pendulum swinging with the energy plot demonstrating near-perfect conservation.</p>
-<h2 id="maxwells-demon">Maxwell’s Demon</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Maxwell’s demon is a thought experiment described by James Clerk Maxwell in his book, <em>Theory of Heat</em> <span class="citation" data-cites="Maxwell-theory71">(Maxwell, 1871)</span> on page 308.</p>
-<blockquote>
-<p>But if we conceive a being whose faculties are so sharpened that he can follow every molecule in its course, such a being, whose attributes are still as essentially finite as our own, would be able to do what is at present impossible to us. For we have seen that the molecules in a vessel full of air at uniform temperature are moving with velocities by no means uniform, though the mean velocity of any great number of them, arbitrarily selected, is almost exactly uniform. Now let us suppose that such a vessel is divided into two portions, A and B, by a division in which there is a small hole, and that a being, who can see the individual molecules, opens and closes this hole, so as to allow only the swifter molecules to pass from A to B, and the only the slower ones to pass from B to A. He will thus, without expenditure of work, raise the temperature of B and lower that of A, in contradiction to the second law of thermodynamics.</p>
-<p>James Clerk Maxwell in <em>Theory of Heat</em> <span class="citation" data-cites="Maxwell-theory71">(Maxwell, 1871)</span> page 308</p>
-</blockquote>
-<p>He goes onto say:</p>
-<blockquote>
-<p>This is only one of the instances in which conclusions which we have draw from our experience of bodies consisting of an immense number of molecules may be found not to be applicable to the more delicate observations and experiments which we may suppose made by one who can perceive and handle the individual molecules which we deal with only in large masses</p>
-</blockquote>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=0p8AAAAAMAAJ&amp;pg=PA308&amp;output=embed" width="700" height="500">
-</iframe>
-</div>
-<div id="maxwells-demon-magnify" class="magnify" onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="maxwells-demon-caption" class="caption-frame">
-<p>Figure: Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.</p>
-</div>
-</div>
-<div class="figure">
-<div id="maxwells-demon-figure" class="figure-frame">
-<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
-<div style="flex:1 1 400px;min-width:0">
-<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
-</canvas>
-</div>
-<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<div>
-Velocity-bin entropy:
-<output id="maxwell-entropy">
-</output>
-</div>
-<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
-
-</div>
-<div style="display:flex;flex-wrap:wrap;gap:4px">
-<button id="maxwell-newball">
-New Ball
-</button>
-<button id="maxwell-pause">
-Pause
-</button>
-<button id="maxwell-skip">
-Skip 1000s
-</button>
-<button id="maxwell-histogram">
-Histogram
-</button>
-</div>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
-</div>
-<div id="maxwells-demon-magnify" class="magnify" onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="maxwells-demon-caption" class="caption-frame">
-<p>Figure: Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
-</div>
-</div>
-<p>Maxwell’s demon allows us to connect thermodynamics with information theory (see e.g. <span class="citation" data-cites="Hosoya-demon15">Hosoya et al. (2015)</span>;<span class="citation" data-cites="Hosoya-maxwell11">Hosoya et al. (2011)</span>;<span class="citation" data-cites="Bub-maxwell01">Bub (2001)</span>;<span class="citation" data-cites="Brillouin-maxwell51">Brillouin (1951)</span>;<span class="citation" data-cites="Szilard-intelligenter29">Szilard (1929)</span>). <span class="citation" data-cites="Landauer-irreversibility61">Landauer (1961)</span> described a fundamental connection between information erasure and energy consumption .</p>
-<p><span class="citation" data-cites="Alemi-therml18">Alemi and Fischer (2019)</span></p>
+<!-- include{_physics/includes/maxwells-demon.md} -->
 <p>One of the nice results of <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span> is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes’ maximum entropy approach to determin the stationary distribution.</p>
 <h1 id="intelligence">Intelligence</h1>
 <h2 id="perpetual-motion-and-superintelligence">Perpetual Motion and Superintelligence</h2>
@@ -818,29 +751,14 @@ Histogram
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Alemi-therml18" class="csl-entry" role="doc-biblioentry">
-Alemi, A.A., Fischer, I., 2019. Ther<span>ML</span>: The thermodynamics of machine learning. arXiv Preprint arXiv:1807.04162.
-</div>
 <div id="ref-Amari-information00" class="csl-entry" role="doc-biblioentry">
 Amari, S., Nagaoka, H., 2000. Information geometry and its applications. Springer.
-</div>
-<div id="ref-Brillouin-maxwell51" class="csl-entry" role="doc-biblioentry">
-Brillouin, L., 1951. Maxwell’s demon cannot operate: Information and entropy. i. Journal of Applied Physics 22, 334–337. <a href="https://doi.org/10.1063/1.1699951">https://doi.org/10.1063/1.1699951</a>
-</div>
-<div id="ref-Bub-maxwell01" class="csl-entry" role="doc-biblioentry">
-Bub, J., 2001. Maxwell’s demon and the thermodynamics of computation. Studies in History and Philosophy of Science Part B: Modern Physics 32, 569–579. <a href="https://doi.org/10.1016/S1355-2198(01)00023-5">https://doi.org/10.1016/S1355-2198(01)00023-5</a>
 </div>
 <div id="ref-Gardner-life70" class="csl-entry" role="doc-biblioentry">
 Gardner, M., 1970. Mathematical games: The fantastic combinations of <span class="nocase">John Conway’s</span> new solitaire game <span>“life.”</span> Scientific American 223, 120–123.
 </div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
-</div>
-<div id="ref-Hosoya-demon15" class="csl-entry" role="doc-biblioentry">
-Hosoya, A., Maruyama, K., Shikano, Y., 2015. Operational derivation of <span>B</span>oltzmann distribution with <span>M</span>axwell’s demon model. Scientific Reports 5, 17011. <a href="https://doi.org/10.1038/srep17011">https://doi.org/10.1038/srep17011</a>
-</div>
-<div id="ref-Hosoya-maxwell11" class="csl-entry" role="doc-biblioentry">
-Hosoya, A., Maruyama, K., Shikano, Y., 2011. Maxwell’s demon and data compression. Phys. Rev. E 84, 061117. <a href="https://doi.org/10.1103/PhysRevE.84.061117">https://doi.org/10.1103/PhysRevE.84.061117</a>
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
@@ -860,17 +778,11 @@ MacKay, D.J.C., 2008. Sustainable energy — without the hot air. UIT Cambridge,
 <div id="ref-MacKay-information03" class="csl-entry" role="doc-biblioentry">
 MacKay, D.J.C., 2003. Information theory, inference and learning algorithms. Cambridge University Press, Cambridge, U.K.
 </div>
-<div id="ref-Maxwell-theory71" class="csl-entry" role="doc-biblioentry">
-Maxwell, J.C., 1871. Theory of heat. Longmans, Green; Co, London.
-</div>
 <div id="ref-vonNeumann-book32" class="csl-entry" role="doc-biblioentry">
 Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, Berlin.
 </div>
 <div id="ref-Ottinger-beyond05" class="csl-entry" role="doc-biblioentry">
 Öttinger, H.C., 2005. Beyond equilibrium thermodynamics. Wiley-Interscience, Hoboken, NJ. <a href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>
-</div>
-<div id="ref-Szilard-intelligenter29" class="csl-entry" role="doc-biblioentry">
-Szilard, L., 1929. <span>Ü</span>ber die <span>E</span>ntropieverminderung in einem thermodynamischen <span>S</span>ystem bei <span>E</span>ingriffen intelligenter <span>W</span>esen. Zeitschrift f<span>ü</span>r Physik 53, 840–856. <a href="https://doi.org/10.1007/BF01341281">https://doi.org/10.1007/BF01341281</a>
 </div>
 <div id="ref-Ward-dasher00" class="csl-entry" role="doc-biblioentry">
 Ward, D.J., Blackwell, A.F., MacKay, D.J.C., 2000. Dasher—a data entry interface using continuous gestures and language models, in: Proceedings of the 13th Annual ACM Symposium on User Interface Software and Technology, UIST ’00. Association for Computing Machinery, New York, NY, USA, pp. 129--137. <a href="https://doi.org/10.1145/354401.354427">https://doi.org/10.1145/354401.354427</a>

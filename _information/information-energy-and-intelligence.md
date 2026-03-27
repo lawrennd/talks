@@ -364,7 +364,7 @@ Maximise *joint* entropy subject to *marginal* entropy conservation
 \slides{@MacKay-energy08}
 
 \include{_physics/includes/pendulum-animation.md}
-\include{_physics/includes/maxwells-demon.md}
+<!-- include{_physics/includes/maxwells-demon.md} -->
 
 \newslide{Energy}
 

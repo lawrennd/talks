@@ -62,11 +62,11 @@ transition: None
 
 \figure{\includepng{\diagramsDir/ml/dasher-bits-per-second}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
 
-\include{_ml/includes/dasher.md}
+<!--include{_ml/includes/dasher.md}-->
 
 
-<!-- \include{_physics/includes/entropy-billiards.md} -->
-<!-- \include{_physics/includes/entropy-histogram.md} -->
+<!-- include{_physics/includes/entropy-billiards.md} -->
+<!-- include{_physics/includes/entropy-histogram.md} -->
 \include{_physics/includes/multigame-entropy.md}
 
 \newslide{Sampling Two Dimensional Variables}
@@ -168,14 +168,12 @@ $\theta_i = \lambda_i$
 \slides{From @Waterhouse-bayesian96}
 
 \notes{This approach became a mainstay of the variational Bayesian approach to machine learning.}
-<!--
-\subsection{The Classical Observer}
+<!-- \subsection{The Classical Observer} -->
 
-\figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{observer-eye}
+<!-- \figure{\includediagramclass{\diagramsDir/physics/observer-eye}{60%}}{A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.}{observer-eye} -->
 
-\include{_physics/includes/observer-outside.md}
-\include{_physics/includes/observer-inside.md}
--->
+<!-- include{_physics/includes/observer-outside.md} -->
+<!-- include{_physics/includes/observer-inside.md} -->
 \setuphelpercode{import mlai.plot as plot
 import mlai
 import numpy as np
@@ -302,10 +300,10 @@ Think of entropy as a scoring system: every probability distribution gets a numb
 
 <!-- \section{Foundations: Information Loss and Entropy} -->
 
-<!-- \include{_information-game/includes/inaccessible-game-set-up.md} -->
+<!-- include{_information-game/includes/inaccessible-game-set-up.md} -->
 
 <!-- \notes{ -->
-<!-- \include{_information-game/includes/information-isolation.md} -->
+<!-- include{_information-game/includes/information-isolation.md} -->
 <!-- } -->
 
 \section{Energy}

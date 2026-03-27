@@ -144,142 +144,9 @@ categories:
 <p>Figure: The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.</p>
 </div>
 </div>
-<h2 id="dasher-arithmetic-coding-as-interface">Dasher: Arithmetic Coding as Interface</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/dasher.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/dasher.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Dasher is a writing interface invented by David MacKay <span class="citation" data-cites="MacKay-dasher98">(<strong>MacKay-dasher98?</strong>)</span> that makes the connection between arithmetic coding and character prediction viscerally concrete. The key insight: if we arrange a character set vertically with each character occupying space proportional to its probability, then <em>selecting a character</em> is equivalent to <em>zooming into its interval</em> in the arithmetic code.</p>
-<p>Moving the mouse to the right zooms toward whichever letter the cursor is pointing at. Because common letters (e, t, a, space) have large probability, they occupy large screen area — they are easy to aim at. Rare letters (q, z, x) have tiny probability, occupy tiny screen area, and are correspondingly hard to hit. Ease of selection equals low information content, which equals efficiency.</p>
-<p>After typing “th,” notice how ‘e’ swells to dominate the display; after “q,” ‘u’ fills almost the entire screen. The visualisation makes the language model’s predictions tangible.</p>
-<div class="figure">
-<div id="dasher-visualisation-figure" class="figure-frame">
-<div style="width:100%;font-family:&#39;Courier New&#39;,monospace;font-size:0.85em">
-<div style="display:flex;justify-content:space-between;align-items:center;
-            padding:6px 14px;background:#131320;border-bottom:1px solid #2a2a3e">
-<p><span style="color:#4ecdc4;letter-spacing:3px;font-size:14px">DASHER</span> <span style="color:#404068;font-style:italic;font-size:10px;flex:1;margin:0 12px;
-               overflow:hidden;text-overflow:ellipsis;white-space:nowrap"> screen height ∝ probability ∝ ease of selection ∝ low information </span> <button id="dasher-reset"
-    style="background:#1a1a2e;border:1px solid #2a2a3e;color:#505080;
-           padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
-           border-radius:3px">Reset</button></p>
-</div>
-<div style="display:flex;align-items:center;gap:12px;padding:5px 14px;
-            background:#0f0f1e;border-bottom:1px solid #1e1e32;min-height:34px">
-<p><span style="font-size:9px;color:#404068">TYPED:</span> <span id="dasher-text" style="font-size:16px;color:#4ecdc4;letter-spacing:2px;flex:1;
-           overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> bits: <span id="dasher-bits" style="color:#ffd93d">0.0</span></span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> avg: <span id="dasher-avgbits" style="color:#ffd93d">—</span> b/ch</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
-               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> H(next): <span id="dasher-entropy" style="color:#ffd93d">—</span></span></p>
-</div>
-<div style="position:relative;width:100%;height:380px;cursor:crosshair;overflow:hidden">
-<canvas id="dasher-canvas" style="display:block;width:100%;height:100%">
-</canvas>
-</div>
-<div style="padding:5px 14px;background:#0f0f1e;border-top:1px solid #1e1e32;
-            font-size:9px;color:#303055;text-align:center">
-<p>Move mouse <strong style="color:#4ecdc460">right</strong> to write · <strong style="color:#4ecdc460">left</strong> to erase · vertical position aims · Backspace removes last · Escape resets</p>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//dasher/dasher.js"></script>
-</div>
-<div id="dasher-visualisation-magnify" class="magnify" onclick="magnifyFigure(&#39;dasher-visualisation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="dasher-visualisation-caption" class="caption-frame">
-<p>Figure: Dasher: continuous-zoom arithmetic coding interface. Move the mouse to the right to zoom toward the character at your vertical cursor position. Character height is proportional to P(char | context), so common letters present large targets. Try typing “th” — ‘e’ expands to fill nearly the whole display.</p>
-</div>
-</div>
-<!-- 
-
-
-
-
-## Entropy Billiards
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-<div class="figure">
-<div class="figure-frame" id="entropy-billiards-js-figure">
-
-<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
-<div style="flex:1 1 400px;min-width:0">
-<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%"></canvas>
-</div>
-<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<div>Velocity-bin entropy: <output id="multiball-entropy"></output></div>
-<div id="multiball-histogram-canvas" style="width:100%;height:250px"></div>
-<div style="display:flex;flex-wrap:wrap;gap:4px">
-<button id="multiball-newball">New Ball</button>
-<button id="multiball-pause">Pause</button>
-<button id="multiball-skip">Skip 1000s</button>
-<button id="multiball-histogram">Histogram</button>
-</div>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-
-
-
-
-<!--
-Loads the shared Ballworld runtime used by interactive physics demos
-(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
-behaviour is provided by follow-on scripts such as maxwell.js.
--->
-<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/multiball.js"></script>
-</div>
-<div id="entropy-billiards-js-magnify" class="magnify" onclick="magnifyFigure(&#39;entropy-billiards-js&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="entropy-billiards-js-caption" class="caption-frame">
-<p>Figure: Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
-</div>
-</div>
-<p>–&gt; <!-- 
-
-
-
-
-
-
-```{.python}
-import numpy as np
-```
-
-```{.python}
-p = np.random.randn(10000, 1)
-xlim = [-4, 4]
-x = np.linspace(xlim[0], xlim[1], 200)
-y = 1/np.sqrt(2*np.pi)*np.exp(-0.5*x*x)
-```
-
-
-
-
-
-Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.
-
-<div class="figure">
-<div class="figure-frame" id="gaussian-histogram-figure">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" "></object>
-</div>
-<div class="magnify" id="gaussian-histogram-magnify" onclick="magnifyFigure('gaussian-histogram')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="gaussian-histogram-caption">
-Figure: James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).
-</div>
-</div>
-
-
- --></p>
+<!--include{_ml/includes/dasher.md}-->
+<!-- include{_physics/includes/entropy-billiards.md} -->
+<!-- include{_physics/includes/entropy-histogram.md} -->
 <h2 id="thermalisation-from-different-initial-conditions">Thermalisation from Different Initial Conditions</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -355,6 +222,12 @@ Skip 1000s
 <p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
 </div>
 </div>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
 <script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
 </div>
 <div id="multigame-entropy-magnify" class="magnify" onclick="magnifyFigure(&#39;multigame-entropy&#39;)">
@@ -531,14 +404,12 @@ p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\th
 <p>Figure: Paragraph from <span class="citation" data-cites="Waterhouse-bayesian96">Waterhouse et al. (n.d.)</span> just after equation (10) introducing a separable (mean-field) approximation to the full Bayesian posterior and the independent optimisation of each component.</p>
 </div>
 </div>
-<p>This approach became a mainstay of the variational Bayesian approach to machine learning. <!--
-## The Classical Observer
+<p>This approach became a mainstay of the variational Bayesian approach to machine learning. <!-- ## The Classical Observer
 
 
 
-
-
-<div class="figure">
+ --></p>
+<!-- <div class="figure">
 <div class="figure-frame" id="observer-eye-figure">
 <object class="" data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-eye.svg" width="60%" style=" "></object>
 </div>
@@ -546,167 +417,9 @@ p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\th
 <div class="caption-frame" id="observer-eye-caption">
 Figure: A classical physics observer: watching from outside the system, never disturbing it. Shortly, we will see what happens when the observer steps inside.
 </div>
-</div>
-
-
-
-
-
-
-## The Observer Outside the System
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-outside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-In classical physics the observer stands *outside* the system and watches.
-The act of watching is passive: the observer gathers information without
-disturbing the gas.  Here we make that observer explicit — a single eye that
-tracks the centroid of all nine balls.  Its gaze follows the collective motion
-of the gas, but it changes nothing inside the box.
-
-Notice how the pupil drifts quietly from side to side as the balls
-thermalise.  Early on, when all nine balls move together in the same direction,
-the eye makes a decisive sweep across the canvas.  As collisions disperse the
-balls the centroid settles near the centre and the eye barely moves — the gas
-has become, in a sense, *uninteresting* to the observer.  High entropy means
-the observer has nothing much to track.
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="observer-outside-figure">
-
-<div style="width:100%;max-width:1020px">
-<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
-<div style="flex:1 1 260px">
-<canvas id="observer-outside-canvas" width="500" height="360"
-  style="border:1px solid black;display:block;width:100%"></canvas>
-</div>
-<div style="flex:1 1 260px">
-<canvas id="observer-outside-eye" width="480" height="480"
-  style="border:1px solid #bbb;display:block;width:100%"></canvas>
-</div>
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-outside-reset">Reset</button>
-<button id="observer-outside-pause">Pause / Resume</button>
-<button id="observer-outside-skip">Skip 1000s</button>
-<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
-Initialisation:
-<select id="observer-outside-init">
-<option value="top">From top ↓</option>
-<option value="bottom">From bottom ↑</option>
-<option value="left">From left →</option>
-<option value="right">From right ←</option>
-<option value="cw">Clockwise ↻</option>
-<option value="ccw">Counter-CW ↺</option>
-</select>
-</span>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://inverseprobability.com/talks/scripts//ballworld/observer-outside.js"></script>
-
-
-
-</div>
-<div class="magnify" id="observer-outside-magnify" onclick="magnifyFigure('observer-outside')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="observer-outside-caption">
-Figure: Nine billiard balls with a classical observer eye to the right.  The
-pupil tracks the ball centroid: ordered initial conditions give a decisive
-sweep of the gaze; thermalised equilibrium leaves it nearly motionless.  The
-observer watches without perturbing the gas.
-</div>
-</div>
-
-
-
-
-
-
-
-
-## The Observer Inside the System
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/observer-inside.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-What happens if we put the observer *inside* the box?  In classical
-mechanics the answer is simple: the observer becomes part of the system.  The
-gas molecules no longer pass freely — they bounce off the observer just like
-they bounce off the walls.  The observer is now a *physical object* that the
-system interacts with.
-
-The eye in the centre of the box is no longer passive.  Balls collide
-with it, transfer momentum, and scatter in new directions.  The observer's
-presence reshapes the entire trajectory of the gas.  Yet the eye still tries
-to track the ball centroid — watch the pupil dart nervously as balls come
-flying in from all directions.
-
-This is, of course, a joke — but a pointed one.  The moment the observer
-enters the system, measurement and dynamics become inseparable.  The observer
-cannot help but disturb what it is trying to observe.  This is the origin of
-the *measurement problem* that troubles quantum mechanics: in quantum theory,
-unlike in classical mechanics, there is no principled way to draw a clean
-boundary between observer and observed.
-
-
-
-
-<div class="figure">
-<div class="figure-frame" id="observer-inside-figure">
-
-<div style="width:100%;max-width:700px">
-<canvas id="observer-inside-canvas" width="640" height="420"
-  style="border:1px solid black;display:block;width:100%"></canvas>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="observer-inside-reset">Reset</button>
-<button id="observer-inside-pause">Pause / Resume</button>
-<span style="font-family:sans-serif;font-size:0.9em;margin-left:6px">
-Initialisation:
-<select id="observer-inside-init">
-<option value="top">From top ↓</option>
-<option value="bottom">From bottom ↑</option>
-<option value="left">From left →</option>
-<option value="right">From right ←</option>
-<option value="cw">Clockwise ↻</option>
-<option value="ccw">Counter-CW ↺</option>
-</select>
-</span>
-</div>
-</div>
-
-
-
-
-
-
-<script src="https://inverseprobability.com/talks/scripts//ballworld/observer-inside.js"></script>
-
-
-
-</div>
-<div class="magnify" id="observer-inside-magnify" onclick="magnifyFigure('observer-inside')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
-<div class="caption-frame" id="observer-inside-caption">
-Figure: Nine billiard balls with the observer eye placed as an obstacle in the
-centre of the box.  Balls bounce off the eye elastically.  The pupil tracks
-the ball centroid — and flinches as they arrive.  The observer is no longer
-passive: its presence changes the trajectories of everything it was trying to
-watch.
-</div>
-</div>
-
-
-
---></p>
+</div> -->
+<!-- include{_physics/includes/observer-outside.md} -->
+<!-- include{_physics/includes/observer-inside.md} -->
 <div class="figure">
 <div id="independent-gaussians-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
@@ -813,74 +526,9 @@ watch.
 
 
  -->
-<!-- 
-
-
-
-
-
-## The Inaccessible Game Setup
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-
-
-
-Inspired by the no-barber principle, we set up the game in a way that attempts to avoid "external structure". The first two things we need to do this are 
-1. A representation of information loss
-2. A prohibition of information exchange with the game
-
-How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (@Baez-characterisation11) and Parzygnat (@Parzygnat-functorial22). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.
-
-In the game [@Lawrence-inaccessible25] we introduce information conservation based on these measures of information loss.
-
-
-
- -->
+<!-- include{_information-game/includes/inaccessible-game-set-up.md} -->
 <!--  -->
-<!-- 
-
-
-
-
-## Information Isolation
-
-<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
-
-
-
-The first three axioms of the inaccessible game, due to \citet{Baez-characterisation11}, characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: *information isolation*. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.
-
-
-
-
-
-Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of $N$ variables the sum of marginal entropies $\{h_i\}_{i=1}^{N}$ sums to a constant $C$,
-$$
-\sum_{i=1}^N h_i = C.
-$$
-The conservation law is imposed in an exchangeable form across the *marginal* entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.
-
-
-
-
-
-The specific form $\sum_i h_i = C$ is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form $Q = \sum_i f(h_i)$ with the same function $f$ for each variable. Extensivity (adding one variable increases $Q$ by a fixed amount) forces $f(h) = c \cdot h + \text{const}$. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting $c=1$ gives the unique form $\sum_i h_i = \text{const}$. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.
-
-
-
-
-
-Information isolation can be seen as stronger than frame invariance. It eliminates not only preferred reference frames but appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition $\{X_i\}$ that enters the conservation constraint is a structural choice. It is part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.
-
-In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.
-
-
-
-
- -->
+<!-- include{_information-game/includes/information-isolation.md} -->
 <!--  -->
 <h1 id="energy">Energy</h1>
 <h2 id="energy-constraints">Energy Constraints</h2>

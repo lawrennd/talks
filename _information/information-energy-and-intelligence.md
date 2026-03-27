@@ -34,10 +34,13 @@ transition: None
 
 \notes{David's lectures consisted of discussions of Shannon limits and low density parity checking codes. It seemed a little familiar because the decoding was achieved through Bayesian updates.}
 
-\newslide{Formalisation}
+\section{Information}
 
-\slidesincremental{* Use information theory.
-* Introduced to me in David's group meetings from February 1998.}
+\newslide{Information and Entropy}
+
+\slidesincremental{* Probability and information theory ...
+* David's group meetings from February 1998.
+* MN codes, fountain codes, turbocodes}
 
 \newslide{Dasher}
 
@@ -59,8 +62,25 @@ transition: None
 
 \figure{\includepng{\diagramsDir/ml/dasher-bits-per-second}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
 
-\include{_physics/includes/entropy-billiards.md}
-\include{_physics/includes/entropy-histogram.md}
+\newslide{Dasher — Information Content as Screen Space}
+
+\notes{The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to $P(\text{char}|\text{context})$ — the conditional probability given the characters already typed. Clicking a character "zooms in" on its probability slice, then reveals the next level of conditional probabilities.
+
+The key visual correspondences are:
+
+* **Band height** $\propto P(\text{char}|\text{context})$ — the wider the band, the more likely the character.
+* **Bits column** shows $-\log_2 P(\text{char}|\text{context})$ — the information content you communicate by choosing that character.
+* **Entropy $H$** (top-right) is the expected bits for the next character given context. After 'q', $H$ collapses toward zero: 'u' is almost certain.
+* **Total bits** tracks the cumulative information content of your typed string — predictable text (like "the") accrues bits slowly; surprising text accrues them quickly.
+
+Try typing "q" to see conditional entropy near zero, then "th" to see "e" dominate.}
+
+\slides{
+<iframe src="\diagramsDir/ml/dasher-demo.html" style="width:100%;height:520px;border:none;border-radius:4px;" allowfullscreen></iframe>
+}
+
+<!-- \include{_physics/includes/entropy-billiards.md} -->
+<!-- \include{_physics/includes/entropy-histogram.md} -->
 \include{_physics/includes/multigame-entropy.md}
 
 \newslide{Sampling Two Dimensional Variables}
@@ -142,7 +162,7 @@ from ipywidgets import IntSlider}
 
 \slides{
 $$
-p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
+p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta})\right)
 $$
 where
 $\theta_i = -\lambda_i$
@@ -253,6 +273,9 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 \subsection{The Classical Observer - Anti-correlated}
 
 \figure{\includediagramclass{\diagramsDir/physics/observer-composite-anti-correlated}{90%}}{Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated ($\rho=-0.95$).}{observer-composite-anti-correlated}
+
+\section{Back to self adjudication}
+
 \include{_information-game/includes/no-barber-principle.md}
 
 \subsection{The Classical Observer - Inaccessible}
@@ -299,6 +322,18 @@ Think of entropy as a scoring system: every probability distribution gets a numb
 <!-- \include{_information-game/includes/information-isolation.md} -->
 <!-- } -->
 
+\section{Energy}
+
+\subsection{Energy Constraints}
+
+\slides{
+* Normally we derive physical laws by
+
+*Maximise entropy subject to energy conservation*
+}
+
+\subsection{The Conservation Law}
+
 \newslide{Marginal Entropy Conservation}
 
 \slides{
@@ -307,8 +342,13 @@ $$
 $$
 }
 
+\newslide{Entropy Constraints}
 
-\subsection{The Conservation Law}
+\slides{
+* Now derive game rules by
+
+Maximise *joint* entropy subject to *marginal* entropy conservation
+}
 
 \include{_physics/includes/i-plus-h-equals-c.md}
 
@@ -359,7 +399,7 @@ See @Lawrence-inaccessible25
 
 \subsection{Information-Theoretic Limits}
 
-\notes{The framework reveals constraints on information processing systems, including intelligent systems.}
+\notes{The hope is that this framework might reveal limits on information processing systems, including intelligent systems.}
 
 \include{_information/includes/information-limits-on-intelligence.md}
 
@@ -376,7 +416,7 @@ See @Lawrence-inaccessible25
 * Use reasoning to illuminate constraints
 }
 
-\section{Conclusions}
+\section{Conclusions and Inspiration}
 
 \slidesincremental{
 * I see that approach in others

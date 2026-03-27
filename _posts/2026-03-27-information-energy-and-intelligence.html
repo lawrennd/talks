@@ -101,6 +101,7 @@ categories:
 <p>While this is a tautology, we’re going to try and suggest how to formalise this notion. Given that this is a memorial to David, we’re going to look to define it through information theory.</p>
 <p>When I arrived in Cambridge in February 1998, David was already working on coding and his meetings consisted of discussions of information theory, which was new to me. My background was as a Mechanical Engineer, and what I had learnt about Bayesian probability came from a terms preparation for my PhD at Aston University.</p>
 <p>David’s lectures consisted of discussions of Shannon limits and low density parity checking codes. It seemed a little familiar because the decoding was achieved through Bayesian updates.</p>
+<h1 id="information">Information</h1>
 <p>But perhaps the most memorable impression of the technology came through an interface software developed with David Ward and Alan Blackwell. The Dasher system allowed pointer based text entry.</p>
 <div class="figure">
 <div id="-figure" class="figure-frame">
@@ -143,43 +144,56 @@ categories:
 <p>Figure: The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.</p>
 </div>
 </div>
-<h2 id="entropy-billiards">Entropy Billiards</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
+<p>The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to <span class="math inline">\(P(\text{char}|\text{context})\)</span> — the conditional probability given the characters already typed. Clicking a character “zooms in” on its probability slice, then reveals the next level of conditional probabilities.</p>
+<p>The key visual correspondences are:</p>
+<ul>
+<li><strong>Band height</strong> <span class="math inline">\(\propto P(\text{char}|\text{context})\)</span> — the wider the band, the more likely the character.</li>
+<li><strong>Bits column</strong> shows <span class="math inline">\(-\log_2 P(\text{char}|\text{context})\)</span> — the information content you communicate by choosing that character.</li>
+<li><strong>Entropy <span class="math inline">\(H\)</span></strong> (top-right) is the expected bits for the next character given context. After ‘q,’ <span class="math inline">\(H\)</span> collapses toward zero: ‘u’ is almost certain.</li>
+<li><strong>Total bits</strong> tracks the cumulative information content of your typed string — predictable text (like “the”) accrues bits slowly; surprising text accrues them quickly.</li>
+</ul>
+<p>Try typing “q” to see conditional entropy near zero, then “th” to see “e” dominate.</p>
+<!-- 
+
+
+
+
+## Entropy Billiards
+
+<div style="text-align:right"><span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/entropy-billiards.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span></div>
+
+
+
 <div class="figure">
-<div id="entropy-billiards-js-figure" class="figure-frame">
+<div class="figure-frame" id="entropy-billiards-js-figure">
+
 <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
 <div style="flex:1 1 400px;min-width:0">
-<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
-</canvas>
+<canvas id="multiball-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%"></canvas>
 </div>
 <div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
-<div>
-Velocity-bin entropy:
-<output id="multiball-entropy">
-</output>
-</div>
-<div id="multiball-histogram-canvas" style="width:100%;height:250px">
-
-</div>
+<div>Velocity-bin entropy: <output id="multiball-entropy"></output></div>
+<div id="multiball-histogram-canvas" style="width:100%;height:250px"></div>
 <div style="display:flex;flex-wrap:wrap;gap:4px">
-<button id="multiball-newball">
-New Ball
-</button>
-<button id="multiball-pause">
-Pause
-</button>
-<button id="multiball-skip">
-Skip 1000s
-</button>
-<button id="multiball-histogram">
-Histogram
-</button>
+<button id="multiball-newball">New Ball</button>
+<button id="multiball-pause">Pause</button>
+<button id="multiball-skip">Skip 1000s</button>
+<button id="multiball-histogram">Histogram</button>
 </div>
 </div>
 </div>
+
+
+
+
+
+
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+
+
+
 <!--
 Loads the shared Ballworld runtime used by interactive physics demos
 (e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
@@ -195,24 +209,42 @@ behaviour is provided by follow-on scripts such as maxwell.js.
 <p>Figure: Bernoulli’s simple kinetic models of gases assume that the molecules of air operate like billiard balls. The displayed entropy is the Shannon entropy of the observed velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
 </div>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.random.randn(<span class="dv">10000</span>, <span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>xlim <span class="op">=</span> [<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(xlim[<span class="dv">0</span>], xlim[<span class="dv">1</span>], <span class="dv">200</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">2</span><span class="op">*</span>np.pi)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x)</span></code></pre></div>
-<p>Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.</p>
+<p>–&gt; <!-- 
+
+
+
+
+
+
+```{.python}
+import numpy as np
+```
+
+```{.python}
+p = np.random.randn(10000, 1)
+xlim = [-4, 4]
+x = np.linspace(xlim[0], xlim[1], 200)
+y = 1/np.sqrt(2*np.pi)*np.exp(-0.5*x*x)
+```
+
+
+
+
+
+Another important figure for Cambridge was the first to derive the probability distribution that results from small balls banging together in this manner. In doing so, James Clerk Maxwell founded the field of statistical physics.
+
 <div class="figure">
-<div id="gaussian-histogram-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" ">
-</object>
+<div class="figure-frame" id="gaussian-histogram-figure">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/gaussian-histogram.svg" width="80%" style=" "></object>
 </div>
-<div id="gaussian-histogram-magnify" class="magnify" onclick="magnifyFigure(&#39;gaussian-histogram&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="gaussian-histogram-caption" class="caption-frame">
-<p>Figure: James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).</p>
+<div class="magnify" id="gaussian-histogram-magnify" onclick="magnifyFigure('gaussian-histogram')"><img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex"></div>
+<div class="caption-frame" id="gaussian-histogram-caption">
+Figure: James Clerk Maxwell 1831-1879 Derived distribution of velocities of particles in an ideal gas (elastic fluid).
 </div>
 </div>
+
+
+ --></p>
 <h2 id="thermalisation-from-different-initial-conditions">Thermalisation from Different Initial Conditions</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -353,6 +385,58 @@ Skip 1000s
 <p>Many distributions could satisfy these constraints, but which one makes the fewest unwarranted assumptions? Jaynes argued that we should choose the distribution that is maximally noncommittal with respect to missing information - the one that maximises the entropy, <span class="math display">\[\begin{align}
 S_I = -\sum_{i} p_i \log p_i
 \end{align}\]</span> This principle leads to the exponential family of distributions, which in statistical mechanics gives us the canonical ensemble and other familiar distributions.</p>
+<h2 id="die-roll-simulation">Die Roll Simulation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>This simulation illustrates the maximum entropy principle through Jaynes’ dice example <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>. A fair die has expected outcome 3.5; the <em>Jaynes example</em> asks: if we know only that the average outcome is 4.5, what probability distribution <span class="math inline">\(P_n\)</span> over the six faces should we assign?</p>
+<p>The answer is the maximum-entropy distribution subject to the constraint <span class="math inline">\(\sum_{n=1}^6 n P_n = 4.5\)</span>, which belongs to the exponential family: <span class="math display">\[\begin{align}
+P_n = \frac{e^{\lambda n}}{Z(\lambda)}, \qquad Z(\lambda) = \sum_{n=1}^6 e^{\lambda n}
+\end{align}\]</span> where <span class="math inline">\(\lambda &gt; 0\)</span> is chosen so the mean constraint is satisfied. This avoids any unwarranted assumption beyond the available data.</p>
+<div class="figure">
+<div id="dieroll-simulation-figure" class="figure-frame">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.9em">
+<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;min-width:190px">
+<canvas id="dieroll-die" width="180" height="180" style="display:block;cursor:pointer">
+</canvas>
+<div style="font-size:0.75em;color:#888;text-align:center">
+click die or button to roll
+</div>
+<button id="dieroll-roll">Roll</button>
+<div style="text-align:center;line-height:2;font-size:0.85em">
+<pre><code>Rolls: &lt;strong id=&quot;dieroll-count&quot;&gt;0&lt;/strong&gt;&lt;br&gt;
+Sample mean: &lt;span id=&quot;dieroll-mean&quot;&gt;—&lt;/span&gt;&lt;br&gt;
+H(p): &lt;span id=&quot;dieroll-entropy&quot; style=&quot;color:#2ecc71&quot;&gt;—&lt;/span&gt;</code></pre>
+</div>
+<p><button id="dieroll-reset">Reset history</button></p>
+</div>
+<div style="flex:1;min-width:300px">
+<canvas id="dieroll-hist" width="500" height="260" style="display:block;width:100%;height:auto;border-radius:6px">
+</canvas>
+<div style="margin-top:10px">
+<pre><code>&lt;div style=&quot;font-style:italic;margin-bottom:6px;color:#888&quot;&gt;
+  Outcome weights (auto-normalised to probabilities)
+&lt;/div&gt;
+&lt;div id=&quot;dieroll-sliders&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin-top:8px;display:flex;gap:6px;flex-wrap:wrap&quot;&gt;
+  &lt;button id=&quot;dieroll-uniform&quot;&gt;Uniform (mean 3.5)&lt;/button&gt;
+  &lt;button id=&quot;dieroll-jaynes&quot;&gt;Jaynes: mean 4.5&lt;/button&gt;
+  &lt;button id=&quot;dieroll-low&quot;&gt;Low-biased: mean 2&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+</div>
+<div id="dieroll-simulation-magnify" class="magnify" onclick="magnifyFigure(&#39;dieroll-simulation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="dieroll-simulation-caption" class="caption-frame">
+<p>Figure: Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).</p>
+</div>
+</div>
 <h2 id="the-general-maximum-entropy-formalism">The General Maximum-Entropy Formalism</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -362,7 +446,7 @@ S_I = -\sum_{i} p_i \log p_i
 \sum_{i=1}^n p_i f_k(x_i) &amp;= \langle f_k(x) \rangle = F_k \quad k=1,2,\ldots,m
 \end{align}\]</span> and maximises the entropy <span class="math inline">\(S_I = -\sum_{i=1}^n p_i \log p_i\)</span>.</p>
 <p>Using Lagrange multipliers, the solution is the generalised canonical distribution, <span class="math display">\[\begin{align}
-p_i = \frac{1}{Z(\lambda_1,\ldots,\lambda_m)}\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
 \end{align}\]</span> where <span class="math inline">\(Z(\lambda_1,\ldots,\lambda_m)\)</span> is the partition function, <span class="math display">\[\begin{align}
 Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
 \end{align}\]</span> The Lagrange multipliers <span class="math inline">\(\lambda_k\)</span> are determined by the constraints, <span class="math display">\[\begin{align}
@@ -370,6 +454,13 @@ Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots -
 \end{align}\]</span> The maximum attainable entropy is <span class="math display">\[\begin{align}
 (S_I)_{max} = \log Z + \sum_{k=1}^m \lambda_k \langle f_k \rangle.
 \end{align}\]</span></p>
+<p><span class="math display">\[
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
+\]</span> <span class="math display">\[
+Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\]</span> <span class="math display">\[
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\]</span></p>
 <h2 id="exponential-family">Exponential Family</h2>
 <p>This mirrors a broadly used representation in statistics known as the <em>exponential family</em>.</p>
 <p><span class="math display">\[
@@ -641,6 +732,7 @@ watch.
 <p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
 </div>
 </div>
+<h1 id="back-to-self-adjudication">Back to self adjudication</h1>
 <h2 id="the-no-barber-principle">The No-Barber Principle</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -740,6 +832,8 @@ In traditional thermodynamics, energy conservation defines a built-in potential.
 
  -->
 <!--  -->
+<h1 id="energy">Energy</h1>
+<h2 id="energy-constraints">Energy Constraints</h2>
 <h2 id="the-conservation-law">The Conservation Law</h2>
 <h2 id="the-i-h-c-structure">The <span class="math inline">\(I + H = C\)</span> Structure</h2>
 <div style="text-align:right">
@@ -829,7 +923,7 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <p>Building on these ideas, some interesting conclusions emerge. The marginal engropy constraint leads to GENERIC-like dynamics <span class="citation" data-cites="Grmela-dynamics97">Öttinger (2005)</span>.</p>
 <p>When characterising the origin of the game, a shift is forced from Shannon entropy to von Neumann entropy <span class="citation" data-cites="vonNeumann-book32">(Neumann, 1932)</span>. In retrospect the shift feels natural if we take an algebraic view of quantum probability, where outcomes are no longer primitive. This is consistent with the inaccessible nature of the game.</p>
 <p>The game is inspired by the nice connections between inference and thermodynamics explored by E. T. Jaynes, but the dynamics play out through the framework of information geometry <span class="citation" data-cites="Amari-information00">(Amari and Nagaoka, 2000)</span> which makes much of the (normally complicated) calculations around Riemanian geometry relatively straightforward.</p>
-<h2 id="energy">Energy</h2>
+<h2 id="energy-1">Energy</h2>
 <div class="figure">
 <div id="sustainable-energy-without-the-hot-air-figure" class="figure-frame">
 <div class="centered" style="">
@@ -989,7 +1083,7 @@ Histogram
 <p>One of the resolutions comes from Landauer’s principle, the notion that erasure of information requires heat dissipation. This suggests there are fundamental information-theoretic constraints on intelligent systems, just as there are thermodynamic constraints on engines.</p>
 <p>I’ve no doubt that AI technologies will transform our world just as much as the automobile has. But I also have no doubt that the promise of superintelligence is just as silly as the promise of perpetual motion. The inaccessible game provides one way of understanding why.</p>
 <h2 id="information-theoretic-limits">Information-Theoretic Limits</h2>
-<p>The framework reveals constraints on information processing systems, including intelligent systems.</p>
+<p>The hope is that this framework might reveal limits on information processing systems, including intelligent systems.</p>
 <h2 id="information-theoretic-limits-on-intelligence">Information-Theoretic Limits on Intelligence</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -1012,7 +1106,7 @@ Histogram
 <p>The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.</p>
 <h2 id="davids-approach">David’s Approach</h2>
 <p>David MacKay taught us to ask: “What are the fundamental constraints? What do the numbers actually say?” Today this way of thinking still inspires me, and the inaccessible game is the work I’m interested in that I think comes closest in spirit to that legacy.</p>
-<h1 id="conclusions">Conclusions</h1>
+<h1 id="conclusions-and-inspiration">Conclusions and Inspiration</h1>
 <p>We have explored what emerges when we demand internal adjudicability in an information-theoretic dynamical system. Starting from consistency requirements rather than physical assumptions, we derived:</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>

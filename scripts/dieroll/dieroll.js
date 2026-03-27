@@ -336,9 +336,12 @@ function rebuildProbs() {
         ? [1/6, 1/6, 1/6, 1/6, 1/6, 1/6]
         : rawWeights.map(w => w / total);
 
+    // Show normalised weight (slider position / max = 0–1) so the label
+    // scale is stable regardless of which distribution is active.
+    // The actual probability for each face is visible in the histogram.
     for (let i = 0; i < 6; i++) {
         const el = document.getElementById(`dieroll-pval-${i}`);
-        if (el) el.textContent = probs[i].toFixed(3);
+        if (el) el.textContent = (rawWeights[i] / 10).toFixed(3);
     }
 
     let H = 0;
@@ -367,11 +370,14 @@ function maxEntropyDist(targetMean) {
 }
 
 function setWeights(ws) {
-    rawWeights = [...ws];
+    // Always normalise so the largest weight fills the slider (max=10).
+    // rawWeights must stay in sync with slider positions so that later
+    // manual drags produce the expected relative-weight behaviour.
     const maxW = Math.max(...ws, 1e-9);
     for (let i = 0; i < 6; i++) {
+        rawWeights[i] = ws[i] / maxW * 10;
         const s = document.getElementById(`dieroll-pslider-${i}`);
-        if (s) s.value = (ws[i] / maxW * 10).toString();
+        if (s) s.value = rawWeights[i].toString();
     }
     rebuildProbs();
 }
@@ -405,7 +411,7 @@ function buildSliders() {
         const val = document.createElement('span');
         val.style.cssText = 'width:42px;text-align:right;font-family:monospace;font-size:0.8em;color:#7ec8e3';
         val.id            = `dieroll-pval-${i}`;
-        val.textContent   = (1/6).toFixed(3);
+        val.textContent   = '1.000';
 
         row.appendChild(icon);
         row.appendChild(slider);
@@ -426,6 +432,17 @@ function doRoll() {
     });
 }
 
+function doManyRolls(n) {
+    if (animating) return;
+    for (let k = 0; k < n; k++) {
+        const face = sampleOutcome();
+        counts[face - 1]++;
+        totalRolls++;
+    }
+    updateStats();
+    drawHistogram();
+}
+
 function updateStats() {
     const countEl = document.getElementById('dieroll-count');
     const meanEl  = document.getElementById('dieroll-mean');
@@ -442,15 +459,17 @@ function updateStats() {
 }
 
 // ── Wire up UI ────────────────────────────────────────────────────────────────
-const rollBtn    = document.getElementById('dieroll-roll');
-const resetBtn   = document.getElementById('dieroll-reset');
-const dieCanvas  = document.getElementById('dieroll-die');
-const uniformBtn = document.getElementById('dieroll-uniform');
-const jaynesBtn  = document.getElementById('dieroll-jaynes');
-const lowBtn     = document.getElementById('dieroll-low');
+const rollBtn     = document.getElementById('dieroll-roll');
+const roll100Btn  = document.getElementById('dieroll-roll100');
+const resetBtn    = document.getElementById('dieroll-reset');
+const dieCanvas   = document.getElementById('dieroll-die');
+const uniformBtn  = document.getElementById('dieroll-uniform');
+const jaynesBtn   = document.getElementById('dieroll-jaynes');
+const lowBtn      = document.getElementById('dieroll-low');
 
-if (rollBtn)    rollBtn.addEventListener('click', doRoll);
-if (dieCanvas)  dieCanvas.addEventListener('click', doRoll);
+if (rollBtn)     rollBtn.addEventListener('click', doRoll);
+if (roll100Btn)  roll100Btn.addEventListener('click', () => doManyRolls(100));
+if (dieCanvas)   dieCanvas.addEventListener('click', doRoll);
 
 if (resetBtn) {
     resetBtn.addEventListener('click', () => {

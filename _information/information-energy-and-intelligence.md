@@ -62,6 +62,8 @@ transition: None
 
 \figure{\includepng{\diagramsDir/ml/dasher-bits-per-second}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
 
+\include{_ml/includes/dasher.md}
+
 \newslide{Dasher — Information Content as Screen Space}
 
 \notes{The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to $P(\text{char}|\text{context})$ — the conditional probability given the characters already typed. Clicking a character "zooms in" on its probability slice, then reveals the next level of conditional probabilities.

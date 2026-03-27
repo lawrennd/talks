@@ -144,6 +144,50 @@ categories:
 <p>Figure: The Dasher system <span class="citation" data-cites="Ward-dasher00">(Ward et al., 2000)</span> is a pointer based text entry system that gave a very practical demonstration of the power of probability.</p>
 </div>
 </div>
+<h2 id="dasher-arithmetic-coding-as-interface">Dasher: Arithmetic Coding as Interface</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/dasher.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/dasher.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Dasher is a writing interface invented by David MacKay <span class="citation" data-cites="MacKay-dasher98">(<strong>MacKay-dasher98?</strong>)</span> that makes the connection between arithmetic coding and character prediction viscerally concrete. The key insight: if we arrange a character set vertically with each character occupying space proportional to its probability, then <em>selecting a character</em> is equivalent to <em>zooming into its interval</em> in the arithmetic code.</p>
+<p>Moving the mouse to the right zooms toward whichever letter the cursor is pointing at. Because common letters (e, t, a, space) have large probability, they occupy large screen area — they are easy to aim at. Rare letters (q, z, x) have tiny probability, occupy tiny screen area, and are correspondingly hard to hit. Ease of selection equals low information content, which equals efficiency.</p>
+<p>After typing “th,” notice how ‘e’ swells to dominate the display; after “q,” ‘u’ fills almost the entire screen. The visualisation makes the language model’s predictions tangible.</p>
+<div class="figure">
+<div id="dasher-visualisation-figure" class="figure-frame">
+<div style="width:100%;font-family:&#39;Courier New&#39;,monospace;font-size:0.85em">
+<div style="display:flex;justify-content:space-between;align-items:center;
+            padding:6px 14px;background:#131320;border-bottom:1px solid #2a2a3e">
+<p><span style="color:#4ecdc4;letter-spacing:3px;font-size:14px">DASHER</span> <span style="color:#404068;font-style:italic;font-size:10px;flex:1;margin:0 12px;
+               overflow:hidden;text-overflow:ellipsis;white-space:nowrap"> screen height ∝ probability ∝ ease of selection ∝ low information </span> <button id="dasher-reset"
+    style="background:#1a1a2e;border:1px solid #2a2a3e;color:#505080;
+           padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+           border-radius:3px">Reset</button></p>
+</div>
+<div style="display:flex;align-items:center;gap:12px;padding:5px 14px;
+            background:#0f0f1e;border-bottom:1px solid #1e1e32;min-height:34px">
+<p><span style="font-size:9px;color:#404068">TYPED:</span> <span id="dasher-text" style="font-size:16px;color:#4ecdc4;letter-spacing:2px;flex:1;
+           overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> bits: <span id="dasher-bits" style="color:#ffd93d">0.0</span></span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> avg: <span id="dasher-avgbits" style="color:#ffd93d">—</span> b/ch</span> <span style="background:#131320;border:1px solid #2a2a3e;border-radius:3px;
+               padding:2px 7px;font-size:11px;color:#505080;white-space:nowrap"> H(next): <span id="dasher-entropy" style="color:#ffd93d">—</span></span></p>
+</div>
+<div style="position:relative;width:100%;height:380px;cursor:crosshair;overflow:hidden">
+<canvas id="dasher-canvas" style="display:block;width:100%;height:100%">
+</canvas>
+</div>
+<div style="padding:5px 14px;background:#0f0f1e;border-top:1px solid #1e1e32;
+            font-size:9px;color:#303055;text-align:center">
+<p>Move mouse <strong style="color:#4ecdc460">right</strong> to write · <strong style="color:#4ecdc460">left</strong> to erase · vertical position aims · Backspace removes last · Escape resets</p>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dasher/dasher.js"></script>
+</div>
+<div id="dasher-visualisation-magnify" class="magnify" onclick="magnifyFigure(&#39;dasher-visualisation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="dasher-visualisation-caption" class="caption-frame">
+<p>Figure: Dasher: continuous-zoom arithmetic coding interface. Move the mouse to the right to zoom toward the character at your vertical cursor position. Character height is proportional to P(char | context), so common letters present large targets. Try typing “th” — ‘e’ expands to fill nearly the whole display.</p>
+</div>
+</div>
 <p>The following is an interactive JavaScript reimplementation of Dasher that makes its information-theoretic foundations explicit. Each character band has height proportional to <span class="math inline">\(P(\text{char}|\text{context})\)</span> — the conditional probability given the characters already typed. Clicking a character “zooms in” on its probability slice, then reveals the next level of conditional probabilities.</p>
 <p>The key visual correspondences are:</p>
 <ul>
@@ -403,9 +447,14 @@ P_n = \frac{e^{\lambda n}}{Z(\lambda)}, \qquad Z(\lambda) = \sum_{n=1}^6 e^{\lam
 <div style="font-size:0.75em;color:#888;text-align:center">
 click die or button to roll
 </div>
+<div style="display:flex;gap:6px">
 <button id="dieroll-roll">
 Roll
 </button>
+<button id="dieroll-roll100">
+Roll ×100
+</button>
+</div>
 <div style="text-align:center;line-height:2;font-size:0.85em">
 <p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
 </div>

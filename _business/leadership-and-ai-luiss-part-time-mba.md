@@ -32,7 +32,7 @@ DELIVERY NOTES (Feb 2026, LUISS MBA):
 
 ** TWO-DAY EXPANSION POTENTIAL **
 This material could work very well as a two-day masterclass:
-- Significantly expand exercise portions (currently 20 min → 45-60 min)
+- Significantly expand exercise portions (currently 45 min → 60-90 min)
 - Add more discussion and debate time
 - Allow deeper dive into case studies
 - Include additional exercises on specific topics
@@ -40,42 +40,38 @@ This material could work very well as a two-day masterclass:
 
 CURRENT ONE-DAY SCHEDULE:
 ===========================================
-MORNING SESSION: 10:00-13:00 (3 hours)
+MORNING SESSION: 9:00-13:00 (4 hours)
 ==================================================
-10:00 - Part 1: Understanding Human vs Machine Intelligence (75 min total)
-  10:00-10:45 (45 min) - Lecture
-  10:45-11:05 (20 min) - Group Discussion: Mapping Your Organisation's Information Flows
-  11:05-11:15 (10 min) - Plenary Report Back
+9:00 - Part 1: Understanding Human vs Machine Intelligence (105 min total)
+  9:00-10:00 (60 min) - Lecture
+  10:00-10:45 (45 min) - Group Discussion + Plenary: Mapping Your Organisation's Information Flows
 
-11:15-11:45 (30 min) - BREAK
+10:45-11:15 (30 min) - BREAK
 
-11:45 - Part 2: Information Topography and Decision Making (75 min total)
-  11:45-12:30 (45 min) - Lecture  
-  12:30-12:50 (20 min) - Group Discussion: SWOT Analysis for Your Institution
-  12:50-13:00 (10 min) - Plenary Report Back
+11:15 - Part 2: Information Topography and Decision Making (105 min total)
+  11:15-12:15 (60 min) - Lecture
+  12:15-13:00 (45 min) - Group Discussion + Plenary: SWOT Analysis for Your Institution
 
-LUNCH BREAK: 13:00-14:30 (90 min)
+LUNCH BREAK: 13:00-14:00 (60 min)
 ==================================================
 HOMEWORK: Read about Horizon scandal:
 - https://en.wikipedia.org/wiki/British_Post_Office_scandal
 - https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office
 - https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know
 
-AFTERNOON SESSION: 14:30-17:15 (2 hours 45 min)
+AFTERNOON SESSION: 14:00-18:00 (4 hours)
 ==================================================
-14:30 - Part 3: Maintaining Human Judgment and Building Trust (75 min total)
-  14:30-15:15 (45 min) - Lecture
-  15:15-15:35 (20 min) - Group Discussion: Horizon scandal - judgment failures and power asymmetries
-  15:35-15:45 (10 min) - Plenary Report Back
+14:00 - Part 3: Maintaining Human Judgment and Building Trust (105 min total)
+  14:00-15:00 (60 min) - Lecture
+  15:00-15:45 (45 min) - Group Discussion + Plenary: Horizon scandal - judgment failures and power asymmetries
 
 15:45-16:15 (30 min) - BREAK
 
-16:15 - Part 4: Strategic Implementation and the Attention Economy (75 min total)
-  16:15-17:00 (45 min) - Lecture
-  17:00-17:20 (20 min) - Group Discussion: Developing Institutional AI Strategies
-  17:20-17:30 (10 min) - Plenary Report Back
+16:15 - Part 4: Strategic Implementation and the Attention Economy (105 min total)
+  16:15-17:15 (60 min) - Lecture
+  17:15-18:00 (45 min) - Group Discussion + Plenary: Developing Institutional AI Strategies
 
-TOTAL: 6 hours instruction + 1.5 hours lunch = 7.5 hours (10:00-17:30)
+TOTAL: 7 hours instruction + 1 hour lunch + 2×30 min breaks = 9 hours (9:00-18:00)
 -->
 
 \notes{**Welcome and Masterclass Overview**
@@ -87,19 +83,19 @@ Our journey today will take us from understanding what makes human intelligence 
 \newslide{Today's Schedule}
 
 \slides{
-**Morning Session: 10:00-13:00**
+**Morning Session: 9:00-13:00**
 
-* 10:00-10:45: Part 1 Lecture
-* 10:45-11:15: Exercise 1 + Plenary
-* 11:15-11:45: **Break**
-* 11:45-12:30: Part 2 Lecture
-* 12:30-13:00: Exercise 2 + Plenary
+* 9:00-10:00: Part 1 Lecture
+* 10:00-10:45: Exercise 1 + Plenary
+* 10:45-11:15: **Break**
+* 11:15-12:15: Part 2 Lecture
+* 12:15-13:00: Exercise 2 + Plenary
 }
 
 \newslide{Today's Schedule}
 
 \slides{
-**Lunch: 13:00-14:30** 
+**Lunch: 13:00-14:00** 
 
 * *Homework: Read Horizon scandal materials*
 }
@@ -107,24 +103,26 @@ Our journey today will take us from understanding what makes human intelligence 
 \newslide{Today's Schedule}
 
 \slides{
-**Afternoon Session: 14:30-17:30**
+**Afternoon Session: 14:00-18:00**
 
-* 14:30-15:15: Part 3 Lecture
-* 15:15-15:45: Exercise 3 + Plenary
+* 14:00-15:00: Part 3 Lecture
+* 15:00-15:45: Exercise 3 + Plenary
 * 15:45-16:15: **Break**
-* 16:15-17:00: Part 4 Lecture
-* 17:00-17:30: Exercise 4 + Plenary
+* 16:15-17:15: Part 4 Lecture
+* 17:15-18:00: Exercise 4 + Plenary
 }
 
 <!-- ============================================================ -->
 <!-- MORNING SESSION: 10:00-13:00 -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 10:00 START -->
+<!-- TIMING: 9:00 START -->
 <!-- DELIVERY NOTE: Part 1 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 1: Understanding Human vs Machine Intelligence}
 
-\notes{**Time: 10:00-10:45 (45 min lecture)** - We'll explore what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
+\notes{**Time: 9:00-10:00 (60 min lecture)** - We'll explore what makes human intelligence unique and how it differs fundamentally from machine intelligence. This foundation is essential for everything that follows.}
+
+\notes{**Pre-reading:** Lawrence, N.D. (2024). [*The Atomic Human*](https://atomichuman.co.uk), Ch. 1 (pp. 1--40). Allen Lane. [Introduction to embodiment and human intelligence]}
 
 \subsection{The Age of Human-Analogue Machines}
 
@@ -220,10 +218,10 @@ conceptions of the world to communicate complex subjects.}
 <!-- EXERCISE 1: MAPPING ORGANISATIONAL INFORMATION FLOWS -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 10:45 -->
+<!-- TIMING: 10:00 -->
 \section{Exercise 1: Mapping An Organisation's Information Flows}
 
-\notes{**Time: 10:45-11:15 (20 min group work + 10 min plenary)** - Apply the concepts to real organisational contexts.}
+\notes{**Time: 10:00-10:45 (45 min group work + plenary)** - Apply the concepts to real organisational contexts.}
 
 \notes{**Exercise Instructions:**
 
@@ -266,18 +264,18 @@ Characterise what your institution does. If it's a company, what is their market
 <!-- BREAK: 30 minutes -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 11:15-11:45 BREAK -->
-\notes{**11:15-11:45: Break** - 30 minute refreshment break}
+<!-- TIMING: 10:45-11:15 BREAK -->
+\notes{**10:45-11:15: Break** - 30 minute refreshment break}
 
 <!-- ============================================================ -->
 <!-- PART 2: INFORMATION TOPOGRAPHY AND DECISION MAKING -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 11:45 -->
+<!-- TIMING: 11:15 -->
 <!-- DELIVERY NOTE: Part 2 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 2: Information Topography and Decision Making}
 
-\notes{**Time: 11:45-12:30 (45 min lecture)** - We'll explore how AI changes organisational information landscapes and decision-making structures.}
+\notes{**Time: 11:15-12:15 (60 min lecture)** - We'll explore how AI changes organisational information landscapes and decision-making structures.}
 
 \subsection{The Information Revolution in Organisations}
 
@@ -371,10 +369,10 @@ experimentation and adaptive strategy rather than rigid planning.}
 <!-- EXERCISE 2: SWOT ANALYSIS FOR AI TRANSFORMATION -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 12:30 -->
+<!-- TIMING: 12:15 -->
 \section{Exercise 2: SWOT Analysis for AI Transformation}
 
-\notes{**Time: 12:30-13:00 (20 min group work + 10 min plenary)** - Analyse your institution's position for AI adoption.}
+\notes{**Time: 12:15-13:00 (45 min group work + plenary)** - Analyse your institution's position for AI adoption.}
 
 \notes{**Exercise Instructions:**
 
@@ -421,11 +419,10 @@ For your chosen institution type, conduct a SWOT analysis specifically focused o
 <!-- LUNCH BREAK: 13:00-14:30 (90 min with homework) -->
 <!-- ============================================================ -->
 
-\notes{**13:00-14:30: Lunch Break** - 90 minutes with homework assignment.}
+\notes{**13:00-14:00: Lunch Break** - 60 minutes with homework assignment.}
 
 \newslide{Lunch Homework: The Horizon Scandal}
 
-\slides{
 **Please read about the Horizon scandal over lunch:**
 
 * Wikipedia overview: <https://en.wikipedia.org/wiki/British_Post_Office_scandal>
@@ -433,17 +430,22 @@ For your chosen institution type, conduct a SWOT analysis specifically focused o
 * Technical details: <https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know>
 
 This background will be essential for Exercise 3 this afternoon.
-}
 
 <!-- ============================================================ -->
 <!-- AFTERNOON SESSION: 14:30-17:30 (3 hours) -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 14:30 START AFTERNOON -->
+<!-- TIMING: 14:00 START AFTERNOON -->
 <!-- DELIVERY NOTE: Part 3 is TOO LONG at Neil's pace - need to cut material -->
 \section{Part 3: Maintaining Human Judgment and Building Trust}
 
-\notes{**Time: 14:30-15:15 (45 min lecture)** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
+\notes{**Time: 14:00-15:00 (60 min lecture)** - We'll examine critical cases where algorithmic systems have failed and develop frameworks for maintaining human judgment and trust.}
+
+\notes{**Pre-reading:**
+- Spiegelhalter, D.J. (2019). *The Art of Statistics*, Ch. 1. Pelican. [Data scepticism]
+- Lawrence, N.D. (2024). [*The Atomic Human*](https://atomichuman.co.uk), Epilogue (pp. 360--376). Allen Lane. [Wicked problems, attention flywheel]
+- Susskind, R. & Susskind, D. (2015). *The Future of the Professions*, Ch. 1. Oxford University Press.
+- Horizon scandal case: [Wikipedia overview](https://en.wikipedia.org/wiki/British_Post_Office_scandal), [Economic analysis](https://www.economicsobservatory.com/trust-and-technology-what-went-wrong-with-the-post-office), [Technical details](https://www.computerweekly.com/feature/Post-Office-Horizon-scandal-explained-everything-you-need-to-know)}
 
 \subsection{When Algorithms Override Human Judgment: The Horizon Scandal}
 
@@ -505,10 +507,10 @@ how the business is reacting.}
 <!-- EXERCISE 3: HORIZON SCANDAL - FAILURES OF JUDGMENT -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 15:15 -->
+<!-- TIMING: 15:00 -->
 \section{Exercise 3: The Horizon Scandal - Judgment Failures and Power Asymmetries}
 
-\notes{**Time: 15:15-15:45 (20 min group discussion + 10 min plenary)** - Analyse the Horizon scandal you read about at lunch.}
+\notes{**Time: 15:00-15:45 (45 min group discussion + plenary)** - Analyse the Horizon scandal you read about at lunch.}
 
 \notes{**Exercise Instructions:**
 
@@ -572,7 +574,11 @@ organisational decision-making:
 <!-- DELIVERY NOTE: Part 4 timing is GOOD - no changes needed -->
 \section{Part 4: Strategic Implementation and the Attention Economy}
 
-\notes{**Time: 16:15-17:00 (45 min lecture)** - Strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
+\notes{**Time: 16:15-17:15 (60 min lecture)** - Strategic frameworks for AI implementation, focusing on the attention economy and people-first approaches.}
+
+\notes{**Pre-reading:**
+- Lawrence, N.D. (2025). [Opinion piece in the *Financial Times* on the social flywheel](https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316).
+- O'Reilly, T. [AI and the Attention Economy](https://www.mctd.ac.uk/watch-ai-and-the-attention-economy-tim-oreilly/). Talk at MCTD.}
 
 \subsection{Human Attention as Strategic Resource}
 
@@ -648,10 +654,10 @@ This means reversing the power dynamics and ensuring the organisation remains in
 <!-- EXERCISE 4: DEVELOPING INSTITUTIONAL AI STRATEGIES -->
 <!-- ============================================================ -->
 
-<!-- TIMING: 17:00 -->
+<!-- TIMING: 17:15 -->
 \section{Exercise 4: Developing Institutional AI Strategies}
 
-\notes{**Time: 17:00-17:30 (20 min group work + 10 min plenary)** - Build your institution's AI strategy using your SWOT analysis from Exercise 2.}
+\notes{**Time: 17:15-18:00 (45 min group work + plenary)** - Build your institution's AI strategy using your SWOT analysis from Exercise 2.}
 
 \notes{**Final Synthesis Exercise:**
 
@@ -763,23 +769,35 @@ The AI revolution is not just a technological challenge - it's a leadership chal
 
 \include{_books/includes/the-atomic-human.md}
 
-\newslide{Recommended Reading for MBA Students}
+\newslide{Course Reference Materials}
 
 \slidesincremental{
-* *The Atomic Human* by Neil D. Lawrence
-* *Weapons of Math Destruction* by Cathy O'Neil
-* *A Question of Trust* by Baroness O'Neill
+* [*The Atomic Human*](https://atomichuman.co.uk) by Neil D. Lawrence — Allen Lane, 2024
+* Spiegelhalter, D.J. (2019). *The Art of Statistics* — Pelican
+* Susskind, R. & Susskind, D. (2015). *The Future of the Professions* — Oxford University Press
+* Simon, H.A. (1971). *Designing Organizations for an Information-Rich World*
 }
 
-\notes{**Additional Resources:**
+\notes{**Course Reference Materials:**
 
-- ai@cam: University of Cambridge initiative on AI (www.ai.cam.ac.uk)
+- Lawrence, N.D. (2024). [*The Atomic Human*](https://atomichuman.co.uk). Allen Lane.
+- Simon, H.A. (1971). *Designing Organizations for an Information-Rich World*. In Greenberger, M. (ed.), *Computers, Communications, and the Public Interest*. Baltimore: Johns Hopkins Press.
+- Spiegelhalter, D.J. (2019). *The Art of Statistics: Learning from Data*. Pelican.
+- Susskind, R. & Susskind, D. (2015). *The Future of the Professions: How Technology Will Transform the Work of Human Experts*. Oxford University Press.
+- Lawrence, N.D. (2017). [Living Together: Mind and Machine Intelligence](https://arxiv.org/abs/1705.07996). arXiv preprint arXiv:1705.07996.
+- Lawrence, N.D. (2025). [Opinion: AI and the social flywheel](https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316). *Financial Times*.
+- O'Reilly, T. [AI and the Attention Economy](https://www.mctd.ac.uk/watch-ai-and-the-attention-economy-tim-oreilly/). Talk at MCTD.
+
+**Additional Resources:**
+
+- ai@cam: University of Cambridge initiative on AI (<https://ai.cam.ac.uk>)
+- Data Science Africa: <https://www.datascienceafrica.org>
 - The Alan Turing Institute: UK's national institute for data science and AI
 - Partnership on AI: Multi-stakeholder organization working on AI best practices
 }
 
-<!-- TIMING: 17:30 END -->
-\notes{**End Time: 17:30** - Thank you for your engagement throughout the day!}
+<!-- TIMING: 18:00 END -->
+\notes{**End Time: 18:00** - Thank you for your engagement throughout the day!}
 
 \thanks
 

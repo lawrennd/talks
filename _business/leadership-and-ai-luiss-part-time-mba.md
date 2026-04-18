@@ -452,6 +452,47 @@ For your chosen institution type, conduct a SWOT analysis specifically focused o
 * Most exciting opportunity?
 }
 
+\newslide{What a Good SWOT Looks Like}
+
+\slides{
+**The SWOT should be about information, not just capability**
+
+| | Internal | External |
+|---|---|---|
+| **Helpful** | Strengths: *data assets, decision culture, soft/tacit knowledge* | Opportunities: *where AI shifts the information topography in your favour* |
+| **Harmful** | Weaknesses: *where critical knowledge is trapped in soft form; Conway's Law constraints* | Threats: *competitors gaining information advantages; regulatory exposure* |
+
+**The asymmetry to notice:** Threats from *not* adopting AI are often larger and less visible than threats from adopting it badly.
+}
+
+\notes{The key move here is to connect the SWOT back to the information flow map from Exercise 1. A Strength isn't just "we have lots of data" — it's "we have data that reaches decision-makers in time and in useful form." A Weakness isn't just "legacy IT" — it's "our most decision-critical knowledge is currently travelling on the softest mechanisms and will not survive our current rate of staff turnover."
+
+Conway's Law point to make explicit if groups haven't: your current organisational structure encodes your current information flows. AI doesn't just change what you can compute — it changes who knows what, when. That means it threatens existing power structures. Some "Threats" in the SWOT are really internal resistance dressed up as external risk.
+
+Draw out the contrast between institution types: the Start-up's Strength (no legacy) is also its Weakness (no institutional memory, no soft knowledge base). The Established Player's Weakness (Conway's Law, legacy systems) is also a Strength (deep tacit knowledge, trusted relationships). Neither is obviously better positioned — what matters is whether they understand *which* information flows AI will disrupt.}
+
+\newslide{The Asymmetry of Inaction}
+
+\slides{
+**Adopting AI badly:** visible, recoverable, learnable
+
+**Not adopting AI:** invisible until it's too late
+
+\aligncenter{*"We know everything we're doing now is inadequate. We just don't know exactly how."*}
+
+Three questions for your SWOT:
+
+1. Which competitor gains the most if they formalise what you currently leave tacit?
+2. Which of your decisions would break first if you lost the three people who currently hold them together?
+3. Where is your information topography about to shift — and are you moving towards it or away from it?
+}
+
+\speakernotes{**Speaker note:** This slide is designed to provoke discomfort. The point is that most "Threats" groups identify are things AI does to them. The more dangerous threat is what a well-deployed AI does for a competitor — specifically, it converts their tacit knowledge and relationship capital into scalable, systematic advantage at a speed that removes the time you'd normally have to respond.
+
+The three questions are meant to be taken away and worked on, not answered in the room. They are the thread that connects to Exercise 4 this afternoon.
+
+The quote ("we know everything we're doing now is inadequate") is from the Part 2 lecture — use it to reward attentive students and signal that the exercise was meant to surface exactly that productive discomfort.}
+
 <!-- ============================================================ -->
 <!-- LUNCH BREAK: 13:00-14:30 (90 min with homework) -->
 <!-- ============================================================ -->

@@ -260,6 +260,43 @@ Characterise what your institution does. If it's a company, what is their market
 * How might AI change these flows?
 }
 
+\newslide{What a Good Map Looks Like}
+
+\slides{
+**Nodes**: teams, roles, systems, customers, regulators
+
+**Edges — and their *mechanism*:**
+
+| Soft / tacit | ←————————→ | Hard / explicit |
+|---|---|---|
+| Conversation, judgment | Notes, email, deck | Audit, filing, contract |
+| High context, fast | Filtered, delayed | Low context, slow |
+| **Not AI-legible** | | **AI-legible** |
+}
+
+\notes{The most common mistake is to draw only the nodes and forget to label the edges. A good map asks: *how* does this information actually move? A hallway conversation, a monthly slide deck, and an audited account are not the same thing. They carry different information, at different speeds, with different fidelity.
+
+Draw the map with the mechanism on every edge. Then ask: where is the most decision-critical information travelling on the softest mechanism? That is your most fragile point — and your most important human judgment call.
+
+Key point to draw out from groups: the hard, AI-legible layer is usually a *pale shadow* of the actual information landscape. Organisations function because culture and shared context compress what cannot be written down. That compression is what makes them human institutions — and it is what makes the introduction of AI genuinely hard.}
+
+\newslide{The Translation Problem}
+
+\slides{
+**The deepest bottleneck is not a decision — it is a translation**
+
+\aligncenter{Tacit → Explicit}
+
+* Who is responsible for moving knowledge from soft to hard?
+* What is inevitably lost in that move?
+* Which tacit knowledge should be *protected* from formalisation?
+
+\notes{The question "where should AI help?" is really the question "where should we formalise?" — and formalisation is not free. Every time you move information from a conversation to a database, you gain legibility and lose context. The organisations that use AI well are those that are deliberate about *which* part of the soft layer they formalise, and *why*.}}
+
+\speakernotes{**Speaker note:** This slide is the bridge to Part 2. The tension between tacit and explicit knowledge, and the cost of translating between them, is exactly what drives the information topography of organisations — which is the subject of the next lecture.
+
+Use the plenary to surface one or two examples from the groups where the most critical information was travelling in the softest form (verbal, relational, embodied). Ask: what would happen to that knowledge if the key person left tomorrow? That is the question that motivates the next hour.}
+
 <!-- ============================================================ -->
 <!-- BREAK: 30 minutes -->
 <!-- ============================================================ -->

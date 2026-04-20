@@ -86,7 +86,15 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_economics/includes/herbert-simon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_business/includes/institutional-character.md}
-\include{_atomic-human/includes/legacy-institutions-vs-organic-growth.md}
+\define{noSlideTitle}
+\include{_art/includes/blake-newton.md}
+\include{_art/includes/michelangelo-sistine-chapel-ceiling.md}
+\include{_art/includes/michelangelo-the-creation-of-man.md}
+\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
+\include{_art/includes/blake-elohim-creating-adam.md}
+\include{_atomic-human/includes/communication-through-artefacts-art.md}
+\include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
+\undef{noSlideTitle}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
 \notes{Trust is the connective tissue of institutions. When we deploy AI systems, we are making decisions about where to place trust — in the algorithm, in the human, or in some combination. Getting this balance wrong has consequences that range from lost productivity to serious ethical failures.}

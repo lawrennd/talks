@@ -68,6 +68,10 @@ $\theta_i = \lambda_i$
 
 \include{_information-game/includes/observer-inaccessible-entropy.md}
 
+\include{_information-game/includes/no-barber-selects-ncfinprob.md}
+
+\include{_information-game/includes/configurations-entropy-ordering.md}
+
 \section{Energy}
 
 \include{_information-game/includes/energy-constraints-intro.md}

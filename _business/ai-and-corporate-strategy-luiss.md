@@ -93,6 +93,7 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_economics/includes/herbert-simon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_business/includes/institutional-character.md}
+\include{_business/includes/information-flow-structures.md}
 
 \subsection{Culture and Communication}
 \define{noSlideTitle}

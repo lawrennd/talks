@@ -378,6 +378,51 @@ embodiment
 <p>A common mistake I’ve seen is to transplant a data culture from one (ostensibly) successful institution to another. Such transplants commonly lead to organisational rejection. The institutional character of the new host will have cultural antibodies that operate against the transplant even if, at some (typically executive) level the institution is aware of the vital need for integrating the data driven culture.</p>
 <p>A major part of my job at Amazon was dealing with these tensions. As a scientist, initially working across the company, working with my team introduced dependencies and practices that impinged on the devolved autonomy. I face a similar challenge at Cambridge. Our aim is to integrate data driven methodologies with the classical sciences, humanities and across the academic spectrum. The devolved autonomy inherent in University research provides a similar set of challenges to those I faced at Amazon.</p>
 <p>My role before Amazon was at the University of Sheffield. Those were quieter times in terms of societal interest in machine learning and data science, but the Royal Society was already convening a working group on Machine Learning. This was my first interaction with policy advice, I’ve continued that interaction today by working with the AI Council, convening <a href="https://rs-delve.github.io">the DELVE group</a> to give pandemic advice, serving on the <a href="https://www.csap.cam.ac.uk/about-csap/people/governance/advisory-council/">Advisory Council for the Centre for Science and Policy</a>, and the <a href="https://www.gov.uk/government/publications/advisory-board-of-the-centre-for-data-ethics-and-innovation/advisory-board-of-the-centre-for-data-ethics-and-innovation">Advisory Board for the Centre for Data Ethics and Innovation</a>. I’m not an expert on the civil service and government, but I believe many of the themes I’ve outlined above also apply within government. The ideas I’ll talk about today build on the experiences I’ve had at Sheffield, Amazon, and Cambridge alongside the policy work I’ve been involved in to make suggestions of what the barriers are for enabling a culture of data driven policy making.</p>
+<h2 id="how-information-flows-in-organisations">How Information Flows in Organisations</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_business/includes/information-flow-structures.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_business/includes/information-flow-structures.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The information topography of an organisation is how information flows through the organisaiton. At one level this will involve a hierarchy of information propagation: the chart of reporting lines. But alongside this there are other mechanisms to share information.</p>
+<p>This dictates the organisations "absorbtive capacity which in turn dictates how it will make decisions. The nature of decisio of decisions depend on how well the information that feeds them can travel.</p>
+<p>Classically information propagates through two principle patterns. Hub-and-spoke networks, and peer-to-peer meshes. The hub-and-spoke becomes a hierarchy as it scales. The different mechanisms have different implications for bandwidth, latency, and resilience.</p>
+<div class="figure">
+<div id="corporate-hierarchy-information-flow-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//business/corporate-hierarchy-information-flow.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="corporate-hierarchy-information-flow-magnify" class="magnify" onclick="magnifyFigure(&#39;corporate-hierarchy-information-flow&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="corporate-hierarchy-information-flow-caption" class="caption-frame">
+<p>Figure: In a classical corporate hierarchy, information travels vertically. Strategic decisions flow downward from the CEO through the C-suite (CFO, CIO, COO) to functional departments. Data and reports flow upward. External signals from customers and markets enter at the top. Each layer introduces delay and compression.</p>
+</div>
+</div>
+<p>The hub-and-spoke model centralises information processing. All communication between departments routes through a central function. This works well for “command and control” but the central node tends to become overloaded. In practive that’s why we obtain a hierarchy so each spoke is itself a hub for the next level.</p>
+<div class="figure">
+<div id="hub-and-spoke-information-flow-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//business/hub-and-spoke-information-flow.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="hub-and-spoke-information-flow-magnify" class="magnify" onclick="magnifyFigure(&#39;hub-and-spoke-information-flow&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="hub-and-spoke-information-flow-caption" class="caption-frame">
+<p>Figure: In a hub-and-spoke model, all information routes through a central node. This can result in low latency (good command and control) but the central hub can become overloaded.</p>
+</div>
+</div>
+<p>Peer-to-peer structures allow direct communication between teams without a central intermediary. This maximises bandwidth and reduces latency, but requires more communication interfaces than are managed with hub-and-spoke. Amazon’s API mandate — requiring all teams to expose their capabilities through programmatic interfaces — is an example of deliberately engineering a peer-to-peer information structure within a large organisation. The challenge is coordination: without a hub, norms and protocols must emerge from the network itself. This is where culture becomes important</p>
+<div class="figure">
+<div id="peer-to-peer-information-flow-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//business/peer-to-peer-information-flow.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="peer-to-peer-information-flow-magnify" class="magnify" onclick="magnifyFigure(&#39;peer-to-peer-information-flow&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="peer-to-peer-information-flow-caption" class="caption-frame">
+<p>Figure: In a peer-to-peer network, teams communicate directly with each other through adjacent and cross-cutting channels, without routing through a central authority. This structure is resilient and high-bandwidth, but requires shared protocols and trust. It mirrors how open-source software communities and federated data ecosystems operate.</p>
+</div>
+</div>
 <h2 id="culture-and-communication">Culture and Communication</h2>
 <h2 id="blakes-newton">Blake’s Newton</h2>
 <div style="text-align:right">

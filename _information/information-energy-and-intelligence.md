@@ -68,76 +68,8 @@ transition: None
 <!-- include{_physics/includes/entropy-billiards.md} -->
 <!-- include{_physics/includes/entropy-histogram.md} -->
 \include{_physics/includes/multigame-entropy.md}
-
-\newslide{Sampling Two Dimensional Variables}
-
-\setupplotcode{import mlai.plot as plot}
-\plotcode{plot.independent_gaussians_sample(num_samps=8, 
-                               xlabel='$v_x$',
-                               ylabel='$v_y$',
-                               filestub="independent_velocities",
-                               diagrams='\writeDiagramsDir/ml')}
-							   
-							
-\setupdisplaycode{import notutils as nu
-from ipywidgets import IntSlider}
-
-\displaycode{nu.display_plots('independent_velocities{fig:0>3}.svg', 
-                            directory='\writeDiagramsDir/ml', 
-							fig=IntSlider(0, 0, 7, 1))}
-
-\slides{
-\define{width}{70%}
-\startanimation{independent_velocities}{0}{7}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities000}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities001}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities002}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities003}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities004}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities005}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities006}{\width}}{independent_velocities}
-\newframe{\includediagram{\diagramsDir/ml/independent_velocities007}{\width}}{independent_velocities}
-\endanimation
-}
-\notes{\figure{\includediagram{\diagramsDir/ml/independent_velocities007}{70%}}{Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.}{independent-height-weight-7}}
-
-\newslide{Correlation}
-\slidesincremental{
-* Correlation is when two variables are dependent
-}
-
-\subsection{Sampling Two Dimensional Variables}
-
-\setupplotcode{import mlai.plot as plot}
-\plotcode{plot.correlated_gaussians_sample(num_samps=8, 
-                              xlabel='$v_x$',
-                              ylabel='$v_y$',
-                              filestub='correlated_velocities',
-                              diagrams='\writeDiagramsDir/ml')}
-
-\setupdisplaycode{import notutils as nu
-from ipywidgets import IntSlider}
-
-\displaycode{nu.display_plots('correlated_velocities{fig:0>3}.svg', 
-                            directory='\writeDiagramsDir/ml', 
-							fig=IntSlider(0, 0, 7, 1))}
-
-
-\slides{
-\define{weight}{70%}
-\startanimation{correlated_velocities}{0}{7}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities000}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities001}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities002}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities003}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities004}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities005}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities006}{\width}}{correlated_velocities}
-\newframe{\includediagram{\diagramsDir/ml/correlated_velocities007}{\width}}{correlated_velocities}
-\endanimation
-}
-
-\notes{\figure{\includediagram{\diagramsDir/ml/correlated_velocities007}{70%}}{Samples from *correlated* Gaussian variables that represent vertical and horizontal velocity.}{correlated-velocities-7}}
+\include{_ml/includes/velocity-independent-sample.md}
+\include{_ml/includes/velocity-correlated-sample.md}
 
 
 \include{_physics/includes/jaynes-maximum-entropy.md}
@@ -174,89 +106,8 @@ $\theta_i = \lambda_i$
 
 <!-- include{_physics/includes/observer-outside.md} -->
 <!-- include{_physics/includes/observer-inside.md} -->
-\setuphelpercode{import mlai.plot as plot
-import mlai
-import numpy as np
-import os}
-
-\helpercode{def plot_correlated_gaussian(mu_x = 0, 
-                             var_x = 1, mu_y = 0, var_y = 1, 
-						     xlabel = "$v_x$", ylabel = "$v_y$", correlation = 0.5, ax=None, diagrams="\writeDiagramsDir/ml"):
-
-    sd_x = np.sqrt(var_x)
-    sd_y = np.sqrt(var_y)
-    tau = 2*np.pi
-
-    x = np.linspace(mu_x-3*sd_x, mu_x+3*sd_x, 100)[:, np.newaxis]
-    y = np.linspace(mu_y-3*sd_y, mu_y+3*sd_y, 100)[:, np.newaxis]
-
-    p_x = 1/np.sqrt(tau*var_x)*np.exp(-1/(2*var_x)*(x - mu_x)**2)
-    p_y = 1/np.sqrt(tau*var_y)*np.exp(-1/(2*var_y)*(y - mu_y)**2)
-
-    covMat = np.asarray([[1, correlation], [correlation, 1]])
-    fact = np.asarray([[sd_x, 0], [0, sd_y]])
-    covMat = np.dot(np.dot(fact,covMat), fact)
-    v, R = np.linalg.eig(covMat)
-	if ax is None:
-	    fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
-
-    ax.plot(mu_x, mu_y, 'x', color=[1., 0., 1.], markersize=5, linewidth=3)
-    theta = np.linspace(0, tau, 100)
-    xel = np.sin(theta)*np.sqrt(v[0])
-    yel = np.cos(theta)*np.sqrt(v[1])
-    vals = np.dot(R,np.vstack([xel, yel]))
-    ax.plot(vals[0, :]+mu_x, vals[1, :]+mu_y, '-', color=[1., 0., 1.], linewidth=3)
-    ax.set_xlim([np.min(x), np.max(x)])
-    ax.set_ylim([np.min(y), np.max(y)])
-    ax.set_xticks([mu_x-3*sd_x, mu_x, mu_x+3*sd_x])
-    ax.set_yticks([mu_y-3*sd_y, mu_y, mu_y+3*sd_y])
-    ax.set_xlabel(xlabel, fontsize=20)
-    ax.set_ylabel(ylabel, fontsize=20)
-}
-\newslide{Independent Gaussians}
-
-\setupplotcode{import matplotlib.pyplot as plt
-import mlai}
-
-\plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
-plot_correlated_gaussian(correlation=0.0, ax=ax)
-
-mlai.write_figure(figure=fig, filename=f'independent-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)}
-
-\figure{\includediagram{\diagramsDir/ml/independent-gaussians}{60%}}{Two independent Gaussians for the $x$ and $y$ velocity of a ball.}{independent-gaussians}
-
-\newslide{Correlated Gaussians}
-
-\plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
-plot_correlated_gaussian(correlation=0.995, ax=ax)
-
-mlai.write_figure(figure=fig, filename=f'correlated-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)
-}
-
-\figure{\includediagram{\diagramsDir/ml/correlated-gaussians}{60%}}{A correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right or bottom left.}{independent-gaussians}
-
-\newslide{Anticorrelated Gaussians}
-
-\plotcode{fig, ax = plt.subplots(1, 1, figsize=plot.big_figsize)
-plot_correlated_gaussian(correlation=-0.995, ax=ax)
-
-mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directory="\writeDiagramsDir/ml", transparent=True)
-}
-
-\figure{\includediagram{\diagramsDir/ml/anti-correlated-gaussians}{60%}}{An anti-correlated Gaussian for the $x$ and $y$ velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.}{independent-gaussians}
-
-
-\subsection{The Classical Observer}
-
-\figure{\includediagramclass{\diagramsDir/physics/observer-composite-independent}{90%}}{Here the observer is monitoring the movements of the particles. We've plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.}{observer-composite-independent}
-
-\subsection{The Classical Observer - Correlated}
-
-\figure{\includediagramclass{\diagramsDir/physics/observer-composite-correlated}{90%}}{Again the observer is monitoring the movements of the particles, but here their motion is correlated ($\rho=0.95$).}{observer-composite-correlated}
-
-\subsection{The Classical Observer - Anti-correlated}
-
-\figure{\includediagramclass{\diagramsDir/physics/observer-composite-anti-correlated}{90%}}{Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated ($\rho=-0.95$).}{observer-composite-anti-correlated}
+\include{_ml/includes/velocity-gaussian-contours.md}
+\include{_physics/includes/classical-observer-velocities.md}
 
 \section{Back to self adjudication}
 
@@ -267,70 +118,10 @@ mlai.write_figure(figure=fig, filename=f'anti-correlated-gaussians.svg', directo
 \slides{\figure{\includejpg{\diagramsDir/information/david-ultimate}{60%}}{David playing ultimate. Picture is taken from [one of his last blog posts](https://itila.blogspot.com/2016/04/perhaps-my-last-post-well-see.html).}{david-ultimate}}
 
 
-\subsection{The Classical Observer - Inaccessible}
-
-\figure{\includediagramclass{\diagramsDir/physics/observer-composite-inaccessible}{90%}}{Here the observer is blocked from monitoring anything inside the sytem.}{observer-composite-inaccessible}
-
-\notes{When we don't know what's going on inside, we can't express *outcomes* in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don't express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what's going on.}
-
-\subsection{Entropy and Impossibility}
-
-\notes{While we don't see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy. 
-
-Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.[^entropy-category]
-
-[^entropy-category]: More formally entropy defines a functor from the category of finite probability spaces to the poset category $(\Re, \leq)$, assigning to each object its Shannon entropy.
-}
-
-\slidesincremental{* We don't see see the outcome space
-* But we summarise it using entropy
-* Entropy gives a single number measuring uncertainty
-}
-
-\newslide{Entropy and Impossibility}
-
-\slidesincremental{
-* Each distribution gets a score $\rightarrow$ compare them
-* Induces ordering from low to high uncertainty
-* Formally: a functor from FinProb to $(\Re, \leq)$
-}
-\notes{We denote marginal entropy of the $i$th variable by $h_i$. We denote the joint entropy of the entire system by $H$.}
-
-\newslide{Marginal and Joint}
-
-\slidesincremental{
-* Marginal entropy of variable $i$: $h_i$
-* Joint entropy of system: $H$
-* Multiinformation $I = \sum_i h_i - H$
-}
-
+\include{_information-game/includes/observer-inaccessible-entropy.md}
 \section{Energy}
 
-\subsection{Energy Constraints}
-
-\slides{
-* Normally we derive physical laws by
-
-*Maximise entropy subject to energy conservation*
-}
-
-\subsection{The Conservation Law}
-
-\newslide{Marginal Entropy Conservation}
-
-\slides{
-$$
-\sum_{i=1}^N h_i = C
-$$
-}
-
-\newslide{Entropy Constraints}
-
-\slides{
-* Now derive game rules by
-
-Maximise *joint* entropy subject to *marginal* entropy conservation
-}
+\include{_information-game/includes/energy-constraints-intro.md}
 
 \include{_physics/includes/i-plus-h-equals-c.md}
 

@@ -70,6 +70,13 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 \include{_ai/includes/the-atomic-eye.md}
 \include{_ai/includes/embodiment-factors-celsius.md}
+\undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\define{noSlideTitle}
+
+
+\include{_ai/includes/conversation-tedx.md}
+\include{_atomic-human/includes/fascination-with-ourselves.md}
 \include{_ai/includes/baby-shoes.md}
 
 
@@ -86,6 +93,8 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_economics/includes/herbert-simon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_business/includes/institutional-character.md}
+
+\subsection{Culture and Communication}
 \define{noSlideTitle}
 \include{_art/includes/blake-newton.md}
 \include{_art/includes/michelangelo-sistine-chapel-ceiling.md}

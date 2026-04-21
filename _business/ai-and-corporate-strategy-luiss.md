@@ -66,11 +66,12 @@ CONNECTION TO COURSE SYLLABUS:
 
 \section{Part 1: What AI Is and Isn't}
 
+\define{noSlideTitle}
 \include{_ai/includes/henry-ford-intro.md}
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 \include{_ai/includes/the-atomic-eye.md}
-\include{_ai/includes/embodiment-factors-celsius.md}
 \undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-celsius.md}
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
 \define{noSlideTitle}
 
@@ -80,6 +81,7 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_ai/includes/baby-shoes.md}
 
 
+\undef{noSlideTitle}
 \include{_economics/includes/homo-atomicus.md}
 
 \subsection{Discussion}
@@ -88,10 +90,14 @@ CONNECTION TO COURSE SYLLABUS:
 
 \section{Part 2: Information, Institutions and Change}
 
+\define{noSlideTitle}
 \include{_economics/includes/philosophers-stone.md}
+\undef{noSlideTitle}
 \include{_economics/includes/the-attention-economy.md}
 \include{_economics/includes/herbert-simon-information.md}
+\define{noSlideTitle}
 \include{_data-science/includes/new-flow-of-information.md}
+\undef{noSlideTitle}
 \include{_business/includes/institutional-character.md}
 \include{_business/includes/information-flow-structures.md}
 
@@ -105,6 +111,7 @@ CONNECTION TO COURSE SYLLABUS:
 \include{_atomic-human/includes/communication-through-artefacts-art.md}
 \include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
 \undef{noSlideTitle}
+\include{_business/includes/more-information-topography.md}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
 \notes{Trust is the connective tissue of institutions. When we deploy AI systems, we are making decisions about where to place trust — in the algorithm, in the human, or in some combination. Getting this balance wrong has consequences that range from lost productivity to serious ethical failures.}

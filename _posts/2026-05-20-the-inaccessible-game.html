@@ -1,15 +1,7 @@
 ---
 title: "The Inaccessible Game"
-venue: "Information Theory Seminar, Centre for Mathematical Sciences
-(MR5), University of Cambridge"
-abstract: "<p>In this talk we will explore a zero-player game based on
-an information isolation constraint. The dynamics of the game emerge
-from a “no-barber” selection principle that prohibits external
-structure. The aim is for the game to avoid impredictive-style
-inconsistencies. Motivated by the selection principle we will derive a
-“selected” trajectory in the game that consists of a second-order
-constrained maximum entropy production along the information
-geometry.</p>"
+venue: "Information Theory Seminar, Centre for Mathematical Sciences (MR5), University of Cambridge"
+abstract: "<p>In this talk we will explore a zero-player game based on an information isolation constraint. The dynamics of the game emerge from a “no-barber” selection principle that prohibits external structure. The aim is for the game to avoid impredictive-style inconsistencies. Motivated by the selection principle we will derive a “selected” trajectory in the game that consists of a second-order constrained maximum entropy production along the information geometry.</p>"
 author:
 - given: Neil D.
   family: Lawrence
@@ -38,131 +30,649 @@ categories:
 <!--
 
 -->
-<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
+<h2 id="the-munchkin-provision">The Munchkin Provision</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/munchkin-provision.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/munchkin-provision.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves
-everyone in the village who does not shave themselves, does the barber
-shave themselves? The paradox arises when a definition quantifies over a
-totality that includes the defining rule itself.</p>
-<p>We propose a similar constraint for the inaccessible game: <em>the
-foundational rules must not refer to anything outside themselves for
-adjudication or reference</em>. Or in other words there can be no
-<em>external structure</em>. We call this the “no-barber principle.”</p>
-<p>Without such consistency, we would require what we might call a
-“Munchkin provision.” In the Munchkin card game <span class="citation"
-data-cites="Jackson-munchkin01">(<strong>Jackson-munchkin01?</strong>)</span>,
-it is acknowledged that the cards and rules may be inconsistent. Their
-resolution?</p>
+<p>Without such consistency, we would require what we might call a “Munchkin provision.” In the Munchkin card game <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span>, it is acknowledged that the cards and rules may be inconsistent. Their resolution?</p>
 <blockquote>
-<p>Any other disputes should be settled by loud arguments, with the
-owner of the game having the last word.</p>
-<p>Munckin Rules <span class="citation"
-data-cites="Jackson-munchkin01">(<strong>Jackson-munchkin01?</strong>)</span></p>
+<p>Any other disputes should be settled by loud arguments, with the owner of the game having the last word.</p>
+<p>Munckin Rules <span class="citation" data-cites="Jackson-munchkin01">(Jackson, 2001)</span></p>
 </blockquote>
-<p>While this works for card games, it’s unsatisfying for foundational
-mathematics. We want our game to be <em>internally consistent</em>, not
-requiring an external referee to resolve paradoxes.</p>
+<p>While this works for card games, it’s unsatisfying for foundational mathematics. We want our game to be <em>internally consistent</em>, not requiring an external referee to resolve paradoxes.</p>
 <div class="figure">
 <div id="munchkin-game-cover-figure" class="figure-frame">
-<div class="centered" style="">
-<img class="" src="\slidesDiagrams/information-game/Munchkin_game_cover.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//information-game/Munchkin_game_cover.jpg" width="35%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
 </div>
 </div>
-<div id="munchkin-game-cover-magnify" class="magnify"
-onclick="magnifyFigure(&#39;munchkin-game-cover&#39;)">
+<div id="munchkin-game-cover-magnify" class="magnify" onclick="magnifyFigure(&#39;munchkin-game-cover&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
 <div id="munchkin-game-cover-caption" class="caption-frame">
-<p>Figure: The Munchkin card came has both cards and rules. The game
-explicitly acknowledges that this can lead to inconsistencies which
-should be resolved by the game owner.</p>
+<p>Figure: The Munchkin card came has both cards and rules. The game explicitly acknowledges that this can lead to inconsistencies which should be resolved by the game owner.</p>
 </div>
 </div>
-<p>The no-barber principle says that admissible rules must be
-<em>internally adjudicable</em>: they depend only on quantities
-definable from within the system’s internal language, without requiring
-e.g. an external observer to define what’s distinguishable, or a
-pre-specified outcome space or <span
-class="math inline">\(\sigma\)</span>-algebra, a privileged
-decomposition into subsystems an externally defined time parameter or
-spatial coordinates.</p>
-<h2 id="entropic-exchangeability">Entropic Exchangeability</h2>
-<p>The no-barber principle leads to what we call <em>entropic
-exchangeability</em>: any admissible constraint or selection criterion
-must depend only on reduced subsystem descriptions, be invariant under
-relabeling of subsystems, and not presuppose access to globally
-distinguishable joint configurations.</p>
-<p>This is an attempt to introduce a consistency requirement that
-prevents the rules from appealing to distinctions the game itself cannot
-represent.</p>
-<h2 id="what-this-excludes">What This Excludes</h2>
-<p>Many seemingly natural constraints violate the no-barber principle.
-For example, partial conservation which assumes only some variables are
-isolated, privileges those variables. A time varying <span
-class="math inline">\(C\)</span> would require an external time
-parameter. The notion of observer relative isolation would require an
-observer that cannot be defined externally. Probabilistic isolation also
-requires an externally defined probabilistic space.</p>
-<h1 id="foundations-information-loss-and-entropy">Foundations:
-Information Loss and Entropy</h1>
+<h2 id="a-tautology">A Tautology</h2>
+<blockquote>
+<p>Self-governing systems cannot refer to external arbitration.</p>
+</blockquote>
+<p>While this is a tautology, we’re going to try and suggest how to formalise this notion through information theory.</p>
+<h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
 <h2 id="the-inaccessible-game-setup">The Inaccessible Game Setup</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span
-class="editsection"
-style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>{Inspired by the no-barber principle, we set up the game in a way
-that attempts to avoid “external structure”. The first two things we
-need to do this are 1. A representation of information loss 2. A
-prohibition of information exchange with the game</p>
-<p>At this point there’s a challenge, how do we obtain a representation
-of information loss without including external structure? Our best
-suggestion is the axiomatic frameworks of Baez et al (<span
-class="citation" data-cites="Baez-characterisation11">Baez et al.
-(2011)</span>) and Parzygnat (<span class="citation"
-data-cites="Parzygnat">(<strong>Parzygnat?</strong>)</span></p>
+<p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
+<p>How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.</p>
+<p>In the game <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span> we introduce information conservation based on these measures of information loss.</p>
+<!-- include{_physics/includes/entropy-billiards.md} -->
+<!-- include{_physics/includes/entropy-histogram.md} -->
+<h2 id="thermalisation-from-different-initial-conditions">Thermalisation from Different Initial Conditions</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>This simulation places exactly nine billiard balls on a 3×3 grid, each coloured according to its position. The <strong>3×3 histogram grid</strong> tracks, for each ball, the cumulative 2-D velocity distribution <span class="math inline">\((v_x, v_y)\)</span> it has visited since the last reset.</p>
+<p>The <em>entropy</em> <span class="math inline">\(H(v_x, v_y)\)</span> for each ball is shown in the top-left of its panel. At the start, when all balls move identically, every panel shows a single bright dot near zero entropy. As elastic collisions redistribute energy the dots spread outward, tracing the Maxwell–Boltzmann circle, and entropy climbs toward its maximum.</p>
+<p>The coloured dot in the top-right corner of each panel matches the ball’s colour on the main canvas, making it easy to follow individual balls.</p>
+<p>Use the <strong>Display</strong> dropdown to switch between the 2D joint distribution <span class="math inline">\(p(v_x, v_y)\)</span> (heatmap) and the two 1D marginals <span class="math inline">\(p(v_x)\)</span> and <span class="math inline">\(p(v_y)\)</span> overlaid as bar charts. Both marginals are expected to converge to the same symmetric distribution; the coloured bars show <span class="math inline">\(p(v_x)\)</span> (ball colour) and the dark outline shows <span class="math inline">\(p(v_y)\)</span>. The entropy labels <span class="math inline">\(H_x\)</span> and <span class="math inline">\(H_y\)</span> confirm that the two components thermalise at the same rate.</p>
+<p>Use the <strong>Initialisation</strong> dropdown to choose how the balls start:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>From top ↓</td>
+<td>All balls move downward at the same speed</td>
+</tr>
+<tr class="even">
+<td>From bottom ↑</td>
+<td>All balls move upward</td>
+</tr>
+<tr class="odd">
+<td>From left →</td>
+<td>All balls move rightward</td>
+</tr>
+<tr class="even">
+<td>From right ←</td>
+<td>All balls move leftward</td>
+</tr>
+<tr class="odd">
+<td>Clockwise ↻</td>
+<td>Each ball moves tangentially clockwise around the canvas centre</td>
+</tr>
+<tr class="even">
+<td>Counter-CW ↺</td>
+<td>Each ball moves tangentially counter-clockwise</td>
+</tr>
+</tbody>
+</table>
+<p>For the four directional cases all nine histograms start at the same point, yet rapidly diverge and then converge to the same circular distribution. For the propellor cases adjacent balls start with very different velocity directions — the corner and edge balls even start at nearly opposite velocities — and yet all nine panels converge to the same equilibrium blob.</p>
+<p>Notice that this system is ergodic: in the long-run distribution of each ball’s velocity is independent of the initial conditions and identical for all balls, even though the <em>path</em> to equilibrium differs.</p>
+<div class="figure">
+<div id="multigame-entropy-figure" class="figure-frame">
+<div style="width:100%;max-width:1020px">
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
+<div style="flex:1 1 260px">
+<canvas id="multigame-canvas" width="500" height="360" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:1 1 260px">
+<canvas id="multigame-grid" width="480" height="480" style="border:1px solid #bbb;display:block;width:100%">
+</canvas>
+</div>
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+<button id="multigame-reset">
+Reset
+</button>
+<button id="multigame-pause">
+Pause / Resume
+</button>
+<button id="multigame-skip">
+Skip 1000s
+</button>
+<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
+</div>
+</div>
+<!--
+Loads the shared Ballworld runtime used by interactive physics demos
+(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
+behaviour is provided by follow-on scripts such as maxwell.js.
+-->
+<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
+</div>
+<div id="multigame-entropy-magnify" class="magnify" onclick="magnifyFigure(&#39;multigame-entropy&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="multigame-entropy-caption" class="caption-frame">
+<p>Figure: Nine billiard balls on a 3×3 grid. The histogram grid tracks each ball’s cumulative <span class="math inline">\((v_x, v_y)\)</span> velocity distribution. Entropy per ball rises from near zero (single bright dot at the initial velocity) to the Maxwell–Boltzmann value as collisions thermalise the gas. Use the Initialisation dropdown to compare directional starts (all balls move the same way) with propellor starts (adjacent balls move in opposite directions): all initial conditions converge to the same equilibrium, demonstrating ergodicity.</p>
+</div>
+</div>
+<div class="figure">
+<div id="independent-velocities-7-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities007.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="independent-velocities-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-velocities-7&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="independent-velocities-7-caption" class="caption-frame">
+<p>Figure: Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.</p>
+</div>
+</div>
+<h2 id="sampling-two-dimensional-variables">Sampling Two Dimensional Variables</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/velocity-correlated-sample.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/velocity-correlated-sample.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="correlated-velocities-7-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities007.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="correlated-velocities-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-velocities-7&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="correlated-velocities-7-caption" class="caption-frame">
+<p>Figure: Samples from <em>correlated</em> Gaussian variables that represent vertical and horizontal velocity.</p>
+</div>
+</div>
+<h2 id="jaynes-and-maximum-entropy">Jaynes and Maximum Entropy</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="e-t-jaynes-figure" class="figure-frame">
+<div class="centered centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="e-t-jaynes-magnify" class="magnify" onclick="magnifyFigure(&#39;e-t-jaynes&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="e-t-jaynes-caption" class="caption-frame">
+<p>Figure: Ed Jaynes who developed the maximum entropy principle</p>
+</div>
+</div>
+<h2 id="maximum-entropy-motivation">Maximum Entropy Motivation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Ed Jaynes <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>, proposed a foundation for statistical mechanics based on information theory. Jaynes recast that the problem of assigning probabilities in statistical mechanics as a problem of inference with incomplete information.</p>
+<p>A central problem in statistical mechanics is assigning initial probabilities when our knowledge is incomplete. The canonical example is if we know only the average energy of a system, what probability distribution should we use? Jaynes argued that we should use the distribution that maximises entropy subject to the constraints of our knowledge.</p>
+<p>Jaynes illustrated the approach with a simple example. If a die has been tossed many times, with an average result of 4.5 rather than the expected 3.5 for a fair die. What probability assignment <span class="math inline">\(P_n\)</span> (<span class="math inline">\(n=1,2,...,6\)</span>) should we make for the next toss?</p>
+<p>We need to satisfy two constraints <span class="math display">\[\begin{align}
+\sum_{n=1}^6 P_n &amp;= 1 \\
+\sum_{n=1}^6 n P_n &amp;= 4.5
+\end{align}\]</span></p>
+<p>Many distributions could satisfy these constraints, but which one makes the fewest unwarranted assumptions? Jaynes argued that we should choose the distribution that is maximally noncommittal with respect to missing information - the one that maximises the entropy, <span class="math display">\[\begin{align}
+S_I = -\sum_{i} p_i \log p_i
+\end{align}\]</span> This principle leads to the exponential family of distributions, which in statistical mechanics gives us the canonical ensemble and other familiar distributions.</p>
+<h2 id="die-roll-simulation">Die Roll Simulation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>This simulation illustrates the maximum entropy principle through Jaynes’ dice example <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>. A fair die has expected outcome 3.5; the <em>Jaynes example</em> asks: if we know only that the average outcome is 4.5, what probability distribution <span class="math inline">\(P_n\)</span> over the six faces should we assign?</p>
+<p>The answer is the maximum-entropy distribution subject to the constraint <span class="math inline">\(\sum_{n=1}^6 n P_n = 4.5\)</span>, which belongs to the exponential family: <span class="math display">\[\begin{align}
+P_n = \frac{e^{\lambda n}}{Z(\lambda)}, \qquad Z(\lambda) = \sum_{n=1}^6 e^{\lambda n}
+\end{align}\]</span> where <span class="math inline">\(\lambda &gt; 0\)</span> is chosen so the mean constraint is satisfied. This avoids any unwarranted assumption beyond the available data.</p>
+<div class="figure">
+<div id="dieroll-simulation-figure" class="figure-frame">
+<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
+<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
+<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
+</canvas>
+<div style="font-size:0.75em;color:#888;text-align:center">
+click die or button to roll
+</div>
+<div style="display:flex;gap:6px">
+<button id="dieroll-roll">
+Roll
+</button>
+<button id="dieroll-roll100">
+Roll ×100
+</button>
+</div>
+<div style="text-align:center;line-height:1.6;font-size:0.85em">
+<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
+</div>
+<button id="dieroll-reset">
+Reset history
+</button>
+</div>
+<div style="flex:1;min-width:280px">
+<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
+</canvas>
+<div style="margin-top:6px">
+<div style="font-style:italic;margin-bottom:6px;color:#888">
+<p>Outcome weights (auto-normalised to probabilities)</p>
+</div>
+<div id="dieroll-sliders">
+
+</div>
+<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+<button id="dieroll-uniform">
+Uniform (mean 3.5)
+</button>
+<button id="dieroll-jaynes">
+Jaynes: mean 4.5
+</button>
+<button id="dieroll-low">
+Low-biased: mean 2
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
+</div>
+<div id="dieroll-simulation-magnify" class="magnify" onclick="magnifyFigure(&#39;dieroll-simulation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="dieroll-simulation-caption" class="caption-frame">
+<p>Figure: Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).</p>
+</div>
+</div>
+<h2 id="the-general-maximum-entropy-formalism">The General Maximum-Entropy Formalism</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>For a more general case, suppose a quantity <span class="math inline">\(x\)</span> can take values <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span> and we know the average values of several functions <span class="math inline">\(f_k(x)\)</span>. The problem is to find the probability assignment <span class="math inline">\(p_i = p(x_i)\)</span> that satisfies <span class="math display">\[\begin{align}
+\sum_{i=1}^n p_i &amp;= 1 \\
+\sum_{i=1}^n p_i f_k(x_i) &amp;= \langle f_k(x) \rangle = F_k \quad k=1,2,\ldots,m
+\end{align}\]</span> and maximises the entropy <span class="math inline">\(S_I = -\sum_{i=1}^n p_i \log p_i\)</span>.</p>
+<p>Using Lagrange multipliers, the solution is the generalised canonical distribution, <span class="math display">\[\begin{align}
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
+\end{align}\]</span> where <span class="math inline">\(Z(\lambda_1,\ldots,\lambda_m)\)</span> is the partition function, <span class="math display">\[\begin{align}
+Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\end{align}\]</span> The Lagrange multipliers <span class="math inline">\(\lambda_k\)</span> are determined by the constraints, <span class="math display">\[\begin{align}
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\end{align}\]</span> The maximum attainable entropy is <span class="math display">\[\begin{align}
+(S_I)_{max} = \log Z + \sum_{k=1}^m \lambda_k \langle f_k \rangle.
+\end{align}\]</span></p>
+<p><span class="math display">\[
+p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
+\]</span> <span class="math display">\[
+Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
+\]</span> <span class="math display">\[
+\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
+\]</span></p>
+<h2 id="exponential-family">Exponential Family</h2>
+<p>This mirrors a broadly used representation in statistics known as the <em>exponential family</em>.</p>
+<p><span class="math display">\[
+p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
+\]</span> where <span class="math inline">\(\theta_i = \lambda_i\)</span></p>
+<div class="figure">
+<div id="independent-gaussians-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="independent-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-gaussians&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="independent-gaussians-caption" class="caption-frame">
+<p>Figure: Two independent Gaussians for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball.</p>
+</div>
+</div>
+<div class="figure">
+<div id="correlated-gaussians-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated-gaussians.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="correlated-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-gaussians&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="correlated-gaussians-caption" class="caption-frame">
+<p>Figure: A correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right or bottom left.</p>
+</div>
+</div>
+<div class="figure">
+<div id="anti-correlated-gaussians-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/anti-correlated-gaussians.svg" width="60%" style=" ">
+</object>
+</div>
+<div id="anti-correlated-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;anti-correlated-gaussians&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="anti-correlated-gaussians-caption" class="caption-frame">
+<p>Figure: An anti-correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.</p>
+</div>
+</div>
+<h2 id="the-classical-observer">The Classical Observer</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="observer-composite-independent-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-independent-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-independent&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-independent-caption" class="caption-frame">
+<p>Figure: Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.</p>
+</div>
+</div>
+<h2 id="the-classical-observer---correlated">The Classical Observer - Correlated</h2>
+<div class="figure">
+<div id="observer-composite-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-correlated-caption" class="caption-frame">
+<p>Figure: Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).</p>
+</div>
+</div>
+<h2 id="the-classical-observer---anti-correlated">The Classical Observer - Anti-correlated</h2>
+<div class="figure">
+<div id="observer-composite-anti-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-anti-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-anti-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-anti-correlated-caption" class="caption-frame">
+<p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
+</div>
+</div>
+<h1 id="back-to-self-adjudication">Back to self adjudication</h1>
+<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
+<p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
+<p>The no-barber principle says that admissible rules must be <em>internally adjudicable</em>: they depend only on quantities definable from within the system’s internal language, without requiring e.g. an external observer to define the co-ordinates or a privileged decomposition.</p>
+<h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="observer-composite-inaccessible-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-inaccessible.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-inaccessible-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-inaccessible&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-inaccessible-caption" class="caption-frame">
+<p>Figure: Here the observer is blocked from monitoring anything inside the sytem.</p>
+</div>
+</div>
+<p>When we don’t know what’s going on inside, we can’t express <em>outcomes</em> in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don’t express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what’s going on.</p>
+<h2 id="entropy-and-impossibility">Entropy and Impossibility</h2>
+<p>While we don’t see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy.</p>
+<p>Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>We denote marginal entropy of the <span class="math inline">\(i\)</span>th variable by <span class="math inline">\(h_i\)</span>. We denote the joint entropy of the entire system by <span class="math inline">\(H\)</span>.</p>
+<h1 id="energy">Energy</h1>
+<h2 id="energy-constraints">Energy Constraints</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/energy-constraints-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/energy-constraints-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<h2 id="the-conservation-law">The Conservation Law</h2>
+<h2 id="the-i-h-c-structure">The <span class="math inline">\(I + H = C\)</span> Structure</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>We have established four axioms, with the fourth axiom stating that the sum of marginal entropies is conserved, <span class="math display">\[
+\sum_{i=1}^N h_i = C.
+\]</span> This conservation law is the heart of The Inaccessible Game, but to understand its dynamical implications, we need to rewrite it in a more revealing form.</p>
+<h2 id="multi-information-measuring-correlation">Multi-Information: Measuring Correlation</h2>
+<p>The <strong>multi-information</strong> (or <strong>total correlation</strong>), introduced by <span class="citation" data-cites="Watanabe-multiinformation60">Watanabe (1960)</span>, measures how much the variables in a system are correlated. It is defined as, <span class="math display">\[
+I = \sum_{i=1}^N h_i - H,
+\]</span> where <span class="math inline">\(H\)</span> is the <strong>joint entropy</strong> of the full system: <span class="math display">\[
+H = -\sum_{\mathbf{x}} p(\mathbf{x}) \log p(\mathbf{x}).
+\]</span></p>
+<p>The multi-information has a nice interpretation:</p>
+<ul>
+<li><strong><span class="math inline">\(I = 0\)</span></strong>: The variables are completely independent. The joint entropy equals the sum of marginal entropies.</li>
+<li><strong><span class="math inline">\(I &gt; 0\)</span></strong>: The variables are correlated. Some information is “shared” between variables, so the joint entropy is less than the sum of marginals.</li>
+<li><strong><span class="math inline">\(I\)</span> is maximal</strong>: The variables are maximally correlated (in the extreme case, deterministically related).</li>
+</ul>
+<p>Multi-information is always non-negative (<span class="math inline">\(I \geq 0\)</span>) and measures how much knowing one variable tells you about others.</p>
+<p>Using the definition of multi-information, we can rewrite our conservation law. From <span class="math inline">\(I = \sum_{i=1}^N h_i - H\)</span>, we have: <span class="math display">\[
+\sum_{i=1}^N h_i = I + H.
+\]</span> Therefore, the fourth axiom <span class="math inline">\(\sum_{i=1}^N h_i = C\)</span> becomes: <span class="math display">\[
+I + H = C.
+\]</span></p>
+<p>This is an <em>information action principle</em>. It says that multi-information plus joint entropy is conserved. This equation sits behind the dynamics of the Inaccessible Game.</p>
+<p>This equation has the structure of an action principle in classical mechanics. In physics, total energy is conserved and splits into two parts, <span class="math display">\[
+T + V = E,
+\]</span> where <span class="math inline">\(T\)</span> is kinetic energy and <span class="math inline">\(V\)</span> is potential energy.</p>
+<p>The analogy for The Inaccessible Game is.</p>
+<ul>
+<li><strong>Multi-information <span class="math inline">\(I\)</span></strong> plays the role of <em>potential energy</em>. It represents “stored” correlation structure. High <span class="math inline">\(I\)</span> means variables are tightly coupled, like a compressed spring.</li>
+<li><strong>Joint entropy <span class="math inline">\(H\)</span></strong> plays the role of <em>kinetic energy</em>. It represents “dispersed” or “free” information. High <span class="math inline">\(H\)</span> means the probability distribution is spread out, with maximal uncertainty.</li>
+</ul>
+<p>Just as a classical system evolves from high potential energy to high kinetic energy (a ball rolling down a hill), the idea in the Inaccessible Game will be that the information system evolves from high correlation (high <span class="math inline">\(I\)</span>) to high entropy (high <span class="math inline">\(H\)</span>).</p>
+<h2 id="information-relaxation">Information Relaxation</h2>
+<p>The <span class="math inline">\(I + H = C\)</span> structure suggests a <em>relaxation principle</em>: systems naturally evolve from states of high correlation (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>) toward states of low correlation (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>).</p>
+<p>Why? Our inspiration is that the second law of thermodynamics tells us that entropy increases. If we want to introduce dynamics in the game, increasing entropy provides an obvious way to do that. Since <span class="math inline">\(I + H = C\)</span> is constant, if <span class="math inline">\(H\)</span> increases, <span class="math inline">\(I\)</span> must decrease. The system <em>breaks down correlations</em> to increase entropy.</p>
+<p>This is analogous to how physical systems relax from non-equilibrium states (low <span class="math inline">\(T\)</span>, high <span class="math inline">\(V\)</span>) to equilibrium (high <span class="math inline">\(T\)</span>, low <span class="math inline">\(V\)</span>). A compressed spring releases its stored energy. A hot object in a cold room disperses its energy. In information systems, correlated structure dissipates into entropy.</p>
+<p>Consider a simple two-variable system with binary variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>:</p>
+<p><strong>High correlation state</strong> (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
+\]</span> The variables are perfectly correlated. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 1\)</span> bit. Multi-information: <span class="math inline">\(I = 1 + 1 - 1 = 1\)</span> bit.</p>
+<p><strong>Low correlation state</strong> (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1, X_2) = 0.25 \text{ for all four combinations}
+\]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
+<p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualise this relaxation:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
+<div class="figure">
+<div id="i-plus-h-relaxation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="i-plus-h-relaxation-magnify" class="magnify" onclick="magnifyFigure(&#39;i-plus-h-relaxation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="i-plus-h-relaxation-caption" class="caption-frame">
+<p>Figure: Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.</p>
+</div>
+</div>
+<p>The visualisation shows the trade-off: as the system relaxes, correlation structure (multi-information) is converted into entropy. The total <span class="math inline">\(I + H = C\)</span> remains constant (black dashed line), but the system evolves from a state dominated by correlation to one dominated by entropy.</p>
+<p>The marginal entropies <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span> stay constant throughout this evolution. An external observer measuring only marginal entropies would see no change—the system is informationally isolated, hence “inaccessible.”</p>
+<h2 id="long-story-short">Long Story Short</h2>
+<p>Building on these ideas, some interesting conclusions emerge. The marginal entropy constraint leads to GENERIC-like dynamics <span class="citation" data-cites="Grmela-dynamics97">Öttinger (2005)</span>.</p>
+<p>When characterising the origin of the game, a shift is forced from Shannon entropy to von Neumann entropy <span class="citation" data-cites="vonNeumann-book32">(Neumann, 1932)</span>. In retrospect the shift feels natural if we take an algebraic view of quantum probability, where outcomes are no longer primitive. This is consistent with the inaccessible nature of the game.</p>
+<p>The game is inspired by the nice connections between inference and thermodynamics explored by E. T. Jaynes, but the dynamics play out through the framework of information geometry <span class="citation" data-cites="Amari-information00">(Amari and Nagaoka, 2000)</span> which makes much of the (normally complicated) calculations around Riemanian geometry relatively straightforward.</p>
+<h2 id="pendulum-animation">Pendulum Animation</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple pendulum: trading potential ↔ kinetic energy</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># State: angle θ and angular velocity ω</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Energy: E = (1/2)mL²ω² + mgL(1-cos(θ))</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>  <span class="co"># gravity</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># length</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># mass</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial conditions: release from angle, zero velocity</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>theta0 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">3</span>  <span class="co"># 60 degrees</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> np.array([theta0, omega0])</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>initial_energy <span class="op">=</span> pendulum_energy(theta0, omega0)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate using Störmer-Verlet method (symplectic integrator, preserves energy)</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.02</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>t_max <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="bu">int</span>(t_max <span class="op">/</span> dt)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrays to store trajectory</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.linspace(<span class="dv">0</span>, t_max, num_steps)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.zeros((num_steps, <span class="dv">2</span>))</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>energies <span class="op">=</span> np.zeros(num_steps)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate using Störmer-Verlet (symplectic, time-reversible)</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Half-step omega, full-step theta, half-step omega — preserves energy to machine precision</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>theta, omega <span class="op">=</span> initial_state</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    trajectory[i] <span class="op">=</span> [theta, omega]</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    energies[i] <span class="op">=</span> pendulum_energy(theta, omega)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    omega_half <span class="op">=</span> omega <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> theta <span class="op">+</span> omega_half <span class="op">*</span> dt</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    omega <span class="op">=</span> omega_half <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify energy conservation</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>energy_drift <span class="op">=</span> np.<span class="bu">abs</span>(energies <span class="op">-</span> initial_energy).<span class="bu">max</span>()</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum energy drift: </span><span class="sc">{</span>energy_drift<span class="op">/</span>initial_energy<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%&quot;</span>)</span></code></pre></div>
+<div class="figure">
+<div id="pendulum-energy-conservation-figure" class="figure-frame">
+<div class="centered" style="">
+<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/pendulum-energy-conservation.gif" width="80%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+</div>
+</div>
+<div id="pendulum-energy-conservation-magnify" class="magnify" onclick="magnifyFigure(&#39;pendulum-energy-conservation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="pendulum-energy-conservation-caption" class="caption-frame">
+<p>Figure: Pendulum energy conservation: the pendulum (left) trades potential and kinetic energy while total energy (red line, right) remains constant. Green shows kinetic energy, orange shows potential energy.</p>
+</div>
+</div>
+<p>This pendulum simulation uses.</p>
+<ol type="1">
+<li><p><strong>Energy formula</strong>: <span class="math inline">\(E = \frac{1}{2}mL^2\omega^2 + mgL(1-\cos\theta)\)</span> (kinetic + potential)</p></li>
+<li><p><strong>Dynamics from energy</strong>: The equation <span class="math inline">\(\frac{\text{d}\omega}{\text{d}t} = -\frac{g}{L}\sin\theta\)</span> comes from energy conservation structure</p></li>
+<li><p><strong>Trading energy</strong>: Watch kinetic (green) and potential (orange) trade off while total (red) stays constant</p></li>
+<li><p><strong>Geometric structure</strong>: The antisymmetric structure we’ll study ensures this conservation automatically</p></li>
+<li><p><strong>Störmer-Verlet integrator</strong>: The simulation uses a symplectic, time-reversible integrator — each step splits the velocity update into two half-steps either side of the position update, preserving the Hamiltonian structure and keeping energy drift at machine precision level.</p></li>
+</ol>
+<p>The animation shows the pendulum swinging with the energy plot demonstrating near-perfect conservation.</p>
+<p>One of the nice results of <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span> is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes’ maximum entropy approach to determin the stationary distribution.</p>
+<h1 id="intelligence">Intelligence</h1>
+<h2 id="perpetual-motion-and-superintelligence">Perpetual Motion and Superintelligence</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Imagine in 1925 a world where the automobile is already transforming society, but big promises are being made for things to come. The stock market is soaring, the 1918 pandemic is forgotten. And every major automobile manufacturer is investing heavily on the promise they will each be the first to produce a car that needs no fuel. A perpetual motion machine.</p>
+<p>Well, of course that didn’t happen. But I sometimes wonder if what we’re seeing today 100 years later is the modern equivalent of that. In 2025 billions are being invested in promises of superintelligence and artificial general intelligence that will transform everything.</p>
+<p>We know why perpetual motion is impossible: the second law of thermodynamics tells us that entropy always increases. So we can’t have motion without entropy production. No matter how clever the design, you cannot extract energy from nothing, and you cannot create a closed system that does useful work indefinitely without an external energy source.</p>
+<p>How might we make an equivalent statement for the bizarre claims around superintelligence? Some inspiration comes from Maxwell’s demon, an “intelligent” entity which operates against the laws of thermodynamics. The inspiration comes because the demon suggests that for the second law to hold there must be a relationship between the demon’s decisions and thermodynamic entropy.</p>
+<p>One of the resolutions comes from Landauer’s principle, the notion that erasure of information requires heat dissipation. This suggests there are fundamental information-theoretic constraints on intelligent systems, just as there are thermodynamic constraints on engines.</p>
+<p>I’ve no doubt that AI technologies will transform our world just as much as the automobile has. But I also have no doubt that the promise of superintelligence is just as silly as the promise of perpetual motion. The inaccessible game provides one way of understanding why.</p>
+<h2 id="information-theoretic-limits">Information-Theoretic Limits</h2>
+<p>The hope is that this framework might reveal limits on information processing systems, including intelligent systems.</p>
+<h2 id="information-theoretic-limits-on-intelligence">Information-Theoretic Limits on Intelligence</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Just as the second law of thermodynamics places fundamental limits on mechanical engines, no matter how cleverly designed, the idea is that information theory places fundamental limits on information engines, no matter how cleverly implemented.</p>
+<h3 id="what-intelligent-systems-must-do">What Intelligent Systems Must Do</h3>
+<p>Any intelligent system, whether biological or artificial, must perform certain fundamental operations:</p>
+<ol type="1">
+<li><strong>Acquire information</strong> from its environment (sensing, observation)</li>
+<li><strong>Store information</strong> about the world (memory)</li>
+<li><strong>Process information</strong> to make decisions (computation)</li>
+<li><strong>Erase information</strong> to make room for new data (memory management)</li>
+<li><strong>Act on the world</strong> using the processed information</li>
+</ol>
+<p>Each of these operations has information-theoretic costs that cannot be eliminated by clever engineering.</p>
+<h2 id="landauers-principle">Landauer’s Principle</h2>
+<p>Landauer’s principle <span class="citation" data-cites="Landauer-irreversibility61">(Landauer, 1961)</span> establishes that erasing one bit of information requires dissipating at least <span class="math inline">\(k_BT\log 2\)</span> of energy as heat, where <span class="math inline">\(k_B\)</span> is Boltzmann’s constant and <span class="math inline">\(T\)</span> is temperature.</p>
+<p>This isn’t an engineering limitation, it’s a fundamental consequence of the second law. To reset a bit to a standard state (say, always 0) requires reducing its entropy from 1 bit to 0 bits. That entropy must go somewhere, and it ends up as heat in the environment.</p>
+<p>This doesn’t mean AI can’t be powerful or transformative — internal combustion engines transformed the world despite thermodynamic limits. But it does mean there are hard bounds on what’s possible, and claims that ignore these bounds are as unrealistic as promises of perpetual motion.</p>
+<p>The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.</p>
 <h2 id="open-questions">Open Questions</h2>
 <p>Many questions remain:</p>
 <ol type="1">
 <li>Can we formalize the no-barber principle more rigorously?</li>
-<li>What is the right internal notion of “stage”/sample space for the
-game?</li>
-<li>When are selections actually forced (vs design degrees of
-freedom)?</li>
-<li>Can this be extended beyond symmetric configurations / beyond the
-origin?</li>
+<li>What is the right internal notion of “stage”/sample space for the game?</li>
+<li>When are selections actually forced (vs design degrees of freedom)?</li>
+<li>Can this be extended beyond symmetric configurations / beyond the origin?</li>
 <li>What other structures emerge from internal adjudicability?</li>
 </ol>
-<p>These point toward future work at the intersection of information
-theory, geometry, and foundations.</p>
+<p>These point toward future work at the intersection of information theory, geometry, and foundations.</p>
 <h2 id="thanks">Thanks!</h2>
-<p>For more information on these subjects and more you might want to
-check the following resources.</p>
+<p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
 <li>company: <a href="https://trent.ai">Trent AI</a></li>
-<li>book: <a
-href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The
-Atomic Human</a></li>
+<li>book: <a href="https://www.penguin.co.uk/books/455130/the-atomic-human-by-lawrence-neil-d/9780241625248">The Atomic Human</a></li>
 <li>twitter: <a href="https://twitter.com/lawrennd">@lawrennd</a></li>
-<li>podcast: <a href="http://thetalkingmachines.com">The Talking
-Machines</a></li>
-<li>newspaper: <a
-href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile
-Page</a></li>
-<li>blog: <a
-href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
+<li>podcast: <a href="http://thetalkingmachines.com">The Talking Machines</a></li>
+<li>newspaper: <a href="http://www.theguardian.com/profile/neil-lawrence">Guardian Profile Page</a></li>
+<li>blog: <a href="http://inverseprobability.com/blog.html">http://inverseprobability.com</a></li>
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent"
-role="list">
-<div id="ref-Baez-characterisation11" class="csl-entry" role="listitem">
-Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy
-in terms of information loss. Entropy 13, 1945–1957. <a
-href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Amari-information00" class="csl-entry" role="doc-biblioentry">
+Amari, S., Nagaoka, H., 2000. Information geometry and its applications. Springer.
+</div>
+<div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
+Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
+</div>
+<div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
+Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
+</div>
+<div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
+Jackson, S., 2001. Munchkin. Steve Jackson Games.
+</div>
+<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
+</div>
+<div id="ref-Landauer-irreversibility61" class="csl-entry" role="doc-biblioentry">
+Landauer, R., 1961. Irreversibility and heat generation in the computing process. IBM Journal of Research and Development 5, 183–191. <a href="https://doi.org/10.1147/rd.53.0183">https://doi.org/10.1147/rd.53.0183</a>
+</div>
+<div id="ref-Lawrence-inaccessible25" class="csl-entry" role="doc-biblioentry">
+Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/arXiv.2511.06795">https://doi.org/10.48550/arXiv.2511.06795</a>
+</div>
+<div id="ref-vonNeumann-book32" class="csl-entry" role="doc-biblioentry">
+Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, Berlin.
+</div>
+<div id="ref-Ottinger-beyond05" class="csl-entry" role="doc-biblioentry">
+Öttinger, H.C., 2005. Beyond equilibrium thermodynamics. Wiley-Interscience, Hoboken, NJ. <a href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>
+</div>
+<div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
+Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
+</div>
+<div id="ref-Watanabe-multiinformation60" class="csl-entry" role="doc-biblioentry">
+Watanabe, S., 1960. Information theoretical analysis of multivariate correlation. IBM Journal of Research and Development 4, 66–82. <a href="https://doi.org/10.1147/rd.41.0066">https://doi.org/10.1147/rd.41.0066</a>
 </div>
 </div>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>More formally entropy defines a functor from the category of finite probability spaces to the poset category <span class="math inline">\((\Re, \leq)\)</span>, assigning to each object its Shannon entropy.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 

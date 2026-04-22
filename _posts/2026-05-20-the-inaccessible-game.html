@@ -464,6 +464,18 @@ S : \{\text{configurations}\} \longrightarrow [0, \infty),
 </div>
 <p>We can picture the structure as a ladder: each rung corresponds to an entropy level <span class="math inline">\(S = c\)</span>, and multiple configurations sit at the same rung. Moving up the ladder means increasing entropy, more mixed, less structured. Moving down means decreasing entropy, more ordered, more pure. The bottom rung <span class="math inline">\(S = 0\)</span> corresponds to a pure state.</p>
 <p>This picture does not require us to know  configuration the system is in at any rung, only  the system sits on the ladder. We can think of dynamics in the inaccessible game as being expressed as movement along this ladder.</p>
+<div class="figure">
+<div id="entropy-ladder-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/entropy-ladder.svg" width="40%" style=" ">
+</object>
+</div>
+<div id="entropy-ladder-magnify" class="magnify" onclick="magnifyFigure(&#39;entropy-ladder&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="entropy-ladder-caption" class="caption-frame">
+<p>Figure: The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.</p>
+</div>
+</div>
 <p>The functor <span class="math inline">\(S: \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span> that assigns von Neumann entropy to each configuration is the formal expression of this structure. It maps the category of configurations to the poset of non-negative reals, and it is the unique (up to rescaling) continuous, functorial measure of information loss in <span class="math inline">\(\textsf{NCFinProb}\)</span> <span class="citation" data-cites="Parzygnat-functorial22">(Parzygnat, 2022)</span>.</p>
 <h1 id="energy">Energy</h1>
 <h2 id="energy-constraints">Energy Constraints</h2>

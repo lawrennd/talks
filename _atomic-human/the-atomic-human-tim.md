@@ -91,6 +91,14 @@ dotx: custom-reference.dotx
 
 \subsection{Judgement Layer}
 
+\notes{Under our three way decomposition, storage, coupling and channel, the new wave of Generative AI is affecting coupling between digital systems and the human layer. That puts pressure on a different form of coupling, the interaction between the human and wider society. What we think of accountability.}
+
+\slidesincremental{* Bottleneck analysis
+* Old bottleneck: human to information
+* Generative AI is a human-digital coupling.
+* New bottleneck: human to society coupling (accountability).
+}
+
 \notes{This is the layer in a business where judgement is performed. How do we ensure that the key decisions in a business are performed within this judgment layer.}
 \slidesincremental{* What decisions are key?
 * What decisions can be handed off?

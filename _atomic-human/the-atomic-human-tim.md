@@ -1,6 +1,6 @@
 ---
 title: "The Atomic Human"
-subtitle: "Understanding Ourselves in the Age of AI"
+subtitle: "Understanding Our Copoprations in the Age of AI"
 abstract: |
   A vital perspective is missing from the discussions we're having
   about Artificial Intelligence: what does it mean for our identity?
@@ -21,7 +21,7 @@ abstract: |
 
   I'll contrast our own (evolved, locked-in, embodied) intelligence
   with the capabilities of machine intelligence and speculate on what
-  it means for the information infrastructure in our future businesses.
+  it means for the information infrastructure in our corporations.
 
   This talk is based on Neil's book "The Atomic Human".
 author:
@@ -62,22 +62,32 @@ dotx: custom-reference.dotx
 
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_atomic-human/includes/their-data-comes-from-us.md}
-\include{_business/includes/information-flow-structures.md}
-\include{_simulation/includes/the-moniac.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
 
-\subsection{Three Parts to Topography}
+\include{_business/includes/information-flow-structures.md}
+\undef{noSlideTitle}
+\subsection{Three Parts to Information Topography}
 
 \notes{There are three parts to the information topography: storage, channel and coupling. The channel is the mechanism for transmission. The coupling is the interface between storage and channel. AI is a radical change in *coupling*.}
 
-\slides{Three parts:
+\slidesincremental{Three parts:
+
 * Storage
 * Channel (transmission/communication)
 * Coupling (interface)
 }
 
-\include{_business/includes/more-information-topography.md}
+
+\define{noSlideTitle}
+\include{_simulation/includes/the-moniac.md}
+\include{_ai/includes/processor-ham.md}
+\undef{noSlideTitle}
+\include{_data-science/includes/new-flow-of-information-ham.md}
+
+\newslide{AI Changes Information Flow}
+
+\slidesincremental{* Changes customers
+* Changes markets
+* Changes flow within organisation}
 
 \subsection{Judgement Layer}
 
@@ -85,6 +95,13 @@ dotx: custom-reference.dotx
 \slidesincremental{* What decisions are key?
 * What decisions can be handed off?
 }
+
+\newslide{Monitoring Change}
+
+\slides{* Needs to occur across organisation.}
+
+\include{_business/includes/more-information-topography.md}
+
 
 \include{_ai/includes/agentic-debt-short.md}
 \define{noSlideTitle}

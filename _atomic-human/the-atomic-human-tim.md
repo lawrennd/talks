@@ -40,7 +40,7 @@ transition: None
 slidesipynb: True
 pptx: False
 docx: False
-ipynb: True
+ipynb: False
 reveal: True
 potx: custom-reference.potx 
 dotx: custom-reference.dotx

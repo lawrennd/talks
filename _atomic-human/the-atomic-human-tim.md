@@ -67,6 +67,16 @@ dotx: custom-reference.dotx
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
+\subsection{Three Parts to Topography}
+
+\notes{There are three parts to the information topography: storage, channel and coupling. The channel is the mechanism for transmission. The coupling is the interface between storage and channel. AI is a radical change in *coupling*.}
+
+\slides{Three parts:
+* Storage
+* Channel (transmission/communication)
+* Coupling (interface)
+}
+
 \include{_business/includes/more-information-topography.md}
 
 \subsection{Judgement Layer}

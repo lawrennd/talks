@@ -32,7 +32,7 @@ layout: talk
 linkpdf: /publications/files/gplvm_07_02.pdf
 linkvideo: http://video.google.com/videoplay?docid=-5127068978792458641
 month: 2
-published: 2007-02-12
+published: 2006-02-12
 section: pre
 title: Probabilistic Dimensional Reduction with the Gaussian Process
   Latent Variable Model

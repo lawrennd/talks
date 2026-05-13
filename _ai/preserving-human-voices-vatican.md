@@ -41,7 +41,7 @@ transition: None
   * the knowledge that comes from being mortal
 * The atomic human is indivisible — there *is* a kernel the machine cannot take}
 
-\notes{Human culture is an ecology. It has evolved over tens of thousands of years and carries complexity that we cannot fully articulate, because that complexity lives in relationships, communities, traditions, liturgies, and stories told across generations — in all the things that cannot be uploaded or scaled.
+\notes{Human culture is an ecology. It has evolved over tens of thousands of years and carries complexity that we cannot fully articulate, because that complexity lives in relationships, communities, traditions, liturgies, and stories told across generations. It lives in all the things that cannot be uploaded or scaled.
 
 The question before us is whether we can bring custodial wisdom to this new moment. Can we ensure that what floods in — the nitrogen of our digital age — feeds genuine growth rather than a catastrophic bloom?
 

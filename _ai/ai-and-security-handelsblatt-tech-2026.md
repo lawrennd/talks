@@ -41,11 +41,14 @@ ipynb: False
 * Despite rapid change, one constant remains: the attack surface keeps expanding.
 * Teams ship faster than ever; threats scale faster than most review and governance cycles.
 * Many organisations lack a *judgement layer* that turns security noise into “what matters now”.
+* The challenge is not knowledge — it is *contextual reasoning under time pressure*.
 }
 
-\notes{This is the wedge: security is becoming an interpretation and coordination problem under time pressure. For Trent, the product claim is “becoming the Security Agent”: a judgement layer that helps small and medium enterprises identify, prioritise, and close their real risks—without turning every decision into a heavyweight process.}
+\notes{This is the wedge: security is becoming an interpretation and coordination problem under time pressure. For Trent, the product claim is “becoming the Security Agent”: a judgement layer that helps small and medium enterprises identify, prioritise, and close their real risks—without turning every decision into a heavyweight process. Trent’s platform runs a continuous Scan-Judge-Mitigate-Evaluate loop; the “judge” step is the judgment layer in action—contextual reasoning that knows which risks matter now, not just which alerts fired.}
 
 \include{_ai/includes/institutional-tacit-knowledge-short.md}
+
+\include{_ai/includes/judgment-layer-explicit.md}
 
 \newslides{Europe’s opportunity: trust as infrastructure}
 
@@ -119,6 +122,9 @@ ipynb: False
 
 \include{_ai/includes/intellectual-debt-short.md}
 \include{_ai/includes/agentic-debt-short.md}
+
+\include{_ai/includes/agentic-debt-paying-down.md}
+
 \include{_software/includes/lancelot.md}
 
 \newslides{Practical Phase 3 patterns}
@@ -156,8 +162,10 @@ ipynb: False
 \slidesincremental{
 * Bandwidth mismatch is the core risk: systems move faster than human sense-making.
 * Agentic AI turns text attacks into action attacks: model + tools = new threat model.
+* Organisations carry a *judgement layer* of tacit norms and escalation paths; automating without extracting it creates *agentic debt*.
 * Design for legibility: instruction hierarchies, provenance, and auditable action boundaries.
 * Prefer reversible, least-privilege delegation with strong defaults and fast containment.
+* Pay down agentic debt: make policies explicit, require evidence, and give every delegation a recovery path.
 }
 
 \thanks

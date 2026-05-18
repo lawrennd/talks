@@ -57,8 +57,34 @@ categories:
 <blockquote>
 <p>Self-governing systems cannot refer to external arbitration.</p>
 </blockquote>
-<p>While this is a tautology, we’re going to try and suggest how to formalise this notion through information theory.</p>
-<h1 id="foundations-information-loss-and-entropy">Foundations: Information Loss and Entropy</h1>
+<p>While this is a tautology, we will try to formalise it through information theory. The key question is: what mathematical structure is forced on a system that cannot appeal to external adjudication?</p>
+<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
+<p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
+<p>The no-barber principle says that admissible rules must be <em>internally adjudicable</em>: they depend only on quantities definable from within the system’s internal language, without requiring e.g. an external observer to define the co-ordinates or a privileged decomposition.</p>
+<h1 id="information-loss">Information Loss</h1>
+<h2 id="baez-fritz-leinster-characterization-of-information-loss">Baez-Fritz-Leinster Characterization of Information Loss</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/baez-information-loss-axioms.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/baez-information-loss-axioms.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>Before introducing our fourth axiom, we need to understand how information loss is measured. <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span> showed that entropy emerges naturally from category theory as a way of measuring information loss in measure-preserving functions. They derived Shannon entropy from three axioms, without invoking probability directly.</p>
+<h3 id="the-three-axioms">The Three Axioms</h3>
+<p>Let <span class="math inline">\(F(f)\)</span> denote the information lost by a process <span class="math inline">\(f\)</span> that transforms one probability distribution to another. The three axioms constrain the functional form of <span class="math inline">\(F\)</span>.</p>
+<p><strong>Axiom 1: Functoriality</strong> suggests that given a process consisting of two stages, the amount of information lost in the whole process is the sum of the amounts lost at each stage: <span class="math display">\[
+F(f \circ g) = F(f) + F(g),
+\]</span> where <span class="math inline">\(\circ\)</span> represents composition.</p>
+<p><strong>Axiom 2: Convex Linearity</strong> suggests that if we flip a probability-<span class="math inline">\(\lambda\)</span> coin to decide whether to do one process or another, the information lost is <span class="math inline">\(\lambda\)</span> times the information lost by the first process plus <span class="math inline">\((1-\lambda)\)</span> times the information lost by the second: <span class="math display">\[
+F(\lambda f \oplus (1-\lambda)g) = \lambda F(f) + (1-\lambda)F(g).
+\]</span></p>
+<p><strong>Axiom 3: Continuity</strong> suggests that if we change a process slightly, the information lost changes only slightly, i.e. <span class="math inline">\(F(f)\)</span> is a continuous function of <span class="math inline">\(f\)</span>.</p>
+<h2 id="the-main-result">The Main Result</h2>
+<p>The main result of <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span> is that these three axioms uniquely determine the form of information loss. There exists a constant <span class="math inline">\(c\geq 0\)</span> such that for any <span class="math inline">\(f: p \rightarrow q\)</span>: <span class="math display">\[
+F(f) = c(H(p) -H(q))
+\]</span> where <span class="math inline">\(F(f)\)</span> is the information loss in process <span class="math inline">\(f: p\rightarrow q\)</span> and <span class="math inline">\(H(\cdot)\)</span> is the Shannon entropy measured before and after the process is applied to the system.</p>
+<p>This provides a foundational justification for using entropy as our measure of information. It’s not just a convenient choice, it’s the unique measure that satisfies natural requirements for measuring information loss.</p>
 <h2 id="the-inaccessible-game-setup">The Inaccessible Game Setup</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -66,126 +92,188 @@ categories:
 <p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
 <p>How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.</p>
 <p>In the game <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span> we introduce information conservation based on these measures of information loss.</p>
-<!-- include{_physics/includes/entropy-billiards.md} -->
-<!-- include{_physics/includes/entropy-histogram.md} -->
-<h2 id="thermalisation-from-different-initial-conditions">Thermalisation from Different Initial Conditions</h2>
+<h1 id="information-isolation">Information Isolation</h1>
+<h2 id="information-isolation-1">Information Isolation</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/multigame-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>This simulation places exactly nine billiard balls on a 3×3 grid, each coloured according to its position. The <strong>3×3 histogram grid</strong> tracks, for each ball, the cumulative 2-D velocity distribution <span class="math inline">\((v_x, v_y)\)</span> it has visited since the last reset.</p>
-<p>The <em>entropy</em> <span class="math inline">\(H(v_x, v_y)\)</span> for each ball is shown in the top-left of its panel. At the start, when all balls move identically, every panel shows a single bright dot near zero entropy. As elastic collisions redistribute energy the dots spread outward, tracing the Maxwell–Boltzmann circle, and entropy climbs toward its maximum.</p>
-<p>The coloured dot in the top-right corner of each panel matches the ball’s colour on the main canvas, making it easy to follow individual balls.</p>
-<p>Use the <strong>Display</strong> dropdown to switch between the 2D joint distribution <span class="math inline">\(p(v_x, v_y)\)</span> (heatmap) and the two 1D marginals <span class="math inline">\(p(v_x)\)</span> and <span class="math inline">\(p(v_y)\)</span> overlaid as bar charts. Both marginals are expected to converge to the same symmetric distribution; the coloured bars show <span class="math inline">\(p(v_x)\)</span> (ball colour) and the dark outline shows <span class="math inline">\(p(v_y)\)</span>. The entropy labels <span class="math inline">\(H_x\)</span> and <span class="math inline">\(H_y\)</span> confirm that the two components thermalise at the same rate.</p>
-<p>Use the <strong>Initialisation</strong> dropdown to choose how the balls start:</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Option</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>From top ↓</td>
-<td>All balls move downward at the same speed</td>
-</tr>
-<tr class="even">
-<td>From bottom ↑</td>
-<td>All balls move upward</td>
-</tr>
-<tr class="odd">
-<td>From left →</td>
-<td>All balls move rightward</td>
-</tr>
-<tr class="even">
-<td>From right ←</td>
-<td>All balls move leftward</td>
-</tr>
-<tr class="odd">
-<td>Clockwise ↻</td>
-<td>Each ball moves tangentially clockwise around the canvas centre</td>
-</tr>
-<tr class="even">
-<td>Counter-CW ↺</td>
-<td>Each ball moves tangentially counter-clockwise</td>
-</tr>
-</tbody>
-</table>
-<p>For the four directional cases all nine histograms start at the same point, yet rapidly diverge and then converge to the same circular distribution. For the propellor cases adjacent balls start with very different velocity directions — the corner and edge balls even start at nearly opposite velocities — and yet all nine panels converge to the same equilibrium blob.</p>
-<p>Notice that this system is ergodic: in the long-run distribution of each ball’s velocity is independent of the initial conditions and identical for all balls, even though the <em>path</em> to equilibrium differs.</p>
-<div class="figure">
-<div id="multigame-entropy-figure" class="figure-frame">
-<div style="width:100%;max-width:1020px">
-<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start">
-<div style="flex:1 1 260px">
-<canvas id="multigame-canvas" width="500" height="360" style="border:1px solid black;display:block;width:100%">
-</canvas>
-</div>
-<div style="flex:1 1 260px">
-<canvas id="multigame-grid" width="480" height="480" style="border:1px solid #bbb;display:block;width:100%">
-</canvas>
-</div>
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-<button id="multigame-reset">
-Reset
-</button>
-<button id="multigame-pause">
-Pause / Resume
-</button>
-<button id="multigame-skip">
-Skip 1000s
-</button>
-<p><span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Initialisation: <select id="multigame-init"> <option value="top">From top ↓</option> <option value="bottom">From bottom ↑</option> <option value="left">From left →</option> <option value="right">From right ←</option> <option value="cw">Clockwise ↻</option> <option value="ccw">Counter-CW ↺</option> </select> </span> <span style="font-family:sans-serif;font-size:0.9em;margin-left:6px"> Display: <select id="multigame-display"> <option value="1d">1D marginals p(vₓ) &amp; p(vᵧ)</option> <option value="2d">2D joint p(vₓ,vᵧ)</option> </select> </span></p>
-</div>
-</div>
-<!--
-Loads the shared Ballworld runtime used by interactive physics demos
-(e.g. multiball, Maxwell, Szilard, kappenball). Scenario-specific
-behaviour is provided by follow-on scripts such as maxwell.js.
--->
-<script src="https://inverseprobability.com/talks/scripts//ballworld/ballworld.js"></script>
-<script src="https://inverseprobability.com/talks/scripts//ballworld/multigame.js"></script>
-</div>
-<div id="multigame-entropy-magnify" class="magnify" onclick="magnifyFigure(&#39;multigame-entropy&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="multigame-entropy-caption" class="caption-frame">
-<p>Figure: Nine billiard balls on a 3×3 grid. The histogram grid tracks each ball’s cumulative <span class="math inline">\((v_x, v_y)\)</span> velocity distribution. Entropy per ball rises from near zero (single bright dot at the initial velocity) to the Maxwell–Boltzmann value as collisions thermalise the gas. Use the Initialisation dropdown to compare directional starts (all balls move the same way) with propellor starts (adjacent balls move in opposite directions): all initial conditions converge to the same equilibrium, demonstrating ergodicity.</p>
-</div>
+<p>The first three axioms of the inaccessible game, due to , characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: <em>information isolation</em>. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.</p>
+<p>Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of <span class="math inline">\(N\)</span> variables the sum of marginal entropies <span class="math inline">\(\{h_i\}_{i=1}^{N}\)</span> sums to a constant <span class="math inline">\(C\)</span>, <span class="math display">\[
+\sum_{i=1}^N h_i = C.
+\]</span> The conservation law is imposed in an exchangeable form across the <em>marginal</em> entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.</p>
+<p>The specific form <span class="math inline">\(\sum_i h_i = C\)</span> is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form <span class="math inline">\(Q = \sum_i f(h_i)\)</span> with the same function <span class="math inline">\(f\)</span> for each variable. Extensivity (adding one variable increases <span class="math inline">\(Q\)</span> by a fixed amount) forces <span class="math inline">\(f(h) = c \cdot h + \text{const}\)</span>. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting <span class="math inline">\(c=1\)</span> gives the unique form <span class="math inline">\(\sum_i h_i = \text{const}\)</span>. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.</p>
+<p>Information isolation can be seen as stronger than frame invariance. It eliminates not only preferred reference frames but appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition <span class="math inline">\(\{X_i\}\)</span> that enters the conservation constraint is a structural choice. It is part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.</p>
+<p>In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.</p>
+<h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
 <div class="figure">
-<div id="independent-velocities-7-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent_velocities007.svg" width="70%" style=" ">
+<div id="observer-composite-inaccessible-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-inaccessible.svg" width="90%" style=" ">
 </object>
 </div>
-<div id="independent-velocities-7-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-velocities-7&#39;)">
+<div id="observer-composite-inaccessible-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-inaccessible&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="independent-velocities-7-caption" class="caption-frame">
-<p>Figure: Samples from independent Gaussian variables that represent horizontal and vertical velocities when our system is at equilibrium.</p>
+<div id="observer-composite-inaccessible-caption" class="caption-frame">
+<p>Figure: Here the observer is blocked from monitoring anything inside the sytem.</p>
 </div>
 </div>
-<h2 id="sampling-two-dimensional-variables">Sampling Two Dimensional Variables</h2>
+<p>When we don’t know what’s going on inside, we can’t express <em>outcomes</em> in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don’t express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what’s going on.</p>
+<h2 id="entropy-and-impossibility">Entropy and Impossibility</h2>
+<p>While we don’t see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy.</p>
+<p>Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>We denote marginal entropy of the <span class="math inline">\(i\)</span>th variable by <span class="math inline">\(h_i\)</span>. We denote the joint entropy of the entire system by <span class="math inline">\(H\)</span>.</p>
+<h2 id="the-i-h-c-structure">The <span class="math inline">\(I + H = C\)</span> Structure</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_ml/includes/velocity-correlated-sample.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_ml/includes/velocity-correlated-sample.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>We have established four axioms, with the fourth axiom stating that the sum of marginal entropies is conserved, <span class="math display">\[
+\sum_{i=1}^N h_i = C.
+\]</span> This conservation law is the heart of The Inaccessible Game, but to understand its dynamical implications, we need to rewrite it in a more revealing form.</p>
+<h2 id="multi-information-measuring-correlation">Multi-Information: Measuring Correlation</h2>
+<p>The <strong>multi-information</strong> (or <strong>total correlation</strong>), introduced by <span class="citation" data-cites="Watanabe-multiinformation60">Watanabe (1960)</span>, measures how much the variables in a system are correlated. It is defined as, <span class="math display">\[
+I = \sum_{i=1}^N h_i - H,
+\]</span> where <span class="math inline">\(H\)</span> is the <strong>joint entropy</strong> of the full system: <span class="math display">\[
+H = -\sum_{\mathbf{x}} p(\mathbf{x}) \log p(\mathbf{x}).
+\]</span></p>
+<p>The multi-information has a nice interpretation:</p>
+<ul>
+<li><strong><span class="math inline">\(I = 0\)</span></strong>: The variables are completely independent. The joint entropy equals the sum of marginal entropies.</li>
+<li><strong><span class="math inline">\(I &gt; 0\)</span></strong>: The variables are correlated. Some information is “shared” between variables, so the joint entropy is less than the sum of marginals.</li>
+<li><strong><span class="math inline">\(I\)</span> is maximal</strong>: The variables are maximally correlated (in the extreme case, deterministically related).</li>
+</ul>
+<p>Multi-information is always non-negative (<span class="math inline">\(I \geq 0\)</span>) and measures how much knowing one variable tells you about others.</p>
+<p>Using the definition of multi-information, we can rewrite our conservation law. From <span class="math inline">\(I = \sum_{i=1}^N h_i - H\)</span>, we have: <span class="math display">\[
+\sum_{i=1}^N h_i = I + H.
+\]</span> Therefore, the fourth axiom <span class="math inline">\(\sum_{i=1}^N h_i = C\)</span> becomes: <span class="math display">\[
+I + H = C.
+\]</span></p>
+<p>This is an <em>information action principle</em>. It says that multi-information plus joint entropy is conserved. This equation sits behind the dynamics of the Inaccessible Game.</p>
+<p>This equation has the structure of an action principle in classical mechanics. In physics, total energy is conserved and splits into two parts, <span class="math display">\[
+T + V = E,
+\]</span> where <span class="math inline">\(T\)</span> is kinetic energy and <span class="math inline">\(V\)</span> is potential energy.</p>
+<p>The analogy for The Inaccessible Game is.</p>
+<ul>
+<li><strong>Multi-information <span class="math inline">\(I\)</span></strong> plays the role of <em>potential energy</em>. It represents “stored” correlation structure. High <span class="math inline">\(I\)</span> means variables are tightly coupled, like a compressed spring.</li>
+<li><strong>Joint entropy <span class="math inline">\(H\)</span></strong> plays the role of <em>kinetic energy</em>. It represents “dispersed” or “free” information. High <span class="math inline">\(H\)</span> means the probability distribution is spread out, with maximal uncertainty.</li>
+</ul>
+<p>Just as a classical system evolves from high potential energy to high kinetic energy (a ball rolling down a hill), the idea in the Inaccessible Game will be that the information system evolves from high correlation (high <span class="math inline">\(I\)</span>) to high entropy (high <span class="math inline">\(H\)</span>).</p>
+<h2 id="information-relaxation">Information Relaxation</h2>
+<p>The <span class="math inline">\(I + H = C\)</span> structure suggests a <em>relaxation principle</em>: systems naturally evolve from states of high correlation (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>) toward states of low correlation (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>).</p>
+<p>Why? Our inspiration is that the second law of thermodynamics tells us that entropy increases. If we want to introduce dynamics in the game, increasing entropy provides an obvious way to do that. Since <span class="math inline">\(I + H = C\)</span> is constant, if <span class="math inline">\(H\)</span> increases, <span class="math inline">\(I\)</span> must decrease. The system <em>breaks down correlations</em> to increase entropy.</p>
+<p>This is analogous to how physical systems relax from non-equilibrium states (low <span class="math inline">\(T\)</span>, high <span class="math inline">\(V\)</span>) to equilibrium (high <span class="math inline">\(T\)</span>, low <span class="math inline">\(V\)</span>). A compressed spring releases its stored energy. A hot object in a cold room disperses its energy. In information systems, correlated structure dissipates into entropy.</p>
+<p>Consider a simple two-variable system with binary variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>:</p>
+<p><strong>High correlation state</strong> (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
+\]</span> The variables are perfectly correlated. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 1\)</span> bit. Multi-information: <span class="math inline">\(I = 1 + 1 - 1 = 1\)</span> bit.</p>
+<p><strong>Low correlation state</strong> (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1, X_2) = 0.25 \text{ for all four combinations}
+\]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
+<p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualise this relaxation:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
 <div class="figure">
-<div id="correlated-velocities-7-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated_velocities007.svg" width="70%" style=" ">
+<div id="i-plus-h-relaxation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
 </object>
 </div>
-<div id="correlated-velocities-7-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-velocities-7&#39;)">
+<div id="i-plus-h-relaxation-magnify" class="magnify" onclick="magnifyFigure(&#39;i-plus-h-relaxation&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="correlated-velocities-7-caption" class="caption-frame">
-<p>Figure: Samples from <em>correlated</em> Gaussian variables that represent vertical and horizontal velocity.</p>
+<div id="i-plus-h-relaxation-caption" class="caption-frame">
+<p>Figure: Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.</p>
 </div>
 </div>
+<p>The visualisation shows the trade-off: as the system relaxes, correlation structure (multi-information) is converted into entropy. The total <span class="math inline">\(I + H = C\)</span> remains constant (black dashed line), but the system evolves from a state dominated by correlation to one dominated by entropy.</p>
+<p>The marginal entropies <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span> stay constant throughout this evolution. An external observer measuring only marginal entropies would see no change—the system is informationally isolated, hence “inaccessible.”</p>
+<h2 id="configurations-without-visibility">Configurations Without Visibility</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The inaccessible game proceeds without an external observer who can read off the state. However, regardless of the current configuration of the system, we <em>can</em> ask: is there a property of the system we can use?</p>
+<p>The idea is we use the entropy (von Neumann entropy) as a potential which gives us the system flow. This makes it a property of each configuration.</p>
+<h2 id="entropy-orders-the-configurations">Entropy Orders the Configurations</h2>
+<p>Entropy assigns a non-negative real number to every configuration. This gives us a map <span class="math display">\[
+S : \{\text{configurations}\} \longrightarrow [0, \infty),
+\]</span> and we can pull back the standard order on <span class="math inline">\(\mathbb{R}\)</span> to get an ordering on configurations: <span class="math display">\[
+\rho \leq \rho&#39; \quad \Longleftrightarrow \quad S(\rho) \leq S(\rho&#39;).
+\]</span> This relation is reflexive (<span class="math inline">\(\rho \leq \rho\)</span>) and transitive (if <span class="math inline">\(\rho \leq \rho&#39;\)</span> and <span class="math inline">\(\rho&#39; \leq \rho&#39;&#39;\)</span> then <span class="math inline">\(\rho \leq \rho&#39;&#39;\)</span>). It is  antisymmetric in general: two distinct density matrices <span class="math inline">\(\rho \neq \rho&#39;\)</span> can share the same entropy value <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. A relation that is reflexive and transitive but not necessarily antisymmetric is called a , and a set equipped with a preorder is called a  (preordered set).</p>
+<p>So the configurations of the inaccessible game form a natural proset under von Neumann entropy.</p>
+<p>Within the proset, the configurations that share an entropy value form equivalence classes: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. Each equivalence class is an , i.e. a manifold of configurations all carrying the same entropic content.</p>
+<p>If we pass to the quotient, i.e. treat isoentropy configurations as a single object, the resulting collection of equivalence classes <span class="math inline">\([\rho]\)</span> is antisymmetric: <span class="math inline">\([\rho] \leq [\rho&#39;]\)</span> and <span class="math inline">\([\rho&#39;] \leq [\rho]\)</span> together imply <span class="math inline">\([\rho] = [\rho&#39;]\)</span>. This quotient is a  (poset). Because because <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>, which is totally ordered, the quotient poset is a : every two equivalence classes are comparable.</p>
+<p>Even without seeing inside the system we can hypothesise that the chain of entropy levels is defined.</p>
+<div class="figure">
+<div id="configurations-to-entropy-line-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">
+</object>
+</div>
+<div id="configurations-to-entropy-line-magnify" class="magnify" onclick="magnifyFigure(&#39;configurations-to-entropy-line&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="configurations-to-entropy-line-caption" class="caption-frame">
+<p>Figure: Many configurations (density matrices <span class="math inline">\(\rho\)</span>) map under von Neumann entropy <span class="math inline">\(S\)</span> to a single real number. Configurations with the same entropy value are isoentropy; they form an equivalence class. The quotient is a totally ordered chain of entropy levels.</p>
+</div>
+</div>
+<p>We can picture the structure as a ladder: each rung corresponds to an entropy level <span class="math inline">\(S = c\)</span>, and multiple configurations sit at the same rung. Moving up the ladder means increasing entropy, more mixed, less structured. Moving down means decreasing entropy, more ordered, more pure. The bottom rung <span class="math inline">\(S = 0\)</span> corresponds to a pure state.</p>
+<p>This picture does not require us to know  configuration the system is in at any rung, only  the system sits on the ladder. We can think of dynamics in the inaccessible game as being expressed as movement along this ladder.</p>
+<div class="figure">
+<div id="entropy-ladder-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/entropy-ladder.svg" width="40%" style=" ">
+</object>
+</div>
+<div id="entropy-ladder-magnify" class="magnify" onclick="magnifyFigure(&#39;entropy-ladder&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="entropy-ladder-caption" class="caption-frame">
+<p>Figure: The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.</p>
+</div>
+</div>
+<p>The functor <span class="math inline">\(S: \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span> that assigns von Neumann entropy to each configuration is the formal expression of this structure. It maps the category of configurations to the poset of non-negative reals, and it is the unique (up to rescaling) continuous, functorial measure of information loss in <span class="math inline">\(\textsf{NCFinProb}\)</span> <span class="citation" data-cites="Parzygnat-functorial22">(Parzygnat, 2022)</span>.</p>
+<h1 id="axiomatically-distinguished-trajectory">Axiomatically Distinguished Trajectory</h1>
+<h2 id="natural-parameters-and-the-exponential-family">Natural Parameters and the Exponential Family</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/axiomatically-distinguished-trajectory.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/axiomatically-distinguished-trajectory.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The information relaxation dynamics are expressed using the exponential family. A probability distribution in the exponential family is written as <span class="math display">\[
+p(\mathbf{x}|\boldsymbol{\theta}) = \exp\left(\boldsymbol{\theta}^\top \mathbf{T}(\mathbf{x}) - \psi(\boldsymbol{\theta})\right),
+\]</span> where <span class="math inline">\(\boldsymbol{\theta}\)</span> are the <em>natural parameters</em>, <span class="math inline">\(\mathbf{T}(\mathbf{x})\)</span> are sufficient statistics, and <span class="math inline">\(\psi(\boldsymbol{\theta})\)</span> is the cumulant generating function (log partition function). The Fisher information matrix is the Hessian of the cumulant generating function, <span class="math display">\[
+G(\boldsymbol{\theta}) = \nabla\nabla \psi(\boldsymbol{\theta}),
+\]</span> and serves as the canonical Riemannian metric on the statistical manifold.</p>
+<p>The information relaxation principle says the game evolves by maximising joint entropy production subject to the marginal entropy constraint <span class="math inline">\(\sum_i h_i = C\)</span>. In natural parameter space the joint entropy gradient is <span class="math display">\[
+\nabla H = -G(\boldsymbol{\theta})\boldsymbol{\theta}.
+\]</span> We enforce the constraint via a Lagrange multiplier <span class="math inline">\(\nu(\tau)\)</span>, giving constrained dynamics <span class="math display">\[
+\dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta} + \nu(\tau)\,\mathbf{a}(\boldsymbol{\theta}),
+\]</span> where <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla\!\sum_i h_i\)</span> is the constraint gradient and <span class="math inline">\(\nu(\tau)\)</span> is determined by requiring <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}} = 0\)</span> (the constraint is maintained). Here <span class="math inline">\(\tau\)</span> is <em>game time</em>, the affine parameter tracking progress along the trajectory.</p>
+<h2 id="generic-like-structure">GENERIC-like Structure</h2>
+<p>To understand the local structure of the dynamics we linearise around any point <span class="math inline">\(\boldsymbol{\theta}^*\)</span> on the constraint manifold. Writing <span class="math inline">\(\mathbf{q} = \boldsymbol{\theta} - \boldsymbol{\theta}^*\)</span>, the linearised flow is <span class="math display">\[
+\dot{\mathbf{q}} = M\mathbf{q} + O(\|\mathbf{q}\|^2), \qquad M = S + A,
+\]</span> where <span class="math inline">\(S = \tfrac{1}{2}(M + M^\top)\)</span> is symmetric (positive-semidefinite) and <span class="math inline">\(A = \tfrac{1}{2}(M - M^\top)\)</span> is antisymmetric. The symmetric part drives entropy production; the antisymmetric part generates entropy-conserving, rotation-like redistribution of information. This decomposition is the GENERIC (General Equation for Non-Equilibrium Reversible–Irreversible Coupling) structure of <span class="citation" data-cites="Grmela-dynamics97">Grmela and Öttinger (1997)</span> and <span class="citation" data-cites="Ottinger-beyond05">Öttinger (2005)</span>, and it emerges automatically from the constraint geometry rather than being imposed by hand <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span>.</p>
+<p>The ratio <span class="math inline">\(\|A\|/\|S\|\)</span> varies across the constraint manifold and determines the local character of the dynamics. When <span class="math inline">\(\|S\| \gg \|A\|\)</span> the system is in a thermodynamic regime: dissipation dominates and entropy is produced rapidly. When <span class="math inline">\(\|A\| \gtrsim \|S\|\)</span> the system is in a mechanical regime: conservative, rotation-like dynamics dominate. The information topography — the landscape of the Fisher information <span class="math inline">\(G(\boldsymbol{\theta})\)</span> — governs how these regimes are distributed.</p>
+<h2 id="axiomatically-distinguished">Axiomatically Distinguished</h2>
+<p>The direction of maximum entropy ascent is the unique steepest-ascent direction in the Fisher (Riemannian) metric. No external structure — no Hamiltonian, no clock, no spatial coordinates — is needed to specify it. The trajectory is <em>axiomatically distinguished</em>: uniquely identifiable from within the game’s own axioms <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span>.</p>
 <h2 id="jaynes-and-maximum-entropy">Jaynes and Maximum Entropy</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -308,118 +396,24 @@ Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
 \]</span> <span class="math display">\[
 \langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
 \]</span></p>
-<h2 id="exponential-family">Exponential Family</h2>
-<p>This mirrors a broadly used representation in statistics known as the <em>exponential family</em>.</p>
-<p><span class="math display">\[
-p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\theta}_i)\right)
-\]</span> where <span class="math inline">\(\theta_i = \lambda_i\)</span></p>
-<div class="figure">
-<div id="independent-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/independent-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="independent-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;independent-gaussians&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="independent-gaussians-caption" class="caption-frame">
-<p>Figure: Two independent Gaussians for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball.</p>
-</div>
-</div>
-<div class="figure">
-<div id="correlated-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/correlated-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="correlated-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;correlated-gaussians&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="correlated-gaussians-caption" class="caption-frame">
-<p>Figure: A correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were correlated in this way, this would imply that the whole box is moving towards the upper right or bottom left.</p>
-</div>
-</div>
-<div class="figure">
-<div id="anti-correlated-gaussians-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//ml/anti-correlated-gaussians.svg" width="60%" style=" ">
-</object>
-</div>
-<div id="anti-correlated-gaussians-magnify" class="magnify" onclick="magnifyFigure(&#39;anti-correlated-gaussians&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="anti-correlated-gaussians-caption" class="caption-frame">
-<p>Figure: An anti-correlated Gaussian for the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> velocity of a ball. If all balls were anti-correlated in this way, this would imply that the whole box is moving towards the upper left or bottom right.</p>
-</div>
-</div>
-<h2 id="the-classical-observer">The Classical Observer</h2>
+<h1 id="the-quantum-origin">The Quantum Origin</h1>
+<h2 id="the-classical-obstruction-at-the-origin">The Classical Obstruction at the Origin</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/shannon-origin-impossibility.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/shannon-origin-impossibility.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div class="figure">
-<div id="observer-composite-independent-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
-</object>
-</div>
-<div id="observer-composite-independent-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-independent&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="observer-composite-independent-caption" class="caption-frame">
-<p>Figure: Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.</p>
-</div>
-</div>
-<h2 id="the-classical-observer---correlated">The Classical Observer - Correlated</h2>
-<div class="figure">
-<div id="observer-composite-correlated-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
-</object>
-</div>
-<div id="observer-composite-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-correlated&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="observer-composite-correlated-caption" class="caption-frame">
-<p>Figure: Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).</p>
-</div>
-</div>
-<h2 id="the-classical-observer---anti-correlated">The Classical Observer - Anti-correlated</h2>
-<div class="figure">
-<div id="observer-composite-anti-correlated-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
-</object>
-</div>
-<div id="observer-composite-anti-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-anti-correlated&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="observer-composite-anti-correlated-caption" class="caption-frame">
-<p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
-</div>
-</div>
-<h1 id="back-to-self-adjudication">Back to self adjudication</h1>
-<h2 id="the-no-barber-principle">The No-Barber Principle</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-principle.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>In 1901 Bertrand Russell introduced a paradox: if a barber shaves everyone in the village who does not shave themselves, does the barber shave themselves? The paradox arises when a definition quantifies over a totality that includes the defining rule itself.</p>
-<p>We propose a similar constraint for the inaccessible game: <em>the foundational rules must not refer to anything outside themselves for adjudication or reference</em>. Or in other words there can be no <em>external structure</em>. We call this the “no-barber principle.”</p>
-<p>The no-barber principle says that admissible rules must be <em>internally adjudicable</em>: they depend only on quantities definable from within the system’s internal language, without requiring e.g. an external observer to define the co-ordinates or a privileged decomposition.</p>
-<h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<div class="figure">
-<div id="observer-composite-inaccessible-figure" class="figure-frame">
-<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-inaccessible.svg" width="90%" style=" ">
-</object>
-</div>
-<div id="observer-composite-inaccessible-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-inaccessible&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="observer-composite-inaccessible-caption" class="caption-frame">
-<p>Figure: Here the observer is blocked from monitoring anything inside the sytem.</p>
-</div>
-</div>
-<p>When we don’t know what’s going on inside, we can’t express <em>outcomes</em> in the way we could with an observer. But we can still express entropies. This highlights an interesting characteristic of entropies. If we don’t express the probability directly, but just work with the entropies themselves, it feels like we can assess the bounds of possibility without directly expressing what’s going on.</p>
-<h2 id="entropy-and-impossibility">Entropy and Impossibility</h2>
-<p>While we don’t see the underlying probability, we can capture a class of different distirbutions by considering the mapping to the system entropy.</p>
-<p>Think of entropy as a scoring system: every probability distribution gets a number measuring its uncertainty. Once you have that, you can line them up from least to most uncertain — which gives you a natural ordering.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>We denote marginal entropy of the <span class="math inline">\(i\)</span>th variable by <span class="math inline">\(h_i\)</span>. We denote the joint entropy of the entire system by <span class="math inline">\(H\)</span>.</p>
+<p>The information relaxation dynamics suggest that the game begins at the origin: the state of maximum multi-information, <span class="math inline">\(I = C\)</span>, with zero joint entropy, <span class="math inline">\(H = 0\)</span>. Playing forward, multi-information is relaxed and joint entropy increases until <span class="math inline">\(H = C\)</span> and <span class="math inline">\(I = 0\)</span>.</p>
+<p>This natural starting point — zero joint entropy with positive marginal entropies — cannot be represented by classical Shannon entropy. The problem is the <em>non-negativity of conditional Shannon entropy</em>: for any two classical random variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, <span class="math display">\[
+H_{X_1|X_2} = H_{1,2} - H_2 \geq 0,
+\]</span> because conditional entropy measures residual uncertainty after conditioning, which cannot be negative. This constraint has an immediate consequence for multi-information.</p>
+<p>For a two-variable system, multi-information is <span class="math display">\[
+I_{1,2} = H_1 + H_2 - H_{1,2} = H_1 - H_{1|2},
+\]</span> using the chain rule <span class="math inline">\(H_{1|2} = H_{1,2} - H_2\)</span>. Since <span class="math inline">\(H_{1|2} \geq 0\)</span> we get <span class="math inline">\(I_{1,2} \leq H_1\)</span>, and by symmetry <span class="math inline">\(I_{1,2} \leq \min(H_1, H_2)\)</span>.</p>
+<p>At the origin we need <span class="math inline">\(H_{1,2} = 0\)</span>, which gives <span class="math inline">\(I_{1,2} = H_1 + H_2\)</span>. But this would require <span class="math inline">\(I_{1,2} &gt; H_1\)</span> whenever <span class="math inline">\(H_2 &gt; 0\)</span>, contradicting the bound. The only escape is <span class="math inline">\(H_1 = H_2 = 0\)</span>, i.e. all marginals are zero — but then <span class="math inline">\(C = 0\)</span> and there is no game.</p>
+<p>More generally, for <span class="math inline">\(N\)</span> variables the Shannon conditional entropy constraint forces: <em>zero joint entropy is only possible when all marginal entropies are also zero</em>.</p>
+<p>The Baez–Fritz–Leinster axioms (functoriality, convex linearity, continuity) uniquely select Shannon entropy <span class="citation" data-cites="Baez-characterisation11">(Baez et al., 2011)</span>, but Shannon entropy structurally forbids the game’s natural origin <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>.</p>
+<h2 id="von-neumann-entropy-resolution">Von Neumann Entropy Resolution</h2>
+<p>The resolution is to replace Shannon entropy with von Neumann entropy. For a bipartite quantum system with density matrix <span class="math inline">\(\rho\)</span>, the von Neumann conditional entropy <span class="math inline">\(S_{A|B} = S_{AB} - S_B\)</span> <em>can be negative</em> when the subsystems are entangled. A globally pure entangled state has <span class="math inline">\(S(\rho) = 0\)</span> while its marginal states <span class="math inline">\(\rho_A\)</span> and <span class="math inline">\(\rho_B\)</span> may each have positive entropy — precisely the configuration the game needs at its origin.</p>
+<p>An analogous axiomatic characterisation of information loss via von Neumann entropy is provided by <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>. This extends the Baez–Fritz–Leinster framework from classical stochastic maps to quantum channels (unital completely positive maps on finite-dimensional <span class="math inline">\(C^*\)</span>-algebras). Adopting the Parzygnat axioms resolves the origin paradox.</p>
 <h2 id="two-candidates-for-information-loss">Two Candidates for Information Loss</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-selects-ncfinprob.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/no-barber-selects-ncfinprob.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -434,143 +428,62 @@ p(X|\boldsymbol{\theta}) = \exp\left(\sum_i \theta_i T(X) - \phi(\boldsymbol{\th
 <p>In a cartesian category this map exists for free, making the paradox constructible internally. In a symmetric monoidal category with no canonical copying map, self-application cannot be formed without additional non-standard structure. The Lawvere diagonalisation — and with it the class of impredicative paradoxes it generates — cannot be derived internally.</p>
 <p>The no-barber principle requires that the internal language of the game does not permit constructions whose resolution requires external adjudication. <span class="math inline">\(\textsf{FinProb}\)</span>, being cartesian, admits the diagonal constructions that can generate impredicative circularity. <span class="math inline">\(\textsf{NCFinProb}\)</span>, lacking canonical copying, blocks those constructions at the structural level.</p>
 <p>The no-barber principle selects <span class="math inline">\(\textsf{NCFinProb}\)</span> over <span class="math inline">\(\textsf{FinProb}\)</span> as the foundational language for information loss in the game. This is independent of but consistent with the selection in <span class="citation" data-cites="Lawrence-origin26">Lawrence (2026)</span>, where von Neumann entropy is independently required because the game’s origin demands zero joint entropy with positive marginal entropies (a configuration achievable via entanglement but impossible under Shannon entropy).</p>
-<h2 id="configurations-without-visibility">Configurations Without Visibility</h2>
+<h2 id="variational-derivation-of-the-initial-curvature-structure">Variational Derivation of the Initial Curvature Structure</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/minimal-entropy-density-matrix-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/minimal-entropy-density-matrix-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The inaccessible game proceeds without an external observer who can read off the state. However, regardless of the current configuration of the system, we <em>can</em> ask: is there a property of the system we can use?</p>
-<p>The idea is we use the entropy (von Neumann entropy) as a potential which gives us the system flow. This makes it a property of each configuration.</p>
-<h2 id="entropy-orders-the-configurations">Entropy Orders the Configurations</h2>
-<p>Entropy assigns a non-negative real number to every configuration. This gives us a map <span class="math display">\[
-S : \{\text{configurations}\} \longrightarrow [0, \infty),
-\]</span> and we can pull back the standard order on <span class="math inline">\(\mathbb{R}\)</span> to get an ordering on configurations: <span class="math display">\[
-\rho \leq \rho&#39; \quad \Longleftrightarrow \quad S(\rho) \leq S(\rho&#39;).
-\]</span> This relation is reflexive (<span class="math inline">\(\rho \leq \rho\)</span>) and transitive (if <span class="math inline">\(\rho \leq \rho&#39;\)</span> and <span class="math inline">\(\rho&#39; \leq \rho&#39;&#39;\)</span> then <span class="math inline">\(\rho \leq \rho&#39;&#39;\)</span>). It is  antisymmetric in general: two distinct density matrices <span class="math inline">\(\rho \neq \rho&#39;\)</span> can share the same entropy value <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. A relation that is reflexive and transitive but not necessarily antisymmetric is called a , and a set equipped with a preorder is called a  (preordered set).</p>
-<p>So the configurations of the inaccessible game form a natural proset under von Neumann entropy.</p>
-<p>Within the proset, the configurations that share an entropy value form equivalence classes: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. Each equivalence class is an , i.e. a manifold of configurations all carrying the same entropic content.</p>
-<p>If we pass to the quotient, i.e. treat isoentropy configurations as a single object, the resulting collection of equivalence classes <span class="math inline">\([\rho]\)</span> is antisymmetric: <span class="math inline">\([\rho] \leq [\rho&#39;]\)</span> and <span class="math inline">\([\rho&#39;] \leq [\rho]\)</span> together imply <span class="math inline">\([\rho] = [\rho&#39;]\)</span>. This quotient is a  (poset). Because because <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>, which is totally ordered, the quotient poset is a : every two equivalence classes are comparable.</p>
-<p>Even without seeing inside the system we can hypothesise that the chain of entropy levels is defined.</p>
-<div class="figure">
-<div id="configurations-to-entropy-line-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">
-</object>
-</div>
-<div id="configurations-to-entropy-line-magnify" class="magnify" onclick="magnifyFigure(&#39;configurations-to-entropy-line&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="configurations-to-entropy-line-caption" class="caption-frame">
-<p>Figure: Many configurations (density matrices <span class="math inline">\(\rho\)</span>) map under von Neumann entropy <span class="math inline">\(S\)</span> to a single real number. Configurations with the same entropy value are isoentropy; they form an equivalence class. The quotient is a totally ordered chain of entropy levels.</p>
-</div>
-</div>
-<p>We can picture the structure as a ladder: each rung corresponds to an entropy level <span class="math inline">\(S = c\)</span>, and multiple configurations sit at the same rung. Moving up the ladder means increasing entropy, more mixed, less structured. Moving down means decreasing entropy, more ordered, more pure. The bottom rung <span class="math inline">\(S = 0\)</span> corresponds to a pure state.</p>
-<p>This picture does not require us to know  configuration the system is in at any rung, only  the system sits on the ladder. We can think of dynamics in the inaccessible game as being expressed as movement along this ladder.</p>
-<div class="figure">
-<div id="entropy-ladder-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/entropy-ladder.svg" width="40%" style=" ">
-</object>
-</div>
-<div id="entropy-ladder-magnify" class="magnify" onclick="magnifyFigure(&#39;entropy-ladder&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="entropy-ladder-caption" class="caption-frame">
-<p>Figure: The entropy ladder: each rung is an isoentropy class. Multiple configurations sit at the same rung. Dynamics move the system up the ladder (entropy increase) subject to the marginal entropy conservation constraint.</p>
-</div>
-</div>
-<p>The functor <span class="math inline">\(S: \textsf{NCFinProb} \to (\mathbb{R}_{\geq 0}, \leq)\)</span> that assigns von Neumann entropy to each configuration is the formal expression of this structure. It maps the category of configurations to the poset of non-negative reals, and it is the unique (up to rescaling) continuous, functorial measure of information loss in <span class="math inline">\(\textsf{NCFinProb}\)</span> <span class="citation" data-cites="Parzygnat-functorial22">(Parzygnat, 2022)</span>.</p>
-<h1 id="energy">Energy</h1>
-<h2 id="energy-constraints">Energy Constraints</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/energy-constraints-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/energy-constraints-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<h2 id="the-conservation-law">The Conservation Law</h2>
-<h2 id="the-i-h-c-structure">The <span class="math inline">\(I + H = C\)</span> Structure</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/i-plus-h-equals-c.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We have established four axioms, with the fourth axiom stating that the sum of marginal entropies is conserved, <span class="math display">\[
-\sum_{i=1}^N h_i = C.
-\]</span> This conservation law is the heart of The Inaccessible Game, but to understand its dynamical implications, we need to rewrite it in a more revealing form.</p>
-<h2 id="multi-information-measuring-correlation">Multi-Information: Measuring Correlation</h2>
-<p>The <strong>multi-information</strong> (or <strong>total correlation</strong>), introduced by <span class="citation" data-cites="Watanabe-multiinformation60">Watanabe (1960)</span>, measures how much the variables in a system are correlated. It is defined as, <span class="math display">\[
-I = \sum_{i=1}^N h_i - H,
-\]</span> where <span class="math inline">\(H\)</span> is the <strong>joint entropy</strong> of the full system: <span class="math display">\[
-H = -\sum_{\mathbf{x}} p(\mathbf{x}) \log p(\mathbf{x}).
+<p>We will determine constraints on the Fisher Information Matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span> that are consistent with the system’s unfolding rules and internal information geometry. We follow Jaynes <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span> in solving a variational problem that captures the allowed structure of the system’s origin (minimal entropy) state.</p>
+<p><span class="citation" data-cites="Hirschman-entropy57">Hirschman Jr (1957)</span> established a connection between entropy and the Fourier transform, showing that the entropy of a function and its Fourier transform cannot both be arbitrarily small. This result, known as the Hirschman uncertainty principle, was later strengthened by Beckner <span class="citation" data-cites="Beckner-fourier75">(Beckner, 1975)</span> who derived the optimal constant in the inequality. <span class="citation" data-cites="Bialynicki-uncertainty75">Białynicki-Birula and Mycielski (1975)</span> extended these ideas to derive uncertainty relations for information entropy in wave mechanics.</p>
+<p>From these results we know that there are fundamental limits to how we express the entropy of position and its conjugate space simultaneously. These limits inspire us to focus on the <em>von Neumann entropy</em> so that our system respects the Hirschman uncertainty principle.</p>
+<p>A density matrix has the form <span class="math display">\[
+\rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
+\]</span> where <span class="math inline">\(Z(\boldsymbol{\theta}) = \mathrm{tr}\left[\exp\left( \sum_i \theta_i H_i \right)\right]\)</span> and <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^d\)</span>, <span class="math inline">\(H_i\)</span> are Hermitian observables.</p>
+<p>The von Neumman entropy is given by <span class="math display">\[
+S[\rho] = -\text{tr} (\rho \log \rho)
 \]</span></p>
-<p>The multi-information has a nice interpretation:</p>
-<ul>
-<li><strong><span class="math inline">\(I = 0\)</span></strong>: The variables are completely independent. The joint entropy equals the sum of marginal entropies.</li>
-<li><strong><span class="math inline">\(I &gt; 0\)</span></strong>: The variables are correlated. Some information is “shared” between variables, so the joint entropy is less than the sum of marginals.</li>
-<li><strong><span class="math inline">\(I\)</span> is maximal</strong>: The variables are maximally correlated (in the extreme case, deterministically related).</li>
-</ul>
-<p>Multi-information is always non-negative (<span class="math inline">\(I \geq 0\)</span>) and measures how much knowing one variable tells you about others.</p>
-<p>Using the definition of multi-information, we can rewrite our conservation law. From <span class="math inline">\(I = \sum_{i=1}^N h_i - H\)</span>, we have: <span class="math display">\[
-\sum_{i=1}^N h_i = I + H.
-\]</span> Therefore, the fourth axiom <span class="math inline">\(\sum_{i=1}^N h_i = C\)</span> becomes: <span class="math display">\[
-I + H = C.
-\]</span></p>
-<p>This is an <em>information action principle</em>. It says that multi-information plus joint entropy is conserved. This equation sits behind the dynamics of the Inaccessible Game.</p>
-<p>This equation has the structure of an action principle in classical mechanics. In physics, total energy is conserved and splits into two parts, <span class="math display">\[
-T + V = E,
-\]</span> where <span class="math inline">\(T\)</span> is kinetic energy and <span class="math inline">\(V\)</span> is potential energy.</p>
-<p>The analogy for The Inaccessible Game is.</p>
-<ul>
-<li><strong>Multi-information <span class="math inline">\(I\)</span></strong> plays the role of <em>potential energy</em>. It represents “stored” correlation structure. High <span class="math inline">\(I\)</span> means variables are tightly coupled, like a compressed spring.</li>
-<li><strong>Joint entropy <span class="math inline">\(H\)</span></strong> plays the role of <em>kinetic energy</em>. It represents “dispersed” or “free” information. High <span class="math inline">\(H\)</span> means the probability distribution is spread out, with maximal uncertainty.</li>
-</ul>
-<p>Just as a classical system evolves from high potential energy to high kinetic energy (a ball rolling down a hill), the idea in the Inaccessible Game will be that the information system evolves from high correlation (high <span class="math inline">\(I\)</span>) to high entropy (high <span class="math inline">\(H\)</span>).</p>
-<h2 id="information-relaxation">Information Relaxation</h2>
-<p>The <span class="math inline">\(I + H = C\)</span> structure suggests a <em>relaxation principle</em>: systems naturally evolve from states of high correlation (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>) toward states of low correlation (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>).</p>
-<p>Why? Our inspiration is that the second law of thermodynamics tells us that entropy increases. If we want to introduce dynamics in the game, increasing entropy provides an obvious way to do that. Since <span class="math inline">\(I + H = C\)</span> is constant, if <span class="math inline">\(H\)</span> increases, <span class="math inline">\(I\)</span> must decrease. The system <em>breaks down correlations</em> to increase entropy.</p>
-<p>This is analogous to how physical systems relax from non-equilibrium states (low <span class="math inline">\(T\)</span>, high <span class="math inline">\(V\)</span>) to equilibrium (high <span class="math inline">\(T\)</span>, low <span class="math inline">\(V\)</span>). A compressed spring releases its stored energy. A hot object in a cold room disperses its energy. In information systems, correlated structure dissipates into entropy.</p>
-<p>Consider a simple two-variable system with binary variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>:</p>
-<p><strong>High correlation state</strong> (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>): <span class="math display">\[
-p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
-\]</span> The variables are perfectly correlated. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 1\)</span> bit. Multi-information: <span class="math inline">\(I = 1 + 1 - 1 = 1\)</span> bit.</p>
-<p><strong>Low correlation state</strong> (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>): <span class="math display">\[
-p(X_1, X_2) = 0.25 \text{ for all four combinations}
-\]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
-<p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualise this relaxation:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
-<div class="figure">
-<div id="i-plus-h-relaxation-figure" class="figure-frame">
-<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
-</object>
+<p>We now derive the minimal entropy configuration inspired by Jaynes’s <em>free-form</em> variational approach. This enables us to derive the form of the <em>density matrix</em> directly from information-theoretic constraints <span class="citation" data-cites="Jaynes-information63">(Jaynes, 1963)</span>.</p>
+<h2 id="the-lme-origin">The LME Origin</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/lme-origin-confinement.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/lme-origin-confinement.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div id="i-plus-h-relaxation-magnify" class="magnify" onclick="magnifyFigure(&#39;i-plus-h-relaxation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+<p>The game’s natural origin is an axiomatically distinguished pure state. Since von Neumann entropy admits states with <span class="math inline">\(S(\rho)=0\)</span> and positive marginal entropies, the origin is a <em>globally pure</em> state with maximally mixed reduced states on each subsystem. These are the <em>locally maximally entangled</em> (LME) states.</p>
+<p>To single out a canonical origin without introducing external structure we apply an additional axiomatic selection: among all globally pure states, choose those that maximise the conserved marginal-entropy sum. Since each marginal entropy is bounded by <span class="math inline">\(s_i \leq \log d_i\)</span> (where <span class="math inline">\(d_i\)</span> is the dimension of subsystem <span class="math inline">\(i\)</span>), this forces every reduced state to be maximally mixed, fixing <span class="math display">\[
+C = C_{\max} = \sum_i \log d_i.
+\]</span> The origin is selected up to local-unitary equivalence <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>.</p>
+<h2 id="constraint-saturation-and-the-gibbs-lock">Constraint Saturation and the Gibbs Lock</h2>
+<p>At the LME origin the marginal-entropy sum is saturated termwise: every <span class="math inline">\(s_i = \log d_i\)</span> is at its individual upper bound. This has a remarkable consequence. Since each marginal is already at its ceiling, <em>none can increase further and none can decrease without violating the sum</em>. The marginal entropies are locked at their maximum values for the entire trajectory: <span class="math display">\[
+s_i(\tau) = \log d_i \quad \forall i, \;\forall \tau.
+\]</span> The constraint gradient <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}^*) = \nabla_{\boldsymbol{\theta}} C\big|_{\boldsymbol{\theta}^*} = \mathbf{0}\)</span> vanishes at the origin. The usual first-order tangency condition <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}} = 0\)</span> is trivially satisfied for any velocity — it no longer selects admissible directions. The constraint becomes a <em>second-order</em> geometric condition: admissible velocities must lie in the kernel of the constraint Hessian <span class="math inline">\(\nabla^2 C(\boldsymbol{\theta}^*)\)</span>.</p>
+<h2 id="generic-dynamics-at-the-origin">GENERIC Dynamics at the Origin</h2>
+<p>The second-order admissible velocity subspace consists of directions that preserve all reduced states to first order: <span class="math inline">\(\dot{\rho}_i = 0\)</span> for all subsystems <span class="math inline">\(i\)</span>. These include the commutator flows <span class="math display">\[
+\dot{\rho} = -\mathrm{i}[K_{\text{local}}, \rho],
+\]</span> where <span class="math inline">\(K_{\text{local}} = \sum_i K_i \otimes \mathbf{I}_{\bar{i}}\)</span> is a local Hermitian generator. This is precisely the von Neumann/Schrödinger equation form.</p>
+<p>The constrained dynamics decompose into a GENERIC-compatible structure <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>: <span class="math display">\[
+\frac{\mathrm{d}\boldsymbol{\theta}}{\mathrm{d}t} \propto \underbrace{-\Pi_{\mathrm{marg}}(\boldsymbol{\theta})\boldsymbol{\theta}}_{\text{dissipative (SEA)}} + \underbrace{\mathrm{ad}_\xi\,\boldsymbol{\theta}}_{\text{reversible (Lax)}},
+\]</span> where <span class="math inline">\(\Pi_{\mathrm{marg}}\)</span> is the Fisher-orthogonal projector onto marginal-preserving directions and <span class="math inline">\(\mathrm{ad}_\xi\)</span> is the adjoint action corresponding to <span class="math inline">\(\dot{\rho} = -\mathrm{i}[\xi,\rho]\)</span>. The reversible sector has the structure of a Lax equation; the irreversible sector realises steepest entropy ascent within the correlation degrees of freedom.</p>
+<h2 id="the-origin-is-unreachable">The Origin is Unreachable</h2>
+<p>Although the origin axiomatically distinguishes the trajectory, the system can never literally have been there. The origin lies on the <em>boundary</em> of the natural-parameter space: as the state approaches the pure LME state, the natural parameters <span class="math inline">\(\boldsymbol{\theta}\)</span> diverge, <span class="math inline">\(\|\boldsymbol{\theta}\| \to \infty\)</span>. The Riemannian (BKM/Fisher) metric degenerates in the direction of diverging parameters, so the origin is at <em>infinite Fisher distance</em> from any interior point.</p>
+<p>The game is axiomatically directed <em>towards</em> an origin that acts as a limit, not a starting point that was literally occupied. The trajectory is uniquely distinguished by its asymptotic direction — the steepest-entropy-ascent direction in the Fisher metric — even though the origin itself is unreachable <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>.</p>
+<h2 id="entropy-time">Entropy Time</h2>
+<h2 id="entropy-time-1">Entropy Time</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-time.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-time.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div id="i-plus-h-relaxation-caption" class="caption-frame">
-<p>Figure: Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.</p>
-</div>
-</div>
-<p>The visualisation shows the trade-off: as the system relaxes, correlation structure (multi-information) is converted into entropy. The total <span class="math inline">\(I + H = C\)</span> remains constant (black dashed line), but the system evolves from a state dominated by correlation to one dominated by entropy.</p>
-<p>The marginal entropies <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span> stay constant throughout this evolution. An external observer measuring only marginal entropies would see no change—the system is informationally isolated, hence “inaccessible.”</p>
-<h2 id="long-story-short">Long Story Short</h2>
-<p>Building on these ideas, some interesting conclusions emerge. The marginal entropy constraint leads to GENERIC-like dynamics <span class="citation" data-cites="Grmela-dynamics97">Öttinger (2005)</span>.</p>
-<p>When characterising the origin of the game, a shift is forced from Shannon entropy to von Neumann entropy <span class="citation" data-cites="vonNeumann-book32">(Neumann, 1932)</span>. In retrospect the shift feels natural if we take an algebraic view of quantum probability, where outcomes are no longer primitive. This is consistent with the inaccessible nature of the game.</p>
-<p>The game is inspired by the nice connections between inference and thermodynamics explored by E. T. Jaynes, but the dynamics play out through the framework of information geometry <span class="citation" data-cites="Amari-information00">(Amari and Nagaoka, 2000)</span> which makes much of the (normally complicated) calculations around Riemanian geometry relatively straightforward.</p>
+<p>The natural parameter space carries a preferred affine parameter, game time <span class="math inline">\(\tau\)</span>, which tracks progress along the constrained flow. However, as the system approaches the LME origin, the natural parameters diverge (<span class="math inline">\(\|\boldsymbol{\theta}\|\to\infty\)</span>) and the entropy production rate with respect to game time tends to zero. The origin is at infinite affine distance. This creates a degenerate parametrisation: infinite game time elapses while the system covers a finite range of entropy values.</p>
+<p>The resolution is an <em>axiomatically distinguished reparametrisation</em>. An external clock is forbidden by information isolation. But there is one quantity internal to the game that provides a natural measure of progress: the entropy itself. We define <em>entropy time</em> <span class="math inline">\(t\)</span> by the condition that entropy production is constant <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>.</p>
+<h2 id="entropy-time-2">Entropy Time</h2>
+<p>Entropy time <span class="math inline">\(t\)</span> is defined by the condition <span class="math display">\[
+\frac{\text{d}S}{\text{d}t} = c,
+\]</span> for a fixed constant <span class="math inline">\(c &gt; 0\)</span>, where <span class="math inline">\(S = -\mathrm{tr}(\rho\log\rho)\)</span> is the von Neumann entropy. Different choices of <span class="math inline">\(c\)</span> correspond to affine rescalings of <span class="math inline">\(t\)</span> and leave the integral curves unchanged.</p>
+<p>This is much stronger than entropy being monotonically increasing. Here the time parameter <em>is defined by</em> entropy production: one unit of <span class="math inline">\(t\)</span> corresponds to <span class="math inline">\(c\)</span> nats of entropy produced. <span class="math inline">\(t\)</span> is the unique reparametrisation (up to affine shift) for which entropy grows linearly.</p>
+<p>The relationship to game time is <span class="math display">\[
+\frac{\text{d}\tau}{\text{d}t} = \frac{c}{\boldsymbol{\theta}^\top G(\boldsymbol{\theta})\Pi_{\mathrm{marg}}(\boldsymbol{\theta})\boldsymbol{\theta}},
+\]</span> which diverges as the origin is approached (<span class="math inline">\(\boldsymbol{\theta}\to\infty\)</span>, metric degenerates), mapping the infinite affine-time approach to the boundary into a <em>finite</em> entropy-time interval <span class="citation" data-cites="Lawrence-origin26">(Lawrence, 2026)</span>.</p>
+<h2 id="entropy-time-is-axiomatically-distinguished">Entropy Time is Axiomatically Distinguished</h2>
+<p>The entropy time parametrisation is axiomatically distinguished in the sense of the inaccessible game: it is uniquely identifiable from within the game’s axioms, without introducing any additional external choice. Information isolation forbids a background Newtonian time, a temperature scale, spatial coordinates, or a Hamiltonian. Entropy time requires none of these — it is defined purely by the constrained information dynamics and the BFL/Parzygnat information-loss functionals.</p>
+<p>Crucially, the game does not assume an external time and then derive that entropy increases monotonically. Instead, it singles out a preferred parametrisation of the information flow in which the irreversible (dissipative) sector is uniformised. This is Jaynes’s programme taken to its logical conclusion <span class="citation" data-cites="Jaynes-information57a">Jaynes (1980)</span>: take the conservation law exact, let the dynamics emerge, and measure progress by the entropy produced.</p>
+<h1 id="connections">Connections</h1>
+<p>The game connects three bodies of ideas that are often treated separately: (1) the Jaynes programme of deriving statistical mechanics from entropy maximisation and conservation laws; (2) information geometry, which provides a coordinate-free language for the statistical manifold and makes Riemannian calculations tractable; and (3) noncommutative probability and quantum mechanics, which are <em>forced</em> by the requirement that the game have a well-defined origin.</p>
 <h2 id="pendulum-animation">Pendulum Animation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -636,50 +549,23 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 <li><p><strong>Störmer-Verlet integrator</strong>: The simulation uses a symplectic, time-reversible integrator — each step splits the velocity update into two half-steps either side of the position update, preserving the Hamiltonian structure and keeping energy drift at machine precision level.</p></li>
 </ol>
 <p>The animation shows the pendulum swinging with the energy plot demonstrating near-perfect conservation.</p>
-<p>One of the nice results of <span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span> is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes’ maximum entropy approach to determin the stationary distribution.</p>
-<h1 id="intelligence">Intelligence</h1>
-<h2 id="perpetual-motion-and-superintelligence">Perpetual Motion and Superintelligence</h2>
+<h1 id="hamiltonian-emergence-in-preparation">Hamiltonian Emergence (In Preparation)</h1>
+<h2 id="from-information-geometry-to-hamiltonian-mechanics">From Information Geometry to Hamiltonian Mechanics</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/perpetual-motion-superintelligence-analogy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hamiltonian-emergence-preview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hamiltonian-emergence-preview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Imagine in 1925 a world where the automobile is already transforming society, but big promises are being made for things to come. The stock market is soaring, the 1918 pandemic is forgotten. And every major automobile manufacturer is investing heavily on the promise they will each be the first to produce a car that needs no fuel. A perpetual motion machine.</p>
-<p>Well, of course that didn’t happen. But I sometimes wonder if what we’re seeing today 100 years later is the modern equivalent of that. In 2025 billions are being invested in promises of superintelligence and artificial general intelligence that will transform everything.</p>
-<p>We know why perpetual motion is impossible: the second law of thermodynamics tells us that entropy always increases. So we can’t have motion without entropy production. No matter how clever the design, you cannot extract energy from nothing, and you cannot create a closed system that does useful work indefinitely without an external energy source.</p>
-<p>How might we make an equivalent statement for the bizarre claims around superintelligence? Some inspiration comes from Maxwell’s demon, an “intelligent” entity which operates against the laws of thermodynamics. The inspiration comes because the demon suggests that for the second law to hold there must be a relationship between the demon’s decisions and thermodynamic entropy.</p>
-<p>One of the resolutions comes from Landauer’s principle, the notion that erasure of information requires heat dissipation. This suggests there are fundamental information-theoretic constraints on intelligent systems, just as there are thermodynamic constraints on engines.</p>
-<p>I’ve no doubt that AI technologies will transform our world just as much as the automobile has. But I also have no doubt that the promise of superintelligence is just as silly as the promise of perpetual motion. The inaccessible game provides one way of understanding why.</p>
-<h2 id="information-theoretic-limits">Information-Theoretic Limits</h2>
-<p>The hope is that this framework might reveal limits on information processing systems, including intelligent systems.</p>
-<h2 id="information-theoretic-limits-on-intelligence">Information-Theoretic Limits on Intelligence</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Just as the second law of thermodynamics places fundamental limits on mechanical engines, no matter how cleverly designed, the idea is that information theory places fundamental limits on information engines, no matter how cleverly implemented.</p>
-<h3 id="what-intelligent-systems-must-do">What Intelligent Systems Must Do</h3>
-<p>Any intelligent system, whether biological or artificial, must perform certain fundamental operations:</p>
-<ol type="1">
-<li><strong>Acquire information</strong> from its environment (sensing, observation)</li>
-<li><strong>Store information</strong> about the world (memory)</li>
-<li><strong>Process information</strong> to make decisions (computation)</li>
-<li><strong>Erase information</strong> to make room for new data (memory management)</li>
-<li><strong>Act on the world</strong> using the processed information</li>
-</ol>
-<p>Each of these operations has information-theoretic costs that cannot be eliminated by clever engineering.</p>
-<h2 id="landauers-principle">Landauer’s Principle</h2>
-<p>Landauer’s principle <span class="citation" data-cites="Landauer-irreversibility61">(Landauer, 1961)</span> establishes that erasing one bit of information requires dissipating at least <span class="math inline">\(k_BT\log 2\)</span> of energy as heat, where <span class="math inline">\(k_B\)</span> is Boltzmann’s constant and <span class="math inline">\(T\)</span> is temperature.</p>
-<p>This isn’t an engineering limitation, it’s a fundamental consequence of the second law. To reset a bit to a standard state (say, always 0) requires reducing its entropy from 1 bit to 0 bits. That entropy must go somewhere, and it ends up as heat in the environment.</p>
-<p>This doesn’t mean AI can’t be powerful or transformative — internal combustion engines transformed the world despite thermodynamic limits. But it does mean there are hard bounds on what’s possible, and claims that ignore these bounds are as unrealistic as promises of perpetual motion.</p>
-<p>The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.</p>
-<h2 id="open-questions">Open Questions</h2>
-<p>Many questions remain:</p>
-<ol type="1">
-<li>Can we formalize the no-barber principle more rigorously?</li>
-<li>What is the right internal notion of “stage”/sample space for the game?</li>
-<li>When are selections actually forced (vs design degrees of freedom)?</li>
-<li>Can this be extended beyond symmetric configurations / beyond the origin?</li>
-<li>What other structures emerge from internal adjudicability?</li>
-</ol>
-<p>These point toward future work at the intersection of information theory, geometry, and foundations.</p>
+<p>The inaccessible game has no Hamiltonian in its axioms. Its dynamics are governed entirely by the information-geometric structure: maximum entropy production under marginal entropy conservation, with time measured by entropy production (entropy time). Yet Hamiltonian structure can <em>emerge</em> in metastable regions of the trajectory, as a local effective description.</p>
+<p>The key condition is a structural alignment of the modular generator <span class="math inline">\(K(\boldsymbol{\theta}) = \log\rho(\boldsymbol{\theta})\)</span> (in trace gauge) with a fixed operator direction. When this alignment holds, we say the system is in a <em>Gibbs-locked</em> region <span class="citation" data-cites="Lawrence-hamiltonian26">(<strong>Lawrence-hamiltonian26?</strong>)</span>.</p>
+<h2 id="the-gibbs-lock-condition">The Gibbs-lock Condition</h2>
+<p>The Gibbs-lock condition is that the modular generator aligns with a fixed effective Hamiltonian direction <span class="math inline">\(H\)</span>: <span class="math display">\[
+K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H,
+\]</span> where <span class="math inline">\(\beta(\boldsymbol{\theta})\)</span> is a smoothly varying scalar (effective inverse temperature) and <span class="math inline">\(H\)</span> is approximately fixed along the trajectory. The exact locked point is the Gibbs thermal state <span class="math inline">\(\rho_0 = e^{-\beta_0 H}/Z\)</span>, where the reversible (Lax) sector ceases to evolve and <span class="math inline">\([K_0, H] = 0\)</span>.</p>
+<p>This condition reverses the usual explanatory order: rather than postulating time-translation symmetry and deriving energy conservation, the game’s constraint geometry selects an approximately conserved direction <span class="math inline">\(H\)</span> from the modular generator. The effective Hamiltonian is not an axiom — it is an emergent feature of metastable Gibbs-locked regions <span class="citation" data-cites="Lawrence-hamiltonian26">(<strong>Lawrence-hamiltonian26?</strong>)</span>.</p>
+<h2 id="the-hamiltonian-clock">The Hamiltonian Clock</h2>
+<p>Within a Gibbs-locked region, entropy time <span class="math inline">\(t\)</span> can be converted into a Hamiltonian-frame clock <span class="math inline">\(\tau_H\)</span> by <span class="math display">\[
+\text{d}\tau_H = \beta(t)\,\text{d}t.
+\]</span> This Hamiltonian clock is a derived conversion of entropy time, not an independent temporal structure. The effective inverse temperature <span class="math inline">\(\beta(t)\)</span> acts as a conversion factor between information-geometric progress (entropy produced) and mechanical phase (Hamiltonian time). Within the locked frame the constrained dynamics take the familiar form of a Lindblad master equation: a reversible Lax sector (the von Neumann equation) plus a dissipative sector that uniformly dephases all off-diagonal coherences in the locked eigenbasis.</p>
+<p>These results are conditional on the trajectory entering a Gibbs-locked region. The threshold for these conditional results to carry observational content is <span class="math inline">\(W_{\mathcal{R}} \gg 1\)</span>, a Boltzmann-style multiplicity of action-resolution cells inside the locked basin — essentially the regime in which equilibrium statistical mechanics applies empirically <span class="citation" data-cites="Lawrence-hamiltonian26">(<strong>Lawrence-hamiltonian26?</strong>)</span>.</p>
 <h2 id="thanks">Thanks!</h2>
 <p>For more information on these subjects and more you might want to check the following resources.</p>
 <ul>
@@ -692,23 +578,32 @@ p(X_1, X_2) = 0.25 \text{ for all four combinations}
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Amari-information00" class="csl-entry" role="doc-biblioentry">
-Amari, S., Nagaoka, H., 2000. Information geometry and its applications. Springer.
-</div>
 <div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
 Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
+</div>
+<div id="ref-Beckner-fourier75" class="csl-entry" role="doc-biblioentry">
+Beckner, W., 1975. Inequalities in <span>F</span>ourier analysis. Annals of Mathematics 159–182. <a href="https://doi.org/10.2307/1970980">https://doi.org/10.2307/1970980</a>
+</div>
+<div id="ref-Bialynicki-uncertainty75" class="csl-entry" role="doc-biblioentry">
+Białynicki-Birula, I., Mycielski, J., 1975. Uncertainty relations for information entropy in wave mechanics. Communications in Mathematical Physics 44, 129–132. <a href="https://doi.org/10.1007/BF01608825">https://doi.org/10.1007/BF01608825</a>
 </div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
 </div>
+<div id="ref-Hirschman-entropy57" class="csl-entry" role="doc-biblioentry">
+Hirschman Jr, I.I., 1957. A note on entropy. American Journal of Mathematics 79, 152–156. <a href="https://doi.org/10.2307/2372390">https://doi.org/10.2307/2372390</a>
+</div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
+<div id="ref-Jaynes-minimum80" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1980. The minimum entropy production principle. Annual Review of Physical Chemistry 31, 579–601. <a href="https://doi.org/10.1146/annurev.pc.31.100180.003051">https://doi.org/10.1146/annurev.pc.31.100180.003051</a>
+</div>
+<div id="ref-Jaynes-information63" class="csl-entry" role="doc-biblioentry">
+Jaynes, E.T., 1963. Information theory and statistical mechanics, in: Ford, K.W. (Ed.), Brandeis University Summer Institute Lectures in Theoretical Physics, Vol. 3: Statistical Physics. W. A. Benjamin, Inc., New York, pp. 181–218.
+</div>
 <div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
 Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
-</div>
-<div id="ref-Landauer-irreversibility61" class="csl-entry" role="doc-biblioentry">
-Landauer, R., 1961. Irreversibility and heat generation in the computing process. IBM Journal of Research and Development 5, 183–191. <a href="https://doi.org/10.1147/rd.53.0183">https://doi.org/10.1147/rd.53.0183</a>
 </div>
 <div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>
@@ -718,9 +613,6 @@ Lawrence, N.D., 2025. The inaccessible game. <a href="https://doi.org/10.48550/a
 </div>
 <div id="ref-Lawvere-diagonal69" class="csl-entry" role="doc-biblioentry">
 Lawvere, F.W., 1969. Diagonal arguments and cartesian closed categories, in: Category Theory, Homology Theory and Their Applications II, Lecture Notes in Mathematics. Springer, Berlin, pp. 134–145. <a href="https://doi.org/10.1007/BFb0080769">https://doi.org/10.1007/BFb0080769</a>
-</div>
-<div id="ref-vonNeumann-book32" class="csl-entry" role="doc-biblioentry">
-Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, Berlin.
 </div>
 <div id="ref-Ottinger-beyond05" class="csl-entry" role="doc-biblioentry">
 Öttinger, H.C., 2005. Beyond equilibrium thermodynamics. Wiley-Interscience, Hoboken, NJ. <a href="https://doi.org/10.1002/0471727903">https://doi.org/10.1002/0471727903</a>

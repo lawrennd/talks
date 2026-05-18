@@ -4,9 +4,6 @@
 			"path": "."
 		},
 		{
-			"path": "../vibesafe"
-		},
-		{
 			"path": "../slides"
 		},
 		{
@@ -16,16 +13,16 @@
 			"path": "../lamd"
 		},
 		{
-			"path": "../information-engines"
+			"path": "../the-inaccessible-game"
 		},
 		{
-			"path": "../../atomichuman/atomichuman.github.io"
-		},
-		{
-			"path": "../../ai-cam/ai-cam.github.io"
+			"path": "../the-inaccessible-game-origin"
 		},
 		{
 			"path": "../the-inaccessible-game-no-barber"
+		},
+		{
+			"path": "../the-inaccessible-game-decoherence"
 		}
 	],
 	"settings": {}

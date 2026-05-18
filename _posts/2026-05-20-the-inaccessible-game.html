@@ -274,128 +274,58 @@ G(\boldsymbol{\theta}) = \nabla\nabla \psi(\boldsymbol{\theta}),
 <p>The ratio <span class="math inline">\(\|A\|/\|S\|\)</span> varies across the constraint manifold and determines the local character of the dynamics. When <span class="math inline">\(\|S\| \gg \|A\|\)</span> the system is in a thermodynamic regime: dissipation dominates and entropy is produced rapidly. When <span class="math inline">\(\|A\| \gtrsim \|S\|\)</span> the system is in a mechanical regime: conservative, rotation-like dynamics dominate. The information topography — the landscape of the Fisher information <span class="math inline">\(G(\boldsymbol{\theta})\)</span> — governs how these regimes are distributed.</p>
 <h2 id="axiomatically-distinguished">Axiomatically Distinguished</h2>
 <p>The direction of maximum entropy ascent is the unique steepest-ascent direction in the Fisher (Riemannian) metric. No external structure — no Hamiltonian, no clock, no spatial coordinates — is needed to specify it. The trajectory is <em>axiomatically distinguished</em>: uniquely identifiable from within the game’s own axioms <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span>.</p>
-<h2 id="jaynes-and-maximum-entropy">Jaynes and Maximum Entropy</h2>
+<h2 id="information-relaxation-1">Information Relaxation</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/jaynes-maximum-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/information-relaxation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/information-relaxation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
+<p>The <span class="math inline">\(I + H = C\)</span> structure suggests a <em>relaxation principle</em>: systems naturally evolve from states of high correlation (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>) toward states of low correlation (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>).</p>
+<p>Why? Our inspiration is that the second law of thermodynamics tells us that entropy increases. If we want to introduce dynamics in the game, increasing entropy provides an obvious way to do that. Entropy also presents a way of ordering onfigurations that doesn’t require us to “see inside” the game. Since <span class="math inline">\(I + H = C\)</span> is constant, if <span class="math inline">\(H\)</span> increases, <span class="math inline">\(I\)</span> must decrease. The system <em>breaks down correlations</em> to increase entropy.</p>
+<p>This is analogous to how physical systems relax from non-equilibrium states (low <span class="math inline">\(T\)</span>, high <span class="math inline">\(V\)</span>) to equilibrium (high <span class="math inline">\(T\)</span>, low <span class="math inline">\(V\)</span>). A compressed spring releases its stored energy. A hot object in a cold room disperses its energy. In information systems, correlated structure dissipates into entropy.</p>
+<p>Consider a simple two-variable system with binary variables <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>:</p>
+<p><strong>High correlation state</strong> (high <span class="math inline">\(I\)</span>, low <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1=0, X_2=0) = 0.5, \quad p(X_1=1, X_2=1) = 0.5
+\]</span> The variables are perfectly correlated. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 1\)</span> bit. Multi-information: <span class="math inline">\(I = 1 + 1 - 1 = 1\)</span> bit.</p>
+<p><strong>Low correlation state</strong> (low <span class="math inline">\(I\)</span>, high <span class="math inline">\(H\)</span>): <span class="math display">\[
+p(X_1, X_2) = 0.25 \text{ for all four combinations}
+\]</span> The variables are independent. Marginal entropies: <span class="math inline">\(h_1 = h_2 = 1\)</span> bit. Joint entropy: <span class="math inline">\(H = 2\)</span> bits. Multi-information: <span class="math inline">\(I = 1 + 1 - 2 = 0\)</span> bits.</p>
+<p>The system relaxes from the first state to the second, conserving <span class="math inline">\(I + H = 2\)</span> bits throughout. Let’s visualise this relaxation:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate relaxation trajectory</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>n_steps <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>alphas <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, n_steps)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> []</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> []</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> []</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> []</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> alphas:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    p00, p01, p10, p11 <span class="op">=</span> relaxation_path(alpha)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    h1, h2, H, I <span class="op">=</span> compute_binary_entropies(p00, p01, p10, p11)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    h1_vals.append(h1)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    h2_vals.append(h2)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    H_vals.append(H)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    I_vals.append(I)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>h1_vals <span class="op">=</span> np.array(h1_vals)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>h2_vals <span class="op">=</span> np.array(h2_vals)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>H_vals <span class="op">=</span> np.array(H_vals)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>I_vals <span class="op">=</span> np.array(I_vals)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>C_vals <span class="op">=</span> I_vals <span class="op">+</span> H_vals  <span class="co"># Should be constant</span></span></code></pre></div>
 <div class="figure">
-<div id="e-t-jaynes-figure" class="figure-frame">
-<div class="centered centered" style="">
-<img class="" src="https://inverseprobability.com/talks/../slides/diagrams//physics/e-t-jaynes.jpg" width="40%" height="auto" align="center" style="background:none; border:none; box-shadow:none; display:block; margin-left:auto; margin-right:auto;vertical-align:middle">
+<div id="i-plus-h-relaxation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/i-plus-h-relaxation.svg" width="80%" style=" ">
+</object>
 </div>
-</div>
-<div id="e-t-jaynes-magnify" class="magnify" onclick="magnifyFigure(&#39;e-t-jaynes&#39;)">
+<div id="i-plus-h-relaxation-magnify" class="magnify" onclick="magnifyFigure(&#39;i-plus-h-relaxation&#39;)">
 <img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
 </div>
-<div id="e-t-jaynes-caption" class="caption-frame">
-<p>Figure: Ed Jaynes who developed the maximum entropy principle</p>
+<div id="i-plus-h-relaxation-caption" class="caption-frame">
+<p>Figure: Left: Multi-information <span class="math inline">\(I\)</span> decreases as joint entropy <span class="math inline">\(H\)</span> increases, conserving <span class="math inline">\(I + H = C\)</span>. The colored regions show how the conserved quantity splits between correlation (red) and entropy (blue). Right: Marginal entropies remain constant throughout, making the system inaccessible to external observation.</p>
 </div>
 </div>
-<h2 id="maximum-entropy-motivation">Maximum Entropy Motivation</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-motivation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>Ed Jaynes <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>, proposed a foundation for statistical mechanics based on information theory. Jaynes recast that the problem of assigning probabilities in statistical mechanics as a problem of inference with incomplete information.</p>
-<p>A central problem in statistical mechanics is assigning initial probabilities when our knowledge is incomplete. The canonical example is if we know only the average energy of a system, what probability distribution should we use? Jaynes argued that we should use the distribution that maximises entropy subject to the constraints of our knowledge.</p>
-<p>Jaynes illustrated the approach with a simple example. If a die has been tossed many times, with an average result of 4.5 rather than the expected 3.5 for a fair die. What probability assignment <span class="math inline">\(P_n\)</span> (<span class="math inline">\(n=1,2,...,6\)</span>) should we make for the next toss?</p>
-<p>We need to satisfy two constraints <span class="math display">\[\begin{align}
-\sum_{n=1}^6 P_n &amp;= 1 \\
-\sum_{n=1}^6 n P_n &amp;= 4.5
-\end{align}\]</span></p>
-<p>Many distributions could satisfy these constraints, but which one makes the fewest unwarranted assumptions? Jaynes argued that we should choose the distribution that is maximally noncommittal with respect to missing information - the one that maximises the entropy, <span class="math display">\[\begin{align}
-S_I = -\sum_{i} p_i \log p_i
-\end{align}\]</span> This principle leads to the exponential family of distributions, which in statistical mechanics gives us the canonical ensemble and other familiar distributions.</p>
-<h2 id="die-roll-simulation">Die Roll Simulation</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/dieroll.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>This simulation illustrates the maximum entropy principle through Jaynes’ dice example <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span>. A fair die has expected outcome 3.5; the <em>Jaynes example</em> asks: if we know only that the average outcome is 4.5, what probability distribution <span class="math inline">\(P_n\)</span> over the six faces should we assign?</p>
-<p>The answer is the maximum-entropy distribution subject to the constraint <span class="math inline">\(\sum_{n=1}^6 n P_n = 4.5\)</span>, which belongs to the exponential family: <span class="math display">\[\begin{align}
-P_n = \frac{e^{\lambda n}}{Z(\lambda)}, \qquad Z(\lambda) = \sum_{n=1}^6 e^{\lambda n}
-\end{align}\]</span> where <span class="math inline">\(\lambda &gt; 0\)</span> is chosen so the mean constraint is satisfied. This avoids any unwarranted assumption beyond the available data.</p>
-<div class="figure">
-<div id="dieroll-simulation-figure" class="figure-frame">
-<div style="width:100%;max-width:780px;font-family:sans-serif;font-size:0.82em">
-<div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start">
-<div style="display:flex;flex-direction:column;align-items:center;gap:6px;min-width:160px">
-<canvas id="dieroll-die" width="150" height="150" style="display:block;cursor:pointer">
-</canvas>
-<div style="font-size:0.75em;color:#888;text-align:center">
-click die or button to roll
-</div>
-<div style="display:flex;gap:6px">
-<button id="dieroll-roll">
-Roll
-</button>
-<button id="dieroll-roll100">
-Roll ×100
-</button>
-</div>
-<div style="text-align:center;line-height:1.6;font-size:0.85em">
-<p>Rolls: <strong id="dieroll-count">0</strong><br> Sample mean: <span id="dieroll-mean">—</span><br> H(p): <span id="dieroll-entropy" style="color:#2ecc71">—</span></p>
-</div>
-<button id="dieroll-reset">
-Reset history
-</button>
-</div>
-<div style="flex:1;min-width:280px">
-<canvas id="dieroll-hist" width="500" height="210" style="display:block;width:100%;height:auto;border-radius:6px">
-</canvas>
-<div style="margin-top:6px">
-<div style="font-style:italic;margin-bottom:6px;color:#888">
-<p>Outcome weights (auto-normalised to probabilities)</p>
-</div>
-<div id="dieroll-sliders">
-
-</div>
-<div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
-<button id="dieroll-uniform">
-Uniform (mean 3.5)
-</button>
-<button id="dieroll-jaynes">
-Jaynes: mean 4.5
-</button>
-<button id="dieroll-low">
-Low-biased: mean 2
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script src="https://inverseprobability.com/talks/scripts//dieroll/dieroll.js"></script>
-</div>
-<div id="dieroll-simulation-magnify" class="magnify" onclick="magnifyFigure(&#39;dieroll-simulation&#39;)">
-<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
-</div>
-<div id="dieroll-simulation-caption" class="caption-frame">
-<p>Figure: Interactive die-roll simulation. Click the die or press Roll to sample from the configured distribution. The histogram shows empirical relative frequencies (coloured bars) overlaid on the theoretical probabilities (dashed outlines). Use the sliders to set arbitrary outcome weights, or click a preset to load the uniform distribution (mean 3.5), the Jaynes maximum-entropy distribution (mean 4.5), or a low-biased distribution (mean 2).</p>
-</div>
-</div>
-<h2 id="the-general-maximum-entropy-formalism">The General Maximum-Entropy Formalism</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maximum-entropy-formalism.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>For a more general case, suppose a quantity <span class="math inline">\(x\)</span> can take values <span class="math inline">\((x_1, x_2, \ldots, x_n)\)</span> and we know the average values of several functions <span class="math inline">\(f_k(x)\)</span>. The problem is to find the probability assignment <span class="math inline">\(p_i = p(x_i)\)</span> that satisfies <span class="math display">\[\begin{align}
-\sum_{i=1}^n p_i &amp;= 1 \\
-\sum_{i=1}^n p_i f_k(x_i) &amp;= \langle f_k(x) \rangle = F_k \quad k=1,2,\ldots,m
-\end{align}\]</span> and maximises the entropy <span class="math inline">\(S_I = -\sum_{i=1}^n p_i \log p_i\)</span>.</p>
-<p>Using Lagrange multipliers, the solution is the generalised canonical distribution, <span class="math display">\[\begin{align}
-p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
-\end{align}\]</span> where <span class="math inline">\(Z(\lambda_1,\ldots,\lambda_m)\)</span> is the partition function, <span class="math display">\[\begin{align}
-Z(\lambda_1,\ldots,\lambda_m) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
-\end{align}\]</span> The Lagrange multipliers <span class="math inline">\(\lambda_k\)</span> are determined by the constraints, <span class="math display">\[\begin{align}
-\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
-\end{align}\]</span> The maximum attainable entropy is <span class="math display">\[\begin{align}
-(S_I)_{max} = \log Z + \sum_{k=1}^m \lambda_k \langle f_k \rangle.
-\end{align}\]</span></p>
-<p><span class="math display">\[
-p_i = \frac{\exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))}{Z(\lambda_1,\ldots,\lambda_m)}
-\]</span> <span class="math display">\[
-Z(\ldots) = \sum_{i=1}^n \exp(-\lambda_1 f_1(x_i) - \ldots - \lambda_m f_m(x_i))
-\]</span> <span class="math display">\[
-\langle f_k \rangle = -\frac{\partial}{\partial \lambda_k}\log Z(\lambda_1,\ldots,\lambda_m) \quad k=1,2,\ldots,m.
-\]</span></p>
+<p>The visualisation shows the trade-off: as the system relaxes, correlation structure (multi-information) is converted into entropy. The total <span class="math inline">\(I + H = C\)</span> remains constant (black dashed line), but the system evolves from a state dominated by correlation to one dominated by entropy.</p>
+<p>The marginal entropies <span class="math inline">\(h_1\)</span> and <span class="math inline">\(h_2\)</span> stay constant throughout this evolution. An external observer measuring only marginal entropies would see no change—the system is informationally isolated, hence “inaccessible.”</p>
 <h1 id="the-quantum-origin">The Quantum Origin</h1>
 <h2 id="the-classical-obstruction-at-the-origin">The Classical Obstruction at the Origin</h2>
 <div style="text-align:right">
@@ -488,45 +418,45 @@ s_i(\tau) = \log d_i \quad \forall i, \;\forall \tau.
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/pendulum-animation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple pendulum: trading potential ↔ kinetic energy</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># State: angle θ and angular velocity ω</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Energy: E = (1/2)mL²ω² + mgL(1-cos(θ))</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>  <span class="co"># gravity</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># length</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># mass</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial conditions: release from angle, zero velocity</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>theta0 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">3</span>  <span class="co"># 60 degrees</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> np.array([theta0, omega0])</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>initial_energy <span class="op">=</span> pendulum_energy(theta0, omega0)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate using Störmer-Verlet method (symplectic integrator, preserves energy)</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.02</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>t_max <span class="op">=</span> <span class="fl">5.0</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="bu">int</span>(t_max <span class="op">/</span> dt)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrays to store trajectory</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.linspace(<span class="dv">0</span>, t_max, num_steps)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.zeros((num_steps, <span class="dv">2</span>))</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>energies <span class="op">=</span> np.zeros(num_steps)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate using Störmer-Verlet (symplectic, time-reversible)</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Half-step omega, full-step theta, half-step omega — preserves energy to machine precision</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>theta, omega <span class="op">=</span> initial_state</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    trajectory[i] <span class="op">=</span> [theta, omega]</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    energies[i] <span class="op">=</span> pendulum_energy(theta, omega)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    omega_half <span class="op">=</span> omega <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> theta <span class="op">+</span> omega_half <span class="op">*</span> dt</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    omega <span class="op">=</span> omega_half <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify energy conservation</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>energy_drift <span class="op">=</span> np.<span class="bu">abs</span>(energies <span class="op">-</span> initial_energy).<span class="bu">max</span>()</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum energy drift: </span><span class="sc">{</span>energy_drift<span class="op">/</span>initial_energy<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple pendulum: trading potential ↔ kinetic energy</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># State: angle θ and angular velocity ω</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Energy: E = (1/2)mL²ω² + mgL(1-cos(θ))</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="fl">9.81</span>  <span class="co"># gravity</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># length</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> <span class="fl">1.0</span>   <span class="co"># mass</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Initial conditions: release from angle, zero velocity</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>theta0 <span class="op">=</span> np.pi<span class="op">/</span><span class="dv">3</span>  <span class="co"># 60 degrees</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>omega0 <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>initial_state <span class="op">=</span> np.array([theta0, omega0])</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>initial_energy <span class="op">=</span> pendulum_energy(theta0, omega0)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate using Störmer-Verlet method (symplectic integrator, preserves energy)</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.02</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>t_max <span class="op">=</span> <span class="fl">5.0</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>num_steps <span class="op">=</span> <span class="bu">int</span>(t_max <span class="op">/</span> dt)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrays to store trajectory</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> np.linspace(<span class="dv">0</span>, t_max, num_steps)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>trajectory <span class="op">=</span> np.zeros((num_steps, <span class="dv">2</span>))</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>energies <span class="op">=</span> np.zeros(num_steps)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Integrate using Störmer-Verlet (symplectic, time-reversible)</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Half-step omega, full-step theta, half-step omega — preserves energy to machine precision</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>theta, omega <span class="op">=</span> initial_state</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_steps):</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    trajectory[i] <span class="op">=</span> [theta, omega]</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    energies[i] <span class="op">=</span> pendulum_energy(theta, omega)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    omega_half <span class="op">=</span> omega <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> theta <span class="op">+</span> omega_half <span class="op">*</span> dt</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    omega <span class="op">=</span> omega_half <span class="op">-</span> <span class="fl">0.5</span> <span class="op">*</span> (g<span class="op">/</span>L) <span class="op">*</span> np.sin(theta) <span class="op">*</span> dt</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify energy conservation</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>energy_drift <span class="op">=</span> np.<span class="bu">abs</span>(energies <span class="op">-</span> initial_energy).<span class="bu">max</span>()</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Maximum energy drift: </span><span class="sc">{</span>energy_drift<span class="op">/</span>initial_energy<span class="op">*</span><span class="dv">100</span><span class="sc">:.2f}</span><span class="ss">%&quot;</span>)</span></code></pre></div>
 <div class="figure">
 <div id="pendulum-energy-conservation-figure" class="figure-frame">
 <div class="centered" style="">

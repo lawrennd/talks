@@ -44,11 +44,12 @@ talkscam:
 
 \include{_information-game/includes/configurations-entropy-ordering.md}
 
+
 \section{Axiomatically Distinguished Trajectory}
 
 \include{_information-game/includes/axiomatically-distinguished-trajectory.md}
 
-\include{_physics/includes/jaynes-maximum-entropy.md}
+\include{_physics/includes/information-relaxation.md}
 
 \section{The Quantum Origin}
 

@@ -345,20 +345,6 @@ I_{1,2} = H_1 + H_2 - H_{1,2} = H_1 - H_{1|2},
 <p>In the noncommutative case, the state is not given as a measure over a fixed outcome space. Classical outcomes arise only through a chosen measurement context. Without making such a choice internal, there is no basis-independent copying operation and hence no native self-application step of the Lawvere kind.</p>
 <p>The no-barber principle does not select between <span class="math inline">\(\textsf{FinProb}\)</span> and <span class="math inline">\(\textsf{NCFinProb}\)</span> merely as categories, nor does it argue against the Baez–Fritz–Leinster characterisation of information loss. It constrains the internal language of the game. The problematic structure is a copyable space of classical outcomes. A classical probability measure presupposes such a space; the no-barber issue arises if that space is admitted internally as data that the game can inspect and duplicate.</p>
 <p><span class="math inline">\(\textsf{NCFinProb}\)</span> avoids this not because it has no state, but because its states are not measures over a basis-independent set of outcomes. Classical outcomes appear only after a measurement context is chosen. Thus the no-barber principle favours an internal language in which outcome-selection and copying are not primitive. This is independent of but consistent with the selection in <span class="citation" data-cites="Lawrence-origin26">Lawrence (2026)</span>, where von Neumann entropy is independently required because the game’s origin demands zero joint entropy with positive marginal entropies — a configuration achievable via entanglement but impossible under Shannon entropy.</p>
-<h2 id="variational-derivation-of-the-initial-curvature-structure">Variational Derivation of the Initial Curvature Structure</h2>
-<div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/minimal-entropy-density-matrix-intro.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/minimal-entropy-density-matrix-intro.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
-</div>
-<p>We will determine constraints on the Fisher Information Matrix <span class="math inline">\(G(\boldsymbol{\theta})\)</span> that are consistent with the system’s unfolding rules and internal information geometry. We follow Jaynes <span class="citation" data-cites="Jaynes-information57">(Jaynes, 1957)</span> in solving a variational problem that captures the allowed structure of the system’s origin (minimal entropy) state.</p>
-<p><span class="citation" data-cites="Hirschman-entropy57">Hirschman Jr (1957)</span> established a connection between entropy and the Fourier transform, showing that the entropy of a function and its Fourier transform cannot both be arbitrarily small. This result, known as the Hirschman uncertainty principle, was later strengthened by Beckner <span class="citation" data-cites="Beckner-fourier75">(Beckner, 1975)</span> who derived the optimal constant in the inequality. <span class="citation" data-cites="Bialynicki-uncertainty75">Białynicki-Birula and Mycielski (1975)</span> extended these ideas to derive uncertainty relations for information entropy in wave mechanics.</p>
-<p>From these results we know that there are fundamental limits to how we express the entropy of position and its conjugate space simultaneously. These limits inspire us to focus on the <em>von Neumann entropy</em> so that our system respects the Hirschman uncertainty principle.</p>
-<p>A density matrix has the form <span class="math display">\[
-\rho(\boldsymbol{\theta}) = \frac{1}{Z(\boldsymbol{\theta})} \exp\left( \sum_i \theta_i H_i \right)
-\]</span> where <span class="math inline">\(Z(\boldsymbol{\theta}) = \mathrm{tr}\left[\exp\left( \sum_i \theta_i H_i \right)\right]\)</span> and <span class="math inline">\(\boldsymbol{\theta} \in \mathbb{R}^d\)</span>, <span class="math inline">\(H_i\)</span> are Hermitian observables.</p>
-<p>The von Neumman entropy is given by <span class="math display">\[
-S[\rho] = -\text{tr} (\rho \log \rho)
-\]</span></p>
-<p>We now derive the minimal entropy configuration inspired by Jaynes’s <em>free-form</em> variational approach. This enables us to derive the form of the <em>density matrix</em> directly from information-theoretic constraints <span class="citation" data-cites="Jaynes-information63">(Jaynes, 1963)</span>.</p>
 <h2 id="the-lme-origin">The LME Origin</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/lme-origin-confinement.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/lme-origin-confinement.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
@@ -498,29 +484,14 @@ K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H,
 <div id="ref-Baez-characterisation11" class="csl-entry" role="doc-biblioentry">
 Baez, J.C., Fritz, T., Leinster, T., 2011. A characterization of entropy in terms of information loss. Entropy 13, 1945–1957. <a href="https://doi.org/10.3390/e13111945">https://doi.org/10.3390/e13111945</a>
 </div>
-<div id="ref-Beckner-fourier75" class="csl-entry" role="doc-biblioentry">
-Beckner, W., 1975. Inequalities in <span>F</span>ourier analysis. Annals of Mathematics 159–182. <a href="https://doi.org/10.2307/1970980">https://doi.org/10.2307/1970980</a>
-</div>
-<div id="ref-Bialynicki-uncertainty75" class="csl-entry" role="doc-biblioentry">
-Białynicki-Birula, I., Mycielski, J., 1975. Uncertainty relations for information entropy in wave mechanics. Communications in Mathematical Physics 44, 129–132. <a href="https://doi.org/10.1007/BF01608825">https://doi.org/10.1007/BF01608825</a>
-</div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
-</div>
-<div id="ref-Hirschman-entropy57" class="csl-entry" role="doc-biblioentry">
-Hirschman Jr, I.I., 1957. A note on entropy. American Journal of Mathematics 79, 152–156. <a href="https://doi.org/10.2307/2372390">https://doi.org/10.2307/2372390</a>
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
 </div>
 <div id="ref-Jaynes-minimum80" class="csl-entry" role="doc-biblioentry">
 Jaynes, E.T., 1980. The minimum entropy production principle. Annual Review of Physical Chemistry 31, 579–601. <a href="https://doi.org/10.1146/annurev.pc.31.100180.003051">https://doi.org/10.1146/annurev.pc.31.100180.003051</a>
-</div>
-<div id="ref-Jaynes-information63" class="csl-entry" role="doc-biblioentry">
-Jaynes, E.T., 1963. Information theory and statistical mechanics, in: Ford, K.W. (Ed.), Brandeis University Summer Institute Lectures in Theoretical Physics, Vol. 3: Statistical Physics. W. A. Benjamin, Inc., New York, pp. 181–218.
-</div>
-<div id="ref-Jaynes-information57" class="csl-entry" role="doc-biblioentry">
-Jaynes, E.T., 1957. Information theory and statistical mechanics. Physical Review 106, 620–630. <a href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a>
 </div>
 <div id="ref-Lawrence-origin26" class="csl-entry" role="doc-biblioentry">
 Lawrence, N.D., 2026. The origin of the inaccessible game. <a href="https://doi.org/10.48550/arXiv.2601.12576">https://doi.org/10.48550/arXiv.2601.12576</a>

@@ -362,6 +362,30 @@ C = C_{\max} = \sum_i \log d_i.
 <p>At the LME origin the marginal-entropy sum is saturated termwise: every <span class="math inline">\(s_i = \log d_i\)</span> is at its individual upper bound. This has a remarkable consequence. Since each marginal is already at its ceiling, <em>none can increase further and none can decrease without violating the sum</em>. The marginal entropies are locked at their maximum values for the entire trajectory: <span class="math display">\[
 s_i(\tau) = \log d_i \quad \forall i, \;\forall \tau.
 \]</span> The constraint gradient <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}^*) = \nabla_{\boldsymbol{\theta}} C\big|_{\boldsymbol{\theta}^*} = \mathbf{0}\)</span> vanishes at the origin. The usual first-order tangency condition <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}} = 0\)</span> is trivially satisfied for any velocity — it no longer selects admissible directions. The constraint becomes a <em>second-order</em> geometric condition: admissible velocities must lie in the kernel of the constraint Hessian <span class="math inline">\(\nabla^2 C(\boldsymbol{\theta}^*)\)</span>.</p>
+<div class="figure">
+<div id="marginal-entropy-tradeoff-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-tradeoff.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="marginal-entropy-tradeoff-magnify" class="magnify" onclick="magnifyFigure(&#39;marginal-entropy-tradeoff&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="marginal-entropy-tradeoff-caption" class="caption-frame">
+<p>Figure: The marginal-entropy conservation constraint <span class="math inline">\(s_1 + s_2 = C\)</span> in the <span class="math inline">\((s_1,s_2)\)</span> plane. The dashed lines mark the individual ceilings <span class="math inline">\(s_i = \log d\)</span>. Along the constraint segment, increasing one marginal entropy forces a decrease in the other.</p>
+</div>
+</div>
+<div class="figure">
+<div id="marginal-entropy-saturation-figure" class="figure-frame">
+<object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/marginal-entropy-saturation.svg" width="70%" style=" ">
+</object>
+</div>
+<div id="marginal-entropy-saturation-magnify" class="magnify" onclick="magnifyFigure(&#39;marginal-entropy-saturation&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="marginal-entropy-saturation-caption" class="caption-frame">
+<p>Figure: As <span class="math inline">\(C\)</span> increases toward <span class="math inline">\(C_{\max} = \sum_i \log d_i\)</span>, the accessible constraint segment (coloured lines) shrinks. At <span class="math inline">\(C = C_{\max}\)</span> the constraint collapses to the single corner point (red dot), the LME origin, where every marginal entropy is individually at its ceiling and the constraint gradient vanishes.</p>
+</div>
+</div>
 <h2 id="generic-dynamics-at-the-origin">GENERIC Dynamics at the Origin</h2>
 <p>The second-order admissible velocity subspace consists of directions that preserve all reduced states to first order: <span class="math inline">\(\dot{\rho}_i = 0\)</span> for all subsystems <span class="math inline">\(i\)</span>. These include the commutator flows <span class="math display">\[
 \dot{\rho} = -\mathrm{i}[K_{\text{local}}, \rho],

@@ -55,7 +55,7 @@ talkscam:
 
 \include{_information-game/includes/shannon-origin-impossibility.md}
 
-\include{_information-game/includes/no-barber-selects-ncfinprob.md}
+\include{_information-game/includes/no-barber-favours-ncfinprob.md}
 
 \include{_information-game/includes/minimal-entropy-density-matrix-intro.md}
 

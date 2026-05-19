@@ -206,22 +206,10 @@ T + V = E,
 <li><strong>Joint entropy <span class="math inline">\(H\)</span></strong> plays the role of <em>kinetic energy</em>. It represents “dispersed” or “free” information. High <span class="math inline">\(H\)</span> means the probability distribution is spread out, with maximal uncertainty.</li>
 </ul>
 <p>Just as a classical system evolves from high potential energy to high kinetic energy (a ball rolling down a hill), the idea in the Inaccessible Game will be that the information system evolves from high correlation (high <span class="math inline">\(I\)</span>) to high entropy (high <span class="math inline">\(H\)</span>).</p>
-<h2 id="configurations-without-visibility">Configurations Without Visibility</h2>
+<h2 id="entropy-configuration-mapping">Entropy Configuration Mapping</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/configurations-entropy-ordering.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-configuration-mapping.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/entropy-configuration-mapping.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The inaccessible game proceeds without an external observer who can read off the state. However, regardless of the current configuration of the system, we <em>can</em> ask: is there a property of the system we can use?</p>
-<p>The idea is we use the entropy (von Neumann entropy) as a potential which gives us the system flow. This makes it a property of each configuration.</p>
-<h2 id="entropy-orders-the-configurations">Entropy Orders the Configurations</h2>
-<p>Entropy assigns a non-negative real number to every configuration. This gives us a map <span class="math display">\[
-S : \{\text{configurations}\} \longrightarrow [0, \infty),
-\]</span> and we can pull back the standard order on <span class="math inline">\(\mathbb{R}\)</span> to get an ordering on configurations: <span class="math display">\[
-\rho \leq \rho&#39; \quad \Longleftrightarrow \quad S(\rho) \leq S(\rho&#39;).
-\]</span> This relation is reflexive (<span class="math inline">\(\rho \leq \rho\)</span>) and transitive (if <span class="math inline">\(\rho \leq \rho&#39;\)</span> and <span class="math inline">\(\rho&#39; \leq \rho&#39;&#39;\)</span> then <span class="math inline">\(\rho \leq \rho&#39;&#39;\)</span>). It is  antisymmetric in general: two distinct density matrices <span class="math inline">\(\rho \neq \rho&#39;\)</span> can share the same entropy value <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. A relation that is reflexive and transitive but not necessarily antisymmetric is called a , and a set equipped with a preorder is called a  (preordered set).</p>
-<p>So the configurations of the inaccessible game form a natural proset under von Neumann entropy.</p>
-<p>Within the proset, the configurations that share an entropy value form equivalence classes: <span class="math inline">\(\rho \sim \rho&#39;\)</span> iff <span class="math inline">\(S(\rho) = S(\rho&#39;)\)</span>. Each equivalence class is an , i.e. a manifold of configurations all carrying the same entropic content.</p>
-<p>If we pass to the quotient, i.e. treat isoentropy configurations as a single object, the resulting collection of equivalence classes <span class="math inline">\([\rho]\)</span> is antisymmetric: <span class="math inline">\([\rho] \leq [\rho&#39;]\)</span> and <span class="math inline">\([\rho&#39;] \leq [\rho]\)</span> together imply <span class="math inline">\([\rho] = [\rho&#39;]\)</span>. This quotient is a  (poset). Because because <span class="math inline">\(S\)</span> maps into <span class="math inline">\(\mathbb{R}\)</span>, which is totally ordered, the quotient poset is a : every two equivalence classes are comparable.</p>
-<p>Even without seeing inside the system we can hypothesise that the chain of entropy levels is defined.</p>
 <div class="figure">
 <div id="configurations-to-entropy-line-figure" class="figure-frame">
 <object class="svgplot " data="https://inverseprobability.com/talks/../slides/diagrams//information-game/configurations-to-entropy-line.svg" width="80%" style=" ">

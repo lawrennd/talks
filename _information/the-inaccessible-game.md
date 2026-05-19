@@ -44,7 +44,7 @@ talkscam:
 
 \include{_physics/includes/i-plus-h-equals-c.md}
 
-\include{_information-game/includes/configurations-entropy-ordering.md}
+\include{_information-game/includes/entropy-configuration-mapping.md}
 
 
 \section{Axiomatically Distinguished Trajectory}

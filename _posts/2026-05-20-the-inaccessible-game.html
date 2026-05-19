@@ -89,21 +89,67 @@ F(f) = c(H(p) -H(q))
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/inaccessible-game-set-up.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are 1. A representation of information loss 2. A prohibition of information exchange with the game</p>
+<p>Inspired by the no-barber principle, we set up the game in a way that attempts to avoid “external structure.” The first two things we need to do this are</p>
+<ol type="1">
+<li>A representation of information loss</li>
+<li>A prohibition of information exchange with the game</li>
+</ol>
 <p>How do we obtain a representation of information loss without including external structure? We use the axiomatic frameworks of Baez et al (<span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>) and Parzygnat (<span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>). They characterise entropy through category theory frameworks that depend on three axioms. Slight differences in the axioms result in different conclusions. Baez et al conclude that difference in Shannon entropy before and after a process is applied characterises information loss. Parzygnat is inspired by Baez et al but reformulates around a different categorical object which implies von Neumann entropy.</p>
-<p>In the game <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span> we introduce information conservation based on these measures of information loss.</p>
+<p>In the game (<span class="citation" data-cites="Lawrence-inaccessible25">Lawrence (2025)</span>) we introduce information conservation based on these measures of information loss.</p>
 <h1 id="information-isolation">Information Isolation</h1>
 <h2 id="information-isolation-1">Information Isolation</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/information-isolation.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The first three axioms of the inaccessible game, due to , characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: <em>information isolation</em>. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.</p>
+<p>The first three axioms of the inaccessible game, due to <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span>, characterise information loss and justify the use of entropy. For the game itself we introduce a fourth axiom: <em>information isolation</em>. Just as an isolated chamber conserves mass and energy, our game is isolated from external observation. No observer outside the system can extract or inject information.</p>
 <p>Under additional requirements of exchangeability and extensivity, information isolation implies that the total marginal entropy is conserved. For any finite sub-group of <span class="math inline">\(N\)</span> variables the sum of marginal entropies <span class="math inline">\(\{h_i\}_{i=1}^{N}\)</span> sums to a constant <span class="math inline">\(C\)</span>, <span class="math display">\[
 \sum_{i=1}^N h_i = C.
 \]</span> The conservation law is imposed in an exchangeable form across the <em>marginal</em> entropies, so that it applies consistently to any finite partition drawn from a potentially countably infinite collection of variables.</p>
 <p>The specific form <span class="math inline">\(\sum_i h_i = C\)</span> is not an arbitrary choice. Any exchangeable quantity depending only on marginal entropies must take the form <span class="math inline">\(Q = \sum_i f(h_i)\)</span> with the same function <span class="math inline">\(f\)</span> for each variable. Extensivity (adding one variable increases <span class="math inline">\(Q\)</span> by a fixed amount) forces <span class="math inline">\(f(h) = c \cdot h + \text{const}\)</span>. Requiring the law to apply consistently as the subset size varies eliminates the constant term. Setting <span class="math inline">\(c=1\)</span> gives the unique form <span class="math inline">\(\sum_i h_i = \text{const}\)</span>. The fourth axiom is therefore the unique exchangeable, extensive, information-theoretic conservation law for an isolated system.</p>
 <p>Information isolation can be seen as stronger than frame invariance. It eliminates not only preferred reference frames but appeal to external reference structures. All physically meaningful quantities must be internal to the system and relational rather than absolute. The variable partition <span class="math inline">\(\{X_i\}\)</span> that enters the conservation constraint is a structural choice. It is part of the model specification, analogous to choosing a Hilbert space factorisation in quantum mechanics—rather than an externally privileged decomposition.</p>
 <p>In traditional thermodynamics, energy conservation defines a built-in potential. Here, marginal entropy conservation plays the analogous role: it defines an intrinsic potential within the information geometry. The curvature of this potential, encoded in the Fisher information, acts as the metric governing how the system redistributes its informational content.</p>
+<h2 id="the-classical-observer">The Classical Observer</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/classical-observer-velocities.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<div class="figure">
+<div id="observer-composite-independent-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-independent.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-independent-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-independent&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-independent-caption" class="caption-frame">
+<p>Figure: Here the observer is monitoring the movements of the particles. We’ve plotted the velocities alongside the 1 standard deviation contour of their theoretical distribution.</p>
+</div>
+</div>
+<h2 id="the-classical-observer---correlated">The Classical Observer - Correlated</h2>
+<div class="figure">
+<div id="observer-composite-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-correlated-caption" class="caption-frame">
+<p>Figure: Again the observer is monitoring the movements of the particles, but here their motion is correlated (<span class="math inline">\(\rho=0.95\)</span>).</p>
+</div>
+</div>
+<h2 id="the-classical-observer---anti-correlated">The Classical Observer - Anti-correlated</h2>
+<div class="figure">
+<div id="observer-composite-anti-correlated-figure" class="figure-frame">
+<object class data="https://inverseprobability.com/talks/../slides/diagrams//physics/observer-composite-anti-correlated.svg" width="90%" style=" ">
+</object>
+</div>
+<div id="observer-composite-anti-correlated-magnify" class="magnify" onclick="magnifyFigure(&#39;observer-composite-anti-correlated&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="observer-composite-anti-correlated-caption" class="caption-frame">
+<p>Figure: Here the observer is monitoring the movements of the particles, but here their motion is anti-correlated (<span class="math inline">\(\rho=-0.95\)</span>).</p>
+</div>
+</div>
 <h2 id="the-classical-observer---inaccessible">The Classical Observer - Inaccessible</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/observer-inaccessible-entropy.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

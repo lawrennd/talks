@@ -38,6 +38,8 @@ talkscam:
 
 \include{_information-game/includes/information-isolation.md}
 
+\include{_physics/includes/classical-observer-velocities.md}
+
 \include{_information-game/includes/observer-inaccessible-entropy.md}
 
 \include{_physics/includes/i-plus-h-equals-c.md}

@@ -65,21 +65,6 @@ talkscam:
 
 \include{_information-game/includes/entropy-time.md}
 
-\section{Connections}
-
-\newslide{Connections}
-
-\slidesincremental{
-* Nice connections between.
-  * Thermodynamics and Inference (Jaynes).
-  * Information Geometry and GENERIC.
-  * Inaccessibility and noncommutative probability.
-}
-
-\notes{The game connects three bodies of ideas that are often treated separately: (1) the Jaynes programme of deriving statistical mechanics from entropy maximisation and conservation laws; (2) information geometry, which provides a coordinate-free language for the statistical manifold and makes Riemannian calculations tractable; and (3) noncommutative probability and quantum mechanics, which are *forced* by the requirement that the game have a well-defined origin.}
-
-\include{_physics/includes/pendulum-animation.md}
-
 \section{Hamiltonian Emergence (In Preparation)}
 
 \include{_information-game/includes/hamiltonian-emergence-preview.md}

@@ -52,6 +52,8 @@ talkscam:
 
 \include{_information-game/includes/shannon-origin-impossibility.md}
 
+\notes{Having seen why the state space must become noncommutative, we now need the corresponding information geometry. The exponential family and Fisher information that organise the classical dynamics have a quantum analogue: the matrix exponential family, equipped with the Bogoliubov–Kubo–Mori metric.}
+
 \include{_information/includes/the-matrix-exponential-family.md}
 
 <!--include{_information-game/includes/no-barber-favours-ncfinprob.md}-->

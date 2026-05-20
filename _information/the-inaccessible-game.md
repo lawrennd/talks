@@ -74,7 +74,7 @@ talkscam:
 
 *Emergent effective rules.* With no Hamiltonian, no clock, and no spatial structure in the axioms, we look for emergence. Entropy time provides an internal clock, axiomatically distinguished because it is the unique reparametrisation that uniformises entropy production. Next we're studying Gibbs-locked regions an effective Hamiltonian emerges from the modular generator[@Lawrence-hamiltonian26].
 
-The game suggests a quantum-mechanical structure — density matrices, von Neumann entropy, unitary evolution, Gibbs states. Can we show that this is a unique internally consistent language for a self-governing system that enforces information isolation and avoids external adjudication?}
+The game suggests a quantum-mechanical structure — density matrices, von Neumann entropy, unitary evolution, Gibbs states. Can we show that this is, within the assumptions of the no-barber programme, the internally consistent language for a self-governing system that enforces information isolation and avoids external adjudication?}
 
 \slides{* No barber principle
 * Information isolation

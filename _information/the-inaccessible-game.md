@@ -46,6 +46,8 @@ talkscam:
 
 \include{_information-game/includes/axiomatically-distinguished-trajectory.md}
 
+\include{_information-game/includes/constrained-entropy-ascent.md}
+
 \include{_information-game/includes/generic-like-structure.md}
 
 \include{_information-game/includes/information-relaxation-dynamics.md}

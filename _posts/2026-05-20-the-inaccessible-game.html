@@ -263,6 +263,39 @@ L(\boldsymbol{ \theta}) = \boldsymbol{ \theta}^\top T- \psi(\boldsymbol{ \theta}
 \]</span> We enforce the constraint via a Lagrange multiplier <span class="math inline">\(\nu(\tau)\)</span>, giving constrained dynamics <span class="math display">\[
 \dot{\boldsymbol{\theta}} = -G(\boldsymbol{\theta})\boldsymbol{\theta} + \nu(\tau)\,\mathbf{a}(\boldsymbol{\theta}),
 \]</span> where <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla\!\sum_i h_i\)</span> is the constraint gradient and <span class="math inline">\(\nu(\tau)\)</span> is determined by requiring <span class="math inline">\(\mathbf{a}^\top\dot{\boldsymbol{\theta}} = 0\)</span> (the constraint is maintained). Here <span class="math inline">\(\tau\)</span> is <em>game time</em>, the affine parameter tracking progress along the trajectory.</p>
+<h2 id="constrained-entropy-ascent">Constrained Entropy Ascent</h2>
+<div style="text-align:right">
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/constrained-entropy-ascent.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/constrained-entropy-ascent.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+</div>
+<p>The game’s dynamics are fixed by two requirements: maximise joint entropy production, and maintain the information isolation constraint <span class="math inline">\(\sum_i h_i = C\)</span> exactly. Working out the explicit equations makes transparent why the linearised flow decomposes into symmetric (dissipative) and antisymmetric (reversible) parts.</p>
+<p>For a distribution <span class="math inline">\(p(\mathbf{x};\boldsymbol{\theta})\)</span> in the exponential family, <span class="math display">\[
+p(\mathbf{x};\boldsymbol{\theta}) = \exp\!\left(\sum_k \theta_k f_k(\mathbf{x}) - \psi(\boldsymbol{\theta})\right),
+\]</span> the log-partition function <span class="math inline">\(\psi(\boldsymbol{\theta}) = \log\sum_{\mathbf{x}}\exp(\sum_k\theta_k f_k(\mathbf{x}))\)</span> is the cumulant generating function (CGF). The moment parameters are its first derivatives, <span class="math display">\[
+\eta_k = \frac{\partial\psi}{\partial\theta_k} = \mathbb{E}_{p_{\boldsymbol{\theta}}}[f_k(\mathbf{x})],
+\]</span> and the Fisher information matrix is the Hessian: <span class="math inline">\(G_{jk}(\boldsymbol{\theta}) = \partial^2\psi/\partial\theta_j\partial\theta_k\)</span>.</p>
+<p>Shannon entropy is the Legendre conjugate of <span class="math inline">\(\psi\)</span>: <span class="math display">\[
+H(\boldsymbol{\theta}) = \psi(\boldsymbol{\theta}) - \boldsymbol{\theta}\cdot\nabla\psi(\boldsymbol{\theta}) = \psi(\boldsymbol{\theta}) - \boldsymbol{\theta}\cdot\boldsymbol{\eta}.
+\]</span></p>
+<p>Differentiating entropy with respect to the natural parameters: <span class="math display">\[
+\frac{\partial H}{\partial\theta_k}
+= \frac{\partial\psi}{\partial\theta_k} - \eta_k - \sum_j\theta_j\frac{\partial^2\psi}{\partial\theta_j\partial\theta_k}
+= \eta_k - \eta_k - (G(\boldsymbol{\theta})\boldsymbol{\theta})_k
+= -(G(\boldsymbol{\theta})\boldsymbol{\theta})_k.
+\]</span> So <span class="math inline">\(\nabla_{\!\boldsymbol{\theta}} H = -G(\boldsymbol{\theta})\boldsymbol{\theta}\)</span>.</p>
+<p>The natural gradient (steepest ascent in the Fisher metric) is then <span class="math display">\[
+\nabla^{\mathrm{nat}} H = G(\boldsymbol{\theta})^{-1}\nabla_{\!\boldsymbol{\theta}} H = -\boldsymbol{\theta}.
+\]</span> Unconstrained steepest entropy ascent is simply descent in the natural parameters: <span class="math inline">\(\dot{\boldsymbol{\theta}} \propto -\boldsymbol{\theta}\)</span>. This is the symmetric, dissipative part of the flow.</p>
+<p>The information isolation constraint <span class="math inline">\(\sum_i h_i(\boldsymbol{\theta}) = C\)</span> introduces a Lagrange multiplier <span class="math inline">\(\nu(\tau)\)</span>. The constrained natural gradient ascent is <span class="math display">\[
+\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta} + \nu(\tau) G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta}),
+\]</span> where <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta}) = \nabla_{\boldsymbol{\theta}} \sum_i h_i(\boldsymbol{\theta})\)</span> is the constraint gradient and <span class="math inline">\(G^{-1}\mathbf{a}\)</span> is its natural gradient.</p>
+<p>Requiring the constraint to be maintained, <span class="math inline">\(\mathbf{a}(\boldsymbol{\theta})^\top\dot{\boldsymbol{\theta}} = 0\)</span>, gives <span class="math display">\[
+\mathbf{a}^\top\left(-\boldsymbol{\theta} + \nu\,G^{-1}\mathbf{a}\right) = 0
+\quad\Longrightarrow\quad
+\nu(\tau) = \frac{\mathbf{a}(\boldsymbol{\theta})^\top\boldsymbol{\theta}}{\mathbf{a}(\boldsymbol{\theta})^\top G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta})}.
+\]</span> Substituting back gives a projected natural gradient flow: <span class="math display">\[
+\dot{\boldsymbol{\theta}} = -\boldsymbol{\theta} + \frac{\mathbf{a}^\top\boldsymbol{\theta}}{\mathbf{a}^\top G^{-1}\mathbf{a}}\,G^{-1}\mathbf{a} = -\Pi^G_\perp \boldsymbol{\theta},
+\]</span> where <span class="math inline">\(\Pi^G_\perp = \mathbf{I} - G^{-1}\mathbf{a}\,\mathbf{a}^\top / (\mathbf{a}^\top G^{-1}\mathbf{a})\)</span> is the projector orthogonal to the constraint gradient in the Fisher metric.</p>
+<p>Because <span class="math inline">\(\nu(\boldsymbol{\theta})\)</span> depends on <span class="math inline">\(\boldsymbol{\theta}\)</span>, linearising the Lagrange multiplier term <span class="math inline">\(\nu(\boldsymbol{\theta})\,G^{-1}(\boldsymbol{\theta}) \mathbf{a}(\boldsymbol{\theta})\)</span> around <span class="math inline">\(\boldsymbol{\theta}^*\)</span> produces a contribution to the Jacobian whose antisymmetric part seeds the reversible sector <span class="math inline">\(A\)</span> of the linearised dynamics. The symmetric part of the Jacobian comes from <span class="math inline">\(-\mathbf{I}\)</span> (unconstrained natural gradient) and the symmetric part of <span class="math inline">\(\nabla[\nu G^{-1}\mathbf{a}]\)</span>; the antisymmetric part is sourced by the Lagrange multiplier’s <span class="math inline">\(\boldsymbol{\theta}\)</span>-dependence <span class="citation" data-cites="Lawrence-inaccessible25">(Lawrence, 2025)</span>.</p>
 <h2 id="generic-like-structure">GENERIC-like Structure</h2>
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/generic-like-structure.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/generic-like-structure.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>

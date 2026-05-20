@@ -28,13 +28,9 @@ talkscam:
 
 \include{_information-game/includes/no-barber-principle.md}
 
-\section{Information Loss}
-
 \include{_information-game/includes/baez-information-loss-axioms.md}
 
 \include{_information-game/includes/inaccessible-game-set-up.md}
-
-\section{Information Isolation}
 
 \include{_information-game/includes/information-isolation.md}
 
@@ -46,26 +42,21 @@ talkscam:
 
 \include{_information-game/includes/entropy-configuration-mapping.md}
 
-
-\section{Axiomatically Distinguished Trajectory}
+\include{_statistics/includes/the-exponential-family.md}
 
 \include{_information-game/includes/axiomatically-distinguished-trajectory.md}
 
-\include{_physics/includes/information-relaxation.md}
-
-\section{The Quantum Origin}
+\include{_information-game/includes/information-relaxation-dynamics.md}
 
 \include{_information-game/includes/shannon-origin-impossibility.md}
 
-\include{_information-game/includes/no-barber-favours-ncfinprob.md}
+\include{_information/includes/the-matrix-exponential-family.md}
+
+<!--include{_information-game/includes/no-barber-favours-ncfinprob.md}-->
 
 \include{_information-game/includes/lme-origin-confinement.md}
 
-\subsection{Entropy Time}
-
 \include{_information-game/includes/entropy-time.md}
-
-\section{Hamiltonian Emergence (In Preparation)}
 
 \include{_information-game/includes/hamiltonian-emergence-preview.md}
 

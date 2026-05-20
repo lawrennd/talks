@@ -60,6 +60,25 @@ talkscam:
 
 \include{_information-game/includes/hamiltonian-emergence-preview.md}
 
+\subsection{Conclusions}
+
+\notes{We began with a tautology — self-governing systems cannot refer to external arbitration — and asked what mathematical structure it forces. The answer, obtained by applying the no-barber principle to information theory, turns out to be surprisingly rich.
+
+*No-barber principle.* Formalised through the axiomatic frameworks of @Baez-characterisation11 and @Parzygnat-functorial22, the requirement of internal adjudicability prohibits outcome spaces, Hamiltonians, clocks, and external observers from appearing as primitives. The game must define everything it uses from within [@Lawrence-nobarber26].
+
+*Information isolation.* The no-barber principle suggests the marginal entropy sum $\sum_i h_i = C$ as a global conservation law. Question: is information isolation a fourth axiom or a derived necessity? 
+
+*Axiomatic selection.*  We've suggested that the game structure requires a pure-state LME origin with positive marginal entropies — a configuration impossible under Shannon entropy [@Lawrence-origin26]. Is this necessary or sufficient?
+
+*Emergent effective rules.* With no Hamiltonian, no clock, and no spatial structure in the axioms, we look for emergence. Entropy time provides an internal clock, axiomatically distinguished because it is the unique reparametrisation that uniformises entropy production. Next we're studying Gibbs-locked regions an effective Hamiltonian emerges from the modular generator[@Lawrence-hamiltonian26].
+
+The game suggests a quantum-mechanical structure — density matrices, von Neumann entropy, unitary evolution, Gibbs states. Can we show that this is a unique internally consistent language for a self-governing system that enforces information isolation and avoids external adjudication?}
+
+\slides{* No barber principle
+* Information isolation
+* Axiomatic selection
+* Emergent effective rules}
+
 \thanks
 
 \references

@@ -26,7 +26,11 @@ talkscam:
 
 \notes{While this is a tautology, we will try to formalise it through information theory. The key question is: what mathematical structure is forced on a system that cannot appeal to external adjudication?}
 
+\narration{Why should we care about self-governing systems? Well, you'd expect the rules of physics to be self-governing. It would be a problem if a rule of physics had to pause and check VAR — an external decision made outside the game. That clearly cannot work for a dynamical system we expect to be self-sustaining and self-adjudicating. So I'm going to try and formalise this tautology and see what mathematical structure it forces on us.}
+
 \include{_information-game/includes/no-barber-principle.md}
+
+\narration{The core idea actually came to me on the train on the way back from watching Sheffield United lose the playoff final. I was sober enough to think clearly, and this is almost exactly a year ago, though I've been thinking about this problem for longer.}
 
 \include{_information-game/includes/baez-information-loss-axioms.md}
 
@@ -84,6 +88,12 @@ The game suggests a quantum-mechanical structure — density matrices, von Neuma
 * Information isolation
 * Axiomatic selection
 * Emergent effective rules}
+
+\narration{So to summarise: starting from a tautology — self-governing systems can't appeal to external arbitration — and applying information theory, you get a surprisingly specific set of conclusions. The no-barber principle rules out external outcome spaces, clocks, Hamiltonians, and observers as primitives. Information isolation gives you a conservation law for marginal entropies. The requirement for a pure-state origin with positive marginals forces you into quantum probability — you can't stay classical. The GENERIC structure and entropy time emerge from the dynamics. And the idea is that a Hamiltonian would have to emerge conditionally, in Gibbs-locked regions.
+
+There are three papers now: the inaccessible game sets up the framework and derives the GENERIC structure. The origin paper derives the necessity of quantum probability. And the Hamiltonian paper derives the emergence of Hamiltonian dynamics from the Gibbs-locked region. Each paper has a "work in progress" quality — I'm not claiming these are complete. What I hope to have shown is that the tautology is not empty: it has mathematical teeth.
+
+I was told I should finish with a question. Here's mine: can we show that quantum mechanics — density matrices, von Neumann entropy, unitary evolution, Gibbs states — is, within the assumptions of the no-barber programme, the unique internally consistent language for a self-governing system that enforces information isolation? I don't know the answer yet, but I think it's the right question to be asking.}
 
 \thanks
 

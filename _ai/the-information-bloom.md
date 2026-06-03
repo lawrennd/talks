@@ -1,6 +1,5 @@
 ---
-title: "Preserving Human Voices and Faces"
-subtitle: "What AI Threatens, and What It Cannot Touch"
+title: "The Information Bloom"
 abstract: |
   The information revolution — and AI is its latest phase — is like a nutrient flood in an ecosystem. Algae are the organisms best placed to exploit nitrogen, and when nitrogen floods in they bloom rapidly, consuming the oxygen and crowding out diversity. In 1971 Herbert Simon warned that a wealth of information creates a poverty of attention. Today that poverty is acute. But the very quality that makes us bandwidth-limited also makes us irreplaceable: we carry the knowledge that comes from being mortal and vulnerable. This talk explores the embodiment factor — the million-to-one gap between how fast we communicate and how fast machines do — and argues that human culture, like ecology, carries complexity that cannot be scaled or uploaded. The challenge before us is to ensure the information bloom does not destroy the diverse ecosystem of human voice and face.
 author:

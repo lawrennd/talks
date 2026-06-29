@@ -1,10 +1,10 @@
 ---
 title: "The Inaccessible Game"
-subtitle: "Information, Energy and the Limits of Intelligence"
+subtitle: "Information and the Limits of Intelligence"
 abstract: |
   Most games rely on an external adjudicator. That is, an observer outside the system who defines outcomes, measures states, and applies rules. What happens when we forbid this? 
   
-  This talk develops the "inaccessible game," an information-theoretic dynamical system that forbits external adjudication.  We introduce the game and present the no-barber principle which supports in selecting the game's rules.
+  This talk develops the "inaccessible game," an information-theoretic dynamical system that forbids external adjudication.  We introduce the game and present the no-barber principle which supports us when selecting the game's rules.
 
   We explain how structure emerges from these foundations and speculate on why this framing might be useful in understanding the limits of information infrastructures and the limits of intelligence.
 author:
@@ -16,6 +16,7 @@ author:
   orcid: 0000-0001-9258-1030
   url: https://inverseprobability.com
 date: 2026-06-30
+room: "Aula Toti"
 venue: "Department of AI, Data and Decision Sciences, Luiss Guido Carli University, Rome"
 transition: None
 talkscam:

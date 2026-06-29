@@ -138,6 +138,8 @@ include{_information-game/includes/hamiltonian-emergence-preview.md}
 
 \include{_information/includes/information-limits-on-intelligence.md}
 -->
+\include{_data-science/includes/new-flow-of-information.md}
+\include{_business/includes/information-flow-structures.md}
 
 \subsection{Conclusions}
 

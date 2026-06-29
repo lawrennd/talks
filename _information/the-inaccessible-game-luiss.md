@@ -86,9 +86,6 @@ talkscam:
 
 \subsection{Energy}
 
-\figure{\includepng{\diagramsDir/books/sustainable-energy-without-the-hot-air}{50%}}{David's book @MacKay-energy08 brought his clarity of thought to the challenge of sustainable energy.}{sustainable-energy-without-the-hot-air}
-\slides{@MacKay-energy08}
-
 \include{_physics/includes/pendulum-animation.md}
 <!-- include{_physics/includes/maxwells-demon.md} -->
 

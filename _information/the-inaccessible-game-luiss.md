@@ -40,7 +40,17 @@ talkscam:
 
 \include{_information-game/includes/information-isolation.md}
 
+\include{_physics/includes/multigame-entropy.md}
+\include{_ml/includes/velocity-independent-sample.md}
+\include{_ml/includes/velocity-correlated-sample.md}
+\include{_physics/includes/jaynes-maximum-entropy.md}
+
+
 \include{_physics/includes/classical-observer-velocities.md}
+
+\section{Back to self adjudication}
+
+\include{_information-game/includes/no-barber-principle.md}
 
 \include{_information-game/includes/observer-inaccessible-entropy.md}
 
@@ -52,27 +62,82 @@ talkscam:
 
 \include{_information-game/includes/axiomatically-distinguished-trajectory.md}
 
-\include{_information-game/includes/constrained-entropy-ascent.md}
+\subsection{Long Story Short}
 
-\include{_information-game/includes/generic-like-structure.md}
+\notes{Building on these ideas, some interesting conclusions emerge. The marginal engropy constraint leads to GENERIC-like dynamics [@Grmela-dynamics97,@Ottinger-beyond05].}
 
-\include{_information-game/includes/information-relaxation-dynamics.md}
+\slidesincremental{
+* Can derive GENERIC-like dynamics.
+* Origin suggests von Neumann entropy more natural than Shannon.
+}
 
-\include{_information-game/includes/shannon-origin-impossibility.md}
+\notes{When characterising the origin of the game, a shift is forced from Shannon entropy to von Neumann entropy [@vonNeumann-book32]. In retrospect the shift feels natural if we take an algebraic view of quantum probability, where outcomes are no longer primitive. This is consistent with the inaccessible nature of the game.}
 
-\include{_information/includes/the-matrix-exponential-family.md}
+\newslide{Connections}
 
-\include{_information-game/includes/lme-origin-confinement.md}
+\slidesincremental{
+* Nice connections between.
+  * Thermodynamics and Inference (Jaynes).
+  * Information Geometry and GENERIC.
+  * Inaccessibility and noncommutative probability.
+}
 
-\include{_information-game/includes/entropy-time.md}
+\notes{The game is inspired by the nice connections between inference and thermodynamics explored by E. T. Jaynes, but the dynamics play out through the framework of information geometry [@Amari-information00] which makes much of the (normally complicated) calculations around Riemanian geometry relatively straightforward.}
 
-\include{_information-game/includes/hamiltonian-emergence-preview.md}
+\subsection{Energy}
+
+\figure{\includepng{\diagramsDir/books/sustainable-energy-without-the-hot-air}{50%}}{David's book @MacKay-energy08 brought his clarity of thought to the challenge of sustainable energy.}{sustainable-energy-without-the-hot-air}
+\slides{@MacKay-energy08}
+
+\include{_physics/includes/pendulum-animation.md}
+<!-- include{_physics/includes/maxwells-demon.md} -->
+
+\newslide{Energy}
+
+\slidesincremental{
+* In certain thermodynamic limits:
+  * Marginal entropy conservation $\equiv$ Energy conservation
+
+See @Lawrence-inaccessible25
+}
+
+\notes{One of the nice results of @Lawrence-inaccessible25 is that in certain thermodynamic limits marginal entropy conservation manifests as energy conservation. So in these (meta-stable) regions one can use Jaynes' maximum entropy approach to determin the stationary distribution.}
+
+\section{Intelligence}
+
+\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
+
+\subsection{Information-Theoretic Limits}
+
+\notes{The hope is that this framework might reveal limits on information processing systems, including intelligent systems.}
+
+\include{_information/includes/information-limits-on-intelligence.md}
+
+\notes{The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.}
+
+<!--
+include{_information-game/includes/constrained-entropy-ascent.md}
+
+include{_information-game/includes/generic-like-structure.md}
+
+include{_information-game/includes/information-relaxation-dynamics.md}
+
+include{_information-game/includes/shannon-origin-impossibility.md}
+
+include{_information/includes/the-matrix-exponential-family.md}
+
+include{_information-game/includes/lme-origin-confinement.md}
+
+include{_information-game/includes/entropy-time.md}
+
+include{_information-game/includes/hamiltonian-emergence-preview.md}
 
 \section{Intelligence}
 
 \include{_information/includes/perpetual-motion-superintelligence-analogy.md}
 
 \include{_information/includes/information-limits-on-intelligence.md}
+-->
 
 \subsection{Conclusions}
 
@@ -92,8 +157,14 @@ talkscam:
 * No-barber principle
 * Information isolation
 * Axiomatic selection
+}
+
+\newslide{Conclusions}
+
+\slides{
 * Emergent effective rules
 * Limits on intelligence
+* Social Oranisation
 }
 
 \thanks

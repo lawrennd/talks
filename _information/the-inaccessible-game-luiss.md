@@ -22,6 +22,8 @@ transition: None
 talkscam:
 ---
 
+\include{_information/includes/information-topography-motivation.md}
+
 \include{_information-game/includes/munchkin-provision.md}
 
 \subsection{A Tautology}

@@ -12,6 +12,7 @@
 //   dieroll-sliders  <div>     – slider rows built dynamically
 //   dieroll-uniform  <button>  – preset: uniform
 //   dieroll-jaynes   <button>  – preset: max-entropy mean 4.5
+//   dieroll-simple   <button>  – preset: simple 50/50 (faces 4 & 5), mean 4.5
 //   dieroll-low      <button>  – preset: max-entropy mean 2
 //   dieroll-count    <span>    – total roll count display
 //   dieroll-mean     <span>    – sample mean display
@@ -464,6 +465,7 @@ const resetBtn    = document.getElementById('dieroll-reset');
 const dieCanvas   = document.getElementById('dieroll-die');
 const uniformBtn  = document.getElementById('dieroll-uniform');
 const jaynesBtn   = document.getElementById('dieroll-jaynes');
+const simpleBtn   = document.getElementById('dieroll-simple');
 const lowBtn      = document.getElementById('dieroll-low');
 
 if (rollBtn)     rollBtn.addEventListener('click', doRoll);
@@ -481,6 +483,7 @@ if (resetBtn) {
 
 if (uniformBtn) uniformBtn.addEventListener('click', () => setWeights([1,1,1,1,1,1]));
 if (jaynesBtn)  jaynesBtn.addEventListener('click',  () => setWeights(maxEntropyDist(4.5)));
+if (simpleBtn)  simpleBtn.addEventListener('click',  () => setWeights([0, 0, 0, 1, 1, 0]));
 if (lowBtn)     lowBtn.addEventListener('click',     () => setWeights(maxEntropyDist(2.0)));
 
 // ── Initialise ────────────────────────────────────────────────────────────────

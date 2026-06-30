@@ -22,6 +22,13 @@ transition: None
 talkscam:
 ---
 
+\include{_atomic-human/includes/artificial-general-vehicle.md}
+
+\include{_ai/includes/the-atomic-eye.md}
+\undef{noSlideTitle}
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\define{noSlideTitle}
+
 \include{_information/includes/information-topography-motivation.md}
 
 \include{_information-game/includes/munchkin-provision.md}
@@ -137,6 +144,18 @@ include{_information-game/includes/hamiltonian-emergence-preview.md}
 
 \include{_information/includes/information-limits-on-intelligence.md}
 -->
+\section{Information Infrastructures}
+
+\notes{The information-theoretic constraints that bound individual intelligence extend naturally to the collective systems we build.  An organisation, a firm, a society — each is itself an information-processing system embedded in an information topography.  The same bottlenecks and channel capacities that constrain what a single agent can know also constrain what institutions can know, and therefore what they can do.}
+
+\notes{Recall the embodiment factor introduced earlier: human communication bandwidth is at walking pace while machines operate at light speed.  This asymmetry means that the relationship between people and data is now almost always mediated by machine.  The information topography of modern organisations is therefore shaped not only by their internal reporting hierarchy, but by the machine infrastructure that now sits between people and the world.}
+
+\slides{
+* Intelligence limits apply to institutions, not just individuals
+* Embodiment factor shapes organisational information topography
+* Machine-mediated data changes what organisations can know
+}
+
 \include{_data-science/includes/new-flow-of-information.md}
 \include{_business/includes/information-flow-structures.md}
 

@@ -25,9 +25,7 @@ talkscam:
 \include{_atomic-human/includes/artificial-general-vehicle.md}
 
 \include{_ai/includes/the-atomic-eye.md}
-\undef{noSlideTitle}
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
-\define{noSlideTitle}
 
 \include{_information/includes/information-topography-motivation.md}
 

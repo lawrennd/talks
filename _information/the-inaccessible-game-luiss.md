@@ -146,14 +146,17 @@ include{_information-game/includes/hamiltonian-emergence-preview.md}
 -->
 \section{Information Infrastructures}
 
-\notes{The information-theoretic constraints that bound individual intelligence extend naturally to the collective systems we build.  An organisation, a firm, a society — each is itself an information-processing system embedded in an information topography.  The same bottlenecks and channel capacities that constrain what a single agent can know also constrain what institutions can know, and therefore what they can do.}
+\notes{The information-theoretic constraints that bound individual intelligence extend to collective systems we build.  Any institution: organisations, a businesses, government department is an information-processing system embedded subject to the constraints of the information topography.  The bottlenecks and channel capacities that constrain what a human can know also constrain what institutions can know, and therefore what they can do.}
+
+\notes{This was perhaps most famously explored by Stafford Beer, first in *Cybernetics and Management* [@Beer-cybernetics59] and then most fully in *Brain of the Firm* [@Beer-brain72], where he developed the Viable System Model — a cybernetic account of the information channels an organisation must maintain to remain viable.  Central to Beer's analysis is Ashby's law of requisite variety: the variety of a controller must match the variety of what it seeks to control.  Organisations that lack the information bandwidth to track their environment cannot govern themselves effectively.}
 
 \notes{Recall the embodiment factor introduced earlier: human communication bandwidth is at walking pace while machines operate at light speed.  This asymmetry means that the relationship between people and data is now almost always mediated by machine.  The information topography of modern organisations is therefore shaped not only by their internal reporting hierarchy, but by the machine infrastructure that now sits between people and the world.}
 
 \slides{
-* Intelligence limits apply to institutions, not just individuals
+* Information limits apply to institutions, not just individuals
 * Embodiment factor shapes organisational information topography
 * Machine-mediated data changes what organisations can know
+* Beer's Viable System Model: requisite variety for institutions [@Beer-brain72]
 }
 
 \include{_data-science/includes/new-flow-of-information.md}

@@ -654,55 +654,75 @@ L(\boldsymbol{ \theta}) = \boldsymbol{ \theta}^\top T- \psi(\boldsymbol{ \theta}
 <p>I’ve no doubt that AI technologies will transform our world just as much as the automobile has. But I also have no doubt that the promise of superintelligence is just as silly as the promise of perpetual motion. The inaccessible game provides one way of understanding why.</p>
 <h2 id="information-theoretic-limits">Information-Theoretic Limits</h2>
 <p>The hope is that this framework might reveal limits on information processing systems, including intelligent systems.</p>
-<h2 id="information-theoretic-limits-on-intelligence">Information-Theoretic Limits on Intelligence</h2>
+<h2 id="maxwells-demon">Maxwell’s Demon</h2>
 <div style="text-align:right">
-<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information/includes/information-limits-on-intelligence.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
+<span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_physics/includes/maxwells-demon.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>Just as the second law of thermodynamics places fundamental limits on mechanical engines, no matter how cleverly designed, the idea is that information theory places fundamental limits on information engines, no matter how cleverly implemented.</p>
-<h3 id="what-intelligent-systems-must-do">What Intelligent Systems Must Do</h3>
-<p>Any intelligent system, whether biological or artificial, must perform certain fundamental operations:</p>
-<ol type="1">
-<li><strong>Acquire information</strong> from its environment (sensing, observation)</li>
-<li><strong>Store information</strong> about the world (memory)</li>
-<li><strong>Process information</strong> to make decisions (computation)</li>
-<li><strong>Erase information</strong> to make room for new data (memory management)</li>
-<li><strong>Act on the world</strong> using the processed information</li>
-</ol>
-<p>Each of these operations has information-theoretic costs that cannot be eliminated by clever engineering.</p>
-<h2 id="landauers-principle">Landauer’s Principle</h2>
-<p>Landauer’s principle <span class="citation" data-cites="Landauer-irreversibility61">(Landauer, 1961)</span> establishes that erasing one bit of information requires dissipating at least <span class="math inline">\(k_BT\log 2\)</span> of energy as heat, where <span class="math inline">\(k_B\)</span> is Boltzmann’s constant and <span class="math inline">\(T\)</span> is temperature.</p>
-<p>This isn’t an engineering limitation, it’s a fundamental consequence of the second law. To reset a bit to a standard state (say, always 0) requires reducing its entropy from 1 bit to 0 bits. That entropy must go somewhere, and it ends up as heat in the environment.</p>
-<p>This doesn’t mean AI can’t be powerful or transformative — internal combustion engines transformed the world despite thermodynamic limits. But it does mean there are hard bounds on what’s possible, and claims that ignore these bounds are as unrealistic as promises of perpetual motion.</p>
+<p>Maxwell’s demon is a thought experiment described by James Clerk Maxwell in his book, <em>Theory of Heat</em> <span class="citation" data-cites="Maxwell-theory71">(Maxwell, 1871)</span> on page 308.</p>
+<blockquote>
+<p>But if we conceive a being whose faculties are so sharpened that he can follow every molecule in its course, such a being, whose attributes are still as essentially finite as our own, would be able to do what is at present impossible to us. For we have seen that the molecules in a vessel full of air at uniform temperature are moving with velocities by no means uniform, though the mean velocity of any great number of them, arbitrarily selected, is almost exactly uniform. Now let us suppose that such a vessel is divided into two portions, A and B, by a division in which there is a small hole, and that a being, who can see the individual molecules, opens and closes this hole, so as to allow only the swifter molecules to pass from A to B, and the only the slower ones to pass from B to A. He will thus, without expenditure of work, raise the temperature of B and lower that of A, in contradiction to the second law of thermodynamics.</p>
+<p>James Clerk Maxwell in <em>Theory of Heat</em> <span class="citation" data-cites="Maxwell-theory71">(Maxwell, 1871)</span> page 308</p>
+</blockquote>
+<p>He goes onto say:</p>
+<blockquote>
+<p>This is only one of the instances in which conclusions which we have draw from our experience of bodies consisting of an immense number of molecules may be found not to be applicable to the more delicate observations and experiments which we may suppose made by one who can perceive and handle the individual molecules which we deal with only in large masses</p>
+</blockquote>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<iframe frameborder="0" scrolling="no" style="border:0px" src="https://books.google.co.uk/books?id=0p8AAAAAMAAJ&amp;pg=PA308&amp;output=embed" width="700" height="500">
+</iframe>
+</div>
+<div id="maxwells-demon-magnify" class="magnify" onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="maxwells-demon-caption" class="caption-frame">
+<p>Figure: Maxwell’s demon was designed to highlight the statistical nature of the second law of thermodynamics.</p>
+</div>
+</div>
+<div class="figure">
+<div id="maxwells-demon-figure" class="figure-frame">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start">
+<div style="flex:1 1 400px;min-width:0">
+<canvas id="maxwell-canvas" width="700" height="500" style="border:1px solid black;display:block;width:100%">
+</canvas>
+</div>
+<div style="flex:0 1 280px;min-width:0;display:flex;flex-direction:column;gap:6px">
+<div>
+Velocity-bin entropy:
+<output id="maxwell-entropy">
+</output>
+</div>
+<div id="maxwell-histogram-canvas" style="width:100%;height:250px">
+
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px">
+<button id="maxwell-newball">
+New Ball
+</button>
+<button id="maxwell-pause">
+Pause
+</button>
+<button id="maxwell-skip">
+Skip 1000s
+</button>
+<button id="maxwell-histogram">
+Histogram
+</button>
+</div>
+</div>
+</div>
+<script src="https://inverseprobability.com/talks/scripts//ballworld/maxwell.js"></script>
+</div>
+<div id="maxwells-demon-magnify" class="magnify" onclick="magnifyFigure(&#39;maxwells-demon&#39;)">
+<img class="img-button" src="{{ '/assets/images/Magnify_Large.svg' | relative_url }}" style="width:1.5ex">
+</div>
+<div id="maxwells-demon-caption" class="caption-frame">
+<p>Figure: Maxwell’s Demon. The demon decides balls are either cold (blue) or hot (red) according to their velocity. Balls are allowed to pass the green membrane from right to left only if they are cold, and from left to right only if they are hot. The displayed entropy is the Shannon entropy of the velocity histogram (a coarse-grained proxy, not full thermodynamic entropy).</p>
+</div>
+</div>
+<p>Maxwell’s demon allows us to connect thermodynamics with information theory (see e.g. <span class="citation" data-cites="Hosoya-demon15">Hosoya et al. (2015)</span>;<span class="citation" data-cites="Hosoya-maxwell11">Hosoya et al. (2011)</span>;<span class="citation" data-cites="Bub-maxwell01">Bub (2001)</span>;<span class="citation" data-cites="Brillouin-maxwell51">Brillouin (1951)</span>;<span class="citation" data-cites="Szilard-intelligenter29">Szilard (1929)</span>). <span class="citation" data-cites="Landauer-irreversibility61">Landauer (1961)</span> described a fundamental connection between information erasure and energy consumption .</p>
+<p><span class="citation" data-cites="Alemi-therml18">Alemi and Fischer (2019)</span></p>
 <p>The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.</p>
-<!--
-include{_information-game/includes/constrained-entropy-ascent.md}
-
-include{_information-game/includes/generic-like-structure.md}
-
-include{_information-game/includes/information-relaxation-dynamics.md}
-
-include{_information-game/includes/shannon-origin-impossibility.md}
-
-include{_information/includes/the-matrix-exponential-family.md}
-
-include{_information-game/includes/lme-origin-confinement.md}
-
-include{_information-game/includes/entropy-time.md}
-
-include{_information-game/includes/hamiltonian-emergence-preview.md}
-
-# Intelligence
-
-
-
-
-
-
-
-
-
-
--->
 <h1 id="information-infrastructures">Information Infrastructures</h1>
 <p>The information-theoretic constraints that bound individual intelligence extend to collective systems we build. Any institution: organisations, a businesses, government department is an information-processing system embedded subject to the constraints of the information topography. The bottlenecks and channel capacities that constrain what a human can know also constrain what institutions can know, and therefore what they can do.</p>
 <p>This was perhaps most famously explored by Stafford Beer whoe developed the Viable System Model <span class="citation" data-cites="Beer-cybernetics59">Beer (1972)</span>, where a cybernetic account of the information channels an organisation must maintain to remain viable. Central to Beer’s analysis is Ashby’s law of requisite variety <span class="citation" data-cites="Ashby-introduction56">(Ashby, 1956)</span>: the variety of a controller must match the variety of what it seeks to control. Organisations that lack the information bandwidth to track their environment cannot govern themselves effectively.</p>
@@ -791,6 +811,9 @@ include{_information-game/includes/hamiltonian-emergence-preview.md}
 </ul>
 <h1 class="unnumbered" id="references">References</h1>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Alemi-therml18" class="csl-entry" role="doc-biblioentry">
+Alemi, A.A., Fischer, I., 2019. Ther<span>ML</span>: The thermodynamics of machine learning. arXiv Preprint arXiv:1807.04162.
+</div>
 <div id="ref-Amari-information00" class="csl-entry" role="doc-biblioentry">
 Amari, S., Nagaoka, H., 2000. Information geometry and its applications. Springer.
 </div>
@@ -806,8 +829,20 @@ Beer, S., 1972. Brain of the firm. Allen Lane, London.
 <div id="ref-Beer-cybernetics59" class="csl-entry" role="doc-biblioentry">
 Beer, S., 1959. Cybernetics and management. English Universities Press, London.
 </div>
+<div id="ref-Brillouin-maxwell51" class="csl-entry" role="doc-biblioentry">
+Brillouin, L., 1951. Maxwell’s demon cannot operate: Information and entropy. i. Journal of Applied Physics 22, 334–337. <a href="https://doi.org/10.1063/1.1699951">https://doi.org/10.1063/1.1699951</a>
+</div>
+<div id="ref-Bub-maxwell01" class="csl-entry" role="doc-biblioentry">
+Bub, J., 2001. Maxwell’s demon and the thermodynamics of computation. Studies in History and Philosophy of Science Part B: Modern Physics 32, 569–579. <a href="https://doi.org/10.1016/S1355-2198(01)00023-5">https://doi.org/10.1016/S1355-2198(01)00023-5</a>
+</div>
 <div id="ref-Grmela-dynamics97" class="csl-entry" role="doc-biblioentry">
 Grmela, M., Öttinger, H.C., 1997. Dynamics and thermodynamics of complex fluids. <span>I</span>. <span>D</span>evelopment of a general formalism. Physical Review E 56, 6620–6632. <a href="https://doi.org/10.1103/PhysRevE.56.6620">https://doi.org/10.1103/PhysRevE.56.6620</a>
+</div>
+<div id="ref-Hosoya-demon15" class="csl-entry" role="doc-biblioentry">
+Hosoya, A., Maruyama, K., Shikano, Y., 2015. Operational derivation of <span>B</span>oltzmann distribution with <span>M</span>axwell’s demon model. Scientific Reports 5, 17011. <a href="https://doi.org/10.1038/srep17011">https://doi.org/10.1038/srep17011</a>
+</div>
+<div id="ref-Hosoya-maxwell11" class="csl-entry" role="doc-biblioentry">
+Hosoya, A., Maruyama, K., Shikano, Y., 2011. Maxwell’s demon and data compression. Phys. Rev. E 84, 061117. <a href="https://doi.org/10.1103/PhysRevE.84.061117">https://doi.org/10.1103/PhysRevE.84.061117</a>
 </div>
 <div id="ref-Jackson-munchkin01" class="csl-entry" role="doc-biblioentry">
 Jackson, S., 2001. Munchkin. Steve Jackson Games.
@@ -836,6 +871,9 @@ Lawrence, N.D., 2024. The atomic human: Understanding ourselves in the age of AI
 <div id="ref-Lyons-assessing22" class="csl-entry" role="doc-biblioentry">
 Lyons, S., 2022. Assessing intelligence: The bildungsroman and the politics of human potential in england, 1860-1910. Edinburgh University Press, Edinburgh. <a href="https://doi.org/10.3366/edinburgh/9781474497664.001.0001">https://doi.org/10.3366/edinburgh/9781474497664.001.0001</a>
 </div>
+<div id="ref-Maxwell-theory71" class="csl-entry" role="doc-biblioentry">
+Maxwell, J.C., 1871. Theory of heat. Longmans, Green; Co, London.
+</div>
 <div id="ref-vonNeumann-book32" class="csl-entry" role="doc-biblioentry">
 Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, Berlin.
 </div>
@@ -844,6 +882,9 @@ Neumann, J. von, 1932. Mathematische grundlagen der quantenmechanik. Springer, B
 </div>
 <div id="ref-Parzygnat-functorial22" class="csl-entry" role="doc-biblioentry">
 Parzygnat, A.J., 2022. A functorial characterization of von <span>N</span>eumann entropy. Cahiers de Topologie et G<span>é</span>om<span>é</span>trie Diff<span>é</span>rentielle Cat<span>é</span>goriques 63, 89–128.
+</div>
+<div id="ref-Szilard-intelligenter29" class="csl-entry" role="doc-biblioentry">
+Szilard, L., 1929. <span>Ü</span>ber die <span>E</span>ntropieverminderung in einem thermodynamischen <span>S</span>ystem bei <span>E</span>ingriffen intelligenter <span>W</span>esen. Zeitschrift f<span>ü</span>r Physik 53, 840–856. <a href="https://doi.org/10.1007/BF01341281">https://doi.org/10.1007/BF01341281</a>
 </div>
 <div id="ref-Watanabe-multiinformation60" class="csl-entry" role="doc-biblioentry">
 Watanabe, S., 1960. Information theoretical analysis of multivariate correlation. IBM Journal of Research and Development 4, 66–82. <a href="https://doi.org/10.1147/rd.41.0066">https://doi.org/10.1147/rd.41.0066</a>

@@ -115,33 +115,10 @@ See @Lawrence-inaccessible25
 
 \notes{The hope is that this framework might reveal limits on information processing systems, including intelligent systems.}
 
-\include{_information/includes/information-limits-on-intelligence.md}
-
+\include{_physics/includes/maxwells-demon.md}
 \notes{The perpetual motion analogy provides an accessible way to think about claims of unbounded intelligence.}
 
-<!--
-include{_information-game/includes/constrained-entropy-ascent.md}
 
-include{_information-game/includes/generic-like-structure.md}
-
-include{_information-game/includes/information-relaxation-dynamics.md}
-
-include{_information-game/includes/shannon-origin-impossibility.md}
-
-include{_information/includes/the-matrix-exponential-family.md}
-
-include{_information-game/includes/lme-origin-confinement.md}
-
-include{_information-game/includes/entropy-time.md}
-
-include{_information-game/includes/hamiltonian-emergence-preview.md}
-
-\section{Intelligence}
-
-\include{_information/includes/perpetual-motion-superintelligence-analogy.md}
-
-\include{_information/includes/information-limits-on-intelligence.md}
--->
 \section{Information Infrastructures}
 
 \notes{The information-theoretic constraints that bound individual intelligence extend to collective systems we build.  Any institution: organisations, a businesses, government department is an information-processing system embedded subject to the constraints of the information topography.  The bottlenecks and channel capacities that constrain what a human can know also constrain what institutions can know, and therefore what they can do.}

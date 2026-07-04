@@ -1,17 +1,20 @@
 ---
 title: "Viable Systems, Judgment, and AI Safety"
-subtitle: "What Stafford Beer knew that alignment research forgot"
+subtitle: "Rethinking AI safety for agentic systems"
 abstract: |
-  Classical AI alignment assumes we can specify values and goals upfront.
-  The Viable Systems Model and the Good Regulator Theorem suggest otherwise:
-  control requires variety matching, authority must devolve to context,
-  and the controlling entity must contain a model of what it controls.
-  Automating operations without preserving the judgment layer — the
-  distributed, contextual decisions about what to surface, how, and when
-  — creates agentic debt: delegation without authority or authorship.
-  The technical intervention is not better value specification; it is
-  making the judgment layer explicit and delivering it to the
-  AI-augmented engineer.
+  AI safety has been framed as an alignment problem — values, hallucinations,
+  constraints. Those are important questions, but they are increasingly
+  yesterday's questions. Today's AI systems are teams of collaborating agents
+  embedded in real business workflows. Safety stops being solely a machine
+  learning problem and becomes an organisational one. The right question is
+  not how to make a model produce the right answer; it is who has the authority
+  to decide when the answer matters. Organisational theory solved the complexity
+  side of this fifty years ago: the Viable Systems Model and the Good Regulator
+  Theorem tell us that authority must devolve to where the model of the
+  situation lives. Automating agentic operations without preserving that
+  authority creates agentic debt — delegation without legible boundaries.
+  The technical intervention is making the judgment layer explicit and
+  delivering it to the AI-augmented engineer.
 author:
 - family: Lawrence
   given: Neil D.
@@ -28,73 +31,109 @@ docx: False
 ipynb: False
 ---
 
-\section{The control problem}
+\section{A different question}
 
-\newslide{What Beer knew}
-
-\slides{
-* **Viable Systems Model** (Stafford Beer, 1972): a system survives only if its internal variety *matches* the variety of its environment.
-* **Good Regulator Theorem** (Conant & Ashby, 1970): every good regulator of a system must contain a model of that system.
-* Corollary: authority must *devolve* to where the model lives; signals must *attenuate* upward.
-}
-
-\notes{The Viable Systems Model is Stafford Beer's account of how organisations stay viable under complexity. Its central claim is Ashby's Law of Requisite Variety: only variety can absorb variety. A simple controller cannot govern a complex system; the controller must match the complexity of what it governs.
-
-The Good Regulator Theorem (Conant and Ashby 1970) is the formal version of this intuition: every good regulator of a system must contain a model of that system. This has a direct implication for where authority must live. The model must be close to the context it models — which means authority devolves down, toward the people and systems that hold local knowledge, and signals attenuate upward, with only what matters reaching higher-level oversight.
-
-This is the technical prior. It was worked out fifty years ago for industrial management. It is directly applicable to the current agentic AI moment.}
-
-\section{Where alignment goes wrong}
-
-\newslide{The alignment gap}
+\newslide{Yesterday's question vs today's question}
 
 \slides{
-* Classical alignment: specify correct values/goals, the system pursues them.
-* The VSM critique: values are *context-dependent*; the model must live at the point of action.
-* Automating operations without the judgment layer = delegation without authority.
-* **Agentic debt**: accrued risk from workflows that act without legible boundaries.
+* Alignment framing: values, hallucinations, constraints — *important, but increasingly yesterday's questions*.
+* Today: AI systems execute real workflows inside real organisations.
+* AI safety stops being a machine learning problem and starts being an *organisational* one.
+* The right question: **who has the authority to decide when the answer matters?**
 }
 
-\notes{Classical AI alignment research — from utility maximisation through to Constitutional AI and RLHF — shares an implicit assumption: that we can specify, at training or deployment time, the values or goals that should govern the system's behaviour. The VSM critique is that this misunderstands where control actually lives.
+\notes{The blog post "The Judgment Layer" opens with exactly this reframe, and it is the right place to start for this audience. Alignment research — from utility maximisation through Constitutional AI and RLHF — treats safety as a property of a model. But today's systems are multi-agent teams embedded in operations: they plan, use tools, modify software, and execute business workflows. At that point the question of authority becomes unavoidable. It is not enough to make the model produce the right answer; someone or something has to decide when the answer matters enough to act on. That decision is not a model property. It is an organisational one.}
 
-In a viable organisation, the regulator at each level holds a model of its domain. The model is not a specification handed down from above; it is built from local context, tacit norms, exception handling, and accumulated judgment. When you automate an operational workflow, you are not automating a specification — you are automating a context-sensitive process in which human judgment was doing work that no one wrote down.
+\section{AI systems are starting to look like organisations}
 
-The result is agentic debt. Not technical debt (shortcuts in engineering) or intellectual debt (complexity in well-engineered systems), but a third kind: delegation without crisp authority boundaries. Who can cause what action, on what evidence, with what recovery path? When the answer is unclear or implicit, debt accumulates.
+\newslide{Multi-agent systems mirror human collaboration}
 
-This is an AI safety problem, not just an operations problem. The risk is not that the system pursues the wrong objective. The risk is that the judgment about what constitutes the right objective in this context, at this moment, has been silently removed from the loop.}
+\slides{
+* Multi-agent systems: specialised agents that critique one another, share context, coordinate.
+* This is not an engineering trick — it mirrors how humans manage complexity: *collaboration*.
+* These systems succeed because they absorb patterns found in effective organisations.
+* **The interesting question**: why do they behave so much like organisations — and what does that tell us about safety?
+}
 
-\include{_ai/includes/agentic-debt-short.md}
+\notes{One of the most striking developments of the past year is how much the architecture of capable multi-agent systems resembles human organisational structures. Diverse perspectives, constructive disagreement, independent judgment, shared context, mechanisms for correction — these improve both human decision-making and multi-agent AI systems. The question is not why multiple agents perform better together. The question is why they behave so much like effective organisations, and what that implies for AI safety. The answer lies in what organisations already know about managing complexity.}
+
+\section{What organisations know about complexity}
+
+\newslide{Viable Systems Model: authority down, signals up}
+
+\slides{
+* Authority distributed *downward*: people closest to the work make local decisions.
+* Information filtered *upward*: only what requires intervention reaches leadership.
+* Beer called this **attenuation** — the result is not less control; it is *better* control.
+* The organisation manages complexity precisely because it recognises not every decision belongs at the top.
+}
+
+\notes{Long before large language models, organisational theorists were wrestling with the same problem: how do you control a system too complex for any one individual to fully understand? Stafford Beer's Viable Systems Model, developed in the 1970s, gives a remarkably simple answer: authority is distributed downward while information is filtered upward. People closest to the work make local decisions. Only the information requiring intervention reaches leadership.
+
+Beer called this filtering process attenuation. The result is not less control — it is better control. The organisation becomes capable of managing complexity precisely because it recognises that not every decision belongs at the top. This is the structural logic that agentic AI systems must respect.}
+
+\section{The missing piece}
+
+\newslide{Accounting versus accountability}
+
+\slides{
+> "Accounting is the numbers. Accountability is the human authority and the judgment."
+
+* Execution can be delegated to agents. The judgment that determines *what matters* cannot disappear.
+* AI is becoming exceptional at accounting: summarising, correlating, generating, executing.
+* Accountability remains fundamentally different — someone must still own the decision.
+}
+
+\notes{This is where today's discussion around AI safety often falls short. Organisations are rapidly automating operational work using AI agents. But many assume that judgment can be automated alongside execution. That assumption deserves scrutiny.
+
+The operational work may well be delegated to agents. The judgment that determines what matters cannot simply disappear. The distinction between accounting and accountability is the crux: AI is becoming exceptionally good at accounting — summarising logs, correlating alerts, generating reports, executing workflows at extraordinary speed. But accountability remains fundamentally different. Someone must still own the decision. Someone must still carry the authority.}
+
+\section{Why judgment matters}
+
+\newslide{The Good Regulator Theorem}
+
+\slides{
+* **Good Regulator Theorem** (Conant & Ashby, 1970): every good regulator must contain a *model* of what it regulates.
+* Humans naturally do this: not just the software, but the organisation, priorities, risk tolerance, history, people.
+* Those models shape contextual judgments: interrupt production? Escalate? Noise or signal?
+* These are not deterministic calculations — context is what organisations depend upon.
+* **The more autonomous AI systems become, the more valuable this judgment becomes, not less.**
+}
+
+\notes{The Good Regulator Theorem argues that an effective regulator must contain a model of the system it regulates. Humans naturally build these models — not just of the software, but of the organisation: priorities, risk tolerance, previous incidents, customers, deadlines, and the personalities of the people making decisions.
+
+Those models shape countless judgments every day. Should this finding interrupt production? Does this require executive attention? Is this genuinely critical, or simply noisy? These are not deterministic calculations. They are contextual judgments, and context is what organisations depend upon. When we automate agentic operations without preserving the judgment layer, we remove the regulator that holds the model. The process continues; the model does not.
+
+The more autonomous AI systems become, the more valuable this judgment becomes — not less. That is the counterintuitive but correct conclusion from the VSM and Good Regulator frameworks.}
 
 \section{The intervention}
 
 \newslide{The judgment layer}
 
 \slides{
-* Judgment = decisions about *what to surface*, *how*, and *when*: inherently contextual.
-* Make the judgment layer **explicit**: extract it, formalise it, deliver it.
-* Separate the judgment layer from automated execution.
+* Judgment = decisions about *what to surface*, *how*, and *when* — inherently contextual.
+* Automating without it makes it *invisible*, not absent: **agentic debt**.
+* The intervention: make the judgment layer **explicit**, separate it from execution, deliver it to the human.
 * The AI-augmented engineer holds authority; the system delivers the context to exercise it well.
 }
 
-\notes{The judgment layer is not a single decision point. It is a distributed set of micro-interventions: approval exceptions, escalation triggers, context-dependent waivers. In a security context — which is where this summit sits — it is the accumulated knowledge of which alerts are usually noise, which anomalies are fine because of a known upstream cause, which deviations warrant a halt.
+\notes{The judgment layer is a distributed set of micro-interventions embedded in how work flows through an organisation: approval exceptions, escalation triggers, context-dependent waivers. None of it is written down. It lives in the experience of operators and in the patterns of who calls whom when something looks off.
 
-When we automate with agentic AI, we inherit whatever judgment was embedded in the process. But because it was tacit, we do not know we inherited it, and we do not know when it breaks.
+When we automate with agentic AI, we inherit whatever judgment was embedded in the process. Because it was tacit, we do not know we inherited it, and we do not know when it breaks. The result is agentic debt: delegation without legible boundaries. Who can cause what action, on what evidence, with what recovery path?
 
-The technical intervention is: make the judgment layer explicit. Separate it architecturally from automated execution. The AI-augmented engineer — the human-in-the-loop who holds contextual authority — should receive not just an alert or a summary but the rendered judgment layer: here is what the system is about to do, here is the decision it needs from you, here is the context you need to make it well.
+The technical intervention is: make the judgment layer explicit. Separate it architecturally from automated execution. The AI-augmented engineer should receive not just a summary but the rendered judgment layer — here is what the system is about to do, here is the decision it needs from you, here is the context you need to make it well.
 
-This is what Trent's platform delivers. The judgment layer is not a residual to be automated away; it is the structural location of human authority in a viable agentic system.}
+This is what Trent's platform delivers. The judgment layer is not a residual to be automated away; it is the structural location of human authority in a viable agentic system. That is where AI safety lives.}
 
 \include{_ai/includes/judgment-layer-explicit.md}
 
-\newslide{The one-sentence summary}
+\newslide{The one-sentence version}
 
 \slides{
 > We need the judgment layer separated, the authority of the AI-augmented engineer preserved, and the system built to deliver both.
 }
 
-\notes{Close with the operational claim. Classical alignment asks: how do we make the AI safe? The VSM framing asks: how do we build the system so that human judgment remains structurally authoritative? The answer is not better value specification. It is engineering the judgment layer as a first-class component of the architecture.
-
-If the team delivers the technical implementation before the talk, the third section can describe that concretely. If not, the VSM framing is itself the distinct technical contribution: a fifty-year-old control theory that predicts exactly where current agentic AI safety approaches will fail.}
+\notes{Close here. The alignment framing asks: how do we make the AI safe? The organisational framing asks: how do we build the system so that human judgment remains structurally authoritative? The answer is not better value specification. It is engineering the judgment layer as a first-class architectural component — and that is the distinct technical contribution on offer.}
 
 \thanks
 

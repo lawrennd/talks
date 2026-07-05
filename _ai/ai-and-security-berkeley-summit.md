@@ -31,8 +31,8 @@ potx: /Users/neil/lawrennd/lamd/lamd/includes/trent-reference.potx
 docx: False
 ipynb: False
 talktheme: white
-talkcss: ../trent.css
-cover-image: ../../slides/diagrams/people/neil-trent-portrait.jpg
+talkcss: trent.css
+cover-image: diagrams/people/neil-trent-portrait.jpg
 ---
 
 \newslide{AI safety is becoming an organisational problem}
@@ -50,11 +50,14 @@ cover-image: ../../slides/diagrams/people/neil-trent-portrait.jpg
 \slides{
 * **Viable Systems Model** (Stafford Beer, 1972): authority *down*, signals *up*.
 * Beer called this **attenuation** — not less control, *better* control.
-* > "Accounting is the numbers. Accountability is the human authority and the judgment."
+}
+\newslide{Accounting vs Accountability}
+\slides{
+> "Accounting is the numbers. Accountability is the human authority and the judgment."
 * AI excels at accounting. Accountability is different — someone must still own the decision.
 }
 
-\notes{Long before large language models, organisational theorists wrestled with the same problem: how do you control a system too complex for any one person to fully understand? Stafford Beer's Viable Systems Model gives a simple answer: authority is distributed downward while information is filtered upward. People closest to the work make local decisions. Only what requires intervention reaches leadership. Beer called this filtering process attenuation. The result is not less control — it is better control.
+\notes{Long before large language models, organisational theorists wrestled with the same problem: how do you control a system too complex for any one person to fully understand? Stafford Beer's Viable Systems Model gives an answer: authority is distributed downward while information is filtered upward. People closest to the work make local decisions. Only what requires intervention reaches leadership. Beer called this filtering process attenuation. The result is not less control, it is better control.
 
 This is where today's discussion around AI safety often falls short. Organisations are rapidly automating operational work using AI agents, but many assume that judgment can be automated alongside execution. AI is becoming exceptionally good at accounting — summarising logs, correlating alerts, generating reports, executing workflows at speed. But accountability remains fundamentally different. Someone must still own the decision. Someone must still carry the authority.}
 

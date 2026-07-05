@@ -1,0 +1,313 @@
+/* ============================================================
+   Trent.AI Reveal.js Theme
+   Usage in frontmatter:
+     talktheme: white
+     talkcss:   ../trent.css          (from a topic subdirectory)
+   For deployed slides use the full URL instead.
+   ============================================================ */
+
+/* -- Fonts ---------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+/* -- Trent brand palette --------------------------------------------------
+   Primary orange : #F5821F
+   Dark navy      : #1A1A3E
+   Peach light    : #FDE9D8
+   Peach mid      : #FAE0C8
+   Muted text     : #6A6A8A
+   ------------------------------------------------------------------ */
+
+/* -- Base slides ---------------------------------------------------------- */
+.reveal {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 32px;
+    color: #1A1A3E;
+    background-color: #ffffff;
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slides section {
+    text-align: left;
+}
+
+/* -- Headings ------------------------------------------------------------- */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -0.01em;
+}
+
+.reveal h2 {
+    font-size: 1.4em;
+    color: #F5821F;
+    font-weight: 700;
+    border-bottom: none;
+    margin-bottom: 0.5em;
+}
+
+.reveal h1 {
+    font-size: 2em;
+    color: #1A1A3E;
+}
+
+.reveal h3 {
+    font-size: 1.0em;
+    color: #1A1A3E;
+}
+
+/* -- Standard title slide (no cover-image) -------------------------------- */
+.reveal section#title-slide h1.title {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #F5821F;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 0.3em;
+}
+
+.reveal section#title-slide p.subtitle {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #1A1A3E;
+}
+
+.reveal section#title-slide p.author,
+.reveal section#title-slide p.date,
+.reveal section#title-slide p.venue {
+    font-size: 0.75em;
+    color: #6A6A8A;
+}
+
+/* -- Trent cover slide (two-column layout when cover-image is set) -------- */
+.reveal section#title-slide.trent-cover {
+    display: grid !important;
+    grid-template-columns: 57% 43%;
+    align-items: stretch;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    text-align: left;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+}
+
+/* Left panel: gradient background */
+.trent-title-content {
+    background: linear-gradient(150deg, #FDE9D8 0%, #FAE0C8 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 2rem 2.5rem 2.5rem;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Logo in top-left of left panel
+   Replace trent-logo.svg with your actual logo asset path.
+   For local builds: copy the SVG next to this CSS file.
+   For deployed slides: use an absolute URL. */
+.trent-logo {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.8rem;
+    width: 110px;
+    height: 36px;
+    background: url('../slides/diagrams/logos/trent-blue.png') no-repeat left center;
+    background-size: contain;
+}
+
+/* Fallback text logo shown when trent-logo.svg is absent */
+.trent-logo::after {
+    content: 'trent';
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #1A1A3E;
+    letter-spacing: -0.03em;
+    display: block;
+    line-height: 36px;
+}
+
+/* Title on cover slide */
+.reveal section#title-slide.trent-cover h1.title {
+    font-size: 2.1em;
+    font-weight: 800;
+    color: #F5821F;
+    line-height: 1.18;
+    text-align: left;
+    text-shadow: none;
+    margin: 2.5rem 0 0.6rem 0;
+}
+
+/* Subtitle on cover slide */
+.reveal section#title-slide.trent-cover p.subtitle {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #4A4A6A;
+    text-align: left;
+    margin: 0.2rem 0 0.5rem 0;
+}
+
+/* Date and venue on cover slide */
+.reveal section#title-slide.trent-cover p.date,
+.reveal section#title-slide.trent-cover p.venue {
+    font-size: 0.7em;
+    color: #6A6A8A;
+    text-align: left;
+    margin: 0.15rem 0;
+}
+
+/* Right panel: white, photo centred */
+.trent-cover-photo {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.8rem;
+}
+
+/* Rounded photo card */
+.trent-photo-card {
+    width: 78%;
+    border-radius: 1.1rem;
+    overflow: hidden;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.14);
+    margin-bottom: 0.9rem;
+}
+
+.trent-photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Speaker name and role below card */
+.trent-speaker-name {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #1A1A3E;
+    text-align: center;
+    margin: 0.2rem 0 0 0;
+}
+
+.trent-speaker-role {
+    font-size: 0.62em;
+    color: #6A6A8A;
+    text-align: center;
+    margin: 0.1rem 0;
+}
+
+/* -- Lists ---------------------------------------------------------------- */
+.reveal ul,
+.reveal ol {
+    margin-left: 1em;
+    line-height: 1.5;
+}
+
+.reveal li {
+    margin-bottom: 0.35em;
+}
+
+/* -- Blockquotes ---------------------------------------------------------- */
+.reveal blockquote {
+    border-left: 4px solid #F5821F;
+    background: #FEF3EC;
+    color: #1A1A3E;
+    padding: 0.5em 1em;
+    font-style: italic;
+    width: 90%;
+    box-shadow: none;
+    font-size: 0.9em;
+    margin: 0.5em auto;
+}
+
+/* -- Inline code & code blocks -------------------------------------------- */
+.reveal code {
+    background: #f4f0eb;
+    color: #c0392b;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.82em;
+}
+
+.reveal pre {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border-radius: 6px;
+}
+
+.reveal pre code {
+    background: #2b2b3b;
+    color: #f8f8f2;
+    font-size: 0.75em;
+    padding: 0.8em 1em;
+}
+
+/* -- Links ---------------------------------------------------------------- */
+.reveal a {
+    color: #F5821F;
+    text-decoration: none;
+}
+
+.reveal a:hover {
+    color: #C8650F;
+    text-decoration: underline;
+}
+
+/* -- Progress bar --------------------------------------------------------- */
+.reveal .progress {
+    background: rgba(245, 130, 31, 0.2);
+    color: #F5821F;
+}
+
+.reveal .progress span {
+    background: #F5821F;
+    transition: width 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/* -- Tables --------------------------------------------------------------- */
+.reveal table {
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+
+.reveal table th {
+    background: #F5821F;
+    color: white;
+    padding: 0.4em 0.8em;
+    font-weight: 700;
+}
+
+.reveal table td {
+    padding: 0.35em 0.8em;
+    border-bottom: 1px solid #EEE;
+}
+
+.reveal table tr:nth-child(even) td {
+    background: #FEF3EC;
+}
+
+/* -- Utility classes (inherited from existing talks conventions) ----------- */
+.reveal .slides section.scrollable {
+    overflow-y: auto !important;
+    height: 100% !important;
+    top: 0 !important;
+    text-align: left;
+}
+
+.reveal p {
+    text-align: left;
+}
+
+.reveal li {
+    text-align: left;
+}

@@ -9,7 +9,7 @@ date: 2026-07-16
 time: "19:30"
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
-venue: "The North End Social Club, 60 Roff Avenue, Bedford, MK41 7TW"
+venue: "Bedford Skeptics, The North End Social Club, 60 Roff Avenue, Bedford, MK41 7TW"
 transition: None
 ---
 

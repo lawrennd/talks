@@ -459,18 +459,45 @@ s_i(\tau) = \log d_i \quad \forall i, \;\forall \tau.
 <div style="text-align:right">
 <span class="editsection-bracket" style="">[</span><span class="editsection" style=""><a href="https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hamiltonian-emergence-preview.md" target="_blank" onclick="ga('send', 'event', 'Edit Page', 'Edit', 'https://github.com/lawrennd/snippets/edit/main/_information-game/includes/hamiltonian-emergence-preview.md', 13);">edit</a></span><span class="editsection-bracket" style="">]</span>
 </div>
-<p>The inaccessible game has no Hamiltonian in its axioms. Its dynamics are governed entirely by the information-geometric structure: maximum entropy production under marginal entropy conservation, with time measured by entropy production (entropy time). Yet Hamiltonian structure can <em>emerge</em> in metastable regions of the trajectory, as a local effective description.</p>
-<p>The key condition is a structural alignment of the modular generator <span class="math inline">\(K(\boldsymbol{\theta}) = \log\rho(\boldsymbol{\theta})\)</span> (in trace gauge) with a fixed operator direction. When this alignment holds, we say the system is in a <em>Gibbs-locked</em> region <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
-<h2 id="the-gibbs-lock-condition">The Gibbs-lock Condition</h2>
-<p>The Gibbs-lock condition is that the modular generator aligns with a fixed effective Hamiltonian direction <span class="math inline">\(H\)</span>: <span class="math display">\[
-K(\boldsymbol{\theta}) \approx -\beta(\boldsymbol{\theta})\,H,
-\]</span> where <span class="math inline">\(\beta(\boldsymbol{\theta})\)</span> is a smoothly varying scalar (effective inverse temperature) and <span class="math inline">\(H\)</span> is approximately fixed along the trajectory. The exact locked point is the Gibbs thermal state <span class="math inline">\(\rho_0 = e^{-\beta_0 H}/Z\)</span>, where the reversible (Lax) sector ceases to evolve and <span class="math inline">\([K_0, H] = 0\)</span>.</p>
-<p>This condition reverses the usual explanatory order: rather than postulating time-translation symmetry and deriving energy conservation, the game’s constraint geometry selects an approximately conserved direction <span class="math inline">\(H\)</span> from the modular generator. The effective Hamiltonian is not an axiom — it is an emergent feature of metastable Gibbs-locked regions <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
-<h2 id="the-hamiltonian-clock">The Hamiltonian Clock</h2>
-<p>Within a Gibbs-locked region, entropy time <span class="math inline">\(t\)</span> can be converted into a Hamiltonian-frame clock <span class="math inline">\(\tau_H\)</span> by <span class="math display">\[
-\text{d}\tau_H = \beta(t)\,\text{d}t.
-\]</span> This Hamiltonian clock is a derived conversion of entropy time, not an independent temporal structure. The effective inverse temperature <span class="math inline">\(\beta(t)\)</span> acts as a conversion factor between information-geometric progress (entropy produced) and mechanical phase (Hamiltonian time). Within the locked frame the constrained dynamics take the familiar form of a Lindblad master equation: a reversible Lax sector (the von Neumann equation) plus a dissipative sector that uniformly dephases all off-diagonal coherences in the locked eigenbasis.</p>
-<p>These results are conditional on the trajectory entering a Gibbs-locked region. The threshold for these conditional results to carry observational content is <span class="math inline">\(W_{\mathcal{R}} \gg 1\)</span>, a Boltzmann-style multiplicity of action-resolution cells inside the locked basin — essentially the regime in which equilibrium statistical mechanics applies empirically <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
+<p>The inaccessible game has no Hamiltonian in its axioms. The question is whether Hamiltonian structure can nonetheless <em>emerge</em>, e.g. back-fitted from the game’s own oscillating correlation modes, when the marginal-entropy constraint saturates <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
+<h2 id="saturation-and-the-correlation-sector">Saturation and the Correlation Sector</h2>
+<p>When the constraint saturates at <span class="math inline">\(C = C_{\max} = \sum_k \log d_k\)</span>, every marginal entropy reaches its maximum <span class="math inline">\(s_k = \log d_k\)</span>, forcing every marginal to the maximally mixed state <span class="math inline">\(\rho_k = I/d_k\)</span>. All structure then resides entirely in the <em>joint</em> correlations <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
+<p>The admissible perturbations form the <em>correlation sector</em> <span class="math display">\[
+\mathcal{C} = \{ X : \operatorname{tr}_{\neq k}(X) = 0 \text{ for all } k \},
+\]</span> the common kernel of all single-site partial traces. On this tangent space the linearised reversible dynamics is generated by the <em>compressed</em> commutator <span class="math inline">\(L_\kappa = \Pi_\kappa\,\mathrm{ad}_{K_0}\,\Pi_\kappa\big|_{\mathcal{C}}\)</span>, where <span class="math inline">\(K_0 = -\log\rho_0\)</span> (trace-gauge modular generator) and <span class="math inline">\(\Pi_\kappa\)</span> is the metric projection onto <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<h2 id="the-ritz-criterion-back-fitting-a-hamiltonian">The Ritz Criterion: Back-fitting a Hamiltonian</h2>
+<p>Heisenberg’s 1925 matrix mechanics can be read as a walk calculus on a transition graph: spectral lines are edges, the Ritz combination rule <span class="math inline">\(\omega_{ik} = \omega_{ij} + \omega_{jk}\)</span> is flatness of a <span class="math inline">\(U(1)\)</span> connection, and a Hamiltonian is back-fitted when this connection is exact (admits a vertex potential). The game uses this as a criterion, not an assumption: a Hamiltonian exists precisely when the oscillating modes of <span class="math inline">\(L_\kappa\)</span> satisfy Ritz closure <span class="citation" data-cites="Lawrence-hamiltonian26">(Lawrence, 2026c)</span>.</p>
+<!--
+## Compliance Dichotomy and the Dressing Field
+
+
+
+
+
+Saturated modes split into two compliance classes. *Vacuously compliant* modes (those with at least two traceless site factors) already lie in $\mathcal{C}$: the constraint cannot see them and they oscillate at their bare modular gaps. *Actively compliant* modes must be projected, dragging a compensating admixture; they pay a spectral price, i.e.\ a *dressing factor* $\lambda_\kappa < 1$, so that
+$$
+\omega = x\lambda_\kappa, \qquad \lambda_\kappa = \sqrt{\frac{d^2-4}{d^2-4+4\eta}}, \quad \eta = \frac{\kappa_{QQ}}{\kappa_\times}.
+$$
+For a qubit pair ($d=2$), $\lambda_\kappa = 0$: no oscillating admissible modes exist. The qutrit pair ($d = 3$) is the minimal bipartite clock [@Lawrence-hamiltonian26].
+
+
+
+## Composite Backgrounds, Holonomy, and Locality
+
+
+
+
+
+A composite background (e.g.\ two clusters) populates both compliance classes. Both dressed and bare modes connect the *same* level pair, producing a multigraph with a *digon*. The dressing field is non-constant on this component — taking value $1$ on the bare edge and $\lambda_\kappa$ on the dressed edge — so the $U(1)$ connection has holonomy $e^{ix(1-\lambda_\kappa)t}$. Global Ritz closure fails: the composite walks on a *magnetic* multigraph.
+
+The two rival flat subgraphs are present simultaneously: the *generated* (dressed) subgraph carries the back-fitted cluster Hamiltonian; the *inherited* (bare) subgraph is the thermal-time sector, present but demoted to interaction terms.
+
+Locality emerges from the no-barber principle itself. A global clock across $N$ parties requires a flat frame connection on a cyclic party graph — precisely what no-barber forbids, since only an external frame could enforce cycle-compatibility. Pairwise and cluster backgrounds are forests in the party graph (no cycles, no coordination needed) and are therefore the generic clock structures compatible with the game [@Lawrence-hamiltonian26].
+
+
+
+
+-->
 <h2 id="conclusions">Conclusions</h2>
 <p>We began with a tautology — self-governing systems cannot refer to external arbitration — and asked what mathematical structure it forces. The answer, obtained by applying the no-barber principle to information theory, turns out to be surprisingly rich.</p>
 <p><em>No-barber principle.</em> Formalised through the axiomatic frameworks of <span class="citation" data-cites="Baez-characterisation11">Baez et al. (2011)</span> and <span class="citation" data-cites="Parzygnat-functorial22">Parzygnat (2022)</span>, the requirement of internal adjudicability prohibits outcome spaces, Hamiltonians, clocks, and external observers from appearing as primitives. The game must define everything it uses from within <span class="citation" data-cites="Lawrence-nobarber26">(Lawrence, 2026a)</span>.</p>

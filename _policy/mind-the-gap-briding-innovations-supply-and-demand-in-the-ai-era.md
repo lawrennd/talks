@@ -23,7 +23,7 @@ transition: None
 
 <!-- Negotiating Innovation: institutions slow speed of adoption allow people to negotiate how the technologies are used. -->
 
-
+This talk has been written up as a perspectives paper in *Science and Public Policy* available here: <https://doi.org/10.1093/scipol/scag070>
 
 \include{_economics/includes/philosophers-stone.md}
 

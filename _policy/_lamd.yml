@@ -21,6 +21,7 @@ snippetsdir: $HOME/lawrennd/snippets/
 writediagramsdir: .
 scriptsdir: https://inverseprobability.com/talks/scripts/
 diagramsdir: ../slides/diagrams/
+diagramsurl: https://inverseprobability.com/slides/diagrams
 slidesheader: slides-header.html
 notation: talk-notation.tex
 posts: True

@@ -76,7 +76,7 @@ EXISTING SNIPPETS USED:
 
 \section{Not a Race}
 
-\newslides{The AI Race}
+\newslide{The AI Race}
 
 \slidesincremental{
 * Characterising AI as a race implies one winner
@@ -96,7 +96,7 @@ EXISTING SNIPPETS USED:
 
 \section{Value in the Spread}
 
-\newslides{Where the Value Is}
+\newslide{Where the Value Is}
 
 \slidesincremental{
 * The prize is not the cleverest model
@@ -112,7 +112,7 @@ EXISTING SNIPPETS USED:
 
 \section{The Missing Half}
 
-\newslides{Supply-Side Policy, Demand-Side Prize}
+\newslide{Supply-Side Policy, Demand-Side Prize}
 
 \slidesincremental{
 * We have supply-side policy. We need a demand-side strategy
@@ -132,7 +132,7 @@ EXISTING SNIPPETS USED:
 
 \include{_software/includes/horizon-scandal.md}
 
-\newslides{The Horizon Pattern}
+\newslide{The Horizon Pattern}
 
 \slidesincremental{
 * Centrally deploying technology on people, without engaging them
@@ -159,7 +159,7 @@ EXISTING SNIPPETS USED:
 
 \include{_policy/includes/compute-concentration.md}
 
-\newslides{Bottled Up at the Top}
+\newslide{Bottled Up at the Top}
 
 \slidesincremental{
 * If a few gatekeepers set the terms, the technology stays at the top
@@ -177,7 +177,7 @@ EXISTING SNIPPETS USED:
 
 \section{Sovereignty Means Having Alternatives}
 
-\newslides{Sovereignty}
+\newslide{Sovereignty}
 
 \slidesincremental{
 * Hosting someone else's infrastructure is not sovereignty
@@ -195,7 +195,7 @@ EXISTING SNIPPETS USED:
 
 \section{The Instrument We Already Have}
 
-\newslides{Pro-Innovation Is Not Pro-Big-Tech}
+\newslide{Pro-Innovation Is Not Pro-Big-Tech}
 
 \slidesincremental{
 * The DMCCA is targeted, flexible, and can move with the market
@@ -211,7 +211,7 @@ EXISTING SNIPPETS USED:
 
 \section{The Investment We Should Worry About}
 
-\newslides{Reframe Inward Investment}
+\newslide{Reframe Inward Investment}
 
 \slidesincremental{
 * Opening the gateways is the pro-investment move
@@ -231,7 +231,7 @@ EXISTING SNIPPETS USED:
 
 \include{_policy/includes/universities-as-bridges.md}
 
-\newslides{Campus UK}
+\newslide{Campus UK}
 
 \slidesincremental{
 * Draw a circle around what a train can reach
@@ -245,7 +245,7 @@ EXISTING SNIPPETS USED:
 
 \section{A Reset}
 
-\newslides{What a Reset Looks Like}
+\newslide{What a Reset Looks Like}
 
 \slidesincremental{
 * Treat the demand side as strategy, not a downstream consequence of supply

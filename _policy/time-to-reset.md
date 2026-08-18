@@ -185,7 +185,7 @@ EXISTING SNIPPETS USED:
 * Sovereignty here is options, not a national champion
 }
 
-\notes{There is little point investing hundreds of millions in a sovereign AI fund to build national champions while leaving untouched a market structure that will see them acquired or outcompeted. Diane Coyle has called the outcome policy incoherence @Coyle-armsrace26. She is right.}
+\notes{There is little point investing hundreds of millions in a sovereign AI fund to build national champions while leaving untouched a market structure that will see them acquired or outcompeted. Diane Coyle has called the outcome policy incoherence @Coyle-armsrace26, pg 70. She is right.}
 
 \notes{A country whose firms can only build on someone else's terms is not sovereign, however many data centres it hosts. Sovereignty in this setting is not a national champion. It is having options: a British business that is not left stranded when the terms change in a US boardroom.}
 

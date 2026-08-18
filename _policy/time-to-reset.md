@@ -120,9 +120,9 @@ EXISTING SNIPPETS USED:
 * Foreign capital and foreign software do not become British productivity on their own
 }
 
-\notes{If you sit through enough policy meetings on AI, a pattern is hard to miss. Almost everyone advising government has a supply-side interest. They sell infrastructure, or they build models, or they run platforms. Those perspectives matter. But it means the menu of options ministers see is shaped, structurally, by suppliers' interests. The result is a policy agenda that mistakes the input for the output.}
+\notes{If you've been tracking recent policy priorities in AI, a pattern is hard to miss. Almost everyone advising government has a supply-side interest. They sell infrastructure, or they build models, or they run platforms. Those perspectives matter. But it means the menu of options ministers see is shaped, structurally, by suppliers' interests. The result is a policy agenda that mistakes the input for the output.  Like mistaking manure for roses.}
 
-\notes{We want broad-based productivity growth, better public services, and a workforce with more agency over its own institutional decision-making. The inputs we have arranged are foreign capital and foreign software. Neither becomes British productivity on its own. The work in between — adoption, institutions, tool-building — is what is missing.}
+\notes{We want broad-based productivity growth, better public services, and a workforce with more agency over its own institutional decision-making. The inputs we have arranged are foreign capital and foreign software. Neither becomes British productivity on its own. The bridging work is missing: adoption, institutions, tool-building.}
 
 \notes{If you are looking for a single intervention, it is not on the supply side. Major US technology firms have enormous and growing lobbying capability. We do not need to worry about whether their interests are being represented. We need to worry about whether everyone else's are. Mainstream UK businesses left behind by previous digital waves. SMEs that struggle to invest. Councils, hospitals and schools that, left to the market, will be sold platforms rather than supported to build and adapt. That is where the productivity prize lives. It is almost entirely absent from the conversation ministers hear.}
 

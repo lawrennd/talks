@@ -34,6 +34,11 @@ papersize: a4paper
 transition: None
 ---
 
+<!-- Some missing links to integrate: https://academic.oup.com/spp/advance-article/doi/10.1093/scipol/scag070/8746319 (Mind the Gap paper)
+
+Reports from ai@cam: https://www.ai.cam.ac.uk/reports/
+-->
+
 <!--
 20-minute lectern keynote, no Q&A. Speaks after a panel on the costs of
 concentrated markets in the AI age, and immediately before a panel on CMA

@@ -25,47 +25,148 @@
 'use strict';
 
 // ── Language model ────────────────────────────────────────────────────────────
+//
+// Default tables live in dasher-lm.json (same directory).  They can be
+// replaced at runtime:
+//   Dasher.setLanguageModel({ chars, uni, bi, bigramWeight })
+//   Dasher.trainFromText(corpusString)
+//   Dasher.getLanguageModel()
+// Optional: <canvas data-dasher-lm="path/to/model.json">
 
-const CHARS = 'abcdefghijklmnopqrstuvwxyz ';
-
-const UNI = {
-    ' ':0.183,'e':0.103,'t':0.074,'a':0.064,'o':0.062,'i':0.057,
-    'n':0.055,'s':0.052,'h':0.047,'r':0.047,'d':0.034,'l':0.033,
-    'u':0.023,'c':0.022,'m':0.020,'w':0.017,'f':0.016,'g':0.015,
-    'y':0.015,'p':0.015,'b':0.011,'v':0.007,'k':0.006,'j':0.001,
-    'x':0.001,'q':0.001,'z':0.001
+const DEFAULT_LM = {
+    chars: 'abcdefghijklmnopqrstuvwxyz ',
+    bigramWeight: 0.82,
+    uni: {
+        ' ':0.183,'e':0.103,'t':0.074,'a':0.064,'o':0.062,'i':0.057,
+        'n':0.055,'s':0.052,'h':0.047,'r':0.047,'d':0.034,'l':0.033,
+        'u':0.023,'c':0.022,'m':0.020,'w':0.017,'f':0.016,'g':0.015,
+        'y':0.015,'p':0.015,'b':0.011,'v':0.007,'k':0.006,'j':0.001,
+        'x':0.001,'q':0.001,'z':0.001
+    },
+    bi: {
+        ' ':{t:0.15,a:0.12,o:0.10,s:0.09,i:0.08,h:0.07,w:0.07,b:0.05,f:0.04,m:0.04},
+        'q':{u:0.94,a:0.02,i:0.01,e:0.01,o:0.01,' ':0.01},
+        't':{h:0.30,e:0.09,o:0.08,i:0.07,a:0.06,r:0.05,s:0.04,l:0.03,u:0.03,' ':0.05},
+        'h':{e:0.36,a:0.14,i:0.13,o:0.09,r:0.05,u:0.04,t:0.03,y:0.03,' ':0.05},
+        'e':{' ':0.19,r:0.11,d:0.09,n:0.09,s:0.08,l:0.06,a:0.05,t:0.05,i:0.04,v:0.03},
+        'a':{n:0.18,t:0.12,l:0.09,s:0.08,r:0.07,c:0.06,i:0.05,d:0.04,y:0.03,' ':0.06},
+        's':{t:0.14,e:0.14,' ':0.13,i:0.10,h:0.08,a:0.07,o:0.05,u:0.04,s:0.03},
+        'i':{n:0.25,s:0.11,t:0.09,o:0.08,c:0.07,l:0.06,e:0.06,a:0.04,r:0.04},
+        'n':{' ':0.19,g:0.14,d:0.12,e:0.10,t:0.08,a:0.06,s:0.05,o:0.04,i:0.03},
+        'o':{n:0.18,r:0.13,u:0.10,t:0.09,f:0.08,s:0.06,m:0.05,w:0.04,' ':0.07},
+        'r':{e:0.21,' ':0.16,a:0.10,i:0.08,o:0.07,s:0.06,t:0.05,n:0.04},
+        'l':{l:0.15,e:0.20,y:0.08,i:0.10,a:0.09,d:0.05,s:0.05,' ':0.04},
+        'd':{' ':0.25,e:0.15,i:0.10,a:0.08,o:0.07,r:0.05,s:0.04,u:0.04},
+        'g':{h:0.22,e:0.15,' ':0.14,r:0.10,i:0.08,a:0.07,o:0.06},
+    }
 };
 
-const BI = {
-    ' ':{t:0.15,a:0.12,o:0.10,s:0.09,i:0.08,h:0.07,w:0.07,b:0.05,f:0.04,m:0.04},
-    'q':{u:0.94,a:0.02,i:0.01,e:0.01,o:0.01,' ':0.01},
-    't':{h:0.30,e:0.09,o:0.08,i:0.07,a:0.06,r:0.05,s:0.04,l:0.03,u:0.03,' ':0.05},
-    'h':{e:0.36,a:0.14,i:0.13,o:0.09,r:0.05,u:0.04,t:0.03,y:0.03,' ':0.05},
-    'e':{' ':0.19,r:0.11,d:0.09,n:0.09,s:0.08,l:0.06,a:0.05,t:0.05,i:0.04,v:0.03},
-    'a':{n:0.18,t:0.12,l:0.09,s:0.08,r:0.07,c:0.06,i:0.05,d:0.04,y:0.03,' ':0.06},
-    's':{t:0.14,e:0.14,' ':0.13,i:0.10,h:0.08,a:0.07,o:0.05,u:0.04,s:0.03},
-    'i':{n:0.25,s:0.11,t:0.09,o:0.08,c:0.07,l:0.06,e:0.06,a:0.04,r:0.04},
-    'n':{' ':0.19,g:0.14,d:0.12,e:0.10,t:0.08,a:0.06,s:0.05,o:0.04,i:0.03},
-    'o':{n:0.18,r:0.13,u:0.10,t:0.09,f:0.08,s:0.06,m:0.05,w:0.04,' ':0.07},
-    'r':{e:0.21,' ':0.16,a:0.10,i:0.08,o:0.07,s:0.06,t:0.05,n:0.04},
-    'l':{l:0.15,e:0.20,y:0.08,i:0.10,a:0.09,d:0.05,s:0.05,' ':0.04},
-    'd':{' ':0.25,e:0.15,i:0.10,a:0.08,o:0.07,r:0.05,s:0.04,u:0.04},
-    'g':{h:0.22,e:0.15,' ':0.14,r:0.10,i:0.08,a:0.07,o:0.06},
+const LM = {
+    chars: DEFAULT_LM.chars,
+    bigramWeight: DEFAULT_LM.bigramWeight,
+    uni: Object.assign({}, DEFAULT_LM.uni),
+    bi: JSON.parse(JSON.stringify(DEFAULT_LM.bi)),
 };
 
-const BIGRAM_WEIGHT = 0.82;
+function cloneLM(spec) {
+    return {
+        chars: spec.chars || DEFAULT_LM.chars,
+        bigramWeight: (typeof spec.bigramWeight === 'number')
+            ? spec.bigramWeight : DEFAULT_LM.bigramWeight,
+        uni: Object.assign({}, spec.uni || {}),
+        bi: JSON.parse(JSON.stringify(spec.bi || {})),
+    };
+}
+
+function applyLanguageModel(spec, opts) {
+    const next = cloneLM(spec || DEFAULT_LM);
+    if (!next.chars || !next.chars.length) {
+        throw new Error('Dasher language model needs a non-empty chars string');
+    }
+    LM.chars = next.chars;
+    LM.bigramWeight = next.bigramWeight;
+    LM.uni = next.uni;
+    LM.bi = next.bi;
+    if (!opts || opts.reset !== false) {
+        // Rebuild the zoom tree under the new probabilities (only after boot)
+        if (typeof initRoot === 'function' && typeof S !== 'undefined' && S.root !== undefined) {
+            initRoot();
+            updateDisplay();
+            render();
+        }
+    }
+    return getLanguageModel();
+}
+
+function getLanguageModel() {
+    return cloneLM(LM);
+}
+
+function trainFromText(text, opts) {
+    opts = opts || {};
+    const chars = opts.chars || LM.chars || DEFAULT_LM.chars;
+    const alpha = new Set(chars.split(''));
+    const mapOther = opts.mapOtherToSpace !== false;
+    const uniCounts = {};
+    const biCounts = {};
+    for (const ch of chars) uniCounts[ch] = 0;
+
+    let prev = null;
+    let n = 0;
+    for (let i = 0; i < text.length; i++) {
+        let ch = text.charAt(i).toLowerCase();
+        if (!alpha.has(ch)) {
+            if (mapOther && (ch === '\n' || ch === '\t' || ch === '\r' || ch === ' ')) {
+                ch = ' ';
+                if (!alpha.has(ch)) continue;
+            } else {
+                continue;
+            }
+        }
+        uniCounts[ch] = (uniCounts[ch] || 0) + 1;
+        n++;
+        if (prev !== null) {
+            if (!biCounts[prev]) biCounts[prev] = {};
+            biCounts[prev][ch] = (biCounts[prev][ch] || 0) + 1;
+        }
+        prev = ch;
+    }
+    if (n === 0) throw new Error('Dasher.trainFromText: no alphabet characters found');
+
+    const uni = {};
+    for (const ch of chars) uni[ch] = (uniCounts[ch] || 0) / n;
+
+    const bi = {};
+    for (const prevCh of Object.keys(biCounts)) {
+        const row = biCounts[prevCh];
+        const total = Object.values(row).reduce((a, b) => a + b, 0);
+        if (total <= 0) continue;
+        bi[prevCh] = {};
+        for (const nextCh of Object.keys(row)) {
+            bi[prevCh][nextCh] = row[nextCh] / total;
+        }
+    }
+
+    return applyLanguageModel({
+        chars,
+        bigramWeight: (typeof opts.bigramWeight === 'number')
+            ? opts.bigramWeight : LM.bigramWeight,
+        uni,
+        bi,
+    }, opts);
+}
 
 function getProbs(context) {
     const last = context.slice(-1).toLowerCase();
-    const bg   = BI[last];
+    const bg   = LM.bi[last];
     const out  = {};
-    for (const ch of CHARS) {
+    for (const ch of LM.chars) {
         const bp = (bg && bg[ch]) ? bg[ch] : 0;
-        const up = UNI[ch] || 0.0001;
-        out[ch]  = BIGRAM_WEIGHT * bp + (1 - BIGRAM_WEIGHT) * up;
+        const up = LM.uni[ch] || 0.0001;
+        out[ch]  = LM.bigramWeight * bp + (1 - LM.bigramWeight) * up;
     }
     const sum = Object.values(out).reduce((a, b) => a + b, 0);
-    for (const ch of CHARS) out[ch] /= sum;
+    for (const ch of LM.chars) out[ch] /= sum;
     return out;
 }
 
@@ -133,13 +234,14 @@ function expandNode(node) {
     // Largest-remainder integer allocation over NORM so shares sum exactly
     // and every positive-probability symbol gets ≥ 1.  The old round-and-
     // skip path left gaps (empty parent colour) where tiny probs vanished.
+    const alphabet = LM.chars;
     const exact = [];
-    for (const ch of CHARS) exact.push((probs[ch] || 0) * NORM);
+    for (const ch of alphabet) exact.push((probs[ch] || 0) * NORM);
     const share = exact.map(v => Math.floor(v));
     let left = NORM - share.reduce((a, b) => a + b, 0);
 
     const fracOrder = exact
-        .map((v, i) => ({ i, frac: v - share[i], p: probs[CHARS[i]] || 0 }))
+        .map((v, i) => ({ i, frac: v - share[i], p: probs[alphabet[i]] || 0 }))
         .sort((a, b) => b.frac - a.frac || a.i - b.i);
 
     for (const o of fracOrder) {
@@ -156,11 +258,11 @@ function expandNode(node) {
     }
 
     let cum = 0;
-    for (let i = 0; i < CHARS.length; i++) {
+    for (let i = 0; i < alphabet.length; i++) {
         const lo = cum;
         cum += share[i];
         if (cum > lo) {
-            node.children.push(makeNode(CHARS[i], lo, cum, node, node.context + CHARS[i]));
+            node.children.push(makeNode(alphabet[i], lo, cum, node, node.context + alphabet[i]));
         }
     }
     if (node.children.length) {
@@ -708,6 +810,33 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')    { e.preventDefault(); resetAll(); }
 });
 
+function defaultLmUrl() {
+    // Prefer an explicit URL on the canvas; else sibling dasher-lm.json
+    const explicit = canvas.getAttribute('data-dasher-lm');
+    if (explicit) return explicit;
+    const scripts = document.getElementsByTagName('script');
+    for (let i = scripts.length - 1; i >= 0; i--) {
+        const src = scripts[i].src || '';
+        if (/dasher\.js(\?|$)/.test(src)) {
+            return src.replace(/dasher\.js(\?.*)?$/, 'dasher-lm.json');
+        }
+    }
+    return 'dasher-lm.json';
+}
+
+function loadLanguageModelFromUrl(url) {
+    return fetch(url, { cache: 'no-store' })
+        .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(spec => applyLanguageModel(spec, { reset: true }))
+        .catch(err => {
+            console.warn('Dasher: could not load language model from', url, err);
+            return getLanguageModel();
+        });
+}
+
 const resetBtn = document.getElementById('dasher-reset');
 if (resetBtn) resetBtn.addEventListener('click', resetAll);
 
@@ -724,7 +853,22 @@ function boot() {
     updateDisplay();
     render();
     requestAnimationFrame(tick);
+
+    // Overlay defaults with dasher-lm.json when available (HTTP hosts)
+    loadLanguageModelFromUrl(defaultLmUrl());
 }
+
+// Public API for updating / inspecting the model
+window.Dasher = {
+    setLanguageModel: applyLanguageModel,
+    getLanguageModel: getLanguageModel,
+    trainFromText: trainFromText,
+    reset: resetAll,
+    pause: () => setPaused(true),
+    go: () => setPaused(false),
+    togglePause: togglePause,
+    getText: () => S.text,
+};
 
 if (document.readyState === 'complete') {
     requestAnimationFrame(boot);

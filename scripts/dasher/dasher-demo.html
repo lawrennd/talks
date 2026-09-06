@@ -32,42 +32,48 @@
 
     <div style="width:100%;font-size:0.85em">
 
-      <div style="display:flex;justify-content:space-between;align-items:center;
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;
                   padding:6px 14px;background:#1e272e;border-bottom:1px solid #485460">
-        <span style="color:#81ecec;letter-spacing:3px;font-size:14px">DASHER</span>
-        <span style="color:#8395a7;font-style:italic;font-size:10px;flex:1;margin:0 12px;
-                     overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
-          screen height ∝ probability · boxes stream left across the crosshair
-        </span>
-        <button id="dasher-pause"
-          style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
-                 padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
-                 border-radius:3px;margin-right:6px">Go</button>
-        <button id="dasher-copy"
-          style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
-                 padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
-                 border-radius:3px;margin-right:6px">Copy</button>
-        <button id="dasher-reset"
-          style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
-                 padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
-                 border-radius:3px">Reset</button>
+        <div style="display:flex;align-items:center;gap:12px;min-width:0;flex:1">
+          <span style="color:#81ecec;letter-spacing:3px;font-size:14px">DASHER</span>
+          <span style="color:#8395a7;font-style:italic;font-size:10px;
+                       overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+            screen height ∝ probability · boxes stream left across the crosshair
+          </span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0">
+          <button id="dasher-pause"
+            style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
+                   padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+                   border-radius:3px">Go</button>
+          <button id="dasher-copy"
+            style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
+                   padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+                   border-radius:3px">Copy</button>
+          <button id="dasher-reset"
+            style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
+                   padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+                   border-radius:3px">Reset</button>
+        </div>
       </div>
 
       <div style="display:flex;align-items:center;gap:12px;padding:5px 14px;
                   background:#1e272e;border-bottom:1px solid #485460;min-height:34px">
-        <span style="font-size:9px;color:#8395a7">TYPED:</span>
-        <span id="dasher-text"
+        <div style="font-size:9px;color:#8395a7;flex-shrink:0">TYPED:</div>
+        <div id="dasher-text"
           style="font-size:16px;color:#81ecec;letter-spacing:2px;flex:1;
-                 overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</span>
-        <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
-                     padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
-          bits: <span id="dasher-bits" style="color:#f6e58d">0.0</span></span>
-        <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
-                     padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
-          avg: <span id="dasher-avgbits" style="color:#f6e58d">—</span> b/ch</span>
-        <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
-                     padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
-          H(next): <span id="dasher-entropy" style="color:#f6e58d">—</span></span>
+                 overflow:hidden;text-overflow:ellipsis;white-space:nowrap">▋</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0">
+          <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
+                       padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
+            bits: <span id="dasher-bits" style="color:#f6e58d">0.0</span></span>
+          <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
+                       padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
+            avg: <span id="dasher-avgbits" style="color:#f6e58d">—</span> b/ch</span>
+          <span style="background:#1e272e;border:1px solid #485460;border-radius:3px;
+                       padding:2px 7px;font-size:11px;color:#8395a7;white-space:nowrap">
+            H(next): <span id="dasher-entropy" style="color:#f6e58d">—</span></span>
+        </div>
       </div>
 
       <div style="position:relative;width:min(100%,520px);height:520px;margin:0 auto;
@@ -87,6 +93,6 @@
     </div>
   </div>
 
-  <script src="dasher.js?v=14"></script>
+  <script src="dasher.js?v=15"></script>
 </body>
 </html>

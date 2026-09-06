@@ -39,6 +39,14 @@
                      overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
           screen height ∝ probability · boxes stream left across the crosshair
         </span>
+        <button id="dasher-pause"
+          style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
+                 padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+                 border-radius:3px;margin-right:6px">Go</button>
+        <button id="dasher-copy"
+          style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
+                 padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
+                 border-radius:3px;margin-right:6px">Copy</button>
         <button id="dasher-reset"
           style="background:#485460;border:1px solid #676f75;color:#dfe6e9;
                  padding:3px 10px;cursor:pointer;font-family:inherit;font-size:11px;
@@ -70,14 +78,15 @@
 
       <div style="padding:5px 14px;background:#1e272e;border-top:1px solid #485460;
                   font-size:9px;color:#8395a7;text-align:center">
-        Move pointer <strong style="color:#81ecec">right</strong> of centre to zoom in ·
-        <strong style="color:#81ecec">left</strong> to zoom out ·
+        <strong style="color:#81ecec">Click</strong> or <strong style="color:#81ecec">Space</strong> to Go/Pause ·
+        <strong style="color:#81ecec">Copy</strong> extracts text ·
+        pointer right zooms in · left zooms out ·
         Backspace unwrites · Escape resets
       </div>
 
     </div>
   </div>
 
-  <script src="dasher.js?v=13"></script>
+  <script src="dasher.js?v=14"></script>
 </body>
 </html>

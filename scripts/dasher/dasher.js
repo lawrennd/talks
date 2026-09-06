@@ -16,7 +16,10 @@
 //
 // Expected DOM (ids prefixed "dasher-"):
 //   dasher-canvas, dasher-text, dasher-bits, dasher-avgbits,
-//   dasher-entropy, dasher-reset
+//   dasher-entropy, dasher-reset, dasher-pause, dasher-copy
+//
+// Classic controls: click canvas or Space toggles Go/Pause;
+// Copy extracts the typed buffer to the clipboard.
 
 (function () {
 'use strict';
@@ -183,6 +186,7 @@ const S = {
     oldRoots: [],            // promoted-away ancestors (keeps coords bounded)
     mouseX:   null,
     mouseY:   null,
+    paused:   true,          // classic Dasher: click / Space to start
     text:     '',
     totalBits: 0,
     charBits: [],
@@ -500,31 +504,45 @@ function render() {
     ctx.arc(origin.x, origin.y, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    // Idle hint
-    if (S.mouseX === null) {
+    // Idle / paused hint (classic: start with click or Space)
+    if (S.paused || S.mouseX === null) {
         const t = performance.now() / 700;
         const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2);
         const cx = (S.crossX + W) / 2;
         ctx.fillStyle = 'rgba(40,40,40,0.78)';
-        ctx.fillRect(cx - 200, H / 2 - 48, 400, 96);
-        ctx.fillStyle = '#81ecec';
-        ctx.font = 'bold 14px "Trebuchet MS", sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('Move pointer right of the crosshair to zoom', cx, H / 2 - 18);
-        ctx.fillStyle = '#fff';
-        ctx.font = '12px "Trebuchet MS", sans-serif';
-        ctx.fillText('Boxes nest inside parents and stream left', cx, H / 2 + 4);
-        ctx.fillText('Vertical position steers · left of crosshair zooms out', cx, H / 2 + 24);
-        ctx.fillStyle = `rgba(129,236,236,${0.5 + pulse * 0.5})`;
-        ctx.fillText('▶▶▶', cx + 170, H / 2 - 18);
+        ctx.fillRect(cx - 210, H / 2 - 52, 420, 104);
+        if (S.paused) {
+            ctx.fillStyle = '#81ecec';
+            ctx.font = 'bold 15px "Trebuchet MS", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Paused — click canvas or press Space to go', cx, H / 2 - 18);
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px "Trebuchet MS", sans-serif';
+            ctx.fillText('Pointer right of centre zooms · left zooms out', cx, H / 2 + 6);
+            ctx.fillText('Copy extracts the typed text to the clipboard', cx, H / 2 + 26);
+            ctx.fillStyle = `rgba(129,236,236,${0.5 + pulse * 0.5})`;
+            ctx.fillText('▶', cx - 180, H / 2 - 18);
+        } else {
+            ctx.fillStyle = '#81ecec';
+            ctx.font = 'bold 14px "Trebuchet MS", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Move pointer right of the crosshair to zoom', cx, H / 2 - 18);
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px "Trebuchet MS", sans-serif';
+            ctx.fillText('Boxes nest inside parents and stream left', cx, H / 2 + 4);
+            ctx.fillText('Click or Space pauses · Copy extracts text', cx, H / 2 + 24);
+            ctx.fillStyle = `rgba(129,236,236,${0.5 + pulse * 0.5})`;
+            ctx.fillText('▶▶▶', cx + 170, H / 2 - 18);
+        }
     }
 }
 
 // ── Animation ─────────────────────────────────────────────────────────────────
 
 function tick() {
-    if (S.mouseX !== null && S.mouseY !== null) {
+    if (!S.paused && S.mouseX !== null && S.mouseY !== null) {
         const d = screen2Dasher(S.mouseX, S.mouseY);
         // Clamp dasherX so extreme left still zooms out gracefully
         const dx = clamp(d.x, 1, MAX_Y * 2);
@@ -549,21 +567,72 @@ function updateDisplay() {
     if (ae) ae.textContent = S.text.length > 0
         ? (S.totalBits / S.text.length).toFixed(2) : '—';
     if (ee) ee.textContent = entropy(getProbs(S.text)).toFixed(2);
+    syncPauseButton();
+}
+
+function syncPauseButton() {
+    const btn = document.getElementById('dasher-pause');
+    if (!btn) return;
+    btn.textContent = S.paused ? 'Go' : 'Pause';
+    btn.setAttribute('aria-pressed', S.paused ? 'true' : 'false');
+}
+
+function setPaused(paused) {
+    S.paused = !!paused;
+    syncPauseButton();
+}
+
+function togglePause() {
+    setPaused(!S.paused);
+}
+
+function copyText() {
+    const text = S.text || '';
+    const btn = document.getElementById('dasher-copy');
+    const done = (ok) => {
+        if (!btn) return;
+        const prev = btn.textContent;
+        btn.textContent = ok ? 'Copied' : 'Copy failed';
+        setTimeout(() => { btn.textContent = prev; }, 1200);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => done(true)).catch(() => done(false));
+        return;
+    }
+    // Fallback for file:// / older browsers
+    try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        done(ok);
+    } catch (err) {
+        done(false);
+    }
 }
 
 function deleteChar() {
     // Zoom out by stepping toward a large-X (leftward) target a few times
     if (S.text.length === 0) return;
+    const wasPaused = S.paused;
+    S.paused = true; // freeze live zoom while we surgically unwrite
     const targetLen = S.text.length - 1;
     for (let i = 0; i < 40 && S.text.length > targetLen; i++) {
         scheduleOneStep(ORIGIN_X * 2.5, ORIGIN_Y);
         stabilizeRoots();
         syncText();
     }
+    S.paused = wasPaused;
+    syncPauseButton();
 }
 
 function resetAll() {
     initRoot();
+    setPaused(true);
     updateDisplay();
     render();
 }
@@ -595,6 +664,24 @@ canvas.addEventListener('mouseleave', () => {
     S.mouseY = null;
 });
 
+// Classic: click toggles start / pause
+let ignoreClickUntil = 0;
+canvas.addEventListener('click', e => {
+    e.preventDefault();
+    if (performance.now() < ignoreClickUntil) return;
+    togglePause();
+});
+
+canvas.addEventListener('touchstart', e => {
+    e.preventDefault();
+    ignoreClickUntil = performance.now() + 600; // suppress ghost click
+    const r = canvas.getBoundingClientRect();
+    const t = e.touches[0];
+    S.mouseX = (t.clientX - r.left) * (canvas.width  / r.width);
+    S.mouseY = (t.clientY - r.top)  * (canvas.height / r.height);
+    if (S.paused) setPaused(false);
+}, { passive: false });
+
 canvas.addEventListener('touchmove', e => {
     e.preventDefault();
     const r = canvas.getBoundingClientRect();
@@ -609,6 +696,14 @@ canvas.addEventListener('touchend', () => {
 });
 
 document.addEventListener('keydown', e => {
+    if (e.key === ' ' || e.code === 'Space') {
+        // Don't steal Space from real form fields
+        const tag = (e.target && e.target.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || (e.target && e.target.isContentEditable)) return;
+        e.preventDefault();
+        togglePause();
+        return;
+    }
     if (e.key === 'Backspace') { e.preventDefault(); deleteChar(); }
     if (e.key === 'Escape')    { e.preventDefault(); resetAll(); }
 });
@@ -616,9 +711,16 @@ document.addEventListener('keydown', e => {
 const resetBtn = document.getElementById('dasher-reset');
 if (resetBtn) resetBtn.addEventListener('click', resetAll);
 
+const pauseBtn = document.getElementById('dasher-pause');
+if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+const copyBtn = document.getElementById('dasher-copy');
+if (copyBtn) copyBtn.addEventListener('click', copyText);
+
 function boot() {
     resizeCanvas();
     initRoot();
+    setPaused(true);
     updateDisplay();
     render();
     requestAnimationFrame(tick);

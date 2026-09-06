@@ -125,18 +125,43 @@ function makeNode(token, lbnd, hbnd, parent, context) {
 function expandNode(node) {
     if (node.children) return;
     const probs = getProbs(node.context);
-    let cum = 0;
     node.children = [];
-    for (const ch of CHARS) {
-        const p = probs[ch];
-        const lo = Math.round(cum * NORM);
-        cum += p;
-        const hi = Math.round(cum * NORM);
-        if (hi > lo) {
-            node.children.push(makeNode(ch, lo, hi, node, node.context + ch));
+
+    // Largest-remainder integer allocation over NORM so shares sum exactly
+    // and every positive-probability symbol gets ≥ 1.  The old round-and-
+    // skip path left gaps (empty parent colour) where tiny probs vanished.
+    const exact = [];
+    for (const ch of CHARS) exact.push((probs[ch] || 0) * NORM);
+    const share = exact.map(v => Math.floor(v));
+    let left = NORM - share.reduce((a, b) => a + b, 0);
+
+    const fracOrder = exact
+        .map((v, i) => ({ i, frac: v - share[i], p: probs[CHARS[i]] || 0 }))
+        .sort((a, b) => b.frac - a.frac || a.i - b.i);
+
+    for (const o of fracOrder) {
+        if (left <= 0) break;
+        if (o.p > 0 && share[o.i] === 0) {
+            share[o.i] = 1;
+            left--;
+        }
+    }
+    for (const o of fracOrder) {
+        if (left <= 0) break;
+        share[o.i]++;
+        left--;
+    }
+
+    let cum = 0;
+    for (let i = 0; i < CHARS.length; i++) {
+        const lo = cum;
+        cum += share[i];
+        if (cum > lo) {
+            node.children.push(makeNode(CHARS[i], lo, cum, node, node.context + CHARS[i]));
         }
     }
     if (node.children.length) {
+        node.children[0].lbnd = 0;
         node.children[node.children.length - 1].hbnd = NORM;
     }
 }
@@ -223,36 +248,43 @@ function reparentRoot() {
 }
 
 function hasSpaceAroundRoot() {
-    // Visible Dasher-Y window is roughly [0, MAX_Y]; visible max X is left edge.
+    // Match DasherViewSquare: if the root does not cover the visible
+    // rectangle, siblings (or parent) should be brought back on screen.
+    const topLeft = screen2Dasher(0, 0);
+    const bottomRight = screen2Dasher(canvas.width, canvas.height);
+    const visibleMinY = topLeft.y;
+    const visibleMaxY = bottomRight.y;
+    const visibleMaxX = topLeft.x;
     const range = S.rootmax - S.rootmin;
-    const visibleMaxX = canvas.width / S.scaleX;
-    return range < visibleMaxX || S.rootmin > 0 || S.rootmax < MAX_Y;
+    return range < visibleMaxX ||
+        S.rootmin > visibleMinY ||
+        S.rootmax < visibleMaxY;
 }
 
 function stabilizeRoots() {
-    // Zooming out: pop roots until the current root fills the view again
+    // Zooming out / over-promotion: pop roots until the current root
+    // fills the view (brings siblings back into the empty quadrants).
     let guard = 0;
     while (hasSpaceAroundRoot() && guard++ < 32) {
         if (!reparentRoot()) break;
     }
 
-    // Zooming in: push the unique on-screen child that covers the crosshair.
-    // This is what keeps rootmin/rootmax from exploding (and the view from jittering).
+    // Zooming in: promote only when a single child remains on screen
+    // (classic onlyChildRendered). Promoting earlier hides siblings and
+    // leaves blank regions like the empty top-right in long strings.
     guard = 0;
     while (guard++ < 32) {
         if (!S.root.children) break;
 
         const span = S.rootmax - S.rootmin;
-        // Hard safety if promotion lagged behind a fast zoom
-        const force = span > 1e9;
+        const force = span > 1e9; // numerical safety only
 
         let covering = null;
         let visible = 0;
         for (const ch of S.root.children) {
             const b = childBounds(ch, S.rootmin, S.rootmax);
             const h = (b.y2 - b.y1) * S.scaleY;
-            // Ignore hairline leftovers when deciding "only child"
-            if (h < 8) continue;
+            if (h < MIN_PX) continue;
             const top = canvas.height / 2 + (b.y1 - ORIGIN_Y) * S.scaleY;
             const bot = canvas.height / 2 + (b.y2 - ORIGIN_Y) * S.scaleY;
             if (bot < 0 || top > canvas.height) continue;
@@ -262,9 +294,9 @@ function stabilizeRoots() {
             }
         }
         if (!covering) break;
-        const b = childBounds(covering, S.rootmin, S.rootmax);
-        const childRange = b.y2 - b.y1;
-        if (force || ((visible <= 1 || childRange > MAX_Y) && childRange > ORIGIN_X)) {
+
+        // Promote iff this is the only on-screen child (or span has exploded)
+        if (force || visible <= 1) {
             if (!makeRoot(covering)) break;
         } else {
             break;

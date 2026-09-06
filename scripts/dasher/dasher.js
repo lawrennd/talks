@@ -155,12 +155,13 @@ const S = {
     root:     null,
     rootmin:  0,
     rootmax:  MAX_Y,
+    oldRoots: [],            // promoted-away ancestors (keeps coords bounded)
     mouseX:   null,
     mouseY:   null,
     text:     '',
     totalBits: 0,
     charBits: [],
-    path:     [],            // nodes from root to crosshair
+    path:     [],            // nodes under crosshair below current root
     scaleX:   1,
     scaleY:   1,
     crossX:   0,
@@ -174,10 +175,101 @@ function initRoot() {
     const width = MAX_Y * 1.15;
     S.rootmin = ORIGIN_Y - width / 2;
     S.rootmax = ORIGIN_Y + width / 2;
+    S.oldRoots = [];
     S.text = '';
     S.charBits = [];
     S.totalBits = 0;
     S.path = [];
+}
+
+// Promote a child to root so rootmin/rootmax stay O(MAX_Y).
+// Without this, deep zooms send the span to 1e20+ and float precision
+// around ORIGIN_Y collapses — the whole view jitters.
+function makeRoot(child) {
+    if (!child || child.parent !== S.root) return false;
+    const range = S.rootmax - S.rootmin;
+    const newMax = S.rootmin + range * child.hbnd / NORM;
+    const newMin = S.rootmin + range * child.lbnd / NORM;
+    S.oldRoots.push(S.root);
+    if (S.oldRoots.length > 64) S.oldRoots.shift();
+    S.rootmin = newMin;
+    S.rootmax = newMax;
+    child.parent = null;
+    S.root = child;
+    expandNode(S.root);
+    return true;
+}
+
+function reparentRoot() {
+    if (!S.oldRoots.length) return false;
+    const parent = S.oldRoots.pop();
+    const lower = S.root.lbnd;
+    const upper = S.root.hbnd;
+    const nodeRange = upper - lower;
+    if (nodeRange <= 0) return false;
+
+    // Put current root back under its parent
+    S.root.parent = parent;
+    if (parent.children) {
+        const idx = parent.children.findIndex(c => c.token === S.root.token && c.lbnd === lower);
+        if (idx >= 0) parent.children[idx] = S.root;
+    }
+
+    const rootWidth = S.rootmax - S.rootmin;
+    S.rootmax = S.rootmax + ((NORM - upper) * rootWidth) / nodeRange;
+    S.rootmin = S.rootmin - (lower * rootWidth) / nodeRange;
+    S.root = parent;
+    return true;
+}
+
+function hasSpaceAroundRoot() {
+    // Visible Dasher-Y window is roughly [0, MAX_Y]; visible max X is left edge.
+    const range = S.rootmax - S.rootmin;
+    const visibleMaxX = canvas.width / S.scaleX;
+    return range < visibleMaxX || S.rootmin > 0 || S.rootmax < MAX_Y;
+}
+
+function stabilizeRoots() {
+    // Zooming out: pop roots until the current root fills the view again
+    let guard = 0;
+    while (hasSpaceAroundRoot() && guard++ < 32) {
+        if (!reparentRoot()) break;
+    }
+
+    // Zooming in: push the unique on-screen child that covers the crosshair.
+    // This is what keeps rootmin/rootmax from exploding (and the view from jittering).
+    guard = 0;
+    while (guard++ < 32) {
+        if (!S.root.children) break;
+
+        const span = S.rootmax - S.rootmin;
+        // Hard safety if promotion lagged behind a fast zoom
+        const force = span > 1e9;
+
+        let covering = null;
+        let visible = 0;
+        for (const ch of S.root.children) {
+            const b = childBounds(ch, S.rootmin, S.rootmax);
+            const h = (b.y2 - b.y1) * S.scaleY;
+            // Ignore hairline leftovers when deciding "only child"
+            if (h < 8) continue;
+            const top = canvas.height / 2 + (b.y1 - ORIGIN_Y) * S.scaleY;
+            const bot = canvas.height / 2 + (b.y2 - ORIGIN_Y) * S.scaleY;
+            if (bot < 0 || top > canvas.height) continue;
+            visible++;
+            if (b.y1 < ORIGIN_Y && b.y2 > ORIGIN_Y && (b.y2 - b.y1) > ORIGIN_X) {
+                covering = ch;
+            }
+        }
+        if (!covering) break;
+        const b = childBounds(covering, S.rootmin, S.rootmax);
+        const childRange = b.y2 - b.y1;
+        if (force || ((visible <= 1 || childRange > MAX_Y) && childRange > ORIGIN_X)) {
+            if (!makeRoot(covering)) break;
+        } else {
+            break;
+        }
+    }
 }
 
 // ── View transforms ───────────────────────────────────────────────────────────
@@ -279,12 +371,15 @@ function findPathAtCrosshair() {
 }
 
 function syncText() {
-    const path = findPathAtCrosshair();
-    S.path = path;
-    const next = path.map(n => n.token).join('');
+    const under = findPathAtCrosshair();
+    S.path = under;
+    // Tokens already promoted to root + nodes still under the crosshair
+    const committed = S.oldRoots.filter(n => n.token);
+    const nodes = committed.concat(under);
+    const next = nodes.map(n => n.token).join('');
     if (next === S.text) return;
     S.text = next;
-    S.charBits = path.map(n => n.bits);
+    S.charBits = nodes.map(n => n.bits);
     S.totalBits = S.charBits.reduce((a, b) => a + b, 0);
     updateDisplay();
 }
@@ -402,6 +497,7 @@ function tick() {
         // Clamp dasherX so extreme left still zooms out gracefully
         const dx = clamp(d.x, 1, MAX_Y * 2);
         scheduleOneStep(dx, d.y);
+        stabilizeRoots();
         syncText();
     }
     render();
@@ -429,6 +525,7 @@ function deleteChar() {
     const targetLen = S.text.length - 1;
     for (let i = 0; i < 40 && S.text.length > targetLen; i++) {
         scheduleOneStep(ORIGIN_X * 2.5, ORIGIN_Y);
+        stabilizeRoots();
         syncText();
     }
 }

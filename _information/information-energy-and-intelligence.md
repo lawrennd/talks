@@ -62,7 +62,7 @@ transition: None
 
 \figure{\includepng{\diagramsDir/ml/dasher-bits-per-second}{60%}}{The Dasher system [@Ward-dasher00] is a pointer based text entry system that gave a very practical demonstration of the power of probability.}
 
-<!--include{_ml/includes/dasher.md}-->
+<!-- include{_information/includes/dasher.md} -->
 
 
 <!-- include{_physics/includes/entropy-billiards.md} -->

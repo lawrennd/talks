@@ -1,39 +1,29 @@
 // Copyright (c) 2026 Neil D. Lawrence
 //
 // Dasher: continuous-zoom arithmetic coding visualiser.
-// Inspired by David MacKay's Dasher interface (MacKay 2003).
-// Screen space is proportional to probability, so common characters
-// are large targets — ease of selection mirrors information content.
+// Geometry follows MacKay / Ward Dasher (see dasher-hello-world.gif and
+// the canonical square-view model):
 //
-// Usage: move mouse RIGHT of centre to zoom toward the letter at
-//        your vertical position.  Move LEFT to zoom out / undo.
-//        Each character is committed when you zoom in close enough.
-//        Backspace removes the last character; Escape resets.
+//   - Crosshair fixed on screen
+//   - Every node is a rectangle whose Dasher-space WIDTH equals its
+//     Dasher-space HEIGHT (the Y-range).  Both parent and child extend
+//     to dasherX = 0 (the right edge of the screen).  A child therefore
+//     sits strictly INSIDE its parent: smaller Y-range ⇒ left edge
+//     further to the right.
+//   - Zooming changes rootmin/rootmax so nodes grow and stream left
+//     across the crosshair; nesting is preserved because it is baked
+//     into the coordinate system.
 //
-// Expected DOM elements (all IDs prefixed "dasher-"):
-//   dasher-canvas    <canvas>  – the main zooming viewport
-//   dasher-text      <span>    – typed text display
-//   dasher-bits      <span>    – total bits consumed
-//   dasher-avgbits   <span>    – average bits per character
-//   dasher-entropy   <span>    – H(next | context) in bits
-//   dasher-reset     <button>  – reset everything
+// Expected DOM (ids prefixed "dasher-"):
+//   dasher-canvas, dasher-text, dasher-bits, dasher-avgbits,
+//   dasher-entropy, dasher-reset
 
 (function () {
 'use strict';
 
 // ── Language model ────────────────────────────────────────────────────────────
-//
-// Source: approximate English letter-frequency tables.
-//   UNI  – unigram probabilities (single-character frequencies)
-//          from standard published English text statistics (Norvig/Brown corpus
-//          approximations).  Space is treated as the 27th character.
-//   BI   – conditional bigram distributions for the 13 most common characters.
-//          These are hand-smoothed approximations; a production system would
-//          use trained n-gram or neural language model probabilities.
-//   BIGRAM_WEIGHT – when a bigram entry exists, blend bigram (82%) + unigram (18%)
-//          so rare contexts degrade gracefully to unigram statistics.
 
-const CHARS = ' abcdefghijklmnopqrstuvwxyz';
+const CHARS = 'abcdefghijklmnopqrstuvwxyz ';
 
 const UNI = {
     ' ':0.183,'e':0.103,'t':0.074,'a':0.064,'o':0.062,'i':0.057,
@@ -76,65 +66,44 @@ function getProbs(context) {
     return out;
 }
 
-function buildDist(probs) {
-    const arr = Object.entries(probs)
-        .map(([char, prob]) => ({ char, prob, bits: -Math.log2(prob) }))
-        .sort((a, b) => b.prob - a.prob);
-    let cum = 0;
-    for (const x of arr) { x.cumLow = cum; x.cumHigh = cum + x.prob; cum = x.cumHigh; }
-    return arr;
-}
-
 function entropy(probs) {
     return Object.values(probs).reduce((H, p) => p > 0 ? H - p * Math.log2(p) : H, 0);
 }
 
-// ── Sub-distribution cache ────────────────────────────────────────────────────
-// Keys are single characters; cache is invalidated whenever S.text changes.
-// getSubDist(c) returns buildDist(getProbs(S.text + c)).
-let subDistCache = {};
-function getSubDist(char) {
-    if (!subDistCache[char]) {
-        subDistCache[char] = buildDist(getProbs(S.text + char));
-    }
-    return subDistCache[char];
+// Pastel palette (vowels / consonants / space), GIF-like
+const VOWELS = 'aeiou';
+function colorFor(ch) {
+    if (ch === ' ') return '#ffffff';
+    if (VOWELS.includes(ch)) return '#ffc9c9';
+    const palette = [
+        '#a8e6cf','#dcedc1','#ffd3b6','#ffaaa5','#c5a3ff',
+        '#b5eada','#a0c4ff','#caffbf','#fdffb6','#ffc6ff',
+        '#bdb2ff','#9bf6ff','#fffffc','#e0fbfc','#c8b6ff'
+    ];
+    return palette[ch.charCodeAt(0) % palette.length];
 }
-function clearSubCache() { subDistCache = {}; }
 
-// Band colours — bright HSL palette so bands are clearly visible on any background
-const BAND_COLORS = [
-    '#e74c3c','#e67e22','#f1c40f','#2ecc71','#1abc9c',
-    '#3498db','#9b59b6','#e91e63','#00bcd4','#8bc34a',
-    '#ff5722','#607d8b','#795548','#ff9800','#4caf50',
-    '#2196f3','#673ab7','#f44336','#009688','#cddc39',
-    '#ff6f00','#0288d1','#558b2f','#ad1457','#00838f',
-    '#6a1b9a','#37474f'
-];
+// ── Dasher coordinate system ──────────────────────────────────────────────────
+//
+// Y ∈ [0, MAX_Y].  Crosshair at (ORIGIN_X, ORIGIN_Y).
+// Square (isotropic) screen mapping — required for GIF-like nesting:
+//   scaleX = scaleY = min(W,H) / MAX_Y
+//   screenX = W - dasherX * scaleX
+//   so dasherX = 0 is the RIGHT edge; dasherX = ORIGIN_X is the crosshair.
+// A node covering Dasher-Y [y1, y2] is drawn with
+//   dasherX_left = (y2 - y1)     // width ≡ height in Dasher *and* screen space
+//   dasherX_right = 0            // always to the right edge of the screen
+// Children inherit a sub-interval of [y1, y2], so they are strictly nested:
+// smaller Y-range ⇒ left edge further right, still inside the parent.
 
-// Assign a fixed bright colour to each character so it stays consistent
-const CHAR_COLOR = {};
-(function () {
-    const sorted = Array.from(CHARS).sort(); // stable alphabetical order
-    sorted.forEach((ch, i) => { CHAR_COLOR[ch] = BAND_COLORS[i % BAND_COLORS.length]; });
-})();
+const MAX_Y    = 4096;
+const ORIGIN_X = 2048;
+const ORIGIN_Y = 2048;
+const NORM     = 65536;          // child bounds in [0, NORM]
 
-// ── State ─────────────────────────────────────────────────────────────────────
-
-const S = {
-    text:      '',
-    totalBits: 0,
-    charBits:  [],
-    probs:     null,
-    dist:      null,
-    viewMin:   0,
-    viewMax:   1,
-    mouseX:    null,
-    mouseY:    null,
-    flash:     0,
-    lastChar:  '',
-};
-
-// ── Canvas ────────────────────────────────────────────────────────────────────
+const N_STEPS = 18;              // zoom speed (larger = slower)
+const MIN_PX  = 2;               // skip nodes shorter than this
+const EXPAND_PX = 14;            // expand children once taller than this
 
 const canvas = document.getElementById('dasher-canvas');
 if (!canvas) { return; }
@@ -142,390 +111,304 @@ const ctx = canvas.getContext('2d');
 
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
-// Use getBoundingClientRect so we measure the actual CSS-rendered size,
-// not the flex-computed clientWidth/Height which can be 0 at parse time.
-function resizeCanvas() {
-    const r = canvas.getBoundingClientRect();
-    const w = Math.round(r.width);
-    const h = Math.round(r.height);
-    // Only update if we have real dimensions to avoid clearing mid-paint
-    if (w > 0 && h > 0) {
-        canvas.width  = w;
-        canvas.height = h;
-    } else {
-        // Hard fallback: occupy the viewport minus rough header/footer
-        canvas.width  = window.innerWidth  || 800;
-        canvas.height = Math.max(300, (window.innerHeight || 600) - 90);
+// ── Node tree ─────────────────────────────────────────────────────────────────
+
+function makeNode(token, lbnd, hbnd, parent, context) {
+    return {
+        token, lbnd, hbnd, parent,
+        context: context || '',
+        children: null,
+        bits: hbnd > lbnd ? -Math.log2((hbnd - lbnd) / NORM) : 0,
+    };
+}
+
+function expandNode(node) {
+    if (node.children) return;
+    const probs = getProbs(node.context);
+    let cum = 0;
+    node.children = [];
+    for (const ch of CHARS) {
+        const p = probs[ch];
+        const lo = Math.round(cum * NORM);
+        cum += p;
+        const hi = Math.round(cum * NORM);
+        if (hi > lo) {
+            node.children.push(makeNode(ch, lo, hi, node, node.context + ch));
+        }
+    }
+    if (node.children.length) {
+        node.children[node.children.length - 1].hbnd = NORM;
     }
 }
 
-window.addEventListener('resize', () => { resizeCanvas(); render(); });
+function childBounds(child, parentY1, parentY2) {
+    const range = parentY2 - parentY1;
+    return {
+        y1: parentY1 + range * child.lbnd / NORM,
+        y2: parentY1 + range * child.hbnd / NORM,
+    };
+}
 
-// ── Layout ────────────────────────────────────────────────────────────────────
+// ── Model state ───────────────────────────────────────────────────────────────
 
-// NOW_FRAC: commitment line (typed chars live to its left)
-// BAND_FRAC: where probability bands begin (right 70% of canvas)
-const NOW_FRAC  = 0.20;
-const BAND_FRAC = 0.28;
+const S = {
+    root:     null,
+    rootmin:  0,
+    rootmax:  MAX_Y,
+    mouseX:   null,
+    mouseY:   null,
+    text:     '',
+    totalBits: 0,
+    charBits: [],
+    path:     [],            // nodes from root to crosshair
+    scaleX:   1,
+    scaleY:   1,
+    crossX:   0,
+    crossY:   0,
+};
 
-function layout(W) {
-    return { nowX: W * NOW_FRAC, bandLeft: W * BAND_FRAC };
+function initRoot() {
+    S.root = makeNode('', 0, NORM, null, '');
+    expandNode(S.root);
+    // Start slightly "inside" the root so the alphabet sits on the right
+    const width = MAX_Y * 1.15;
+    S.rootmin = ORIGIN_Y - width / 2;
+    S.rootmax = ORIGIN_Y + width / 2;
+    S.text = '';
+    S.charBits = [];
+    S.totalBits = 0;
+    S.path = [];
+}
+
+// ── View transforms ───────────────────────────────────────────────────────────
+
+function updateScales() {
+    const W = canvas.width, H = canvas.height;
+    // Isotropic scale: Dasher width≡height must stay square on screen,
+    // otherwise children sit in a thin strip and nesting does not read.
+    const scale = Math.min(W, H) / MAX_Y;
+    S.scaleX = scale;
+    S.scaleY = scale;
+    // Crosshair is wherever ORIGIN_X lands (centre on a square canvas)
+    S.crossX = W - ORIGIN_X * scale;
+    S.crossY = H / 2;
+}
+
+function dasher2Screen(dx, dy) {
+    return {
+        x: canvas.width - dx * S.scaleX,
+        y: canvas.height / 2 + (dy - ORIGIN_Y) * S.scaleY,
+    };
+}
+
+function screen2Dasher(sx, sy) {
+    return {
+        x: (canvas.width - sx) / S.scaleX,
+        y: ORIGIN_Y + (sy - canvas.height / 2) / S.scaleY,
+    };
+}
+
+// ── Zoom dynamics (MacKay / Dasher scheduleOneStep) ───────────────────────────
+// target = [Y − X, Y + X]; mouse right of crosshair ⇒ small X ⇒ zoom in.
+
+function scheduleOneStep(dasherX, dasherY) {
+    const targetY1 = dasherY - dasherX;
+    const targetY2 = dasherY + dasherX;
+    const targetRange = targetY2 - targetY1;
+    if (targetRange <= 0) return;
+
+    const R1 = S.rootmin, R2 = S.rootmax;
+    const r1 = MAX_Y * (R1 - targetY1) / targetRange;
+    const r2 = MAX_Y * (R2 - targetY1) / targetRange;
+
+    let m1 = r1 - R1;
+    let m2 = r2 - R2;
+
+    const sqrtTarget = Math.sqrt(targetRange);
+    const sqrtMax = Math.sqrt(MAX_Y);
+    const denom = sqrtMax * (N_STEPS - 1) + sqrtTarget;
+    const alpha = sqrtTarget / denom;
+
+    m1 *= alpha;
+    m2 *= alpha;
+
+    let newMin = R1 + m1;
+    let newMax = R2 + m2;
+
+    // Keep crosshair covered
+    newMin = Math.min(newMin, ORIGIN_Y - 1);
+    newMax = Math.max(newMax, ORIGIN_Y + 1);
+
+    // Prevent pathological over-zoom
+    if (newMax - newMin < MAX_Y / 4) {
+        const c = (newMin + newMax) / 2;
+        newMin = c - MAX_Y / 8;
+        newMax = c + MAX_Y / 8;
+    }
+
+    S.rootmin = newMin;
+    S.rootmax = newMax;
+}
+
+// ── Crosshair path → typed text ───────────────────────────────────────────────
+
+function findPathAtCrosshair() {
+    const path = [];
+    function walk(node, y1, y2) {
+        const range = y2 - y1;
+        // Node covers crosshair if it spans ORIGIN_Y and is wide enough
+        // (range > ORIGIN_X means left edge is left of the crosshair)
+        if (range <= ORIGIN_X || y1 >= ORIGIN_Y || y2 <= ORIGIN_Y) return;
+        if (node.token) path.push(node);
+        if (!node.children) {
+            const screenH = range * S.scaleY;
+            if (screenH > EXPAND_PX) expandNode(node);
+        }
+        if (node.children) {
+            for (const ch of node.children) {
+                const b = childBounds(ch, y1, y2);
+                if (b.y1 < ORIGIN_Y && b.y2 > ORIGIN_Y) {
+                    walk(ch, b.y1, b.y2);
+                    return;
+                }
+            }
+        }
+    }
+    walk(S.root, S.rootmin, S.rootmax);
+    return path;
+}
+
+function syncText() {
+    const path = findPathAtCrosshair();
+    S.path = path;
+    const next = path.map(n => n.token).join('');
+    if (next === S.text) return;
+    S.text = next;
+    S.charBits = path.map(n => n.bits);
+    S.totalBits = S.charBits.reduce((a, b) => a + b, 0);
+    updateDisplay();
 }
 
 // ── Rendering ─────────────────────────────────────────────────────────────────
+
+function renderNode(node, y1, y2, depth) {
+    const W = canvas.width, H = canvas.height;
+    const range = y2 - y1;
+    if (range <= 0) return;
+
+    // Canonical nesting: left edge at dasherX = range, right edge at 0
+    const left  = dasher2Screen(range, y1);
+    const right = dasher2Screen(0, y2);
+    const x = left.x;
+    const y = left.y;
+    const w = right.x - left.x;
+    const h = right.y - left.y;
+
+    if (h < MIN_PX || w < 1) return;
+    if (x > W || x + w < 0 || y > H || y + h < 0) return;
+
+    const covers = range > ORIGIN_X && y1 < ORIGIN_Y && y2 > ORIGIN_Y;
+
+    // Fill — root gets a warm yellow like the GIF's outer shelf
+    if (!node.token) {
+        ctx.fillStyle = depth === 0 ? '#f6e58d' : '#e8e8e8';
+    } else {
+        ctx.fillStyle = colorFor(node.token);
+    }
+    ctx.fillRect(x, y, w, h);
+
+    // Clear border so containment reads like the GIF
+    ctx.strokeStyle = covers ? '#111' : 'rgba(0,0,0,0.45)';
+    ctx.lineWidth = covers ? 2.5 : 1.25;
+    ctx.strokeRect(x + 0.5, y + 0.5, Math.max(0, w - 1), Math.max(0, h - 1));
+
+    // Label near the LEFT edge of this box (parent letter sits left of its children)
+    if (node.token && h >= 11 && x < W - 4) {
+        const label = node.token === ' ' ? '⎵' : node.token;
+        const fs = clamp(h * 0.5, 11, 56);
+        ctx.font = `bold ${fs}px "Trebuchet MS", "Segoe UI", sans-serif`;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#111';
+        const tx = Math.max(2, x + 5);
+        if (tx < W - 8) ctx.fillText(label, tx, y + h / 2);
+    }
+
+    // Expand / draw children (nested inside: smaller range ⇒ further right)
+    if (!node.children && h > EXPAND_PX) expandNode(node);
+    if (node.children && h > MIN_PX * 2) {
+        for (const ch of node.children) {
+            const b = childBounds(ch, y1, y2);
+            renderNode(ch, b.y1, b.y2, depth + 1);
+        }
+    }
+}
 
 function render() {
     const W = canvas.width, H = canvas.height;
     if (W === 0 || H === 0) return;
 
-    const { nowX, bandLeft } = layout(W);
-    const bandW  = W - bandLeft;
-    const vRange = S.viewMax - S.viewMin;
-
-    // ── Background ──────────────────────────────────────────────────────────
-    ctx.fillStyle = '#1a1a2e';
+    ctx.fillStyle = '#f0f0f0';
     ctx.fillRect(0, 0, W, H);
 
-    // Slightly lighter background in band zone so bands show as solid colour
-    ctx.fillStyle = '#16213e';
-    ctx.fillRect(bandLeft, 0, bandW, H);
+    // Root (and nested children)
+    renderNode(S.root, S.rootmin, S.rootmax, 0);
 
-    // ── Probability bands (two-level fractal) ────────────────────────────────
-    // Each band's LEFT portion shows the parent character label.
-    // Each band's RIGHT portion shows the next-level sub-distribution —
-    // i.e. P(next | context + this_char) — creating the recursive/fractal
-    // structure that is the core of arithmetic-coding navigation.
-    const LABEL_W_PX = 56; // fixed pixel width reserved for parent label
-
-    if (S.dist && vRange > 0) {
-        for (const item of S.dist) {
-            if (item.cumHigh <= S.viewMin || item.cumLow >= S.viewMax) continue;
-
-            const vLow  = Math.max(item.cumLow,  S.viewMin);
-            const vHigh = Math.min(item.cumHigh, S.viewMax);
-            const sTop  = ((vLow  - S.viewMin) / vRange) * H;
-            const sBot  = ((vHigh - S.viewMin) / vRange) * H;
-            const natH  = sBot - sTop;
-            const bh    = Math.max(natH, 4);
-            const midY  = sTop + natH / 2;
-
-            const col   = CHAR_COLOR[item.char] || '#888';
-            const aimed = S.mouseY !== null && S.mouseY >= sTop && S.mouseY < sTop + bh;
-            const lz    = Math.min(LABEL_W_PX, bandW * 0.18); // label zone width
-
-            // Subtle full-width background tint (gives the band a colour identity)
-            ctx.globalAlpha = aimed ? 0.18 : 0.10;
-            ctx.fillStyle   = col;
-            ctx.fillRect(bandLeft, sTop, bandW, bh);
-            ctx.globalAlpha = 1;
-
-            // Solid label zone (left portion of band)
-            ctx.globalAlpha = aimed ? 0.90 : 0.65;
-            ctx.fillStyle   = col;
-            ctx.fillRect(bandLeft, sTop, lz, bh);
-            ctx.globalAlpha = 1;
-
-            // Left-edge accent stripe
-            ctx.fillStyle = col;
-            ctx.fillRect(bandLeft, sTop, aimed ? 5 : 3, bh);
-
-            // ── Sub-distribution (fractal interior) ─────────────────────────
-            // Shown when the parent band is tall enough to host children.
-            // The sub-bands are placed inside the right portion of the parent
-            // band, each sub-band height ∝ P(next_char | context + parent_char).
-            if (natH >= 28) {
-                const subX = bandLeft + lz + 2;
-                const subW = W - subX - 1;
-
-                ctx.save();
-                ctx.beginPath();
-                ctx.rect(subX, sTop, subW, bh);
-                ctx.clip();
-
-                const subDist = getSubDist(item.char);
-                let   cumY    = sTop;
-                for (const sc of subDist) {
-                    const scH = sc.prob * bh;
-                    if (scH < 1.5) break; // sorted descending; rest are smaller
-
-                    const scCol = CHAR_COLOR[sc.char] || '#888';
-                    ctx.globalAlpha = aimed ? 0.80 : 0.62;
-                    ctx.fillStyle   = scCol;
-                    ctx.fillRect(subX, cumY, subW, scH);
-                    ctx.globalAlpha = 1;
-
-                    // Thin separator between sub-bands
-                    ctx.fillStyle = '#16213e';
-                    ctx.fillRect(subX, cumY + scH - 1, subW, 1);
-
-                    // Sub-character label (when sub-band is tall enough)
-                    if (scH >= 9) {
-                        const sfs = clamp(scH * 0.58, 7, 20);
-                        ctx.font         = `bold ${sfs}px "Courier New", monospace`;
-                        ctx.textBaseline = 'middle';
-                        ctx.textAlign    = 'left';
-                        ctx.fillStyle    = '#ffffffee';
-                        ctx.fillText(sc.char === ' ' ? '⎵' : sc.char,
-                            subX + 5, cumY + scH / 2);
-                        // Sub-band probability (right-aligned, if wide enough)
-                        if (scH >= 14 && subW > 80) {
-                            ctx.font      = `${clamp(scH * 0.30, 7, 12)}px "Courier New", monospace`;
-                            ctx.textAlign = 'right';
-                            ctx.fillStyle = '#ffffffaa';
-                            ctx.fillText((sc.prob * 100).toFixed(1) + '%',
-                                subX + subW - 6, cumY + scH / 2);
-                        }
-                    }
-                    cumY += scH;
-                }
-                ctx.restore();
-            }
-
-            // Band separator
-            ctx.fillStyle = '#16213e';
-            ctx.fillRect(bandLeft, sTop + bh - 1, bandW, 1);
-
-            // Parent character label (drawn on top, centred in label zone)
-            if (bh >= 10) {
-                const fs = clamp(natH * 0.65, 9, 48);
-                ctx.font         = `bold ${fs}px "Courier New", monospace`;
-                ctx.textBaseline = 'middle';
-                ctx.textAlign    = 'center';
-                ctx.fillStyle    = '#ffffff';
-                ctx.fillText(item.char === ' ' ? '⎵' : item.char,
-                    bandLeft + lz / 2, midY);
-            }
-
-            // Parent probability percentage (below label, if band is tall)
-            if (bh >= 22) {
-                const pfs = clamp(natH * 0.26, 7, 12);
-                ctx.font         = `${pfs}px "Courier New", monospace`;
-                ctx.textBaseline = 'middle';
-                ctx.textAlign    = 'center';
-                ctx.fillStyle    = '#ffffffcc';
-                ctx.fillText((item.prob * 100).toFixed(1) + '%',
-                    bandLeft + lz / 2, midY + clamp(natH * 0.38, 8, 28));
-            }
-        }
-    }
-
-    // ── "Now" commitment line ──────────────────────────────────────────────
-    ctx.strokeStyle = '#4ecdc4';
-    ctx.lineWidth   = 2;
-    ctx.setLineDash([]);
+    // Crosshair at ORIGIN (must match scale mapping used for nesting)
+    const origin = dasher2Screen(ORIGIN_X, ORIGIN_Y);
+    S.crossX = origin.x;
+    S.crossY = origin.y;
+    ctx.strokeStyle = '#222';
+    ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.moveTo(nowX, 0);
-    ctx.lineTo(nowX, H);
+    ctx.moveTo(origin.x, 0);
+    ctx.lineTo(origin.x, H);
     ctx.stroke();
-
-    // Arrow marker on the commitment line
-    ctx.fillStyle = '#4ecdc4';
     ctx.beginPath();
-    ctx.moveTo(nowX,      H * 0.5 - 9);
-    ctx.lineTo(nowX + 12, H * 0.5);
-    ctx.lineTo(nowX,      H * 0.5 + 9);
-    ctx.closePath();
+    ctx.moveTo(origin.x - 10, origin.y);
+    ctx.lineTo(origin.x + 10, origin.y);
+    ctx.stroke();
+    ctx.fillStyle = '#222';
+    ctx.beginPath();
+    ctx.arc(origin.x, origin.y, 3, 0, Math.PI * 2);
     ctx.fill();
 
-    // ── Typed text (left of commitment line) ──────────────────────────────
-    if (S.text.length > 0) {
-        const disp = S.text.replace(/ /g, '⎵');
-        ctx.font         = 'bold 16px "Courier New", monospace';
-        ctx.textBaseline = 'middle';
-        ctx.textAlign    = 'right';
-        ctx.fillStyle    = '#4ecdc4';
-        ctx.fillText(disp, nowX - 10, H / 2);
-    }
-
-    // ── Mouse crosshair and speed arrow ───────────────────────────────────
-    if (S.mouseX !== null && S.mouseY !== null) {
-        const mx = S.mouseX, my = S.mouseY;
-
-        // Horizontal aim line across band zone
-        ctx.strokeStyle = 'rgba(255,255,255,0.25)';
-        ctx.lineWidth   = 1;
-        ctx.setLineDash([4, 6]);
-        ctx.beginPath();
-        ctx.moveTo(bandLeft, my);
-        ctx.lineTo(W, my);
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        // Arrow at nowX showing direction and speed
-        const spd    = clamp((mx - W / 2) / (W / 2), -1, 1);
-        const alpha  = clamp(Math.abs(spd) * 0.9 + 0.1, 0.1, 1);
-        const aSize  = clamp(Math.abs(spd) * 18, 4, 18);
-        const dir    = spd >= 0 ? 1 : -1;
-
-        ctx.fillStyle = `rgba(78,205,196,${alpha})`;
-        ctx.beginPath();
-        if (dir > 0) {
-            ctx.moveTo(nowX + 2,          my);
-            ctx.lineTo(nowX + 2 + aSize,  my - aSize * 0.6);
-            ctx.lineTo(nowX + 2 + aSize,  my + aSize * 0.6);
-        } else {
-            ctx.moveTo(nowX - 2,          my);
-            ctx.lineTo(nowX - 2 - aSize,  my - aSize * 0.6);
-            ctx.lineTo(nowX - 2 - aSize,  my + aSize * 0.6);
-        }
-        ctx.closePath();
-        ctx.fill();
-
-        // Cursor dot
-        ctx.beginPath();
-        ctx.arc(mx, my, 4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,0.7)';
-        ctx.fill();
-    }
-
-    // ── Commit flash ──────────────────────────────────────────────────────
-    if (S.flash > 0) {
-        const a = S.flash / 30;
-        ctx.fillStyle = `rgba(78,205,196,${a * 0.3})`;
-        ctx.fillRect(0, 0, W, H);
-        if (S.lastChar && S.flash > 12) {
-            const fs = clamp(H * 0.25, 32, 80);
-            ctx.font         = `bold ${fs}px "Courier New", monospace`;
-            ctx.textBaseline = 'middle';
-            ctx.textAlign    = 'center';
-            ctx.fillStyle    = `rgba(255,255,255,${a})`;
-            ctx.fillText(S.lastChar === ' ' ? '⎵' : S.lastChar, nowX / 2, H / 2);
-        }
-        S.flash = Math.max(0, S.flash - 1);
-    }
-
-    // ── Zoom depth indicator ──────────────────────────────────────────────
-    const zoom = Math.round(1 / vRange);
-    ctx.font         = '10px "Courier New", monospace';
-    ctx.textBaseline = 'top';
-    ctx.textAlign    = 'right';
-    ctx.fillStyle    = '#4ecdc466';
-    ctx.fillText('×' + zoom, W - 6, 5);
-
-    // ── Idle hint (pulsing, shown when mouse is outside canvas) ───────────
+    // Idle hint
     if (S.mouseX === null) {
-        const t     = performance.now() / 700;
+        const t = performance.now() / 700;
         const pulse = 0.5 + 0.5 * Math.sin(t * Math.PI * 2);
-        const cx    = (nowX + W) / 2;
-        const cy    = H / 2;
-
-        // Frosted-glass backdrop
-        ctx.fillStyle = 'rgba(22,33,62,0.85)';
-        ctx.beginPath();
-        ctx.rect(cx - 230, cy - 56, 460, 112);
-        ctx.fill();
-
-        ctx.strokeStyle = 'rgba(78,205,196,0.4)';
-        ctx.lineWidth   = 1;
-        ctx.stroke();
-
-        // Main instruction
-        ctx.font         = 'bold 15px "Courier New", monospace';
+        const cx = (S.crossX + W) / 2;
+        ctx.fillStyle = 'rgba(40,40,40,0.78)';
+        ctx.fillRect(cx - 200, H / 2 - 48, 400, 96);
+        ctx.fillStyle = '#81ecec';
+        ctx.font = 'bold 14px "Trebuchet MS", sans-serif';
+        ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.textAlign    = 'center';
-        ctx.fillStyle    = '#4ecdc4';
-        ctx.fillText('Move mouse here', cx, cy - 30);
-
-        ctx.font      = '12px "Courier New", monospace';
-        ctx.fillStyle = '#ffffff';
-        ctx.fillText('Drift RIGHT  →  zoom in  (select a letter)', cx, cy - 8);
-        ctx.fillText('Drift LEFT   ←  zoom out (undo)', cx, cy + 12);
-        ctx.fillText('Vertical position aims at a letter', cx, cy + 32);
-
-        // Pulsing arrow
-        ctx.font      = `bold ${Math.round(16 + pulse * 4)}px "Courier New", monospace`;
-        ctx.fillStyle = `rgba(78,205,196,${0.5 + pulse * 0.5})`;
-        ctx.fillText('▶▶▶', cx + 110, cy - 30);
+        ctx.fillText('Move pointer right of the crosshair to zoom', cx, H / 2 - 18);
+        ctx.fillStyle = '#fff';
+        ctx.font = '12px "Trebuchet MS", sans-serif';
+        ctx.fillText('Boxes nest inside parents and stream left', cx, H / 2 + 4);
+        ctx.fillText('Vertical position steers · left of crosshair zooms out', cx, H / 2 + 24);
+        ctx.fillStyle = `rgba(129,236,236,${0.5 + pulse * 0.5})`;
+        ctx.fillText('▶▶▶', cx + 170, H / 2 - 18);
     }
 }
 
-// ── Animation / zoom loop ─────────────────────────────────────────────────────
-
-const ZOOM_SPEED    = 0.055;
-const COMMIT_THRESH = 0.005;
-const DEAD_FRAC     = 0.04;
+// ── Animation ─────────────────────────────────────────────────────────────────
 
 function tick() {
-    const W = canvas.width, H = canvas.height;
-
     if (S.mouseX !== null && S.mouseY !== null) {
-        const speed = clamp((S.mouseX - W / 2) / (W / 2), -1.5, 1);
-
-        if (Math.abs(speed) > DEAD_FRAC) {
-            const adj    = speed > 0 ? speed - DEAD_FRAC : speed + DEAD_FRAC;
-            const yFrac  = clamp(S.mouseY / H, 0, 1);
-            const target = S.viewMin + (S.viewMax - S.viewMin) * yFrac;
-
-            const factor   = Math.exp(-adj * ZOOM_SPEED);
-            const newRange = (S.viewMax - S.viewMin) * factor;
-            let   newMin   = target - newRange * yFrac;
-            let   newMax   = target + newRange * (1 - yFrac);
-
-            if (newMin < 0) { newMax = Math.min(1, newMax - newMin); newMin = 0; }
-            if (newMax > 1) { newMin = Math.max(0, newMin - (newMax - 1)); newMax = 1; }
-            S.viewMin = clamp(newMin, 0, 1);
-            S.viewMax = clamp(newMax, 0, 1);
-
-            checkCommit();
-        }
+        const d = screen2Dasher(S.mouseX, S.mouseY);
+        // Clamp dasherX so extreme left still zooms out gracefully
+        const dx = clamp(d.x, 1, MAX_Y * 2);
+        scheduleOneStep(dx, d.y);
+        syncText();
     }
-    // Always render — keeps idle-hint pulsing and drains flash
     render();
     requestAnimationFrame(tick);
 }
 
-// ── Commit logic ──────────────────────────────────────────────────────────────
-
-function checkCommit() {
-    if (S.viewMax - S.viewMin > COMMIT_THRESH) return;
-    for (const item of S.dist) {
-        if (item.cumLow  <= S.viewMin + 1e-6 &&
-            item.cumHigh >= S.viewMax - 1e-6) {
-            commitChar(item);
-            return;
-        }
-    }
-}
-
-function commitChar(item) {
-    S.text      += item.char;
-    S.charBits.push(item.bits);
-    S.totalBits += item.bits;
-    S.lastChar   = item.char;
-    S.flash      = 30;
-    S.probs      = getProbs(S.text);
-    S.dist       = buildDist(S.probs);
-    S.viewMin    = 0;
-    S.viewMax    = 1;
-    clearSubCache();
-    updateDisplay();
-}
-
-function deleteChar() {
-    if (S.text.length === 0) return;
-    S.text      = S.text.slice(0, -1);
-    S.charBits.pop();
-    S.totalBits = S.charBits.reduce((a, b) => a + b, 0);
-    S.probs     = getProbs(S.text);
-    S.dist      = buildDist(S.probs);
-    S.viewMin   = 0;
-    S.viewMax   = 1;
-    clearSubCache();
-    updateDisplay();
-}
-
-function resetAll() {
-    S.text = ''; S.charBits = []; S.totalBits = 0;
-    S.viewMin = 0; S.viewMax = 1;
-    S.flash = 0; S.lastChar = '';
-    S.probs = getProbs('');
-    S.dist  = buildDist(S.probs);
-    clearSubCache();
-    updateDisplay();
-    render();
-}
-
-// ── Display update ────────────────────────────────────────────────────────────
+// ── Display / controls ────────────────────────────────────────────────────────
 
 function updateDisplay() {
     const el = id => document.getElementById(id);
@@ -537,13 +420,43 @@ function updateDisplay() {
     if (be) be.textContent = S.totalBits.toFixed(1);
     if (ae) ae.textContent = S.text.length > 0
         ? (S.totalBits / S.text.length).toFixed(2) : '—';
-    if (ee && S.probs) ee.textContent = entropy(S.probs).toFixed(2);
+    if (ee) ee.textContent = entropy(getProbs(S.text)).toFixed(2);
 }
 
-// ── Events ────────────────────────────────────────────────────────────────────
+function deleteChar() {
+    // Zoom out by stepping toward a large-X (leftward) target a few times
+    if (S.text.length === 0) return;
+    const targetLen = S.text.length - 1;
+    for (let i = 0; i < 40 && S.text.length > targetLen; i++) {
+        scheduleOneStep(ORIGIN_X * 2.5, ORIGIN_Y);
+        syncText();
+    }
+}
+
+function resetAll() {
+    initRoot();
+    updateDisplay();
+    render();
+}
+
+function resizeCanvas() {
+    const r = canvas.getBoundingClientRect();
+    const w = Math.round(r.width);
+    const h = Math.round(r.height);
+    if (w > 0 && h > 0) {
+        canvas.width = w;
+        canvas.height = h;
+    } else {
+        canvas.width = window.innerWidth || 800;
+        canvas.height = Math.max(300, (window.innerHeight || 600) - 90);
+    }
+    updateScales();
+}
+
+window.addEventListener('resize', () => { resizeCanvas(); render(); });
 
 canvas.addEventListener('mousemove', e => {
-    const r  = canvas.getBoundingClientRect();
+    const r = canvas.getBoundingClientRect();
     S.mouseX = (e.clientX - r.left) * (canvas.width  / r.width);
     S.mouseY = (e.clientY - r.top)  * (canvas.height / r.height);
 });
@@ -555,8 +468,8 @@ canvas.addEventListener('mouseleave', () => {
 
 canvas.addEventListener('touchmove', e => {
     e.preventDefault();
-    const r  = canvas.getBoundingClientRect();
-    const t  = e.touches[0];
+    const r = canvas.getBoundingClientRect();
+    const t = e.touches[0];
     S.mouseX = (t.clientX - r.left) * (canvas.width  / r.width);
     S.mouseY = (t.clientY - r.top)  * (canvas.height / r.height);
 }, { passive: false });
@@ -568,27 +481,21 @@ canvas.addEventListener('touchend', () => {
 
 document.addEventListener('keydown', e => {
     if (e.key === 'Backspace') { e.preventDefault(); deleteChar(); }
-    if (e.key === 'Escape')    { e.preventDefault(); resetAll();   }
+    if (e.key === 'Escape')    { e.preventDefault(); resetAll(); }
 });
 
 const resetBtn = document.getElementById('dasher-reset');
 if (resetBtn) resetBtn.addEventListener('click', resetAll);
 
-// ── Boot ──────────────────────────────────────────────────────────────────────
-// We wait for 'load' (all resources fetched) before measuring the canvas,
-// then use a rAF so the first paint has committed flex/grid layout dimensions.
-
 function boot() {
     resizeCanvas();
-    S.probs = getProbs('');
-    S.dist  = buildDist(S.probs);
+    initRoot();
     updateDisplay();
     render();
     requestAnimationFrame(tick);
 }
 
 if (document.readyState === 'complete') {
-    // Script loaded after window.load fired — safe to measure immediately
     requestAnimationFrame(boot);
 } else {
     window.addEventListener('load', () => requestAnimationFrame(boot));

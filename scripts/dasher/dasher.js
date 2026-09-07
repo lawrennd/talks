@@ -322,10 +322,11 @@ const S = {
 function initRoot() {
     S.root = makeNode('', 0, NORM, null, '');
     expandNode(S.root);
-    // Start slightly "inside" the root so the alphabet sits on the right
-    const width = MAX_Y * 1.15;
-    S.rootmin = ORIGIN_Y - width / 2;
-    S.rootmax = ORIGIN_Y + width / 2;
+    // Map the full probability stack onto the visible canvas.  A span
+    // larger than MAX_Y (the old 1.15× pad) pushed mid-mass punctuation
+    // ("," "." "$" "\") off the bottom edge so they looked "missing".
+    S.rootmin = 0;
+    S.rootmax = MAX_Y;
     S.oldRoots = [];
     S.text = '';
     S.charBits = [];
@@ -575,16 +576,22 @@ function renderNode(node, y1, y2, depth) {
     ctx.lineWidth = covers ? 2.5 : 1.25;
     ctx.strokeRect(x + 0.5, y + 0.5, Math.max(0, w - 1), Math.max(0, h - 1));
 
-    // Label near the LEFT edge of this box (parent letter sits left of its children)
-    if (node.token && h >= 11 && x < W - 4) {
+    // Label: prefer inside the box (left edge).  Narrow / short boxes from
+    // square nesting sit on the far right — the old `x < W-4` / `h >= 11`
+    // gates dropped their glyphs entirely, so "," "." "$" looked absent
+    // even at ~0.5–1% mass.  Fall back to just left of the strip.
+    if (node.token && h >= MIN_PX) {
         const label = node.token === ' ' ? '⎵' : node.token;
-        const fs = clamp(h * 0.5, 11, 56);
+        const fs = clamp(h * 0.55, 8, 56);
         ctx.font = `bold ${fs}px "Trebuchet MS", "Segoe UI", sans-serif`;
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#111';
-        const tx = Math.max(2, x + 5);
-        if (tx < W - 8) ctx.fillText(label, tx, y + h / 2);
+        const tw = ctx.measureText(label).width;
+        let tx = x + 4;
+        if (w < tw + 8 || tx + tw > W - 2) tx = x - tw - 3;
+        if (tx < 2) tx = 2;
+        if (tx + tw <= W - 1) ctx.fillText(label, tx, y + h / 2);
     }
 
     // Expand / draw children (nested inside: smaller range ⇒ further right)

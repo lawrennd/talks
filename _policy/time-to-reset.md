@@ -34,6 +34,8 @@ papersize: a4paper
 transition: None
 talktheme: white
 talkcss: ai-cam.css
+nocite: |
+  @Hayek-knowledge45
 ---
 
 <!-- Some missing links to integrate: https://academic.oup.com/spp/advance-article/doi/10.1093/scipol/scag070/8746319 (Mind the Gap paper)
@@ -83,9 +85,9 @@ EXISTING SNIPPETS USED:
 
 <!-- MISSING SNIPPET: _policy/includes/life-of-brian-ai-race.md -->
 
-\section{Not a Race}
+\section{Not a race ...}
 
-\newslide{The AI Race}
+\newslide{The AI race}
 
 \slidesincremental{
 * Characterising AI as a race implies one winner
@@ -101,15 +103,15 @@ EXISTING SNIPPETS USED:
 
 \speakernotes{Acknowledge Panel 1, then turn the race question. Do not spend more than two minutes on the Monty Python beat.}
 
-\section{An Old Warning}
+\section{An old warning}
 
 \include{_policy/includes/digital-oligarchy-guardian.md}
 
 <!-- MISSING SNIPPET: _policy/includes/value-in-the-spread.md -->
 
-\section{Value in the Spread}
+\section{Value in the spread ...}
 
-\newslide{Where the Value Is}
+\newslide{Where the value is}
 
 \slidesincremental{
 * The prize is not the cleverest model
@@ -121,15 +123,15 @@ EXISTING SNIPPETS USED:
 
 \notes{The returns from AI do not come from building the cleverest model. They come from diffusion. The genuinely valuable UK products will not come from a handful of frontier labs. They will come from thousands of small firms across the country solving specific, unglamorous problems. That is the growth people actually feel, in the places the last tech wave passed by. Those firms can only build if they can reach a customer without renting access from — or being locked into deals with — the platforms they are competing against.}
 
-\section{Why the Demand Side}
+\section{Why the demand side ...}
 
 \include{_policy/includes/human-capital-demand-side.md}
 
 <!-- MISSING SNIPPET: _policy/includes/supply-side-vs-demand-side.md -->
 
-\section{The Missing Half}
+\section{The missing half}
 
-\newslide{Supply-Side Policy, Demand-Side Prize}
+\newslide{Supply-side policy, demand-side prize}
 
 \slidesincremental{
 * We have supply-side policy. We need a demand-side strategy
@@ -145,11 +147,11 @@ EXISTING SNIPPETS USED:
 
 \notes{The frontier of innovation has also shifted. Recent progress has come from combining and directing existing models rather than training new ones. Models that can be convened in English — or Mandarin, French, Urdu or Spanish — and that can write software tailored to a business's needs rather than a platform's bottom line. That drops the cost and skill threshold for institution-led adoption. It means the next decade's value will be created by the people closest to the problems. None of this happens unless we treat the demand side as a core component of national strategy.}
 
-\section{Central Deployment Without Engagement}
+\section{Central deployment without engagement}
 
 \include{_software/includes/horizon-scandal.md}
 
-\newslide{The Horizon Pattern}
+\newslide{The Horizon pattern}
 
 \slidesincremental{
 * Centrally deploying technology on people, without engaging them
@@ -161,7 +163,7 @@ EXISTING SNIPPETS USED:
 
 \notes{The track record of centrally deploying technology on people, without engaging them, is the Horizon scandal. Horizon is what happens when a system is imposed, the people who use it have no voice, and the institution that deployed it won't admit the machine can be wrong.}
 
-\section{The Alternative: Ground Up}
+\section{The alternative: ground up}
 
 <!-- MISSING SNIPPET: _policy/includes/south-cambridgeshire-planning.md
      Existing `_policy/includes/building-from-ground-up.md` covers Greater
@@ -174,11 +176,11 @@ EXISTING SNIPPETS USED:
 
 \notes{What do we hear four months later? Big announcements that Google is going to solve planning across the country. On the day of that announcement I got an email asking: what does this Google thing mean for us? That is concentration strangling diffusion in one sentence. Not because Google is a villain. Because a supply-side announcement, made over the heads of the people already doing the work, chills the very capability we say we want to build.}
 
-\section{Concentration Strangles Diffusion}
+\section{Concentration strangles diffusion}
 
 \include{_policy/includes/compute-concentration.md}
 
-\newslide{Bottled Up at the Top}
+\newslide{Bottled up at the top}
 
 \slidesincremental{
 * If a few gatekeepers set the terms, the technology stays at the top
@@ -194,7 +196,7 @@ EXISTING SNIPPETS USED:
 
 <!-- MISSING SNIPPET: _policy/includes/sovereignty-as-options.md -->
 
-\section{Sovereignty Means Having Alternatives}
+\section{Sovereignty means having alternatives}
 
 \newslide{Sovereignty}
 
@@ -212,9 +214,9 @@ EXISTING SNIPPETS USED:
 
 <!-- MISSING SNIPPET: _policy/includes/pro-innovation-not-pro-big-tech.md -->
 
-\section{The Instrument We Already Have}
+\section{The instrument we already have}
 
-\newslide{Pro-Innovation Is Not Pro-Big-Tech}
+\newslide{Pro-innovation/growth is *not* pro-big-tech}
 
 \slidesincremental{
 * The DMCCA is targeted, flexible, and can move with the market
@@ -228,9 +230,9 @@ EXISTING SNIPPETS USED:
 
 <!-- MISSING SNIPPET: _policy/includes/inward-investment-reframe.md -->
 
-\section{The Investment We Should Worry About}
+\section{The investment we should worry about}
 
-\newslide{Reframe Inward Investment}
+\newslide{Reframe inward investment}
 
 \slidesincremental{
 * Opening the gateways is the pro-investment move
@@ -262,9 +264,9 @@ EXISTING SNIPPETS USED:
 
 \notes{We do not currently reward our universities for delivering on that. The incentives push us towards the cover of *Nature* rather than the cover of the local paper. That forgets why many of these institutions were developed. Our civic universities were founded to advance learning for the benefit of their city and region. AI is a chance for them to do just that. Lincoln's work with farmers through agricultural robotics. Nottingham Trent's work on inclusion for students with learning disabilities and autism. That is Campus UK. It is not as glamorous as a frontier-lab announcement. It is meant to be useful.}
 
-\section{A Reset}
+\section{A reset}
 
-\newslide{What a Reset Looks Like}
+\newslide{What a reset looks like}
 
 \slidesincremental{
 * Treat the demand side as strategy, not a downstream consequence of supply

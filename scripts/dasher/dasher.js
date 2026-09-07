@@ -158,16 +158,22 @@ function trainFromText(text, opts) {
 }
 
 function getProbs(context) {
-    const last = context.slice(-1).toLowerCase();
-    const bg   = LM.bi[last];
+    // Do not case-fold: the Lamd alphabet is case-sensitive (A ≠ a).
+    const last = context.length ? context.slice(-1) : '';
+    const bg   = last ? LM.bi[last] : null;
     const out  = {};
+    // Unique chars only — iterating a string with a duplicated glyph
+    // would overwrite the same key but inflate bookkeeping elsewhere.
+    const seen = Object.create(null);
     for (const ch of LM.chars) {
-        const bp = (bg && bg[ch]) ? bg[ch] : 0;
-        const up = LM.uni[ch] || 0.0001;
+        if (seen[ch]) continue;
+        seen[ch] = true;
+        const bp = (bg && typeof bg[ch] === 'number') ? bg[ch] : 0;
+        const up = (typeof LM.uni[ch] === 'number') ? LM.uni[ch] : 0.0001;
         out[ch]  = LM.bigramWeight * bp + (1 - LM.bigramWeight) * up;
     }
-    const sum = Object.values(out).reduce((a, b) => a + b, 0);
-    for (const ch of LM.chars) out[ch] /= sum;
+    const sum = Object.values(out).reduce((a, b) => a + b, 0) || 1;
+    for (const ch of Object.keys(out)) out[ch] /= sum;
     return out;
 }
 
@@ -175,12 +181,15 @@ function entropy(probs) {
     return Object.values(probs).reduce((H, p) => p > 0 ? H - p * Math.log2(p) : H, 0);
 }
 
-// Pastel palette (vowels / consonants / space), GIF-like
+// Pastel palette.  Punctuation must contrast with the yellow root shelf
+// (#f6e58d); #ffe8a3 was effectively invisible on it.
 const VOWELS = 'aeiouAEIOUαεηιουωΑΕΗΙΟΥΩ';
 function colorFor(ch) {
     if (ch === ' ') return '#ffffff';
     if (/[0-9]/.test(ch)) return '#d0d0e8';
-    if (/[\\{}$^_&#%]|[≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∑∏∫∂∇√±×·÷∞]/.test(ch)) return '#ffe8a3';
+    if (/[.,:;!?\"'`\\/{}$^_&#%*+=<>()[\]|~@-]|[≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∑∏∫∂∇√±×·÷∞]/.test(ch)) {
+        return '#9b59b6';
+    }
     if (VOWELS.includes(ch)) return '#ffc9c9';
     if (/[α-ωΑ-Ωϕϵϑϱϖℓ]/.test(ch)) return '#c5e8ff';
     const palette = [
@@ -322,9 +331,8 @@ const S = {
 function initRoot() {
     S.root = makeNode('', 0, NORM, null, '');
     expandNode(S.root);
-    // Map the full probability stack onto the visible canvas.  A span
-    // larger than MAX_Y (the old 1.15× pad) pushed mid-mass punctuation
-    // ("," "." "$" "\") off the bottom edge so they looked "missing".
+    // Fit the full probability stack on the canvas.  (A span larger than
+    // MAX_Y clips the bottom of the alphabet — where "," "." "$" live.)
     S.rootmin = 0;
     S.rootmax = MAX_Y;
     S.oldRoots = [];
@@ -490,13 +498,6 @@ function scheduleOneStep(dasherX, dasherY) {
     newMin = Math.min(newMin, ORIGIN_Y - 1);
     newMax = Math.max(newMax, ORIGIN_Y + 1);
 
-    // Prevent pathological over-zoom
-    if (newMax - newMin < MAX_Y / 4) {
-        const c = (newMin + newMax) / 2;
-        newMin = c - MAX_Y / 8;
-        newMax = c + MAX_Y / 8;
-    }
-
     S.rootmin = newMin;
     S.rootmax = newMax;
 }
@@ -576,22 +577,23 @@ function renderNode(node, y1, y2, depth) {
     ctx.lineWidth = covers ? 2.5 : 1.25;
     ctx.strokeRect(x + 0.5, y + 0.5, Math.max(0, w - 1), Math.max(0, h - 1));
 
-    // Label: prefer inside the box (left edge).  Narrow / short boxes from
-    // square nesting sit on the far right — the old `x < W-4` / `h >= 11`
-    // gates dropped their glyphs entirely, so "," "." "$" looked absent
-    // even at ~0.5–1% mass.  Fall back to just left of the strip.
+    // Label at the left edge of the box.  Small-probability symbols are
+    // narrow squares on the far right (width ≡ height); the old gates
+    // `h >= 11` and `x < W - 4` dropped their glyphs.  If the box is too
+    // narrow for the text, draw just to the left of it (still in-parent).
     if (node.token && h >= MIN_PX) {
         const label = node.token === ' ' ? '⎵' : node.token;
-        const fs = clamp(h * 0.55, 8, 56);
+        const fs = clamp(h * 0.5, 8, 56);
         ctx.font = `bold ${fs}px "Trebuchet MS", "Segoe UI", sans-serif`;
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#111';
         const tw = ctx.measureText(label).width;
         let tx = x + 4;
-        if (w < tw + 8 || tx + tw > W - 2) tx = x - tw - 3;
+        if (w < tw + 6) tx = x - tw - 2;
         if (tx < 2) tx = 2;
-        if (tx + tw <= W - 1) ctx.fillText(label, tx, y + h / 2);
+        if (tx + tw > W - 1) tx = Math.max(2, W - tw - 1);
+        ctx.fillText(label, tx, y + h / 2);
     }
 
     // Expand / draw children (nested inside: smaller range ⇒ further right)

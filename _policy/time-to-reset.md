@@ -32,6 +32,8 @@ venue: Time to Reset, Financial Times, Bracken House, London
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
+talktheme: white
+talkcss: ai-cam.css
 ---
 
 <!-- Some missing links to integrate: https://academic.oup.com/spp/advance-article/doi/10.1093/scipol/scag070/8746319 (Mind the Gap paper)

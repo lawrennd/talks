@@ -46,7 +46,19 @@ DEFAULT_BIGRAM_WEIGHT = 0.82
 
 # Fuller Lamd / academic alphabet (Latin case, digits, TeX punct, Greek, math).
 # Used by scripts/dasher/train_default_lm.py for the shipped dasher-lm.json.
-LAMD_CHARS = (
+def _uniq_chars(s: str) -> str:
+    seen = set()
+    out = []
+    for ch in s:
+        if ch in "\t\n\r":
+            continue
+        if ch not in seen:
+            seen.add(ch)
+            out.append(ch)
+    return "".join(out)
+
+
+LAMD_CHARS = _uniq_chars(
     "abcdefghijklmnopqrstuvwxyz"
     "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "0123456789"
@@ -176,9 +188,8 @@ def train_from_text(
         raise ValueError("training text contains no alphabet characters")
 
     uni_counts: Dict[str, float] = {ch: add_k for ch in chars}
-    bi_counts: Dict[str, Dict[str, float]] = defaultdict(
-        lambda: {ch: add_k for ch in chars}
-    )
+    # Bigrams stay sparse: Dasher blends missing mass with the unigram.
+    bi_counts: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
 
     prev: Optional[str] = None
     for ch in data:
@@ -195,9 +206,7 @@ def train_from_text(
         total = sum(row.values())
         if total <= 0:
             continue
-        # Keep only mass that came from data (or smoothing) — Dasher blends
-        # sparse rows with the unigram itself.
-        sparse = {ch: row[ch] / total for ch in chars if row[ch] > 0}
+        sparse = {ch: row[ch] / total for ch in row if row[ch] > 0}
         if sparse:
             bi[prev_ch] = sparse
 

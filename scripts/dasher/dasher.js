@@ -26,15 +26,14 @@
 
 // ── Language model ────────────────────────────────────────────────────────────
 //
-// Default tables live in dasher-lm.json (same directory).  They can be
-// replaced at runtime:
+// Default tables live in dasher-lm.json (trained on pre-2022 snippets with
+// the Lamd alphabet).  Replaced at runtime via fetch or:
 //   Dasher.setLanguageModel({ chars, uni, bi, bigramWeight })
 //   Dasher.trainFromText(corpusString)
-//   Dasher.getLanguageModel()
-// Optional: <canvas data-dasher-lm="path/to/model.json">
+// Inline DEFAULT_LM is Latin-only fallback if JSON fetch fails.
 
-# Prefer the sibling JSON (trained corpus).  Inline fallback is Latin-only
-# and only used if fetch fails.
+// Prefer the sibling JSON (trained corpus).  Inline fallback is Latin-only
+// and only used if fetch fails.
 const DEFAULT_LM = {
     chars: 'abcdefghijklmnopqrstuvwxyz ',
     bigramWeight: 0.82,
@@ -239,11 +238,27 @@ function expandNode(node) {
     // Largest-remainder integer allocation over NORM so shares sum exactly
     // and every positive-probability symbol gets ≥ 1.  The old round-and-
     // skip path left gaps (empty parent colour) where tiny probs vanished.
-    const alphabet = LM.chars;
+    // Deduplicate alphabet in case a model JSON lists a character twice
+    // (duplicate mass would make Σ share > NORM and blank the tree).
+    const seen = Object.create(null);
+    const alphabet = [];
+    for (const ch of LM.chars) {
+        if (seen[ch]) continue;
+        seen[ch] = true;
+        alphabet.push(ch);
+    }
     const exact = [];
     for (const ch of alphabet) exact.push((probs[ch] || 0) * NORM);
     const share = exact.map(v => Math.floor(v));
     let left = NORM - share.reduce((a, b) => a + b, 0);
+    if (left < 0) {
+        // Degenerate / duplicated mass — fall back to renormalised floors
+        const sumEx = exact.reduce((a, b) => a + b, 0) || 1;
+        for (let i = 0; i < share.length; i++) {
+            share[i] = Math.floor((exact[i] / sumEx) * NORM);
+        }
+        left = NORM - share.reduce((a, b) => a + b, 0);
+    }
 
     const fracOrder = exact
         .map((v, i) => ({ i, frac: v - share[i], p: probs[alphabet[i]] || 0 }))

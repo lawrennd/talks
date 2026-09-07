@@ -44,6 +44,18 @@ from typing import Dict, Iterable, List, Mapping, MutableMapping, Optional, Sequ
 DEFAULT_CHARS = "abcdefghijklmnopqrstuvwxyz "
 DEFAULT_BIGRAM_WEIGHT = 0.82
 
+# Fuller Lamd / academic alphabet (Latin case, digits, TeX punct, Greek, math).
+# Used by scripts/dasher/train_default_lm.py for the shipped dasher-lm.json.
+LAMD_CHARS = (
+    "abcdefghijklmnopqrstuvwxyz"
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "0123456789"
+    " .,:;!?\"'`-_/\\|~@#%&*+=<>^()[]{}$\\"
+    "αβγδεζηθικλμνξοπρσςτυφχψωϕϵϑϱϖ"
+    "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
+    "∞∂∇∑∏∫√±∓×·÷≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∄ℓ′″…—–−"
+)
+
 
 # ── Text normalisation ─────────────────────────────────────────────────────────
 
@@ -52,19 +64,22 @@ def normalise_text(
     chars: str = DEFAULT_CHARS,
     *,
     map_other_to_space: bool = True,
+    lowercase: bool = True,
 ) -> str:
     """Map text onto the model alphabet.
 
-    Lower-cases letters.  Newlines / tabs become spaces when
+    When ``lowercase`` is true (teaching default), Latin letters are folded.
+    For the Lamd alphabet, pass ``lowercase=False`` so case and symbols keep
+    their identity.  Newlines / tabs become spaces when
     ``map_other_to_space`` is true; other characters are dropped.
     """
     alpha = set(chars)
     out: List[str] = []
     for raw in text:
-        ch = raw.lower()
+        ch = raw.lower() if lowercase else raw
         if ch in alpha:
             out.append(ch)
-        elif map_other_to_space and ch in "\n\r\t ":
+        elif map_other_to_space and raw in "\n\r\t ":
             if " " in alpha:
                 out.append(" ")
     return "".join(out)
@@ -133,6 +148,7 @@ def train_from_text(
     bigram_weight: float = DEFAULT_BIGRAM_WEIGHT,
     map_other_to_space: bool = True,
     add_k: float = 0.0,
+    lowercase: bool = True,
 ) -> CharModel:
     """Count unigrams and bigrams and return a :class:`CharModel`.
 
@@ -147,8 +163,15 @@ def train_from_text(
         Optional additive smoothing on raw counts (0 = maximum likelihood).
         A small value such as 0.01 avoids zero probabilities for unseen
         characters without flattening the model much.
+    lowercase:
+        Fold Latin letters when True.  Use False with :data:`LAMD_CHARS`.
     """
-    data = normalise_text(text, chars, map_other_to_space=map_other_to_space)
+    data = normalise_text(
+        text,
+        chars,
+        map_other_to_space=map_other_to_space,
+        lowercase=lowercase,
+    )
     if not data:
         raise ValueError("training text contains no alphabet characters")
 

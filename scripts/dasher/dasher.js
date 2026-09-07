@@ -33,6 +33,8 @@
 //   Dasher.getLanguageModel()
 // Optional: <canvas data-dasher-lm="path/to/model.json">
 
+# Prefer the sibling JSON (trained corpus).  Inline fallback is Latin-only
+# and only used if fetch fails.
 const DEFAULT_LM = {
     chars: 'abcdefghijklmnopqrstuvwxyz ',
     bigramWeight: 0.82,
@@ -175,10 +177,13 @@ function entropy(probs) {
 }
 
 // Pastel palette (vowels / consonants / space), GIF-like
-const VOWELS = 'aeiou';
+const VOWELS = 'aeiouAEIOUαεηιουωΑΕΗΙΟΥΩ';
 function colorFor(ch) {
     if (ch === ' ') return '#ffffff';
+    if (/[0-9]/.test(ch)) return '#d0d0e8';
+    if (/[\\{}$^_&#%]|[≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∑∏∫∂∇√±×·÷∞]/.test(ch)) return '#ffe8a3';
     if (VOWELS.includes(ch)) return '#ffc9c9';
+    if (/[α-ωΑ-Ωϕϵϑϱϖℓ]/.test(ch)) return '#c5e8ff';
     const palette = [
         '#a8e6cf','#dcedc1','#ffd3b6','#ffaaa5','#c5a3ff',
         '#b5eada','#a0c4ff','#caffbf','#fdffb6','#ffc6ff',

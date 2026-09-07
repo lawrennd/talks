@@ -72,6 +72,7 @@ MISSING SNIPPETS (drafted inline below; factor out if reused):
 EXISTING SNIPPETS USED:
 
 - `_policy/includes/digital-oligarchy-guardian.md`
+- `_policy/includes/human-capital-demand-side.md`
 - `_software/includes/horizon-scandal.md`
 - `_policy/includes/building-from-ground-up.md`
 - `_policy/includes/compute-concentration.md`
@@ -119,6 +120,10 @@ EXISTING SNIPPETS USED:
 \notes{The same AI moment is the biggest growth opportunity in a generation. But only if its value can spread. Concentration is precisely what stops it spreading.}
 
 \notes{The returns from AI do not come from building the cleverest model. They come from diffusion. The genuinely valuable UK products will not come from a handful of frontier labs. They will come from thousands of small firms across the country solving specific, unglamorous problems. That is the growth people actually feel, in the places the last tech wave passed by. Those firms can only build if they can reach a customer without renting access from — or being locked into deals with — the platforms they are competing against.}
+
+\section{Why the Demand Side}
+
+\include{_policy/includes/human-capital-demand-side.md}
 
 <!-- MISSING SNIPPET: _policy/includes/supply-side-vs-demand-side.md -->
 

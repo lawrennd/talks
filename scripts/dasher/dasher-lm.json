@@ -1,5 +1,5 @@
 {
-  "chars": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;!?\"'`-_/\\|~@#%&*+=<>^()[]{}$\\αβγδεζηθικλμνξοπρσςτυφχψωϕϵϑϱϖΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ∞∂∇∑∏∫√±∓×·÷≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∄ℓ′″…—–−",
+  "chars": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 .,:;!?\"'`-_/\\|~@#%&*+=<>^()[]{}$αβγδεζηθικλμνξοπρσςτυφχψωϕϵϑϱϖΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ∞∂∇∑∏∫√±∓×·÷≤≥≠≈≡∈∉⊂⊃∪∩→←↔⇒⇔∀∃∄ℓ′″…—–−",
   "bigramWeight": 0.82,
   "uni": {
     "a": 0.06123797235073893,
@@ -6198,7 +6198,7 @@
     "author": "Neil Lawrence",
     "notation": "/Users/neil/lawrennd/lamd/lamd/includes/talk-notation.tex",
     "alphabet": "lamd",
-    "alphabetSize": 188,
+    "alphabetSize": 187,
     "trained": "2026-09-07",
     "normalisedBytes": 2206750,
     "H0": 4.8941

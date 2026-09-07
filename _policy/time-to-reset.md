@@ -147,7 +147,9 @@ EXISTING SNIPPETS USED:
 
 \notes{When I gave evidence to the Business and Trade Select Committee I was asked about the UK's weaknesses. I said one of them is a lack of confidence in our own people, our own businesses, and our own universities. We look across the Atlantic at organisations that are brilliant. We want them here. But by over-emphasising what they can do for the economy, we forget that the growth will not come from them. It will come from our businesses adopting, assimilating and innovating.}
 
-\notes{The track record of centrally deploying technology on people, without engaging them, is the Horizon scandal. That is not a metaphor I reach for lightly. It is what happens when a system is imposed, the people who use it have no voice, and the institution that deployed it cannot admit the machine is wrong.}
+\notes{The track record of centrally deploying technology on people, without engaging them, is the Horizon scandal. Horizon is what happens when a system is imposed, the people who use it have no voice, and the institution that deployed it won't admit the machine can be wrong.}
+
+\section{The Alternative: Ground Up}
 
 <!-- MISSING SNIPPET: _policy/includes/south-cambridgeshire-planning.md
      Existing `_policy/includes/building-from-ground-up.md` covers Greater

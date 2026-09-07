@@ -71,6 +71,7 @@ MISSING SNIPPETS (drafted inline below; factor out if reused):
 
 EXISTING SNIPPETS USED:
 
+- `_policy/includes/digital-oligarchy-guardian.md`
 - `_software/includes/horizon-scandal.md`
 - `_policy/includes/building-from-ground-up.md`
 - `_policy/includes/compute-concentration.md`
@@ -98,6 +99,10 @@ EXISTING SNIPPETS USED:
 \notes{The AI race is one of those stories. You can see its footprints in hyperscale partnerships, the sovereignty unit, the compute target. Each one looks like a decision. Most of them are reflexes. A race implies one winner and a field of losers. That is a dangerous frame for the UK. We will not be plucky Brits snatching a bronze. We will be targeting innovations that are not on the entrée of what our citizens and businesses need.}
 
 \speakernotes{Acknowledge Panel 1, then turn the race question. Do not spend more than two minutes on the Monty Python beat.}
+
+\section{An Old Warning}
+
+\include{_policy/includes/digital-oligarchy-guardian.md}
 
 <!-- MISSING SNIPPET: _policy/includes/value-in-the-spread.md -->
 

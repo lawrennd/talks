@@ -693,7 +693,11 @@ function updateDisplay() {
     const be = el('dasher-bits');
     const ae = el('dasher-avgbits');
     const ee = el('dasher-entropy');
-    if (te) te.textContent = (S.text || '').replace(/ /g, '⎵') + '▋';
+    if (te) {
+        te.textContent = (S.text || '').replace(/ /g, '⎵') + '▋';
+        // Keep the writing point visible: older text scrolls off to the left
+        te.scrollLeft = te.scrollWidth;
+    }
     if (be) be.textContent = S.totalBits.toFixed(1);
     if (ae) ae.textContent = S.text.length > 0
         ? (S.totalBits / S.text.length).toFixed(2) : '—';

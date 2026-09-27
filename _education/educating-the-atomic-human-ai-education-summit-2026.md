@@ -2,7 +2,7 @@
 title: "Educating the Atomic Human"
 subtitle: "Reaping what we sow"
 abstract: |
-  What we believe intelligence to be shapes what we choose to cultivate, measure and automate. Our notion of intelligence has been degraded by simplistic ideas of artificial intelligence largely driven by commercial interests. 
+  What we believe intelligence to be shapes what we choose to cultivate, measure and automate. Our notion of intelligence has been degraded by simplistic ideas of artificial intelligence largely driven by commercial interests. 
 
   Our fascination with artificial intelligence stems from the perceived uniqueness of human intelligence. Fears of AI concern not only how it invades our digital lives, but the implied threat of an intelligence that displaces us from our position at the centre of the world.
 
@@ -42,80 +42,177 @@ transition: None
 ---
 \define{noSlideTitle}
 
-\notes{The summit theme is AI and Human Intelligence in Education. The
-organisers asked particularly for thoughts on what current AI systems
-can and cannot tell us about human intelligence; which human
-capabilities may be placed at risk through poorly considered
-automation; and how AI might augment human knowledge, judgement and
-expertise. The through-line is that what we believe intelligence to be
-shapes what we cultivate, measure or automate.}
+\speakernotes{This is a 30 minute version. The structure is
+deliberately practical: why, what, how, do, document.}
 
-\section{What is Intelligence?}
+\notes{The target is not a technical catalogue of AI capability but the
+institutional reaction to AI challenges. Killer AI narratives often
+trigger disempowerment: they make the future feel inevitable, alien
+and ungovernable. The talk should bring the agency back to teachers,
+learners, universities, public institutions and civic society.}
+
+\newslide{Reacting to AI Challenges}
+
+\slidesincremental{
+* The danger is not only what machines can do.
+* It is how people react when they feel powerless.
+* Education should turn AI anxiety into agency.
+}
+
+\speakernotes{Open by acknowledging the dominant emotional frame: awe,
+fear and helplessness. Then move quickly to agency.}
+
+\notes{AI in education is not a question of whether a machine is
+intelligent in the abstract. It is a question of what systems we
+build, who they serve, and what human capabilities they strengthen or
+weaken.}
+
+\section{Why}
+
+\newslide{Why: Intelligence is Context Specific}
+
+\slides{
+* There is no single general intelligence.
+* Human intelligence is embodied, social and situated.
+* Education works because context matters.
+}
+
+\notes{The first response to disempowerment is conceptual. If we accept
+the myth of a single ladder of intelligence, then AI appears as a
+machine climbing past us. But human intelligence is not a single
+quantity. It is a collection of capabilities that operate in context:
+in bodies, in relationships, in institutions, in cultures.}
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
-\include{_ai/includes/the-atomic-eye.md}
-\include{_atomic-human/includes/fascination-with-ourselves.md}
-
-\section{What Machines Can and Cannot Tell Us}
-
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
-\include{_ai/includes/conversation-tedx.md}
-\include{_ai/includes/conversation-computer.md}
-\include{_data-science/includes/new-flow-of-information.md}
-\include{_atomic-human/includes/their-data-comes-from-us.md}
-\include{_ai/includes/baby-shoes.md}
-
-\section{Cultivating Human Intelligence}
-
-\include{_ai/includes/cuneiform.md}
-\include{_books/includes/the-structure-of-scientific-revolutions.md}
-\include{_art/includes/blake-newton.md}
-\include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
 \include{_ai/includes/people-culture-communicate.md}
 
-\notes{Cicero's cultura animi — the cultivation of the mind — is the
-right frame for this summit. Education is how a society decides which
-forms of intelligence to grow. When we automate assessment, tutoring
-or feedback without asking what those practices were cultivating, we
-risk measuring only what machines can see.}
+\section{What}
+
+\newslide{What: Accountability to Human Users}
+
+\slidesincremental{
+* AI systems should serve users, not absorb responsibility.
+* Delegation needs visible authority boundaries.
+* Accountability must stay with people and institutions.
+}
+
+\notes{Once we see intelligence as contextual, the design question
+changes. We are not asking whether the machine is generally
+intelligent. We are asking where it is appropriate to delegate, what
+evidence the system should provide, how a human can challenge it, and
+who remains responsible when something goes wrong.}
+
+\include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
 \include{_dialogue/includes/public-dialogue-education.md}
 
-\section{Capabilities at Risk}
-
-\include{_atomic-human/includes/the-trick-doesnt-replace-the-truth.md}
-\include{_ai/includes/the-sorcerers-apprentice.md}
-\include{_ai/includes/atrophy-and-cognitive-flattening.md}
-
-\section{Augmenting Judgement and Expertise}
-
-\include{_atomic-human/includes/trust-autonomy-embodiment.md}
-\include{_simulation/includes/the-moniac.md}
-\include{_ai/includes/processor-ham.md}
-\include{_data-science/includes/new-flow-of-information-ham.md}
-\include{_ai/includes/attention-cycles.md}
-\include{_business/includes/ft-op-ed.md}
-
-\section{Epilogue}
-
-\include{_ai/includes/bandwidth-vs-complexity.md}
-\include{_atomic-human/includes/nothing-to-worry-about.md}
-\include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
-
-\newslide{What We Choose to Cultivate}
+\newslide{The User Test}
 
 \slides{
-* Intelligence we can automate is not the whole of intelligence
-* Poorly considered automation risks atrophy of human capability
-* Education should reinvest attention in judgement, culture and expertise
+* Can the user understand what role AI played?
+* Can the user challenge or override the outcome?
+* Can the institution learn from failure?
 }
 
-\notes{Closing for this audience: assessment and education systems
-encode a theory of intelligence. If that theory is only what current
-AI systems can score, mimic or accelerate, we will cultivate a narrower
-humanity. The task is to use AI to free attention for the parts of
-intelligence that remain atomic — trust, embodiment, culture, and the
-relationships through which real learning happens.}
+\notes{This is the practical test for education. AI that reduces
+teacher workload can be useful. AI that makes teachers, learners or
+parents unable to understand or contest decisions is not merely
+technically flawed; it is institutionally dangerous.}
+
+\section{How}
+
+\newslide{How: Break the Scribes Model}
+
+\slidesincremental{
+* New information technologies can widen participation.
+* They can also create new gatekeepers.
+* Access is part of accountability.
+}
+
+\notes{The third step is access. The Mesopotamian scribes model is a
+world where the power to read, write and record is concentrated in a
+specialist class. AI can recreate that pattern if the ability to build,
+adapt and scrutinise these systems accumulates only inside large
+technology companies.}
+
+\include{_ai/includes/cuneiform.md}
+\include{_policy/includes/digital-autocracy.md}
+
+\newslide{Access Means Capability}
+
+\slidesincremental{
+* Access to tools.
+* Access to skills.
+* Access to evidence about how systems behave.
+}
+
+\speakernotes{Do not frame access as simply handing everyone a
+chatbot.}
+
+\notes{The deeper question is capability: can teachers adapt systems
+to their contexts? Can schools and universities audit claims made by
+suppliers? Can learners understand the tools that mediate their
+education? Can public institutions build enough internal competence
+not to be passive customers of proprietary systems?}
+
+\section{Do}
+
+\newslide{Do: Reinvest Attention}
+
+\slides{
+* Use AI to free human attention.
+* Reinvest that attention in learning and care.
+* Measure what matters to people, not only what is easy to automate.
+}
+
+\notes{The practical action is not automation for its own sake. It is
+attention reinvestment. If a system saves teacher time, where does that
+time go? If it saves administrative effort, is the benefit captured by
+the institution, the platform provider, or the learner?}
+
+\include{_policy/includes/attention-reinvestment-cycle.md}
+
+\section{Document}
+
+\newslide{Document: Share What Works}
+
+\slidesincremental{
+* Write down what you tried.
+* Record what changed in practice.
+* Share failures as well as successes.
+}
+
+\notes{Documentation is a civic act in an AI transition. If each school,
+department or university learns privately, power returns to vendors and
+consultants. If people share what they tried, what worked, what failed,
+and what evidence they used, then capability spreads across the
+system.}
+
+\newslide{Celebrate the Builders}
+
+\slides{
+* Celebrate teachers and learners who improve practice.
+* Celebrate institutions that share evidence openly.
+* Celebrate tools that increase agency rather than dependency.
+}
+
+\speakernotes{Close positively here.}
+
+\notes{The antidote to disempowerment is not another grand prediction.
+It is a visible culture of practice: people trying things, documenting
+them, learning from one another and celebrating those who build shared
+capability.}
+
+\newslide{A Practical Response}
+
+\slidesincremental{
+* Why: human intelligence is context specific.
+* What: keep systems accountable to human users.
+* How: widen access and break the scribes model.
+* Do: reinvest attention in human capability.
+* Document: share what worked and celebrate others.
+}
 
 \thanks
 

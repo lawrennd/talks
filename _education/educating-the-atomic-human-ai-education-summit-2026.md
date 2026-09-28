@@ -199,7 +199,7 @@ system.}
 
 \speakernotes{Close positively here. Keep Cambridge light: DSA is the
 main Do example; the local government accelerator is the only ai@cam
-pointer.}
+pointer. AI in Education is the education-sector Document example.}
 
 \notes{The antidote to disempowerment is not another grand prediction.
 It is a visible culture of practice: people trying things, documenting
@@ -214,6 +214,8 @@ capability.}
 * Share failures as well as successes.
 }
 
+\include{_education/includes/ai-in-education.md}
+
 \section{Conclusion}
 
 \newslide{A Practical Response}
@@ -223,7 +225,7 @@ capability.}
 * What: enfranchise human accountability; river gods are the failure mode.
 * How: reinvest attention through open institutions and piecemeal engineers.
 * Do: build with local partners, as DSA and local government show.
-* Document: share what worked and celebrate others.
+* Document: share what worked; AiEd Certified is one route.
 }
 
 \newslide{}{data-background-image="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue_scaled.png" data-background-size="contain" data-background-color="#ffffff"}

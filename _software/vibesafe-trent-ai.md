@@ -11,7 +11,11 @@ author:
 date: 2026-02-06
 venue: Trent.AI
 transition: None
+talktheme: white
+slide_setup: slide-setup-trent-rivers.html
 ---
+
+\define{sectionSlideBackground}{data-state="trent-section"}
 
 \include{_software/includes/vibesafe-opening.md}
 \include{_software/includes/vibesafe-philosophy.md}

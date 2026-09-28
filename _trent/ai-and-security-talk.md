@@ -13,7 +13,11 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: Trent.AI Offsite 
 transition: None
+talktheme: white
+slide_setup: slide-setup-trent-rivers.html
 ---
+
+\define{sectionSlideBackground}{data-state="trent-section"}
 
 \include{_books/includes/the-atomic-human.md}
 \include{_policy/includes/shannon-information.md}

@@ -21,7 +21,11 @@ reveal: True
 pptx: False
 docx: False
 ipynb: False
+talktheme: white
+slide_setup: slide-setup-trent-rivers.html
 ---
+
+\define{sectionSlideBackground}{data-state="trent-section"}
 
 \section{Context and objective}
 
@@ -137,4 +141,3 @@ ipynb: False
 \thanks
 
 \references
-

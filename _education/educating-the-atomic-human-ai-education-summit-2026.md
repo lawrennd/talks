@@ -59,6 +59,8 @@ learners, universities, public institutions and civic society.}
 * Education should turn AI anxiety into agency.
 }
 
+\include{_atomic-human/includes/gods-and-robots-scribeysense.md}
+
 \speakernotes{Open by acknowledging the dominant emotional frame: awe,
 fear and helplessness. Then move quickly to agency.}
 
@@ -84,6 +86,7 @@ quantity. It is a collection of capabilities that operate in context:
 in bodies, in relationships, in institutions, in cultures.}
 
 \include{_atomic-human/includes/artificial-general-vehicle.md}
+\include{_atomic-human/includes/narratives-vs-statistics.md}
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
 \include{_ai/includes/people-culture-communicate.md}
 
@@ -104,6 +107,8 @@ evidence the system should provide, how a human can challenge it, and
 who remains responsible when something goes wrong.}
 
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
+
+\include{_ai/includes/sorcerers-apprentice-system-zero.md}
 
 \include{_dialogue/includes/public-dialogue-education.md}
 
@@ -138,6 +143,7 @@ technology companies.}
 
 \include{_ai/includes/cuneiform.md}
 \include{_policy/includes/digital-autocracy.md}
+\include{_ai/includes/the-sorcerers-apprentice.md}
 
 \newslide{Access Means Capability}
 
@@ -156,6 +162,8 @@ suppliers? Can learners understand the tools that mediate their
 education? Can public institutions build enough internal competence
 not to be passive customers of proprietary systems?}
 
+\include{_business/includes/attention-flywheel-example-dsa.md}
+
 \section{Do}
 
 \newslide{Do: Reinvest Attention}
@@ -172,8 +180,11 @@ time go? If it saves administrative effort, is the benefit captured by
 the institution, the platform provider, or the learner?}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
+\include{_business/includes/attention-flywheel-example-ai-at-cam.md}
 
 \section{Document}
+
+\include{_policy/includes/piecemeal-social-engineers.md}
 
 \newslide{Document: Share What Works}
 
@@ -196,6 +207,8 @@ system.}
 * Celebrate institutions that share evidence openly.
 * Celebrate tools that increase agency rather than dependency.
 }
+
+\include{_ai/includes/cambridge-ai-initiatives-logos.md}
 
 \speakernotes{Close positively here.}
 

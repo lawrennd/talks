@@ -226,6 +226,12 @@ capability.}
 * Document: share what worked and celebrate others.
 }
 
+\newslide{}{data-background-image="https://inverseprobability.com/slides/diagrams/atomic-human/Atomic_H_Epilogue_scaled.png" data-background-size="contain" data-background-color="#ffffff"}
+
+\speakernotes{Close on the full Epilogue drawing. The panels we have been
+zooming into reassemble as one picture: sorcerer's apprentice, open
+society, wicked problems, who's stepping up.}
+
 \thanks
 
 \references

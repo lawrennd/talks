@@ -92,103 +92,87 @@ in bodies, in relationships, in institutions, in cultures.}
 
 \section{What}
 
-\newslide{What: Accountability to Human Users}
+\newslide{What: Enfranchise Human Accountability}
 
 \slidesincremental{
-* AI systems should serve users, not absorb responsibility.
-* Delegation needs visible authority boundaries.
-* Accountability must stay with people and institutions.
+* Keep people able to understand, challenge and own decisions.
+* Systems should answer to users and institutions, not absorb responsibility.
+* Enfranchisement is the opposite of digital oligarchy.
 }
 
-\notes{Once we see intelligence as contextual, the design question
-changes. We are not asking whether the machine is generally
-intelligent. We are asking where it is appropriate to delegate, what
-evidence the system should provide, how a human can challenge it, and
-who remains responsible when something goes wrong.}
+\notes{The What is human accountability: people and institutions must
+remain able to see what a system did, contest it, and take
+responsibility for outcomes. That is enfranchisement. The
+Mesopotamian scribes model shows how it fails: when only a specialist
+class can read and rewrite the record, everyone else is locked out of
+power. AI recreates that pattern if capability concentrates inside a
+digital oligarchy.}
 
-\include{_atomic-human/includes/trust-autonomy-embodiment.md}
+\include{_ai/includes/cuneiform.md}
+\include{_policy/includes/digital-oligarchy-guardian.md}
+\include{_policy/includes/digital-autocracy.md}
+\include{_atomic-human/includes/surveillance-goes-self-service.md}
+\include{_atomic-human/includes/epilogue-sorcerers-apprentice.md}
 
-\include{_ai/includes/sorcerers-apprentice-system-zero.md}
-\include{_atomic-human/includes/epilogue-separation-of-tasks.md}
+\newslide{Counter-example: River Gods Decide}
+
+\slidesincremental{
+* When people feel powerless, they defer to greater authorities.
+* “Let the AI decide” is the modern river god.
+* Losing enfranchisement looks like handing hard cases away.
+}
+
+\notes{River gods are the counter-example. When decisions become too
+difficult, societies have always been tempted to invoke a higher power
+and step back. Today that temptation is to let the model decide. The
+point is not a rule about which cases machines may touch. It is that
+without enfranchisement we stop being accountable: we outsource
+judgement precisely where human responsibility is most needed.}
+
+\include{_atomic-human/includes/river-gods-decide.md}
 
 \include{_dialogue/includes/public-dialogue-education.md}
 
-\newslide{The User Test}
-
-\slides{
-* Can the user understand what role AI played?
-* Can the user challenge or override the outcome?
-* Can the institution learn from failure?
-}
-
-\notes{This is the practical test for education. AI that reduces
-teacher workload can be useful. AI that makes teachers, learners or
-parents unable to understand or contest decisions is not merely
-technically flawed; it is institutionally dangerous.}
 
 \section{How}
 
-\newslide{How: Break the Scribes Model}
-
-\slidesincremental{
-* New information technologies can widen participation.
-* They can also create new gatekeepers.
-* Access is part of accountability.
-}
-
-\notes{The third step is access. The Mesopotamian scribes model is a
-world where the power to read, write and record is concentrated in a
-specialist class. AI can recreate that pattern if the ability to build,
-adapt and scrutinise these systems accumulates only inside large
-technology companies.}
-
-\include{_ai/includes/cuneiform.md}
-\include{_policy/includes/digital-autocracy.md}
-\include{_atomic-human/includes/epilogue-sorcerers-apprentice.md}
-\include{_atomic-human/includes/epilogue-generative-ai-popper.md}
-
-\newslide{Access Means Capability}
-
-\slidesincremental{
-* Access to tools.
-* Access to skills.
-* Access to evidence about how systems behave.
-}
-
-\speakernotes{Do not frame access as simply handing everyone a
-chatbot.}
-
-\notes{The deeper question is capability: can teachers adapt systems
-to their contexts? Can schools and universities audit claims made by
-suppliers? Can learners understand the tools that mediate their
-education? Can public institutions build enough internal competence
-not to be passive customers of proprietary systems?}
-
-\include{_business/includes/attention-flywheel-example-dsa.md}
-
-\section{Do}
-
-\newslide{Do: Reinvest Attention}
+\newslide{How: Reinvest Attention Through Open Institutions}
 
 \slides{
 * Use AI to free human attention.
-* Reinvest that attention in learning and care.
-* Measure what matters to people, not only what is easy to automate.
+* Reinvest that attention through knowledge networks.
+* Trust piecemeal social engineers, not grand narratives.
 }
 
-\notes{The practical action is not automation for its own sake. It is
-attention reinvestment. If a system saves teacher time, where does that
-time go? If it saves administrative effort, is the benefit captured by
-the institution, the platform provider, or the learner?}
+\notes{The practical method is not automation for its own sake. It is
+attention reinvestment: free human attention, then put it back into
+learning, care and judgement. Popper's open society supplies the
+institutional how. Change comes through piecemeal social engineers —
+people who make careful, reversible improvements inside institutions —
+not through deference to a few Great Men or a single general
+intelligence.}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
-\include{_business/includes/attention-flywheel-example-ai-at-cam.md}
+\include{_policy/includes/piecemeal-social-engineers.md}
+\include{_atomic-human/includes/epilogue-open-society.md}
 \include{_atomic-human/includes/epilogue-wicked-problems.md}
+
+\section{Do}
+
+\newslide{Do: Build Capability Where the Need Is}
+
+\slidesincremental{
+* Start with local problems and local partners.
+* Build capacity, do not only buy products.
+* Share methods so others can adapt them.
+}
+
+\include{_business/includes/attention-flywheel-example-dsa.md}
+
+\include{_ai/includes/local-government-ai-accelerator.md}
 
 \section{Document}
 
-\include{_policy/includes/piecemeal-social-engineers.md}
-\include{_atomic-human/includes/epilogue-open-society.md}
 \include{_atomic-human/includes/epilogue-steerage.md}
 
 \newslide{Document: Share What Works}
@@ -213,9 +197,9 @@ system.}
 * Celebrate tools that increase agency rather than dependency.
 }
 
-\include{_atomic-human/includes/epilogue-whos-stepping-up.md}
-
-\speakernotes{Close positively here.}
+\speakernotes{Close positively here. Keep Cambridge light: DSA is the
+main Do example; the local government accelerator is the only ai@cam
+pointer.}
 
 \notes{The antidote to disempowerment is not another grand prediction.
 It is a visible culture of practice: people trying things, documenting
@@ -226,9 +210,9 @@ capability.}
 
 \slidesincremental{
 * Why: human intelligence is context specific.
-* What: keep systems accountable to human users.
-* How: widen access and break the scribes model.
-* Do: reinvest attention in human capability.
+* What: enfranchise human accountability; river gods are the failure mode.
+* How: reinvest attention through open institutions and piecemeal engineers.
+* Do: build with local partners, as DSA and local government show.
 * Document: share what worked and celebrate others.
 }
 

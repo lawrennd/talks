@@ -1,6 +1,6 @@
 ---
 title: "Educating the Atomic Human"
-subtitle: "Reaping what we sow"
+subtitle: "Why, What, How, Do, Document"
 abstract: |
   What we believe intelligence to be shapes what we choose to cultivate, measure and automate. Our notion of intelligence has been degraded by simplistic ideas of artificial intelligence largely driven by commercial interests. 
 
@@ -39,8 +39,9 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 venue: Cambridge AI and Education Summit 2026, Hilton Cambridge City Centre
 transition: None
+talktheme: white
+talkcss: ai-cam.css
 ---
-\define{noSlideTitle}
 
 \speakernotes{This is a 30 minute version. The structure is
 deliberately practical: why, what, how, do, document.}
@@ -71,6 +72,18 @@ weaken.}
 
 \section{Why}
 
+\include{_atomic-human/includes/artificial-general-vehicle.md}
+
+\notes{The first response to disempowerment is conceptual. If we accept
+the myth of a single ladder of intelligence, then AI appears as a
+machine climbing past us. But human intelligence is not a single
+quantity. It is a collection of capabilities that operate in context:
+in bodies, in relationships, in institutions, in cultures.}
+
+\include{_ai/includes/embodiment-factors-walking-vs-light.md}
+\include{_ai/includes/people-culture-communicate.md}
+\include{_atomic-human/includes/narratives-vs-statistics.md}
+
 \newslide{Why: Intelligence is Context Specific}
 
 \slides{
@@ -79,34 +92,7 @@ weaken.}
 * Education works because context matters.
 }
 
-\notes{The first response to disempowerment is conceptual. If we accept
-the myth of a single ladder of intelligence, then AI appears as a
-machine climbing past us. But human intelligence is not a single
-quantity. It is a collection of capabilities that operate in context:
-in bodies, in relationships, in institutions, in cultures.}
-
-\include{_atomic-human/includes/artificial-general-vehicle.md}
-\include{_atomic-human/includes/narratives-vs-statistics.md}
-\include{_ai/includes/embodiment-factors-walking-vs-light.md}
-\include{_ai/includes/people-culture-communicate.md}
-
 \section{What}
-
-\newslide{What: Enfranchise Human Accountability}
-
-\slidesincremental{
-* Keep people able to understand, challenge and own decisions.
-* Systems should answer to users and institutions, not absorb responsibility.
-* Enfranchisement is the opposite of digital oligarchy.
-}
-
-\notes{The What is human accountability: people and institutions must
-remain able to see what a system did, contest it, and take
-responsibility for outcomes. That is enfranchisement. The
-Mesopotamian scribes model shows how it fails: when only a specialist
-class can read and rewrite the record, everyone else is locked out of
-power. AI recreates that pattern if capability concentrates inside a
-digital oligarchy.}
 
 \include{_ai/includes/cuneiform.md}
 \include{_policy/includes/digital-oligarchy-guardian.md}
@@ -131,10 +117,36 @@ judgement precisely where human responsibility is most needed.}
 
 \include{_atomic-human/includes/river-gods-decide.md}
 
+\notes{The What is human accountability: people and institutions must
+remain able to see what a system did, contest it, and take
+responsibility for outcomes. That is enfranchisement. The
+Mesopotamian scribes model shows how it fails: when only a specialist
+class can read and rewrite the record, everyone else is locked out of
+power. AI recreates that pattern if capability concentrates inside a
+digital oligarchy.}
+
+
 \include{_dialogue/includes/public-dialogue-education.md}
+
+\newslide{What: Enfranchise Human Accountability}
+
+\slidesincremental{
+* Keep people able to understand, challenge and own decisions.
+* Systems should answer to users and institutions, not absorb responsibility.
+* Enfranchisement is the opposite of digital oligarchy.
+}
+
 
 
 \section{How}
+
+\include{_policy/includes/mind-the-gap.md}
+
+\include{_policy/includes/piecemeal-social-engineers.md}
+\include{_atomic-human/includes/epilogue-open-society.md}
+\include{_atomic-human/includes/epilogue-wicked-problems.md}
+
+\include{_policy/includes/attention-reinvestment-cycle.md}
 
 \newslide{How: Reinvest Attention Through Open Institutions}
 
@@ -152,12 +164,11 @@ people who make careful, reversible improvements inside institutions —
 not through deference to a few Great Men or a single general
 intelligence.}
 
-\include{_policy/includes/attention-reinvestment-cycle.md}
-\include{_policy/includes/piecemeal-social-engineers.md}
-\include{_atomic-human/includes/epilogue-open-society.md}
-\include{_atomic-human/includes/epilogue-wicked-problems.md}
-
 \section{Do}
+
+\include{_business/includes/attention-flywheel-example-dsa.md}
+
+\include{_ai/includes/local-government-ai-accelerator.md}
 
 \newslide{Do: Build Capability Where the Need Is}
 
@@ -167,21 +178,10 @@ intelligence.}
 * Share methods so others can adapt them.
 }
 
-\include{_business/includes/attention-flywheel-example-dsa.md}
-
-\include{_ai/includes/local-government-ai-accelerator.md}
 
 \section{Document}
 
 \include{_atomic-human/includes/epilogue-steerage.md}
-
-\newslide{Document: Share What Works}
-
-\slidesincremental{
-* Write down what you tried.
-* Record what changed in practice.
-* Share failures as well as successes.
-}
 
 \notes{Documentation is a civic act in an AI transition. If each school,
 department or university learns privately, power returns to vendors and
@@ -205,6 +205,16 @@ pointer.}
 It is a visible culture of practice: people trying things, documenting
 them, learning from one another and celebrating those who build shared
 capability.}
+
+\newslide{Document: Share What Works}
+
+\slidesincremental{
+* Write down what you tried.
+* Record what changed in practice.
+* Share failures as well as successes.
+}
+
+\section{Conclusion}
 
 \newslide{A Practical Response}
 

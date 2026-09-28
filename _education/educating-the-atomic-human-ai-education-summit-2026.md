@@ -109,6 +109,7 @@ who remains responsible when something goes wrong.}
 \include{_atomic-human/includes/trust-autonomy-embodiment.md}
 
 \include{_ai/includes/sorcerers-apprentice-system-zero.md}
+\include{_atomic-human/includes/epilogue-separation-of-tasks.md}
 
 \include{_dialogue/includes/public-dialogue-education.md}
 
@@ -143,7 +144,8 @@ technology companies.}
 
 \include{_ai/includes/cuneiform.md}
 \include{_policy/includes/digital-autocracy.md}
-\include{_ai/includes/the-sorcerers-apprentice.md}
+\include{_atomic-human/includes/epilogue-sorcerers-apprentice.md}
+\include{_atomic-human/includes/epilogue-generative-ai-popper.md}
 
 \newslide{Access Means Capability}
 
@@ -181,10 +183,13 @@ the institution, the platform provider, or the learner?}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
 \include{_business/includes/attention-flywheel-example-ai-at-cam.md}
+\include{_atomic-human/includes/epilogue-wicked-problems.md}
 
 \section{Document}
 
 \include{_policy/includes/piecemeal-social-engineers.md}
+\include{_atomic-human/includes/epilogue-open-society.md}
+\include{_atomic-human/includes/epilogue-steerage.md}
 
 \newslide{Document: Share What Works}
 
@@ -208,7 +213,7 @@ system.}
 * Celebrate tools that increase agency rather than dependency.
 }
 
-\include{_ai/includes/cambridge-ai-initiatives-logos.md}
+\include{_atomic-human/includes/epilogue-whos-stepping-up.md}
 
 \speakernotes{Close positively here.}
 

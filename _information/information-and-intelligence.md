@@ -40,6 +40,8 @@ venue: "The Stokes Society, Pembroke College"
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
+talktheme: white
+talkcss: mlatcl.css
 ---
 
 <!-- Stokes Society, 12 October 2026. General-audience sibling of

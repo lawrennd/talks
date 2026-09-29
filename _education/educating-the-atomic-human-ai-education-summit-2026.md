@@ -81,7 +81,6 @@ quantity. It is a collection of capabilities that operate in context:
 in bodies, in relationships, in institutions, in cultures.}
 
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
-\include{_ai/includes/people-culture-communicate.md}
 \include{_atomic-human/includes/narratives-vs-statistics.md}
 
 \newslide{Why: Intelligence is Context Specific}
@@ -100,15 +99,9 @@ in bodies, in relationships, in institutions, in cultures.}
 \include{_atomic-human/includes/surveillance-goes-self-service.md}
 \include{_atomic-human/includes/epilogue-sorcerers-apprentice.md}
 
-\newslide{Counter-example: River Gods Decide}
+\subsection{River Gods}
 
-\slidesincremental{
-* When people feel powerless, they defer to greater authorities.
-* “Let the AI decide” is the modern river god.
-* Losing enfranchisement looks like handing hard cases away.
-}
-
-\notes{River gods are the counter-example. When decisions become too
+\notes{Why does this happen? When decisions become too
 difficult, societies have always been tempted to invoke a higher power
 and step back. Today that temptation is to let the model decide. The
 point is not a rule about which cases machines may touch. It is that
@@ -116,6 +109,14 @@ without enfranchisement we stop being accountable: we outsource
 judgement precisely where human responsibility is most needed.}
 
 \include{_atomic-human/includes/river-gods-decide.md}
+
+\newslide{Let the AI decide!}
+
+\slidesincremental{
+* When people feel powerless, they defer to greater authorities.
+* “Let the AI decide” is the modern river god.
+* Losing enfranchisement looks like handing hard cases away.
+}
 
 \notes{The What is human accountability: people and institutions must
 remain able to see what a system did, contest it, and take
@@ -125,10 +126,9 @@ class can read and rewrite the record, everyone else is locked out of
 power. AI recreates that pattern if capability concentrates inside a
 digital oligarchy.}
 
-
 \include{_dialogue/includes/public-dialogue-education.md}
 
-\newslide{What: Enfranchise Human Accountability}
+\newslide{What: Enfranchise human accountability}
 
 \slidesincremental{
 * Keep people able to understand, challenge and own decisions.
@@ -148,9 +148,9 @@ digital oligarchy.}
 
 \include{_policy/includes/attention-reinvestment-cycle.md}
 
-\newslide{How: Reinvest Attention Through Open Institutions}
+\newslide{How: Reinvest attention & open institutions}
 
-\slides{
+\slidesincremental{
 * Use AI to free human attention.
 * Reinvest that attention through knowledge networks.
 * Trust piecemeal social engineers, not grand narratives.
@@ -170,7 +170,7 @@ intelligence.}
 
 \include{_ai/includes/local-government-ai-accelerator.md}
 
-\newslide{Do: Build Capability Where the Need Is}
+\newslide{Do: Build capability where the need Is}
 
 \slidesincremental{
 * Start with local problems and local partners.
@@ -191,7 +191,7 @@ system.}
 
 \newslide{Celebrate the Builders}
 
-\slides{
+\slidesincremental{
 * Celebrate teachers and learners who improve practice.
 * Celebrate institutions that share evidence openly.
 * Celebrate tools that increase agency rather than dependency.

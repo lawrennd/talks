@@ -216,6 +216,10 @@ capability.}
 
 \include{_education/includes/ai-in-education.md}
 
+\speakernotes{Flag that Sarah Alcock is presenting earlier in the Summit
+(Responsible AI implementation), alongside Explorer-certified Hills Road
+Sixth Form College.}
+
 \section{Conclusion}
 
 \newslide{A Practical Response}

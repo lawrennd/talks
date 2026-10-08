@@ -26,6 +26,7 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 reveal: True
+youtube: bKLPgnaVpEI
 pptx: True
 potx: /Users/neil/lawrennd/lamd/lamd/includes/trent-reference.potx
 docx: False

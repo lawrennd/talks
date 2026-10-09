@@ -36,53 +36,35 @@ talkcss: trent.css
 cover-image: diagrams/people/neil-portrait-trent.jpg
 ---
 
-\newslide{AI safety is becoming an organisational problem}
+\newslide{AI safety - an accountability problem}
 
 \slides{
-* Alignment framing: values, hallucinations, constraints — *yesterday's questions*.
-* Today: AI systems execute real workflows inside real organisations.
-* The right question: **who has the authority to decide when the answer matters?**
+> Accounting is the numbers. Accountability is the human authority and the judgment.
 }
 
-\notes{Alignment research — from utility maximisation through Constitutional AI and RLHF — treats safety as a property of a model. But today's systems are multi-agent teams embedded in operations: they plan, use tools, modify software, and execute business workflows. Multi-agent systems succeed because they absorb patterns from effective organisations: diverse perspectives, constructive disagreement, independent judgment, shared context, mechanisms for correction. The question is not why multiple agents perform better together. It is why they behave so much like organisations — and what that implies for AI safety. At that point the question of authority becomes unavoidable. It is not a model property. It is an organisational one.}
+\notes{Alignment research, from utility maximisation through Constitutional AI and RLHF, treats safety as a property of a model. But today's systems are multi-agent teams embedded in operations. They plan, use tools, modify software, and execute business workflows. Multi-agent systems succeed because they absorb patterns from effective organisations: diverse perspectives, constructive disagreement, independent judgment, shared context, mechanisms for correction. The question is not why multiple agents perform better together. It is why they behave so much like organisations and what that implies for AI safety. At that point the question of authority becomes unavoidable. It stops being a property of the model and becomes a property of the organisation.}
 
-\newslide{What organisations already know}
+\newslide{Agentic debt}
 
 \slides{
-* **Viable Systems Model** (Stafford Beer, 1972): authority *down*, signals *up*.
-* Beer called this **attenuation** — not less control, *better* control.
-}
-\newslide{Accounting vs Accountability}
-\slides{
-> "Accounting is the numbers. Accountability is the human authority and the judgment."
-* AI excels at accounting. Accountability is different — someone must still own the decision.
+> devolving authority without judgment undermines accountability and creates agentic debt
 }
 
-\notes{Long before large language models, organisational theorists wrestled with the same problem: how do you control a system too complex for any one person to fully understand? Stafford Beer's Viable Systems Model gives an answer: authority is distributed downward while information is filtered upward. People closest to the work make local decisions. Only what requires intervention reaches leadership. Beer called this filtering process attenuation. The result is not less control, it is better control.
 
-This is where today's discussion around AI safety often falls short. Organisations are rapidly automating operational work using AI agents, but many assume that judgment can be automated alongside execution. AI is becoming exceptionally good at accounting — summarising logs, correlating alerts, generating reports, executing workflows at speed. But accountability remains fundamentally different. Someone must still own the decision. Someone must still carry the authority.}
+\notes{Long before large language models, organisational theorists wrestled with the same problem: how do you control a system too complex for any one person to fully understand? Stafford Beer's Viable Systems Model [@Beer:brainofthefirm72] gives an answer: authority is distributed downward while information is filtered upward. People closest to the work make local decisions. Only what requires intervention reaches leadership. Beer called this filtering process attenuation. The result is not less control, it is better control.}
 
-\newslide{The judgment layer}
+\notes{This is where today's discussion around AI safety often falls short. Organisations are rapidly automating operational work using AI agents, but many assume that judgment can be automated alongside execution. AI is becoming exceptionally good at accounting — summarising logs, correlating alerts, generating reports, executing workflows at speed. But accountability remains fundamentally different. Someone must still own the decision. Someone must still carry the authority.}
 
-\slides{
-* **Good Regulator Theorem** (Conant & Ashby, 1970): every good regulator must contain a *model* of what it regulates.
-* Humans model not just the software but the organisation: priorities, risk, history, people.
-* Automating without preserving judgment makes it *invisible*, not absent — **agentic debt**.
-* The intervention: make the judgment layer **explicit**; deliver it to the AI-augmented engineer.
-* *The more autonomous AI becomes, the more valuable this judgment becomes — not less.*
-}
+\newslide{Augmented engineers}
 
-\notes{The Good Regulator Theorem makes precise why judgment cannot be automated away: every good regulator must contain a model of what it regulates. Humans naturally build these models — not just of the software, but of the organisation: priorities, risk tolerance, previous incidents, customers, deadlines, the personalities of the people making decisions. Should this finding interrupt production? Escalate? Is this noise or signal? These are not deterministic calculations. They are contextual judgments.
+\slides{> delegation requies undersanding, augmentation supplies understanding}
 
-When we automate agentic operations without preserving the judgment layer, we remove the regulator that holds the model. The process continues; the model does not. The result is agentic debt: delegation without legible boundaries.
+\notes{The Good Regulator Theorem [@Conant:goodregulator70] gives this idea mathematical teeth. The theorem tells us that every good regulator must contain a model of what it regulates. Humans naturally build these models, of each other, of the software and of the organisation they sit in. For the organisation this includes risk tolerance, previous incidents, customers, deadlines, the personalities of the people making decisions. Should a particular finding interrupt production? Should it be escalated? Is it noise or signal? These are contextual judgments.}
 
-The technical intervention is: make the judgment layer explicit. Separate it architecturally from automated execution. The AI-augmented engineer should receive the rendered judgment layer — here is what the system is about to do, here is the decision it needs from you, here is the context to make it well. That is what Trent's platform delivers. The more autonomous AI systems become, the more valuable this judgment becomes — not less.}
+\notes{If we automate agentic operations without preserving the judgment layer, we remove the regulator that holds the model. The process continues; the model does not. The result is agentic debt: delegation without legible boundaries.}
 
-\newslide{}
+\notes{The technical intervention is: make the judgment layer explicit. Separate it architecturally from automated execution. The AI-augmented engineer should receive the rendered judgment layer. Here is what the system is about to do, here is the decision it needs from you, here is the context to make it well. That is what Trent's platform delivers. The more autonomous AI systems become, the more valuable this judgment becomes — not less.}
 
-\slides{
-> We need the judgment layer separated, the authority of the AI-augmented engineer preserved, and the system built to deliver both.
-}
 
 \notes{The alignment framing asks: how do we make the AI safe? The organisational framing asks: how do we build the system so that human judgment remains structurally authoritative? The answer is not better value specification. It is engineering the judgment layer as a first-class architectural component.}
 

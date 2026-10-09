@@ -33,7 +33,7 @@ docx: False
 ipynb: False
 talktheme: white
 talkcss: trent.css
-cover-image: diagrams/people/neil-trent-portrait.jpg
+cover-image: diagrams/people/neil-portrait-trent.jpg
 ---
 
 \newslide{AI safety is becoming an organisational problem}

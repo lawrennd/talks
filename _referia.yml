@@ -1,0 +1,229 @@
+# Talks calendar overview (referia CIP-0010 tall-first / inline_list).
+# Browse talk front matter across topic collections; excludes _posts, _notes,
+# _includes, _layouts, and other non-talk directories.
+#
+# Serve from this directory, e.g.:
+#   referia serve --root ~/lawrennd/talks
+# or open assessment notebook after loading this config.
+
+referia_config_version: 2
+title: "Talks — calendar"
+description: >
+  Overview of talk markdown across topic collections (_physics, _ai, _ml, …).
+  Default view: dated today to +180 days, by collection, soonest first.
+date: 2026-10-12
+author: Neil D. Lawrence
+
+display:
+  layout: inline_list
+  # Collapsible body under each listing row (referia display.detail_field).
+  detail_field: abstract
+  # Session start + Clear: talks in an upcoming window, by collection,
+  # soonest date first. Relative dates resolve when the session loads / resets.
+  filter_defaults:
+    complete: any
+    date:
+      after: today-30d
+      before: today+180d
+    _sort: date:desc
+    _group: directory
+
+# Site GitHub identity reverse-engineered from Jekyll config:
+#   _config.yml → github_username, ghub.repository
+#   collection _lamd.yml → ghub.branch (gh-pages)
+# TODO: load _config.yml directly as constants once lynguine fixes
+# backlog/bugs/2026-10-12_yaml-constants-nested-mapping.md
+constants:
+  type: local
+  index: index
+  select: github
+  data:
+    - index: github
+      github_username: lawrennd
+      github_repository: talks
+      github_branch: gh-pages
+
+# --- tall discovery (lynguine markdown_directory) --------------------------
+input:
+  type: markdown_directory
+  index: talkPath
+  source:
+    - directory: _accelerate
+      glob: "*.md"
+    - directory: _ai
+      glob: "*.md"
+    - directory: _atomic-human
+      glob: "*.md"
+    - directory: _business
+      glob: "*.md"
+    - directory: _cognitive-science
+      glob: "*.md"
+    - directory: _data-science
+      glob: "*.md"
+    - directory: _deepgp
+      glob: "*.md"
+    - directory: _delve
+      glob: "*.md"
+    - directory: _dimred
+      glob: "*.md"
+    - directory: _economics
+      glob: "*.md"
+    - directory: _education
+      glob: "*.md"
+    - directory: _engineering
+      glob: "*.md"
+    - directory: _execed
+      glob: "*.md"
+    - directory: _governance
+      glob: "*.md"
+    - directory: _gp
+      glob: "*.md"
+    - directory: _gpy
+      glob: "*.md"
+    - directory: _health
+      glob: "*.md"
+    - directory: _information
+      glob: "*.md"
+    - directory: _jaynes-world
+      glob: "*.md"
+    - directory: _ml
+      glob: "*.md"
+    - directory: _mlss
+      glob: "*.md"
+    - directory: _neurips
+      glob: "*.md"
+    - directory: _philosophy
+      glob: "*.md"
+    - directory: _physics
+      glob: "*.md"
+    - directory: _policy
+      glob: "*.md"
+    - directory: _privacy
+      glob: "*.md"
+    - directory: _r255
+      glob: "*.md"
+    - directory: _science
+      glob: "*.md"
+    - directory: _software
+      glob: "*.md"
+    - directory: _trent
+      glob: "*.md"
+    - directory: _uq
+      glob: "*.md"
+    - directory: _vision
+      glob: "*.md"
+  fields:
+    - title
+    - date
+    - venue
+    - abstract
+    - layout
+    - subtitle
+  store_fields:
+    directory: sourceDirectory
+    filename: sourceFilename
+    root: sourceRoot
+  compute:
+    - field: talkPath
+      function: render_liquid
+      args:
+        template: "{{ sourceDirectory }}/{{ sourceFilename }}"
+      row_args:
+        sourceDirectory: sourceDirectory
+        sourceFilename: sourceFilename
+    - field: collection
+      function: render_liquid
+      args:
+        # basename so absolute sourceDirectory still yields _ai / _physics
+        template: "{{ sourceDirectory | split: '/' | last }}"
+      row_args:
+        sourceDirectory: sourceDirectory
+    # inline_list title links via `url` (see referia _inline_list_href).
+    # github_* come from constants / _config.yml but must be passed as args
+    # (parameter values), not row_args — constants are not input columns.
+    - field: url
+      function: render_liquid
+      args:
+        template: >-
+          https://github.com/{{ github_username }}/{{ github_repository }}/edit/{{ github_branch }}/{{ collection }}/{{ sourceFilename }}
+        github_username: lawrennd
+        github_repository: talks
+        github_branch: gh-pages
+      row_args:
+        collection: collection
+        sourceFilename: sourceFilename
+    # inline_list shows title / date / description read-only from input.
+    - field: description
+      function: render_liquid
+      args:
+        template: >-
+          {% if subtitle %}{{ subtitle }}{% endif %}{% if subtitle and venue %} · {% endif %}{% if venue %}{{ venue }}{% endif %}
+      row_args:
+        subtitle: subtitle
+        venue: venue
+    - field: today
+      function: today
+
+# --- assessments / filters / sort (CIP-0010) ------------------------------
+output:
+  type: yaml
+  index: talkPath
+  filename: talks-scores.yml
+  directory: ./info
+  columns:
+    - complete
+    - category
+
+review:
+  - type: Checkbox
+    field: complete
+    default: false
+    args:
+      description: Done
+  - type: Select
+    field: category
+    args:
+      description: Category
+      options:
+        - ""
+        - Trent
+        - Epokay
+        - Public Understanding
+        - Research
+  - type: SaveButton
+
+filters:
+  - field: complete
+    type: boolean
+    label: Done
+  - field: category
+    type: categorical
+    label: Category
+    values:
+      - Trent
+      - Epokay
+      - Public Understanding
+      - Research
+  - field: title
+    type: contains
+    label: Title
+  - field: venue
+    type: contains
+    label: Venue
+  - field: date
+    type: date_range
+    label: Date
+  - field: layout
+    type: categorical
+    label: Layout
+
+sort:
+  - field: date
+    order: asc
+
+viewer:
+  - liquid: |
+      Tick **Done** on talks you have prepared (or use Select all filtered).
+      Default view: incomplete talks from today -30 days through +180 days, grouped by
+      collection, furthest into future first. Clear restores that default.
+      Widen the date range to browse the full archive.

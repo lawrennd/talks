@@ -76,6 +76,7 @@ talkcss: mlatcl.css
 \notes{While this is a tautology, we will try to formalise it through information theory. The key question is: what mathematical structure is forced on a system that cannot appeal to external adjudication?}
 
 \include{_information-game/includes/no-barber-principle.md}
+\include{_maths/includes/lawvere-diagonalisation.md}
 \include{_information-game/includes/baez-information-loss-axioms.md}
 \include{_information-game/includes/inaccessible-game-set-up.md}
 \include{_information-game/includes/information-isolation.md}

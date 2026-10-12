@@ -2,16 +2,16 @@
 title: "AI and Software"
 subtitle: ""
 abstract: |
-  Software is at the frontier of change for AI.
+  Software is the frontier for AI driven change.
 
   Drawing on *The Atomic Human*, this keynote starts by giving a clear model of what
-  machine intelligence is and is not, then applies that model to the software
-  industry: how generative systems alter information flows inside the firm,
-  why superficial automation can hollow out expertise, and how intellectual
+  machine intelligence is and is not. It applies that model to the software
+  industry. How do generative AI systems alter information flows inside the firm?
+  How superficial automation can hollow out expertise. How intellectual
   and agentic debt accumulate when organisations ship faster than they can
-  explain. The talk introduces the *judgment layer* — the organisational
-  interface where human authority still owns consequence — and how we retain
-  it in an age of AI-generated code. It closes with Trent, where we are
+  explain. The talk introduces the *judgment layer*. This is the organisational
+  interface where human authority still owns consequence. We look at how retain
+  this layer in an age of AI-generated code. We closes with Trent.AI, where we are
   putting that idea into practice for complex software systems.
 author:
 - given: Neil D.

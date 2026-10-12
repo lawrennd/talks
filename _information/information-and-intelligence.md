@@ -95,10 +95,17 @@ talkcss: mlatcl.css
 See @Lawrence-inaccessible25
 }
 
-\section{Intelligence}
+\include{_physics/includes/maxwells-demon.md}
 
-\notes{The perpetual motion analogy is no longer only an analogy. Once the game is internally adjudicable, the same kind of constraint that forbids a fuel-less engine begins to look like a constraint on unbounded intelligence. Thermodynamics limits mechanical engines. Information isolation limits information engines. Superintelligence, on this view, is the claim that those limits can be wished away.}
+\section{Conclusion}
 
+\notes{The hope is that with(in) the inaccessible game the perpetual motion analogy is no longer only an analogy. Once the game is forced to be internally adjudicable, the same kind of constraint that forbids a fuel-less engine could also be a constraint on unbounded intelligence. Thermodynamics limits mechanical engines. Does information isolation limits information processing engines? The extreme versions of superintelligence (under this view), would be claims that those limits can be wished away.}
+
+\slidesincremental{
+* Introduced inaccessible game
+* Framework for studying information isolation
+* A selection principle for a self-adjudicating system?
+}
 \thanks
 
 \references

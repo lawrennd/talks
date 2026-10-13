@@ -1,0 +1,1296 @@
+- talkPath: _accelerate/accelerate-overview.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.572267'
+  complete_created: '2026-10-12 07:09:24.572267'
+- talkPath: _accelerate/accelerator-intro.md
+- talkPath: _accelerate/ai-for-science-in-the-era-of-generative-ai-models.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.645102'
+  complete_created: '2026-10-12 07:09:24.645102'
+- talkPath: _ai/2026-08-18_ippr_digital-competition.md
+- talkPath: _ai/2026-08-18_time-to-reset_speaker-notes.md
+- talkPath: _ai/ai-and-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.564712'
+  complete_created: '2026-10-12 07:09:24.564712'
+- talkPath: _ai/ai-and-intellectual-debt.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.540692'
+  complete_created: '2026-10-12 07:09:24.540692'
+- talkPath: _ai/ai-and-security-berkeley-summit.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.799442'
+  complete_created: '2026-10-12 07:09:24.799442'
+- talkPath: _ai/ai-and-security-handelsblatt-tech-2026.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.794192'
+  complete_created: '2026-10-12 07:09:24.794192'
+- talkPath: _ai/ai-and-security-talk.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.753334'
+  complete_created: '2026-10-12 07:09:24.753334'
+- talkPath: _ai/ai-and-security-trent-offsite-2026.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.776913'
+  complete_created: '2026-10-12 07:09:24.776913'
+- talkPath: _ai/ai-at-cam.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.617776'
+  complete_created: '2026-10-12 07:09:24.617776'
+- talkPath: _ai/ai-cant-fix-this-happenstance-data-modelling-and-the-covid19-pandemic.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.591562'
+  complete_created: '2026-10-12 07:09:24.591562'
+- talkPath: _ai/ai-data-science-and-the-covid19-pandemic.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.602453'
+  complete_created: '2026-10-12 07:09:24.602453'
+- talkPath: _ai/ai-faith-panel-discussion.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.584371'
+  complete_created: '2026-10-12 07:09:24.584371'
+- talkPath: _ai/ai-for-science-bellairs-workshop-2026.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.775712'
+  complete_created: '2026-10-12 07:09:24.775712'
+- talkPath: _ai/ai-for-social-good.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.541813'
+  complete_created: '2026-10-12 07:09:24.541813'
+- talkPath: _ai/ai-needs-to-serve-people-science-and-society-cais.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.638787'
+  complete_created: '2026-10-12 07:09:24.638787'
+- talkPath: _ai/ai-opportunities-and-challenges.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.718710'
+  complete_created: '2026-10-12 07:09:24.718710'
+- talkPath: _ai/ai-reclaiming-control.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.614171'
+  complete_created: '2026-10-12 07:09:24.614171'
+- talkPath: _ai/artificial-intelligence-ludgate.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.653290'
+  complete_created: '2026-10-12 07:09:24.653290'
+- talkPath: _ai/assembled-thoughts-on-lifelong-learning.md
+- talkPath: _ai/auto-ai-resolving-intellectual-debt-in-complex-systems.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.583166'
+  complete_created: '2026-10-12 07:09:24.583166'
+- talkPath: _ai/auto-ai-systems-machine-learning-and-mathematics.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.573455'
+  complete_created: '2026-10-12 07:09:24.573455'
+- talkPath: _ai/auto-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.518248'
+  complete_created: '2026-10-12 07:09:24.518248'
+- talkPath: _ai/being-human-in-the-age-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.641921'
+  complete_created: '2026-10-12 07:09:24.641921'
+- talkPath: _ai/data-science-intellectual-debt-and-auto-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.557178'
+  complete_created: '2026-10-12 07:09:24.557178'
+- talkPath: _ai/debating-project-debater.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.525571'
+  complete_created: '2026-10-12 07:09:24.525571'
+- talkPath: _ai/decision-making-in-the-era-of-generative-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.647124'
+  complete_created: '2026-10-12 07:09:24.647124'
+- talkPath: _ai/deploying-machine-learning-systems-intellectual-debt-and-auto-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.567179'
+  complete_created: '2026-10-12 07:09:24.567179'
+- talkPath: _ai/embodiment-factors-and-privacy.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.458591'
+  complete_created: '2026-10-12 07:09:24.458591'
+- talkPath: _ai/fairness-and-embodiment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.482175'
+  complete_created: '2026-10-12 07:09:24.482175'
+- talkPath: _ai/faith-and-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.470759'
+  complete_created: '2026-10-12 07:09:24.470759'
+- talkPath: _ai/faith.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.475396'
+  complete_created: '2026-10-12 07:09:24.475396'
+- talkPath: _ai/fit-machine-learning-systems.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.560902'
+  complete_created: '2026-10-12 07:09:24.560902'
+- talkPath: _ai/future-debates-this-house-believes-an-artificial-intelligence-will-benefit-society.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.433910'
+  complete_created: '2026-10-12 07:09:24.433910'
+- talkPath: _ai/information-engines.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.726021'
+  complete_created: '2026-10-12 07:09:24.726021'
+- talkPath: _ai/information-in-the-age-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.752012'
+  complete_created: '2026-10-12 07:09:24.752012'
+- talkPath: _ai/intellectual-debt-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.542992'
+  complete_created: '2026-10-12 07:09:24.542992'
+- talkPath: _ai/intellectual-debt-and-auto-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.510593'
+  complete_created: '2026-10-12 07:09:24.510593'
+- talkPath: _ai/intellectual-debt-and-the-death-of-the-programmer-bbc.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.538341'
+  complete_created: '2026-10-12 07:09:24.538341'
+- talkPath: _ai/intellectual-debt-and-the-death-of-the-programmer.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.537092'
+  complete_created: '2026-10-12 07:09:24.537092'
+- talkPath: _ai/interpretable-models.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.581964'
+  complete_created: '2026-10-12 07:09:24.581964'
+- talkPath: _ai/jawdrop-summit.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.636715'
+  complete_created: '2026-10-12 07:09:24.636715'
+- talkPath: _ai/laplaces-gremlin-uncertainty-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.579467'
+  complete_created: '2026-10-12 07:09:24.579467'
+- talkPath: _ai/living-together-natural-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.565892'
+  complete_created: '2026-10-12 07:09:24.565892'
+- talkPath: _ai/living-together.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.455928'
+  complete_created: '2026-10-12 07:09:24.455928'
+- talkPath: _ai/lords-evidence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.646122'
+  complete_created: '2026-10-12 07:09:24.646122'
+- talkPath: _ai/machine-learning-systems-design-cambridge-ai-group-seminar.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.519447'
+  complete_created: '2026-10-12 07:09:24.519447'
+- talkPath: _ai/machine-learning-systems-design-data-first.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.476486'
+  complete_created: '2026-10-12 07:09:24.476486'
+- talkPath: _ai/machine-learning-systems-design-microsoft.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.523105'
+  complete_created: '2026-10-12 07:09:24.523105'
+- talkPath: _ai/machine-learning-systems-design.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.511843'
+  complete_created: '2026-10-12 07:09:24.511843'
+- talkPath: _ai/mind-and-machine-intelligence-comenius.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.606110'
+  complete_created: '2026-10-12 07:09:24.606110'
+- talkPath: _ai/mind-and-machine-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.481087'
+  complete_created: '2026-10-12 07:09:24.481087'
+- talkPath: _ai/narrowing-the-intelligence-gap.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.501857'
+  complete_created: '2026-10-12 07:09:24.501857'
+- talkPath: _ai/natural-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.479914'
+  complete_created: '2026-10-12 07:09:24.479914'
+- talkPath: _ai/on-natural-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.464988'
+  complete_created: '2026-10-12 07:09:24.464988'
+- talkPath: _ai/once-upon-a-universal-standard-time.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.449881'
+  complete_created: '2026-10-12 07:09:24.449881'
+- talkPath: _ai/open-challenges-for-auto-ml-solving-intellectual-debt-with-auto-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.558453'
+  complete_created: '2026-10-12 07:09:24.558453'
+- talkPath: _ai/peppercorns-and-machine-learning-systems-design.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.447379'
+  complete_created: '2026-10-12 07:09:24.447379'
+- talkPath: _ai/perspectives-on-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.530687'
+  complete_created: '2026-10-12 07:09:24.530687'
+- talkPath: _ai/preserving-human-voices-final.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.790154'
+  complete_created: '2026-10-12 07:09:24.790154'
+- talkPath: _ai/preserving-human-voices-vatican-script.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.791711'
+  complete_created: '2026-10-12 07:09:24.791711'
+- talkPath: _ai/reacting-fast-and-slow.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.675545'
+  complete_created: '2026-10-12 07:09:24.675545'
+- talkPath: _ai/the-3ds-of-machine-learning-systems-design.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.477559'
+  complete_created: '2026-10-12 07:09:24.477559'
+- talkPath: _ai/the-ai-paradigm-shift-machine-learning-automated-decision-making-and-modern-society.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.625172'
+  complete_created: '2026-10-12 07:09:24.625172'
+- talkPath: _ai/the-atomic-human-ai-in-education.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.676609'
+  complete_created: '2026-10-12 07:09:24.676609'
+- talkPath: _ai/the-atomic-human-alumni.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.691821'
+  complete_created: '2026-10-12 07:09:24.691821'
+- talkPath: _ai/the-atomic-human-bellairs.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.657289'
+  complete_created: '2026-10-12 07:09:24.657289'
+- talkPath: _ai/the-atomic-human-cambridge-ring.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.682836'
+  complete_created: '2026-10-12 07:09:24.682836'
+- talkPath: _ai/the-atomic-human-churchill.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.648138'
+  complete_created: '2026-10-12 07:09:24.648138'
+- talkPath: _ai/the-atomic-human-ckiwfest.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.681160'
+  complete_created: '2026-10-12 07:09:24.681160'
+- talkPath: _ai/the-atomic-human-elevated-nyc.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.687533'
+  complete_created: '2026-10-12 07:09:24.687533'
+- talkPath: _ai/the-atomic-human-ellis-summer-school.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.677717'
+  complete_created: '2026-10-12 07:09:24.677717'
+- talkPath: _ai/the-atomic-human-ellis.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.671365'
+  complete_created: '2026-10-12 07:09:24.671365'
+- talkPath: _ai/the-atomic-human-google.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.688536'
+  complete_created: '2026-10-12 07:09:24.688536'
+- talkPath: _ai/the-atomic-human-kings-llm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.655309'
+  complete_created: '2026-10-12 07:09:24.655309'
+- talkPath: _ai/the-atomic-human-kings.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.664761'
+  complete_created: '2026-10-12 07:09:24.664761'
+- talkPath: _ai/the-atomic-human-max-planck-lecture.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.695148'
+  complete_created: '2026-10-12 07:09:24.695148'
+- talkPath: _ai/the-atomic-human-minderoo.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.665982'
+  complete_created: '2026-10-12 07:09:24.665982'
+- talkPath: _ai/the-atomic-human-miss-tweed.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.660494'
+  complete_created: '2026-10-12 07:09:24.660494'
+- talkPath: _ai/the-atomic-human-mit-museum.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.686523'
+  complete_created: '2026-10-12 07:09:24.686523'
+- talkPath: _ai/the-atomic-human-msr-ne.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.685507'
+  complete_created: '2026-10-12 07:09:24.685507'
+- talkPath: _ai/the-atomic-human-new-scientist-live.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.694090'
+  complete_created: '2026-10-12 07:09:24.694090'
+- talkPath: _ai/the-atomic-human-schmidt-retreat.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.692894'
+  complete_created: '2026-10-12 07:09:24.692894'
+- talkPath: _ai/the-atomic-human-sheffield.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.668234'
+  complete_created: '2026-10-12 07:09:24.668234'
+- talkPath: _ai/the-atomic-human-st-andrews.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.654307'
+  complete_created: '2026-10-12 07:09:24.654307'
+- talkPath: _ai/the-atomic-human-summer-of-science-2.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.674523'
+  complete_created: '2026-10-12 07:09:24.674523'
+- talkPath: _ai/the-atomic-human-summer-of-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.672358'
+  complete_created: '2026-10-12 07:09:24.672358'
+- talkPath: _ai/the-atomic-human-utah-valley-university.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.684438'
+  complete_created: '2026-10-12 07:09:24.684438'
+- talkPath: _ai/the-atomic-human-vector.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.656297'
+  complete_created: '2026-10-12 07:09:24.656297'
+- talkPath: _ai/the-atomic-human-zangwill.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.696170'
+  complete_created: '2026-10-12 07:09:24.696170'
+- talkPath: _ai/the-future-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.513174'
+  complete_created: '2026-10-12 07:09:24.513174'
+- talkPath: _ai/the-great-ai-fallacy.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.548957'
+  complete_created: '2026-10-12 07:09:24.548957'
+- talkPath: _ai/the-information-bloom.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.792924'
+  complete_created: '2026-10-12 07:09:24.792924'
+- talkPath: _ai/the-power-and-pitfalls-of-machine-learning-in-the-design-of-new-molecules.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.658373'
+  complete_created: '2026-10-12 07:09:24.658373'
+- talkPath: _ai/the-promise-and-reality-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.544205'
+  complete_created: '2026-10-12 07:09:24.544205'
+- talkPath: _ai/the-rise-of-the-algorithm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.440847'
+  complete_created: '2026-10-12 07:09:24.440847'
+- talkPath: _ai/this-house-believes-ai-will-bring-more-harm-than-good.md
+- talkPath: _ai/uncertainty-procrastination-and-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.580758'
+  complete_created: '2026-10-12 07:09:24.580758'
+- talkPath: _ai/understanding-ai-rothschild.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.634599'
+  complete_created: '2026-10-12 07:09:24.634599'
+- talkPath: _ai/understanding-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.622526'
+  complete_created: '2026-10-12 07:09:24.622526'
+- talkPath: _ai/use-or-be-used.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.639792'
+  complete_created: '2026-10-12 07:09:24.639792'
+- talkPath: _ai/what-is-ai-and-what-are-the-implications-of-advances-in-ai-for-religion.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.497900'
+  complete_created: '2026-10-12 07:09:24.497900'
+- talkPath: _ai/what-is-artificial-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.521896'
+  complete_created: '2026-10-12 07:09:24.521896'
+- talkPath: _ai/what-kind-of-ai-have-we-created.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.435178'
+  complete_created: '2026-10-12 07:09:24.435178'
+- talkPath: _ai/what-kind-of-ai-public.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.436574'
+  complete_created: '2026-10-12 07:09:24.436574'
+- talkPath: _ai/what-makes-us-unique-in-the-age-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.661612'
+  complete_created: '2026-10-12 07:09:24.661612'
+- talkPath: _ai/where-next-for-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.454911'
+  complete_created: '2026-10-12 07:09:24.454911'
+- talkPath: _ai/will-ai-make-the-workplace-wherever-it-is-more-equal.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.563502'
+  complete_created: '2026-10-12 07:09:24.563502'
+- talkPath: _atomic-human/ai-and-capability-shaping-servicenow.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.758350'
+  complete_created: '2026-10-12 07:09:24.758350'
+- talkPath: _atomic-human/art-and-the-atomic-human-rca.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.770740'
+  complete_created: '2026-10-12 07:09:24.770740'
+- talkPath: _atomic-human/atomic-human-astrazeneca.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.709153'
+  complete_created: '2026-10-12 07:09:24.709153'
+- talkPath: _atomic-human/business-and-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.741553'
+  complete_created: '2026-10-12 07:09:24.741553'
+- talkPath: _atomic-human/how-ai-works-and-how-it-will-transform-our-lives.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.768343'
+  complete_created: '2026-10-12 07:09:24.768343'
+- talkPath: _atomic-human/humans-in-the-ai-world-cohort-2.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.745452'
+  complete_created: '2026-10-12 07:09:24.745452'
+- talkPath: _atomic-human/humans-in-the-ai-world.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.723928'
+  complete_created: '2026-10-12 07:09:24.723928'
+- talkPath: _atomic-human/il-nucleo-umano-sace.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.806584'
+  complete_created: '2026-10-12 07:09:24.806584'
+- talkPath: _atomic-human/politics-and-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.710391'
+  complete_created: '2026-10-12 07:09:24.710391'
+- talkPath: _atomic-human/science-and-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.704395'
+  complete_created: '2026-10-12 07:09:24.704395'
+- talkPath: _atomic-human/the-atomic-human-africa-digital-future.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.738925'
+  complete_created: '2026-10-12 07:09:24.738925'
+- talkPath: _atomic-human/the-atomic-human-bbc.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.712690'
+  complete_created: '2026-10-12 07:09:24.712690'
+- talkPath: _atomic-human/the-atomic-human-celp.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.749437'
+  complete_created: '2026-10-12 07:09:24.749437'
+- talkPath: _atomic-human/the-atomic-human-cfi.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.716367'
+  complete_created: '2026-10-12 07:09:24.716367'
+- talkPath: _atomic-human/the-atomic-human-cses-aru-christmas.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.759629'
+  complete_created: '2026-10-12 07:09:24.759629'
+- talkPath: _atomic-human/the-atomic-human-lewes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.713870'
+  complete_created: '2026-10-12 07:09:24.713870'
+- talkPath: _atomic-human/the-atomic-human-marconi-bologna.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.764099'
+  complete_created: '2026-10-12 07:09:24.764099'
+- talkPath: _atomic-human/the-atomic-human-mila.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.774531'
+  complete_created: '2026-10-12 07:09:24.774531'
+- talkPath: _atomic-human/the-atomic-human-msr-cambridge.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.778481'
+  complete_created: '2026-10-12 07:09:24.778481'
+- talkPath: _atomic-human/the-atomic-human-mst-1.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.690732'
+  complete_created: '2026-10-12 07:09:24.690732'
+- talkPath: _atomic-human/the-atomic-human-mst-2.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.711489'
+  complete_created: '2026-10-12 07:09:24.711489'
+- talkPath: _atomic-human/the-atomic-human-munich.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.746805'
+  complete_created: '2026-10-12 07:09:24.746805'
+- talkPath: _atomic-human/the-atomic-human-tim.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.786323'
+  complete_created: '2026-10-12 07:09:24.786323'
+- talkPath: _atomic-human/translating-ai-into-practice-astrazeneca.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.755808'
+  complete_created: '2026-10-12 07:09:24.755808'
+- talkPath: _atomic-human/understanding-ourselves-in-the-age-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.703281'
+  complete_created: '2026-10-12 07:09:24.703281'
+- talkPath: _atomic-human/what-an-i-can-do-that-ai-cant-bedford.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.796720'
+  complete_created: '2026-10-12 07:09:24.796720'
+- talkPath: _atomic-human/what-an-i-can-do-that-ai-cant.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.714972'
+  complete_created: '2026-10-12 07:09:24.714972'
+- talkPath: _atomic-human/what-i-can-do-that-ai-cant-digital-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.717589'
+  complete_created: '2026-10-12 07:09:24.717589'
+- talkPath: _business/2026-04-20_corporate-strategy_syllabus.md
+- talkPath: _business/ai-and-business-santanna-sorrento-2026.md
+- talkPath: _business/ai-and-commercial-applications-ceibs-global-ceo.md
+  category: Epokay
+  category_modified: '2026-10-12 07:19:10.255338'
+  category_created: '2026-10-12 07:19:10.255338'
+- talkPath: _business/ai-and-corporate-strategy-luiss.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.784649'
+  complete_created: '2026-10-12 07:09:24.784649'
+- talkPath: _business/ai-and-the-software-business-london-2026.md
+  category: Epokay
+  category_modified: '2026-10-12 07:18:54.841911'
+  category_created: '2026-10-12 07:18:54.841911'
+- talkPath: _business/ai-impact-core-books-rome.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.765499'
+  complete_created: '2026-10-12 07:09:24.765499'
+- talkPath: _business/ai-investor-briefing-2025.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.721885'
+  complete_created: '2026-10-12 07:09:24.721885'
+- talkPath: _business/ai-opportunities-and-challenges-may-2025.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.734334'
+  complete_created: '2026-10-12 07:09:24.734334'
+- talkPath: _business/ai-opportunities-and-challenges.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.719752'
+  complete_created: '2026-10-12 07:09:24.719752'
+- talkPath: _business/coconut-science-and-the-supply-chain-of-ideas.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.534659'
+  complete_created: '2026-10-12 07:09:24.534659'
+- talkPath: _business/communication-and-remote-working.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.535874'
+  complete_created: '2026-10-12 07:09:24.535874'
+- talkPath: _business/data-first-culture-june-23.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.642919'
+  complete_created: '2026-10-12 07:09:24.642919'
+- talkPath: _business/data-first-culture-november-22.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.632233'
+  complete_created: '2026-10-12 07:09:24.632233'
+- talkPath: _business/data-first-culture-november-24.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.697818'
+  complete_created: '2026-10-12 07:09:24.697818'
+- talkPath: _business/data-first-culture-post-digital-transformation-and-intellectual-debt-july-22.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.628056'
+  complete_created: '2026-10-12 07:09:24.628056'
+- talkPath: _business/data-first-culture-post-digital-transformation-and-intellectual-debt-june-22.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.623785'
+  complete_created: '2026-10-12 07:09:24.623785'
+- talkPath: _business/data-first-culture-post-digital-transformation-and-intellectual-debt.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.607395'
+  complete_created: '2026-10-12 07:09:24.607395'
+- talkPath: _business/data-first-culture.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.520662'
+  complete_created: '2026-10-12 07:09:24.520662'
+- talkPath: _business/future-of-ai-and-machine-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.555950'
+  complete_created: '2026-10-12 07:09:24.555950'
+- talkPath: _business/human-machine-collaboration.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.736626'
+  complete_created: '2026-10-12 07:09:24.736626'
+- talkPath: _business/innovation-and-the-supply-chain-of-ideas.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.545405'
+  complete_created: '2026-10-12 07:09:24.545405'
+- talkPath: _business/knowledge-work-in-the-ai-era.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.649143'
+  complete_created: '2026-10-12 07:09:24.649143'
+- talkPath: _business/leadership-and-ai-luiss-mba.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.771939'
+  complete_created: '2026-10-12 07:09:24.771939'
+- talkPath: _business/leadership-and-ai-luiss-part-time-mba-syllabus.md
+- talkPath: _business/leadership-and-ai-luiss-part-time-mba.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.781849'
+  complete_created: '2026-10-12 07:09:24.781849'
+- talkPath: _business/leading-with-ai-lloyds-bank.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.750802'
+  complete_created: '2026-10-12 07:09:24.750802'
+- talkPath: _business/organisational-data-science-ai-uk.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.612983'
+  complete_created: '2026-10-12 07:09:24.612983'
+- talkPath: _business/organisational-data-science-cdei.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.629258'
+  complete_created: '2026-10-12 07:09:24.629258'
+- talkPath: _business/organisational-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.609843'
+  complete_created: '2026-10-12 07:09:24.609843'
+- talkPath: _business/post-digital-transformation-decision-making-and-intellectual-debt.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.615409'
+  complete_created: '2026-10-12 07:09:24.615409'
+- talkPath: _business/post-digital-transformation-intellectual-debt.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.586859'
+  complete_created: '2026-10-12 07:09:24.586859'
+- talkPath: _business/post-digital-transformation.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.524390'
+  complete_created: '2026-10-12 07:09:24.524390'
+- talkPath: _business/the-age-of-generative-ai-june-2024-alp.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.667088'
+  complete_created: '2026-10-12 07:09:24.667088'
+- talkPath: _business/the-age-of-generative-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.659460'
+  complete_created: '2026-10-12 07:09:24.659460'
+- talkPath: _business/the-art-of-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.737733'
+  complete_created: '2026-10-12 07:09:24.737733'
+- talkPath: _business/the-atomic-human-ypo-global-leaders.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.689682'
+  complete_created: '2026-10-12 07:09:24.689682'
+- talkPath: _business/the-transformative-power-of-ai-and-its-challenges.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.744128'
+  complete_created: '2026-10-12 07:09:24.744128'
+- talkPath: _cognitive-science/the-mechanistic-fallacy-and-modelling-how-we-think.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.430093'
+  complete_created: '2026-10-12 07:09:24.430093'
+- talkPath: _data-science/access-assess-address-a-pipeline-for-automated-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.601194'
+  complete_created: '2026-10-12 07:09:24.601194'
+- talkPath: _data-science/data-analytics-perspectives.md
+- talkPath: _data-science/data-quality-and-data-readiness.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.514346'
+  complete_created: '2026-10-12 07:09:24.514346'
+- talkPath: _data-science/data-readiness-levels.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.493525'
+  complete_created: '2026-10-12 07:09:24.493525'
+- talkPath: _data-science/data-science-and-digital-systems.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.484432'
+  complete_created: '2026-10-12 07:09:24.484432'
+- talkPath: _data-science/data-science-and-the-professions.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.472943'
+  complete_created: '2026-10-12 07:09:24.472943'
+- talkPath: _data-science/data-science-challenges.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.467442'
+  complete_created: '2026-10-12 07:09:24.467442'
+- talkPath: _data-science/data-science-time-for-professionalisation-odsc.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.457357'
+  complete_created: '2026-10-12 07:09:24.457357'
+- talkPath: _data-science/data-science-time-for-professionalisation.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.474364'
+  complete_created: '2026-10-12 07:09:24.474364'
+- talkPath: _data-science/digital-disruption.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.494880'
+  complete_created: '2026-10-12 07:09:24.494880'
+- talkPath: _data-science/ethical-challenges-in-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.554740'
+  complete_created: '2026-10-12 07:09:24.554740'
+- talkPath: _data-science/from-innovation-to-deployment-turing-2.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.531871'
+  complete_created: '2026-10-12 07:09:24.531871'
+- talkPath: _data-science/from-innovation-to-deployment-turing.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.526765'
+  complete_created: '2026-10-12 07:09:24.526765'
+- talkPath: _data-science/from-innovation-to-deployment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.515563'
+  complete_created: '2026-10-12 07:09:24.515563'
+- talkPath: _data-science/harnessing-data-science-for-africas-socio-economic-development.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.640850'
+  complete_created: '2026-10-12 07:09:24.640850'
+- talkPath: _data-science/kepler-lightcurve-data-cleaning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.593978'
+  complete_created: '2026-10-12 07:09:24.593978'
+- talkPath: _data-science/machine-learning-and-data-readiness-levels.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.463821'
+  complete_created: '2026-10-12 07:09:24.463821'
+- talkPath: _data-science/machine-learning-and-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.505507'
+  complete_created: '2026-10-12 07:09:24.505507'
+- talkPath: _data-science/machine-learning-and-the-data-science-process.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.442675'
+  complete_created: '2026-10-12 07:09:24.442675'
+- talkPath: _data-science/modern-data-oriented-programming.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.499339'
+  complete_created: '2026-10-12 07:09:24.499339'
+- talkPath: _data-science/new-directions-in-data-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.438031'
+  complete_created: '2026-10-12 07:09:24.438031'
+- talkPath: _data-science/paradoxes-of-the-data-society.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.453547'
+  complete_created: '2026-10-12 07:09:24.453547'
+- talkPath: _data-science/rss-data-science-and-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.678937'
+  complete_created: '2026-10-12 07:09:24.678937'
+- talkPath: _data-science/the-data-delusion-democratising.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.439186'
+  complete_created: '2026-10-12 07:09:24.439186'
+- talkPath: _data-science/the-data-delusion.md
+- talkPath: _deepgp/deep-gaussian-processes-a-motivation-and-introduction-bristol.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.621304'
+  complete_created: '2026-10-12 07:09:24.621304'
+- talkPath: _deepgp/deep-gaussian-processes-a-motivation-and-introduction-sheffield.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.626528'
+  complete_created: '2026-10-12 07:09:24.626528'
+- talkPath: _deepgp/deep-gaussian-processes-a-motivation-and-introduction.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.604885'
+  complete_created: '2026-10-12 07:09:24.604885'
+- talkPath: _deepgp/deep-gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.415512'
+  complete_created: '2026-10-12 07:09:24.415512'
+- talkPath: _deepgp/deep-gps.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.562261'
+  complete_created: '2026-10-12 07:09:24.562261'
+- talkPath: _deepgp/deep-probabilistic-modelling-with-gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.459768'
+  complete_created: '2026-10-12 07:09:24.459768'
+- talkPath: _deepgp/introduction-to-deep-gps.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.509241'
+  complete_created: '2026-10-12 07:09:24.509241'
+- talkPath: _deepgp/nips-tutorial-notes.md
+- talkPath: _deepgp/what-is-a-deep-gp.md
+- talkPath: _delve/action-team-sync.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.547815'
+  complete_created: '2026-10-12 07:09:24.547815'
+- talkPath: _delve/delve-overview.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.551234'
+  complete_created: '2026-10-12 07:09:24.551234'
+- talkPath: _delve/the-delve-initiative.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.552365'
+  complete_created: '2026-10-12 07:09:24.552365'
+- talkPath: _delve/working-practices-overview.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.550106'
+  complete_created: '2026-10-12 07:09:24.550106'
+- talkPath: _dimred/dealing-with-high-dimensional-data-with-dimensionality-reduction.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.422850'
+  complete_created: '2026-10-12 07:09:24.422850'
+- talkPath: _economics/ai-cannot-replace-the-atomic-human-banca-ditalia.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.773282'
+  complete_created: '2026-10-12 07:09:24.773282'
+- talkPath: _economics/ai-cannot-replace-the-atomic-human-mimit.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.766906'
+  complete_created: '2026-10-12 07:09:24.766906'
+- talkPath: _economics/ai-cannot-replace-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.727301'
+  complete_created: '2026-10-12 07:09:24.727301'
+- talkPath: _economics/humans-economics-and-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.783218'
+  complete_created: '2026-10-12 07:09:24.783218'
+- talkPath: _education/ai-education-summit-accelerate-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.757066'
+  complete_created: '2026-10-12 07:09:24.757066'
+- talkPath: _education/educating-the-atomic-human-ai-education-summit-2026.md
+- talkPath: _education/educating-the-atomic-human-cambridge-assessment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.724977'
+  complete_created: '2026-10-12 07:09:24.724977'
+- talkPath: _education/educating-the-atomic-human-educationfest.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.748150'
+  complete_created: '2026-10-12 07:09:24.748150'
+- talkPath: _education/educating-the-atomic-human-kings.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.720816'
+  complete_created: '2026-10-12 07:09:24.720816'
+- talkPath: _education/educating-the-atomic-human-pti.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.673380'
+  complete_created: '2026-10-12 07:09:24.673380'
+- talkPath: _education/educating-the-atomic-human-queen-elizabeths.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.706751'
+  complete_created: '2026-10-12 07:09:24.706751'
+- talkPath: _education/educating-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.651230'
+  complete_created: '2026-10-12 07:09:24.651230'
+- talkPath: _education/engineering-and-the-atomic-human.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.652262'
+  complete_created: '2026-10-12 07:09:24.652262'
+- talkPath: _engineering/how-do-we-cope-with-rapid-change-like-ai-ml-2024.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.701872'
+  complete_created: '2026-10-12 07:09:24.701872'
+- talkPath: _engineering/how-do-we-cope-with-rapid-change-like-ai-ml.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.650182'
+  complete_created: '2026-10-12 07:09:24.650182'
+- talkPath: _engineering/how-engineers-solve-big-and-difficult-problems-part-1-the-challenge-opportunities-presented-to-engineers-by-ai-ml.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.633422'
+  complete_created: '2026-10-12 07:09:24.633422'
+- talkPath: _engineering/the-atomic-human-cambridge-consultants.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.700397'
+  complete_created: '2026-10-12 07:09:24.700397'
+- talkPath: _execed/bringing-together.md
+- talkPath: _execed/data-quality.md
+- talkPath: _execed/ethics-and-privacy.md
+- talkPath: _execed/intellectual-debt.md
+- talkPath: _execed/project-management.md
+- talkPath: _execed/the-data-crisis.md
+- talkPath: _execed/the-new-world.md
+- talkPath: _governance/ai-and-data-trusts.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.618896'
+  complete_created: '2026-10-12 07:09:24.618896'
+- talkPath: _governance/data-governance-ai-for-er.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.608657'
+  complete_created: '2026-10-12 07:09:24.608657'
+- talkPath: _governance/data-governance-for-ethical-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.603650'
+  complete_created: '2026-10-12 07:09:24.603650'
+- talkPath: _governance/data-governance-toolkit.md
+- talkPath: _governance/data-sharing-and-data-trusts.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.568419'
+  complete_created: '2026-10-12 07:09:24.568419'
+- talkPath: _governance/from-data-subject-to-data-citizen.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.516992'
+  complete_created: '2026-10-12 07:09:24.516992'
+- talkPath: _governance/personal-data-trusts.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.539541'
+  complete_created: '2026-10-12 07:09:24.539541'
+- talkPath: _gp/approximate-gps.md
+- talkPath: _gp/approximations-workshop.md
+- talkPath: _gp/machine-learning-with-gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.431397'
+  complete_created: '2026-10-12 07:09:24.431397'
+- talkPath: _gp/what-is-a-deep-gp.md
+- talkPath: _gp/what-is-a-gp.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.419384'
+  complete_created: '2026-10-12 07:09:24.419384'
+- talkPath: _gpy/cmu-mocap-gplvm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.588078'
+  complete_created: '2026-10-12 07:09:24.588078'
+- talkPath: _gpy/inducing-variables.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.589192'
+  complete_created: '2026-10-12 07:09:24.589192'
+- talkPath: _gpy/osu-run1-bgplvm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.590342'
+  complete_created: '2026-10-12 07:09:24.590342'
+- talkPath: _gpy/robot-wireless-bgplvm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.592798'
+  complete_created: '2026-10-12 07:09:24.592798'
+- talkPath: _health/challenges-for-data-science-in-healthcare.md
+- talkPath: _health/challenges-in-personalized-health.md
+- talkPath: _health/leveraging-opportunities-of-the-fourth-industrial-revolution-to-develop-successful-careers-in-the-field-of-healthcare-the-pains-and-gains.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.611474'
+  complete_created: '2026-10-12 07:09:24.611474'
+- talkPath: _health/machine-learning-and-emergency-medicine.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.533403'
+  complete_created: '2026-10-12 07:09:24.533403'
+- talkPath: _health/my-experience-with-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.616654'
+  complete_created: '2026-10-12 07:09:24.616654'
+- talkPath: _health/personalized-dsa15.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.427536'
+  complete_created: '2026-10-12 07:09:24.427536'
+- talkPath: _health/proportionate-lifecycle-regulation.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.802593'
+  complete_created: '2026-10-12 07:09:24.802593'
+- talkPath: _information/information-and-intelligence.md
+  complete: true
+  complete_modified: '2026-10-13 06:29:17.296565'
+  complete_created: '2026-10-13 06:29:17.296565'
+- talkPath: _information/information-energy-and-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.780264'
+  complete_created: '2026-10-12 07:09:24.780264'
+- talkPath: _information/information-engines-sorrento.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.732123'
+  complete_created: '2026-10-12 07:09:24.732123'
+- talkPath: _information/information-topography.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.730892'
+  complete_created: '2026-10-12 07:09:24.730892'
+- talkPath: _information/jaynes-world.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.733269'
+  complete_created: '2026-10-12 07:09:24.733269'
+- talkPath: _information/the-inaccessible-game-ellis.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.797953'
+  complete_created: '2026-10-12 07:09:24.797953'
+- talkPath: _information/the-inaccessible-game-luiss.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.795465'
+  complete_created: '2026-10-12 07:09:24.795465'
+- talkPath: _information/the-inaccessible-game.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.788316'
+  complete_created: '2026-10-12 07:09:24.788316'
+- talkPath: _information/the-inaccessible-game.narration.md
+- talkPath: _jaynes-world/jaynes-world-edinburgh.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.722912'
+  complete_created: '2026-10-12 07:09:24.722912'
+- talkPath: _ml/bayesian-methods.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.471804'
+  complete_created: '2026-10-12 07:09:24.471804'
+- talkPath: _ml/data-science-and-digital-systems-three-ds.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.420448'
+  complete_created: '2026-10-12 07:09:24.420448'
+- talkPath: _ml/data-science-and-digital-systems.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.491234'
+  complete_created: '2026-10-12 07:09:24.491234'
+- talkPath: _ml/data-science-and-digital-systems_draft.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.478806'
+  complete_created: '2026-10-12 07:09:24.478806'
+- talkPath: _ml/emulation-2022.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.630264'
+  complete_created: '2026-10-12 07:09:24.630264'
+- talkPath: _ml/innovation-to-deployment-turing.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.528052'
+  complete_created: '2026-10-12 07:09:24.528052'
+- talkPath: _ml/innovation-to-deployment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.508088'
+  complete_created: '2026-10-12 07:09:24.508088'
+- talkPath: _ml/interpretable-end-to-end-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.506708'
+  complete_created: '2026-10-12 07:09:24.506708'
+- talkPath: _ml/introduction-to-machine-intelligence.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.576981'
+  complete_created: '2026-10-12 07:09:24.576981'
+- talkPath: _ml/life-the-universe-and-machine-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.424258'
+  complete_created: '2026-10-12 07:09:24.424258'
+- talkPath: _ml/life-universe-and-machine-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.425375'
+  complete_created: '2026-10-12 07:09:24.425375'
+- talkPath: _ml/linear-regression-iterative.md
+- talkPath: _ml/machine-learning-a-revolution-in-computer-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.546631'
+  complete_created: '2026-10-12 07:09:24.546631'
+- talkPath: _ml/machine-learning-and-intellectual-debt.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.553529'
+  complete_created: '2026-10-12 07:09:24.553529'
+- talkPath: _ml/machine-learning-and-the-physical-world.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.485473'
+  complete_created: '2026-10-12 07:09:24.485473'
+- talkPath: _ml/matrix-factorization.md
+- talkPath: _ml/meta-modelling-and-deploying-ml-software.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.500654'
+  complete_created: '2026-10-12 07:09:24.500654'
+- talkPath: _ml/ml-and-the-physical-world-data-centric-engineering.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.585604'
+  complete_created: '2026-10-12 07:09:24.585604'
+- talkPath: _ml/ml-and-the-physical-world-trustworthy-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.598701'
+  complete_created: '2026-10-12 07:09:24.598701'
+- talkPath: _ml/ml-and-the-physical-world-tuebingen.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.599910'
+  complete_created: '2026-10-12 07:09:24.599910'
+- talkPath: _ml/ml-systems-design.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.460928'
+  complete_created: '2026-10-12 07:09:24.460928'
+- talkPath: _ml/modelling-things.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.559678'
+  complete_created: '2026-10-12 07:09:24.559678'
+- talkPath: _ml/outlook-for-uk-ai-and-ml.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.468481'
+  complete_created: '2026-10-12 07:09:24.468481'
+- talkPath: _ml/real-world-machine-learning-challenges-present-and-future.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.462180'
+  complete_created: '2026-10-12 07:09:24.462180'
+- talkPath: _ml/real-world-machine-learning-challenges.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.529493'
+  complete_created: '2026-10-12 07:09:24.529493'
+- talkPath: _ml/the-three-ds-of-machine-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.503111'
+  complete_created: '2026-10-12 07:09:24.503111'
+- talkPath: _ml/towards-ml-systems-design-lessons-from-comp-bio.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.496250'
+  complete_created: '2026-10-12 07:09:24.496250'
+- talkPath: _ml/towards-ml-systems-design.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.492355'
+  complete_created: '2026-10-12 07:09:24.492355'
+- talkPath: _ml/translating-ai-into-practice-astrazeneca.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.762635'
+  complete_created: '2026-10-12 07:09:24.762635'
+- talkPath: _ml/two-challenges-for-deep-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.452377'
+  complete_created: '2026-10-12 07:09:24.452377'
+- talkPath: _ml/uncertainty-in-loss-functions.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.469494'
+  complete_created: '2026-10-12 07:09:24.469494'
+- talkPath: _ml/what-are-large-language-models.md
+- talkPath: _ml/what-is-the-future-for-probability-in-the-era-of-generative-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.643998'
+  complete_created: '2026-10-12 07:09:24.643998'
+- talkPath: _mlss/approximate-gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.487778'
+  complete_created: '2026-10-12 07:09:24.487778'
+- talkPath: _mlss/deep-gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.488802'
+  complete_created: '2026-10-12 07:09:24.488802'
+- talkPath: _mlss/gaussian-processes.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.486762'
+  complete_created: '2026-10-12 07:09:24.486762'
+- talkPath: _neurips/neurips-simulation.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.595212'
+  complete_created: '2026-10-12 07:09:24.595212'
+- talkPath: _neurips/peer-review-and-the-nips-experiment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.428578'
+  complete_created: '2026-10-12 07:09:24.428578'
+- talkPath: _neurips/revisiting-the-revisiting-of-the-revisit-of-the-2014-neurips-experiment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.708012'
+  complete_created: '2026-10-12 07:09:24.708012'
+- talkPath: _neurips/the-neurips-experiment-iwcv.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.662657'
+  complete_created: '2026-10-12 07:09:24.662657'
+- talkPath: _neurips/the-neurips-experiment-snsf.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.620068'
+  complete_created: '2026-10-12 07:09:24.620068'
+- talkPath: _neurips/the-neurips-experiment.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.596350'
+  complete_created: '2026-10-12 07:09:24.596350'
+- talkPath: _neurips/the-nips-experiment-examining-the-repeatability-of-peer-review.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.426469'
+  complete_created: '2026-10-12 07:09:24.426469'
+- talkPath: _neurips/where-do-rejected-papers-go.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.597508'
+  complete_created: '2026-10-12 07:09:24.597508'
+- talkPath: _philosophy/decision-making-and-diversity.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.466286'
+  complete_created: '2026-10-12 07:09:24.466286'
+- talkPath: _philosophy/decision-making.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.444735'
+  complete_created: '2026-10-12 07:09:24.444735'
+- talkPath: _philosophy/fairness-and-decision-making.md
+- talkPath: _philosophy/fairness-and-diversity-of-decision-making.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.483354'
+  complete_created: '2026-10-12 07:09:24.483354'
+- talkPath: _physics/quantum-exponential-families-for-ml.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.761163'
+  complete_created: '2026-10-12 07:09:24.761163'
+- talkPath: _physics/the-physical-origins-of-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.421703'
+  complete_created: '2026-10-12 07:09:24.421703'
+- talkPath: _policy/ai-future-of-work-hsm.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.578206'
+  complete_created: '2026-10-12 07:09:24.578206'
+- talkPath: _policy/ai-guardians-who-holds-power-over-our-data.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.669263'
+  complete_created: '2026-10-12 07:09:24.669263'
+- talkPath: _policy/ai-needs-to-serve-people-science-and-society-aru.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.663715'
+  complete_created: '2026-10-12 07:09:24.663715'
+- talkPath: _policy/ai-needs-to-serve-people-science-and-society-robust.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.670336'
+  complete_created: '2026-10-12 07:09:24.670336'
+- talkPath: _policy/ai-needs-to-serve-people-science-and-society.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.637721'
+  complete_created: '2026-10-12 07:09:24.637721'
+- talkPath: _policy/ai-that-serves-science-citizens-and-society.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.729623'
+  complete_created: '2026-10-12 07:09:24.729623'
+- talkPath: _policy/ai-value-chain-research-policy-priorities.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.735406'
+  complete_created: '2026-10-12 07:09:24.735406'
+- talkPath: _policy/bridging-besci-and-data-science-at-the-un.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.728401'
+  complete_created: '2026-10-12 07:09:24.728401'
+- talkPath: _policy/mind-the-gap-briding-innovations-supply-and-demand-in-the-ai-era.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.705588'
+  complete_created: '2026-10-12 07:09:24.705588'
+- talkPath: _policy/mind-the-gap-manchester.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.740321'
+  complete_created: '2026-10-12 07:09:24.740321'
+- talkPath: _policy/ostrom-workshop.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.575832'
+  complete_created: '2026-10-12 07:09:24.575832'
+- talkPath: _policy/policy-science-and-the-convening-power-of-data.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.571066'
+  complete_created: '2026-10-12 07:09:24.571066'
+- talkPath: _policy/science-evidence-and-government-reflections-on-the-covid-19-experience.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.569736'
+  complete_created: '2026-10-12 07:09:24.569736'
+- talkPath: _policy/time-to-reset.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.801347'
+  complete_created: '2026-10-12 07:09:24.801347'
+- talkPath: _policy/towards-ai-that-works-for-everyone.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.742880'
+  complete_created: '2026-10-12 07:09:24.742880'
+- talkPath: _policy/when-scientists-work-with-government.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.574675'
+  complete_created: '2026-10-12 07:09:24.574675'
+- talkPath: _privacy/cloaking-functions.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.451330'
+  complete_created: '2026-10-12 07:09:24.451330'
+- talkPath: _r255/bias-variance-and-fairness-stochasticity-in-decision-making.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.635686'
+  complete_created: '2026-10-12 07:09:24.635686'
+- talkPath: _science/ai-for-science.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.631232'
+  complete_created: '2026-10-12 07:09:24.631232'
+- talkPath: _software/vibesafe-trent-ai.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.769559'
+  complete_created: '2026-10-12 07:09:24.769559'
+- talkPath: _trent/ai-and-security-talk.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.754554'
+  complete_created: '2026-10-12 07:09:24.754554'
+- talkPath: _trent/judgment-and-model-minimisation.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.804325'
+  complete_created: '2026-10-12 07:09:24.804325'
+- talkPath: _uq/uncertainty-quantification.md
+- talkPath: _vision/interpretable-end-to-end-learning.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.504289'
+  complete_created: '2026-10-12 07:09:24.504289'
+- talkPath: _vision/my-research-vision.md
+  complete: true
+  complete_modified: '2026-10-12 07:09:24.489864'
+  complete_created: '2026-10-12 07:09:24.489864'
+- talkPath: _business/ai-fitzwalter-capital-london-2026.md
+  category: Epokay
+  category_modified: '2026-10-12 18:00:50.465707'
+  category_created: '2026-10-12 18:00:50.465707'

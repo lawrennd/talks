@@ -33,8 +33,9 @@ geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
 pptx: True
-potx: ../_includes/custom-reference.potx
+potx: ../_includes/moller-simple-reference.potx
 reveal: True
+talktheme: white
 ---
 
 <!--
@@ -55,8 +56,9 @@ BRIEF FROM MØLLER INSTITUTE:
    developments and future directions."
 
 POWERPOINT HANDOFF:
-  Draft uses custom-reference.potx. Swap potx to the Møller Institute template
-  when received (target: share PPT ~two weeks before the session, ~13 Oct 2026).
+  Uses moller-simple-reference.potx (pandoc layouts + Møller fonts/colours,
+  white background). Full branded moller-reference.potx kept but not used —
+  its layout names do not match pandoc.
 
 TALK STRUCTURE (90 minutes):
 ============================================================

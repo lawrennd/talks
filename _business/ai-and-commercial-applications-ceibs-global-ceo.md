@@ -76,6 +76,7 @@ OPTIONAL CUTS (if running long under SI):
 - Skip baby-shoes (save ~2 min)
 - Shorten Horizon to one slide + one note (save ~3 min)
 - Collapse productivity + attention flywheel into one beat (save ~3 min)
+- Keep Good Regulator to the first slide if Part 3 runs long (save ~2 min)
 - Shorten judgment-layer emulsion if already covered in discussion (save ~3 min)
 -->
 
@@ -207,14 +208,16 @@ would hide risk rather than reduce it.}
 because it changes the *interface* between humans and machines, not
 because it creates a digital human. Treat large language models as
 human-analogue machines: powerful amplifiers of information that still
-require human authorship for consequence.}
+require human authorship for consequence. But the market story is not
+“bigger models only”: what is compounding is harnesses and small models
+on cognitive toil, under a Good Regulator constraint.}
 
 \newslide{Recent Developments}
 
 \slidesincremental{
 * Generative AI as a human-analogue machine (HAM)
-* Information amplifier — not a substitute for judgment
-* Organisational models designed for the old interface become obsolete
+* Progress driven by *harnesses* and *small models*, not only scale
+* Model minimisation keeps the judgement layer solvent
 }
 
 \include{_simulation/includes/the-moniac.md}
@@ -245,6 +248,15 @@ will.}
 
 \subsection{Future Directions: Opportunity and New Forms of Debt}
 
+\notes{Before agents that act, one constraint from cybernetics. If the firm
+is still meant to regulate what its systems do, the people who own the risk
+must still be able to model those systems. That is the Good Regulator
+condition, and it is why we minimise.}
+
+\include{_ai/includes/good-regulator-model-minimisation.md}
+
+\include{_ai/includes/harnesses-and-small-models.md}
+
 \include{_ai/includes/agentic-debt-short.md}
 
 \notes{Agentic systems — systems that can act — may pay down technical
@@ -260,8 +272,8 @@ with what stop-condition?}
 
 \slidesincremental{
 * People first, not AI first
-* Redesign information flows before buying tools
-* Keep human judgment in high-consequence decisions
+* Prefer harnesses and small models for cognitive toil
+* Let role-holders introduce and monitor those harnesses
 * Watch for agentic debt as systems begin to act
 }
 

@@ -85,10 +85,10 @@ in bodies, in relationships, in institutions, in cultures.}
 
 \newslide{Why: Intelligence is Context Specific}
 
-\slides{
+\slidesincremental{
 * There is no single general intelligence.
 * Human intelligence is embodied, social and situated.
-* Education works because context matters.
+* Education accommodates different contexts
 }
 
 \section{What}

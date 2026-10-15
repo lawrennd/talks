@@ -206,6 +206,10 @@ It is a visible culture of practice: people trying things, documenting
 them, learning from one another and celebrating those who build shared
 capability.}
 
+\subsection{OSCAR}
+
+<!-- NEED A SECTION HERE ON Peterborough City Council OSCAR system -->
+
 \newslide{Document: Share What Works}
 
 \slidesincremental{

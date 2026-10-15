@@ -170,6 +170,8 @@ intelligence.}
 
 \include{_ai/includes/local-government-ai-accelerator.md}
 
+\include{_ai/includes/oscar-citizen-ai-router.md}
+
 \newslide{Do: Build capability where the need Is}
 
 \slidesincremental{
@@ -199,16 +201,13 @@ system.}
 
 \speakernotes{Close positively here. Keep Cambridge light: DSA is the
 main Do example; the local government accelerator is the only ai@cam
-pointer. AI in Education is the education-sector Document example.}
+pointer; OSCAR is the concrete council case. AI in Education is the
+education-sector Document example.}
 
 \notes{The antidote to disempowerment is not another grand prediction.
 It is a visible culture of practice: people trying things, documenting
 them, learning from one another and celebrating those who build shared
 capability.}
-
-\subsection{OSCAR}
-
-<!-- NEED A SECTION HERE ON Peterborough City Council OSCAR system -->
 
 \newslide{Document: Share What Works}
 
@@ -232,7 +231,7 @@ Sixth Form College.}
 * Why: human intelligence is context specific.
 * What: enfranchise human accountability; river gods are the failure mode.
 * How: reinvest attention through open institutions and piecemeal engineers.
-* Do: build with local partners, as DSA and local government show.
+* Do: build with local partners, as DSA, local government and OSCAR show.
 * Document: share what worked; AiEd Certified is one route.
 }
 

@@ -1,6 +1,6 @@
 ---
-title: "AI and Business"
-subtitle: "Competing in the Age of Human-Analogue Machines"
+title: "AI in Business"
+subtitle: "Maintaining the Human Advantage"
 abstract: |
   Artificial intelligence is changing how firms operate and compete — not only
   through new products, but by reshaping information flows, decision rights, and

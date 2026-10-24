@@ -1,6 +1,6 @@
 ---
 title: "AI and Software"
-subtitle: ""
+subtitle: "Moats, judgment, and advantage when code gets cheap"
 abstract: |
   Software is the frontier for AI driven change.
 
@@ -22,9 +22,9 @@ author:
   gscholar: r3SJcvoAAAAJ
   orcid: 0000-0001-9258-1030
 date: 2026-11-17
-time: "18:00"
+time: "19:00"
 duration: 30
-venue: TBC, Central London
+venue: Clearwater International / KeyBank, Central London (TBC)
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
@@ -34,30 +34,8 @@ reveal: True
 ---
 
 <!--
-LCORPORATE KEYNOTE
-Event date: Tuesday 17 November 2026
-Arrive: no later than 17:30 | Speak: 18:00 | Leave: ~20:00
-All timings TBC. Venue TBC, Central London.
 
-AUDIENCE:
-- 100+ software CEOs, founders, senior executives
-- Private equity investors and investment bankers
-- Across the technology ecosystem
-
-BRIEF:
-- 30-minute keynote: impact of AI on software businesses
-- How AI is reshaping SaaS and how it may evolve
-- Followed by up to 30 minutes Q&A
-- Subject to be refined on briefing call (Paula Nieuwoudt, LSB)
-
-CONSTRAINTS:
-- Dress: Business
-- Travel: speaker arranges and pays (included in fee)
-- Tech: client provides and pays for equipment
-- Recording: NO audio/video (incl. back projection) without prior
-  consent of London Speaker Bureau / Speaker
-
-TALK STRUCTURE (30 minutes + up to 30 Q&A):
+CURRENT DRAFT STRUCTURE (too long / too academic for this slot):
 ============================================================
 0:00–0:03   Opening and framing for software leaders
 0:03–0:11   Part 1: What AI is (and isn't) for software businesses
@@ -65,6 +43,100 @@ TALK STRUCTURE (30 minutes + up to 30 Q&A):
 0:20–0:26   Part 3: Evolution — HAMs, debt, and the judgment layer
 0:26–0:30   Close: Trent and the judgment layer in practice
 0:30–1:00   Q&A
+
+PROPOSED 30-MINUTE STRUCTURE (after briefing):
+============================================================
+0:00–0:03   Opening: after the M&A market — tailwind or headwind?
+0:03–0:08   Part 1 (cut hard): production of software gets cheap;
+            judgment does not. One bandwidth beat. No baby-shoes.
+0:08–0:18   Part 2: moats in *vertical* B2B — defensibility,
+            build vs buy, seats → usage
+0:18–0:24   Part 3: the judgment layer as the moat (FT letter is
+            the PE/M&A hook: software groups are not one AI programme)
+0:24–0:30   Close: Trent as a case study, not a pitch
+0:30–1:00   Q&A — leave space; this is the "what I don't say"
+
+WHAT TO CHANGE (from the briefing):
+-----------------------------------
+CUT / SHORTEN
+- Part 1 is a lecture this room does not need after an hour of
+  SaaS benchmarks. Drop baby-shoes, walking-vs-light, TEDx
+  conversation. Keep at most Henry Ford + celsius, or skip
+  embodiment entirely and go straight to "Implication for SaaS".
+- Horizon is a dark software-accountability story. One line max
+  in an evening networking slot; do not play the full scandal.
+- Collapse productivity + attention flywheels into one beat.
+- Good Regulator: one slide, or fold into the judgment-layer
+  close. The theorem name will not land; the idea will
+  ("whoever owns the risk must still be able to model the system").
+- FT op-ed image only if needed; the *letter* is the one for this
+  room (Visma / software-group valuation).
+
+REFRAME PART 2 AROUND FINN'S QUESTIONS
+- Tailwind: cheaper production, better interfaces into niche
+  workflows, usage-based packaging of domain work the customer
+  already pays for.
+- Headwind: horizontal AI eats undifferentiated features;
+  seat-based SaaS under pressure as agents multiply work;
+  owner-managed businesses that bolt on "an AI feature" will
+  look the same as everyone else in diligence.
+- Moat / defensibility: not the model, not the code. Proprietary
+  workflow data, distribution into a niche customer set, trust,
+  and a *legible* judgment layer. That is the vertical story.
+- Build vs buy: buy undifferentiated generation (models, coding
+  assistants, commodity agents). Build — or keep — the domain
+  harness and the people who own consequence. Do not buy a
+  horizontal "AI layer" and expect it to become the product.
+- Pricing: the stub already has "seat-based pricing under
+  pressure". Lean into it. Annual seats → variable usage /
+  outcome as agents do the work. Ask what the customer is
+  actually buying when the seat is no longer the bottleneck.
+
+VERTICAL, NOT HORIZONTAL
+- 95% of the room is product software serving a niche customer
+  set (£30m–£500m). Do not talk as if they are competing with
+  OpenAI or building a horizontal platform. Examples should
+  look like a vertical SaaS firm: one customer set, one workflow,
+  one set of people who know the work.
+- The FT letter is the diligence line for PE in the room:
+  do not value a portfolio as if AI were a single centre-led
+  programme. Underwrite the *local* judgment layer in each
+  workflow.
+
+OSCAR?
+- Existing include: `_ai/includes/oscar-citizen-ai-router.md`
+  (Peterborough / local government harness). The pattern is
+  right (orchestration stays close to the work; judgment stays
+  with the role-holder). The example is wrong for this room:
+  public-sector, not a £30–500m B2B software asset. Keep in
+  reserve for Q&A if someone asks about harnesses. Do not
+  feature it. If we need a "harness" beat, Trent is the case
+  study Finn already offered.
+
+TRENT
+- Finn: "perhaps use Trent as a case study". The close already
+  does this, but it currently reads as a product ending. Recast:
+  a vertical bet on people close to complex systems; explicit
+  judgment layer; not a general-purpose AI company. One or two
+  slides. Do not demo. Do not over-claim. Then sit down.
+
+TONE
+- "More about what I don't say than what I say." After KeyBank's
+  numbers, do not add another framework dump. Three claims,
+  then Q&A. Avoid: AGI, Horizon-at-length, model-size races,
+  horizontal platform plays, a Trent sales pitch.
+- They will have been standing/registering then sitting through
+  M&A market. Keep slides sparse. Talk to founders and deal
+  partners in the same sentence: what you would underwrite,
+  and what you would not.
+
+STILL OPEN:
+- Confirm venue and exact title they want on the invite
+- Confirm PPTX handoff and by when
+- Confirm how named Trent should be (case study vs closing mention)
+- Confirm "employee-owned business" — who, after the UK sale?
+- Abstract still describes the *current* draft; rewrite once
+  Part 1 is cut and Part 2 is reframed
 
 JUDGMENT LAYER / TRENT THREAD (from Agentic AI Summit, Berkeley 2026):
 - Safety/advantage become organisational: who decides when the answer matters?
@@ -78,32 +150,22 @@ FT THREAD:
   https://www.ft.com/content/6ac0ad1b-29b4-4f43-a4ce-be209649c316
 - Letter (May 2026): AI arrives workflow by workflow / software group valuation
   https://www.ft.com/content/75ebaeb0-e250-4030-93b9-25fb517109ca
-
-OPTIONAL CUTS (if briefing shortens the slot):
-- Skip baby-shoes (save ~2 min)
-- Collapse productivity + attention flywheel into one beat (save ~2 min)
-- Drop Horizon to a single cautionary note (save ~2 min)
-- Shorten Part 1 embodiment to celsius only (save ~2 min)
-- Keep Good Regulator to one slide if Part 3 runs long (save ~2 min)
-- Show FT op-ed image only (skip letter slides) if over time (save ~2 min)
-
-POST-BRIEFING TODO:
-- Confirm venue, exact title, and any client framing
-- Confirm whether PPTX handoff is required and by when
-- Tune Part 2 examples to any verticals the client emphasises
-- Confirm how much Trent product detail is appropriate for this room
+  ← keep this one prominent; it is written for this PE/M&A room
 -->
 
 \section{Opening: Software Advantage When Code Gets Cheap}
 
-\notes{Welcome. Thirty minutes on how AI is reshaping software businesses —
-and where advantage will sit as the cost of producing software falls.
-I will keep this practical for founders, CEOs, and investors: what to
-automate, what not to, and what debt you accumulate if you get the
-balance wrong. The through-line is the *judgment layer*: the part of the
+\notes{Welcome. You have just heard the M&A market from KeyBank. Thirty
+minutes on whether AI is a tailwind or a headwind for the software
+businesses in this room — vertical B2B product companies, owner-managed
+and PE-backed, in the £30–500 million range — and where a moat still
+sits as the cost of producing software falls. I will keep this practical
+for founders, CEOs, and investors: what to build, what to buy, what
+pricing survives, and what debt you accumulate if you get the balance
+wrong. The through-line is the *judgment layer*: the part of the
 organisation that still owns consequence when machines act. I will end
-with how we are building for that at Trent. Happy to go deeper in the
-Q&A that follows.}
+with Trent as a case study, not a pitch. The useful conversation is the
+Q&A that follows — this talk is as much about what I leave unsaid.}
 
 \newslide{Today's Arc}
 
@@ -113,12 +175,15 @@ Q&A that follows.}
 * The judgment layer — and what we are building at Trent
 }
 
-\notes{Three beats. First, a model of machine versus human intelligence —
-without it, SaaS strategy drifts into hype. Second, what that means for
-software businesses today: product, delivery, and organisational design.
-Third, how the industry evolves when agents act: the judgment layer must
-become explicit, or agentic debt accumulates. I close with Trent — where
-we put that architecture into practice.}
+\notes{Three beats. First, a short model of machine versus human
+intelligence — without it, SaaS strategy drifts into hype. For this
+room, keep it short: they have already sat through benchmarks; they do
+not need the full Atomic Human apparatus. Second, what that means for
+*vertical* software businesses today: moats, defensibility, build vs
+buy, and the move off annual seats. Third, how the industry evolves when
+agents act: the judgment layer must become explicit, or agentic debt
+accumulates. I close with Trent as a case study — a vertical bet on
+people close to complex systems — then sit down.}
 
 \section{Part 1: What AI Is (and Isn't) for Software Businesses}
 
@@ -166,7 +231,12 @@ business around a legible judgment layer.}
 \notes{The SaaS model was built on recurring revenue for software that was
 expensive to write, hard to copy, and delivered through a subscription
 relationship. Generative AI attacks the first two assumptions and
-stresses the third.}
+stresses the third. For this room, stay in vertical B2B: a niche
+customer set, a known workflow, a product company in the £30–500 million
+range. The horizontal story (foundation models as product, AI as a
+platform) is the headwind, not the talk. Finn's questions to hit:
+tailwind vs headwind, where the moat is, build vs buy, and the move from
+annual seats to usage-based pricing.}
 
 \define{noSlideTitle}
 \include{_economics/includes/philosophers-stone.md}
@@ -332,10 +402,13 @@ do not assume the centre can create the operational change once for all.}
 
 \section{Close: Trent and the Judgment Layer in Practice}
 
-\notes{I will close with what we are building. The argument of this talk is
-not only diagnostic. At Trent we treat the judgment layer as a
-first-class architectural component — separating it from automated
-execution and delivering it to the AI-augmented engineer.}
+\notes{Close with Trent as a *case study*, not a pitch — Finn suggested
+this. The argument of this talk is not only diagnostic. Trent is a
+vertical bet: people close to complex software systems, an explicit
+judgment layer, not a horizontal AI company. One or two slides, then
+sit down. At Trent we treat the judgment layer as a first-class
+architectural component — separating it from automated execution and
+delivering it to the AI-augmented engineer.}
 
 \include{_business/includes/why-start-trent.md}
 
@@ -373,11 +446,16 @@ systems under agentic AI.}
 * How does your pricing survive when agents do the work?
 }
 
-\notes{Open for Q&A. Prefer concrete product, pricing, and diligence
-examples from the room. Useful threads: seat vs outcome pricing;
-build-vs-buy for models; how PE diligence should treat AI features;
-where customer trust breaks when agents act on a user's behalf; how to
-make escalation / "I don't know" a first-class product behaviour.}
+\notes{Open for Q&A. This is the half-hour that matters. Prefer concrete
+product, pricing, and diligence examples from the room. Threads Finn
+teed up: is AI a tailwind or a headwind *for this vertical*? Where is
+the moat if code is cheap? Build vs buy — what would you never outsource
+in a niche B2B product? Annual seats vs usage/outcome as agents do the
+work. How PE diligence should treat an "AI feature" on a first-round
+asset vs a professionalised portfolio company. Where customer trust
+breaks when agents act on a user's behalf. Do not drag OSCAR into the
+answer unless someone asks about harnesses; Trent only if they ask how
+we are taking the judgment layer to market.}
 
 \thanks
 

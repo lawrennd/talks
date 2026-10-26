@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class test timer</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #f0f6fc;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --danger: #ff2d55;
+      --btn-bg: #21262d;
+      --btn-border: #30363d;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4vh;
+      user-select: none;
+    }
+
+    body.flashing {
+      animation: timer-flash 0.45s steps(1, end) infinite;
+    }
+
+    @keyframes timer-flash {
+      0%, 49% { background: var(--danger); color: #fff; }
+      50%, 100% { background: var(--bg); color: var(--fg); }
+    }
+
+    #timer-display {
+      font-size: min(28vw, 32vh);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+    }
+
+    #timer-status {
+      font-size: min(3.5vw, 2.2vh);
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      min-height: 1.2em;
+    }
+
+    body.flashing #timer-status {
+      color: inherit;
+    }
+
+    #timer-controls {
+      display: flex;
+      gap: 1.5vw;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      font: inherit;
+      font-size: min(4vw, 2.8vh);
+      padding: 1.2vh 3vw;
+      min-width: 8em;
+      border-radius: 0.4em;
+      border: 2px solid var(--btn-border);
+      background: var(--btn-bg);
+      color: var(--fg);
+      cursor: pointer;
+    }
+
+    button:hover { border-color: var(--accent); }
+    button:active { transform: translateY(1px); }
+    button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    #timer-start {
+      border-color: var(--accent);
+      background: #1f3a5f;
+    }
+
+    #timer-pause[disabled],
+    #timer-reset[disabled] {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer-display">10:00</div>
+  <div id="timer-status">Ready</div>
+  <div id="timer-controls">
+    <button type="button" id="timer-start">Start</button>
+    <button type="button" id="timer-pause" disabled>Pause</button>
+    <button type="button" id="timer-reset">Reset</button>
+  </div>
+  <script src="timer.js"></script>
+</body>
+</html>

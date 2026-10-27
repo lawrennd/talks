@@ -13,6 +13,8 @@ author:
 date: 2009-09-06
 venue: Interspeech Tutorial 2009
 published: 2009-09-06
+talktheme: white
+talkcss: manchester.css
 ---
 
 \include{talk-macros.tex}

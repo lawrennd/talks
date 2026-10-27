@@ -13,6 +13,8 @@ date: 2015-06-18
 venue: DSA, Nyeri, Kenya
 pdf: personalized_dsa15.pdf
 transition: None
+talktheme: white
+talkcss: sheffield.css
 ---
 
 <!--\include{_ml/includes/data-plus-model.md}-->

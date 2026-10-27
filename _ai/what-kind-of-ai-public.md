@@ -24,6 +24,8 @@ venue: Science Week Talk, University of Sheffield
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
+talktheme: white
+talkcss: sheffield.css
 ---
 
 \include{../talk-macros.tex}

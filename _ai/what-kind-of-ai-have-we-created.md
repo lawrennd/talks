@@ -22,6 +22,8 @@ venue: Birley Community College, Sheffield
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
+talktheme: white
+talkcss: sheffield.css
 categories:
 - Lawrence-birley15
 ---

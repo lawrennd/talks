@@ -26,6 +26,8 @@ categories:
 day: '11'
 date: 2015-12-11
 venue: NIPS Workshop on Statistical Methods for Understanding Neural Systems
+talktheme: white
+talkcss: sheffield.css
 ---
 
 

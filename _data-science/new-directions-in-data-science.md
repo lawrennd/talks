@@ -17,6 +17,8 @@ abstract: |
 venue: Data Science in Africa Workshop
 location: Pulse Lab, Kampala, Uganda
 date: 2016-07-01
+talktheme: white
+talkcss: sheffield.css
 ---
 
 \notes{This post is thoughts for a talk given at the UN Global Pulse lab in Kampala as part of the second [Data Science in Africa Workshop](http://www.datascienceafrica.org) at the [UN Global Pulse Lab in Kampala, Uganda](http://www.unglobalpulse.org/kampala). It covers challenges in data science.

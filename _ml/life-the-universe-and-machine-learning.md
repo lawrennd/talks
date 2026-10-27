@@ -35,6 +35,8 @@ date: 2012-09-06
 venue: St George's Church Lecture Theatre, University of Sheffield
 video: https://uecho.shef.ac.uk:8443/ess/echo/presentation/cf5b4a10-cf6c-4446-b843-ff07fa741fa0
 transition: None
+talktheme: white
+talkcss: sheffield.css
 ---
 
 \include{talk-macros.tex}

@@ -28,6 +28,8 @@ month: 9
 date: 2015-09-21
 venue: MLPM Summer School, Museum of Science and Industry, Manchester, UK
 year: '2015'
+talktheme: white
+talkcss: sheffield.css
 ---
 
 \notes{The NIPS experiment was an experiment to determine the consistency of the review process. After receiving papers we selected 10% that would be independently rereviewed. The idea was to determine how consistent the decisions between the two sets of independent papers would be. In 2014 NIPS received 1678 submissions and we selected 170 for the experiment. These papers are referred to below as 'duplicated papers'.}

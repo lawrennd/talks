@@ -2,12 +2,14 @@
 //
 // Class-test countdown timer for Reveal background iframes.
 // Duration from ?duration= seconds, MM:SS, or H:MM:SS.
+// Optional ?title= (URL-encoded) labels the slide above the clock.
 
 (function () {
   'use strict';
 
   var display = document.getElementById('timer-display');
   var statusEl = document.getElementById('timer-status');
+  var titleEl = document.getElementById('timer-title');
   var startBtn = document.getElementById('timer-start');
   var pauseBtn = document.getElementById('timer-pause');
   var resetBtn = document.getElementById('timer-reset');
@@ -62,6 +64,17 @@
   var finished = false;
   var lastTick = 0;
   var rafId = 0;
+
+  var rawTitle = params.get('title');
+  if (titleEl) {
+    if (rawTitle && String(rawTitle).trim() !== '') {
+      titleEl.textContent = rawTitle;
+      titleEl.hidden = false;
+    } else {
+      titleEl.textContent = '';
+      titleEl.hidden = true;
+    }
+  }
 
   function setStatus(text) {
     if (statusEl) {
@@ -156,6 +169,56 @@
     syncButtons();
   }
 
+  function parentReveal() {
+    try {
+      return window.parent && window.parent.Reveal ? window.parent.Reveal : null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  // Space toggles the clock. Arrow / page keys advance the parent deck
+  // (data-background-interactive would otherwise trap focus here).
+  function forwardRevealNavigation(key) {
+    var R = parentReveal();
+    if (!R) {
+      return false;
+    }
+    if (key === 'ArrowRight' || key === 'PageDown') {
+      if (typeof R.right === 'function') {
+        R.right();
+      } else {
+        R.next();
+      }
+      return true;
+    }
+    if (key === 'ArrowLeft' || key === 'PageUp') {
+      if (typeof R.left === 'function') {
+        R.left();
+      } else {
+        R.prev();
+      }
+      return true;
+    }
+    if (key === 'ArrowDown') {
+      if (typeof R.down === 'function') {
+        R.down();
+      } else {
+        R.next();
+      }
+      return true;
+    }
+    if (key === 'ArrowUp') {
+      if (typeof R.up === 'function') {
+        R.up();
+      } else {
+        R.prev();
+      }
+      return true;
+    }
+    return false;
+  }
+
   startBtn.addEventListener('click', function () {
     start();
   });
@@ -166,20 +229,26 @@
     reset();
   });
 
-  // Keep Reveal from advancing the deck while this iframe has focus.
   window.addEventListener('keydown', function (ev) {
     var k = ev.key;
-    if (k === ' ' || k === 'ArrowLeft' || k === 'ArrowRight' ||
-        k === 'ArrowUp' || k === 'ArrowDown' || k === 'PageUp' ||
-        k === 'PageDown') {
+    if (k === ' ') {
       ev.preventDefault();
       ev.stopPropagation();
+      if (!finished) {
+        if (running) {
+          pause();
+        } else {
+          start();
+        }
+      }
+      return;
     }
-    if (k === ' ' && !finished) {
-      if (running) {
-        pause();
-      } else {
-        start();
+    if (k === 'ArrowLeft' || k === 'ArrowRight' ||
+        k === 'ArrowUp' || k === 'ArrowDown' ||
+        k === 'PageUp' || k === 'PageDown') {
+      if (forwardRevealNavigation(k)) {
+        ev.preventDefault();
+        ev.stopPropagation();
       }
     }
   }, true);

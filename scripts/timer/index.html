@@ -44,6 +44,21 @@
       50%, 100% { background: var(--bg); color: var(--fg); }
     }
 
+    #timer-title {
+      font-size: min(6vw, 5vh);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fg);
+      text-align: center;
+      max-width: 90vw;
+      line-height: 1.2;
+    }
+
+    #timer-title[hidden] {
+      display: none !important;
+    }
+
     #timer-display {
       font-size: min(28vw, 32vh);
       font-weight: 700;
@@ -104,6 +119,7 @@
   </style>
 </head>
 <body>
+  <div id="timer-title" hidden></div>
   <div id="timer-display">10:00</div>
   <div id="timer-status">Ready</div>
   <div id="timer-controls">

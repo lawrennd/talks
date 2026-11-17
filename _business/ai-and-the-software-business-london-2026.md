@@ -24,7 +24,7 @@ author:
 date: 2026-11-17
 time: "19:00"
 duration: 30
-venue: Clearwater International / KeyBank, Central London (TBC)
+venue: "Royal London St Paul's — Clearwater Capital"
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
@@ -272,6 +272,7 @@ model-driven pricing, support bots, recommendation engines, and agentic
 workflows whose failure modes are opaque to the customer and to the
 board.}
 
+\notes{
 \subsection{Where Superficial Automation Fails}
 
 \include{_business/includes/superficial-automation.md}
@@ -283,7 +284,7 @@ underlying decision problem untouched. Done well, that frees attention.
 Done badly, it flattens cognition inside the firm: juniors stop learning,
 seniors stop reviewing, and the company loses the expertise that made
 the product valuable.}
-
+}
 \include{_business/includes/the-innovators-dilemma.md}
 
 \notes{Incumbent SaaS firms face Christensen's dilemma in a new form. Their
@@ -372,7 +373,7 @@ less.}
 * Keep human authority where consequence lives
 * Watch for intellectual *and* agentic debt
 }
-
+\notes{}
 \newslide{What will evolve in SaaS}
 
 \slidesincremental{
@@ -409,7 +410,7 @@ judgment layer, not a horizontal AI company. One or two slides, then
 sit down. At Trent we treat the judgment layer as a first-class
 architectural component — separating it from automated execution and
 delivering it to the AI-augmented engineer.}
-
+}
 \include{_business/includes/why-start-trent.md}
 
 \newslide{What Trent Delivers}
@@ -446,7 +447,7 @@ systems under agentic AI.}
 * How does your pricing survive when agents do the work?
 }
 
-\notes{Open for Q&A. This is the half-hour that matters. Prefer concrete
+\speakernotes{Open for Q&A. This is the half-hour that matters. Prefer concrete
 product, pricing, and diligence examples from the room. Threads Finn
 teed up: is AI a tailwind or a headwind *for this vertical*? Where is
 the moat if code is cheap? Build vs buy — what would you never outsource

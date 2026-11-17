@@ -27,6 +27,7 @@ notation: talk-notation.tex
 posts: True
 docx: False
 notespdf: False
+slidespdf: False
 slidesipynb: False
 pptx: False
 pdf: False

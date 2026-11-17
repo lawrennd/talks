@@ -13,7 +13,11 @@ circle {
 </style>
 <circle cx="100" cy="100" r="100"/>
 </clipPath>
-</defs><title>\alttext</title><image preserveAspectRatio="xMinYMin slice" width="100%" xlink:href="\filename" clip-path="url(#clip\urlCount)"/></svg>}
+</defs>
+<title>\alttext</title>
+<image preserveAspectRatio="xMinYMin slice" width="100%"
+       xlink:href="\filename" clip-path="url(#clip\urlCount)"/>
+</svg>}
 
 \defeval{\challengerMishraPicture{width}}{\circleHead{\diagramsDir/people/challenger-mishra.jpg}{Challenger Mishra}{\width}{https://acceleratescience.github.io/team/challenger-mishra.html}}
 

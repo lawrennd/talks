@@ -24,7 +24,7 @@ author:
 date: 2026-11-17
 time: "19:00"
 duration: 30
-venue: Clearwater International / KeyBank, Central London (TBC)
+venue: "Royal London St Paul's — Clearwater Capital"
 geometry: ["a4paper", "margin=2cm"]
 papersize: a4paper
 transition: None
@@ -153,7 +153,7 @@ FT THREAD:
   ← keep this one prominent; it is written for this PE/M&A room
 -->
 
-\section{Opening: Software Advantage When Code Gets Cheap}
+\notes{\section{Opening: Software Advantage When Code Gets Cheap}}
 
 \notes{Welcome. You have just heard the M&A market from KeyBank. Thirty
 minutes on whether AI is a tailwind or a headwind for the software
@@ -252,6 +252,8 @@ annual seats to usage-based pricing.}
 \undef{noSlideTitle}
 
 \include{_business/includes/information-flow-structures.md}
+\define{omitBezosMemoTitle}
+\define{omitConwayLawSlide}
 \include{_business/includes/the-api-mandate-bezos.md}
 
 \notes{SaaS companies are information businesses. AI changes the topography
@@ -261,7 +263,7 @@ that when interfaces proliferate without clear ownership, the
 organisation fragments. Software firms that treat AI as a feature bolt-on
 will feel that fragmentation first.}
 
-\subsection{Intellectual Debt in Software Organisations}
+\notes{\subsection{Intellectual Debt in Software Organisations}}
 
 \include{_ai/includes/intellectual-debt-short.md}
 
@@ -272,6 +274,7 @@ model-driven pricing, support bots, recommendation engines, and agentic
 workflows whose failure modes are opaque to the customer and to the
 board.}
 
+\notes{
 \subsection{Where Superficial Automation Fails}
 
 \include{_business/includes/superficial-automation.md}
@@ -291,8 +294,9 @@ processes are optimised for a world where software was scarce. AI makes
 software abundant. The firms that win will not simply add AI features to
 existing suites; they will rethink packaging, pricing, and the human
 work that surrounds the product.}
+}
 
-\subsection{A Warning on Trust}
+\notes{\subsection{A Warning on Trust}}
 
 \include{_software/includes/horizon-scandal.md}
 
@@ -320,24 +324,7 @@ between people and software — and therefore the shape of the firm.}
 \include{_ai/includes/processor-ham.md}
 \include{_data-science/includes/new-flow-of-information-ham.md}
 
-\include{_business/includes/the-productivity-flywheel.md}
-\include{_business/includes/attention-flywheel.md}
-
-\notes{Classical SaaS flywheels reinvest capital into sales and R&D. In the
-AI era the scarce input is human attention — of your engineers, your
-customers, and your operators. Firms that free attention and then waste
-it on more shallow automation will not compound. Firms that reinvest
-attention into judgment, relationships, and new product categories will.}
-
-\include{_business/includes/ft-op-ed.md}
-
-\notes{The FT piece — *AI cannot replace the atomic human* — is the shortest
-public statement of this point. Attempting to measure human capital poses a
-productivity paradox: what machines can quantify, they can automate. The
-remainder that matters for software businesses is judgment, trust, and care
-for the customer problem — the atomic human contribution that does not
-inflate away.}
-
+\define{agenticDebtOneSlide}
 \include{_ai/includes/agentic-debt-short.md}
 
 \notes{Agentic systems — systems that can act inside workflows — may pay
@@ -346,59 +333,14 @@ delegation without clear authority, evidence, or recovery. For software
 CEOs and their investors, the governance question becomes: who or what
 can cause what action, on what basis, with what stop-condition?}
 
-\subsection{The Judgment Layer}
+\notes{\subsection{The Judgment Layer}
 
-\notes{This is the pivot. Once agents execute real workflows, advantage and
+This is the pivot. Once agents execute real workflows, advantage and
 safety stop being model properties and become organisational ones. The
 right question is not how to make the model produce the right answer. It
 is who has the authority to decide when the answer matters.}
 
 \include{_ai/includes/judgment-layer-explicit.md}
-\include{_ai/includes/good-regulator-model-minimisation.md}
-
-\notes{The Good Regulator theorem makes the constraint precise: every good
-regulator must contain a model of what it regulates. Humans model not
-just the software but the organisation — priorities, risk, history,
-customers, people. Automating without preserving that judgment makes it
-invisible, not absent. That invisibility is agentic debt. The more
-autonomous AI becomes, the more valuable this judgment becomes — not
-less.}
-
-\newslide{Strategic Priorities for Software Leaders}
-
-\slidesincremental{
-* People first, not model first
-* Make the judgment layer *explicit* in product and ops
-* Keep human authority where consequence lives
-* Watch for intellectual *and* agentic debt
-}
-
-\newslide{What will evolve in SaaS}
-
-\slidesincremental{
-* Production of software gets cheaper; *judgment* gets scarcer
-* Seat-based pricing under pressure as agents multiply work
-* Moats shift toward data, distribution, trust, and domain judgment
-* Winners redesign the firm around a legible judgment layer
-}
-
-\notes{A short forward look for the room. As code generation and workflow
-automation spread, the marginal cost of software production falls. That
-pressures seat-based SaaS economics and elevates everything around the
-code: proprietary data, distribution, customer trust, and the judgment
-to know what should be built — and when to halt. Private equity and
-founders should underwrite the judgment layer as carefully as the model
-layer.}
-
-\include{_business/includes/ft-letter-workflow-by-workflow.md}
-
-\notes{The FT letter is aimed at this room. Markets err when they value
-software groups as if AI were one centralised programme. Value arrives
-workflow by workflow, in the hands of people who understand the work. That
-is another way of saying: protect and productise the local judgment layer —
-do not assume the centre can create the operational change once for all.}
-
-\include{_books/includes/the-atomic-human.md}
 
 \section{Close: Trent and the Judgment Layer in Practice}
 
@@ -446,7 +388,7 @@ systems under agentic AI.}
 * How does your pricing survive when agents do the work?
 }
 
-\notes{Open for Q&A. This is the half-hour that matters. Prefer concrete
+\speakernotes{Open for Q&A. This is the half-hour that matters. Prefer concrete
 product, pricing, and diligence examples from the room. Threads Finn
 teed up: is AI a tailwind or a headwind *for this vertical*? Where is
 the moat if code is cheap? Build vs buy — what would you never outsource
@@ -460,3 +402,73 @@ we are taking the judgment layer to market.}
 \thanks
 
 \references
+
+\define{appendixOn}
+\slides{
+
+\subsection{APPENDIX}
+
+\include{_business/includes/the-productivity-flywheel.md}
+\include{_business/includes/ft-op-ed.md}
+\include{_business/includes/attention-flywheel.md}
+
+\notes{Classical SaaS flywheels reinvest capital into sales and R&D. In the
+AI era the scarce input is human attention — of your engineers, your
+customers, and your operators. Firms that free attention and then waste
+it on more shallow automation will not compound. Firms that reinvest
+attention into judgment, relationships, and new product categories will.}
+
+\notes{The FT piece — *AI cannot replace the atomic human* — is the shortest
+public statement of this point. Attempting to measure human capital poses a
+productivity paradox: what machines can quantify, they can automate. The
+remainder that matters for software businesses is judgment, trust, and care
+for the customer problem — the atomic human contribution that does not
+inflate away.}
+
+\include{_ai/includes/good-regulator-model-minimisation.md}
+
+\notes{The Good Regulator theorem makes the constraint precise: every good
+regulator must contain a model of what it regulates. Humans model not
+just the software but the organisation — priorities, risk, history,
+customers, people. Automating without preserving that judgment makes it
+invisible, not absent. That invisibility is agentic debt. The more
+autonomous AI becomes, the more valuable this judgment becomes — not
+less.}
+
+\newslide{Strategic Priorities for Software Leaders}
+
+\slidesincremental{
+* People first, not model first
+* Make the judgment layer *explicit* in product and ops
+* Keep human authority where consequence lives
+* Watch for intellectual *and* agentic debt
+}
+
+\newslide{What will evolve in SaaS}
+
+\slidesincremental{
+* Production of software gets cheaper; *judgment* gets scarcer
+* Seat-based pricing under pressure as agents multiply work
+* Moats shift toward data, distribution, trust, and domain judgment
+* Winners redesign the firm around a legible judgment layer
+}
+
+\notes{A short forward look for the room. As code generation and workflow
+automation spread, the marginal cost of software production falls. That
+pressures seat-based SaaS economics and elevates everything around the
+code: proprietary data, distribution, customer trust, and the judgment
+to know what should be built — and when to halt. Private equity and
+founders should underwrite the judgment layer as carefully as the model
+layer.}
+
+\include{_business/includes/ft-letter-workflow-by-workflow.md}
+
+\notes{The FT letter is aimed at this room. Markets err when they value
+software groups as if AI were one centralised programme. Value arrives
+workflow by workflow, in the hands of people who understand the work. That
+is another way of saying: protect and productise the local judgment layer —
+do not assume the centre can create the operational change once for all.}
+
+\define{omitAtomicHumanCover}
+\include{_books/includes/the-atomic-human.md}
+}

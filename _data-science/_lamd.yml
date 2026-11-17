@@ -24,6 +24,7 @@ slidesheader: slides-header.html
 posts: True
 docx: False
 notespdf: False
+slidespdf: False
 slidesipynb: False
 pptx: False
 pdf: False

@@ -59,8 +59,11 @@ ALIGNED TO CLEARWATER ARC (17 Nov), investor-retargeted:
 KEEP IN MAIN (unlike Clearwater appendix):
 - Productivity flywheel + attention reinvestment cycle
 
+TRENT (after judgment layer, Bit 2):
+- Two slides: cybersecurity / "don't mark your own homework" → Trent approach
+- Case study, not a pitch; founding reason lands the judgment-layer point
+
 SOFT-PEDAL:
-- Trent: case-study mention only if asked; not a product close
 - Horizon: one accountability beat, not a long scandal arc
 - Institutional character / Cambridge digression: out
 - Generic investor-qa market-size list: out
@@ -266,6 +269,39 @@ answer. It is who has the authority to decide when the answer matters.}
 
 \include{_ai/includes/judgment-layer-explicit.md}
 
+\newslide{Don't Mark Your Own Homework}
+
+\slidesincremental{
+* Cybersecurity is where consequence is sharpest
+* You do not want the builder marking their own homework
+* That is why we founded Trent — judgment separated from execution
+}
+
+\notes{Cybersecurity makes the judgment-layer argument concrete. When the
+same organisation writes the system, runs the system, and adjudicates
+whether the system is safe, authorship and accountability collapse into
+each other. That is marking your own homework. In security, that is how
+failures become invisible until they are catastrophic. The judgment layer
+has to sit apart from automated execution — with clear authority,
+evidence, and a stop-condition. That separation is why we founded Trent.}
+
+\newslide{The Trent Approach}
+
+\figure{\includepng{\diagramsDir/logos/trent\slides{-white}\notes{-blue}}{60%}}{[trent.ai](https://trent.ai) — agentic AI with people close to complex systems.}{trent-logo}
+
+\slidesincremental{
+* Work with people who are close to the systems
+* Make the judgment layer *explicit* — not buried in tacit ops
+* Start where you must not mark your own homework: cybersecurity
+}
+
+\notes{Not a horizontal AI company. A vertical bet on people close to
+complex systems, starting in cybersecurity because that is where marking
+your own homework fails first. We address real pain points now, hold a
+view on the long-term redesign of information systems, and use the best
+agentic AI — proprietary and commercial — while keeping authority with
+the people who own consequence.}
+
 \section{Close: What Diligence Should Underwrite}
 
 \newslide{Strategic Priorities for Investors}
@@ -311,11 +347,12 @@ for all.}
 
 \speakernotes{Open for Q&A. Prefer concrete portfolio examples from the
 room. Threads to hit: AI roadmap vs judgment-layer diligence; build vs
-buy of undifferentiated generation; what you would never outsource in a
-niche product company; how PE diligence should treat an "AI feature" on a
-first-round asset vs a professionalised portfolio company; where customer
-trust breaks when agents act. Soft-pedal Trent unless someone asks how
-the judgment layer can be productised. Do not reopen Horizon at length.}
+buy of undifferentiated generation; cybersecurity as the clearest case
+where you must not mark your own homework; how PE diligence should treat
+an "AI feature" on a first-round asset vs a professionalised portfolio
+company; where customer trust breaks when agents act. Trent is already
+on stage as the founding case — do not turn Q&A into a product demo. Do
+not reopen Horizon at length.}
 
 \thanks
 

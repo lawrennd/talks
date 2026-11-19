@@ -70,8 +70,15 @@ CONNECTION TO COURSE:
 - Firm strategy: what to automate, what to keep human, where intellectual/agentic debt accumulates
 
 RELATED MATERIAL:
+- Clearwater software keynote (17 Nov): ai-and-the-software-business-london-2026.md
+- FitzWalter investor briefing (18 Nov): ai-fitzwalter-capital-london-2026.md
 - LUISS guest lecture (more advanced / longer): ai-and-corporate-strategy-luiss.md
-- Software business keynote (adjacent date): ai-and-the-software-business-london-2026.md
+
+PART 2 ARC (aligned to Clearwater/FitzWalter):
+- information-flow-structures (hierarchy / hub-and-spoke / peer-to-peer)
+- mythical-man-month (Brooks) before Bezos
+- API mandate (Bezos title on; omitConwayLawSlide)
+- Institutional character / Cambridge digression: out (as FitzWalter)
 -->
 
 \section{Part 1: What AI Is and Isn't}
@@ -80,7 +87,11 @@ RELATED MATERIAL:
 \include{_ai/includes/henry-ford-intro.md}
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
 \undef{noSlideTitle}
-\include{_ai/includes/embodiment-factors-celsius.md}
+
+\include{_ai/includes/diving-bell-butterfly.md}
+\include{_ai/includes/jean-dominique-bauby.md}
+\include{_ai/includes/shannon-bauby.md}
+\include{_ai/includes/embodiment-factors-tedx.md}
 \include{_ai/includes/embodiment-factors-walking-vs-light.md}
 
 \define{noSlideTitle}
@@ -96,7 +107,11 @@ RELATED MATERIAL:
 \include{_data-science/includes/new-flow-of-information.md}
 \undef{noSlideTitle}
 
-\include{_business/includes/institutional-character.md}
+\include{_business/includes/information-flow-structures.md}
+\include{_engineering/includes/mythical-man-month.md}
+\define{omitConwayLawSlide}
+\include{_business/includes/the-api-mandate-bezos.md}
+
 \include{_software/includes/horizon-scandal.md}
 
 \section{Part 3: Competing Globally with AI}

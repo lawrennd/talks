@@ -111,6 +111,7 @@ lunch beforehand with hosts.
 \include{_ai/includes/agentic-debt-short.md}
 \define{noSlideTitle}
 \include{_atomic-human/includes/river-gods-decide.md}
+\include{_ai/includes/ainstein-agents-transforming-business.md}
 \include{_atomic-human/includes/ai-onto-societys-wicked-problems.md}
 
 \thanks

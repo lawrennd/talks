@@ -127,6 +127,7 @@ combined to replace human mental labour.}
 
 \section{Part 3: Competing Globally with AI}
 
+\include{_ai/includes/ainstein-agents-transforming-business.md}
 \include{_business/includes/the-productivity-flywheel.md}
 \include{_economics/includes/human-capital-inflation.md}
 \include{_business/includes/attention-flywheel.md}

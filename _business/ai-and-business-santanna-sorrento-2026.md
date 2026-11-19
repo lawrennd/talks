@@ -137,8 +137,8 @@ scarce input is human attention. Firms that free attention and then waste it on
 more shallow automation will not compound. Firms that reinvest attention into
 judgment, relationships, and capability-building will.}
 
-\include{_ai/includes/local-government-ai-accelerator.md}
 \include{_business/includes/attention-flywheel-example-dsa.md}
+\include{_ai/includes/local-government-ai-accelerator.md}
 \include{_business/includes/why-start-trent.md}
 
 \newslide{Takeaways}

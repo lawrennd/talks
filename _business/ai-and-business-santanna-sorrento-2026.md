@@ -86,6 +86,7 @@ PART 2 ARC (aligned to Clearwater/FitzWalter):
 \define{noSlideTitle}
 \include{_ai/includes/henry-ford-intro.md}
 \include{_atomic-human/includes/artificial-general-vehicle-diagram.md}
+\include{_books/includes/the-atomic-human.md}
 \undef{noSlideTitle}
 
 \include{_ai/includes/diving-bell-butterfly.md}

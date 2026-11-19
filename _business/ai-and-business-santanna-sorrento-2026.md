@@ -98,12 +98,24 @@ PART 2 ARC (aligned to Clearwater/FitzWalter):
 \define{noSlideTitle}
 \include{_ai/includes/conversation-tedx.md}
 \include{_atomic-human/includes/fascination-with-ourselves.md}
+\include{_ai/includes/baby-shoes.md}
 \undef{noSlideTitle}
+
+\include{_economics/includes/homo-atomicus.md}
 
 \section{Part 2: How AI Changes the Firm}
 
 \define{noSlideTitle}
+\include{_economics/includes/philosophers-stone.md}
+\undef{noSlideTitle}
+
+\notes{In our modern economy, automation has the same effect as the
+philosopher's stone. During the industrial revolution, steel and steam
+replaced human manual labour. Today, silicon and electrons are being
+combined to replace human mental labour.}
+
 \include{_economics/includes/the-attention-economy.md}
+\define{noSlideTitle}
 \include{_economics/includes/herbert-simon-information.md}
 \include{_data-science/includes/new-flow-of-information.md}
 \undef{noSlideTitle}
@@ -116,6 +128,7 @@ PART 2 ARC (aligned to Clearwater/FitzWalter):
 \section{Part 3: Competing Globally with AI}
 
 \include{_business/includes/the-productivity-flywheel.md}
+\include{_economics/includes/human-capital-inflation.md}
 \include{_business/includes/attention-flywheel.md}
 
 \notes{Classical productivity flywheels reinvest capital. In the AI era the

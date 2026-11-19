@@ -60,7 +60,7 @@ TALK STRUCTURE (draft, ~60 minutes + discussion):
 0:00–0:05   Opening: AI as a business and competition problem
 0:05–0:20   Part 1: What AI is (and isn't) — bandwidth, HAMs, Atomic Human
 0:20–0:40   Part 2: How AI changes the firm — information, judgment, debt
-0:40–0:55   Part 3: Competing globally with AI — advantage, risk, strategy
+0:40–0:55   Part 3: Productivity → attention reinvestment → examples (LG accelerator, DSA, Trent)
 0:55–1:00   Close and takeaways
 1:00–      Q&A / discussion
 
@@ -113,17 +113,27 @@ PART 2 ARC (aligned to Clearwater/FitzWalter):
 \define{omitConwayLawSlide}
 \include{_business/includes/the-api-mandate-bezos.md}
 
-\include{_software/includes/horizon-scandal.md}
-
 \section{Part 3: Competing Globally with AI}
 
 \include{_business/includes/the-productivity-flywheel.md}
-\include{_business/includes/supply-chain-of-ideas.md}
+\include{_business/includes/attention-flywheel.md}
 
-\notes{For students of international competition: AI does not erase geography,
-regulation, or culture. It changes the speed and shape of information inside the
-firm, and therefore where advantage and failure modes appear when companies
-operate across borders.}
+\notes{Classical productivity flywheels reinvest capital. In the AI era the
+scarce input is human attention. Firms that free attention and then waste it on
+more shallow automation will not compound. Firms that reinvest attention into
+judgment, relationships, and capability-building will.}
+
+\include{_ai/includes/local-government-ai-accelerator.md}
+\include{_business/includes/attention-flywheel-example-dsa.md}
+\include{_business/includes/why-start-trent.md}
+
+\newslide{Takeaways}
+
+\slides{* AI doesn't erase geography, regulation or culture.
+* AI will evolve with regulation and cluture.
+* The atomic human is the irreplaceable core.
+* Our businesses and institutions are constructed from that core.}
+
 
 \thanks
 

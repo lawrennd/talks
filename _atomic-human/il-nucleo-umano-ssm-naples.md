@@ -78,7 +78,6 @@ lunch beforehand with hosts.
 \include{_art/includes/michelangelo-the-creation-of-man.md}
 \include{_art/includes/michelangelo-lunette-rehoboam-abijah.md}
 \include{_art/includes/blake-elohim-creating-adam.md}
-\include{_atomic-human/includes/trust-autonomy-embodiment.md}
 \include{_atomic-human/includes/communication-through-artefacts-art.md}
 \include{_ai/includes/human-culture-interacting-michelangelo-blake.md}
 \undef{noSlideTitle}
